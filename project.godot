@@ -14,6 +14,10 @@ config/name="soln"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalFractionFunctions="*res://scripts/global_scripts/global_fraction_functions.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
