@@ -5,11 +5,13 @@
 
 [node name="FractionAdditionGameplay" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 90.0
+anchor_left = 0.067
+anchor_right = 0.465
+anchor_bottom = 0.403
+offset_left = 12.816
 offset_top = 78.0
-offset_right = 90.0
-offset_bottom = 78.0
+offset_right = -445.68
+offset_bottom = -183.144
 size_flags_horizontal = 4
 script = ExtResource("1_endvx")
 
@@ -30,9 +32,6 @@ offset_top = 3.0
 offset_right = 41.0
 offset_bottom = 57.0
 theme_override_fonts/normal_font = ExtResource("2_5jy6y")
-text = "3
---
-4"
 
 [node name="SecondFraction" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -46,9 +45,6 @@ offset_top = 3.0
 offset_right = 105.0
 offset_bottom = 52.0
 theme_override_fonts/normal_font = ExtResource("2_5jy6y")
-text = "1
---
-4"
 
 [node name="Operation" type="NinePatchRect" parent="."]
 layout_mode = 0
