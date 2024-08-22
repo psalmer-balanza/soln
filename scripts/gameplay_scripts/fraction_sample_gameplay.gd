@@ -6,14 +6,23 @@ extends Control
 @onready var second_fraction_given: RichTextLabel = $SecondFraction/FractionTwo
 @onready var display_answer: RichTextLabel = $DisplayAnswer/UserAnswer
 
+func _ready():
+	# Setting the text dynamically in the script
+	# For zen to read from db
+	var fraction_text = "1 -- 4"
+	first_fraction_given.bbcode_text = fraction_text
+	# For zen to read from db (second fraction) 
+	fraction_text = "3 -- 4"
+	second_fraction_given.bbcode_text = fraction_text
+
 # Checker of proper and improper fraction for addition
 func _on_submit_answer_button_down():
 	# Split the string using the right delimiter "\n--\n"
 	## Modify to check if there is no input
 	#GlobalGameState.xalert("No Input", "Please input your answer")
-	var first_fraction_split = first_fraction_given.text.split("\n--\n")
-	var second_fraction_split = second_fraction_given.text.split("\n--\n")
-
+	var first_fraction_split = first_fraction_given.text.split(" -- ")
+	var second_fraction_split = second_fraction_given.text.split(" -- ")
+	
 	var first_numerator = int(first_fraction_split[0])
 	var first_denominator = int(first_fraction_split[1])
 	var second_numerator = int(second_fraction_split[0])
@@ -31,6 +40,8 @@ func _on_submit_answer_button_down():
 		else:
 			# Show this if the student's answer is incorrect
 			display_answer.text = "Try \nagain."
+			# For zen
+			# some scorer thing here that adds to the leaderboard
 	else:
 		# If given problem is improper fraction
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
@@ -48,5 +59,3 @@ func _on_submit_answer_button_down():
 		else:
 			# Show this if the student's answer is incorrect
 			display_answer.text = "Try \nagain."
-
-
