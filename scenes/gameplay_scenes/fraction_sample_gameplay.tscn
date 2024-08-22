@@ -52,6 +52,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Operand" type="RichTextLabel" parent="Operation"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 45.0
 offset_top = 20.0
@@ -62,6 +63,7 @@ theme_override_fonts/normal_font = ExtResource("2_5jy6y")
 text = "+"
 
 [node name="EqualSign" type="RichTextLabel" parent="Operation"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 103.0
 offset_top = 20.0
@@ -71,6 +73,7 @@ theme_override_fonts/normal_font = ExtResource("2_5jy6y")
 text = "="
 
 [node name="Answer" type="NinePatchRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
@@ -90,6 +93,7 @@ placeholder_text = "Input answer"
 caret_blink = true
 
 [node name="DenominatorAnswer" type="LineEdit" parent="Answer"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 107.0
 offset_top = 32.0
@@ -118,6 +122,7 @@ offset_right = 325.0
 offset_bottom = 41.0
 
 [node name="UserAnswer" type="RichTextLabel" parent="DisplayAnswer"]
+texture_filter = 1
 layout_mode = 0
 offset_right = 159.0
 offset_bottom = 91.0

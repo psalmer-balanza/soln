@@ -48,5 +48,3 @@ func _on_submit_answer_button_down():
 		else:
 			# Show this if the student's answer is incorrect
 			display_answer.text = "Try \nagain."
-
-
