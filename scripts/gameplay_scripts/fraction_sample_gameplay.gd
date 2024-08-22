@@ -29,8 +29,10 @@ func _on_submit_answer_button_down():
 	var second_denominator = int(second_fraction_split[1])
 
 	# OS.alert('Please input your answer', 'Message Title')
+	fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator)
 
-	## Check if given problem is a proper fraction
+func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
+		## Check if given problem is a proper fraction
 	if first_denominator == second_denominator:
 		var added_numerator = first_numerator + second_numerator
 		
@@ -49,7 +51,6 @@ func _on_submit_answer_button_down():
 		# Adjust numerators to the same denominator
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
-		
 		
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
