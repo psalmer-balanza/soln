@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://50xwge6vcpc3"]
 
-[ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_mev2v"]
+[ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dempq"]
 animations = [{
@@ -13,7 +13,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3kgg"]
 
 [node name="MainCharacter" type="CharacterBody2D"]
-script = ExtResource("1_mev2v")
+script = ExtResource("1_vdtrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
