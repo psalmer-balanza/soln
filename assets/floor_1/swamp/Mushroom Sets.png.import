@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0n5bd3wpjw0s"
-path="res://.godot/imported/Deep Water Decorated.png-2dcd3b309d84e1257bb7843f7392a6db.ctex"
+uid="uid://bwvhwcb2fuugq"
+path="res://.godot/imported/Mushroom Sets.png-2ae25cad14bb08fa5ce31b9cdd03eb39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/swamp/Deep Water Decorated.png"
-dest_files=["res://.godot/imported/Deep Water Decorated.png-2dcd3b309d84e1257bb7843f7392a6db.ctex"]
+source_file="res://assets/floor_1/swamp/Mushroom Sets.png"
+dest_files=["res://.godot/imported/Mushroom Sets.png-2ae25cad14bb08fa5ce31b9cdd03eb39.ctex"]
 
 [params]
 

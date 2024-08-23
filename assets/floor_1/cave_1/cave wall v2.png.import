@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cngjdbifuj5to"
-path="res://.godot/imported/Ground Tiles Decorated.png-6ac768c50a4643d5c38d48a08b550bb3.ctex"
+uid="uid://dytsrf2lfinlw"
+path="res://.godot/imported/cave wall v2.png-3ae995622fa404c81e7041faf6dd3ce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/swamp/Ground Tiles Decorated.png"
-dest_files=["res://.godot/imported/Ground Tiles Decorated.png-6ac768c50a4643d5c38d48a08b550bb3.ctex"]
+source_file="res://assets/floor_1/cave_1/cave wall v2.png"
+dest_files=["res://.godot/imported/cave wall v2.png-3ae995622fa404c81e7041faf6dd3ce0.ctex"]
 
 [params]
 

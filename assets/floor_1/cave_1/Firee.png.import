@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv0ocnv3otymn"
-path="res://.godot/imported/Ground Tiles Symetrical.png-3d7a6be4c09cec95699fd0ad62310c41.ctex"
+uid="uid://bia66rxdv45if"
+path="res://.godot/imported/Firee.png-1cf03219a1ef02e43209b25afeb93bc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/swamp/Ground Tiles Symetrical.png"
-dest_files=["res://.godot/imported/Ground Tiles Symetrical.png-3d7a6be4c09cec95699fd0ad62310c41.ctex"]
+source_file="res://assets/floor_1/cave_1/Firee.png"
+dest_files=["res://.godot/imported/Firee.png-1cf03219a1ef02e43209b25afeb93bc8.ctex"]
 
 [params]
 
