@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2bqbxcw8qjy5"
-path="res://.godot/imported/mc idle front.png-095c4e113e33dee74124dcafafa17310.ctex"
+uid="uid://8e0ae8uex75k"
+path="res://.godot/imported/mc_walk_front.png-f8c21200d9a3140d37b4c00c134da252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/mc idle front.png"
-dest_files=["res://.godot/imported/mc idle front.png-095c4e113e33dee74124dcafafa17310.ctex"]
+source_file="res://assets/main_character/mc_walk_front.png"
+dest_files=["res://.godot/imported/mc_walk_front.png-f8c21200d9a3140d37b4c00c134da252.ctex"]
 
 [params]
 

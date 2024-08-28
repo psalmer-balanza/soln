@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 250.0
+const SPEED = 100.0
 
 var player_state
 
@@ -8,12 +8,16 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if direction.x == 0 and direction.y == 0:
 		player_state = "idle"
 	elif direction.x != 0 or direction.y != 0:
 		player_state = "walking"
+		if direction.x != 0:
+			direction.y = 0
+		if direction.y != 0:
+			direction.x = 0
 
 	velocity = direction * SPEED
 	move_and_slide()
@@ -30,8 +34,10 @@ func play_anim(dir):
 		if dir.y == -1:
 			$AnimatedSprite2D.play("up-walk")
 		if dir.x == 1:
-			$AnimatedSprite2D.play("right-side-walk")
+			$AnimatedSprite2D.play("side-walk")
+			$AnimatedSprite2D.scale.x = 1
 		if dir.y == 1:
 			$AnimatedSprite2D.play("down-walk")
 		if dir.x == -1:
-			$AnimatedSprite2D.play("left-side-walk")
+			$AnimatedSprite2D.play("side-walk")
+			$AnimatedSprite2D.scale.x = -1

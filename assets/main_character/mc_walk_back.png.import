@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xsmtswkfadyy"
-path="res://.godot/imported/mc idle side.png-43343f887f525f48d84eadc345d5e403.ctex"
+uid="uid://dta7ryqekyn1j"
+path="res://.godot/imported/mc_walk_back.png-d3aebe9e923174100420d4572547e014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/mc idle side.png"
-dest_files=["res://.godot/imported/mc idle side.png-43343f887f525f48d84eadc345d5e403.ctex"]
+source_file="res://assets/main_character/mc_walk_back.png"
+dest_files=["res://.godot/imported/mc_walk_back.png-d3aebe9e923174100420d4572547e014.ctex"]
 
 [params]
 
