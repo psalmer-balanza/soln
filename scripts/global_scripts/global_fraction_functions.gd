@@ -11,4 +11,3 @@ func gcd(first_denominator, second_denominator):
 		second_denominator = first_denominator % second_denominator
 		first_denominator = temp
 	return first_denominator
-

@@ -10,34 +10,30 @@ func _ready():
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	if direction.x == 0 and direction.y == 0:
+	if direction == Vector2.ZERO:
 		player_state = "idle"
-	elif direction.x != 0 or direction.y != 0:
+	else:
 		player_state = "walking"
-		if direction.x != 0:
-			direction.y = 0
-		if direction.y != 0:
-			direction.x = 0
 
-	velocity = direction * SPEED
-	move_and_slide()
-	
+	velocity = direction * SPEED  # Set the velocity property of CharacterBody2D
+
+	move_and_slide()  # Correct usage in Godot 4
+
 	play_anim(direction)
 
 func play_anim(dir):
 	# Idle state animation
 	if player_state == "idle":
 		$AnimatedSprite2D.play("idle")
-	
-	if player_state == "walking":
+	elif player_state == "walking":
 		# Walking state (WASD)
 		if dir.y == -1:
 			$AnimatedSprite2D.play("up-walk")
-		if dir.x == 1:
+		elif dir.y == 1:
+			$AnimatedSprite2D.play("down-walk")
+		elif dir.x == 1:
 			$AnimatedSprite2D.play("side-walk")
 			$AnimatedSprite2D.scale.x = 1
-		if dir.y == 1:
-			$AnimatedSprite2D.play("down-walk")
-		if dir.x == -1:
+		elif dir.x == -1:
 			$AnimatedSprite2D.play("side-walk")
 			$AnimatedSprite2D.scale.x = -1
