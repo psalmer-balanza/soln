@@ -1,39 +1,49 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
-
-var player_state
+var movement_speed : float = 60.0
+var character_direction : Vector2
+enum States { IDLE, MOVE }
+var current_state = States.IDLE
 
 func _ready():
 	pass
 
 func _physics_process(delta):
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
-	if direction == Vector2.ZERO:
-		player_state = "idle"
+	# Know current state
+	handle_state_transitions()
+	perform_state_actions(delta)
+	move_and_slide()
+
+func handle_state_transitions():
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
+		current_state = States.MOVE
 	else:
-		player_state = "walking"
+		current_state = States.IDLE
+		#velocity = velocity.move_toward()
 
-	velocity = direction * SPEED  # Set the velocity property of CharacterBody2D
-
-	move_and_slide()  # Correct usage in Godot 4
-
-	play_anim(direction)
-
-func play_anim(dir):
-	# Idle state animation
-	if player_state == "idle":
-		$AnimatedSprite2D.play("idle")
-	elif player_state == "walking":
-		# Walking state (WASD)
-		if dir.y == -1:
-			$AnimatedSprite2D.play("up-walk")
-		elif dir.y == 1:
-			$AnimatedSprite2D.play("down-walk")
-		elif dir.x == 1:
-			$AnimatedSprite2D.play("side-walk")
-			$AnimatedSprite2D.scale.x = 1
-		elif dir.x == -1:
-			$AnimatedSprite2D.play("side-walk")
-			$AnimatedSprite2D.scale.x = -1
+func perform_state_actions(delta):
+	match current_state: 
+		States.MOVE:
+			character_direction.x = Input.get_axis("ui_left", "ui_right")
+			character_direction.y = Input.get_axis("ui_up", "ui_down")
+			character_direction = character_direction.normalized()
+			
+			if character_direction.x < 0 && character_direction.y == 0:
+				$AnimatedSprite2D.animation = "side-walk"
+			
+			if character_direction.x > 0 && character_direction.y == 0:
+				$AnimatedSprite2D.animation = "side-walk"
+				
+			if character_direction.y < 0:
+				$AnimatedSprite2D.animation = "up-walk"
+				
+			if character_direction.y > 0:
+				$AnimatedSprite2D.animation = "down-walk"
+				
+			velocity = character_direction * movement_speed
+			
+		States.IDLE:
+			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+			$AnimatedSprite2D.animation = "idle"
+				
+			
