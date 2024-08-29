@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=37 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -228,13 +228,16 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gm5m7"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob2iv"]
+radius = 33.0151
+
 [node name="MainCharacter" type="CharacterBody2D"]
 script = ExtResource("1_vdtrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
 animation = &"down-walk"
-frame_progress = 0.552891
+frame_progress = 0.780976
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -242,3 +245,10 @@ shape = SubResource("CapsuleShape2D_gm5m7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="ActionableFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+shape = SubResource("CircleShape2D_ob2iv")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://br2denl37ljn6"
+path="res://.godot/imported/saisai.dialogue-5ea3d7e1b3bd7dcfc05213f91b3da031.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/saisai.dialogue"
+dest_files=["res://.godot/imported/saisai.dialogue-5ea3d7e1b3bd7dcfc05213f91b3da031.tres"]
+
+[params]
+
+defaults=true

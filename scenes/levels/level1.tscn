@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c1ka1vk0qumpg"]
+[gd_scene load_steps=54 format=4 uid="uid://c1ka1vk0qumpg"]
 
 [ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_ceyh7"]
 [ext_resource type="Texture2D" uid="uid://dlvwtvjxj4g3d" path="res://assets/floor_1/cave_1/cave wall.png" id="2_s7ota"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://elh5saf6uhsk" path="res://assets/floor_1/raket_house/Blacksmith Tileset.png" id="8_lsx5v"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="9_g2wvt"]
 [ext_resource type="Texture2D" uid="uid://cn4we3yodtpi" path="res://assets/floor_1/npc/Raket idle animation.png" id="11_2hpnr"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="11_7kj8y"]
+[ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="12_2dgkx"]
+[ext_resource type="Resource" uid="uid://jw3m22lt8u17" path="res://dialogue/floor_1/raket.dialogue" id="14_f5w2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
 texture = ExtResource("1_ceyh7")
@@ -7847,8 +7850,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r20um"]
-size = Vector2(21, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xqj6"]
+radius = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j6f3l"]
 atlas = ExtResource("11_2hpnr")
@@ -7886,7 +7889,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru4jq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1bu3"]
+radius = 15.0333
 
 [node name="Level1" type="Node2D"]
 
@@ -7905,7 +7909,7 @@ tile_set = SubResource("TileSet_sjkl0")
 y_sort_origin = -2
 
 [node name="Medium Objects" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAdACsAAwAAAAAAAAAjACsAAwAAAAAAAAD///D/AQADAAQAAAA=")
+tile_map_data = PackedByteArray("AAAdACsAAwAAAAAAAAAjACsAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_eb4fp")
 y_sort_origin = 4
 
@@ -7914,7 +7918,7 @@ tile_set = SubResource("TileSet_3n6qi")
 y_sort_origin = 1
 
 [node name="Big Objects" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAZABIAAgACAAAAAAAZABMAAgACAAEAAAAaABIAAgADAAAAAAAaABMAAgADAAEAAAAbABIAAgADAAAAAAAbABMAAgADAAEAAAAbACUAAgACAAAAAAAcABIAAgADAAAAAAAcABMAAgADAAEAAAAcACUAAgADAAAAAAAdABIAAgADAAAAAAAdABMAAgADAAEAAAAdACUAAgADAAAAAAAeABIAAgADAAAAAAAeABMAAgADAAEAAAAeACUAAgADAAAAAAAfABIAAgADAAAAAAAfABMAAgADAAEAAAAfACUAAgADAAAAAAAgABIAAgADAAAAAAAgABMAAgADAAEAAAAgACUAAgADAAAAAAAhABIAAgADAAAAAAAhABMAAgADAAEAAAAhACUAAgAEAAAAAAAiABIAAgADAAAAAAAiABMAAgADAAEAAAAjABIAAgADAAAAAAAjABMAAgADAAEAAAAkABIAAgAEAAAAAAAkABMAAgAEAAEAAAAAAO//AQABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAZABIAAgACAAAAAAAZABMAAgACAAEAAAAaABIAAgADAAAAAAAaABMAAgADAAEAAAAbABIAAgADAAAAAAAbABMAAgADAAEAAAAbACUAAgACAAAAAAAcABIAAgADAAAAAAAcABMAAgADAAEAAAAcACUAAgADAAAAAAAdABIAAgADAAAAAAAdABMAAgADAAEAAAAdACUAAgADAAAAAAAeABIAAgADAAAAAAAeABMAAgADAAEAAAAeACUAAgADAAAAAAAfABIAAgADAAAAAAAfABMAAgADAAEAAAAfACUAAgADAAAAAAAgABIAAgADAAAAAAAgABMAAgADAAEAAAAgACUAAgADAAAAAAAhABIAAgADAAAAAAAhABMAAgADAAEAAAAhACUAAgAEAAAAAAAiABIAAgADAAAAAAAiABMAAgADAAEAAAAjABIAAgADAAAAAAAjABMAAgADAAEAAAAkABIAAgAEAAAAAAAkABMAAgAEAAEAAAA=")
 tile_set = SubResource("TileSet_l56gl")
 
 [node name="cave" type="TileMapLayer" parent="."]
@@ -7924,25 +7928,42 @@ tile_set = SubResource("TileSet_8ydrn")
 [node name="MainCharacter" parent="." instance=ExtResource("9_g2wvt")]
 position = Vector2(27, -950)
 
-[node name="SaiSai" type="CharacterBody2D" parent="."]
-position = Vector2(72, -952)
+[node name="Saisai" type="StaticBody2D" parent="."]
+position = Vector2(27, -950)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SaiSai"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Saisai"]
+position = Vector2(65, -2)
 sprite_frames = SubResource("SpriteFrames_kd8to")
 animation = &"new_animation"
-frame_progress = 0.286848
+frame = 2
+frame_progress = 0.344082
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SaiSai"]
-position = Vector2(-0.5, -1)
-shape = SubResource("RectangleShape2D_r20um")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Saisai"]
+position = Vector2(65, -2)
+polygon = PackedVector2Array(4, -15, -5, -15, -5, -14, -6, -14, -6, -13, -7, -13, -7, -11, -8, -11, -8, -9, -9, -9, -9, -5, -10, -5, -10, -2, -11, -2, -11, -1, -12, -1, -12, 2, -13, 2, -13, 4, -14, 4, -14, 6, -15, 6, -15, 8, -14, 8, -14, 9, -13, 9, -13, 10, -11, 10, -11, 11, -9, 11, -9, 10, -5, 10, -5, 12, 3, 12, 3, 9, 7, 9, 7, 10, 9, 10, 9, 11, 12, 11, 12, 10, 13, 10, 13, 9, 14, 9, 14, 8, 15, 8, 15, 4, 14, 4, 14, 3, 13, 3, 13, 2, 12, 2, 12, 1, 11, 1, 11, -1, 10, -1, 10, -2, 10, -3, 9, -3, 9, -6, 8, -6, 8, -9, 7, -9, 7, -11, 6, -11, 6, -12, 5, -12, 5, -13, 4, -13)
 
-[node name="Raket" type="CharacterBody2D" parent="."]
-position = Vector2(-17, -1060)
+[node name="Actionable" parent="Saisai" instance=ExtResource("11_7kj8y")]
+position = Vector2(65, -2)
+dialogue_resource = ExtResource("12_2dgkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saisai/Actionable"]
+position = Vector2(-2, 10)
+shape = SubResource("CircleShape2D_0xqj6")
+
+[node name="Raket" type="StaticBody2D" parent="."]
+position = Vector2(57, -784)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Raket"]
 sprite_frames = SubResource("SpriteFrames_6bvxt")
 frame = 1
 frame_progress = 0.503368
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Raket"]
-shape = SubResource("RectangleShape2D_ru4jq")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Raket"]
+polygon = PackedVector2Array(7, -13, 6, -13, 6, -14, 2, -14, 2, -13, -4, -13, -4, -14, -7, -14, -7, -13, -8, -13, -8, -12, -9, -12, -9, -6, -10, -6, -10, -5, -11, -5, -11, -4, -10, -4, -10, -2, -9, -2, -9, -1, -9, 4, -10, 4, -10, 7, -9, 7, -9, 8, -8, 8, -8, 11, -7, 11, -7, 12, -6, 12, -6, 13, 3, 13, 3, 12, 5, 12, 5, 11, 6, 11, 6, 10, 9, 10, 9, 11, 10, 11, 10, 12, 13, 12, 13, 11, 14, 11, 14, 10, 15, 10, 15, 7, 14, 7, 14, 6, 13, 6, 13, 5, 12, 5, 12, 4, 8, 4, 8, -6, 7, -6)
+
+[node name="Actionable" parent="Raket" instance=ExtResource("11_7kj8y")]
+dialogue_resource = ExtResource("14_f5w2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raket/Actionable"]
+position = Vector2(-2, 11)
+shape = SubResource("CircleShape2D_w1bu3")
