@@ -1,12 +1,12 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
+Raket: [[Hi|Hello|Howdy]], this is some dialogue.
+Raket: Here are some choices.
 - First one
-	Nathan: You picked the first one.
+	Raket: You picked the first one.
 - Second one
-	Nathan: You picked the second one.
+	Raket: You picked the second one.
 - Start again => start
 - End the conversation => END
-Nathan: For more information see the online documentation.
+Raket: For more information see the online documentation.
 
 => END

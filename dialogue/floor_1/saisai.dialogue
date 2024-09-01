@@ -1,13 +1,25 @@
 ~ start
 
+if sai_quest_status == "finished":
+	Saisai: I think you're ready. Go ahead and talk to Raket! Tell him I sent you!
+	=> END
+
 Saisai: [[Hi|Hello|Howdy]], this is some dialogue.
 Saisai: Here are some choices.
 - First one
 	Saisai: You picked the first one.
-- Second one
-	Saisai: You picked the second one.
+- Second one (status = finished)
+	set sai_quest_status = "finished"
+	Saisai: You picked the second one. Now let's restart
+	=> start
 - Start again => start
+- Change scene => game_scene
 - End the conversation => END
+
 Saisai: For more information see the online documentation.
 
+=> END
+
+~ game_scene
+do change_scene_to_game()
 => END

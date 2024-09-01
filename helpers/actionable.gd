@@ -7,4 +7,4 @@ extends Area2D
 
 # Show balloon when actionable is activated
 func action() -> void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
