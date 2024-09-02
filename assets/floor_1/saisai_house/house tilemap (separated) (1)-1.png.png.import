@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4n87b1tlvtf"
-path="res://.godot/imported/mc walk side.png-6f04c5c29ff7df98159729f89c38dd70.ctex"
+uid="uid://d201cjchyu31q"
+path="res://.godot/imported/house tilemap (separated) (1)-1.png.png-73c97cce62d9c173aa92a2176e47b23d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/mc walk side.png"
-dest_files=["res://.godot/imported/mc walk side.png-6f04c5c29ff7df98159729f89c38dd70.ctex"]
+source_file="res://assets/floor_1/saisai_house/house tilemap (separated) (1)-1.png.png"
+dest_files=["res://.godot/imported/house tilemap (separated) (1)-1.png.png-73c97cce62d9c173aa92a2176e47b23d.ctex"]
 
 [params]
 

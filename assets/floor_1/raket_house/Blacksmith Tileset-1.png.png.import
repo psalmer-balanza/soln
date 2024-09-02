@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dta7ryqekyn1j"
-path="res://.godot/imported/mc walk back.png-c2f0d06a0e2c2eed2df4a68533bcb685.ctex"
+uid="uid://b2ux6f77p6brk"
+path="res://.godot/imported/Blacksmith Tileset-1.png.png-7ac13f4c07b448b3cfdf8e8f3b2e9545.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/mc walk back.png"
-dest_files=["res://.godot/imported/mc walk back.png-c2f0d06a0e2c2eed2df4a68533bcb685.ctex"]
+source_file="res://assets/floor_1/raket_house/Blacksmith Tileset-1.png.png"
+dest_files=["res://.godot/imported/Blacksmith Tileset-1.png.png-7ac13f4c07b448b3cfdf8e8f3b2e9545.ctex"]
 
 [params]
 
