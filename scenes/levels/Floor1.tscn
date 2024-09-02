@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dumhpr72oqcyv"]
+[gd_scene load_steps=32 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://qruekdwwsgx4" path="res://assets/floor_1/swamp/All in one ground.png" id="1_6ktmd"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="2_w64g1"]

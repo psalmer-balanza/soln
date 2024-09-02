@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bipet4e2rgoke"
-path="res://.godot/imported/Saisai.png-ff6008a746049d27a4bc3c4d27c4298e.ctex"
+uid="uid://boano2wcdkpy4"
+path="res://.godot/imported/Raket.png-9726268c3d3932e8af79205d7507c0dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Saisai.png"
-dest_files=["res://.godot/imported/Saisai.png-ff6008a746049d27a4bc3c4d27c4298e.ctex"]
+source_file="res://assets/character_portraits/Raket.png"
+dest_files=["res://.godot/imported/Raket.png-9726268c3d3932e8af79205d7507c0dd.ctex"]
 
 [params]
 

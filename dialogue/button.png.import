@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bipet4e2rgoke"
-path="res://.godot/imported/Saisai.png-ff6008a746049d27a4bc3c4d27c4298e.ctex"
+uid="uid://c3essyp8b42ak"
+path="res://.godot/imported/button.png-f07949e3e1bd69a193e94e6398631454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Saisai.png"
-dest_files=["res://.godot/imported/Saisai.png-ff6008a746049d27a4bc3c4d27c4298e.ctex"]
+source_file="res://dialogue/button.png"
+dest_files=["res://.godot/imported/button.png-f07949e3e1bd69a193e94e6398631454.ctex"]
 
 [params]
 

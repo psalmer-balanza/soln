@@ -1,25 +1,60 @@
 ~ start
+Saisai: Whoa! Hey there! Didn't see you coming, sneaky! [wait=0.5] You've got a light fragment in your lantern, huh? [wait=0.5]
+Saisai: Shiny! My raccoon friend has one just like it on his house. I can give you directions, but first... [wait=1.5]
 
-if sai_quest_status == "finished":
-	Saisai: I think you're ready. Go ahead and talk to Raket! Tell him I sent you!
-	=> END
+Saisai: [#curious, #skeptical] You see, I have these pies, and they're not just any kinda pie—they're special pies! Made from swamp berries that only grow once every blue moon! [wait=1] I need to get it to my raccoon friend, but I need to make sure you're worthy of this noble pie-carrying mission. Think you can handle a little test? [wait=1] Just a small task to prove you're the chosen one!
 
-Saisai: [[Hi|Hello|Howdy]], this is some dialogue.
-Saisai: Here are some choices.
-- First one
-	Saisai: You picked the first one.
-- Second one (status = finished)
-	set sai_quest_status = "finished"
-	Saisai: You picked the second one. Now let's restart
-	=> start
-- Start again => start
-- Change scene => game_scene
-- End the conversation => END
+- Sure, I'll take the test.
+	=> saisai_fraction_test
+- I don't have time for this shite! *run away*. => END
 
-Saisai: For more information see the online documentation.
+~ saisai_fraction_test
+Saisai: Great! Let's start simple. [wait=0.5] If we cut this pie into 4 pieces and you take 1/4 and I take 1/4, how much of the pie is taken?
+
+- 1/2
+	Saisai: Correct! [wait=0.5] See, that wasn't so hard! Let's try another. [wait=1]
+	=> saisai_second_question
+- 1/4
+	Saisai: Nope, that’s not right. Let’s try again! [wait=1]
+	=> saisai_fraction_test
+- 2/4
+	Saisai: Close, but you can simplify that! Try again. [wait=1]
+	=> saisai_fraction_test
+
+~ saisai_second_question
+Saisai: Now, let's say we cut another pie into 3 pieces. If you take 1/3 and I take 1/3, how much pie have we taken together?
+
+- 2/3
+	Saisai: That's right! [wait=0.5] You're a natural at this! Let's do one more. [wait=1]
+	=> saisai_final_question
+- 1/3
+	Saisai: Not quite! Remember, it's you AND me taking pieces. [wait=1]
+	=> saisai_second_question
+- 1
+	Saisai: A whole pie? Not quite! Let’s try that again. [wait=1]
+	=> saisai_second_question
+
+~ saisai_final_question
+Saisai: Last one! We have a pie cut into 6 pieces. If you take 2/6 and I take 1/6, how much of the pie have we taken together?
+
+- 1/2
+	Saisai: [#happy] Perfect! You’re really good at this. [wait=1] You did it! You actually did it! Perfectly, too. I'm impressed! You're officially the best pie-carrying hero in the swamp. [wait=2]
+	=> saisai_mission_complete
+- 3/6
+	Saisai: Close! But you can simplify that. [wait=1] Try again! 
+	=> saisai_final_question
+- 1/3
+	Saisai: Hmm, not quite. Think about it and try again! [wait=1]
+	=> saisai_final_question
+
+~ saisai_mission_complete
+Saisai: Here are the directions to my raccoon friend's house. [wait=1] Take the pie, and may the pastry gods be with you! [wait=2] Safe travels, pie hero!
 
 => END
 
-~ game_scene
-do change_scene_to_game()
-=> END
+~ saisai_repeat_test
+Saisai: Ready to try the pie test again?
+
+- Yes, let's do it!
+	=> saisai_fraction_test
+- No, maybe later. => END
