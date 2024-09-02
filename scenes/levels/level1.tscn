@@ -2963,7 +2963,6 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_tuxcb")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nclk"]
-load_path = "res://.godot/imported/Deep Water Decorated.png-2dcd3b309d84e1257bb7843f7392a6db.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikx7e"]
 texture = SubResource("CompressedTexture2D_5nclk")
