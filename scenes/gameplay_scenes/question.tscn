@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3u51x0uqf8se"]
+
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/question.gd" id="1_pk2pt"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_s2l85"]
+
+[node name="Question" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pk2pt")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2l85")
+theme_override_font_sizes/font_size = 50
+text = "Test
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Answers" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 176.0
+offset_right = -3.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Choice 1" type="Button" parent="Answers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2l85")
+theme_override_font_sizes/font_size = 25
+text = "a"
+
+[node name="Choice 2" type="Button" parent="Answers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2l85")
+theme_override_font_sizes/font_size = 25
+text = "b"
+
+[node name="Choice 3" type="Button" parent="Answers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2l85")
+theme_override_font_sizes/font_size = 25
+text = "c"
+
+[node name="Choice 4" type="Button" parent="Answers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s2l85")
+theme_override_font_sizes/font_size = 25
+text = "d"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="Answers/Choice 1" to="." method="_on_choice_1_pressed"]
+[connection signal="pressed" from="Answers/Choice 2" to="." method="_on_choice_2_pressed"]
+[connection signal="pressed" from="Answers/Choice 3" to="." method="_on_choice_3_pressed"]
+[connection signal="pressed" from="Answers/Choice 4" to="." method="_on_choice_4_pressed"]

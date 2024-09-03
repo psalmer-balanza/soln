@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=4 uid="uid://ctdyhdsjw36c6"]
+
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/battle.gd" id="1_5ad4a"]
+[ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="2_nyyw0"]
+[ext_resource type="PackedScene" uid="uid://b3u51x0uqf8se" path="res://scenes/gameplay_scenes/question.tscn" id="2_v4881"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_mqy38"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycwsl"]
+texture = ExtResource("2_nyyw0")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3x3ed"]
+tile_size = Vector2i(64, 64)
+sources/2 = SubResource("TileSetAtlasSource_ycwsl")
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ad4a")
+
+[node name="Battle BG" type="TileMapLayer" parent="."]
+modulate = Color(0.340339, 0.340339, 0.340339, 1)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAP//AgAAAAAAAAABAAAAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_3x3ed")
+
+[node name="Enemy HP" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 277.0
+offset_right = 678.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("3_mqy38")
+theme_override_font_sizes/font_size = 25
+value = 100.0
+
+[node name="Actions" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -68.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Attack" type="Button" parent="Actions"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mqy38")
+theme_override_font_sizes/font_size = 25
+text = "ATTACK
+"
+
+[node name="Question BG" type="TileMapLayer" parent="."]
+visible = false
+modulate = Color(0.340339, 0.340339, 0.340339, 1)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAP//AgAAAAAAAAABAAAAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_3x3ed")
+
+[node name="Question" parent="." instance=ExtResource("2_v4881")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Actions/Attack" to="." method="_on_attack_pressed"]
+[connection signal="draw" from="Question" to="Question" method="_on_draw"]

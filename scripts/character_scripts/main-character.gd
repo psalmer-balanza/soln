@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed : float = 60.0
+var movement_speed : float = 80.0
 var character_direction : Vector2
 enum States { IDLE, MOVE }
 var current_state = States.IDLE
