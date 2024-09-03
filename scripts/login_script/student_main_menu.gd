@@ -4,23 +4,25 @@ extends Control
 @onready var password: LineEdit = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
+var login_url = "http://localhost:3000/soln/login"
+
+func _ready():
+	# Create an HTTP request node and connect its completion signal.
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
+
 func _on_login_button_button_down():
+	print("username: " + username.text + " " + "password: " + password.text)
 	var credentials = {
 		"username": username.text,
 		"password": password.text
 	}
 	
 	var json_body = JSON.stringify(credentials)
-	# Create an HTTP request node and connect its completion signal.
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(self._http_request_completed)
+	var headers = ["Content-type: application/json"]
 	
 	# Perform a POST request. The URL below returns JSON as of writing.
-	#var body = JSON.new().stringify({"Username": "user3", "Password": "password_hash3"})
-	var error = http_request.request("http://localhost:3000/soln/login", [], HTTPClient.METHOD_POST, json_body)
-	if error != OK:
-		push_error("An error occurred in the HTTP request.")
+	http_request.request(login_url, headers, HTTPClient.METHOD_POST, json_body)
 
 # Called when the HTTP request is completed.
 func _http_request_completed(result, response_code, headers, body):
@@ -31,7 +33,7 @@ func _http_request_completed(result, response_code, headers, body):
 			var response = json.get_data()
 			if response.success:
 				print("Login successful")
-				get_tree().change_scene_to_file("res://scenes/floors_scenes/floor_one.tscn")
+				get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 			else:
 				print("Login failed")
 		else:
