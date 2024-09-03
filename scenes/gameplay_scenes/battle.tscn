@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://ctdyhdsjw36c6"]
+[gd_scene load_steps=7 format=4 uid="uid://dfrf0ytq1ox5x"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/battle.gd" id="1_5ad4a"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="2_nyyw0"]
-[ext_resource type="PackedScene" uid="uid://b3u51x0uqf8se" path="res://scenes/gameplay_scenes/question.tscn" id="2_v4881"]
+[ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="2_v4881"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_mqy38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycwsl"]
