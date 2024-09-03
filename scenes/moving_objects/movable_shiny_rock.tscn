@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs4r8b8nw7byt"]
+
+[ext_resource type="Script" path="res://movable_shiny_rock.gd" id="1_eihb3"]
+[ext_resource type="Texture2D" uid="uid://drdh8c7lkyx6q" path="res://scenes/moving_objects/colored rocks.png" id="2_xmsjw"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_aqbaf"]
+[ext_resource type="Resource" uid="uid://o8ail5r6s168" path="res://dialogue/floor_1/movable_rock.dialogue" id="4_eylw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7enk"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xsks"]
+radius = 30.0167
+
+[node name="MovableShinyRock" type="Node2D"]
+script = ExtResource("1_eihb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 9)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("2_xmsjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(9, 10)
+shape = SubResource("CircleShape2D_f7enk")
+
+[node name="Actionable" parent="." instance=ExtResource("3_aqbaf")]
+dialogue_resource = ExtResource("4_eylw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(9, 10)
+shape = SubResource("CircleShape2D_7xsks")

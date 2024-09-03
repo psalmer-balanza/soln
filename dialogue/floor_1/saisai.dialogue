@@ -35,7 +35,7 @@ Saisai: Now, let's say we cut another pie into 3 pieces. If you take 1/3 and I t
 	=> saisai_second_question
 
 ~ saisai_final_question
-Saisai: Last one! We have a pie cut into 6 pieces. If you take 2/6 and I take 1/6, how much of the pie have we taken together?
+Saisai: One more before the final test! We have a pie cut into 6 pieces. If you take 2/6 and I take 1/6, how much of the pie have we taken together?
 
 - 1/2
 	Saisai: [#happy] Perfect! You’re really good at this. [wait=1] You did it! You actually did it! Perfectly, too. I'm impressed! You're officially the best pie-carrying hero in the swamp. [wait=2]
@@ -46,6 +46,9 @@ Saisai: Last one! We have a pie cut into 6 pieces. If you take 2/6 and I take 1/
 - 1/3
 	Saisai: Hmm, not quite. Think about it and try again! [wait=1]
 	=> saisai_final_question
+	
+Saisai: Now let's try a real problem. Are you ready?
+do change_scene_to_game()
 
 ~ saisai_mission_complete
 Saisai: Here are the directions to my raccoon friend's house. [wait=1] Take the pie, and may the pastry gods be with you! [wait=2] Safe travels, pie hero!

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://o8ail5r6s168"
+path="res://.godot/imported/movable_rock.dialogue-fe29062cec619a504a8757392fefc186.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/movable_rock.dialogue"
+dest_files=["res://.godot/imported/movable_rock.dialogue-fe29062cec619a504a8757392fefc186.tres"]
+
+[params]
+
+defaults=true

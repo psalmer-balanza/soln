@@ -73,7 +73,7 @@ ui_down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue", "res://dialogue/floor_1/movable_rock.dialogue")
 
 [layer_names]
 
