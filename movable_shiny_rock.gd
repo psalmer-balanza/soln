@@ -1,17 +1,20 @@
 extends Node2D
 
+var has_hidden_rock = false
+
 func _ready():
 	# Check the state of the rock on start
 	if State.rock_removed:
 		hide_rock()
 
 func _process(delta):
-	# Continuously check if the rock should be removed
-	if State.rock_removed:
+	if State.rock_removed and not has_hidden_rock:
+		print("Rock removed from the path.")
 		hide_rock()
 
 func hide_rock():
-	# Function to hide or remove the rock
-	$CollisionShape2D.disabled = true # Disable the collision
-	$Sprite2D.visible = false  # Hide the rock sprite
-	print("Rock removed from the path.")
+	# Annotated by ChatGPT OpenAI
+	$CollisionShape2D.disabled = true
+	$Sprite2D.visible = false
+	has_hidden_rock = true
+	

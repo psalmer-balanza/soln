@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://c1ka1vk0qumpg"]
+[gd_scene load_steps=47 format=4 uid="uid://c1ka1vk0qumpg"]
 
 [ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_ceyh7"]
 [ext_resource type="Texture2D" uid="uid://dlvwtvjxj4g3d" path="res://assets/floor_1/cave_1/cave wall.png" id="2_s7ota"]
@@ -7800,6 +7800,10 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_kb3rn")
 sources/1 = SubResource("TileSetAtlasSource_q4qop")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmbk2"]
+radius = 6.67378
+height = 26.718
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ry7r2"]
 atlas = ExtResource("10_njgni")
 region = Rect2(0, 0, 32, 32)
@@ -7880,7 +7884,12 @@ tile_set = SubResource("TileSet_8ydrn")
 [node name="MainCharacter" parent="." instance=ExtResource("9_b4343")]
 position = Vector2(25, -490)
 
-[node name="Saisai" type="StaticBody2D" parent="."]
+[node name="Saisai" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saisai"]
+position = Vector2(90, -489)
+scale = Vector2(1.73366, 1.60069)
+shape = SubResource("CapsuleShape2D_gmbk2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Saisai"]
 position = Vector2(91, -488)
@@ -7893,7 +7902,7 @@ frame_progress = 0.777759
 dialogue_resource = ExtResource("12_agaei")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saisai/Actionable"]
-position = Vector2(90, -487)
+position = Vector2(90, -489)
 shape = SubResource("CircleShape2D_x7q2k")
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("13_s7sat")]
