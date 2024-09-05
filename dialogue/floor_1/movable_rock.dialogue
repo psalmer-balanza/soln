@@ -29,8 +29,10 @@ One traveler takes 1/2 of the rock's mass, and another takes 1/4.
 How much of the rock's mass have we taken together?"
 
 - 3/4
-	Correct! The rock shatters and clears the path. Fading into nothingness. [do remove_rock()]
+	Correct! The rock shatters and clears the path. Fading into nothingness. 
 	=> END
+	[wait=2]
+	do remove_rock()
 - 1/2
 	Incorrect again. The magic is patient, but the rock remains solid. [wait=1]
 	=> start_try_again

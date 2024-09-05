@@ -7830,26 +7830,52 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MovableShinyRock:modulate")
+tracks/1/path = NodePath("MovableShinyRock:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(24, -336)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MovableShinyRock:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_2473r"]
 resource_name = "rock_disappear"
+length = 2.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MovableShinyRock:modulate")
+tracks/0/enabled = false
+tracks/0/path = NodePath("MovableShinyRock:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(24, -336), Vector2(27, -283), Vector2(91, -291)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovableShinyRock:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -7894,10 +7920,9 @@ tile_map_data = PackedByteArray("AAAnABgAAAAAAAUAAAAoABgAAAABAAUAAAAnABkAAAAAAAU
 tile_set = SubResource("TileSet_8ydrn")
 
 [node name="MainCharacter" parent="." instance=ExtResource("9_vq7s1")]
-position = Vector2(34, -403)
+position = Vector2(51, -358)
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("10_yag8n")]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(24, -336)
 
 [node name="Saisai" parent="." instance=ExtResource("11_0kq5r")]

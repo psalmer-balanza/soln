@@ -23,5 +23,4 @@ texture = ExtResource("2_xmsjw")
 dialogue_resource = ExtResource("4_eylw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(9, 10)
 shape = SubResource("CircleShape2D_7xsks")
