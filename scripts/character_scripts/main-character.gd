@@ -30,7 +30,7 @@ func handle_state_transitions():
 		current_state = States.IDLE
 		#velocity = velocity.move_toward()
 
-func perform_state_actions(delta):
+func perform_state_actions(_delta):
 	match current_state: 
 		States.MOVE:
 			character_direction.x = Input.get_axis("ui_left", "ui_right")

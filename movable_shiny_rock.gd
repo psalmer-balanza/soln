@@ -7,7 +7,7 @@ func _ready():
 	if State.rock_removed:
 		hide_rock()
 
-func _process(delta):
+func _process(_delta):
 	if State.rock_removed and not has_hidden_rock:
 		print("Rock removed from the path.")
 		hide_rock()
