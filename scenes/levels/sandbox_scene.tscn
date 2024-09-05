@@ -1,21 +1,19 @@
-[gd_scene load_steps=47 format=4 uid="uid://c1ka1vk0qumpg"]
+[gd_scene load_steps=41 format=4 uid="uid://c1ka1vk0qumpg"]
 
-[ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_ceyh7"]
-[ext_resource type="Texture2D" uid="uid://dlvwtvjxj4g3d" path="res://assets/floor_1/cave_1/cave wall.png" id="2_s7ota"]
-[ext_resource type="Texture2D" uid="uid://qruekdwwsgx4" path="res://assets/floor_1/swamp/All in one ground.png" id="3_rtrfo"]
-[ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="4_2lwqw"]
-[ext_resource type="Texture2D" uid="uid://c352c5vkocom7" path="res://assets/floor_1/swamp/All in one ground Decor.png" id="5_rp1c1"]
-[ext_resource type="Texture2D" uid="uid://bwvhwcb2fuugq" path="res://assets/floor_1/swamp/Mushroom Sets.png" id="7_g3ign"]
-[ext_resource type="Texture2D" uid="uid://bia66rxdv45if" path="res://assets/floor_1/cave_1/Firee.png" id="7_lox45"]
-[ext_resource type="Texture2D" uid="uid://elh5saf6uhsk" path="res://assets/floor_1/raket_house/Blacksmith Tileset.png" id="8_lsx5v"]
-[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="9_b4343"]
-[ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="10_njgni"]
-[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="11_vwlui"]
-[ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="12_agaei"]
-[ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/moving_objects/movable_shiny_rock.tscn" id="13_s7sat"]
+[ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_4qc1c"]
+[ext_resource type="Texture2D" uid="uid://dlvwtvjxj4g3d" path="res://assets/floor_1/cave_1/cave wall.png" id="2_k8uau"]
+[ext_resource type="Texture2D" uid="uid://qruekdwwsgx4" path="res://assets/floor_1/swamp/All in one ground.png" id="3_qvma2"]
+[ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="4_6qi7h"]
+[ext_resource type="Texture2D" uid="uid://bwvhwcb2fuugq" path="res://assets/floor_1/swamp/Mushroom Sets.png" id="5_eergb"]
+[ext_resource type="Texture2D" uid="uid://c352c5vkocom7" path="res://assets/floor_1/swamp/All in one ground Decor.png" id="6_rmom0"]
+[ext_resource type="Texture2D" uid="uid://bia66rxdv45if" path="res://assets/floor_1/cave_1/Firee.png" id="7_k00c6"]
+[ext_resource type="Texture2D" uid="uid://elh5saf6uhsk" path="res://assets/floor_1/raket_house/Blacksmith Tileset.png" id="8_wi0w8"]
+[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="9_vq7s1"]
+[ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/moving_objects/movable_shiny_rock.tscn" id="10_yag8n"]
+[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="11_0kq5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
-texture = ExtResource("1_ceyh7")
+texture = ExtResource("1_4qc1c")
 texture_region_size = Vector2i(64, 64)
 2:1/0 = 0
 3:1/0 = 0
@@ -57,7 +55,7 @@ texture_region_size = Vector2i(64, 64)
 4:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7g40i"]
-texture = ExtResource("2_s7ota")
+texture = ExtResource("2_k8uau")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -90,7 +88,7 @@ texture_region_size = Vector2i(64, 64)
 3:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqco8"]
-texture = ExtResource("3_rtrfo")
+texture = ExtResource("3_qvma2")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -207,7 +205,7 @@ sources/5 = SubResource("TileSetAtlasSource_7g40i")
 sources/7 = SubResource("TileSetAtlasSource_gqco8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umltt"]
-texture = ExtResource("4_2lwqw")
+texture = ExtResource("4_6qi7h")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -355,7 +353,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_umltt")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuxcb"]
-texture = ExtResource("4_2lwqw")
+texture = ExtResource("4_6qi7h")
 texture_region_size = Vector2i(64, 64)
 10:0/0 = 0
 11:0/0 = 0
@@ -3653,7 +3651,7 @@ texture_region_size = Vector2i(64, 64)
 5:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfs5s"]
-texture = ExtResource("7_g3ign")
+texture = ExtResource("5_eergb")
 texture_region_size = Vector2i(32, 32)
 6:0/0 = 0
 8:0/0 = 0
@@ -3784,7 +3782,7 @@ texture_region_size = Vector2i(32, 32)
 5:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_reosl"]
-texture = ExtResource("5_rp1c1")
+texture = ExtResource("6_rmom0")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 5:0/0 = 0
@@ -4735,7 +4733,7 @@ texture_region_size = Vector2i(64, 64)
 8:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lbq8"]
-texture = ExtResource("7_lox45")
+texture = ExtResource("7_k00c6")
 texture_region_size = Vector2i(44, 44)
 0:0/0 = 0
 0:1/0 = 0
@@ -5443,7 +5441,7 @@ texture_region_size = Vector2i(64, 64)
 9:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qgs6i"]
-texture = ExtResource("7_g3ign")
+texture = ExtResource("5_eergb")
 texture_region_size = Vector2i(32, 32)
 6:0/0 = 0
 8:0/0 = 0
@@ -5574,7 +5572,7 @@ texture_region_size = Vector2i(32, 32)
 4:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfguy"]
-texture = ExtResource("5_rp1c1")
+texture = ExtResource("6_rmom0")
 texture_region_size = Vector2i(64, 64)
 21:0/0 = 0
 22:0/0 = 0
@@ -6471,7 +6469,7 @@ sources/1 = SubResource("TileSetAtlasSource_qgs6i")
 sources/2 = SubResource("TileSetAtlasSource_qfguy")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6wyvk"]
-texture = ExtResource("5_rp1c1")
+texture = ExtResource("6_rmom0")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 5:0/0 = 0
@@ -7392,7 +7390,7 @@ texture_region_size = Vector2i(64, 64)
 12:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80a61"]
-texture = ExtResource("8_lsx5v")
+texture = ExtResource("8_wi0w8")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -7441,7 +7439,7 @@ texture_region_size = Vector2i(64, 64)
 5:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdhag"]
-texture = ExtResource("2_s7ota")
+texture = ExtResource("2_k8uau")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
@@ -7459,7 +7457,7 @@ sources/1 = SubResource("TileSetAtlasSource_80a61")
 sources/2 = SubResource("TileSetAtlasSource_mdhag")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kb3rn"]
-texture = ExtResource("1_ceyh7")
+texture = ExtResource("1_4qc1c")
 texture_region_size = Vector2i(64, 64)
 10:4/0 = 0
 11:4/0 = 0
@@ -7763,7 +7761,7 @@ texture_region_size = Vector2i(64, 64)
 5:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4qop"]
-texture = ExtResource("2_s7ota")
+texture = ExtResource("2_k8uau")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -7800,55 +7798,69 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_kb3rn")
 sources/1 = SubResource("TileSetAtlasSource_q4qop")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gmbk2"]
-radius = 6.67378
-height = 26.718
+[sub_resource type="Animation" id="Animation_q71b5"]
+resource_name = "pick_up_rock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Saisai:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(78, -499), Vector2(-34, -497)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ry7r2"]
-atlas = ExtResource("10_njgni")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_s6ysx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Saisai:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(78, -499)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MovableShinyRock:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7i2g"]
-atlas = ExtResource("10_njgni")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_2473r"]
+resource_name = "rock_disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovableShinyRock:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e68fk"]
-atlas = ExtResource("10_njgni")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_416r6"]
-atlas = ExtResource("10_njgni")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngpx2"]
-atlas = ExtResource("10_njgni")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e63ju"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ry7r2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y7i2g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e68fk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_416r6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngpx2")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 4.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_x7q2k"]
-radius = 30.0167
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7pfy"]
+_data = {
+"RESET": SubResource("Animation_s6ysx"),
+"pick_up_rock": SubResource("Animation_q71b5"),
+"rock_disappear": SubResource("Animation_2473r")
+}
 
 [node name="Level1" type="Node2D"]
 
@@ -7874,36 +7886,24 @@ tile_set = SubResource("TileSet_3n6qi")
 y_sort_origin = 1
 
 [node name="Big Objects" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAZABgAAgACAAEAAAAaABgAAgADAAEAAAAbABgAAgADAAEAAAAcABgAAgADAAEAAAAjABgAAgADAAEAAAAkABgAAgADAAEAAAAlABgAAgADAAEAAAAmABgAAgADAAEAAAAnABgAAgAEAAEAAAAnABcAAgAEAAAAAAAZABcAAgACAAAAAAAaABcAAgADAAAAAAAbABcAAgADAAAAAAAcABcAAgADAAAAAAAdABcAAgADAAAAAAAeABcAAgADAAAAAAAjABcAAgADAAAAAAAkABcAAgADAAAAAAAlABcAAgADAAAAAAAmABcAAgADAAAAAAAiABcAAgADAAAAAAAhABcAAgADAAAAAAAgABcAAgADAAAAAAAfABcAAgADAAAAAAAdABgAAgADAAEAAAAeABgAAgADAAEAAAAfABgAAgADAAEAAAAgABgAAgADAAEAAAAhABgAAgADAAEAAAAiABgAAgADAAEAAAAdACoAAgACAAAAAAAeACoAAgADAAAAAAAfACoAAgADAAAAAAAgACoAAgADAAAAAAAhACoAAgADAAAAAAAiACoAAgADAAAAAAAjACoAAgAEAAAAAAD+//r/AAABAAMAAAABAPr/AAACAAMAAAD+//n/AAAIAAQAAAD///j/AAAIAAQAAAD9//v/AAAKAAYAAAD///v/AAAFAAYAAAD///r/AAABAAYAAAA=")
+tile_map_data = PackedByteArray("AAAZABgAAgACAAEAAAAaABgAAgADAAEAAAAbABgAAgADAAEAAAAcABgAAgADAAEAAAAjABgAAgADAAEAAAAkABgAAgADAAEAAAAlABgAAgADAAEAAAAmABgAAgADAAEAAAAnABgAAgAEAAEAAAAnABcAAgAEAAAAAAAZABcAAgACAAAAAAAaABcAAgADAAAAAAAbABcAAgADAAAAAAAcABcAAgADAAAAAAAdABcAAgADAAAAAAAeABcAAgADAAAAAAAjABcAAgADAAAAAAAkABcAAgADAAAAAAAlABcAAgADAAAAAAAmABcAAgADAAAAAAAiABcAAgADAAAAAAAhABcAAgADAAAAAAAgABcAAgADAAAAAAAfABcAAgADAAAAAAAdABgAAgADAAEAAAAeABgAAgADAAEAAAAfABgAAgADAAEAAAAgABgAAgADAAEAAAAhABgAAgADAAEAAAAiABgAAgADAAEAAAAdACoAAgACAAAAAAAeACoAAgADAAAAAAAfACoAAgADAAAAAAAgACoAAgADAAAAAAAhACoAAgADAAAAAAAiACoAAgADAAAAAAAjACoAAgAEAAAAAAD+//r/AAABAAMAAAABAPr/AAACAAMAAAD+//n/AAAIAAQAAAD///j/AAAIAAQAAAD9//v/AAAKAAYAAAD///v/AAAFAAYAAAD///r/AAABAAIAAAA=")
 tile_set = SubResource("TileSet_l56gl")
 
 [node name="cave" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAnABgAAAAAAAUAAAAoABgAAAABAAUAAAAnABkAAAAAAAUAAAAoABkAAAABAAUAAAAnABoAAAAAAAUAAAAoABoAAAABAAUAAAAnABsAAAAAAAUAAAAoABsAAAABAAUAAAAnABwAAAAAAAUAAAAoABwAAAABAAUAAAAnAB0AAAAAAAUAAAAoAB0AAAABAAUAAAAnAB4AAAAAAAUAAAAoAB4AAAABAAUAAAAnAB8AAAAAAAUAAAAoAB8AAAABAAUAAAAnACAAAAAAAAUAAAAoACAAAAABAAUAAAAnACEAAAAAAAUAAAAoACEAAAABAAUAAAAnACQAAAAAAAUAAAAoACQAAAABAAUAAAAnACMAAAAAAAUAAAAoACMAAAABAAUAAAAnACIAAAAAAAUAAAAoACIAAAABAAUAAAAnACUAAAAAAAUAAAAoACUAAAABAAUAAAAnACYAAAAAAAUAAAAoACYAAAABAAUAAAAnACcAAAAAAAUAAAAoACcAAAABAAUAAAAYABgAAAAEAAUAAAAZABgAAAAFAAUAAAAYABkAAAAEAAUAAAAZABkAAAAFAAUAAAAYABoAAAAEAAUAAAAZABoAAAAFAAUAAAAYABsAAAAEAAUAAAAZABsAAAAFAAUAAAAYABwAAAAEAAUAAAAZABwAAAAFAAUAAAAYAB0AAAAEAAUAAAAZAB0AAAAFAAUAAAAYAB4AAAAEAAUAAAAZAB4AAAAFAAUAAAAYAB8AAAAEAAUAAAAZAB8AAAAFAAUAAAAYACAAAAAEAAUAAAAZACAAAAAFAAUAAAAYACEAAAAEAAUAAAAZACEAAAAFAAUAAAAYACIAAAAEAAUAAAAZACIAAAAFAAUAAAAYACMAAAAEAAUAAAAZACMAAAAFAAUAAAAYACQAAAAEAAUAAAAZACQAAAAFAAUAAAAYACUAAAAEAAUAAAAZACUAAAAFAAUAAAAYACYAAAAEAAUAAAAZACYAAAAFAAUAAAAYACcAAAAEAAUAAAAZACcAAAAFAAUAAAAYACgAAAAEAAUAAAAZACgAAAAFAAUAAAAYACkAAAAEAAUAAAAZACkAAAAFAAUAAAAYACoAAAADAAQAAAAZACoAAAAEAAQAAAAnACgAAAAAAAUAAAAoACgAAAABAAUAAAAnACkAAAAAAAUAAAAoACkAAAABAAUAAAAnACoAAAABAAQAAAAoACoAAAACAAQAAAAZABcAAAAFAAQAAAAnABcAAAAAAAQAAAAZACsAAQABAAQAAAAYACsAAQACAAMAAAAXACsAAQACAAMAAAAWACsAAQACAAMAAAAnACsAAQAEAAUAAAAnACwAAQAEAAUAAAAnAC0AAQAEAAUAAAAnAC4AAQAEAAUAAAAnAC8AAQAEAAUAAAAnADAAAQAEAAUAAAAnADEAAQAEAAUAAAAnADIAAQAEAAUAAAAnADMAAQAEAAYAAAAmADMAAQACAAcAAAAlADMAAQACAAcAAAAkADMAAQACAAcAAAAjADMAAQACAAcAAAAiADMAAQACAAcAAAAhADMAAQACAAcAAAAgADMAAQACAAcAAAAfADMAAQACAAcAAAAeADMAAQACAAcAAAAdADMAAQACAAcAAAAcADMAAQACAAcAAAAbADMAAQACAAcAAAAaADMAAQACAAcAAAAZADMAAQACAAcAAAAYADMAAQACAAcAAAAXADMAAQACAAcAAAAWADMAAQACAAcAAAAVADMAAQACAAcAAAAUADMAAQACAAcAAAATADMAAQACAAcAAAASADMAAQACAAcAAAARADMAAQACAAcAAAAQADMAAQACAAcAAAAPADMAAQACAAcAAAAOADMAAQACAAcAAAANADMAAQACAAcAAAAMADMAAQACAAcAAAALADMAAQACAAcAAAAKADMAAQACAAcAAAAJADMAAQACAAcAAAAVACsAAQACAAMAAAAUACsAAQACAAMAAAATACsAAQACAAMAAAASACsAAQACAAMAAAARACsAAQACAAMAAAAQACsAAQACAAMAAAAPACsAAQACAAMAAAAOACsAAQACAAMAAAANACsAAQACAAMAAAAMACsAAQACAAMAAAALACsAAQACAAMAAAAKACsAAQACAAMAAAAJACsAAQACAAMAAAA=")
 tile_set = SubResource("TileSet_8ydrn")
 
-[node name="MainCharacter" parent="." instance=ExtResource("9_b4343")]
-position = Vector2(25, -490)
+[node name="MainCharacter" parent="." instance=ExtResource("9_vq7s1")]
+position = Vector2(34, -403)
 
-[node name="Saisai" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saisai"]
-position = Vector2(90, -489)
-scale = Vector2(1.73366, 1.60069)
-shape = SubResource("CapsuleShape2D_gmbk2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Saisai"]
-position = Vector2(91, -488)
-sprite_frames = SubResource("SpriteFrames_e63ju")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.777759
-
-[node name="Actionable" parent="Saisai" instance=ExtResource("11_vwlui")]
-dialogue_resource = ExtResource("12_agaei")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saisai/Actionable"]
-position = Vector2(90, -489)
-shape = SubResource("CircleShape2D_x7q2k")
-
-[node name="MovableShinyRock" parent="." instance=ExtResource("13_s7sat")]
+[node name="MovableShinyRock" parent="." instance=ExtResource("10_yag8n")]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(24, -336)
+
+[node name="Saisai" parent="." instance=ExtResource("11_0kq5r")]
+position = Vector2(78, -499)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f7pfy")
+}
