@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlx3ecasemlq1"]
+[gd_scene load_steps=11 format=3 uid="uid://dlx3ecasemlq1"]
 
 [ext_resource type="Texture2D" uid="uid://bvlswl05akcnc" path="res://icon.svg" id="1_clytt"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/marker_2d.gd" id="2_7gchs"]
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/sprite_2d.gd" id="2_fbu5e"]
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/marker_2d_2.gd" id="3_7kuni"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="3_be0lq"]
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/drop_area.gd" id="3_e025o"]
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/sprite_2d_2.gd" id="3_mwd1k"]
@@ -37,8 +38,11 @@ gizmo_extents = 0.0
 script = ExtResource("3_e025o")
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["zone"]]
-position = Vector2(241, 52)
+position = Vector2(233, 3)
 script = ExtResource("2_7gchs")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+script = ExtResource("3_7kuni")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(356, -219)
