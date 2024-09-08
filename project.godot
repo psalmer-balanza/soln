@@ -28,6 +28,10 @@ general/states=["State"]
 general/custom_test_scene_path="res://dialogue/dialogue_tester/TestDialogue.tscn"
 general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
