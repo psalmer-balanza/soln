@@ -3054,3 +3054,6 @@ position = Vector2(25, -490)
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_fw000")]
 position = Vector2(461, 16)
+
+[node name="darkness" type="CanvasModulate" parent="."]
+color = Color(0.1812, 0.241947, 0.373144, 1)
