@@ -59,10 +59,11 @@ frame_progress = 0.164573
 
 [node name="buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 817.0
-offset_top = 315.0
-offset_right = 899.0
-offset_bottom = 416.0
+offset_left = 818.0
+offset_top = 297.0
+offset_right = 1020.0
+offset_bottom = 439.0
+theme_override_constants/separation = 20
 
 [node name="play" type="Button" parent="buttons"]
 layout_mode = 2
