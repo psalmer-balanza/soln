@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed : float = 200.0
+var movement_speed : float = 100.0
 var character_direction : Vector2
 enum States { IDLE, MOVE }
 var current_state = States.IDLE
@@ -38,16 +38,17 @@ func perform_state_actions(_delta):
 			character_direction = character_direction.normalized()
 			
 			if character_direction.x < 0 && character_direction.y == 0:
-				$AnimatedSprite2D.play("side-walk")
+				$AnimatedSprite2D.play("walk")
+				$AnimatedSprite2D.scale.x = 1
 			
 			if character_direction.x > 0 && character_direction.y == 0:
-				$AnimatedSprite2D.play("side-walk")
-				
+				$AnimatedSprite2D.play("walk")
+				$AnimatedSprite2D.scale.x = -1
 			if character_direction.y < 0:
-				$AnimatedSprite2D.play("up-walk")
+				$AnimatedSprite2D.play("walk")
 				
 			if character_direction.y > 0:
-				$AnimatedSprite2D.play("down-walk")
+				$AnimatedSprite2D.play("walk")
 				
 			velocity = character_direction * movement_speed
 			
