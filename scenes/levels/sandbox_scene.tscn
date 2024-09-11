@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bwvhwcb2fuugq" path="res://assets/floor_1/swamp/Mushroom Sets.png" id="5_eergb"]
 [ext_resource type="Texture2D" uid="uid://c352c5vkocom7" path="res://assets/floor_1/swamp/All in one ground Decor.png" id="6_rmom0"]
 [ext_resource type="Texture2D" uid="uid://bia66rxdv45if" path="res://assets/floor_1/cave_1/Firee.png" id="7_k00c6"]
-[ext_resource type="Texture2D" uid="uid://elh5saf6uhsk" path="res://assets/floor_1/raket_house/Blacksmith Tileset.png" id="8_wi0w8"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="9_vq7s1"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/moving_objects/movable_shiny_rock.tscn" id="10_yag8n"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="11_0kq5r"]
+[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/moving_objects/moving_rocks_scene.tscn" id="11_5ob72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
 texture = ExtResource("1_4qc1c")
@@ -7318,7 +7318,6 @@ texture_region_size = Vector2i(64, 64)
 12:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80a61"]
-texture = ExtResource("8_wi0w8")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -7851,3 +7850,6 @@ position = Vector2(78, -499)
 libraries = {
 "": SubResource("AnimationLibrary_f7pfy")
 }
+
+[node name="MovingRocksScene" parent="." instance=ExtResource("11_5ob72")]
+position = Vector2(23, -418)

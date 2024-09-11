@@ -1,8 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvn3kdgd4qnx5"]
+[gd_scene load_steps=18 format=3 uid="uid://cvn3kdgd4qnx5"]
 
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="1_54fms"]
+[ext_resource type="Texture2D" uid="uid://dikcbu2svxla7" path="res://assets/floor_1/npc/saisai_holding_normal_rock.png" id="1_gs6ks"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_ysvw2"]
 [ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="3_crl56"]
+[ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="3_h52pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2nae"]
+atlas = ExtResource("1_gs6ks")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ry7r2"]
 atlas = ExtResource("1_54fms")
@@ -24,8 +30,32 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("1_54fms")
 region = Rect2(0, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cq3d"]
+atlas = ExtResource("3_h52pa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyokn"]
+atlas = ExtResource("3_h52pa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2h2k"]
+atlas = ExtResource("3_h52pa")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jrw"]
+atlas = ExtResource("3_h52pa")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_iifh7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2nae")
+}],
+"loop": true,
+"name": &"holding_regular_rock",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ry7r2")
@@ -45,6 +75,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cq3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyokn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2h2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6jrw")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
@@ -55,9 +102,8 @@ radius = 30.0167
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -4)
 sprite_frames = SubResource("SpriteFrames_iifh7")
-animation = &"idle"
+animation = &"holding_regular_rock"
 autoplay = "idle"
-frame_progress = 0.0721647
 
 [node name="Actionable" parent="." instance=ExtResource("2_ysvw2")]
 dialogue_resource = ExtResource("3_crl56")

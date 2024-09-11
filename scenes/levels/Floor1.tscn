@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=101 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
 [ext_resource type="Texture2D" uid="uid://qruekdwwsgx4" path="res://assets/floor_1/swamp/All in one ground.png" id="2_fbicr"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="18_gf83l"]
 [ext_resource type="Texture2D" uid="uid://bwvhwcb2fuugq" path="res://assets/floor_1/swamp/Mushroom Sets.png" id="18_h3r1i"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/moving_objects/movable_shiny_rock.tscn" id="19_fw000"]
+[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/moving_objects/moving_rocks_scene.tscn" id="22_0c5wx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xutd3"]
 texture = ExtResource("1_eabov")
@@ -2976,3 +2977,6 @@ position = Vector2(461, 16)
 [node name="darkness" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.1812, 0.241947, 0.373144, 1)
+
+[node name="MovingRocksScene" parent="." instance=ExtResource("22_0c5wx")]
+position = Vector2(552, 398)

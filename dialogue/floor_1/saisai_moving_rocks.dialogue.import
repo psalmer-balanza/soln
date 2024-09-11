@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://d2ary7dmkm8rm"
+path="res://.godot/imported/saisai_moving_rocks.dialogue-730166084eb332619da41d34b5c3e06e.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/saisai_moving_rocks.dialogue"
+dest_files=["res://.godot/imported/saisai_moving_rocks.dialogue-730166084eb332619da41d34b5c3e06e.tres"]
+
+[params]
+
+defaults=true

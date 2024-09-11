@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drdh8c7lkyx6q"
-path="res://.godot/imported/colored rocks.png-4f17b5bd5f5e8850157d6adff3d19e75.ctex"
+uid="uid://dikcbu2svxla7"
+path="res://.godot/imported/saisai_holding_normal_rock.png-338e51c61801a39039ab87de75cf6024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/moving_objects/colored rocks.png"
-dest_files=["res://.godot/imported/colored rocks.png-4f17b5bd5f5e8850157d6adff3d19e75.ctex"]
+source_file="res://assets/floor_1/npc/saisai_holding_normal_rock.png"
+dest_files=["res://.godot/imported/saisai_holding_normal_rock.png-338e51c61801a39039ab87de75cf6024.ctex"]
 
 [params]
 

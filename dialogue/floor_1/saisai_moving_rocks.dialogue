@@ -1,0 +1,75 @@
+~ start
+
+Saisai: Oh, there you are! I’m trying to move this rock, but it’s too heavy for me to carry all at once.  
+Saisai: I’m going to move it in parts. I’ll need your help to figure out how much I’ve moved so far.  
+~ saisai_fraction_first_step
+
+Saisai: Let’s start! I’ll carry 1/4 of the rock first. How much of the rock have I moved so far?
+
+- 1/4
+	Saisai: That’s right! I’ve moved 1/4 of the rock. Let’s keep going!
+	=> saisai_fraction_next_step
+- 1/2
+	Saisai: Not yet! I’ve only moved 1/4 so far.
+	=> saisai_fraction_try_again_first_step
+- 3/4
+	Saisai: Whoa, I haven’t moved that much yet! Try again.
+	=> saisai_fraction_try_again_first_step
+
+~ saisai_fraction_next_step
+
+Saisai: Now I’m going to carry another 1/4 of the rock. How much of the rock have I moved in total now?
+- 1/2
+	Saisai: Yes! I’ve now moved 1/2 of the rock. We're halfway done!
+	=> saisai_fraction_next_step_2
+- 1/4
+	Saisai: No, I’ve already moved 1/4, and now I’ve carried another 1/4. Try again.
+	=> saisai_fraction_try_again_1
+  - 3/4
+	Saisai: Not yet, that’s too much. Let’s go over it again.
+	=> saisai_fraction_try_again_1
+
+~ saisai_fraction_next_step_2
+
+Saisai: Great! Now I’ll carry another 1/4 of the rock. How much of the rock have I moved so far?
+- 3/4
+	Saisai: You got it! I’ve now moved 3/4 of the rock. Almost there!
+	=> saisai_fraction_final_step
+- 1/2
+	Saisai: Hmm, no. I already moved 1/2. Let’s try again.
+	=> saisai_fraction_try_again_2
+  - 1
+	Saisai: Not yet! I haven’t moved the whole rock yet.
+	=> saisai_fraction_try_again_2
+
+~ saisai_fraction_final_step
+
+Saisai: This is the last bit. I’ll move the final 1/4 of the rock. Can you tell me how much I’ve moved in total now?
+
+- 1
+	Saisai: Exactly! I’ve moved the entire rock. Now I can move it to the other side. Watch this! [wait=2] [do saisai_move_rocks_cutscene()]
+	=> END
+- 3/4
+	Saisai: No, I’ve already moved 3/4, and now I’m moving the last 1/4.
+	=> saisai_fraction_try_again_final
+- 1/2
+	Saisai: Hmm, no. We’ve gone past 1/2 already!
+	=> saisai_fraction_try_again_final
+
+~ saisai_fraction_try_again_first_step
+Saisai: Let’s go over that again.
+=> saisai_fraction_first_step
+
+~ saisai_fraction_try_again_1
+Saisai: Let’s go over that again. 
+=> saisai_fraction_next_step
+
+~ saisai_fraction_try_again_2
+Saisai: Let’s go over that again. 
+=> saisai_fraction_next_step_2
+
+~ saisai_fraction_try_again_final
+Saisai: Let’s go over that again. 
+=> saisai_fraction_final_step
+
+=> END

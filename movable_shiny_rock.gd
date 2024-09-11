@@ -1,9 +1,8 @@
 extends Node2D
-@onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var animation_player: AnimationPlayer = $"AnimationPlayer"
 
 
 var has_hidden_rock = false
-
 
 func _process(_delta):
 	if State.rock_removed and not has_hidden_rock:
