@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://elh5saf6uhsk"
-path="res://.godot/imported/Blacksmith Tileset.png-c12af98edb060aa53052f42b36c25192.ctex"
+uid="uid://cbppcwcekgoq5"
+path="res://.godot/imported/Forge Assets.png-fdcfb736e203d86c25a95ff49ce27ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/raket_house/Blacksmith Tileset.png"
-dest_files=["res://.godot/imported/Blacksmith Tileset.png-c12af98edb060aa53052f42b36c25192.ctex"]
+source_file="res://assets/floor_1/raket_house/Forge Assets.png"
+dest_files=["res://.godot/imported/Forge Assets.png-fdcfb736e203d86c25a95ff49ce27ec2.ctex"]
 
 [params]
 
