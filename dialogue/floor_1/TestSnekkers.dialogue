@@ -1,0 +1,37 @@
+~ start
+Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+
+
+- You don't happen to be a morning person right?
+	=> snekkers_dialogue
+- Nope I'm not facing an angry snake. => END
+
+~ snekkers_dialogue
+Snekkers: Well what do you think?
+
+- I'm sorry
+	Snekkers: A little to late for that don't you think
+	=> Snekkers_next_Dialogue
+- I didn't mean too
+	Snekkers: Well I didn't mean to wake up either
+	=> Snekkers_next_Dialogue
+- The racoon said...
+	Snekkers: I don't care what he said. That little shite is proposterous thinking he can send a tin can to wake me up! [wait=0.5]Oh that little racoon always finding ways to bother me.
+	- That's mean..
+	Snekkers: Do I care?
+	
+	=> Snekkers_next_Dialogue
+
+~ Snekkers_next_Dialogue
+Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!.
+ #do Boss_game_play()
+
+~ Snekkers_loser_dialogue
+Snekkers: Loser. Unacceptable. Go back and rethink your decisions.
+
+~ Snekkers_mission_complete
+Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
+Snekkers: You must be the chosen one! There was a tale 
+
+=> END
+
