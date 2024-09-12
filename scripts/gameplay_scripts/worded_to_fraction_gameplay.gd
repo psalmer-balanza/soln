@@ -66,3 +66,8 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		else:
 			# If the user's answer is incorrect
 			display_answer.text = "Try \nagain."
+
+func return_to_world():
+	print("Returning")
+	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+	

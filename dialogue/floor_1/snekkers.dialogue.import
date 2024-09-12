@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bo6dh3eso0qgw"
+path="res://.godot/imported/snekkers.dialogue-79dc4ac6ce1c133696048546e6c12bfd.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/snekkers.dialogue"
+dest_files=["res://.godot/imported/snekkers.dialogue-79dc4ac6ce1c133696048546e6c12bfd.tres"]
+
+[params]
+
+defaults=true

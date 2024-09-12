@@ -12,7 +12,7 @@ Snekkers: Well what do you think?
 - I'm sorry
 	Snekkers: A little to late for that don't you think
 	=> Snekkers_next_Dialogue
-- I didn't mean too
+- I didn't mean to
 	Snekkers: Well I didn't mean to wake up either
 	=> Snekkers_next_Dialogue
 - The racoon said...
@@ -21,10 +21,15 @@ Snekkers: Well what do you think?
 	Snekkers: Do I care?
 	
 	=> Snekkers_next_Dialogue
+- I wanna do something simple!
+	Snekkers: Uh, sure
+	[wait=2] [do change_scene_to_game()]
 
 ~ Snekkers_next_Dialogue
-Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!.
- #do Boss_game_play()
+Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!. 
+[wait=2] [do boss_gameplay()]
+=> END
+
 
 ~ Snekkers_loser_dialogue
 Snekkers: Loser. Unacceptable. Go back and rethink your decisions.

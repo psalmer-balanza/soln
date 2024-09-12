@@ -82,7 +82,7 @@ click={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue", "res://dialogue/floor_1/movable_rock.dialogue", "res://dialogue/floor_1/saisai_moving_rocks.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue", "res://dialogue/floor_1/movable_rock.dialogue", "res://dialogue/floor_1/saisai_moving_rocks.dialogue", "res://dialogue/floor_1/snekkers.dialogue")
 
 [layer_names]
 

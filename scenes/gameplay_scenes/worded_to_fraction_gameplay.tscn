@@ -177,4 +177,13 @@ offset_bottom = 138.0
 theme_override_fonts/normal_font = ExtResource("2_kbh1j")
 text = "Display if answer is right or wrong."
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 146.0
+offset_right = 445.0
+offset_bottom = 175.0
+text = "Return"
+
 [connection signal="button_down" from="Answer/SubmitAnswer" to="." method="_on_submit_answer_button_down"]
+[connection signal="button_down" from="Button" to="." method="return_to_world"]

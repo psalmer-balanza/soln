@@ -7853,3 +7853,7 @@ libraries = {
 
 [node name="MovingRocksScene" parent="." instance=ExtResource("11_5ob72")]
 position = Vector2(23, -418)
+
+[node name="Pile-o-rocks" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pile-o-rocks"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hi2a5thi0n1d"
-path="res://.godot/imported/snekkers512.png-1dffca375b8fe7edeb8050e9853a16da.ctex"
+uid="uid://t5dv1qsdwnh"
+path="res://.godot/imported/snekkers_idle.png-731e112d6f9ee495f43210289a0d3a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/snekkers512.png"
-dest_files=["res://.godot/imported/snekkers512.png-1dffca375b8fe7edeb8050e9853a16da.ctex"]
+source_file="res://assets/floor_1/npc/snekkers_idle.png"
+dest_files=["res://.godot/imported/snekkers_idle.png-731e112d6f9ee495f43210289a0d3a40.ctex"]
 
 [params]
 

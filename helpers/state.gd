@@ -3,8 +3,11 @@ extends Node
 var sai_quest_status: String = ""
 
 func change_scene_to_game():
-	get_tree().change_scene_to_file("res://scenes/gameplay_scenes/fraction_sample_gameplay.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameplay_scenes/worded_to_fraction_gameplay.tscn")
 
+func boss_gameplay():
+	get_tree().change_scene_to_file("res://scenes/gameplay_scenes/battle.tscn")
+	
 # For movable shiny rock cutscene
 var rock_removed: bool = false
 func remove_rock():
