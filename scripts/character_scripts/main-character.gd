@@ -55,5 +55,8 @@ func perform_state_actions(_delta):
 		States.IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 			$AnimatedSprite2D.play("idle")
-				
-			
+
+
+func get_player_position() -> Vector2:
+	print("Position gotten")
+	return self.position

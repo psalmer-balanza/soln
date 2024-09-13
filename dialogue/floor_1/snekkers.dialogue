@@ -23,7 +23,7 @@ Snekkers: Well what do you think?
 	=> Snekkers_next_Dialogue
 - I wanna do something simple!
 	Snekkers: Uh, sure
-	[wait=2] [do change_scene_to_game()]
+	[wait=2] [do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_to_fraction_gameplay.tscn", "res://scenes/levels/Floor1.tscn")]
 
 ~ Snekkers_next_Dialogue
 Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!. 

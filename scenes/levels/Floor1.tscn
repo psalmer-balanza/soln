@@ -1,5 +1,6 @@
-[gd_scene load_steps=102 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=103 format=4 uid="uid://c442aeoodnesa"]
 
+[ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
 [ext_resource type="Texture2D" uid="uid://qruekdwwsgx4" path="res://assets/floor_1/swamp/All in one ground.png" id="2_fbicr"]
 [ext_resource type="Texture2D" uid="uid://dkhtkxcmb6ihw" path="res://assets/floor_1/laboratory/laboratory.png" id="3_8tcco"]
@@ -2828,6 +2829,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_6aogg")
 
 [node name="Floor1" type="Node2D"]
+script = ExtResource("1_akh82")
 
 [node name="water" type="TileMapLayer" parent="."]
 modulate = Color(0.560955, 0.560955, 0.560955, 1)
@@ -2888,6 +2890,7 @@ tile_map_data = PackedByteArray("AAD+//r/AAACAAMAAAD///r/AAADAAMAAAAAAPr/AAACAAM
 tile_set = SubResource("TileSet_btffh")
 
 [node name="raket-house" type="Node2D" parent="."]
+position = Vector2(33, -549)
 
 [node name="house-bot" type="TileMapLayer" parent="raket-house"]
 tile_map_data = PackedByteArray("AAARAAYAAAAAAAEAAAASAAYAAAABAAEAAAA=")
@@ -2915,6 +2918,7 @@ shape = SubResource("RectangleShape2D_7xphk")
 sprite_frames = SubResource("SpriteFrames_1pivy")
 
 [node name="saisai-house" type="Node2D" parent="."]
+position = Vector2(23, -400)
 
 [node name="saisai-house-down" type="TileMapLayer" parent="saisai-house"]
 tile_map_data = PackedByteArray("AAAEAA4AAAABAAEAAAAFAA4AAAACAAEAAAAGAA4AAAADAAEAAAAHAA4AAAAEAAEAAAAIAA4AAAAFAAEAAAAHAA8AAAAEAAIAAAAIAA0AAAAFAAAAAAAHAA0AAAAEAAAAAAAGAA0AAAADAAAAAAAFAA0AAAACAAAAAAAEAA0AAAABAAAAAAA=")
@@ -2970,7 +2974,7 @@ tile_map_data = PackedByteArray("AAAKAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAASABEAAAAAAAA
 tile_set = SubResource("TileSet_fkumn")
 
 [node name="MainCharacter" parent="." instance=ExtResource("18_gf83l")]
-position = Vector2(1701, 1975)
+position = Vector2(1629, 1973)
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_fw000")]
 position = Vector2(472, 16)
