@@ -1,0 +1,37 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c6bbxruet16dv"]
+
+[ext_resource type="Texture2D" uid="uid://cipygxj0wdn1v" path="res://assets/floor_1/laboratory/spawn_pod.png" id="1_52g3i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7re5h"]
+texture = ExtResource("1_52g3i")
+texture_region_size = Vector2i(64, 64)
+0:0/animation_columns = 4
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+3:3/0 = 0
+0:4/animation_columns = 4
+0:4/animation_speed = 8.0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/animation_frame_3/duration = 1.0
+0:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_7re5h")

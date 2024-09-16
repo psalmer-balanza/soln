@@ -1,0 +1,34 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://crajxf2u7t8ki"]
+
+[ext_resource type="Texture2D" uid="uid://cbppcwcekgoq5" path="res://assets/floor_1/raket_house/Forge Assets.png" id="1_5bhoh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fratv"]
+texture = ExtResource("1_5bhoh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_fratv")

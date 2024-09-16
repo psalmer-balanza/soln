@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bvgnr5raudxfl"]
+
+[ext_resource type="Texture2D" uid="uid://cnyodfg5t0nj7" path="res://assets/floor_1/cave_1/cave-floor.png" id="1_gbqfq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1x8pb"]
+texture = ExtResource("1_gbqfq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_1x8pb")
