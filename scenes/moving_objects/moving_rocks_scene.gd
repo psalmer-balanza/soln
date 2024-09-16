@@ -12,6 +12,12 @@ func _process(_delta):
 func play_move_rock() -> void:
 	animation_player.play("saisai_move_rock")
 	await animation_player.animation_finished
+	animation_player.play("saisai_move_rock")
+	await animation_player.animation_finished
+	animation_player.play("saisai_move_rock")
+	await animation_player.animation_finished
+	animation_player.play("saisai_move_rock")
+	await animation_player.animation_finished
 	
 	has_moved_rock = true
 	
