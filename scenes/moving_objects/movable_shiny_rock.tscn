@@ -24,7 +24,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_6vcri"]
-resource_name = "new_animation"
+resource_name = "rock_disappear"
 length = 2.0
 step = 0.5
 tracks/0/type = "value"
@@ -43,7 +43,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5kni"]
 _data = {
 "RESET": SubResource("Animation_0glsj"),
-"new_animation": SubResource("Animation_6vcri")
+"rock_disappear": SubResource("Animation_6vcri")
 }
 
 [node name="MovableShinyRock" type="StaticBody2D"]
