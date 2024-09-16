@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 4.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,8 +102,9 @@ radius = 30.0167
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -4)
 sprite_frames = SubResource("SpriteFrames_iifh7")
-animation = &"holding_regular_rock"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.485335
 
 [node name="Actionable" parent="." instance=ExtResource("2_ysvw2")]
 dialogue_resource = ExtResource("3_crl56")
