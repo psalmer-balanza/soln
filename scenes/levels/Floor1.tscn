@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=27 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -15,8 +15,7 @@
 [ext_resource type="TileSet" uid="uid://2mug3v7qbw0n" path="res://tilemaps/floor_1/general/decoration.tres" id="11_jhipr"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
-[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="15_3c57o"]
-[ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="16_w0x7x"]
+[ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -471,8 +470,18 @@ tile_set = ExtResource("11_jhipr")
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(650, 391)
 
-[node name="SaisaiRockScene" parent="." instance=ExtResource("15_3c57o")]
+[node name="SaisaiRockScene" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(28, 180)
+script = null
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(0, -533)
@@ -480,5 +489,42 @@ position = Vector2(0, -533)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
-[node name="MovableShinyRock" parent="." instance=ExtResource("16_w0x7x")]
+[node name="MovableShinyRock" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(23, -17)
+script = null
+
+[node name="TextBox2" parent="." instance=ExtResource("16_etk15")]
+offset_left = 325.0
+offset_top = -515.0
+offset_right = 539.0
+offset_bottom = -436.0
+scale = Vector2(0.25, 0.25)
+
+[node name="Label" parent="TextBox2/MarginContainer" index="0"]
+text = "press SPACE
+to interact
+with objects"
+
+[node name="TextBox" parent="." instance=ExtResource("16_etk15")]
+offset_left = 38.0
+offset_top = -517.0
+offset_right = 252.0
+offset_bottom = -438.0
+scale = Vector2(0.25, 0.25)
+
+[node name="Label" parent="TextBox/MarginContainer" index="0"]
+text = "use WASD
+or arrow keys
+to move"
+
+[editable path="TextBox2"]
+[editable path="TextBox"]
