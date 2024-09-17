@@ -104,7 +104,7 @@ position = Vector2(4, -4)
 sprite_frames = SubResource("SpriteFrames_iifh7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.485335
+frame_progress = 0.477775
 
 [node name="Actionable" parent="." instance=ExtResource("2_ysvw2")]
 dialogue_resource = ExtResource("3_crl56")
