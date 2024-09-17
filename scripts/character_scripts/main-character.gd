@@ -33,8 +33,8 @@ func handle_state_transitions():
 func perform_state_actions(_delta):
 	match current_state: 
 		States.MOVE:
-			character_direction.x = Input.get_axis("ui_left", "ui_right")
-			character_direction.y = Input.get_axis("ui_up", "ui_down")
+			character_direction.x = Input.get_axis("left", "right")
+			character_direction.y = Input.get_axis("up", "down")
 			character_direction = character_direction.normalized()
 			
 			if character_direction.x < 0 && character_direction.y == 0:
