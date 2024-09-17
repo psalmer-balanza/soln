@@ -282,7 +282,7 @@ script = ExtResource("1_vdtrp")
 sprite_frames = SubResource("SpriteFrames_dempq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.920279
+frame_progress = 0.597807
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
