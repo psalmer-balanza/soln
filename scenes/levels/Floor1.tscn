@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=28 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -15,6 +15,7 @@
 [ext_resource type="TileSet" uid="uid://2mug3v7qbw0n" path="res://tilemaps/floor_1/general/decoration.tres" id="11_jhipr"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
+[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="15_3c57o"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="16_w0x7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
@@ -469,6 +470,9 @@ tile_set = ExtResource("11_jhipr")
 
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(650, 391)
+
+[node name="SaisaiRockScene" parent="." instance=ExtResource("15_3c57o")]
+position = Vector2(28, 180)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(0, -533)

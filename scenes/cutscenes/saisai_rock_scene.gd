@@ -5,7 +5,7 @@ extends Node2D
 var has_moved_rock = false
 
 func _process(_delta):
-	if State.saisai_rock_moved and not has_moved_rock:
+	if DialogueState.saisai_rock_moved and not has_moved_rock:
 		play_move_rock()
 		has_moved_rock = true
 

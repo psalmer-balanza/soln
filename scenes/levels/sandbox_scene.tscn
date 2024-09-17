@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="9_vq7s1"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="10_yag8n"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="11_0kq5r"]
-[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/moving_rocks_scene.tscn" id="11_5ob72"]
+[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="11_5ob72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
 texture = ExtResource("1_4qc1c")
@@ -7852,8 +7852,4 @@ libraries = {
 }
 
 [node name="MovingRocksScene" parent="." instance=ExtResource("11_5ob72")]
-position = Vector2(23, -418)
-
-[node name="Pile-o-rocks" type="Sprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pile-o-rocks"]
+position = Vector2(16, -441)

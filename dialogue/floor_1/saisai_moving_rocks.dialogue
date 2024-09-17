@@ -48,6 +48,7 @@ Saisai: This is the last bit. I’ll move the final 1/4 of the rock. Can you tel
 
 - 1
 	Saisai: Exactly! I’ve moved the entire rock. Now I can move it to the other side. Watch this! [wait=2] [do saisai_move_rocks_cutscene()]
+	[set saisai_quest_progress = 1]
 	=> END
 - 3/4
 	Saisai: No, I’ve already moved 3/4, and now I’m moving the last 1/4.
