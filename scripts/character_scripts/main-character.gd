@@ -39,11 +39,11 @@ func perform_state_actions(_delta):
 			
 			if character_direction.x < 0 && character_direction.y == 0:
 				$AnimatedSprite2D.play("walk")
-				$AnimatedSprite2D.scale.x = 1
+				$AnimatedSprite2D.scale.x = -1
 			
 			if character_direction.x > 0 && character_direction.y == 0:
 				$AnimatedSprite2D.play("walk")
-				$AnimatedSprite2D.scale.x = -1
+				$AnimatedSprite2D.scale.x = 1
 			if character_direction.y < 0:
 				$AnimatedSprite2D.play("walk")
 				
