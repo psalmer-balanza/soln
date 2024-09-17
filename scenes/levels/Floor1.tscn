@@ -295,6 +295,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Floor1" type="Node2D"]
+position = Vector2(0, 2)
 script = ExtResource("1_akh82")
 
 [node name="water" type="TileMapLayer" parent="."]
