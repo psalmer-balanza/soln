@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8nvoxe5g8w0b"
-path="res://.godot/imported/shiny rock.png-b9325a76657e618540e91144b71bfabb.ctex"
+path="res://.godot/imported/shiny rock.png-a2902bfc87844a85100a2ed3adf88af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/moving_objects/shiny rock.png"
-dest_files=["res://.godot/imported/shiny rock.png-b9325a76657e618540e91144b71bfabb.ctex"]
+source_file="res://scenes/cutscenes/shiny rock.png"
+dest_files=["res://.godot/imported/shiny rock.png-a2902bfc87844a85100a2ed3adf88af6.ctex"]
 
 [params]
 
