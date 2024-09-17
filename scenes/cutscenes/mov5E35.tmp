@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs4r8b8nw7byt"]
+[gd_scene load_steps=10 format=3 uid="uid://bs4r8b8nw7byt"]
 
 [ext_resource type="Script" path="res://movable_shiny_rock.gd" id="1_eihb3"]
-[ext_resource type="Texture2D" uid="uid://c8nvoxe5g8w0b" path="res://scenes/moving_objects/shiny rock.png" id="2_jphc2"]
+[ext_resource type="Texture2D" uid="uid://c8nvoxe5g8w0b" path="res://scenes/cutscenes/shiny rock.png" id="2_jphc2"]
+[ext_resource type="PackedScene" uid="uid://h7darp3fq8ng" path="res://scenes/cutscenes/exclamation_mark.tscn" id="2_ncyw2"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_aqbaf"]
 [ext_resource type="Resource" uid="uid://o8ail5r6s168" path="res://dialogue/floor_1/movable_rock.dialogue" id="4_eylw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7xsks"]
-radius = 40.0
+radius = 52.0096
 
 [sub_resource type="Animation" id="Animation_0glsj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("ShinyRock:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +31,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("ShinyRock:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,10 +50,13 @@ _data = {
 [node name="MovableShinyRock" type="StaticBody2D"]
 script = ExtResource("1_eihb3")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-12, -10, -13, -7, -14, -1, -8, 5, 0, 5, -2, 12, -4, 14, -4, 22, -3, 24, -1, 26, 7, 29, 12, 32, 15, 33, 24, 33, 28, 30, 30, 27, 30, 18, 30, 13, 27, 8, 22, 6, 13, 6, 10, 8, 6, 9, 4, 8, 4, 4, 8, 2, 10, -1, 10, -8, 2, -13, -9, -13)
+[node name="ExclamationMark" parent="." instance=ExtResource("2_ncyw2")]
+position = Vector2(8, -29)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -10, -13, -7, -14, -1, -8, 5, 0, 5, -2, 12, -4, 14, -4, 22, -3, 24, -1, 26, 5, 28, 11, 32, 12, 33, 24, 33, 28, 29, 30, 27, 30, 18, 30, 13, 27, 8, 22, 6, 13, 6, 10, 8, 6, 9, 4, 8, 4, 4, 8, 2, 10, -1, 10, -8, 2, -13, -9, -13)
+
+[node name="ShinyRock" type="Sprite2D" parent="."]
 position = Vector2(8, 9)
 scale = Vector2(0.796875, 0.796875)
 texture = ExtResource("2_jphc2")
@@ -61,7 +65,7 @@ texture = ExtResource("2_jphc2")
 dialogue_resource = ExtResource("4_eylw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(9, 8)
+position = Vector2(8, 6)
 shape = SubResource("CircleShape2D_7xsks")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
