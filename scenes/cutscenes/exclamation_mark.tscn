@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3mhd5okfp5ed"]
+
+[ext_resource type="Texture2D" uid="uid://cicdccqnga6oi" path="res://scenes/cutscenes/Exclamation Mark Animation.png" id="1_uy1ip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n0fg"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f7hh"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n15b6"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m8gd"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seqfa"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i78r"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etb5t"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(0, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h2cy"]
+atlas = ExtResource("1_uy1ip")
+region = Rect2(40, 80, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksghd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n0fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f7hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n15b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m8gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seqfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i78r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etb5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h2cy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ExclamationMark" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ksghd")
+autoplay = "default"
+frame_progress = 0.527073
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0.556863, 1)
