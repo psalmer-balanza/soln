@@ -294,7 +294,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Floor1" type="Node2D"]
-position = Vector2(0, 2)
+position = Vector2(2, 4)
 script = ExtResource("1_akh82")
 
 [node name="water" type="TileMapLayer" parent="."]
@@ -342,7 +342,7 @@ tile_set = ExtResource("3_i6jqx")
 
 [node name="floor accesories" type="TileMapLayer" parent="laboratory"]
 position = Vector2(17, 14)
-tile_map_data = PackedByteArray("AAALAO7/AAABAAAAAAALAO//AAABAAEAAAAMAO7/AAACAAAAAAAMAO//AAACAAEAAAAKAPD/AAAAAAAAAAABAPD/AAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAALAO7/AAABAAAAAAALAO//AAABAAEAAAAMAO7/AAACAAAAAAAMAO//AAACAAEAAAABAO//AAAAAAAAAAAKAPD/AAADAAAAAAA=")
 tile_set = SubResource("TileSet_46tes")
 
 [node name="outer wall lower" type="TileMapLayer" parent="laboratory"]
@@ -470,61 +470,45 @@ tile_set = ExtResource("11_jhipr")
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(650, 391)
 
-[node name="SaisaiRockScene" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(28, 180)
-script = null
-
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(0, -533)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
-[node name="MovableShinyRock" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(23, -17)
-script = null
-
-[node name="TextBox2" parent="." instance=ExtResource("16_etk15")]
-offset_left = 325.0
-offset_top = -515.0
-offset_right = 539.0
-offset_bottom = -436.0
-scale = Vector2(0.25, 0.25)
-
-[node name="Label" parent="TextBox2/MarginContainer" index="0"]
-text = "press SPACE
-to interact
-with objects"
-
 [node name="TextBox" parent="." instance=ExtResource("16_etk15")]
-offset_left = 38.0
-offset_top = -517.0
-offset_right = 252.0
-offset_bottom = -438.0
+offset_left = 45.0
+offset_top = -546.0
+offset_right = 77.0
+offset_bottom = -505.0
 scale = Vector2(0.25, 0.25)
 
-[node name="Label" parent="TextBox/MarginContainer" index="0"]
-text = "use WASD
-or arrow keys
+[node name="MarginContainer2" parent="TextBox" index="0"]
+offset_top = 0.0
+offset_right = 182.0
+offset_bottom = 79.0
+
+[node name="Label" parent="TextBox/MarginContainer2/MarginContainer" index="0"]
+text = "use WASD or 
+ARROW KEYS 
 to move"
 
-[editable path="TextBox2"]
+[node name="TextBox2" parent="." instance=ExtResource("16_etk15")]
+offset_left = 333.0
+offset_top = -517.0
+offset_right = 365.0
+offset_bottom = -476.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="TextBox2" index="0"]
+offset_top = 0.0
+offset_right = 178.0
+offset_bottom = 79.0
+
+[node name="Label" parent="TextBox2/MarginContainer2/MarginContainer" index="0"]
+text = "press 
+SPACE 
+to interact"
+
 [editable path="TextBox"]
+[editable path="TextBox2"]
