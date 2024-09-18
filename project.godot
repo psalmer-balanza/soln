@@ -25,7 +25,7 @@ DialogueState="*res://helpers/dialogue_state.gd"
 
 [dialogue_manager]
 
-general/states=["State", "DialogueState"]
+general/states=["State", "DialogueState", "PlayerState"]
 general/custom_test_scene_path="res://dialogue/dialogue_tester/TestDialogue.tscn"
 general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
