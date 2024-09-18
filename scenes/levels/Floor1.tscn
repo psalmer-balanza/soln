@@ -244,14 +244,58 @@ sources/0 = SubResource("TileSetAtlasSource_dppd2")
 texture = ExtResource("5_4f0i8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.2135, 16, -12.0086, 12.0874, -6.89019, 12.1661, -5.07906, 16)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(6.92957, 16, 7.79576, 14.1741, 12.9929, 14.0954, 14.0166, 16)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.1532, 16, -13.9606, 14.2412, -7.296, 14.1009, -6.17354, 16)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-1.06066, 15.5343, -0.994369, 15.0481, -0.0662913, 14.9597, 0, 14.0979, 0.905981, 14.0537, 1.01647, 14.8934, 1.92245, 14.9597, 2.01083, 15.6005)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.2922, -16, -16, -12.0874, -14.9222, 0.0393715, -11.8209, 6.55939, 2.95294, 12.7961, 8.125, 10.625, 15.2585, -16, -14.1347, -16)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -11.9987, -11.9103, -4.04377, -8.09375, 1.03125, -5.09375, 5.96875, 3.96875, 12.6563, 4.90625, 12.9063, 10.0313, -5.96875, 9.84375, -10.0313, 8.03125, -11.7813, 1.90625, -16)
 
 [sub_resource type="TileSet" id="TileSet_webta"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pv2kl")
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05sda"]
+texture = ExtResource("5_s73yv")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 1
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.8985, -9.88251, -9.88251, -9.88251, -9.96125, -10.9062, -6.26023, -10.9062, -6.10274, -9.88251, 12.7961, -10.04, 13.6623, -8.93756, 13.741, -3.34666, 14.7647, -3.03168, 14.7647, 3.74039, 13.8985, 4.05537, 13.8985, 9.56753, -15.0009, 9.64627, -14.9222, -8.85882, -13.741, -8.85882)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.25, -8, 4.5, -8.75, 10, -8.5, 16, -7.25, 16, 16, -10.5, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -7.5, 0.25, -7.75, 0.5, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.5518, -16, -10.8668, -5.11843, -6.06337, -4.88219, -6.06337, -4.09474, -10.9456, -4.016, -11.0243, -3.1498, -6.4571, -2.99231, -5.90588, -2.12612, -4.17349, -1.96863, -3.93725, -1.02369, -1.10243, -1.10243, -1.25992, -1.96863, -3.85851, -2.75608, -5.11843, -4.33098, -4.016, -4.96094, 5.5909, -5.19717, 6.23629, -0.222725, 5.0113, -0.111362, 4.89994, 4.12041, 6.01357, 4.56586, 6.23629, 7.01583, 7.01583, 7.684, 16, 7.90672, 16, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0.353554, -16, 0.707108, -5.12652, -3.0052, -5.3033, -2.47487, -1.59099, -8.30851, 3.35876, -16, 3.18198)
+3:0/animation_columns = 1
+3:0/animation_speed = 8.0
+3:0/animation_frame_0/duration = 1.0
+3:0/animation_frame_1/duration = 1.0
+3:0/animation_frame_2/duration = 1.0
+3:0/animation_frame_3/duration = 1.0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -9.25, 12.5008, -9.72283, 14.2866, -2.77795, 16, 3.57165, 14.0882, 8.92913, -16, 9.75)
+
+[sub_resource type="TileSet" id="TileSet_46tes"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_05sda")
+
+>>>>>>> Stashed changes
 [sub_resource type="Gradient" id="Gradient_nugb7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -322,6 +366,7 @@ tile_map_data = PackedByteArray("AAALAO7/AAABAAAAAAALAO//AAABAAEAAAAMAO7/AAACAAA
 tile_set = ExtResource("6_1gvms")
 
 [node name="outer wall lower" type="TileMapLayer" parent="laboratory"]
+scale = Vector2(1, 1.00146)
 tile_map_data = PackedByteArray("AAD+//T/AAACAAwAAAD+//X/AAACAA0AAAD///T/AAADAAwAAAD///X/AAADAA0AAAAAAPT/AAACAAwAAAAAAPX/AAACAA0AAAABAPT/AAADAAwAAAABAPX/AAADAA0AAAACAPT/AAACAAwAAAACAPX/AAACAA0AAAADAPT/AAADAAwAAAADAPX/AAADAA0AAAAEAPT/AAACAAwAAAAEAPX/AAACAA0AAAAFAPT/AAADAAwAAAAFAPX/AAADAA0AAAAGAPT/AAACAAwAAAAGAPX/AAACAA0AAAAHAPT/AAADAAwAAAAHAPX/AAADAA0AAAAIAPT/AAACAAwAAAAIAPX/AAACAA0AAAAJAPT/AAADAAwAAAAJAPX/AAADAA0AAAAKAPT/AAACAAwAAAAKAPX/AAACAA0AAAALAPT/AAAAAAwAAAALAPX/AAAAAA0AAAAMAPT/AAABAAwAAAAMAPX/AAABAA0AAAANAPT/AAADAAwAAAANAPX/AAADAA0AAAALAPb/AAAAAA4AAAAMAPb/AAABAA4AAAAJAPb/AAACAA4AAAAKAPb/AAADAA4AAAAHAPb/AAACAA4AAAAIAPb/AAADAA4AAAAFAPb/AAACAA4AAAAGAPb/AAADAA4AAAADAPb/AAACAA4AAAAEAPb/AAADAA4AAAABAPb/AAACAA4AAAACAPb/AAADAA4AAAD///b/AAADAA4AAAAAAPb/AAADAA4AAAD+//b/AAACAA4AAAANAPb/AAACAA4AAAAOAPT/AAAFAAsAAAAOAPX/AAAFAAwAAAAOAPb/AAAFAA0AAAD9//T/AAAGAAsAAAD9//X/AAAGAAwAAAD9//b/AAAGAA0AAAA=")
 tile_set = ExtResource("3_i6jqx")
 
