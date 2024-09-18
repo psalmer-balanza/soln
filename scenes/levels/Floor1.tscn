@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=26 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -6,8 +6,8 @@
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="Texture2D" uid="uid://de8p3hg0ri332" path="res://assets/floor_1/laboratory/mushroom pods.png" id="5_4f0i8"]
-[ext_resource type="Texture2D" uid="uid://b8n7vl0qmb4xy" path="res://assets/floor_1/laboratory/floor accesories.png" id="5_s73yv"]
 [ext_resource type="TileSet" uid="uid://dn7va3rflcbsc" path="res://tilemaps/floor_1/saisai/saisai house.tres" id="5_xxcti"]
+[ext_resource type="TileSet" uid="uid://d2m8vpw4avb2x" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
 [ext_resource type="TileSet" uid="uid://crajxf2u7t8ki" path="res://tilemaps/floor_1/racket/racket accesories.tres" id="6_34hxt"]
 [ext_resource type="TileSet" uid="uid://e6dutd0ufmq7" path="res://tilemaps/floor_1/racket/racket house.tres" id="7_h7qtn"]
 [ext_resource type="TileSet" uid="uid://bvgnr5raudxfl" path="res://tilemaps/floor_1/cave/floor.tres" id="8_hc8km"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
+[ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -249,33 +250,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_pv2kl")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05sda"]
-texture = ExtResource("5_s73yv")
-texture_region_size = Vector2i(32, 32)
-0:0/animation_columns = 1
-0:0/animation_speed = 8.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/animation_frame_4/duration = 1.0
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:0/animation_columns = 1
-3:0/animation_speed = 8.0
-3:0/animation_frame_0/duration = 1.0
-3:0/animation_frame_1/duration = 1.0
-3:0/animation_frame_2/duration = 1.0
-3:0/animation_frame_3/duration = 1.0
-3:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_46tes"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_05sda")
-
 [sub_resource type="Gradient" id="Gradient_nugb7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
@@ -343,7 +317,7 @@ tile_set = ExtResource("3_i6jqx")
 [node name="floor accesories" type="TileMapLayer" parent="laboratory"]
 position = Vector2(17, 14)
 tile_map_data = PackedByteArray("AAALAO7/AAABAAAAAAALAO//AAABAAEAAAAMAO7/AAACAAAAAAAMAO//AAACAAEAAAABAO//AAAAAAAAAAAKAPD/AAADAAAAAAA=")
-tile_set = SubResource("TileSet_46tes")
+tile_set = ExtResource("6_1gvms")
 
 [node name="outer wall lower" type="TileMapLayer" parent="laboratory"]
 tile_map_data = PackedByteArray("AAD+//T/AAACAAwAAAD+//X/AAACAA0AAAD///T/AAADAAwAAAD///X/AAADAA0AAAAAAPT/AAACAAwAAAAAAPX/AAACAA0AAAABAPT/AAADAAwAAAABAPX/AAADAA0AAAACAPT/AAACAAwAAAACAPX/AAACAA0AAAADAPT/AAADAAwAAAADAPX/AAADAA0AAAAEAPT/AAACAAwAAAAEAPX/AAACAA0AAAAFAPT/AAADAAwAAAAFAPX/AAADAA0AAAAGAPT/AAACAAwAAAAGAPX/AAACAA0AAAAHAPT/AAADAAwAAAAHAPX/AAADAA0AAAAIAPT/AAACAAwAAAAIAPX/AAACAA0AAAAJAPT/AAADAAwAAAAJAPX/AAADAA0AAAAKAPT/AAACAAwAAAAKAPX/AAACAA0AAAALAPT/AAAAAAwAAAALAPX/AAAAAA0AAAAMAPT/AAABAAwAAAAMAPX/AAABAA0AAAANAPT/AAADAAwAAAANAPX/AAADAA0AAAALAPb/AAAAAA4AAAAMAPb/AAABAA4AAAAJAPb/AAACAA4AAAAKAPb/AAADAA4AAAAHAPb/AAACAA4AAAAIAPb/AAADAA4AAAAFAPb/AAACAA4AAAAGAPb/AAADAA4AAAADAPb/AAACAA4AAAAEAPb/AAADAA4AAAABAPb/AAACAA4AAAACAPb/AAADAA4AAAD///b/AAADAA4AAAAAAPb/AAADAA4AAAD+//b/AAACAA4AAAANAPb/AAACAA4AAAAOAPT/AAAFAAsAAAAOAPX/AAAFAAwAAAAOAPb/AAAFAA0AAAD9//T/AAAGAAsAAAD9//X/AAAGAAwAAAD9//b/AAAGAA0AAAA=")
@@ -509,6 +483,9 @@ offset_bottom = 79.0
 text = "press 
 SPACE 
 to interact"
+
+[node name="Racket" parent="." instance=ExtResource("17_frjke")]
+position = Vector2(1304, 686)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]
