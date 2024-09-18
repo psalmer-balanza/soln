@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=28 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -15,8 +15,10 @@
 [ext_resource type="TileSet" uid="uid://2mug3v7qbw0n" path="res://tilemaps/floor_1/general/decoration.tres" id="11_jhipr"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
+[ext_resource type="PackedScene" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="16_awl35"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
+[ext_resource type="PackedScene" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -450,6 +452,9 @@ position = Vector2(0, -533)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
+[node name="SaisaiRockScene" parent="." instance=ExtResource("16_awl35")]
+position = Vector2(46, 231)
+
 [node name="TextBox" parent="." instance=ExtResource("16_etk15")]
 offset_left = 45.0
 offset_top = -546.0
@@ -486,6 +491,9 @@ to interact"
 
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
 position = Vector2(1304, 686)
+
+[node name="MovableShinyRock" parent="." instance=ExtResource("19_7pd8a")]
+position = Vector2(32, -65)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]
