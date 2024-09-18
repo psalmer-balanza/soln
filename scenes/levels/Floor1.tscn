@@ -7,7 +7,7 @@
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="Texture2D" uid="uid://de8p3hg0ri332" path="res://assets/floor_1/laboratory/mushroom pods.png" id="5_4f0i8"]
 [ext_resource type="TileSet" uid="uid://dn7va3rflcbsc" path="res://tilemaps/floor_1/saisai/saisai house.tres" id="5_xxcti"]
-[ext_resource type="TileSet" uid="uid://d2m8vpw4avb2x" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
+[ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
 [ext_resource type="TileSet" uid="uid://crajxf2u7t8ki" path="res://tilemaps/floor_1/racket/racket accesories.tres" id="6_34hxt"]
 [ext_resource type="TileSet" uid="uid://e6dutd0ufmq7" path="res://tilemaps/floor_1/racket/racket house.tres" id="7_h7qtn"]
 [ext_resource type="TileSet" uid="uid://bvgnr5raudxfl" path="res://tilemaps/floor_1/cave/floor.tres" id="8_hc8km"]
