@@ -27,10 +27,11 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 			#print("The reference for the new vase item is ", new_vase_item)
 			cloned_vase_items.append(new_item)
+			print("Current cloned item/s:",cloned_vase_items.size())
 		else:
 			print("Make warning that the cloned item is in limit")
-			
-	print("Current cloned item/s:",cloned_vase_items.size())
+			print("Current cloned item/s:",cloned_vase_items.size())
+
 
 # Clearing all the items using a button
 func _on_clear_button_button_down():
