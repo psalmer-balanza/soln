@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdv31yxq0nr3x"
-path="res://.godot/imported/evil soln.png-24f0743675b4c0b0200ddc839f09b465.ctex"
+path="res://.godot/imported/evil soln.png-0a3ac15c3e0a1f10db370bbb57fbe9cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/evil soln.png"
-dest_files=["res://.godot/imported/evil soln.png-24f0743675b4c0b0200ddc839f09b465.ctex"]
+source_file="res://assets/character_portraits/evil soln.png"
+dest_files=["res://.godot/imported/evil soln.png-0a3ac15c3e0a1f10db370bbb57fbe9cb.ctex"]
 
 [params]
 

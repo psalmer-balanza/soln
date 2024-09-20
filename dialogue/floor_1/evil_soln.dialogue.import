@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://deqcp5ldraoti"
+path="res://.godot/imported/evil_soln.dialogue-db97056e0362bb77b3afdd5845c9c388.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/evil_soln.dialogue"
+dest_files=["res://.godot/imported/evil_soln.dialogue-db97056e0362bb77b3afdd5845c9c388.tres"]
+
+[params]
+
+defaults=true
