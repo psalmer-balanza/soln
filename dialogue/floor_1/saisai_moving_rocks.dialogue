@@ -1,5 +1,5 @@
 ~ start
-
+set in_dialogue = true
 Saisai: Oh, there you are! I’m trying to move this rock, but it’s too heavy for me to carry all at once.  
 Saisai: I’m going to move it in parts. I’ll need your help to figure out how much I’ve moved so far.  
 ~ saisai_fraction_first_step
@@ -49,7 +49,7 @@ Saisai: This is the last bit. I’ll move the final 1/4 of the rock. Can you tel
 - 1
 	Saisai: Exactly! I’ve moved the entire rock. Now I can move it to the other side. Watch this! [wait=2] [do saisai_move_rocks_cutscene()]
 	[set saisai_quest_progress = 1]
-	=> END
+	=> end
 - 3/4
 	Saisai: No, I’ve already moved 3/4, and now I’m moving the last 1/4.
 	=> saisai_fraction_try_again_final
@@ -73,4 +73,8 @@ Saisai: Let’s go over that again.
 Saisai: Let’s go over that again. 
 => saisai_fraction_final_step
 
+=> end
+
+~ end
+set in_dialogue = false
 => END

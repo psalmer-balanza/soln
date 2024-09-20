@@ -1,10 +1,11 @@
 ~ start
+set in_dialogue = true
 Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
 
 
 - You don't happen to be a morning person right?
 	=> snekkers_dialogue
-- Nope I'm not facing an angry snake. => END
+- Nope I'm not facing an angry snake. => end
 
 ~ snekkers_dialogue
 Snekkers: Well what do you think?
@@ -28,7 +29,7 @@ Snekkers: Well what do you think?
 ~ Snekkers_next_Dialogue
 Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!. 
 [wait=2] [do boss_gameplay()]
-=> END
+=> end
 
 
 ~ Snekkers_loser_dialogue
@@ -38,5 +39,9 @@ Snekkers: Loser. Unacceptable. Go back and rethink your decisions.
 Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
 Snekkers: You must be the chosen one! There was a tale 
 
+=> end
+
+~ end
+set in_dialogue = false
 => END
 

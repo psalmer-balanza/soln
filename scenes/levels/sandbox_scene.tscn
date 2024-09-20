@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c1ka1vk0qumpg"]
+[gd_scene load_steps=46 format=4 uid="uid://c1ka1vk0qumpg"]
 
 [ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_4qc1c"]
 [ext_resource type="Texture2D" uid="uid://dlvwtvjxj4g3d" path="res://assets/floor_1/cave_1/cave wall.png" id="2_k8uau"]
@@ -7810,6 +7810,10 @@ _data = {
 "rock_disappear": SubResource("Animation_2473r")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhjko"]
+radius = 11.0
+height = 36.0
+
 [node name="Level1" type="Node2D"]
 
 [node name="floor" type="TileMapLayer" parent="."]
@@ -7866,10 +7870,6 @@ script = ExtResource("12_7647y")
 position = Vector2(79, -66)
 texture = ExtResource("12_jnf0u")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SolnEnemy"]
-position = Vector2(79, -66)
-polygon = PackedVector2Array(-15, -17, -15, 3, -28, 3, -29, 3, -29, 10, -9, 10, -9, 14, -6, 14, -6, 18, 6, 18, 6, 14, 9, 14, 9, 10, 29, 10, 29, 3, 15, 3, 15, -17, 15, -19, 13, -19, -13, -19, -15, -19)
-
 [node name="StateMachine" type="Node" parent="SolnEnemy" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("13_db3db")
 initial_state = NodePath("EnemyIdle")
@@ -7877,4 +7877,7 @@ initial_state = NodePath("EnemyIdle")
 [node name="EnemyIdle" type="Node" parent="SolnEnemy/StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("14_xdfe5")
 enemy = NodePath("../..")
-move_speed = 250.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SolnEnemy"]
+position = Vector2(79, -66)
+shape = SubResource("CapsuleShape2D_nhjko")

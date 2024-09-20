@@ -1,4 +1,5 @@
 ~ start
+set in_dialogue = true
 
 A large rock blocks your path, and a magical inscription appears on its surface.  
 To clear the path, solve this riddle inscribed on the rock:
@@ -9,7 +10,7 @@ How much of the rock's mass have we taken together?"
 
 - 3/4
 	Correct! The magical force recognizes your wisdom. [do remove_rock()]
-	=> END
+	=> end
 - 1/2
 	That's incorrect. You've miscalculated. The rock remains intact. [wait=1]
 	=> start_try_again
@@ -18,7 +19,7 @@ How much of the rock's mass have we taken together?"
 	=> start_try_again
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> END
+	=> end
 
 ~ start_try_again
 
@@ -30,7 +31,7 @@ How much of the rock's mass have we taken together?"
 
 - 3/4
 	Correct! The rock shatters and clears the path. Fading into nothingness. [wait=2] [do remove_rock()]
-	=> END 
+	=> end 
 - 1/2
 	Incorrect again. The magic is patient, but the rock remains solid. [wait=1]
 	=> start_try_again
@@ -39,4 +40,8 @@ How much of the rock's mass have we taken together?"
 	=> start_try_again
 - Do nothing
 	Rock: The magical light fades. AHAHAHAH. [wait=1]
-	=> END
+	=> end
+
+~ end
+set in_dialogue = false
+=> END

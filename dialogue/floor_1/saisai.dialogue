@@ -1,4 +1,5 @@
 ~ start
+set in_dialogue = true
 Saisai: Whoa! Hey there! Didn't see you coming, sneaky! [wait=0.5] You've got a light fragment in your lantern, huh? [wait=0.5]
 Saisai: Shiny! My raccoon friend has one just like it on his house. I can give you directions, but first... [wait=1.5]
 
@@ -6,7 +7,7 @@ Saisai: [#curious, #skeptical] You see, I have these pies, and they're not just 
 
 - Sure, I'll take the test.
 	=> saisai_fraction_test
-- I don't have time for this shite! *run away*. => END
+- I don't have time for this shite! *run away*. => end
 
 ~ saisai_fraction_test
 Saisai: Great! Let's start simple. [wait=0.5] If we cut this pie into 4 pieces and you take 1/4 and I take 1/4, how much of the pie is taken?
@@ -53,11 +54,15 @@ do change_scene_to_game()
 ~ saisai_mission_complete
 Saisai: Here are the directions to my raccoon friend's house. [wait=1] Take the pie, and may the pastry gods be with you! [wait=2] Safe travels, pie hero!
 
-=> END
+=> end
 
 ~ saisai_repeat_test
 Saisai: Ready to try the pie test again?
 
 - Yes, let's do it!
 	=> saisai_fraction_test
-- No, maybe later. => END
+- No, maybe later. => end
+
+~ end
+set in_dialogue = false
+=> END

@@ -1,5 +1,7 @@
 extends Node
 
+var in_dialogue: bool = false
+
 # For movable shiny rock cutscene
 var rock_removed: bool = false
 func remove_rock():
