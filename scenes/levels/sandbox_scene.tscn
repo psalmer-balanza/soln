@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="10_yag8n"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="11_0kq5r"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="11_5ob72"]
-[ext_resource type="Script" path="res://scenes/levels/soln_enemy.gd" id="12_7647y"]
+[ext_resource type="Script" path="res://scripts/states/soln_enemy.gd" id="12_7647y"]
 [ext_resource type="Texture2D" uid="uid://bdv31yxq0nr3x" path="res://scenes/levels/evil soln.png" id="12_jnf0u"]
-[ext_resource type="Script" path="res://scenes/levels/state_machine.gd" id="13_db3db"]
-[ext_resource type="Script" path="res://helpers/states/EnemyIdle.gd" id="14_xdfe5"]
+[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="13_db3db"]
+[ext_resource type="Script" path="res://scripts/states/EnemyIdle.gd" id="14_xdfe5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
 texture = ExtResource("1_4qc1c")
