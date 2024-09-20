@@ -3,6 +3,7 @@ extends Node
 var Enemy_HP = 100
 var Current_HP = 100
 var Question = false
+var tilemap: TileMapLayer
 
 var Question_Dictionary = {
 	1 : ["Select the first choice", "A", "B", "C", "D", "A"],
