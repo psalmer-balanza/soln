@@ -454,7 +454,7 @@ tile_set = ExtResource("11_jhipr")
 position = Vector2(650, 391)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(0, -533)
+position = Vector2(461, 531)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.293547, 0.347032, 0.463791, 1)
