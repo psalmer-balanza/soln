@@ -1,15 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvn3kdgd4qnx5"]
+[gd_scene load_steps=26 format=3 uid="uid://cvn3kdgd4qnx5"]
 
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="1_54fms"]
-[ext_resource type="Texture2D" uid="uid://dikcbu2svxla7" path="res://assets/floor_1/npc/saisai_holding_normal_rock.png" id="1_gs6ks"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/saisai.gd" id="1_x55dq"]
+[ext_resource type="Texture2D" uid="uid://dg5umwl6c1mbx" path="res://assets/floor_1/cutscenes/Saisai Moving Colored Rock.png" id="2_2s37p"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_ysvw2"]
 [ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="3_crl56"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="3_h52pa"]
+[ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="5_bsl4d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2nae"]
-atlas = ExtResource("1_gs6ks")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kehd"]
+atlas = ExtResource("2_2s37p")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gku3i"]
+atlas = ExtResource("2_2s37p")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ry7r2"]
 atlas = ExtResource("1_54fms")
@@ -47,11 +52,33 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("3_h52pa")
 region = Rect2(32, 32, 32, 32)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3r8ua"]
+load_path = "res://.godot/imported/Wheelbarrow Saisai Frames.png-bfa5491c75188c88948b32276ed60fe8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olc8x"]
+atlas = SubResource("CompressedTexture2D_3r8ua")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om4dh"]
+atlas = SubResource("CompressedTexture2D_3r8ua")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3orb"]
+atlas = ExtResource("5_bsl4d")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bybfe"]
+atlas = ExtResource("5_bsl4d")
+region = Rect2(32, 64, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_iifh7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2nae")
+"texture": SubResource("AtlasTexture_4kehd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gku3i")
 }],
 "loop": true,
 "name": &"holding_regular_rock",
@@ -93,6 +120,28 @@ animations = [{
 "loop": true,
 "name": &"walking",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olc8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om4dh")
+}],
+"loop": true,
+"name": &"wheel_barrow_walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3orb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bybfe")
+}],
+"loop": true,
+"name": &"wheel_barrow_walking_solo",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
@@ -104,9 +153,9 @@ script = ExtResource("1_x55dq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -4)
 sprite_frames = SubResource("SpriteFrames_iifh7")
-animation = &"idle"
+animation = &"wheel_barrow_walking_solo"
 autoplay = "idle"
-frame_progress = 0.477775
+frame_progress = 0.649751
 
 [node name="Actionable" parent="." instance=ExtResource("2_ysvw2")]
 dialogue_resource = ExtResource("3_crl56")

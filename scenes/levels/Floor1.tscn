@@ -460,7 +460,7 @@ position = Vector2(461, 531)
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
 [node name="SaisaiRockScene" parent="." instance=ExtResource("16_awl35")]
-position = Vector2(46, 231)
+position = Vector2(20, 144)
 
 [node name="TextBox" parent="." instance=ExtResource("16_etk15")]
 offset_left = 45.0
@@ -497,7 +497,7 @@ SPACE
 to interact"
 
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
-position = Vector2(1304, 686)
+position = Vector2(1308, 689)
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_7pd8a")]
 position = Vector2(32, -65)
