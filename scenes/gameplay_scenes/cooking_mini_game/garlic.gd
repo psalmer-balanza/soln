@@ -4,7 +4,7 @@ extends Area2D
 var container:Array[CharacterBody2D] = []
 
 func _process(delta: float) -> void:
-	label.text = "Garlic: " + str(container.size()) + " / 5"
+	label.text = "Garlic: " + str(container.size()) + " / 6"
 
 func _on_body_entered(body: Node2D) -> void:
 	print("item entered")
