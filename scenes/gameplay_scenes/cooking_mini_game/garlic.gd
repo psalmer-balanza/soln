@@ -7,11 +7,7 @@ func _process(delta: float) -> void:
 	label.text = "Garlic: " + str(container.size()) + " / 6"
 
 func _on_body_entered(body: Node2D) -> void:
-	print("item entered")
 	container.append(body)
-	print(container.size())
 
 func _on_body_exited(body: Node2D) -> void:
-	print("item exited")
 	container.erase(body)
-	print(container.size())

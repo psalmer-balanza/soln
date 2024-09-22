@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=16 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/mushroom.gd" id="8_patd2"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/butter.gd" id="9_w5g8j"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="9_xpmrs"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="11_e1to4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njprm"]
 size = Vector2(363, 246.5)
@@ -210,14 +211,35 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="UI/recipe/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/recipe/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/recipe/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
-text = "RECIPE:
-1 / 6 Garlic
-1 / 2 Butter
-1 / 3 Mushroom"
+text = "RECIPE:"
+
+[node name="butter" type="Label" parent="UI/recipe/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_fonts/font = ExtResource("11_e1to4")
+text = "1 / 2 Butter"
+
+[node name="mushroom" type="Label" parent="UI/recipe/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_fonts/font = ExtResource("11_e1to4")
+text = "1 / 3 Mushroom"
+
+[node name="garlic" type="Label" parent="UI/recipe/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_fonts/font = ExtResource("11_e1to4")
+text = "1 / 6 Garlic"
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]
