@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chii1tuan3jid"
-path="res://.godot/imported/butter_3.png-49fedab811cda9487eb821a043a0723c.ctex"
+uid="uid://bhxy5iib2v5xb"
+path="res://.godot/imported/mushroom(7).png-a8388599402387b598cac539792daf19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter_3.png"
-dest_files=["res://.godot/imported/butter_3.png-49fedab811cda9487eb821a043a0723c.ctex"]
+source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom(7).png"
+dest_files=["res://.godot/imported/mushroom(7).png-a8388599402387b598cac539792daf19.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsnkeuwbelwou"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/item.gd" id="1_fm6se"]
-[ext_resource type="Texture2D" uid="uid://p3px4ldb3cu8" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom.png" id="2_jthpo"]
+[ext_resource type="Texture2D" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom.png" id="2_jthpo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpo3a"]
 radius = 9.5

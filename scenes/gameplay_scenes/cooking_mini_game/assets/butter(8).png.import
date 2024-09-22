@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs5yn2ht07v6r"
-path="res://.godot/imported/butter_1.png-fa1638361b029ad2fe4d09a551dc1726.ctex"
+uid="uid://yth083l1yb8l"
+path="res://.godot/imported/butter(8).png-426871f2dec31051b30c55eff7345992.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter_1.png"
-dest_files=["res://.godot/imported/butter_1.png-fa1638361b029ad2fe4d09a551dc1726.ctex"]
+source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter(8).png"
+dest_files=["res://.godot/imported/butter(8).png-426871f2dec31051b30c55eff7345992.ctex"]
 
 [params]
 

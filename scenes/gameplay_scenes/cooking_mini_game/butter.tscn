@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://coy5hqh7nwvkl"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/item.gd" id="1_2sbxv"]
-[ext_resource type="Texture2D" uid="uid://chii1tuan3jid" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter_3.png" id="2_h72ig"]
+[ext_resource type="Texture2D" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter_3.png" id="2_h72ig"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpo3a"]
 radius = 9.5
