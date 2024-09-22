@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsnkeuwbelwou"]
+[gd_scene load_steps=3 format=3 uid="uid://bsnkeuwbelwou"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/item.gd" id="1_fm6se"]
-[ext_resource type="Texture2D" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom.png" id="2_jthpo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpo3a"]
 radius = 9.5
@@ -13,7 +12,6 @@ script = ExtResource("1_fm6se")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4.1, 4.1)
-texture = ExtResource("2_jthpo")
 
 [node name="ingredient" type="Button" parent="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0)

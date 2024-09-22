@@ -1,0 +1,8 @@
+~ start
+set in_dialogue = true
+
+Evil Soln: Hey there.
+
+~ end
+set in_dialogue = false
+=> END
