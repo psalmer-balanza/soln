@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ch1mjyw8ve82"
+path="res://.godot/imported/dead_robot_scene.dialogue-9cf697d39a90937260617be4cab82bbf.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/dead_robot_scene.dialogue"
+dest_files=["res://.godot/imported/dead_robot_scene.dialogue-9cf697d39a90937260617be4cab82bbf.tres"]
+
+[params]
+
+defaults=true

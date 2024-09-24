@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cicdccqnga6oi"
-path="res://.godot/imported/Exclamation Mark Animation.png-604252c5114fbf4d8d25118caf668736.ctex"
+uid="uid://cbm1g08w588sl"
+path="res://.godot/imported/single rock.png-e5f17048806a841b0f0aaab579a1789d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cutscenes/Exclamation Mark Animation.png"
-dest_files=["res://.godot/imported/Exclamation Mark Animation.png-604252c5114fbf4d8d25118caf668736.ctex"]
+source_file="res://assets/floor_1/cutscenes/single rock.png"
+dest_files=["res://.godot/imported/single rock.png-e5f17048806a841b0f0aaab579a1789d.ctex"]
 
 [params]
 

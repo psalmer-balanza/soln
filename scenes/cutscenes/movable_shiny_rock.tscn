@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bs4r8b8nw7byt"]
 
-[ext_resource type="Script" path="res://scenes/cutscenes/movable_shiny_rock.gd" id="1_nlvo0"]
+[ext_resource type="Script" path="res://scripts/cutscene_scripts/movable_shiny_rock.gd" id="1_nlvo0"]
 [ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/exclamation_mark.tscn" id="2_5iov6"]
-[ext_resource type="Texture2D" uid="uid://c8nvoxe5g8w0b" path="res://scenes/cutscenes/shiny rock.png" id="2_jphc2"]
+[ext_resource type="Texture2D" uid="uid://c8nvoxe5g8w0b" path="res://assets/floor_1/cutscenes/shiny rock.png" id="2_jphc2"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_aqbaf"]
 [ext_resource type="Resource" uid="uid://o8ail5r6s168" path="res://dialogue/floor_1/movable_rock.dialogue" id="4_eylw6"]
 

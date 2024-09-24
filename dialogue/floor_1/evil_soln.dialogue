@@ -1,8 +1,12 @@
 ~ start
-
-Evil Soln: The test begins
-do save_player_position_and_change_scene("res://scenes/gameplay_scenes/fraction_simple_addition.tscn","res://scenes/levels/sandbox_scene.tscn")
-
+if evil_soln_quest_status == 0
+	Evil Soln: Hello we are talking for the first time
+	set evil_soln_quest_status = 1
+	=> end
+if evil_soln_quest_status == 1
+	Evil Soln: I will test you now
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/fraction_simple_addition.tscn", "res://scenes/levels/sandbox_scene.tscn")
+	=> end
 => end
 
 ~ on_success

@@ -1,7 +1,9 @@
 extends Node
 
 var in_dialogue: bool = false
-
+var evil_soln_quest_status: int = 0
+var dead_robot_quest_status: String = "first_time"
+var current_quest: String = "starting"
 # For movable shiny rock cutscene
 var rock_removed: bool = false
 func remove_rock():

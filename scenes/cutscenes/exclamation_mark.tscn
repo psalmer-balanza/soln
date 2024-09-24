@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3mhd5okfp5ed"]
 
-[ext_resource type="Texture2D" uid="uid://cicdccqnga6oi" path="res://scenes/cutscenes/Exclamation Mark Animation.png" id="1_uy1ip"]
+[ext_resource type="Texture2D" uid="uid://cicdccqnga6oi" path="res://assets/floor_1/cutscenes/Exclamation Mark Animation.png" id="1_uy1ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6n0fg"]
 atlas = ExtResource("1_uy1ip")

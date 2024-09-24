@@ -1,11 +1,24 @@
 extends Control
 
-# Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	[[1, 4], [3, 4]],  # First fraction
-	[[35, 70], [15, 30]],  # Second fraction
+	[[1, 2], [1, 2]],  # Second fraction
 	[[2, 5], [2, 5]],  # Third fraction
 ]
+# Store multiple questions as pairs of numerators and denominators
+func initiate_questions():
+	if DialogueState.current_quest == "raket_stealing":
+		var fraction_questions = [
+			[[1, 4], [3, 4]],  # First fraction
+			[[35, 70], [15, 30]],  # Second fraction
+			[[2, 5], [2, 5]],  # Third fraction
+		]
+	elif DialogueState.current_quest == "dead_robot":
+		var fraction_questions = [
+			[[1, 4], [3, 4]],  # First fraction
+			[[2, 3], [1, 3]],  # Second fraction
+			[[2, 5], [2, 5]],  # Third fraction
+		]
 
 var current_question_index = 0  # Track which question the player is on
 
@@ -17,6 +30,7 @@ var current_question_index = 0  # Track which question the player is on
 
 func _ready():
 	# Start by displaying the first question
+	initiate_questions()
 	display_current_question()
 
 # Function to display the current question
@@ -78,4 +92,4 @@ func next_question_or_finish():
 # Function to return to the world scene
 func return_to_world():
 	print("Returning")
-	get_tree().change_scene_to_file("res://scenes/levels/sandbox_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")

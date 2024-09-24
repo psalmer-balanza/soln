@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8nvoxe5g8w0b"
-path="res://.godot/imported/shiny rock.png-a2902bfc87844a85100a2ed3adf88af6.ctex"
+uid="uid://cicdccqnga6oi"
+path="res://.godot/imported/Exclamation Mark Animation.png-340e9d95a74c8c17a98e3cc5f0206389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cutscenes/shiny rock.png"
-dest_files=["res://.godot/imported/shiny rock.png-a2902bfc87844a85100a2ed3adf88af6.ctex"]
+source_file="res://assets/floor_1/cutscenes/Exclamation Mark Animation.png"
+dest_files=["res://.godot/imported/Exclamation Mark Animation.png-340e9d95a74c8c17a98e3cc5f0206389.ctex"]
 
 [params]
 

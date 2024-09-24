@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbm1g08w588sl"
-path="res://.godot/imported/single rock.png-ab0a8dfee884988924d15a8276e96c3f.ctex"
+uid="uid://xeebeebeup7b"
+path="res://.godot/imported/Soln.png-4f54494dbf358e3099808f688edcde2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cutscenes/single rock.png"
-dest_files=["res://.godot/imported/single rock.png-ab0a8dfee884988924d15a8276e96c3f.ctex"]
+source_file="res://assets/character_portraits/Soln.png"
+dest_files=["res://.godot/imported/Soln.png-4f54494dbf358e3099808f688edcde2d.ctex"]
 
 [params]
 
