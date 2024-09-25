@@ -27,9 +27,11 @@ var container:Array[String] = []
 var conditions_met:bool = false
 
 func _process(delta: float) -> void:
+	var fraction = _add_fractions(2, 3, 6, butter_container.size(), mushroom_container.size(), garlic_container.size())
 	label.text = "INGREDIENTS: " + (
 		str(butter_container.size())+ "/2 + " + str(mushroom_container.size())+ "/3 + " + str(garlic_container.size())+ "/6 "
-		) + "\n" + "= "
+		) + "\n" + "= " + str(fraction[0]) + "/" + str(fraction[1])
+	
 	_check_conditions()
 
 func _check_conditions():
@@ -86,3 +88,39 @@ func _on_correct_pressed() -> void:
 func _on_incorrect_pressed() -> void:
 	incorrect_screen.visible = false
 	color_rect.visible =  false
+
+func _add_fractions(denom1:int, denom2:int, denom3:int, nume1:int, nume2:int, nume3:int):
+	var numerator:int
+	var denominator:int
+	var fraction:Array [int] = [0,0]
+	
+	# first and second number
+	fraction = fraction_addition(nume1, denom1, nume2, denom2)
+	
+	# second and third number
+	fraction = fraction_addition(fraction[0], fraction[1], nume3, denom3)
+	
+	return fraction
+
+func fraction_addition(
+	first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int
+	):
+	var numerator:int = 0
+	var denominator:int = 0
+	var fraction:Array[int] = [0,0]
+	
+	if first_denominator == second_denominator:
+		numerator = first_numerator + second_numerator
+		denominator = first_denominator
+	
+	else: # DIFFERENT DANAMANATORS
+		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
+		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
+		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
+		numerator = adjusted_first_numerator + adjusted_second_numerator
+		denominator = lcd
+	
+	fraction[0] = numerator
+	fraction[1] = denominator
+	
+	return fraction

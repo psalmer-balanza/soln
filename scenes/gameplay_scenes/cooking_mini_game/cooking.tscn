@@ -44,23 +44,6 @@ shape = SubResource("RectangleShape2D_njprm")
 
 [node name="ItemContainer" type="Node" parent="."]
 
-[node name="garlic1" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-
-[node name="garlic2" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-position = Vector2(398, 252)
-
-[node name="garlic3" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-position = Vector2(436, 251)
-
-[node name="garlic4" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-position = Vector2(469, 247)
-
-[node name="garlic5" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-position = Vector2(507, 249)
-
-[node name="garlic6" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
-position = Vector2(370, 292)
-
 [node name="butter1" parent="ItemContainer" instance=ExtResource("5_l2lsw")]
 position = Vector2(136, 197)
 
@@ -86,10 +69,9 @@ offset_right = -12.0
 position = Vector2(-16, 1)
 
 [node name="mushroom3" parent="ItemContainer" instance=ExtResource("3_pm2kx")]
-position = Vector2(187, 358)
+position = Vector2(242, 360)
 
 [node name="Sprite2D" parent="ItemContainer/mushroom3" index="0"]
-position = Vector2(56, 2)
 texture = ExtResource("8_y8gyd")
 
 [node name="ingredient" parent="ItemContainer/mushroom3/Sprite2D" index="0"]
@@ -99,7 +81,7 @@ offset_right = -12.0
 offset_bottom = -7.0
 
 [node name="CollisionShape2D" parent="ItemContainer/mushroom3" index="1"]
-position = Vector2(55, 0)
+position = Vector2(0, 0)
 
 [node name="mushroom1" parent="ItemContainer" instance=ExtResource("3_pm2kx")]
 position = Vector2(105, 358)
@@ -113,10 +95,34 @@ offset_bottom = -7.0
 [node name="CollisionShape2D" parent="ItemContainer/mushroom1" index="1"]
 position = Vector2(2, 0)
 
+[node name="garlic" type="Node2D" parent="ItemContainer"]
+position = Vector2(344, -213)
+rotation = 0.785398
+
+[node name="garlic1" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(429, 309)
+
+[node name="garlic2" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(420, 317)
+
+[node name="garlic3" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(440, 301)
+rotation = -3.14159
+
+[node name="garlic4" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(440, 300)
+rotation = -3.14159
+
+[node name="garlic5" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(420, 319)
+
+[node name="garlic6" parent="ItemContainer/garlic" instance=ExtResource("4_2ja0j")]
+position = Vector2(432, 308)
+
 [node name="Label" type="Label" parent="."]
-offset_left = 596.0
+offset_left = 461.0
 offset_top = 94.0
-offset_right = 665.0
+offset_right = 557.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
