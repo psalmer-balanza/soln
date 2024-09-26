@@ -2,12 +2,13 @@ extends Area2D
 
 @onready var item_container = $"../ItemContainer"
 @onready var label = $"../Label"
-@onready var butter_label = $"../UI/recipe/MarginContainer/VBoxContainer/butter"
-@onready var mushroom_label = $"../UI/recipe/MarginContainer/VBoxContainer/mushroom"
-@onready var garic_label = $"../UI/recipe/MarginContainer/VBoxContainer/garlic"
+@onready var butter_label:Label = $"../Counter/recipe/MarginContainer/VBoxContainer/butter"
+@onready var mushroom_label:Label = $"../Counter/recipe/MarginContainer/VBoxContainer/mushroom"
+@onready var garic_label:Label = $"../Counter/recipe/MarginContainer/VBoxContainer/garlic"
 @onready var correct_screen = $"../UI/Control/Congrats"
 @onready var incorrect_screen = $"../UI/Control/Oh no"
 @onready var color_rect = $"../UI/Control/ColorRect"
+@onready var particle = $"../Counter/particle"
 
 var pass_color:Color = Color('#508d76')
 var def_color:Color = Color('#352b40')
@@ -31,20 +32,21 @@ func _process(delta: float) -> void:
 	label.text = "INGREDIENTS: " + (
 		str(butter_container.size())+ "/2 + " + str(mushroom_container.size())+ "/3 + " + str(garlic_container.size())+ "/6 "
 		) + "\n" + "= " + str(fraction[0]) + "/" + str(fraction[1])
-	
-	_check_conditions()
 
 func _check_conditions():
 	if needed_butter == butter_container.size():
 		butter_label.set("theme_override_colors/font_color", pass_color)
+		particle.emitting = true
 	else:
 		butter_label.set("theme_override_colors/font_color", wrong_color)
 	if needed_mushroom == mushroom_container.size():
 		mushroom_label.set("theme_override_colors/font_color", pass_color)
+		particle.emitting = true
 	else:
 		mushroom_label.set("theme_override_colors/font_color", wrong_color)
 	if needed_garlic == garlic_container.size():
 		garic_label.set("theme_override_colors/font_color", pass_color)
+		particle.emitting = true
 	else:
 		garic_label.set("theme_override_colors/font_color", wrong_color)
 	
@@ -52,6 +54,10 @@ func _check_conditions():
 		conditions_met = true
 	else:
 		conditions_met = false
+
+func _correct_condition(label:Label):
+	label.set("theme_override_colors/font_color", pass_color)
+	particle.emitting = true
 
 func _string_checker(name:String, item:CharacterBody2D) -> bool:
 	if item.name.contains(name):
@@ -65,6 +71,7 @@ func _on_body_entered(body: Node2D) -> void:
 		mushroom_container.append(body.name)
 	elif _string_checker("garlic", body):
 		garlic_container.append(body.name)
+	_check_conditions()
 
 func _on_body_exited(body: Node2D) -> void:
 	if _string_checker("butter", body):
@@ -73,6 +80,7 @@ func _on_body_exited(body: Node2D) -> void:
 		mushroom_container.erase(body.name)
 	elif _string_checker("garlic", body):
 		garlic_container.erase(body.name)
+	_check_conditions()
 
 func _on_cook_button_pressed() -> void:
 	color_rect.visible = true

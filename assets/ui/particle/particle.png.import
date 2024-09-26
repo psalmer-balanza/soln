@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsekcai77ih7m"
-path="res://.godot/imported/garlic.png-44b939714396abe711f45eeeb3f87f18.ctex"
+uid="uid://b7sp6g52cvjm"
+path="res://.godot/imported/particle.png-35884d426fd9a2133392b8668d0fd408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic.png"
-dest_files=["res://.godot/imported/garlic.png-44b939714396abe711f45eeeb3f87f18.ctex"]
+source_file="res://assets/ui/particle/particle.png"
+dest_files=["res://.godot/imported/particle.png-35884d426fd9a2133392b8668d0fd408.ctex"]
 
 [params]
 

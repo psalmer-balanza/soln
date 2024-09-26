@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=31 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="20_yycrb"]
 [ext_resource type="Resource" uid="uid://buiul1opwan62" path="res://dialogue/floor_1/lab_tutorial.dialogue" id="21_rh25p"]
-[ext_resource type="PackedScene" uid="uid://b7al1sg0w0onm" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="22_fd56t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -516,8 +515,18 @@ dialogue_resource = ExtResource("21_rh25p")
 position = Vector2(353, -483)
 shape = SubResource("CircleShape2D_1qw2u")
 
-[node name="DeadRobotScene" parent="." instance=ExtResource("22_fd56t")]
+[node name="DeadRobotScene" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(623, 695)
+script = null
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

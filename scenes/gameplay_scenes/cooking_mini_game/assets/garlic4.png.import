@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccxusmfaf3bvw"
-path="res://.godot/imported/mushroom(9).png-65575509fc5b9eda6c4857579ff4d749.ctex"
+uid="uid://cwwt0hbpbb0lk"
+path="res://.godot/imported/garlic4.png-8d4920ceab903bddfca791eb4068648f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom(9).png"
-dest_files=["res://.godot/imported/mushroom(9).png-65575509fc5b9eda6c4857579ff4d749.ctex"]
+source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png"
+dest_files=["res://.godot/imported/garlic4.png-8d4920ceab903bddfca791eb4068648f.ctex"]
 
 [params]
 
