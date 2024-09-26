@@ -1,7 +1,12 @@
 ~ start
 set in_dialogue = true
 
-Evil Soln: Hey there.
+Broken Terminal: Bzzt... bzzt... 
+Broken Terminal: Oh hey, didn't see you there
+- Hello.
+	Broken Terminal: Hi.
+- (Walk away)
+	=> end
 
 ~ end
 set in_dialogue = false
