@@ -1,0 +1,20 @@
+~ start
+set current_quest = "dead_robot"
+set in_dialogue = true
+
+if dead_robot_quest_status == "first_time"
+	Soln: Hello there...
+	Soln: I used to be the main character... But Matt Ticag hated me...
+	Soln: Now I will test you mathematically to see if you are worthy of the main character title
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/fraction_simple_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+	set dead_robot_quest_status = "done"
+	=> end
+elif dead_robot_quest_status == "done"
+	Soln: Thank you... you have proved yourself worthy
+	Soln: I can move to the archived mc folder without any regrets now...
+	=> end
+=> end
+
+~ end
+set in_dialogue = false
+=> END

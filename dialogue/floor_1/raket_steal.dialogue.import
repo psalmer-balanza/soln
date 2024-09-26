@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bqercl2bxmnu5"
+path="res://.godot/imported/raket_steal.dialogue-872968da80bfa1c3c4aa56e8d6814fb5.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/raket_steal.dialogue"
+dest_files=["res://.godot/imported/raket_steal.dialogue-872968da80bfa1c3c4aa56e8d6814fb5.tres"]
+
+[params]
+
+defaults=true
