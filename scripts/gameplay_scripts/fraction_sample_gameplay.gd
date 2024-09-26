@@ -6,6 +6,7 @@ extends Control
 @onready var second_fraction_given: RichTextLabel = $SecondFraction/FractionTwo
 @onready var display_answer: RichTextLabel = $DisplayAnswer/UserAnswer
 
+
 func _ready():
 	# Setting the text dynamically in the script
 	# For zen to read from db

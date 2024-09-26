@@ -5,7 +5,6 @@ class_name MovingState
 var player: CharacterBody2D
 
 func Enter():
-	print("Now in moving state")
 	
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
 	sprite.play("walk")
@@ -16,7 +15,6 @@ func Update(delta: float):
 		return
 		
 	if Input.is_action_just_pressed("ui_accept"):
-		print("Transitioning to Dialogue State")
 		Transitioned.emit(self, "PlayerDialogueState")
 
 func Physics_Update(delta: float):

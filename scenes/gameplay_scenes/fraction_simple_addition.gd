@@ -8,13 +8,14 @@ var fraction_questions = [
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
 	if DialogueState.current_quest == "raket_stealing":
-		var fraction_questions = [
+		fraction_questions = [
 			[[1, 4], [3, 4]],  # First fraction
 			[[35, 70], [15, 30]],  # Second fraction
 			[[2, 5], [2, 5]],  # Third fraction
 		]
 	elif DialogueState.current_quest == "dead_robot":
-		var fraction_questions = [
+		print("Doing dead robot questions")
+		fraction_questions = [
 			[[1, 4], [3, 4]],  # First fraction
 			[[2, 3], [1, 3]],  # Second fraction
 			[[2, 5], [2, 5]],  # Third fraction
@@ -30,6 +31,7 @@ var current_question_index = 0  # Track which question the player is on
 
 func _ready():
 	# Start by displaying the first question
+	print("Current questline is: ", DialogueState.current_quest)
 	initiate_questions()
 	display_current_question()
 
@@ -63,6 +65,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_numerator = first_numerator + second_numerator
 		
 		if added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
+			$AnimationPlayer.play("good_answer")
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
@@ -74,6 +77,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
+			$AnimationPlayer.play("good_answer")
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		else:

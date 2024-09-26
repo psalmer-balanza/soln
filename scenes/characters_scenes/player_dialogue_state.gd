@@ -4,7 +4,6 @@ class_name PlayerDialogueState
 @onready var actionable_finder: Area2D = $"../../ActionableFinder"
 
 func Enter():
-	print("Now in dialogue state")
 
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
 	sprite.play("idle")

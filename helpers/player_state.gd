@@ -1,7 +1,5 @@
 extends Node
 
-var saisai_quest_progress: int = 0;
-
 # For saving states
 var first_time_initializing_floor_scene: bool = true
 var saved_position: Vector2
