@@ -515,6 +515,7 @@ dialogue_resource = ExtResource("21_rh25p")
 position = Vector2(353, -483)
 shape = SubResource("CircleShape2D_1qw2u")
 
+<<<<<<< Updated upstream
 [node name="DeadRobotScene" parent="."]
 _import_path = NodePath("")
 unique_name_in_owner = false
@@ -528,5 +529,7 @@ editor_description = ""
 position = Vector2(623, 695)
 script = null
 
+=======
+>>>>>>> Stashed changes
 [editable path="TextBox"]
 [editable path="TextBox2"]
