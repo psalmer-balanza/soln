@@ -51,7 +51,7 @@ Saisai: One more before the final test! We have a pie cut into 6 pieces. If you 
 	
 
 ~ saisai_mission_complete
-Saisai: Now let's try a real problem. Are you ready? [do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")]
+Saisai: Now let's try a real problem. Are you ready? [do save_player_position_and_change_scene("res://scenes/gameplay_scenes/cooking_mini_game/cooking.tscn" ,"res://scenes/levels/Floor1.tscn")]
 
 Saisai: Here are the directions to my raccoon friend's house. [wait=1] Take the pie, and may the pastry gods be with you! [wait=2] Safe travels, pie hero!
 

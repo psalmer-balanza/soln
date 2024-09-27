@@ -90,7 +90,8 @@ func _on_cook_button_pressed() -> void:
 		incorrect_screen.visible = true
 
 func _on_correct_pressed() -> void:
-	# connect to return to scene
+	print("Returning")
+	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 	pass # Connect with main scene
 
 func _on_incorrect_pressed() -> void:
