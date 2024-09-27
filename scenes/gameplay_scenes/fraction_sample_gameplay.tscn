@@ -131,10 +131,10 @@ text = "Display if answer is right or wrong."
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 369.0
-offset_top = 143.0
-offset_right = 437.0
-offset_bottom = 172.0
+offset_left = 338.576
+offset_top = 123.0
+offset_right = 406.576
+offset_bottom = 152.0
 text = "Finish"
 
 [connection signal="button_down" from="Answer/SubmitAnswer" to="." method="_on_submit_answer_button_down"]

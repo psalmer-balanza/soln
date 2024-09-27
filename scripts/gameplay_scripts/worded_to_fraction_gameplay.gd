@@ -2,19 +2,22 @@ extends Control
 
 # The user inputs all three fractions
 
-# FIRST FRACTION
-@onready var first_fraction_numerator: LineEdit = $FirstFraction/FirstFractionNumerator
-@onready var first_fraction_denominator: LineEdit = $FirstFraction/FirstFractionDenominator
-# SECOND FRACTION
-@onready var second_fraction_numerator: LineEdit = $SecondFraction/SecondFractionNumerator
-@onready var second_fraction_denominator: LineEdit = $SecondFraction/SecondFractionDenominator
-# ANSWER
-@onready var numerator_answer: LineEdit = $Answer/NumeratorAnswer
-@onready var denominator_answer: LineEdit = $Answer/DenominatorAnswer
+# Add question here
+@onready var question = $question/MarginContainer/Label
 
-@onready var first_fraction_given: RichTextLabel = $FirstFraction/FractionOne
-@onready var second_fraction_given: RichTextLabel = $SecondFraction/FractionTwo
-@onready var display_answer: RichTextLabel = $DisplayAnswer/UserAnswer
+# FIRST FRACTION
+@onready var first_fraction_numerator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer/FirstFractionNumerator
+@onready var first_fraction_denominator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer2/FirstFractionDenominator
+# SECOND FRACTION
+@onready var second_fraction_numerator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer/SecondFractionNumerator
+@onready var second_fraction_denominator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer2/SecondFractionDenominator
+# ANSWER
+@onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer/NumeratorAnswer
+@onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer2/DenominatorAnswer
+
+#@onready var first_fraction_given: RichTextLabel = $FirstFraction/FractionOne
+#@onready var second_fraction_given: RichTextLabel = $SecondFraction/FractionTwo
+@onready var display_answer: Label = $DisplayAnswer/UserAnswer
 
 func _ready():
 	print("ready")
@@ -46,10 +49,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		
 		if added_numerator == answer_numerator and first_denominator == answer_denominator:
 			# If the user's answer is correct
-			display_answer.text = "Good job! \nCorrect answer!"
+			display_answer.text = "Good job! Correct answer!"
 		else:
 			# If the user's answer is incorrect
-			display_answer.text = "Try \nagain."
+			display_answer.text = "Try again."
 	else:
 		# If denominators are different, find the least common denominator (LCD)
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
