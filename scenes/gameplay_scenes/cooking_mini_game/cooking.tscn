@@ -1,13 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=26 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
+[ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
+[ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
+[ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
+[ext_resource type="PackedScene" uid="uid://coy5hqh7nwvkl" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.tscn" id="5_l2lsw"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.gd" id="7_bp1rw"]
+[ext_resource type="Texture2D" uid="uid://bl3556jsoq41c" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom2.png" id="7_yvvxj"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_joskm"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.gd" id="8_patd2"]
+[ext_resource type="Texture2D" uid="uid://dtabsf06518kj" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom3.png" id="8_y8gyd"]
+[ext_resource type="Texture2D" uid="uid://dc00bclfoft36" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic1.png" id="9_rkfkf"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.gd" id="9_w5g8j"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="9_xpmrs"]
+[ext_resource type="Texture2D" uid="uid://5gnbmfdli4cm" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic2.png" id="10_m7kdp"]
+[ext_resource type="Texture2D" uid="uid://bd0dc0xljuqdy" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic3.png" id="11_bgxjc"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="11_e1to4"]
+[ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
+[ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shvq1"]
@@ -124,148 +135,118 @@ shape = SubResource("RectangleShape2D_njprm")
 
 [node name="ItemContainer" type="Node" parent="."]
 
-[node name="butter1" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="butter1" parent="ItemContainer" instance=ExtResource("5_l2lsw")]
 position = Vector2(136, 197)
-script = null
 
-[node name="butter2" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="butter2" parent="ItemContainer" instance=ExtResource("5_l2lsw")]
 position = Vector2(234, 197)
-script = null
 
-[node name="mushroom2" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/butter2" index="0"]
+texture = ExtResource("5_18083")
+
+[node name="mushroom2" parent="ItemContainer" instance=ExtResource("3_pm2kx")]
 position = Vector2(187, 358)
-script = null
 
-[node name="mushroom3" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/mushroom2" index="0"]
+position = Vector2(-14, 2)
+texture = ExtResource("7_yvvxj")
+
+[node name="ingredient" parent="ItemContainer/mushroom2/Sprite2D" index="0"]
+offset_left = -21.0
+offset_top = -11.0
+offset_right = -12.0
+
+[node name="CollisionShape2D" parent="ItemContainer/mushroom2" index="1"]
+position = Vector2(-16, 1)
+
+[node name="mushroom3" parent="ItemContainer" instance=ExtResource("3_pm2kx")]
 position = Vector2(242, 360)
-script = null
 
-[node name="mushroom1" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/mushroom3" index="0"]
+texture = ExtResource("8_y8gyd")
+
+[node name="ingredient" parent="ItemContainer/mushroom3/Sprite2D" index="0"]
+offset_left = -21.0
+offset_top = -11.0
+offset_right = -12.0
+offset_bottom = -7.0
+
+[node name="CollisionShape2D" parent="ItemContainer/mushroom3" index="1"]
+position = Vector2(0, 0)
+
+[node name="mushroom1" parent="ItemContainer" instance=ExtResource("3_pm2kx")]
 position = Vector2(105, 358)
-script = null
 
-[node name="garlic" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="ingredient" parent="ItemContainer/mushroom1/Sprite2D" index="0"]
+offset_left = -23.0
+offset_top = -19.0
+offset_right = -9.0
+offset_bottom = -7.0
+
+[node name="CollisionShape2D" parent="ItemContainer/mushroom1" index="1"]
+position = Vector2(2, 0)
+
+[node name="garlic" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(431, 294)
-script = null
 
-[node name="garlic2" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="garlic2" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(468, 294)
-script = null
 
-[node name="garlic3" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/garlic2" index="0"]
+texture = ExtResource("9_rkfkf")
+
+[node name="ingredient" parent="ItemContainer/garlic2/Sprite2D" index="0"]
+offset_top = -16.0
+offset_right = -34.0
+offset_bottom = -16.0
+
+[node name="garlic3" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(399, 294)
-script = null
 
-[node name="garlic4" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/garlic3" index="0"]
+texture = ExtResource("10_m7kdp")
+
+[node name="ingredient" parent="ItemContainer/garlic3/Sprite2D" index="0"]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = -33.0
+offset_bottom = -14.0
+
+[node name="garlic4" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(407, 294)
-script = null
 
-[node name="garlic5" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/garlic4" index="0"]
+texture = ExtResource("11_bgxjc")
+
+[node name="ingredient" parent="ItemContainer/garlic4/Sprite2D" index="0"]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = -33.0
+offset_bottom = -14.0
+
+[node name="garlic5" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(456, 294)
-script = null
 
-[node name="garlic6" parent="ItemContainer"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Sprite2D" parent="ItemContainer/garlic5" index="0"]
+texture = ExtResource("12_pxebw")
+
+[node name="ingredient" parent="ItemContainer/garlic5/Sprite2D" index="0"]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = -33.0
+offset_bottom = -14.0
+
+[node name="garlic6" parent="ItemContainer" instance=ExtResource("4_2ja0j")]
 position = Vector2(431, 295)
-script = null
+
+[node name="Sprite2D" parent="ItemContainer/garlic6" index="0"]
+texture = ExtResource("13_tbs6y")
+
+[node name="ingredient" parent="ItemContainer/garlic6/Sprite2D" index="0"]
+offset_left = -18.0
+offset_top = -17.0
+offset_right = -36.0
+offset_bottom = -8.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 461.0
@@ -532,3 +513,13 @@ flat = true
 [connection signal="pressed" from="UI/Control/Congrats/correct" to="board" method="_on_correct_pressed"]
 [connection signal="pressed" from="UI/Control/Oh no/incorrect" to="board" method="_on_incorrect_pressed"]
 [connection signal="pressed" from="cook_button" to="board" method="_on_cook_button_pressed"]
+
+[editable path="ItemContainer/butter2"]
+[editable path="ItemContainer/mushroom2"]
+[editable path="ItemContainer/mushroom3"]
+[editable path="ItemContainer/mushroom1"]
+[editable path="ItemContainer/garlic2"]
+[editable path="ItemContainer/garlic3"]
+[editable path="ItemContainer/garlic4"]
+[editable path="ItemContainer/garlic5"]
+[editable path="ItemContainer/garlic6"]
