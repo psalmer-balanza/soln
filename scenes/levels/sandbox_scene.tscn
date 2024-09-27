@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://c1ka1vk0qumpg"]
+[gd_scene load_steps=34 format=4 uid="uid://c1ka1vk0qumpg"]
 
 [ext_resource type="Script" path="res://scenes/levels/sandbox_scene.gd" id="1_0sx2c"]
 [ext_resource type="Texture2D" uid="uid://dytsrf2lfinlw" path="res://assets/floor_1/cave_1/cave wall v2.png" id="1_4qc1c"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bdv31yxq0nr3x" path="res://assets/character_portraits/evil soln.png" id="12_jnf0u"]
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="13_db3db"]
 [ext_resource type="Script" path="res://scripts/states/EnemyIdle.gd" id="14_xdfe5"]
-[ext_resource type="PackedScene" uid="uid://gr5g6gtxm7ni" path="res://scenes/cutscenes/evil_soln.tscn" id="16_q34wt"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="16_vcbx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd82r"]
@@ -4144,6 +4143,3 @@ shape = SubResource("CapsuleShape2D_nhjko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SolnEnemy/Actionable"]
 position = Vector2(79, -61)
 shape = SubResource("CircleShape2D_to1qw")
-
-[node name="EvilSoln" parent="." instance=ExtResource("16_q34wt")]
-position = Vector2(-74, -155)

@@ -7,6 +7,7 @@ var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
 
 var saisai_quest_progress: int = 0;
+var current_npc: String = "none"
 
 # For movable shiny rock cutscene
 var rock_removed: bool = false

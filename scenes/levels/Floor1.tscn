@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=36 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="22_4frcv"]
 [ext_resource type="Script" path="res://scenes/levels/area_2d.gd" id="23_k7a2o"]
 [ext_resource type="Resource" uid="uid://badar42457xdl" path="res://dialogue/floor_1/Encounter_6.dialogue" id="24_25qo4"]
+[ext_resource type="PackedScene" uid="uid://cgmysy3nn0urk" path="res://scenes/cutscenes/placeholder_cutscene.tscn" id="25_5pdx6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -535,6 +536,18 @@ shape = SubResource("CapsuleShape2D_uoe5r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(9, 11, -9, 11, -9, -11, 9, -11)
+
+[node name="PlaceholderCutscene" parent="." instance=ExtResource("25_5pdx6")]
+position = Vector2(539, 704)
+
+[node name="PlaceholderCutscene2" parent="." instance=ExtResource("25_5pdx6")]
+position = Vector2(769, 705)
+
+[node name="PlaceholderCutscene3" parent="." instance=ExtResource("25_5pdx6")]
+position = Vector2(1136, 1220)
+
+[node name="PlaceholderCutscene4" parent="." instance=ExtResource("25_5pdx6")]
+position = Vector2(1263, 1347)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

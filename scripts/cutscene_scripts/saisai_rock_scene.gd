@@ -11,13 +11,12 @@ func _process(_delta):
 
 func play_move_rock() -> void:
 	$Saisai/CollisionPolygon2D.disabled = true
-
 	animation_player.play("saisai_move_rock")
 	await animation_player.animation_finished
 	animation_player.play("moving_wheelbarrow")
 	await animation_player.animation_finished
 	$Saisai/AnimatedSprite2D.visible = false
 	$WheelbarrowWithRocks.visible = false
-	
+	DialogueState.in_dialogue = false
 	has_moved_rock = true
 	

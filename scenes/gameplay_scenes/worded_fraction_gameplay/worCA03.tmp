@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://2kaqp1f7ukyk"]
+[gd_scene load_steps=25 format=3 uid="uid://2kaqp1f7ukyk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_5ccj4"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="2_0yrwa"]
@@ -126,36 +126,24 @@ tracks/2/keys = {
 "values": [&"wrong_answer"]
 }
 
-[sub_resource type="Animation" id="Animation_g1gs7"]
-resource_name = "idle_saisai"
-step = 0.1
+[sub_resource type="Animation" id="Animation_gee6t"]
+resource_name = "spin"
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0]
+"times": PackedFloat32Array(0.0666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
 }
 
 [sub_resource type="Animation" id="Animation_k78ov"]
-resource_name = "wrong_answer_saisai"
+resource_name = "wrong_answer"
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -182,28 +170,11 @@ tracks/1/keys = {
 "values": [&"wrong_answer"]
 }
 
-[sub_resource type="Animation" id="Animation_gee6t"]
-resource_name = "spin_saisai"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5xw6g"]
 _data = {
 "RESET": SubResource("Animation_yceuv"),
-"idle_saisai": SubResource("Animation_g1gs7"),
-"spin_saisai": SubResource("Animation_gee6t"),
-"wrong_answer_saisai": SubResource("Animation_k78ov")
+"spin": SubResource("Animation_gee6t"),
+"wrong_answer": SubResource("Animation_k78ov")
 }
 
 [node name="WordedFractionGameplay" type="Control"]
@@ -228,6 +199,7 @@ scale = Vector2(7.52344, 7.52344)
 sprite_frames = SubResource("SpriteFrames_xwprp")
 animation = &"wrong_answer"
 autoplay = "idle"
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Saisai")
@@ -442,7 +414,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eelnt")
 placeholder_text = "num"
 alignment = 1
-max_length = 3
+max_length = 2
 flat = true
 caret_blink = true
 
@@ -468,7 +440,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eelnt")
 placeholder_text = "denum"
 alignment = 1
-max_length = 3
+max_length = 2
 flat = true
 caret_blink = true
 

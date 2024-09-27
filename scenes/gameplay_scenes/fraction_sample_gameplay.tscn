@@ -137,5 +137,10 @@ offset_right = 406.576
 offset_bottom = 152.0
 text = "Finish"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-81.424, -78)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="button_down" from="Answer/SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="Button" to="." method="return_to_world"]
