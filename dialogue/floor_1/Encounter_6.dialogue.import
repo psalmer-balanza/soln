@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://badar42457xdl"
+path="res://.godot/imported/Encounter_6.dialogue-d321366a122fbad4822e63111259619f.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/Encounter_6.dialogue"
+dest_files=["res://.godot/imported/Encounter_6.dialogue-d321366a122fbad4822e63111259619f.tres"]
+
+[params]
+
+defaults=true
