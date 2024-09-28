@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=40 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -24,7 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="22_4frcv"]
 [ext_resource type="Script" path="res://scenes/levels/area_2d.gd" id="23_k7a2o"]
 [ext_resource type="Resource" uid="uid://badar42457xdl" path="res://dialogue/floor_1/Encounter_6.dialogue" id="24_25qo4"]
-[ext_resource type="PackedScene" uid="uid://d3t32ylyg4guc" path="res://scenes/cutscenes/earthquake_scene.tscn" id="26_g6f4v"]
+[ext_resource type="PackedScene" uid="uid://ch6uv3i2ch2r1" path="res://helpers/auto_start_encounter.tscn" id="25_dad4e"]
+[ext_resource type="Resource" uid="uid://b6e65bcx3nrwm" path="res://dialogue/floor_1/earthquake_scene.dialogue" id="26_al86v"]
 [ext_resource type="PackedScene" uid="uid://dsuix74g1xkkn" path="res://scenes/characters_scenes/racket_steal.tscn" id="27_dbsx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
@@ -288,6 +289,12 @@ radius = 45.0999
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uoe5r"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkx7g"]
+size = Vector2(111, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nu3m"]
+size = Vector2(112, 7)
+
 [node name="Floor1" type="Node2D"]
 position = Vector2(2, 4)
 script = ExtResource("1_akh82")
@@ -517,6 +524,7 @@ position = Vector2(32, -65)
 
 [node name="Lab Actionable" parent="." instance=ExtResource("20_yycrb")]
 dialogue_resource = ExtResource("21_rh25p")
+dialogue_start = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab Actionable"]
 position = Vector2(353, -483)
@@ -531,6 +539,7 @@ collision_layer = 17
 collision_mask = 16
 script = ExtResource("23_k7a2o")
 dialogue_resource = ExtResource("24_25qo4")
+dialogue_start = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_uoe5r")
@@ -538,11 +547,24 @@ shape = SubResource("CapsuleShape2D_uoe5r")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(9, 11, -9, 11, -9, -11, 9, -11)
 
+[node name="AutoStartEncounter" parent="." instance=ExtResource("25_dad4e")]
+position = Vector2(1276, 987)
+dialogue_resource = ExtResource("26_al86v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoStartEncounter"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_jkx7g")
+
+[node name="Actionable" parent="." instance=ExtResource("20_yycrb")]
+position = Vector2(1276, 991)
+dialogue_start = "start"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-167, 122)
+shape = SubResource("RectangleShape2D_1nu3m")
+
 [node name="RacketSteal" parent="." instance=ExtResource("27_dbsx5")]
 position = Vector2(1203, 864)
-
-[node name="EarthquakeScene" parent="." instance=ExtResource("26_g6f4v")]
-position = Vector2(1283, 987)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

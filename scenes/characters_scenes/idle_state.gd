@@ -20,5 +20,6 @@ func Update(delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
 		Transitioned.emit(self, "PlayerDialogueState")
 
+
 func Physics_Update(delta: float):
 	player.velocity = player.velocity.move_toward(Vector2.ZERO, player.movement_speed * delta)

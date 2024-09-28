@@ -38,3 +38,11 @@ func Physics_Update(delta: float):
 
 	# Apply movement velocity
 	player.velocity = character_direction * player.movement_speed
+
+
+func _on_auto_start_encounter_finder_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	# Check if the body is the player character
+	print("The player name is ", body.name)
+	if body.name == "MainCharacter":  # Adjust this check for your actual player node
+		# Emit the transition to PlayerDialogueState
+		Transitioned.emit(self, "PlayerDialogueState")

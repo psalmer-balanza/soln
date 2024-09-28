@@ -2,38 +2,37 @@
 set current_quest = "raket_stealing"
 set in_dialogue = true
 
-Main Character: Yeah, it’s the one Saisai baked.
-Raket: Ohh, that rabbit we're currently not on good relations.
-Raket: But yeah good pie you got there. 
-Raket: Haven't eaten pie for a while since our fight.
-Main Character: Why’s that?
-Raket: Ehh, something about a disagreement. But that pie...
-Raket: I haven’t had a bite in a long time.
-Main Character: But I’m supposed to deliver it to... someone.
-Raket: I’ll just take this off your hands, then.
-Raket: "Quickly grabs the pie"
-Raket: Don’t worry, I'll deliver it for you.
-Main Character: "Surprised" Hey! I'll deliver myself!
-Raket: Oh, relax! I’m just doing you a favor. 
-Raket: Delivering things is what friends are for, right?
-Main Character: Give it back, Raket.
-Raket: Oh, come on now, I haven’t even tasted it yet!
-Main Character: I promised Saisai I’d deliver it.
-Main Character: You’re not making this easy, Raket.
-Raket: Easy? Where’s the fun in easy? 
-Raket: Tell you what: you want this pie? Catch me if you can.
-Raket: "Smiles" "Then runs off with the pie while laughing"
-Main Character: Great... Just what I needed. A raccoon chase.
-Main Character: I’d better hurry before he eats the whole thing.
-
-
-
-Raket: It is now! You’d better run fast if you want it back!
-Raket: "Takes a bite, winking"
-Raket: "Then runs off, laughing"
-
-Raket: "Grinning" Oh, I see, just a simple delivery job, huh? 
-Raket: And here I thought you might be sharing that delicious pie with me.
+Raket: "SMIRKING" Well, well, well, 
+#Main Character: Yeah, it’s the one Saisai baked.
+#Raket: Ohh, that rabbit we're currently not on good relations.
+#Raket: But yeah good pie you got there. 
+#Raket: Haven't eaten pie for a while since our fight.
+#Main Character: Why’s that?
+#Raket: Ehh, something about a disagreement. But that pie...
+#Raket: I haven’t had a bite in a long time.
+#Main Character: But I’m supposed to deliver it to... someone.
+#Raket: I’ll just take this off your hands, then.
+#Raket: "Quickly grabs the pie"
+#Raket: Don’t worry, I'll deliver it for you.
+#Main Character: "Surprised" Hey! I'll deliver myself!
+#Raket: Oh, relax! I’m just doing you a favor. 
+#Raket: Delivering things is what friends are for, right?
+#Main Character: Give it back, Raket.
+#Raket: Oh, come on now, I haven’t even tasted it yet!
+#Main Character: I promised Saisai I’d deliver it.
+#Main Character: You’re not making this easy, Raket.
+#Raket: Easy? Where’s the fun in easy? 
+#Raket: Tell you what: you want this pie? Catch me if you can.
+#Raket: "Smiles" "Then runs off with the pie while laughing"
+#Main Character: Great... Just what I needed. A raccoon chase.
+#Main Character: I’d better hurry before he eats the whole thing.
+#
+#Raket: It is now! You’d better run fast if you want it back!
+#Raket: "Takes a bite, winking"
+#Raket: "Then runs off, laughing"
+#
+#Raket: "Grinning" Oh, I see, just a simple delivery job, huh? 
+#Raket: And here I thought you might be sharing that delicious pie with me.
 
 
 => end

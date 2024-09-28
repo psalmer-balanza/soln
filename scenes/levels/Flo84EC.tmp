@@ -517,6 +517,7 @@ position = Vector2(32, -65)
 
 [node name="Lab Actionable" parent="." instance=ExtResource("20_yycrb")]
 dialogue_resource = ExtResource("21_rh25p")
+dialogue_start = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab Actionable"]
 position = Vector2(353, -483)
@@ -531,6 +532,7 @@ collision_layer = 17
 collision_mask = 16
 script = ExtResource("23_k7a2o")
 dialogue_resource = ExtResource("24_25qo4")
+dialogue_start = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_uoe5r")
