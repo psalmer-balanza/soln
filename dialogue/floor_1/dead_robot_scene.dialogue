@@ -1,20 +1,18 @@
 ~ start
-
-Raket: "SMIRKING" Well, well, well, 
-Raket: What do we have here? Is that... a pie I see?
-Main Character: "Looks at the pie likes its guarding it"
 set current_quest = "dead_robot"
+set current_npc = "old_peculiar"
 set in_dialogue = true
+do dead_robot_scene()
 if dead_robot_quest_status == "first_time"
-	Soln: Hello there...
-	Soln: I used to be the main character... But Matt Ticag hated me...
-	Soln: Now I will test you mathematically to see if you are worthy of the main character title
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/fraction_simple_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+	Old Peculiar: Hello there...
+	Old Peculiar: We are the spirits of the land, we see that you have arisen from your slumber....
+	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set dead_robot_quest_status = "done"
 	=> end
 elif dead_robot_quest_status == "done"
-	Soln: Thank you... you have proved yourself worthy
-	Soln: I can move to the archived mc folder without any regrets now...
+	Old Peculiar: Thank you... you have proved yourself worthy
+	Old Peculiar: I can move to the archived mc folder without any regrets now...
 	=> end
 => end
 

@@ -22,7 +22,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 PlayerState="*res://helpers/player_state.gd"
 Global="*res://helpers/global.gd"
 DialogueState="*res://helpers/dialogue_state.gd"
-DropZoneTwo="*res://scripts/drag_and_drop/drop_zone_two.gd"
 
 [dialogue_manager]
 

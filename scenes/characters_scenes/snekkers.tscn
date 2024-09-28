@@ -92,7 +92,7 @@ scale = Vector2(1.39346, 1.39346)
 sprite_frames = SubResource("SpriteFrames_iifh7")
 animation = &"big_idle"
 autoplay = "big_idle"
-frame_progress = 0.859509
+frame_progress = 0.0746695
 
 [node name="Actionable" parent="." instance=ExtResource("4_kipv2")]
 dialogue_resource = ExtResource("3_5hdfo")

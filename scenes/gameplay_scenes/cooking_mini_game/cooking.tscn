@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
-[ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
-[ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
 [ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
-[ext_resource type="PackedScene" uid="uid://coy5hqh7nwvkl" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.tscn" id="5_l2lsw"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.tscn" id="5_l2lsw"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.gd" id="7_bp1rw"]
 [ext_resource type="Texture2D" uid="uid://bl3556jsoq41c" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom2.png" id="7_yvvxj"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_joskm"]

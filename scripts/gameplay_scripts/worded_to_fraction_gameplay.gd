@@ -29,13 +29,22 @@ func _ready():
 		print("Current npc= saisai")
 		$Raket.visible = false
 		$Saisai.visible = true
+		$OldPeculiar.visible = false
 	elif DialogueState.current_npc == "raket":
 		print("Current npc= raket")
 		$Raket.visible = true
 		$Saisai.visible = false
-	else:
+		$OldPeculiar.visible = false
+	elif DialogueState.current_npc == "old_peculiar":
+		print("Current npc= old peculiar")
 		$Raket.visible = false
 		$Saisai.visible = false
+		$OldPeculiar.visible = true
+	else:
+		print("No npc found", DialogueState.current_npc)
+		$Raket.visible = false
+		$Saisai.visible = false
+		$OldPeculiar.visible = false
 	initiate_questions()
 	display_current_question()
 
@@ -119,6 +128,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			
 			display_answer.text = "Good job! Correct answer!"
 			next_question_or_finish()  # Move to the next question or finish
+			if DialogueState.current_npc == "old_peculiar":
+				$AnimationPlayer.play("spin_old_peculiar")
+				await $AnimationPlayer.animation_finished
+				$AnimationPlayer.play("idle_saisai")
 			$AnimationPlayer.play("spin_saisai")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.play("idle_saisai")

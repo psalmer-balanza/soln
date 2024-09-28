@@ -6,9 +6,10 @@ var in_dialogue: bool = false
 var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
 var earthquake_scene: String = "first_time"
-
 var saisai_quest_progress: int = 0;
 var current_npc: String = "none"
+
+
 
 # For movable shiny rock cutscene
 var rock_removed: bool = false
@@ -24,3 +25,10 @@ func saisai_move_rocks_cutscene():
 	emit_signal("saisai_rock_moved")
 	saisai_quest_progress = 1
 	print("Saisai rock moved")
+	
+# Post-Saisai robot cutscene
+var dead_robot_appeared: bool = false
+func dead_robot_scene():
+	dead_robot_appeared = true
+	emit_signal("dead_robot_scene")
+	current_quest = "dead_robots"
