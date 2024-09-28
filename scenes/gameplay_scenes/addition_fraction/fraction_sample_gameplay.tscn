@@ -1,54 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://djk22k3j63p7n"]
+[gd_scene load_steps=6 format=3 uid="uid://djk22k3j63p7n"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_1p88m"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1trgt"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_deff5"]
-[ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="6_4kt64"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d7xw"]
-atlas = ExtResource("6_4kt64")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5tnt"]
-atlas = ExtResource("6_4kt64")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obd08"]
-atlas = ExtResource("6_4kt64")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h27tv"]
-atlas = ExtResource("6_4kt64")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04ds7"]
-atlas = ExtResource("6_4kt64")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_83e7r"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5d7xw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q5tnt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_obd08")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h27tv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_04ds7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
 
 [node name="FractionAdditionGameplay" type="Control"]
 layout_mode = 3
@@ -240,10 +196,10 @@ patch_margin_bottom = 8
 
 [node name="submit" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 45.576
-offset_top = 321.0
-offset_right = 147.576
-offset_bottom = 361.0
+offset_left = 390.576
+offset_top = 319.0
+offset_right = 492.576
+offset_bottom = 359.0
 scale = Vector2(2, 2)
 
 [node name="SubmitAnswer" type="Button" parent="submit"]
@@ -261,9 +217,10 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="return" type="MarginContainer" parent="."]
-offset_left = 274.576
+layout_mode = 0
+offset_left = 638.576
 offset_top = 319.0
-offset_right = 378.576
+offset_right = 742.576
 offset_bottom = 359.0
 scale = Vector2(2, 2)
 
@@ -281,12 +238,5 @@ theme_override_fonts/font = ExtResource("4_1trgt")
 text = "RETURN"
 flat = true
 
-[node name="character" type="AnimatedSprite2D" parent="."]
-position = Vector2(779.576, 390)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_83e7r")
-autoplay = "default"
-frame_progress = 0.253456
-
 [connection signal="pressed" from="submit/SubmitAnswer" to="." method="_on_submit_answer_pressed"]
-[connection signal="button_down" from="return/Button" to="." method="return_to_world"]
+[connection signal="pressed" from="return/Button" to="." method="_on_button_pressed"]
