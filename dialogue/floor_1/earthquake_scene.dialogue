@@ -1,0 +1,16 @@
+~ start
+
+set current_quest = "earthquake_scene"
+set in_dialogue = true
+
+if earthquake_scene == "first_time"
+	Main Character: Woahh, a sudden earthquake.
+	set earthquake_scene = "done"
+	=> end
+elif earthquake_scene == "done"
+	=> end
+=> end
+
+~ end
+set in_dialogue = false
+=> END

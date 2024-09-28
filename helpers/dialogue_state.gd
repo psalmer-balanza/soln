@@ -5,6 +5,7 @@ var current_quest: String = "starting"
 var in_dialogue: bool = false
 var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
+var earthquake_scene: String = "first_time"
 
 var saisai_quest_progress: int = 0;
 var current_npc: String = "none"

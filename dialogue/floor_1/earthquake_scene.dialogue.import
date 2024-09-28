@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b6e65bcx3nrwm"
+path="res://.godot/imported/earthquake_scene.dialogue-33e369147ea2c7d7049c694754f7e051.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/earthquake_scene.dialogue"
+dest_files=["res://.godot/imported/earthquake_scene.dialogue-33e369147ea2c7d7049c694754f7e051.tres"]
+
+[params]
+
+defaults=true
