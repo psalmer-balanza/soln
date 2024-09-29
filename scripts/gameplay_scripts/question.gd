@@ -5,13 +5,20 @@ extends Control
 @onready var c2 = $"Answers/Choice 2"
 @onready var c3 = $"Answers/Choice 3"
 @onready var c4 = $"Answers/Choice 4"
-# replace question dictionary with questions from database
 @onready var question_dictionary = Global.Question_Dictionary
 var index
 var correct_answer
 var answer
 var rng = RandomNumberGenerator.new()
 var question
+
+func _ready():
+	# First connect to the "questions_loaded" signal to know when the data is ready
+	Global.connect("questions_loaded", _on_questions_loaded)
+
+func _on_questions_loaded():
+	question_dictionary = Global.Question_Dictionary
+	print(question_dictionary)
 
 # can change for better randomness using shuffle bags
 func _choose_question() -> int:
@@ -43,6 +50,7 @@ func _check_answer():
 
 func _on_draw() -> void:
 	index = _choose_question()
+	print(question_dictionary)
 	question = question_dictionary.get(index)
 	content.text = question[0]
 	c1.text = question[1]
