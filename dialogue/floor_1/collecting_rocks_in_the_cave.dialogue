@@ -1,0 +1,89 @@
+~ sword_bottom
+
+set in_dialogue = true
+This must be the sword handle, one of the shards.
+You see a familiar inscription on the handle of the sword. Though it's a little more complicated this time.
+It reads\: "One shard holds 5/6 of the sword's strength, while another holds 1/3. What is the total strength of the sword when combined?"
+- 5/6 + 1/3 = 6/6
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+- 5/6 + 1/3 = 7/6
+	The inscriptions glows, and you pick up the piece. Well done!
+	# Set sword bottom as done
+	# Make the assets vanish
+	=> end
+- 5/6 + 1/3 = 8/6
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+
+=> end
+
+~ sword_guard
+
+set in_dialogue = true
+You find the guard of the sword, resting among ancient carvings. Another inscription is etched into its surface.
+It reads: "This shard holds 2/3 of the sword's strength, and another shard holds 3/9. Combine their power."
+- 2/3 + 3/9 = 1
+    The sword guard remains unchanged. Seems incorrect...
+    => sword_guard
+- 2/3 + 3/9 = 3/3
+    Nothing happens. That doesn't seem right...
+    => sword_guard
+- 2/3 + 3/9 = 1
+	The inscription glows, and you lift the shard. Nice work!
+		# Set sword piece as done (global variable)
+	# Make the assets vanish
+	=> end
+=> end
+
+~ sword_lower_blade
+
+set in_dialogue = true
+You discover the lower blade piece wedged between some rocks. An inscription runs along its edge.
+It reads: "This shard holds 3/5 of the sword's strength, while another holds 2/10. What is their combined strength?"
+- 3/5 + 2/10 = 5/5
+    The inscription remains dull. That doesn’t seem right...
+    => sword_lower_blade
+- 3/5 + 2/10 = 7/10
+    Nothing changes. Maybe that wasn't correct...
+    => sword_lower_blade
+- 3/5 + 2/10 = 8/10
+    The inscription glows softly. You pull out the shard. Well done!
+    => end
+=> end 
+
+~ sword_middle_blade
+
+set in_dialogue = true
+The middle section of the blade lies partially buried. Ancient symbols are engraved on its surface.
+It reads: "One shard holds 4/7 of the sword’s strength, and another holds 1/7. What is the total strength of these two shards?"
+- 4/7 + 1/7 = 6/7
+    The symbols remain lifeless. That can't be right...
+    => sword_middle_blade
+- 4/7 + 1/7 = 5/7
+    The inscription glows, and the shard loosens. Good job!
+    => end
+- 4/7 + 1/7 = 7/7
+    Nothing happens. Seems incorrect...
+    => sword_middle_blade
+=> end
+
+~ sword_top_blade
+
+set in_dialogue = true
+The top blade piece rests atop a pedestal, its surface covered in runes.
+It reads: "This shard contains 2/4 of the sword’s strength, while another contains 1/8. Combine their power."
+- 2/4 + 1/8 = 3/8
+    The runes flicker briefly but fade. Incorrect...
+    => sword_top_blade
+- 2/4 + 1/8 = 5/8
+    The runes glow brightly. You carefully take the shard. Well done!
+    => end
+- 2/4 + 1/8 = 4/8
+    Nothing changes. That doesn't seem right...
+    => sword_top_blade
+=> end
+
+~ end
+set in_dialogue = false
+=> END

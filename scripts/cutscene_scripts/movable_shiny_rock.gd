@@ -15,6 +15,6 @@ func hide_rock() -> void:
 	await animation_player.animation_finished
 	print("Rock disappeared")
 	$CollisionPolygon2D.disabled = true
-	
+	$CollisionShape2D.disabled = true
 	has_hidden_rock = true
 	
