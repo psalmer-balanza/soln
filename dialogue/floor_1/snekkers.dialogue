@@ -1,6 +1,11 @@
 ~ start
 set in_dialogue = true
-Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
+	Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+	Snekkers: Get out of here!!!
+	=> end
+
+Snekkers: You again?! What do you want?!
 
 
 - You don't happen to be a morning person right?

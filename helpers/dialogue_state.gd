@@ -32,3 +32,31 @@ func dead_robot_scene():
 	dead_robot_appeared = true
 	emit_signal("dead_robot_scene")
 	current_quest = "dead_robots"
+
+
+#SWORD STUFF
+var sword_bottom: bool = false
+var sword_guard: bool = false
+var sword_lower_blade: bool = false
+var sword_middle_blade: bool = false
+var sword_top_blade: bool = false
+
+func pick_sword_bottom():
+	sword_bottom = true
+	emit_signal("sword_bottom")
+
+func pick_sword_guard():
+	sword_guard = true
+	emit_signal("sword_guard")
+
+func pick_sword_lower_blade():
+	sword_lower_blade = true
+	emit_signal("sword_lower_blade")
+	
+func pick_sword_middle_blade():
+	sword_middle_blade = true
+	emit_signal("sword_middle_blade")
+	
+func pick_sword_top_blade():
+	sword_top_blade = true
+	emit_signal("sword_top_blade")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cboj5uc2cb5at"]
+[gd_scene load_steps=33 format=3 uid="uid://cboj5uc2cb5at"]
 
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/saisai_rock_scene.gd" id="1_83gal"]
 [ext_resource type="Texture2D" uid="uid://cbm1g08w588sl" path="res://assets/floor_1/cutscenes/single rock.png" id="1_xqfwa"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bjfxam8cjgyre" path="res://assets/floor_1/cutscenes/Wheelbarrow With Rocks.png" id="6_inasl"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="7_aa3yf"]
 [ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="8_hwguc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u56d"]
+size = Vector2(270, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kehd"]
 atlas = ExtResource("5_5sasn")
@@ -314,6 +317,10 @@ texture = ExtResource("1_xqfwa")
 position = Vector2(4, -1)
 polygon = PackedVector2Array(-6, -2, -6, -1, -7, -1, -7, 0, -8, 0, -8, 3, -7, 3, -7, 4, 1, 4, 1, 3, 2, 3, 2, -1, 0, -1, 0, -2)
 
+[node name="Barrier" type="CollisionShape2D" parent="RegularRock"]
+position = Vector2(28, 10)
+shape = SubResource("RectangleShape2D_1u56d")
+
 [node name="Saisai" parent="." instance=ExtResource("4_uv76i")]
 position = Vector2(75, -1)
 script = null
@@ -336,9 +343,8 @@ libraries = {
 }
 
 [node name="Wheelbarrow" type="StaticBody2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.282831)
-position = Vector2(-19, 158)
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(-20, 7)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wheelbarrow"]
 position = Vector2(108, -17)
@@ -348,7 +354,7 @@ texture = ExtResource("5_2ohnw")
 polygon = PackedVector2Array(100, -6, 100, 2, 103, 2, 103, 3, 104, 3, 104, 8, 105, 10, 107, 10, 108, 9, 108, 4, 125, 13, 130, 13, 132, 12, 134, 10, 135, 8, 135, 3, 133, -3, 107, -11, 105, -11, 104, -11, 104, -12, 99, -15, 97, -15, 96, -14, 96, -10, 95, -10, 95, -10, 95, -9)
 
 [node name="WheelbarrowWithRocks" type="StaticBody2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0.5)
 position = Vector2(-20, 7)
 
 [node name="Sprite2D" type="Sprite2D" parent="WheelbarrowWithRocks"]
