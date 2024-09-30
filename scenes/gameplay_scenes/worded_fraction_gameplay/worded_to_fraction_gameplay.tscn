@@ -1,14 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://2kaqp1f7ukyk"]
+[gd_scene load_steps=31 format=3 uid="uid://2kaqp1f7ukyk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_5ccj4"]
-[ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="2_0yrwa"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="2_hqakt"]
 [ext_resource type="Texture2D" uid="uid://v37nxstby7g0" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board.png" id="2_nip83"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="3_cfd2g"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_eelnt"]
-[ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/Saisai Disappointed.png" id="3_h4416"]
 [ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/characters/old_mc/mc idle front.png" id="4_20jjk"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_no8fb"]
+[ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/characters/racket/Raket idle animation.png" id="5_shug5"]
+[ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="6_82myu"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="8_s1jky"]
 
 [sub_resource type="Animation" id="Animation_yceuv"]
@@ -216,6 +216,38 @@ region = Rect2(0, 128, 64, 64)
 atlas = ExtResource("4_20jjk")
 region = Rect2(0, 192, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mua4a"]
+atlas = ExtResource("5_shug5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0v63"]
+atlas = ExtResource("5_shug5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4stp"]
+atlas = ExtResource("5_shug5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xejf3"]
+atlas = ExtResource("5_shug5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykdic"]
+atlas = ExtResource("6_82myu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xclf"]
+atlas = ExtResource("6_82myu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhlhr"]
+atlas = ExtResource("6_82myu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsxeb"]
+atlas = ExtResource("6_82myu")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p2kin"]
 animations = [{
 "frames": [{
@@ -232,112 +264,60 @@ animations = [{
 "texture": SubResource("AtlasTexture_j7fk2")
 }],
 "loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_thli8"]
-atlas = ExtResource("2_0yrwa")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvabi"]
-atlas = ExtResource("2_0yrwa")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fixcj"]
-atlas = ExtResource("2_0yrwa")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtewf"]
-atlas = ExtResource("2_0yrwa")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04q12"]
-atlas = ExtResource("2_0yrwa")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qroww"]
-atlas = ExtResource("3_h4416")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xl8aw"]
-atlas = ExtResource("3_h4416")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qabt4"]
-atlas = ExtResource("3_h4416")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rw8kd"]
-atlas = ExtResource("3_h4416")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwprp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_thli8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvabi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fixcj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gtewf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_04q12")
-}],
-"loop": true,
-"name": &"idle",
+"name": &"old_robot",
 "speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qroww")
+"texture": SubResource("AtlasTexture_mua4a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xl8aw")
+"texture": SubResource("AtlasTexture_i0v63")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qabt4")
+"texture": SubResource("AtlasTexture_t4stp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rw8kd")
+"texture": SubResource("AtlasTexture_xejf3")
 }],
 "loop": true,
-"name": &"wrong_answer",
+"name": &"racket",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykdic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xclf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhlhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsxeb")
+}],
+"loop": true,
+"name": &"saisai",
 "speed": 8.0
 }]
 
-[node name="WordedFractionGameplay" type="Control"]
-layout_mode = 3
-anchor_left = 0.067
-anchor_right = 0.465
-anchor_bottom = 0.403
-offset_left = -68.608
-offset_right = -476.16
-offset_bottom = -232.128
-size_flags_horizontal = 4
+[node name="WordedFractionGameplay" type="Node2D"]
 script = ExtResource("1_5ccj4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.730216, 0.730216, 0.730216, 1)
-layout_mode = 0
 offset_right = 1023.0
 offset_bottom = 577.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Saisai")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_5xw6g")
 }
 
 [node name="question" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_left = 66.0
 offset_top = 44.0
 offset_right = 748.0
@@ -367,30 +347,15 @@ text = "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consec
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Raket" type="AnimatedSprite2D" parent="."]
+[node name="NPC_Sprites" type="AnimatedSprite2D" parent="."]
 position = Vector2(856, 120)
-scale = Vector2(4.74023, 4.74023)
-
-[node name="OldPeculiar" type="AnimatedSprite2D" parent="."]
-position = Vector2(856, 120)
-scale = Vector2(4.74023, 4.74023)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-autoplay = "default"
-frame = 1
-
-[node name="Saisai" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = 1
-position = Vector2(850, 126)
-scale = Vector2(7.52344, 7.52344)
-sprite_frames = SubResource("SpriteFrames_xwprp")
-animation = &"wrong_answer"
-autoplay = "wrong_answer"
-frame = 1
+animation = &"old_robot"
+frame_progress = 0.490781
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
-layout_mode = 0
 offset_top = 2.0
 offset_right = 256.0
 offset_bottom = 146.0
@@ -399,7 +364,6 @@ texture = ExtResource("2_nip83")
 
 [node name="solution" type="HBoxContainer" parent="."]
 z_index = 1
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -586,7 +550,6 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="submit" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_left = 346.0
 offset_top = 458.0
 offset_right = 458.0
@@ -609,7 +572,6 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="SubmitAnswer" type="Button" parent="."]
-layout_mode = 2
 offset_left = 463.0
 offset_top = 501.0
 offset_right = 565.0
@@ -620,7 +582,6 @@ flat = true
 
 [node name="DisplayAnswer" type="MarginContainer" parent="."]
 z_index = 1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -641,7 +602,6 @@ text = "Display if answer is right or wrong."
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
 offset_left = 881.0
 offset_top = 495.0
 offset_right = 985.0

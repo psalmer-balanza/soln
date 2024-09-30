@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
@@ -23,30 +23,24 @@ var current_question_index = 0  # Track which question the player is on
 @onready var display_answer: Label = $DisplayAnswer/UserAnswer
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
+@onready var npc_sprite = $NPC_Sprites
+@onready var current_npc = DialogueState.current_npc
+
 func _ready():
 	print("ready")
-	if DialogueState.current_npc == "saisai":
-		print("Current npc= saisai")
-		$Raket.visible = false
-		$Saisai.visible = true
-		$OldPeculiar.visible = false
-	elif DialogueState.current_npc == "raket":
-		print("Current npc= raket")
-		$Raket.visible = true
-		$Saisai.visible = false
-		$OldPeculiar.visible = false
-	elif DialogueState.current_npc == "old_peculiar":
-		print("Current npc= old peculiar")
-		$Raket.visible = false
-		$Saisai.visible = false
-		$OldPeculiar.visible = true
-	else:
-		print("No npc found", DialogueState.current_npc)
-		$Raket.visible = false
-		$Saisai.visible = false
-		$OldPeculiar.visible = false
+	npc_active()
 	initiate_questions()
 	display_current_question()
+
+func npc_active():
+	if current_npc == "saisai":
+		npc_sprite.play("saisai")
+	elif current_npc == "racket":
+		npc_sprite.play("racket")
+	elif  current_npc == "old_peculiar":
+		npc_sprite.play("old_robot")
+	else:
+		print("no active npc")
 
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
@@ -102,7 +96,7 @@ func _on_submit_answer_button_down():
 
 	# Validate the inputted fractions against the question
 	if not input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
-		$AnimationPlayer.play("wrong_answer_saisai")
+		# $AnimationPlayer.play("wrong_answer_saisai")
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
 		return
 

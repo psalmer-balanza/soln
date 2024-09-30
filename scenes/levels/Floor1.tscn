@@ -449,7 +449,7 @@ position = Vector2(650, 391)
 position = Vector2(763, 1327)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(515, 665)
+position = Vector2(604, 418)
 
 [node name="front decorations" type="Node2D" parent="."]
 
@@ -505,19 +505,6 @@ to interact"
 
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
 position = Vector2(1308, 689)
-
-[node name="DeadRobotScene" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(559, 627)
-script = null
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_7pd8a")]
 position = Vector2(32, -65)
