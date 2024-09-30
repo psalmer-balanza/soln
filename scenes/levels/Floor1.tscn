@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=33 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -14,11 +14,13 @@
 [ext_resource type="TileSet" uid="uid://cuah0bg365ii6" path="res://tilemaps/floor_1/cave/wall.tres" id="9_tb47j"]
 [ext_resource type="TileSet" uid="uid://2mug3v7qbw0n" path="res://tilemaps/floor_1/general/decoration.tres" id="11_jhipr"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
+[ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="14_5ewdd"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="16_awl35"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
+[ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="19_p2bg2"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="20_yycrb"]
 [ext_resource type="Resource" uid="uid://buiul1opwan62" path="res://dialogue/floor_1/lab_tutorial.dialogue" id="21_rh25p"]
 
@@ -444,8 +446,11 @@ tile_set = ExtResource("9_tb47j")
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(650, 391)
 
+[node name="Snekkers" parent="." instance=ExtResource("14_5ewdd")]
+position = Vector2(763, 1327)
+
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(13, -528)
+position = Vector2(515, 665)
 
 [node name="front decorations" type="Node2D" parent="."]
 
@@ -463,7 +468,7 @@ polygon = PackedVector2Array(-73, -317, -59, -273, -62, -266, -94, -248, -92, -2
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
 [node name="SaisaiRockScene" parent="." instance=ExtResource("16_awl35")]
-position = Vector2(20, 144)
+position = Vector2(9, 146)
 
 [node name="TextBox" parent="." instance=ExtResource("16_etk15")]
 offset_left = 45.0
@@ -501,6 +506,9 @@ to interact"
 
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
 position = Vector2(1308, 689)
+
+[node name="DeadRobotScene" parent="." instance=ExtResource("19_p2bg2")]
+position = Vector2(559, 627)
 
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_7pd8a")]
 position = Vector2(32, -65)
