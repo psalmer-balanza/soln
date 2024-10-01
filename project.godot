@@ -26,7 +26,7 @@ DropZoneTwo="*res://scripts/drag_and_drop/drop_zone_two.gd"
 
 [dialogue_manager]
 
-general/states=["State", "DialogueState", "PlayerState"]
+general/states=["State", "DialogueState", "PlayerState", "Global"]
 general/custom_test_scene_path="res://dialogue/dialogue_tester/TestDialogue.tscn"
 general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
@@ -112,7 +112,7 @@ down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue", "res://dialogue/floor_1/movable_rock.dialogue", "res://dialogue/floor_1/saisai_moving_rocks.dialogue", "res://dialogue/floor_1/snekkers.dialogue", "res://dialogue/floor_1/evil_soln.dialogue", "res://dialogue/floor_1/lab_tutorial.dialogue", "res://dialogue/floor_1/dead_robot_scene.dialogue", "res://dialogue/floor_1/raket_steal.dialogue", "res://dialogue/floor_1/Encounter_6.dialogue", "res://dialogue/floor_1/earthquake_scene.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/floor_1/saisai.dialogue", "res://dialogue/floor_1/raket.dialogue", "res://dialogue/floor_1/movable_rock.dialogue", "res://dialogue/floor_1/saisai_moving_rocks.dialogue", "res://dialogue/floor_1/snekkers.dialogue", "res://dialogue/floor_1/evil_soln.dialogue", "res://dialogue/floor_1/lab_tutorial.dialogue", "res://dialogue/floor_1/dead_robot_scene.dialogue", "res://dialogue/floor_1/raket_steal.dialogue", "res://dialogue/floor_1/Encounter_6.dialogue", "res://dialogue/floor_1/earthquake_scene.dialogue", "res://dialogue/floor_1/auto_start_sample.dialogue")
 
 [layer_names]
 

@@ -2,7 +2,6 @@ extends State
 class_name PlayerDialogueState
 @export var player: CharacterBody2D
 @onready var actionable_finder: Area2D = $"../../ActionableFinder"
-@onready var auto_start_encounter_finder = $"../../AutoStartEncounterFinder"
 
 
 func Enter():
@@ -12,16 +11,10 @@ func Enter():
 	player.velocity = Vector2.ZERO
 	# Trigger dialogue once
 	var actionables = actionable_finder.get_overlapping_areas()
-	var auto_start_encounters = auto_start_encounter_finder.get_overlapping_areas()
-	print("These are the actionables: ", actionables)
-	print("These are the auto start actionables: ", auto_start_encounters)
+
 	if actionables.size() > 0:
 		print("Dialogue found")
 		actionables[0].action()  # Trigger the dialogue interaction
-		Transitioned.emit(self, "IdleState")
-	elif auto_start_encounters.size() > 0:
-		print("Dialogue found")
-		auto_start_encounters[0].action()  # Trigger the dialogue interaction
 		Transitioned.emit(self, "IdleState")
 	else:
 		print("No dialogue found")

@@ -28,6 +28,9 @@ var _locale: String = TranslationServer.get_locale()
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
+		if next_dialogue_line == null:
+			PlayerState.in_dialogue= false
+		
 		is_waiting_for_input = false
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
