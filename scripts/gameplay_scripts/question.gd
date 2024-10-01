@@ -1,10 +1,10 @@
 extends Control
 
 @onready var content = $CenterContainer/Content
-@onready var c1 = $"Answers/Choice 1"
-@onready var c2 = $"Answers/Choice 2"
-@onready var c3 = $"Answers/Choice 3"
-@onready var c4 = $"Answers/Choice 4"
+@onready var c1:Button = $"container/VBoxContainer/Answers/a/Choice 1"
+@onready var c2:Button = $"container/VBoxContainer/Answers/b/Choice 2"
+@onready var c3:Button = $"container/VBoxContainer/Answers/c/Choice 3"
+@onready var c4:Button = $"container/VBoxContainer/Answers/d/Choice 4"
 @onready var question_dictionary = Global.Question_Dictionary
 var index
 var correct_answer
