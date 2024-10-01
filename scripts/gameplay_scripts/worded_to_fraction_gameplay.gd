@@ -33,6 +33,7 @@ func _ready():
 	display_current_question()
 
 func npc_active():
+	npc_sprite.play(current_npc)
 	if current_npc == "saisai":
 		npc_sprite.play("saisai")
 	elif current_npc == "racket":
@@ -123,16 +124,16 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			display_answer.text = "Good job! Correct answer!"
 			next_question_or_finish()  # Move to the next question or finish
 			if DialogueState.current_npc == "old_peculiar":
-				$AnimationPlayer.play("spin_old_peculiar")
+				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("idle_saisai")
-			$AnimationPlayer.play("spin_saisai")
+				#$AnimationPlayer.play("idle_ropbot")
+			$AnimationPlayer.play("spin")
 			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("idle_saisai")
+			#$AnimationPlayer.play("idle_saisai")
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("idle_saisai")
+			#$AnimationPlayer.play("wrong_answer_saisai")
+			#await $AnimationPlayer.animation_finished
+			#$AnimationPlayer.play("idle_saisai")
 			display_answer.text = "Try again."
 	else:
 		# If denominators are different, find the least common denominator (LCD)
@@ -144,11 +145,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if added_adjusted_numerator == answer_numerator and lcd == answer_denominator:
-			$AnimationPlayer.play("spin_saisai")
+			$AnimationPlayer.play("spin")
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
+			#$AnimationPlayer.play("wrong_answer_saisai")
 			display_answer.text = "Try \nagain."
 
 # Move to the next question or finish the exercise

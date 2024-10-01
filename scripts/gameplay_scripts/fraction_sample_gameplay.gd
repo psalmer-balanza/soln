@@ -7,7 +7,7 @@ var fraction_questions = [
 ]
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
-	if DialogueState.current_quest == "raket_stealing":
+	if DialogueState.current_quest == "saisai_rock":
 		fraction_questions = [
 			[[1, 4], [3, 4]],  # First fraction
 			[[35, 70], [15, 30]],  # Second fraction
@@ -66,10 +66,13 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_numerator = first_numerator + second_numerator
 		
 		if added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
-			$AnimationPlayer.play("good_answer")
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
+			$AnimationPlayer.play("wrong_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
 	else: # DIFFERENT DANAMANATORS
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
@@ -78,10 +81,13 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
-			$AnimationPlayer.play("good_answer")
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
+			$AnimationPlayer.play("wrong_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
 
 # Function to either move to the next question or finish

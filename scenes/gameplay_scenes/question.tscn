@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://u4k3ryv31ukj"]
+[gd_scene load_steps=3 format=3 uid="uid://pvy17v1fv4bv"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/question.gd" id="1_pk2pt"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_s2l85"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://2kaqp1f7ukyk"]
+[gd_scene load_steps=27 format=3 uid="uid://2kaqp1f7ukyk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_5ccj4"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="2_hqakt"]
@@ -10,195 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/characters/racket/Raket idle animation.png" id="5_shug5"]
 [ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="6_82myu"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="8_s1jky"]
-
-[sub_resource type="Animation" id="Animation_yceuv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"wrong_answer"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../OldPeculiar:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../OldPeculiar:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_yjdxy"]
-resource_name = "idle_old_peculiar"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../OldPeculiar:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../OldPeculiar:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_g1gs7"]
-resource_name = "idle_saisai"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0]
-}
-
-[sub_resource type="Animation" id="Animation_3ufu4"]
-resource_name = "spin_old_peculiar"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../OldPeculiar:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_gee6t"]
-resource_name = "spin_saisai"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_k78ov"]
-resource_name = "wrong_answer_saisai"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"wrong_answer"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xw6g"]
-_data = {
-"RESET": SubResource("Animation_yceuv"),
-"idle_old_peculiar": SubResource("Animation_yjdxy"),
-"idle_saisai": SubResource("Animation_g1gs7"),
-"spin_old_peculiar": SubResource("Animation_3ufu4"),
-"spin_saisai": SubResource("Animation_gee6t"),
-"wrong_answer_saisai": SubResource("Animation_k78ov")
-}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_red00"]
 atlas = ExtResource("4_20jjk")
@@ -302,6 +113,43 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_bvvel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC_Sprites:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hsrhq"]
+resource_name = "spin"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NPC_Sprites:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -6.28319, -6.28319, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j2dn"]
+_data = {
+"RESET": SubResource("Animation_bvvel"),
+"spin": SubResource("Animation_hsrhq")
+}
+
 [node name="WordedFractionGameplay" type="Node2D"]
 script = ExtResource("1_5ccj4")
 
@@ -310,12 +158,6 @@ self_modulate = Color(0.730216, 0.730216, 0.730216, 1)
 offset_right = 1023.0
 offset_bottom = 577.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_5xw6g")
-}
 
 [node name="question" type="MarginContainer" parent="."]
 offset_left = 66.0
@@ -352,7 +194,12 @@ position = Vector2(856, 120)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
 animation = &"old_robot"
-frame_progress = 0.490781
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6j2dn")
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
