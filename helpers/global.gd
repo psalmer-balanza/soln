@@ -1,5 +1,6 @@
 extends Node
 
+# for boss battle scene
 var Enemy_HP = 100
 var Current_HP = 100
 var Question = false
@@ -50,3 +51,6 @@ func constructQuestionDictionary(response):
 			question["correct_answer"]
 		]
 	return Question_Dictionary
+
+# for smithing mini game
+var ores_inside:int = 0

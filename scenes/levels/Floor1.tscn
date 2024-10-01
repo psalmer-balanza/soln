@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=32 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="14_5ewdd"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="16_awl35"]
-[ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="16_bko2w"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
@@ -510,8 +509,18 @@ position = Vector2(1308, 689)
 [node name="MovableShinyRock" parent="." instance=ExtResource("19_7pd8a")]
 position = Vector2(32, -65)
 
-[node name="CollectingSwordPieces" parent="." instance=ExtResource("16_bko2w")]
+[node name="CollectingSwordPieces" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(965, 1231)
+script = null
 
 [node name="Lab Actionable" parent="." instance=ExtResource("20_yycrb")]
 dialogue_resource = ExtResource("21_rh25p")
