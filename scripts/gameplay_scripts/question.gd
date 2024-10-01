@@ -1,6 +1,6 @@
 extends Control
 
-@onready var content = $CenterContainer/Content
+@onready var content = $container/VBoxContainer/Content
 @onready var c1:Button = $"container/VBoxContainer/Answers/a/Choice 1"
 @onready var c2:Button = $"container/VBoxContainer/Answers/b/Choice 2"
 @onready var c3:Button = $"container/VBoxContainer/Answers/c/Choice 3"
@@ -25,19 +25,19 @@ func _choose_question() -> int:
 	return RandomNumberGenerator.new().randi_range(1, question_dictionary.size())
 
 func _on_choice_1_pressed() -> void:
-	answer = $"Answers/Choice 1".text
+	answer = c1.text
 	_check_answer()
 
 func _on_choice_2_pressed() -> void:
-	answer = $"Answers/Choice 2".text
+	answer = c2.text
 	_check_answer()
 
 func _on_choice_3_pressed() -> void:
-	answer = $"Answers/Choice 3".text
+	answer = c3.text
 	_check_answer()
 
 func _on_choice_4_pressed() -> void:
-	answer = $"Answers/Choice 4".text
+	answer = c4.text
 	_check_answer()
 
 func _check_answer():
