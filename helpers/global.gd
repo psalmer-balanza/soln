@@ -1,9 +1,9 @@
 extends Node
 
 # for boss battle scene
-var Enemy_HP = 100
-var Current_HP = 100
-var Question = false
+var Enemy_HP:int = 100
+var Current_HP:int = 100
+var Question:bool = false
 var tilemap: TileMapLayer
 var Question_Dictionary
 signal questions_loaded
@@ -53,4 +53,4 @@ func constructQuestionDictionary(response):
 	return Question_Dictionary
 
 # for smithing mini game
-var ores_inside:int = 0
+var ores_inside:Array [CharacterBody2D] = []
