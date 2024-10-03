@@ -449,7 +449,7 @@ position = Vector2(650, 391)
 position = Vector2(763, 1327)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1272, 1176)
+position = Vector2(32, -573)
 
 [node name="front decorations" type="Node2D" parent="."]
 
