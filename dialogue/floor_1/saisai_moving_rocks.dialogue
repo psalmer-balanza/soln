@@ -1,6 +1,7 @@
 ~ start
 set in_dialogue = true
 set current_npc = "saisai"
+set current_quest = "saisai_rock"
 Saisai: Oh, there you are! I’m trying to move this rock, but it’s too heavy for me to carry all at once.  
 Saisai: I’m going to move it in parts. I’ll need your help to figure out how much I’ve moved so far.  
 ~ saisai_fraction_first_step
@@ -50,7 +51,7 @@ Saisai: This is the last bit. I’ll move the final 1/4 of the rock. Can you tel
 - 1
 	Saisai: Exactly! I’ve moved the entire rock. Now I can move it to the other side. Watch this! [wait=2] [do saisai_move_rocks_cutscene()]
 	[set saisai_quest_progress = 1]
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/addition_fraction/fraction_sample_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
 	=> END
 - 3/4
 	Saisai: No, I’ve already moved 3/4, and now I’m moving the last 1/4.

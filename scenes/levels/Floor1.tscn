@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=32 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -285,6 +285,7 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1qw2u"]
 radius = 45.0999
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awt54"]
 size = Vector2(104, 20)
 
@@ -458,7 +459,8 @@ position = Vector2(650, 391)
 position = Vector2(763, 1327)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(281, -431)
+position = Vector2(32, -573)
+
 
 [node name="front decorations" type="Node2D" parent="."]
 
@@ -540,6 +542,7 @@ dialogue_resource = ExtResource("25_1hwra")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SampleScene"]
 position = Vector2(77, -102)
 shape = SubResource("RectangleShape2D_sqv70")
+
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

@@ -18,5 +18,6 @@ func play_move_rock() -> void:
 	$Saisai/AnimatedSprite2D.visible = false
 	$WheelbarrowWithRocks.visible = false
 	DialogueState.in_dialogue = false
+	$RegularRock/Barrier.disabled = true
 	has_moved_rock = true
 	

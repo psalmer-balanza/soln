@@ -1,13 +1,13 @@
 extends Control
 
 var fraction_questions = [
-	[[1, 4], [3, 4]],  # First fraction
-	[[1, 2], [1, 2]],  # Second fraction
-	[[2, 5], [2, 5]],  # Third fraction
+	[[1, 2], [1, 2]],  # First fraction
+	[[3, 2], [1, 2]],  # Second fraction
+	[[3, 2], [2, 5]],  # Third fraction
 ]
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
-	if DialogueState.current_quest == "raket_stealing":
+	if DialogueState.current_quest == "saisai_rock":
 		fraction_questions = [
 			[[1, 4], [3, 4]],  # First fraction
 			[[35, 70], [15, 30]],  # Second fraction
@@ -23,11 +23,20 @@ func initiate_questions():
 
 var current_question_index = 0  # Track which question the player is on
 
-@onready var numerator_input: LineEdit = $Answer/NumeratorAnswer
-@onready var denominator_input: LineEdit = $Answer/DenominatorAnswer
-@onready var first_fraction_given: RichTextLabel = $FirstFraction/FractionOne
-@onready var second_fraction_given: RichTextLabel = $SecondFraction/FractionTwo
-@onready var display_answer: RichTextLabel = $DisplayAnswer/UserAnswer
+@onready var numerator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
+@onready var denominator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
+@onready var first_num_label:Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/numerator
+@onready var first_denum_label:Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/denominator
+@onready var second_num_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
+@onready var second_denum_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
+@onready var display_answer: Label = $addition/VBoxContainer/result
+@onready var numerator_answer = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
+@onready var denominator_answer = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
+
+var first_num:int
+var first_denum:int
+var second_num:int
+var second_denum:int
 
 func _ready():
 	# Start by displaying the first question
@@ -42,51 +51,59 @@ func display_current_question():
 	var second_fraction = current_question[1]
 	
 	# Set the text for the first and second fractions
-	first_fraction_given.bbcode_text = "%d -- %d" % [first_fraction[0], first_fraction[1]]
-	second_fraction_given.bbcode_text = "%d -- %d" % [second_fraction[0], second_fraction[1]]
-
-# Function called when the submit answer button is pressed
-func _on_submit_answer_button_down():
-	# Split the string using the right delimiter " -- "
-	var first_fraction_split = first_fraction_given.text.split(" -- ")
-	var second_fraction_split = second_fraction_given.text.split(" -- ")
+	first_num = first_fraction[0]
+	first_denum = first_fraction[1]
+	second_num = second_fraction[0]
+	second_denum = second_fraction[1]
 	
-	var first_numerator = int(first_fraction_split[0])
-	var first_denominator = int(first_fraction_split[1])
-	var second_numerator = int(second_fraction_split[0])
-	var second_denominator = int(second_fraction_split[1])
-
-	# Check the answer for the current fraction
-	fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator)
+	# display fractions
+	first_num_label.text = str(first_num)
+	first_denum_label.text = str(first_denum)
+	second_num_label.text = str(second_num)
+	second_denum_label.text = str(second_denum)
 
 # Function to check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
 	if first_denominator == second_denominator:
+		print("same denominator")
 		var added_numerator = first_numerator + second_numerator
 		
 		if added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
-			$AnimationPlayer.play("good_answer")
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			next_question_or_finish()  # Move to the next question or finish the exercise
+			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)):
+				added_numerator 
+				#display_answer.text = "Can be simplified"
+			
+			#next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
+			$AnimationPlayer.play("wrong_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
 	else: # DIFFERENT DANAMANATORS
+		print("different denominator")
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
-			$AnimationPlayer.play("good_answer")
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			next_question_or_finish()  # Move to the next question or finish the exercise
+			#next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
+			$AnimationPlayer.play("wrong_answer_saisai")
+			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
 
 # Function to either move to the next question or finish
 func next_question_or_finish():
 	if current_question_index < fraction_questions.size() - 1:
 		current_question_index += 1  # Move to the next question
+		numerator_answer.clear()
+		denominator_answer.clear()
 		display_current_question()  # Update the UI with the next question
 	else:
 		# If all questions are answered, return to the world
@@ -97,3 +114,9 @@ func next_question_or_finish():
 func return_to_world():
 	print("Returning")
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+
+func _on_submit_answer_pressed() -> void:
+	fraction_addition_checker(first_num, first_denum, second_num, second_denum)
+
+func _on_button_pressed() -> void:
+	return_to_world()

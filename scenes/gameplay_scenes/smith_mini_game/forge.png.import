@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xeebeebeup7b"
-path="res://.godot/imported/Soln.png-4f54494dbf358e3099808f688edcde2d.ctex"
+uid="uid://ch8nph2tfja2j"
+path="res://.godot/imported/forge.png-ed11b611597a63a5c4b3c279d05a096c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Soln.png"
-dest_files=["res://.godot/imported/Soln.png-4f54494dbf358e3099808f688edcde2d.ctex"]
+source_file="res://scenes/gameplay_scenes/smith_mini_game/forge.png"
+dest_files=["res://.godot/imported/forge.png-ed11b611597a63a5c4b3c279d05a096c.ctex"]
 
 [params]
 

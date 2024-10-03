@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://djk22k3j63p7n"]
+[gd_scene load_steps=3 format=3 uid="uid://cijksgyc2vvhx"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_endvx"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_5jy6y"]

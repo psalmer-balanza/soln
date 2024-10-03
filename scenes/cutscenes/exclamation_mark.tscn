@@ -72,6 +72,3 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_ksghd")
 autoplay = "default"
 frame_progress = 0.527073
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 1, 0.556863, 1)

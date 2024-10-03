@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
@@ -23,21 +23,25 @@ var current_question_index = 0  # Track which question the player is on
 @onready var display_answer: Label = $DisplayAnswer/UserAnswer
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
+@onready var npc_sprite = $NPC_Sprites
+@onready var current_npc = DialogueState.current_npc
+
 func _ready():
 	print("ready")
-	if DialogueState.current_npc == "saisai":
-		print("Current npc= saisai")
-		$Raket.visible = false
-		$Saisai.visible = true
-	elif DialogueState.current_npc == "raket":
-		print("Current npc= raket")
-		$Raket.visible = true
-		$Saisai.visible = false
-	else:
-		$Raket.visible = false
-		$Saisai.visible = false
+	npc_active()
 	initiate_questions()
 	display_current_question()
+
+func npc_active():
+	npc_sprite.play(current_npc)
+	if current_npc == "saisai":
+		npc_sprite.play("saisai")
+	elif current_npc == "racket":
+		npc_sprite.play("racket")
+	elif  current_npc == "old_peculiar":
+		npc_sprite.play("old_robot")
+	else:
+		print("no active npc")
 
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
@@ -93,7 +97,7 @@ func _on_submit_answer_button_down():
 
 	# Validate the inputted fractions against the question
 	if not input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
-		$AnimationPlayer.play("wrong_answer_saisai")
+		# $AnimationPlayer.play("wrong_answer_saisai")
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
 		return
 
@@ -119,13 +123,17 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			
 			display_answer.text = "Good job! Correct answer!"
 			next_question_or_finish()  # Move to the next question or finish
-			$AnimationPlayer.play("spin_saisai")
+			if DialogueState.current_npc == "old_peculiar":
+				$AnimationPlayer.play("spin")
+				await $AnimationPlayer.animation_finished
+				#$AnimationPlayer.play("idle_ropbot")
+			$AnimationPlayer.play("spin")
 			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("idle_saisai")
+			#$AnimationPlayer.play("idle_saisai")
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("idle_saisai")
+			#$AnimationPlayer.play("wrong_answer_saisai")
+			#await $AnimationPlayer.animation_finished
+			#$AnimationPlayer.play("idle_saisai")
 			display_answer.text = "Try again."
 	else:
 		# If denominators are different, find the least common denominator (LCD)
@@ -137,11 +145,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if added_adjusted_numerator == answer_numerator and lcd == answer_denominator:
-			$AnimationPlayer.play("spin_saisai")
+			$AnimationPlayer.play("spin")
 			display_answer.text = "Good job! \nCorrect answer!"
 			next_question_or_finish()  # Move to the next question or finish
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
+			#$AnimationPlayer.play("wrong_answer_saisai")
 			display_answer.text = "Try \nagain."
 
 # Move to the next question or finish the exercise

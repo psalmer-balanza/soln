@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bxo6j35kps37h"
+path="res://.godot/imported/collecting_sword_in_the_cave.dialogue-4675307c5843860029c5e1af00970866.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/collecting_sword_in_the_cave.dialogue"
+dest_files=["res://.godot/imported/collecting_sword_in_the_cave.dialogue-4675307c5843860029c5e1af00970866.tres"]
+
+[params]
+
+defaults=true
