@@ -81,10 +81,10 @@ theme = SubResource("Theme_qq3yp")
 
 [node name="TextureRect" type="TextureRect" parent="Balloon"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 422.0
-offset_right = 1137.0
-offset_bottom = 645.0
+offset_left = 24.0
+offset_top = 352.0
+offset_right = 1015.0
+offset_bottom = 552.0
 texture = ExtResource("2_qm8bp")
 expand_mode = 1
 
@@ -129,10 +129,10 @@ z_index = -1
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-offset_left = 576.0
-offset_top = 61.0
-offset_right = 1088.0
-offset_bottom = 573.0
+offset_left = 661.0
+offset_top = 20.0
+offset_right = 1173.0
+offset_bottom = 532.0
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
@@ -141,10 +141,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -549.0
-offset_top = -703.0
-offset_right = 92.0
-offset_bottom = -299.0
+offset_left = -472.0
+offset_top = -520.0
+offset_right = 36.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 
