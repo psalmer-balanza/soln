@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="20_yycrb"]
 [ext_resource type="Resource" uid="uid://buiul1opwan62" path="res://dialogue/floor_1/lab_tutorial.dialogue" id="21_rh25p"]
+[ext_resource type="PackedScene" uid="uid://ch6uv3i2ch2r1" path="res://helpers/auto_start_encounter.tscn" id="23_r2c22"]
+[ext_resource type="Resource" uid="uid://b6e65bcx3nrwm" path="res://dialogue/floor_1/earthquake_scene.dialogue" id="24_h1ofu"]
+[ext_resource type="Resource" uid="uid://ct4iqh2hji2sa" path="res://dialogue/floor_1/auto_start_sample.dialogue" id="25_1hwra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -282,6 +285,13 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1qw2u"]
 radius = 45.0999
 
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awt54"]
+size = Vector2(104, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqv70"]
+size = Vector2(24, 71)
+
 [node name="Floor1" type="Node2D"]
 position = Vector2(2, 4)
 script = ExtResource("1_akh82")
@@ -451,6 +461,7 @@ position = Vector2(763, 1327)
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(32, -573)
 
+
 [node name="front decorations" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="front decorations"]
@@ -515,6 +526,23 @@ dialogue_resource = ExtResource("21_rh25p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab Actionable"]
 position = Vector2(353, -483)
 shape = SubResource("CircleShape2D_1qw2u")
+
+[node name="Actionable2" parent="." instance=ExtResource("23_r2c22")]
+position = Vector2(1276, 981)
+dialogue_resource = ExtResource("24_h1ofu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+position = Vector2(12, 164)
+shape = SubResource("RectangleShape2D_awt54")
+
+[node name="SampleScene" parent="." instance=ExtResource("23_r2c22")]
+position = Vector2(1145, 1292)
+dialogue_resource = ExtResource("25_1hwra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SampleScene"]
+position = Vector2(77, -102)
+shape = SubResource("RectangleShape2D_sqv70")
+
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

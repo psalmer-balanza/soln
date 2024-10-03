@@ -5,6 +5,8 @@ set in_dialogue = true
 
 if earthquake_scene == "first_time"
 	Main Character: Woahh, a sudden earthquake.
+	Main Character: It'd be hard collecting the irons now.
+	Main Character: One falling rock and I could break.
 	set earthquake_scene = "done"
 	=> end
 elif earthquake_scene == "done"

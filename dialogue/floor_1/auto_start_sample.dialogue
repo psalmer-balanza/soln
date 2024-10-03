@@ -1,0 +1,11 @@
+~ start
+
+set current_quest = "auto_start_sample"
+set in_dialogue = true
+
+Narrator: "Earthquake scene activated"
+=> end
+
+~ end
+set in_dialogue = false
+=> END

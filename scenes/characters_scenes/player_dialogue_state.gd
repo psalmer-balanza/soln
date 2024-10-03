@@ -3,6 +3,7 @@ class_name PlayerDialogueState
 @export var player: CharacterBody2D
 @onready var actionable_finder: Area2D = $"../../ActionableFinder"
 
+
 func Enter():
 
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
@@ -10,6 +11,7 @@ func Enter():
 	player.velocity = Vector2.ZERO
 	# Trigger dialogue once
 	var actionables = actionable_finder.get_overlapping_areas()
+
 	if actionables.size() > 0:
 		print("Dialogue found")
 		actionables[0].action()  # Trigger the dialogue interaction

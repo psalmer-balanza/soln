@@ -4,6 +4,7 @@ extends Node
 var first_time_initializing_floor_scene: bool = true
 var saved_position: Vector2
 var saved_scene: String = "res://scenes/levels/Floor1.tscn"
+var player_in_dialogue: bool = false
 
 func save_player_state(position: Vector2, current_scene: String):
 	saved_position = position
