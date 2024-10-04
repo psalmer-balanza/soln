@@ -19,5 +19,7 @@ func play_move_rock() -> void:
 	$WheelbarrowWithRocks.visible = false
 	DialogueState.in_dialogue = false
 	$RegularRock/Barrier.disabled = true
+	$WheelbarrowWithRocks/CollisionPolygon2D.disabled = true
+	$Wheelbarrow/CollisionPolygon2D.disabled = true
 	has_moved_rock = true
 	

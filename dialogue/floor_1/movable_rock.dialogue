@@ -2,44 +2,27 @@
 set in_dialogue = true
 
 A large rock blocks your path, and a magical inscription appears on its surface.  
+For some reason, this inscription is quite familiar to you, where do you know it from?
 To clear the path, solve this riddle inscribed on the rock:
 
+~ question
 "To split the rock, we divide it into portions.  
-One traveler takes 1/2 of the rock's mass, and another takes 1/4.  
+One traveler takes 1/4 of the rock's mass, and another takes 2/4.  
 How much of the rock's mass have we taken together?"
 
 - 3/4
-	Correct! The magical force recognizes your wisdom. [do remove_rock()]
+	Correct! The magical force recognizes your wisdom, and the path is cleared! [do remove_rock()]
 	=> end
 - 1/2
 	That's incorrect. You've miscalculated. The rock remains intact. [wait=1]
-	=> start_try_again
-- 1
+	=> question
+- 4/4
 	That's too much! The magic won't accept this. Try again. [wait=1]
-	=> start_try_again
+	=> question
+- What was that again?
+	=> question
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
-
-~ start_try_again
-
-The rock still blocks your path. The inscription glows again with the same riddle:
-
-"To split the rock, we divide it into portions.  
-One traveler takes 1/2 of the rock's mass, and another takes 1/4.  
-How much of the rock's mass have we taken together?"
-
-- 3/4
-	Correct! The rock shatters and clears the path. Fading into nothingness. [wait=2] [do remove_rock()]
-	=> end 
-- 1/2
-	Incorrect again. The magic is patient, but the rock remains solid. [wait=1]
-	=> start_try_again
-- 1
-	No, that's not right. You must think carefully. Try again! [wait=1]
-	=> start_try_again
-- Do nothing
-	Rock: The magical light fades. AHAHAHAH. [wait=1]
 	=> end
 
 ~ end

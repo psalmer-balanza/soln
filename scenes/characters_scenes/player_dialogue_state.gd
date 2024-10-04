@@ -23,6 +23,7 @@ func Enter():
 
 func Update(delta: float):
 	if DialogueState.in_dialogue == false:
+		await get_tree().create_timer(1.0).timeout
 		Transitioned.emit(self, "IdleState")
 
 # Player must not move during dialogue so do NOTHING HERE
