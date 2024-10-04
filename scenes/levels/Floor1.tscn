@@ -458,7 +458,11 @@ position = Vector2(650, 391)
 position = Vector2(763, 1327)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
+<<<<<<< Updated upstream
 position = Vector2(297, -453)
+=======
+position = Vector2(1292, 1057)
+>>>>>>> Stashed changes
 
 [node name="front decorations" type="Node2D" parent="."]
 

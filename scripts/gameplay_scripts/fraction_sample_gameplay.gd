@@ -1,7 +1,7 @@
 extends Control
 
 var fraction_questions = [
-	[[1, 2], [1, 2]],  # First fraction
+	[[4, 3], [2, 6]],  # First fraction
 	[[3, 2], [1, 2]],  # Second fraction
 	[[3, 2], [2, 5]],  # Third fraction
 ]
@@ -30,13 +30,12 @@ var current_question_index = 0  # Track which question the player is on
 @onready var second_num_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
 @onready var second_denum_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
 @onready var display_answer: Label = $addition/VBoxContainer/result
-@onready var numerator_answer = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
-@onready var denominator_answer = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
 
 var first_num:int
 var first_denum:int
 var second_num:int
 var second_denum:int
+var is_simplified = false
 
 func _ready():
 	# Start by displaying the first question
@@ -65,45 +64,78 @@ func display_current_question():
 # Function to check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
 	if first_denominator == second_denominator:
-		print("same denominator")
 		var added_numerator = first_numerator + second_numerator
 		
-		if added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
+		if is_simplified:
+			if check_simplified_form():
+				display_answer.text = "Nice! \nCorrect simplified form."
+				is_simplified = false
+				next_question_or_finish()  # Move to the next question or finish the exercise
+			else:
+				display_answer.text = "Try again! \nCheck your GCD value."
+				is_simplified = true
+				
+		elif added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)):
-				added_numerator 
-				#display_answer.text = "Can be simplified"
-			
-			#next_question_or_finish()  # Move to the next question or finish the exercise
+			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
+				display_answer.text = "Good job! \nBut answer can be simplified."
+				is_simplified = true
+			else:
+				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
-	else: # DIFFERENT DANAMANATORS
-		print("different denominator")
+			
+	else: # DIFFERENT DENOMINATORS
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
-		if added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
+		if is_simplified:
+			if check_simplified_form():
+				display_answer.text = "Nice! \nCorrect simplified form."
+				is_simplified = false
+				next_question_or_finish()  # Move to the next question or finish the exercise
+			else:
+				display_answer.text = "Try again! \nCheck your GCD value."
+				is_simplified = true
+	
+		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			#next_question_or_finish()  # Move to the next question or finish the exercise
+			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
+				display_answer.text = "Good job! \nBut answer can be simplified."
+				is_simplified = true
+			else:
+				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Try again."
 
+# Function to check for the simplified answer
+func check_simplified_form() -> bool:
+	var gcd_value: int = GlobalFractionFunctions.gcd(int(numerator_input.text), int(denominator_input.text))
+	
+	var simplified_numerator = int(numerator_input.text) / gcd_value
+	var simplified_denominator = int(denominator_input.text) / gcd_value
+	
+	if simplified_numerator == int(numerator_input.text) and simplified_denominator == int(denominator_input.text):
+		return true
+		
+	return false
+
 # Function to either move to the next question or finish
 func next_question_or_finish():
 	if current_question_index < fraction_questions.size() - 1:
 		current_question_index += 1  # Move to the next question
-		numerator_answer.clear()
-		denominator_answer.clear()
+		numerator_input.clear()
+		denominator_input.clear()
 		display_current_question()  # Update the UI with the next question
 	else:
 		# If all questions are answered, return to the world

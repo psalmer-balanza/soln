@@ -6,7 +6,9 @@
 texture = ExtResource("1_mjw41")
 texture_region_size = Vector2i(64, 64)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 22.6274, -32, 13.6118, -21.2132, 14.4957, -9.19239, 17.5009, -6.01041, 12.7279, -1.59099, 11.3137, 7.07107, 13.7886, 15.9099, 10.4681, 22.0497, 10.2453, 32, 32, 32)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -21.3268, -32, -17.5385, -27.0794, -13.3292, -20.6252, -12.9083, -14.592, -12.768, -8.27816, -16.5563, -6.17354, -12.3471, 1.40308, -11.2246, 9.26031, -14.592, 15.9951, -11.3649, 19.0819, -10.1022, 23.9926, -10.6634, 32, -32, 32)
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -43,7 +45,9 @@ texture_region_size = Vector2i(64, 64)
 3:9/0 = 0
 4:9/0 = 0
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [resource]
 tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iohpm")
