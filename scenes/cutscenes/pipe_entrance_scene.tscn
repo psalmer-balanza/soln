@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceaj0vrfn3hs2"]
+
+[ext_resource type="Texture2D" uid="uid://ccpdvbhc5osns" path="res://assets/floor_1/cutscenes/Pipe entrance in the cave.png" id="1_kxexc"]
+
+[node name="PipeEntranceScene" type="Node2D"]
+
+[node name="PipeEntranceInTheCave" type="Sprite2D" parent="."]
+texture = ExtResource("1_kxexc")
