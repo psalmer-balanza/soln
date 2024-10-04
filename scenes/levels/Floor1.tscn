@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=34 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -22,9 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="20_yycrb"]
 [ext_resource type="Resource" uid="uid://buiul1opwan62" path="res://dialogue/floor_1/lab_tutorial.dialogue" id="21_rh25p"]
-[ext_resource type="Resource" uid="uid://b6e65bcx3nrwm" path="res://dialogue/floor_1/earthquake_scene.dialogue" id="24_h1ofu"]
-[ext_resource type="Resource" uid="uid://ct4iqh2hji2sa" path="res://dialogue/floor_1/auto_start_sample.dialogue" id="25_1hwra"]
-[ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/pipe_entrance_scene.tscn" id="25_5bhqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -525,44 +522,13 @@ dialogue_resource = ExtResource("21_rh25p")
 position = Vector2(353, -483)
 shape = SubResource("CircleShape2D_1qw2u")
 
-[node name="Actionable2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(1276, 981)
-dialogue_resource = ExtResource("24_h1ofu")
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+[node name="Actionable2#CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 164)
 shape = SubResource("RectangleShape2D_awt54")
 
-[node name="SampleScene" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(1145, 1292)
-dialogue_resource = ExtResource("25_1hwra")
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SampleScene"]
+[node name="SampleScene#CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(77, -102)
 shape = SubResource("RectangleShape2D_sqv70")
-
-[node name="PipeEntranceScene" parent="." instance=ExtResource("25_5bhqw")]
-position = Vector2(600, 1265)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]
