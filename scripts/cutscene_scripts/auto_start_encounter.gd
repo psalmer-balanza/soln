@@ -1,9 +1,4 @@
-# Or do you wanna try making dialogue autostart when you enter collision with the actionables, 
-# instead of manually pressing space? 
-# Or maybe try to implement dialogue -> gameplay scene 
-# -> dialogue  cause all we have rn is dialogue -> gameplay scene -> floor 1
-
-# BUG 1: Player stills walks since the PlayerDialogueState is not emitted (PARTIAL FIX)
+# BUG 1: Player stills walks since the PlayerDialogueState is not emitted (FIX)
 
 extends Area2D
 
