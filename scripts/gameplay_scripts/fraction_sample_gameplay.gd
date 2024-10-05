@@ -1,40 +1,41 @@
 extends Control
 
 var fraction_questions = [
-	[[4, 3], [2, 6]],  # First fraction
+	[[2, 3], [1, 3]],  # First fraction
 	[[3, 2], [1, 2]],  # Second fraction
 	[[3, 2], [2, 5]],  # Third fraction
 ]
+
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
 	if DialogueState.current_quest == "saisai_rock":
 		fraction_questions = [
-			[[1, 4], [3, 4]],  # First fraction
-			[[35, 70], [15, 30]],  # Second fraction
-			[[2, 5], [2, 5]],  # Third fraction
+			[[5, 4], [3, 4]],  # First fraction
+			[[7, 10], [1, 5]],  # Second fraction
+			[[9, 5], [4, 5]],  # Third fraction
 		]
 	elif DialogueState.current_quest == "dead_robot":
 		print("Doing dead robot questions")
 		fraction_questions = [
-			[[1, 4], [3, 4]],  # First fraction
-			[[2, 3], [1, 3]],  # Second fraction
-			[[2, 5], [2, 5]],  # Third fraction
+			[[3, 4], [1, 4]],  # First fraction
+			[[5, 6], [1, 3]],  # Second fraction
+			[[7, 5], [2, 5]],  # Third fraction
 		]
 
 var current_question_index = 0  # Track which question the player is on
 
 @onready var numerator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
 @onready var denominator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
-@onready var first_num_label:Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/numerator
-@onready var first_denum_label:Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/denominator
-@onready var second_num_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
-@onready var second_denum_label:Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
+@onready var first_num_label: Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/numerator
+@onready var first_denum_label: Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/denominator
+@onready var second_num_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
+@onready var second_denum_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
 @onready var display_answer: Label = $addition/VBoxContainer/result
 
-var first_num:int
-var first_denum:int
-var second_num:int
-var second_denum:int
+var first_num: int
+var first_denum: int
+var second_num: int
+var second_denum: int
 var is_simplified = false
 
 func _ready():
@@ -61,10 +62,10 @@ func display_current_question():
 	second_num_label.text = str(second_num)
 	second_denum_label.text = str(second_denum)
 
-# Function to check the fraction addition answer
-func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
+# Function to check the fraction subtraction answer
+func fraction_subtraction_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
 	if first_denominator == second_denominator:
-		var added_numerator = first_numerator + second_numerator
+		var subtracted_numerator = first_numerator - second_numerator
 		
 		if is_simplified:
 			if check_simplified_form():
@@ -75,11 +76,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				display_answer.text = "Try again! \nCheck your GCD value."
 				is_simplified = true
 				
-		elif added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
+		elif subtracted_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
+			if GlobalFractionFunctions.check_lowest_form(subtracted_numerator, int(denominator_input.text)): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 			else:
@@ -87,13 +88,14 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Try again."
 			
-	else: # DIFFERENT DENOMINATORS
+	else:  # DIFFERENT DENOMINATORS
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
-		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
+		var subtracted_adjusted_numerator = adjusted_first_numerator - adjusted_second_numerator
 		
 		if is_simplified:
 			if check_simplified_form():
@@ -104,11 +106,12 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				display_answer.text = "Try again! \nCheck your GCD value."
 				is_simplified = true
 	
-		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
+		elif subtracted_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
+			if GlobalFractionFunctions.check_lowest_form(subtracted_adjusted_numerator, lcd): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 			else:
@@ -116,6 +119,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Try again."
 
 # Function to check for the simplified answer
@@ -145,10 +149,10 @@ func next_question_or_finish():
 # Function to return to the world scene
 func return_to_world():
 	print("Returning")
-	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/test_floor1/test_floor2.tscn")
 
 func _on_submit_answer_pressed() -> void:
-	fraction_addition_checker(first_num, first_denum, second_num, second_denum)
+	fraction_subtraction_checker(first_num, first_denum, second_num, second_denum)
 
 func _on_button_pressed() -> void:
 	return_to_world()

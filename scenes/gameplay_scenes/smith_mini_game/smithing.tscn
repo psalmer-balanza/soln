@@ -5,6 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://boce8o260p7il" path="res://scenes/gameplay_scenes/smith_mini_game/ore.tscn" id="2_gkncs"]
 [ext_resource type="Texture2D" uid="uid://dsn4t8knd5gqc" path="res://scenes/gameplay_scenes/smith_mini_game/liquid_metal.png" id="3_6vvy4"]
 
+[sub_resource type="Animation" id="Animation_t17m3"]
+resource_name = "0"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(511, 368)]
+}
+
 [sub_resource type="Animation" id="Animation_jxx30"]
 resource_name = "100"
 length = 2.0
@@ -20,71 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(511, 256), Vector2(511, 253)]
-}
-
-[sub_resource type="Animation" id="Animation_adwqp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LiquidMetal:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(511, 256)]
-}
-
-[sub_resource type="Animation" id="Animation_k223k"]
-resource_name = "80"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LiquidMetal:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(511, 279), Vector2(511, 276), Vector2(511, 279)]
-}
-
-[sub_resource type="Animation" id="Animation_hgrpn"]
-resource_name = "60"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LiquidMetal:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(511, 300), Vector2(511, 297)]
-}
-
-[sub_resource type="Animation" id="Animation_gwnnv"]
-resource_name = "40"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LiquidMetal:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(511, 324), Vector2(511, 321)]
 }
 
 [sub_resource type="Animation" id="Animation_ihx6x"]
@@ -104,9 +55,58 @@ tracks/0/keys = {
 "values": [Vector2(511, 349), Vector2(511, 346)]
 }
 
-[sub_resource type="Animation" id="Animation_t17m3"]
-resource_name = "0"
+[sub_resource type="Animation" id="Animation_gwnnv"]
+resource_name = "40"
+length = 2.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 324), Vector2(511, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_hgrpn"]
+resource_name = "60"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 300), Vector2(511, 297)]
+}
+
+[sub_resource type="Animation" id="Animation_k223k"]
+resource_name = "80"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(511, 279), Vector2(511, 276), Vector2(511, 279)]
+}
+
+[sub_resource type="Animation" id="Animation_adwqp"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -117,7 +117,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(511, 368)]
+"values": [Vector2(511, 256)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ovrax"]
