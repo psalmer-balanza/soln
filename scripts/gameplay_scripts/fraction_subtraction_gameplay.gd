@@ -65,10 +65,10 @@ func display_current_question():
 # Function to check the fraction subtraction answer
 func fraction_subtraction_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
 	if first_denominator == second_denominator:
-		var added_numerator = first_numerator + second_numerator
+		var subtracted_numerator = first_numerator - second_numerator
 		
 		if is_simplified:
-			if check_simplified_form(added_numerator, first_denominator):
+			if check_simplified_form(subtracted_numerator, first_denominator):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
 				next_question_or_finish()  # Move to the next question or finish the exercise
@@ -76,11 +76,11 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				display_answer.text = "Try again! \nCheck your GCD value."
 				is_simplified = true
 				
-		elif added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
+		elif subtracted_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
+			if GlobalFractionFunctions.check_lowest_form(subtracted_numerator, int(denominator_input.text)): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 			else:
@@ -95,10 +95,10 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
-		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
+		var subtracted_adjusted_numerator = adjusted_first_numerator - adjusted_second_numerator
 		
 		if is_simplified:
-			if check_simplified_form(added_adjusted_numerator, lcd):
+			if check_simplified_form(subtracted_adjusted_numerator, lcd):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
 				next_question_or_finish()  # Move to the next question or finish the exercise
@@ -106,12 +106,12 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				display_answer.text = "Try again! \nCheck your GCD value."
 				is_simplified = true
 	
-		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
+		elif subtracted_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
+			if GlobalFractionFunctions.check_lowest_form(subtracted_adjusted_numerator, lcd): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 			else:

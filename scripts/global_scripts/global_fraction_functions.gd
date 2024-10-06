@@ -5,7 +5,7 @@ func get_lcd(first_denominator: int, second_denominator: int):
 	return abs(first_denominator * second_denominator) / gcd(first_denominator, second_denominator)
 
 # Function to get the greatest common divisor (GCD)
-func gcd(first_denominator: int, second_denominator: int):
+func gcd(first_denominator: int, second_denominator: int) -> int:
 	while second_denominator != 0:
 		var temp = second_denominator
 		second_denominator = first_denominator % second_denominator
