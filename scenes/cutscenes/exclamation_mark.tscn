@@ -71,4 +71,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ksghd")
 autoplay = "default"
-frame_progress = 0.527073
+frame_progress = 0.942927
