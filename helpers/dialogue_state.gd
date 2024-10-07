@@ -8,8 +8,8 @@ var dead_robot_quest_status: String = "first_time"
 var earthquake_scene: String = "first_time"
 var saisai_quest_progress: int = 0;
 var current_npc: String = "none"
-
-
+var sword_pieces_complete = false
+var raket_sword_complete: bool = false
 
 # For movable shiny rock cutscene
 var rock_removed: bool = false

@@ -6,6 +6,7 @@ var sword_guard: bool = false
 var sword_lower_blade: bool = false
 var sword_middle_blade: bool = false
 var sword_top_blade: bool = false
+var sword_complete = false
 
 func _process(_delta):
 	if DialogueState.sword_bottom and not sword_bottom:
@@ -23,6 +24,9 @@ func _process(_delta):
 	if DialogueState.sword_top_blade and not sword_top_blade:
 		pick_up_sword_top_blade()
 		sword_top_blade = true
+	if not DialogueState.sword_pieces_complete and not sword_complete:
+		DialogueState.sword_pieces_complete = true
+		sword_complete = true
 
 func pick_up_sword_bottom() -> void:
 	animation_player.play("sword_bottom_gone")

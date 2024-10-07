@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://rfc1juq6dx1x"]
+[gd_scene load_steps=11 format=3 uid="uid://rfc1juq6dx1x"]
 
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/characters/racket/Raket idle animation.png" id="1_m1kvl"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_2dxdd"]
+[ext_resource type="Resource" uid="uid://jw3m22lt8u17" path="res://dialogue/floor_1/raket.dialogue" id="3_wr4hu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdn4r"]
 atlas = ExtResource("1_m1kvl")
@@ -42,6 +44,9 @@ animations = [{
 radius = 5.0
 height = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q33bp"]
+radius = 28.0179
+
 [node name="Racket" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -52,3 +57,9 @@ frame_progress = 0.0165923
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
 shape = SubResource("CapsuleShape2D_g5lww")
+
+[node name="Actionable" parent="." instance=ExtResource("2_2dxdd")]
+dialogue_resource = ExtResource("3_wr4hu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_q33bp")

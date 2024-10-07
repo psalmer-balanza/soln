@@ -1,12 +1,10 @@
 ~ start
-Raket: [[Hi|Hello|Howdy]], this is some dialogue.
-Raket: Here are some choices.
-- First one
-	Raket: You picked the first one.
-- Second one
-	Raket: You picked the second one.
-- Start again => start
-- End the conversation => END
-Raket: For more information see the online documentation.
-
+set in_dialogue = true
+if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
+	Raket: This is the first meeting
+	=> end
+Raket: This si where you have the sword
+set raket_sword_complete = true
+~ end
+set in_dialogue = false
 => END
