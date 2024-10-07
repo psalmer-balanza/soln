@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://cokl1at586il8"]
+
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_start_encounter.tscn" id="1_h0iyx"]
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/raket_stealing_auto_start.gd" id="1_oee2b"]
+[ext_resource type="Resource" uid="uid://bqercl2bxmnu5" path="res://dialogue/floor_1/raket_steal.dialogue" id="2_hw68m"]
+[ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="3_1lq3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf4ak"]
+size = Vector2(20, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoy8j"]
+atlas = ExtResource("3_1lq3i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8tge"]
+atlas = ExtResource("3_1lq3i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p8wi"]
+atlas = ExtResource("3_1lq3i")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2n1r"]
+atlas = ExtResource("3_1lq3i")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v72y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoy8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8tge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p8wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2n1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qewy3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sfq4i"]
+resource_name = "new_animation"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g5omf"]
+resource_name = "raket_stealing"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_732td"]
+_data = {
+"RESET": SubResource("Animation_qewy3"),
+"new_animation": SubResource("Animation_sfq4i"),
+"raket_stealing": SubResource("Animation_g5omf")
+}
+
+[node name="RaketStealing" type="Node2D"]
+script = ExtResource("1_oee2b")
+
+[node name="Actionable2" parent="." instance=ExtResource("1_h0iyx")]
+dialogue_resource = ExtResource("2_hw68m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_nf4ak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_v72y3")
+autoplay = "default"
+frame_progress = 0.945624
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_732td")
+}
+autoplay = "new_animation"
