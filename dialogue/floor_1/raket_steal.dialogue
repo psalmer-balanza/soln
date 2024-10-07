@@ -1,6 +1,7 @@
 ~ start
 set current_quest = "raket_stealing"
 set in_dialogue = true
+do raket_steal_scene()
 
 Raket: "SMIRKING" Well, well, well, 
 #Main Character: Yeah, it’s the one Saisai baked.
@@ -34,7 +35,8 @@ Raket: "SMIRKING" Well, well, well,
 #Raket: "Grinning" Oh, I see, just a simple delivery job, huh? 
 #Raket: And here I thought you might be sharing that delicious pie with me.
 
-
+#do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/addition/worded_to_fraction_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
+	
 => end
 
 ~ end

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=46 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
@@ -21,9 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="20_yycrb"]
-[ext_resource type="Texture2D" uid="uid://yb7xr24cgbd7" path="res://assets/floor_1/swamp/Fireflies.png" id="21_1gceu"]
 [ext_resource type="Resource" uid="uid://buiul1opwan62" path="res://dialogue/floor_1/lab_tutorial.dialogue" id="21_rh25p"]
-[ext_resource type="Script" path="res://scenes/levels/animated_sprite_2d.gd" id="22_hdat0"]
+[ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/raket_stealing.tscn" id="24_yrk65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dppd2"]
 texture = ExtResource("1_eabov")
@@ -282,51 +281,39 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1weu"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5syyu"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_npamn"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lq6wq"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80821"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovcqv"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atuo7"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcmk6"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlv3y"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7ydc"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1l1n"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31lh6"]
-atlas = ExtResource("21_1gceu")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3o8h"]
@@ -543,7 +530,7 @@ position = Vector2(650, 391)
 position = Vector2(763, 1327)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(297, -453)
+position = Vector2(696, 681)
 
 [node name="front decorations" type="Node2D" parent="."]
 
@@ -558,6 +545,7 @@ visible = false
 polygon = PackedVector2Array(-73, -317, -59, -273, -62, -266, -94, -248, -92, -223, -64, -211, -62, -190, -94, -165, -91, -144, -65, -98, -62, -81, -30, -68, -28, -47, -32, 49, -47, 113, -14, 125, -11, 145, -33, 175, -31, 193, -16, 189, 1, 189, 4, 208, -33, 237, -27, 283, -14, 284, -12, 304, -13, 308, -32, 331, -15, 349, -12, 368, 29, 381, 33, 410, 46, 412, 48, 432, 92, 445, 96, 477, 125, 491, 142, 492, 173, 475, 187, 476, 210, 492, 223, 492, 268, 492, 287, 508, 300, 508, 333, 492, 387, 493, 390, 601, 418, 621, 420, 640, 399, 669, 402, 689, 445, 716, 461, 716, 466, 734, 470, 768, 715, 768, 732, 747, 792, 744, 802, 750, 812, 768, 960, 768, 982, 740, 984, 799, 1085, 812, 1100, 860, 1105, 880, 1100, 909, 1120, 957, 1166, 972, 1194, 972, 1193, 1013, 1195, 1068, 815, 1073, 495, 1202, 492, 1431, 885, 1484, 1228, 1487, 1366, 1426, 1364, 964, 1373, 954, 1359, 928, 1360, 906, 1387, 879, 1390, 857, 1376, 832, 1375, 809, 1399, 794, 1447, 795, 1449, 616, 984, 615, 985, 669, 960, 640, 957, 640, 954, 640, 948, 640, 936, 640, 924, 640, 885, 640, 877, 640, 865, 640, 858, 640, 849, 640, 842, 640, 768, 640, 766, 643, 748, 643, 748, 621, 716, 609, 697, 608, 696, 348, 635, 349, 443, 287, 392, 287, 392, 384, 353, 384, 352, 402, 345, 404, 284, 402, 250, 417, 193, 417, 160, 385, 162, 365, 156, 336, 157, 317, 141, 289, 143, 269, 160, 225, 162, 205, 125, 193, 127, 173, 156, 145, 158, 125, 111, 115, 98, 113, 97, 92, 97, 82, 109, 49, 110, 29, 80, 17, 82, -3, 96, -31, 98, -51, 156, -79, 141, -95, 143, -114, 188, -143, 189, -163, 226, -195, 303, -227, 283, -221, 268, -221, 270, -243, 320, -256, 512, -256, 512, -286, 476, -285, 478, -307, 458, -321, 600, -341, 1474, 592, 1453, 1524, 1155, 1583, 435, 1556, 332, 1256, 394, 1073, 109, 654, -186, 329, -235, -148, -178, -328)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.293547, 0.347032, 0.463791, 1)
 
 [node name="SaisaiRockScene" parent="." instance=ExtResource("16_awl35")]
@@ -607,7 +595,6 @@ position = Vector2(32, -65)
 position = Vector2(376, -303)
 sprite_frames = SubResource("SpriteFrames_o3o8h")
 autoplay = "default"
-script = ExtResource("22_hdat0")
 
 [node name="3" type="PointLight2D" parent="Fireflies4"]
 position = Vector2(2, 3)
@@ -619,7 +606,6 @@ texture = SubResource("GradientTexture2D_5gwpb")
 position = Vector2(71, -129)
 sprite_frames = SubResource("SpriteFrames_o3o8h")
 autoplay = "default"
-script = ExtResource("22_hdat0")
 
 [node name="3" type="PointLight2D" parent="Fireflies3"]
 position = Vector2(-1, 3)
@@ -631,7 +617,6 @@ texture = SubResource("GradientTexture2D_5gwpb")
 position = Vector2(143, -271)
 sprite_frames = SubResource("SpriteFrames_o3o8h")
 autoplay = "default"
-script = ExtResource("22_hdat0")
 
 [node name="3" type="PointLight2D" parent="Fireflies2"]
 position = Vector2(0, 5)
@@ -643,7 +628,6 @@ texture = SubResource("GradientTexture2D_5gwpb")
 position = Vector2(32, -218)
 sprite_frames = SubResource("SpriteFrames_o3o8h")
 autoplay = "default"
-script = ExtResource("22_hdat0")
 
 [node name="3" type="PointLight2D" parent="Fireflies"]
 position = Vector2(1, 5)
@@ -657,6 +641,9 @@ dialogue_resource = ExtResource("21_rh25p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lab Actionable"]
 position = Vector2(352, -484)
 shape = SubResource("CircleShape2D_1qw2u")
+
+[node name="RaketStealing" parent="." instance=ExtResource("24_yrk65")]
+position = Vector2(845, 689)
 
 [editable path="TextBox"]
 [editable path="TextBox2"]

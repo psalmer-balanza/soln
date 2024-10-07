@@ -1,5 +1,3 @@
-# BUG 1: Player stills walks since the PlayerDialogueState is not emitted (FIX)
-
 extends Area2D
 
 # Attach dialogue file
@@ -13,10 +11,9 @@ func delete_collision():
 	collision_encounter.queue_free()
 
 # Activated when main character walks into a autostart scene
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index) -> void:
+func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	# To prevent spawning multiple dialogues
 	if not PlayerState.player_in_dialogue:
-		print("auto start encounter")
 		PlayerState.player_in_dialogue = true
 		DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
 		delete_collision()

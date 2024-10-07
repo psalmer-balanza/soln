@@ -26,6 +26,7 @@ func Update(delta: float):
 	
 	# Continuously check for overlapping areas
 	if auto_start_encounters.size() > 0:
+		print("AUTO START")
 		Transitioned.emit(self, "PlayerDialogueState")
 		return  # Exit early if a dialogue starts
 

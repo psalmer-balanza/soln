@@ -33,6 +33,11 @@ func dead_robot_scene():
 	emit_signal("dead_robot_scene")
 	current_quest = "dead_robots"
 
+var raket_sneaking: bool = false
+func raket_steal_scene():
+	raket_sneaking = true
+	emit_signal("raket_steal")
+	current_quest = "raket_steal"
 
 #SWORD STUFF
 var sword_bottom: bool = false
