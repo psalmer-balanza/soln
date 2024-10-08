@@ -22,7 +22,9 @@ Masked Raccoon: (Surprised) "Wait, Saisai? This pie for me? I’m… Raket the R
 Main Character: "Well, she does. So, how about we head to your house and share this pie?"
 Raket: "I'd like that. Let’s go and slice it up."
 
-# do change_raket_clothe()
+# do walk_to_house()
+*Walks towards his house*
+
 
 => end
 

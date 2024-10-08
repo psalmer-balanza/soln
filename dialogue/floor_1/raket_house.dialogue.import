@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cuf74adcdsdsl"
+path="res://.godot/imported/raket_house.dialogue-743d7f1a9b2d15fe06625153b76780ea.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/raket_house.dialogue"
+dest_files=["res://.godot/imported/raket_house.dialogue-743d7f1a9b2d15fe06625153b76780ea.tres"]
+
+[params]
+
+defaults=true

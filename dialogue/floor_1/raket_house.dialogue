@@ -1,0 +1,19 @@
+~ start
+set current_quest = "raket_house"
+set in_dialogue = true
+
+Raket: By the way I’m Raket the blacksmith racoon. What’s your name ? 
+Main Character: Oh, I’m Sol’n.
+Raket: Well then Sol’n how about we cut the pie into 10 slices ?
+Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
+Raket: There will still be a few left for me to eat for dinner.
+Main Character: Isn’t 4/10 too much for me ? the pie is for you …
+Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
+
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+
+=> end
+
+~ end
+set in_dialogue = false
+=> END
