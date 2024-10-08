@@ -1,31 +1,27 @@
 ~ start
 set current_quest = "raket_stealing"
+set current_npc = "masked_figure"
 set in_dialogue = true
-do raket_steal_scene()
 
-*Masked ninja Racoon masked figures enters and snatches the pie*
-Main Character: "Hey! Stop right there! That pie isn't for you!"
-Masked Raccoon: "It's mine now ! Who are you and what are you doing here ?”
-Main Character: “Im Sol’n, I'm here to deliver this pie to someone”
-Masked Raccoon: “ Ha! What a poor excuse, but I see that you are serious about it, let's make a deal ?
-Masked Racoon: If you want this pie back, you'll have to solve a few fraction problems first. Deal?"
-Main Character: "Deal. Hit me with your best shot!"
-
-do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
-
-Masked Racoon: “You actually completed the problems ! I’m impressed !”
-Main Character: "Thank you. Now, why did you steal the pie in the first place?"
-Masked Raccoon: "Ah… It's been a while since someone visited me."
-Masked Racoon: "I used to have a friend named Saisai, but we fought, and I haven’t seen her in ages."
-Main Character: "Actually, this pie is from Saisai. She wanted to apologize to her friend, Raket the Raccoon."
-Masked Raccoon: (Surprised) "Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared."
-Main Character: "Well, she does. So, how about we head to your house and share this pie?"
-Raket: "I'd like that. Let’s go and slice it up."
-
-# do walk_to_house()
-*Walks towards his house*
-
-
+if not raket_sneaking_quest_complete
+	do raket_steal_scene()
+	*A masked figure takes the pie off your hands before you could notice*
+	Hey! Stop right there! That pie isn't for you!
+	Masked Figure: It's mine now ! Who are you and what are you doing here?
+	I'm Sol’n, I'm here to deliver this pie to someone
+	Masked Figure: Ha! What a poor excuse, but I see that you are serious about it, let's make a deal? 
+	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
+	Deal. Hit me with your best shot!
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+elif raket_sneaking_quest_complete
+	Masked Figure: You actually completed the problems! I’m impressed!
+	Thank you. Now, why did you steal the pie in the first place?
+	Masked Figure: Ah… It's been a while since someone visited me. 
+	Masked Figure: I used to have a friend named Saisai, but we fought, and I haven’t seen her in ages.
+	Actually, this pie is from Saisai. She wanted to apologize to her friend, Raket the Raccoon.
+	Masked Figure: Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared.
+	Well, she does. So, how about we head to your house and share this pie?
+	Raket: I'd like that. Let’s go and slice it up.
 => end
 
 ~ end

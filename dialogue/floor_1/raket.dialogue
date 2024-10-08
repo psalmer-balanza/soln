@@ -3,8 +3,10 @@ set in_dialogue = true
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
 	Raket: This is the first meeting
 	=> end
-Raket: This si where you have the sword
-set raket_sword_complete = true
+elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+	Raket: This is where you have the sword
+	set raket_sword_complete = true
+	=> end
 ~ end
 set in_dialogue = false
 => END

@@ -36,27 +36,35 @@ func npc_active():
 	npc_sprite.play(current_npc)
 	if current_npc == "saisai":
 		npc_sprite.play("saisai")
-	elif current_npc == "racket":
-		npc_sprite.play("racket")
-	elif  current_npc == "old_peculiar":
+	elif current_npc == "raket":
+		npc_sprite.play("raket")
+		DialogueState.raket_house_quest_complete = true
+	elif current_npc == "old_peculiar":
 		npc_sprite.play("old_robot")
+	elif current_npc == "masked_figure":
+		npc_sprite.play("masked_figure")
+		DialogueState.raket_sneaking_quest_complete = true
 	else:
+		print(current_npc)
 		print("no active npc")
 
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
+	print(DialogueState.current_quest)
 	if DialogueState.current_quest == "raket_stealing":
+		print("Current quest is raket stealing")
 		fraction_questions = [
 			[[1, 4], [3, 4]],  # First question fractions
-			[[35, 70], [15, 30]],  # Second question fractions
+			[[3, 7], [3, 7]],  # Second question fractions
 			[[2, 5], [2, 5]],  # Third question fractions
 		]
 		question_texts = [
 			"Combine these fractions: 1/4 + 3/4.",
-			"Find the sum of these fractions: 35/70 + 15/30.",
+			"Find the sum of these fractions: 3/7 + 3/7.",
 			"Add these fractions: 2/5 + 2/5."
 		]
 	elif DialogueState.current_quest == "dead_robot":
+		print("Current quest is dead robot")
 		fraction_questions = [
 			[[1, 4], [3, 4]],  # First question fractions
 			[[2, 3], [1, 3]],  # Second question fractions
@@ -67,9 +75,24 @@ func initiate_questions():
 			"Add these fractions: 2/3 + 1/3.",
 			"Combine these: 2/5 + 2/5."
 		]
+	elif DialogueState.current_quest == "raket_house":
+		print("Current quest is raket house")
+		fraction_questions = [
+			[[1, 2], [1, 2]],  # First question fractions
+			[[2, 3], [1, 3]],  # Second question fractions
+			[[2, 5], [2, 5]],  # Third question fractions
+		]
+		question_texts = [
+			"What is 1/2 + 1/2?",
+			"Add these fractions: 2/3 + 1/3.",
+			"Combine these: 2/5 + 2/5."
+		]
+	else:
+		print("No quest?")
 
 # Display the current question and update the label text
 func display_current_question():
+	print(fraction_questions[current_question_index])
 	var current_question = fraction_questions[current_question_index]
 	var first_fraction = current_question[0]
 	var second_fraction = current_question[1]

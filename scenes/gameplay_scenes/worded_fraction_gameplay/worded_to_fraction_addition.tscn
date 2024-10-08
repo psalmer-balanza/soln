@@ -1,15 +1,32 @@
-[gd_scene load_steps=27 format=3 uid="uid://2kaqp1f7ukyk"]
+[gd_scene load_steps=32 format=3 uid="uid://2kaqp1f7ukyk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="2_teu7h"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_tmrgo"]
 [ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/characters/old_mc/mc idle front.png" id="4_j4xl2"]
+[ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="4_vo60v"]
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/characters/racket/Raket idle animation.png" id="5_xb7op"]
 [ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="6_e110m"]
 [ext_resource type="Texture2D" uid="uid://v37nxstby7g0" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board.png" id="7_ys2jj"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="8_s5m3f"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_2v7cv"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_ewn1i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
+atlas = ExtResource("4_vo60v")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aikm4"]
+atlas = ExtResource("4_vo60v")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxmdt"]
+atlas = ExtResource("4_vo60v")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy17n"]
+atlas = ExtResource("4_vo60v")
+region = Rect2(64, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_red00"]
 atlas = ExtResource("4_j4xl2")
@@ -63,6 +80,23 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_s6je1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aikm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxmdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy17n")
+}],
+"loop": true,
+"name": &"masked_figure",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_red00")
 }, {
 "duration": 1.0,
@@ -92,7 +126,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xejf3")
 }],
 "loop": true,
-"name": &"racket",
+"name": &"raket",
 "speed": 8.0
 }, {
 "frames": [{
@@ -193,7 +227,9 @@ autowrap_mode = 2
 position = Vector2(856, 120)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"old_robot"
+animation = &"raket"
+autoplay = "old_robot"
+frame_progress = 0.109729
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -448,6 +484,7 @@ text = "Display if answer is right or wrong."
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 offset_left = 881.0
 offset_top = 495.0
 offset_right = 985.0

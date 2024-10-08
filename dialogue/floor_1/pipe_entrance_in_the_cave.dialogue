@@ -1,0 +1,19 @@
+~ start
+set in_dialogue = true
+
+if snake_defeated
+	This must be the exit that Raket was talking about.
+	It seems to connect to higher floors, would you like to enter it?
+	- Yeah
+		do change_scene_to_floor2()
+	- (Leave)
+		
+	=> end
+else if not snake_defeated
+	This must be the exit that Raket was talking about.
+	It's not time to leave yet, let's head back.
+	=> end
+
+~ end
+set in_dialogue = false
+=> END

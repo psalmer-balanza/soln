@@ -32,3 +32,6 @@ func change_scene(new_scene: String):
 
 func boss_gameplay():
 	get_tree().change_scene_to_file("res://scenes/gameplay_scenes/battle.tscn")
+	
+func change_scene_to_floor2():
+	get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")

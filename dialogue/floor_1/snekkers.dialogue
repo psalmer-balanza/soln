@@ -6,19 +6,23 @@ if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_
 	Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
 	Snekkers: Get out of here!!!
 	=> end
+	
+if raket_sword_complete
+	Snekkers: You again?! What do you want?!
+	- You don't happen to be a morning person right?
+		=> snekkers_dialogue
+	- Nope I'm not facing an angry snake. 
+		=> end
 
-Snekkers: You again?! What do you want?!
+Snekkers: Get out of here!!!
 
-
-- You don't happen to be a morning person right?
-	=> snekkers_dialogue
-- Nope I'm not facing an angry snake. => end
+=> end
 
 ~ snekkers_dialogue
 Snekkers: Well what do you think?
 
 - I'm sorry
-	Snekkers: A little to late for that don't you think
+	Snekkers: A little too late for that don't you think
 	=> Snekkers_next_Dialogue
 - I didn't mean to
 	Snekkers: Well I didn't mean to wake up either
@@ -27,17 +31,12 @@ Snekkers: Well what do you think?
 	Snekkers: I don't care what he said. That little shite is proposterous thinking he can send a tin can to wake me up! [wait=0.5]Oh that little racoon always finding ways to bother me.
 	- That's mean..
 	Snekkers: Do I care?
-	
 	=> Snekkers_next_Dialogue
-- I wanna do something simple!
-	Snekkers: Uh, sure
-	[wait=2] [do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_to_fraction_gameplay.tscn", "res://scenes/levels/Floor1.tscn")]
 
 ~ Snekkers_next_Dialogue
 Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!. 
 [wait=2] [do boss_gameplay()]
 => end
-
 
 ~ Snekkers_loser_dialogue
 Snekkers: Loser. Unacceptable. Go back and rethink your decisions.

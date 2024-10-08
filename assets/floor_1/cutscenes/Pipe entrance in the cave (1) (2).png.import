@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chedoqua7nm0j"
-path="res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"
+uid="uid://dtoc8ayduheya"
+path="res://.godot/imported/Pipe entrance in the cave (1) (2).png-671402e2076a4bdb21c3a08286981212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Snekkers.png"
-dest_files=["res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"]
+source_file="res://assets/floor_1/cutscenes/Pipe entrance in the cave (1) (2).png"
+dest_files=["res://.godot/imported/Pipe entrance in the cave (1) (2).png-671402e2076a4bdb21c3a08286981212.ctex"]
 
 [params]
 

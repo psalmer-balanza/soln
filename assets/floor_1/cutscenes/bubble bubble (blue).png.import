@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chedoqua7nm0j"
-path="res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"
+uid="uid://buv7kkl2vlpp6"
+path="res://.godot/imported/bubble bubble (blue).png-b75f785ba1f2158c803f6a2c0a3c8cf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Snekkers.png"
-dest_files=["res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"]
+source_file="res://assets/floor_1/cutscenes/bubble bubble (blue).png"
+dest_files=["res://.godot/imported/bubble bubble (blue).png-b75f785ba1f2158c803f6a2c0a3c8cf9.ctex"]
 
 [params]
 

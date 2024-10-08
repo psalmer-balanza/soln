@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceaj0vrfn3hs2"]
+[gd_scene load_steps=5 format=3 uid="uid://ceaj0vrfn3hs2"]
 
-[ext_resource type="Texture2D" uid="uid://ccpdvbhc5osns" path="res://assets/floor_1/cutscenes/Pipe entrance in the cave.png" id="1_kxexc"]
+[ext_resource type="Texture2D" uid="uid://dtoc8ayduheya" path="res://assets/floor_1/cutscenes/Pipe entrance in the cave (1) (2).png" id="1_0ul75"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_6cyxy"]
+[ext_resource type="Resource" uid="uid://c31ydmsb52cp5" path="res://dialogue/floor_1/pipe_entrance_in_the_cave.dialogue" id="3_kww1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0i7g"]
+size = Vector2(112, 42)
 
 [node name="PipeEntranceScene" type="Node2D"]
 
-[node name="PipeEntranceInTheCave" type="Sprite2D" parent="."]
-texture = ExtResource("1_kxexc")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="PipeEntranceInTheCave" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_0ul75")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(48, 52, 48, 82, 38, 96, 23, 104, 14, 105, -20, 104, -30, 101, -39, 94, -47, 84, -48, 70, -48, 53, -47, 46, -40, 37, -40, 30, 40, 31, 40, 37, 45, 43)
+
+[node name="Actionable" parent="StaticBody2D" instance=ExtResource("2_6cyxy")]
+dialogue_resource = ExtResource("3_kww1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Actionable"]
+position = Vector2(-1, 102)
+shape = SubResource("RectangleShape2D_u0i7g")

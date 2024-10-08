@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bihqvsxkqay0l"]
+[gd_scene load_steps=51 format=4 uid="uid://bihqvsxkqay0l"]
 
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_un8p5"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_dsaqv"]
@@ -18,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_2evbt"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="17_jhjfk"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="17_y1gxy"]
+[ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="19_f3cnf"]
+[ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/pipe_entrance_scene.tscn" id="20_6i0hl"]
+[ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="21_b5t0c"]
+[ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="22_ouu7q"]
+[ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/raket_stealing.tscn" id="23_v3tek"]
+[ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="24_c4tt6"]
+[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="25_n121v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pbk6"]
 texture = ExtResource("1_un8p5")
@@ -932,6 +939,27 @@ follow the fireflies"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.323096, 0.268242, 0.383669, 1)
+
+[node name="Snekkers" parent="." instance=ExtResource("19_f3cnf")]
+position = Vector2(994, 1776)
+
+[node name="PipeEntranceScene" parent="." instance=ExtResource("20_6i0hl")]
+position = Vector2(873, 1548)
+
+[node name="CollectingSwordPieces" parent="." instance=ExtResource("21_b5t0c")]
+position = Vector2(1177, 1687)
+
+[node name="Racket" parent="." instance=ExtResource("22_ouu7q")]
+position = Vector2(1433, 1022)
+
+[node name="RaketStealing" parent="." instance=ExtResource("23_v3tek")]
+position = Vector2(1186, 1051)
+
+[node name="DeadRobotScene" parent="." instance=ExtResource("24_c4tt6")]
+position = Vector2(948, 1014)
+
+[node name="Saisai" parent="." instance=ExtResource("25_n121v")]
+position = Vector2(546, 994)
 
 [editable path="obstacles/MovableShinyRock"]
 [editable path="tooltips/monitor1"]

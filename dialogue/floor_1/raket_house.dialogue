@@ -1,16 +1,49 @@
 ~ start
 set current_quest = "raket_house"
+set current_npc = "raket"
 set in_dialogue = true
+if not raket_house_quest_complete
+	Raket: By the way I’m Raket the blacksmith racoon. What’s your name? 
+	- Oh, I’m Sol’n.
+	Raket: Well then Sol’n how about we cut the pie into 10 slices?
+	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
+	Raket: There will still be a few left for me to eat for dinner.
+	Isn’t 4/10 too much for me? The pie is for you…
+	Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
 
-Raket: By the way I’m Raket the blacksmith racoon. What’s your name ? 
-Main Character: Oh, I’m Sol’n.
-Raket: Well then Sol’n how about we cut the pie into 10 slices ?
-Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
-Raket: There will still be a few left for me to eat for dinner.
-Main Character: Isn’t 4/10 too much for me ? the pie is for you …
-Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+elif raket_house_quest_complete
+	Raket: See I told you I will still have more of the pie slices to eat...
+	Raket: Don’t worry I want to share this pie to you as a form of thanks since you delivered the message from Saisai.
+	Okay then .. Thank you !
+	Raket: Oh I noticed you have some energy on your chest right there ! 
+	What energy ? 
+	Raket: That light on your chest
+	Oh, What is this energy for ? 
+	Raket: I don't know but prophecy says “He who holds the light, shall bring light to the world.” 
+	Raket: But that's all I know from that old thing.
+	Is there a way for me to know the rest of the prophecy ? 
+	Raket: Yeah but you have to go to the top of the lighthouse to find out, 
+	Raket: But the only exit to this place is the pipe behind Snekkers the angry Snake. 
+	Raket: He lives in that cave right there. 
+	Raket: Oh I might need a small favor from you. 
+	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
+	Raket: Think you can help me find them?
+	- Sword pieces? Sure! I’m up for the challenge
+	Raket: Great! There. Just go down that path and follow it. 
+	Raket: It leads directly to the cave. Goodluck Sol’n!
+elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+	Raket: Great job, Sol’n! Now that we have all the ore pieces, I can finally build this sword.
+	Raket: This is where Yzel's animation plays
+	Raket: Look at this beauty! You did it, Sol’n. This sword is perfect.
+	What will you do with it?
+	Raket: Well I plan to-
+	Raket: This is where earthquake plays
+	Raket: Oh no! The snake is waking up! Take these, and be ready! You need to defeat the snake in the cave.
+	set raket_sword_complete = true
+elif sword_bottom or sword_guard or sword_lower_blade or sword_middle_blade or sword_top_blade
+	Raket: What is this, it's still missing a few pieces. Go back! Don't come back until you have them all!
 
-do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 
 => end
 

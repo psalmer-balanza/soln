@@ -6,7 +6,6 @@ var sword_guard: bool = false
 var sword_lower_blade: bool = false
 var sword_middle_blade: bool = false
 var sword_top_blade: bool = false
-var sword_complete = false
 
 func _process(_delta):
 	if DialogueState.sword_bottom and not sword_bottom:
@@ -24,31 +23,24 @@ func _process(_delta):
 	if DialogueState.sword_top_blade and not sword_top_blade:
 		pick_up_sword_top_blade()
 		sword_top_blade = true
-	if not DialogueState.sword_pieces_complete and not sword_complete:
-		DialogueState.sword_pieces_complete = true
-		sword_complete = true
-
+		
 func pick_up_sword_bottom() -> void:
-	animation_player.play("sword_bottom_gone")
-	$SwordBottom/Actionable/CollisionShape2D.disabled = true
-	$SwordBottom/ExclamationMark.visible = false
+	
+	animation_player.play("1st_disappear")
+	$"1st (Sword Bottom)/Actionable/CollisionShape2D".disabled = true
 
 func pick_up_sword_guard() -> void:
-	animation_player.play("sword_guard_gone")
-	$SwordGuard/Actionable/CollisionShape2D.disabled = true
-	$SwordGuard/Actionable/ExclamationMark2.visible = false
+	animation_player.play("2nd_disappear")
+	$"2nd (Sword Guard)/Actionable/CollisionShape2D".disabled = true
 
 func pick_up_sword_lower_blade() -> void:
-	animation_player.play("sword_lower_blade_gone")
-	$SwordLowerBlade/Actionable/CollisionShape2D.disabled = true
-	$SwordLowerBlade/ExclamationMark3.visible = false
+	animation_player.play("3rd_disappear")
+	$"3rd (Sword Lower Blade)/Actionable/CollisionShape2D".disabled = true
 
 func pick_up_sword_middle_blade() -> void:
-	animation_player.play("sword_middle_blade_gone")
-	$SwordMiddleBlade/Actionable/CollisionShape2D.disabled = true
-	$SwordMiddleBlade/ExclamationMark4.visible = false
+	animation_player.play("4th_disappear")
+	$"4th (Sword Middle Blade)/Actionable/CollisionShape2D".disabled = true	
 
 func pick_up_sword_top_blade() -> void:
-	animation_player.play("sword_top_blade_gone")
-	$SwordTopBlade/Actionable/CollisionShape2D.disabled = true
-	$SwordTopBlade/ExclamationMark5.visible = false
+	animation_player.play("5th_disappear")
+	$"5th (Sword Top Blade)/Actionable/CollisionShape2D".disabled = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chedoqua7nm0j"
-path="res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"
+uid="uid://dy7ud0esgaukx"
+path="res://.godot/imported/Masked Figure.png-b4522daf1752104a2e5e553c6f3b08b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_portraits/Snekkers.png"
-dest_files=["res://.godot/imported/Snekkers.png-7fe55c441791ea86255b468dad9d3d90.ctex"]
+source_file="res://assets/character_portraits/Masked Figure.png"
+dest_files=["res://.godot/imported/Masked Figure.png-b4522daf1752104a2e5e553c6f3b08b3.ctex"]
 
 [params]
 

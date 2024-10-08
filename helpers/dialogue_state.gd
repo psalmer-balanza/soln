@@ -10,6 +10,9 @@ var saisai_quest_progress: int = 0;
 var current_npc: String = "none"
 var sword_pieces_complete = false
 var raket_sword_complete: bool = false
+var snake_defeated: bool = false
+var raket_sneaking_quest_complete: bool = false
+var raket_house_quest_complete: bool = false
 
 # For movable shiny rock cutscene
 var rock_removed: bool = false
@@ -37,7 +40,7 @@ var raket_sneaking: bool = false
 func raket_steal_scene():
 	raket_sneaking = true
 	emit_signal("raket_steal")
-	current_quest = "raket_steal"
+	current_quest = "raket_stealing"
 
 #SWORD STUFF
 var sword_bottom: bool = false

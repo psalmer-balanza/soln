@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c31ydmsb52cp5"
+path="res://.godot/imported/pipe_entrance_in_the_cave.dialogue-ea01087501e460da809a1e4a411cff09.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/pipe_entrance_in_the_cave.dialogue"
+dest_files=["res://.godot/imported/pipe_entrance_in_the_cave.dialogue-ea01087501e460da809a1e4a411cff09.tres"]
+
+[params]
+
+defaults=true
