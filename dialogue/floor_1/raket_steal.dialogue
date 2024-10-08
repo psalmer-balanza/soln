@@ -3,40 +3,27 @@ set current_quest = "raket_stealing"
 set in_dialogue = true
 do raket_steal_scene()
 
-Raket: "SMIRKING" Well, well, well, 
-#Main Character: Yeah, it’s the one Saisai baked.
-#Raket: Ohh, that rabbit we're currently not on good relations.
-#Raket: But yeah good pie you got there. 
-#Raket: Haven't eaten pie for a while since our fight.
-#Main Character: Why’s that?
-#Raket: Ehh, something about a disagreement. But that pie...
-#Raket: I haven’t had a bite in a long time.
-#Main Character: But I’m supposed to deliver it to... someone.
-#Raket: I’ll just take this off your hands, then.
-#Raket: "Quickly grabs the pie"
-#Raket: Don’t worry, I'll deliver it for you.
-#Main Character: "Surprised" Hey! I'll deliver myself!
-#Raket: Oh, relax! I’m just doing you a favor. 
-#Raket: Delivering things is what friends are for, right?
-#Main Character: Give it back, Raket.
-#Raket: Oh, come on now, I haven’t even tasted it yet!
-#Main Character: I promised Saisai I’d deliver it.
-#Main Character: You’re not making this easy, Raket.
-#Raket: Easy? Where’s the fun in easy? 
-#Raket: Tell you what: you want this pie? Catch me if you can.
-#Raket: "Smiles" "Then runs off with the pie while laughing"
-#Main Character: Great... Just what I needed. A raccoon chase.
-#Main Character: I’d better hurry before he eats the whole thing.
-#
-#Raket: It is now! You’d better run fast if you want it back!
-#Raket: "Takes a bite, winking"
-#Raket: "Then runs off, laughing"
-#
-#Raket: "Grinning" Oh, I see, just a simple delivery job, huh? 
-#Raket: And here I thought you might be sharing that delicious pie with me.
+*Masked ninja Racoon masked figures enters and snatches the pie*
+Main Character: "Hey! Stop right there! That pie isn't for you!"
+Masked Raccoon: "It's mine now ! Who are you and what are you doing here ?”
+Main Character: “Im Sol’n, I'm here to deliver this pie to someone”
+Masked Raccoon: “ Ha! What a poor excuse, but I see that you are serious about it, let's make a deal ?
+Masked Racoon: If you want this pie back, you'll have to solve a few fraction problems first. Deal?"
+Main Character: "Deal. Hit me with your best shot!"
 
-#do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/addition/worded_to_fraction_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
-	
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+
+Masked Racoon: “You actually completed the problems ! I’m impressed !”
+Main Character: "Thank you. Now, why did you steal the pie in the first place?"
+Masked Raccoon: "Ah… It's been a while since someone visited me."
+Masked Racoon: "I used to have a friend named Saisai, but we fought, and I haven’t seen her in ages."
+Main Character: "Actually, this pie is from Saisai. She wanted to apologize to her friend, Raket the Raccoon."
+Masked Raccoon: (Surprised) "Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared."
+Main Character: "Well, she does. So, how about we head to your house and share this pie?"
+Raket: "I'd like that. Let’s go and slice it up."
+
+# do change_raket_clothe()
+
 => end
 
 ~ end
