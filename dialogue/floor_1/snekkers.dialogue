@@ -29,12 +29,12 @@ Snekkers: Well what do you think?
 	=> Snekkers_next_Dialogue
 - The racoon said...
 	Snekkers: I don't care what he said. That little shite is proposterous thinking he can send a tin can to wake me up! [wait=0.5]Oh that little racoon always finding ways to bother me.
-	- That's mean..
+	- That's mean..,
 	Snekkers: Do I care?
 	=> Snekkers_next_Dialogue
 
 ~ Snekkers_next_Dialogue
-Snekkers: Hey!! Don't think I forgot about you![wait=0.5] You're actions require mathematical consequences!. 
+Snekkers: Hey!! Don't think I forgot about you![wait=0.5] Your actions require mathematical consequences!. 
 [wait=2] [do boss_gameplay()]
 => end
 

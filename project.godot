@@ -33,7 +33,7 @@ general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
-window/size/mode=2
+window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 

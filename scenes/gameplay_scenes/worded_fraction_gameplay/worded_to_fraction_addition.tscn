@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"raket",
-"speed": 8.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,7 +229,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
 animation = &"raket"
 autoplay = "old_robot"
-frame_progress = 0.109729
+frame_progress = 0.345265
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

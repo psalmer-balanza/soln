@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://djk22k3j63p7n"]
+[gd_scene load_steps=23 format=3 uid="uid://djk22k3j63p7n"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
@@ -133,10 +133,38 @@ tracks/0/path = NodePath("AnimatedSprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_mqkyb"]
+resource_name = "saisai_idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 0, 1, 2, 0, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_q2dwf"]
@@ -171,6 +199,7 @@ tracks/1/keys = {
 _data = {
 "RESET": SubResource("Animation_b6yom"),
 "correct_answer_saisai": SubResource("Animation_etxce"),
+"saisai_idle": SubResource("Animation_mqkyb"),
 "wrong_answer_saisai": SubResource("Animation_q2dwf")
 }
 
@@ -417,6 +446,7 @@ autoplay = "default"
 libraries = {
 "": SubResource("AnimationLibrary_jvjtx")
 }
+autoplay = "saisai_idle"
 
 [connection signal="pressed" from="submit/SubmitAnswer" to="." method="_on_submit_answer_pressed"]
 [connection signal="pressed" from="return/Button" to="." method="_on_button_pressed"]

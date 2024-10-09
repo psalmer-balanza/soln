@@ -37,7 +37,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5lww"]
@@ -52,7 +52,7 @@ radius = 28.0179
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_srq5m")
 autoplay = "default"
-frame_progress = 0.0165923
+frame_progress = 0.627687
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)

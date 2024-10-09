@@ -2,25 +2,29 @@
 set in_dialogue = true
 set current_npc = "saisai"
 set current_quest = "saisai_rock"
-Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
-Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
-Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 
-Saisai: and I can’t even budge them! Isn’t that silly? Teehee~.
-Saisai: Maybe you could lend me a hand? Pretty pleeeease?
 
-- Sure
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn" ,"res://scenes/levels/Floor1.tscn")
-- (Leave)
-	=> end
+if saisai_moving_rocks_quest_done
+	Saisai: Yay! Thank you soooo much! Now my garden is gonna be the prettiest ever with these shiny rocks! 
+	Saisai: You're the best~!
+	Saisai: Oh! Um, if it’s not too much trouble, could you help me with another task?
+	Saisai: I was going to bake a pie... and I could really use a little help. It’s for... a friend of mine. I'd love it if you could join me!
+	- Sure thing!
+		Saisai: Okay, see you there!
+	do saisai_move_rocks_cutscene()
+	set saisai_quest_progress = 1
+else 
+	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
+	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
+	Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 
+	Saisai: And I can’t even budge them! Isn’t that silly? Teehee~.
+	Saisai: Maybe you could lend me a hand? Pretty pleeeease?
 
-Saisai: Yay! Thank you soooo much! Now my garden is gonna be the prettiest ever with these shiny rocks! 
-Saisai: You're the best~!
-Saisai: Oh! Um, if it’s not too much trouble, would you maybe like to come to my place later? 
-Saisai: I was going to bake a pie... and I could really use a little help. It’s for... a friend of mine. I'd love it if you could join me!
-- Sure
-	Saisai: Okay, see you there!
-[do saisai_moving_rocks_cutscene()]
-[set saisai_quest_progress = 1]
+	- Sure
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn", "res://scenes/levels/Floor1.tscn")
+		set saisai_moving_rocks_quest_done = true
+	- (Leave)
+		=> end
+
 => end
 
 ~ end

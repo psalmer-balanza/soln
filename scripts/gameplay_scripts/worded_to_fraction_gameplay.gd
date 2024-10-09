@@ -3,12 +3,12 @@ extends Node2D
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	[[1, 4], [3, 4]],  # First question fractions
-	[[35, 70], [15, 30]],  # Second question fractions
+	[[5, 7], [2, 7]],  # Second question fractions
 	[[2, 5], [2, 5]],  # Third question fractions
 	]
 var question_texts = [
 	"Combine these fractions: 1/4 + 3/4.",
-	"Find the sum of these fractions: 35/70 + 15/30.",
+	"Find the sum of these fractions: 5/7 + 2/7.",
 	"Add these fractions: 2/5 + 2/5."
 	]  # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on

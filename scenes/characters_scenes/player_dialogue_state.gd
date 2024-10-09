@@ -15,7 +15,6 @@ func Enter():
 	if actionables.size() > 0:
 		print("Dialogue found")
 		actionables[0].action()  # Trigger the dialogue interaction
-		Transitioned.emit(self, "IdleState")
 	else:
 		Transitioned.emit(self, "IdleState")
 		print("No dialogue found")

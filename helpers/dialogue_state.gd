@@ -2,6 +2,8 @@ extends Node
 
 var current_quest: String = "starting"
 
+var saisai_moving_rocks_quest_done: bool = false
+var saisai_baking_quest_done
 var in_dialogue: bool = false
 var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
@@ -34,6 +36,11 @@ var dead_robot_appeared: bool = false
 func dead_robot_scene():
 	dead_robot_appeared = true
 	emit_signal("dead_robot_scene")
+	current_quest = "dead_robots"
+
+var dead_robot_disappeared: bool = false
+func dead_robot_scene_finished():
+	dead_robot_disappeared = true
 	current_quest = "dead_robots"
 
 var raket_sneaking: bool = false

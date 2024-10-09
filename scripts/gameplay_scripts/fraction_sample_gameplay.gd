@@ -109,10 +109,16 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 		elif is_simplified:
 			if check_simplified_form(added_adjusted_numerator, lcd):
 				display_answer.text = "Nice! \nCorrect simplified form."
+				$AnimationPlayer.play("correct_answer_saisai")
+				await $AnimationPlayer.animation_finished
+				$AnimationPlayer.play("saisai_idle")
 				is_simplified = false
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
 				display_answer.text = "Try again! \nCheck your GCD value."
+				$AnimationPlayer.play("wrong_answer_saisai")
+				await $AnimationPlayer.animation_finished
+				$AnimationPlayer.play("saisai_idle")
 				is_simplified = true
 	
 		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
@@ -158,7 +164,7 @@ func next_question_or_finish():
 # Function to return to the world scene
 func return_to_world():
 	print("Returning")
-	get_tree().change_scene_to_file("res://scenes/levels/test_floor1/test_floor2.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_submit_answer_pressed() -> void:
 	fraction_subtraction_checker(first_num, first_denum, second_num, second_denum)

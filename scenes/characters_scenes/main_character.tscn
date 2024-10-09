@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=48 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -278,10 +278,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.83945, 0.770642)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_546g1"]
-radius = 9.0
-height = 24.0
-
 [node name="MainCharacter" type="CharacterBody2D"]
 script = ExtResource("1_vdtrp")
 
@@ -326,6 +322,5 @@ script = ExtResource("9_bdkni")
 [node name="PlayerDialogueState" type="Node" parent="StateMachine"]
 script = ExtResource("10_uarnf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_546g1")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, 5, -10, 12, -8, 12, -8, 15, -2, 15, -2, 12, 2, 12, 2, 15, 8, 15, 8, 12, 10, 12, 10, 5, 15, 5, 15, -5, 16, -5, 16, -8, 15, -8, 15, -14, 14, -15, 7, -15, 7, -16, 5, -16, 5, -15, -3, -15, -3, -16, -6, -16, -6, -15, -13, -15, -14, -14, -14, -8, -15, -8, -15, -1, -14, -1, -14, 5)
