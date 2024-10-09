@@ -37,6 +37,7 @@ var first_denum: int
 var second_num: int
 var second_denum: int
 var is_simplified = false
+var is_simplified_answer = false
 
 func _ready():
 	# Start by displaying the first question
@@ -67,7 +68,11 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 	if first_denominator == second_denominator:
 		var added_numerator = first_numerator + second_numerator
 		
-		if is_simplified:
+		if check_simplified_form(added_numerator, first_denominator):
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			next_question_or_finish()  # Move to the next question or finish the exercise
+			
+		elif is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
@@ -97,7 +102,11 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
-		if is_simplified:
+		if check_simplified_form(added_adjusted_numerator, lcd):
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			next_question_or_finish()  # Move to the next question or finish the exercise
+			
+		elif is_simplified:
 			if check_simplified_form(added_adjusted_numerator, lcd):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
