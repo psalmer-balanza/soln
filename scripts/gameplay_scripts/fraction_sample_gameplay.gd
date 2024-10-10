@@ -1,5 +1,9 @@
 extends Control
 
+@onready var correct_ans_count = 0
+@onready var wrong_ans_count = 0
+@onready var unsimplified_ans_count = 0
+
 var fraction_questions = [
 	[[2, 3], [1, 3]],  # First fraction
 	[[3, 2], [1, 2]],  # Second fraction
@@ -62,13 +66,18 @@ func display_current_question():
 	second_num_label.text = str(second_num)
 	second_denum_label.text = str(second_denum)
 
-# Function to check the fraction subtraction answer
-func fraction_subtraction_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
+# Function to check the fraction addition answer
+func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
 	if first_denominator == second_denominator:
 		var added_numerator = first_numerator + second_numerator
 		
 		if check_simplified_form(added_numerator, first_denominator) and !is_simplified:
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
+			#Checker for correct
+			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
 			
 		elif is_simplified:
@@ -78,6 +87,8 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				$AnimationPlayer.play("saisai_idle")
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
+				#Checker for correct
+				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
 				display_answer.text = "Try again! \nCheck your GCD value."
@@ -85,20 +96,32 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				$AnimationPlayer.play("wrong_answer_saisai")
 				await $AnimationPlayer.animation_finished
 				$AnimationPlayer.play("saisai_idle")
+				#Checker for wrong ans
+				wrong_ans_count += 1
 				
 		elif added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			display_answer.text = "Good job! \nCorrect answer!"
+
 			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
+				$AnimationPlayer.play("correct_answer_saisai")
+				await $AnimationPlayer.animation_finished
+				$AnimationPlayer.play("saisai_idle")
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
+				#Checker for unsimplified ans
+				unsimplified_ans_count += 1
 			else:
+				#Checker for correct
+				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.play("saisai_idle")
+			#Checker for wrong ans
+			wrong_ans_count += 1
 			display_answer.text = "Try again."
 			
 	else:  # DIFFERENT DENOMINATORS
@@ -109,6 +132,11 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 		
 		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
 			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
+			$AnimationPlayer.play("correct_answer_saisai")
+			await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("saisai_idle")
+			#Checker for correct
+			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
 			
 		elif is_simplified:
@@ -118,6 +146,8 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				await $AnimationPlayer.animation_finished
 				$AnimationPlayer.play("saisai_idle")
 				is_simplified = false
+				#Checker for correct
+				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
 				display_answer.text = "Try again! \nCheck your GCD value."
@@ -125,6 +155,8 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 				await $AnimationPlayer.animation_finished
 				$AnimationPlayer.play("saisai_idle")
 				is_simplified = true
+				#Checker for wrong ans
+				wrong_ans_count += 1
 	
 		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
 			$AnimationPlayer.play("correct_answer_saisai")
@@ -134,13 +166,19 @@ func fraction_subtraction_checker(first_numerator: int, first_denominator: int, 
 			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
+				#Checker for unsimplified ans
+				unsimplified_ans_count += 1
 			else:
+				#Checker for correct
+				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
 			$AnimationPlayer.play("wrong_answer_saisai")
 			await $AnimationPlayer.animation_finished
 			$AnimationPlayer.play("saisai_idle")
 			display_answer.text = "Try again."
+			#Checker for wrong ans
+			wrong_ans_count += 1
 
 # Function to check for the simplified answer
 func check_simplified_form(correct_numerator: int, correct_denominator: int) -> bool:
@@ -163,6 +201,16 @@ func next_question_or_finish():
 		display_current_question()  # Update the UI with the next question
 	else:
 		# If all questions are answered, return to the world
+		# compile and send to db for zen/julliard
+		# dialogue scene here maybe?
+		print("Simple addition correct answers: ", correct_ans_count)
+		print("Simple addition wrong answers: ", wrong_ans_count)
+		var total_ans_count = correct_ans_count + wrong_ans_count
+		print("Simple addition total attempts: ", total_ans_count)
+		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
+		print("What I need to do now is map each of these attempts per question,
+		connect to question IDs too")
+		
 		display_answer.text = "All questions completed! Returning to the world..."
 		return_to_world()
 
@@ -172,7 +220,7 @@ func return_to_world():
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_submit_answer_pressed() -> void:
-	fraction_subtraction_checker(first_num, first_denum, second_num, second_denum)
+	fraction_addition_checker(first_num, first_denum, second_num, second_denum)
 
 func _on_button_pressed() -> void:
 	return_to_world()
