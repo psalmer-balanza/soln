@@ -45,6 +45,8 @@ var is_simplified = false
 func _ready():
 	# Start by displaying the first question
 	print("Current questline is: ", DialogueState.current_quest)
+	if DialogueState.current_quest == "dead_robots":
+		$AnimatedSprite2D.play("idle_robot")
 	initiate_questions()
 	display_current_question()
 
@@ -72,9 +74,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_numerator = first_numerator + second_numerator
 		
 		if check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
+			
 			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
 			#Checker for correct
 			correct_ans_count += 1
@@ -82,9 +86,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			
 		elif is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
-				$AnimationPlayer.play("correct_answer_saisai")
-				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("saisai_idle")
+				if DialogueState.current_quest == "dead_robots":
+					correct_answer_robot()
+				elif DialogueState.current_quest == "saisai_rock":
+					correct_answer_saisai()
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
 				#Checker for correct
@@ -93,21 +98,25 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			else:
 				display_answer.text = "Try again! \nCheck your GCD value."
 				is_simplified = true
-				$AnimationPlayer.play("wrong_answer_saisai")
-				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("saisai_idle")
+				if DialogueState.current_quest == "dead_robots":
+					wrong_answer_robot()
+				elif DialogueState.current_quest == "saisai_rock":
+					wrong_answer_saisai()
 				#Checker for wrong ans
 				wrong_ans_count += 1
 				
 		elif added_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
 			display_answer.text = "Good job! \nCorrect answer!"
 
 			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
-				$AnimationPlayer.play("correct_answer_saisai")
-				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("saisai_idle")
+				if DialogueState.current_quest == "dead_robots":
+					correct_answer_robot()
+				elif DialogueState.current_quest == "saisai_rock":
+					correct_answer_saisai()
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 				#Checker for unsimplified ans
@@ -117,9 +126,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
+			if DialogueState.current_quest == "dead_robots":
+				wrong_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				wrong_answer_saisai()
 			#Checker for wrong ans
 			wrong_ans_count += 1
 			display_answer.text = "Try again."
@@ -132,9 +142,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		
 		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
 			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
 			#Checker for correct
 			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
@@ -142,26 +153,29 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		elif is_simplified:
 			if check_simplified_form(added_adjusted_numerator, lcd):
 				display_answer.text = "Nice! \nCorrect simplified form."
-				$AnimationPlayer.play("correct_answer_saisai")
-				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("saisai_idle")
+				if DialogueState.current_quest == "dead_robots":
+					correct_answer_robot()
+				elif DialogueState.current_quest == "saisai_rock":
+					correct_answer_saisai()
 				is_simplified = false
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
 				display_answer.text = "Try again! \nCheck your GCD value."
-				$AnimationPlayer.play("wrong_answer_saisai")
-				await $AnimationPlayer.animation_finished
-				$AnimationPlayer.play("saisai_idle")
+				if DialogueState.current_quest == "dead_robots":
+					wrong_answer_robot()
+				elif DialogueState.current_quest == "saisai_rock":
+					wrong_answer_saisai()
 				is_simplified = true
 				#Checker for wrong ans
 				wrong_ans_count += 1
 	
 		elif added_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
 			display_answer.text = "Good job! \nCorrect answer!"
 			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
@@ -173,9 +187,10 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
+			if DialogueState.current_quest == "dead_robots":
+				wrong_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				wrong_answer_saisai()
 			display_answer.text = "Try again."
 			#Checker for wrong ans
 			wrong_ans_count += 1
@@ -224,3 +239,24 @@ func _on_submit_answer_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	return_to_world()
+	
+func correct_answer_saisai() -> void:
+	$AnimationPlayer.play("correct_answer_saisai")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("saisai_idle")
+
+func wrong_answer_saisai() -> void:
+	$AnimationPlayer.play("wrong_answer_saisai")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("saisai_idle")
+
+func correct_answer_robot() -> void:
+	$AnimationPlayer.play("right_answer_robot")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("robot_idle")
+
+func wrong_answer_robot() -> void:
+	$AnimationPlayer.play("wrong_answer_robot")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("robot_idle")
+	

@@ -495,49 +495,49 @@ script = ExtResource("1_hppjd")
 
 [node name="Frontview" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(0, -2)
+position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_54ape")
 autoplay = "default"
 
 [node name="Frontview2" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(47, -2)
+position = Vector2(47, 3)
 sprite_frames = SubResource("SpriteFrames_54ape")
 autoplay = "default"
 
 [node name="Frontview3" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(94, -2)
+position = Vector2(94, 3)
 sprite_frames = SubResource("SpriteFrames_54ape")
 autoplay = "default"
 
 [node name="Frontview4" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(141, -2)
+position = Vector2(141, 3)
 sprite_frames = SubResource("SpriteFrames_54ape")
 autoplay = "default"
 
 [node name="Backview" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(0, 92)
+position = Vector2(0, 61)
 sprite_frames = SubResource("SpriteFrames_iqgoj")
 autoplay = "default"
 
 [node name="Backview2" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(47, 92)
+position = Vector2(47, 61)
 sprite_frames = SubResource("SpriteFrames_iqgoj")
 autoplay = "default"
 
 [node name="Backview3" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(94, 92)
+position = Vector2(94, 61)
 sprite_frames = SubResource("SpriteFrames_iqgoj")
 autoplay = "default"
 
 [node name="Backview4" type="AnimatedSprite2D" parent="CharacterBody2D"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(141, 92)
+position = Vector2(141, 61)
 sprite_frames = SubResource("SpriteFrames_iqgoj")
 autoplay = "default"
 

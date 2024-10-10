@@ -361,15 +361,15 @@ shape = SubResource("RectangleShape2D_1u56d")
 position = Vector2(75, -1)
 script = null
 
-[node name="AnimatedSprite2D" parent="Saisai" index="0"]
+[node name="AnimatedSprite2D" parent="Saisai" index="1"]
 sprite_frames = SubResource("SpriteFrames_iifh7")
 animation = &"idle"
 frame_progress = 0.0
 
-[node name="Actionable" parent="Saisai" index="1"]
+[node name="Actionable" parent="Saisai" index="2"]
 dialogue_resource = ExtResource("3_qbktj")
 
-[node name="CollisionPolygon2D" parent="Saisai" index="2"]
+[node name="CollisionPolygon2D" parent="Saisai" index="3"]
 position = Vector2(3, -5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

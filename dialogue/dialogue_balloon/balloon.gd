@@ -55,10 +55,8 @@ var dialogue_line: DialogueLine:
 		# Do you understand?
 		var portrait_path: String = "res://assets/character_portraits/%s.png" % dialogue_line.character.to_lower();
 		if ResourceLoader.exists(portrait_path):
-			print("Portrait found")
 			portrait.texture = load(portrait_path)
 		else:
-			print("Portrait not found")
 			portrait.texture = null
 		
 

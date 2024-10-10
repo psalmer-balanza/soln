@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://djk22k3j63p7n"]
+[gd_scene load_steps=43 format=3 uid="uid://djk22k3j63p7n"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
@@ -6,7 +6,10 @@
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1trgt"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_deff5"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="6_ah1tw"]
+[ext_resource type="Texture2D" uid="uid://d2bqbxcw8qjy5" path="res://assets/main_character/mc_idle_front.png" id="7_d0kf4"]
 [ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/Saisai Disappointed.png" id="7_mw8yk"]
+[ext_resource type="Texture2D" uid="uid://bjdn5kjtbxs5l" path="res://assets/floor_1/npc/Old Peculiar Correct.png" id="8_82yj1"]
+[ext_resource type="Texture2D" uid="uid://3d18d0olryjn" path="res://assets/floor_1/npc/Old Peculiar Wrong Answer.png" id="9_ry3aq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tttc"]
 atlas = ExtResource("6_ah1tw")
@@ -27,6 +30,62 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_aukoq"]
 atlas = ExtResource("6_ah1tw")
 region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_une2x"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmuv4"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m7kd"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efyfm"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opff4"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahwbr"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1e0e"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq7lq"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojbwm"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_makv0"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqjwg"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnep8"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e04r"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lu10"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmacm"]
 atlas = ExtResource("7_mw8yk")
@@ -68,6 +127,63 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_une2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmuv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m7kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efyfm")
+}],
+"loop": true,
+"name": &"idle_robot",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opff4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahwbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1e0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq7lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojbwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_makv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqjwg")
+}],
+"loop": true,
+"name": &"right_answer_robot",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnep8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e04r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lu10")
+}],
+"loop": true,
+"name": &"wrong_answer_robot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qmacm")
 }, {
 "duration": 1.0,
@@ -80,7 +196,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_71ury")
 }],
 "loop": true,
-"name": &"wrong_answer",
+"name": &"wrong_answer_sai",
 "speed": 5.0
 }]
 
@@ -180,7 +296,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"wrong_answer"]
+"values": [&"wrong_answer_sai"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -195,11 +311,98 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_s2543"]
+resource_name = "robot_idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_11una"]
+resource_name = "right_answer_robot"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"right_answer_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_shji1"]
+resource_name = "wrong_answer_robot"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wrong_answer_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2, 2, 2, 1, 1, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jvjtx"]
 _data = {
 "RESET": SubResource("Animation_b6yom"),
 "correct_answer_saisai": SubResource("Animation_etxce"),
+"right_answer_robot": SubResource("Animation_11una"),
+"robot_idle": SubResource("Animation_s2543"),
 "saisai_idle": SubResource("Animation_mqkyb"),
+"wrong_answer_robot": SubResource("Animation_shji1"),
 "wrong_answer_saisai": SubResource("Animation_q2dwf")
 }
 

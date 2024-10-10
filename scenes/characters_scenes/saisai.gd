@@ -14,3 +14,5 @@ func _process(_delta):
 		$Actionable/CollisionShape2D.disabled = false
 		$AnimatedSprite2D.visible = true
 		$CollisionPolygon2D.disabled = false
+	if DialogueState.saisai_quest_progress == 3:
+		$SpeechBalloon.visible = false
