@@ -4,7 +4,7 @@ extends Control
 @onready var password: LineEdit = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
-var login_url = "http://localhost:3000/soln/login"
+var login_url = "http://localhost:3000/game/login"
 
 func _ready():
 	# Create an HTTP request node and connect its completion signal.
