@@ -43,7 +43,6 @@ func npc_active():
 		npc_sprite.play("old_robot")
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure")
-		DialogueState.raket_sneaking_quest_complete = true
 	else:
 		print(current_npc)
 		print("no active npc")

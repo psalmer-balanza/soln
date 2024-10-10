@@ -892,7 +892,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(354, 149)
+position = Vector2(1103, 1049)
 
 [node name="in_front_details" type="Node2D" parent="."]
 

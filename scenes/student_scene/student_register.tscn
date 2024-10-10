@@ -79,6 +79,7 @@ shape = SubResource("RectangleShape2D_h4jqm")
 position = Vector2(509, 283)
 
 [node name="StudentInformation" type="NinePatchRect" parent="."]
+layout_mode = 0
 offset_left = 153.0
 offset_top = 111.0
 offset_right = 1217.0
@@ -109,6 +110,7 @@ caret_blink = true
 
 [node name="Username" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 336.0
 offset_top = 211.0
 offset_right = 573.0
@@ -119,6 +121,7 @@ caret_blink = true
 
 [node name="ClassNumber" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 599.0
 offset_top = 128.0
 offset_right = 837.0
@@ -130,6 +133,7 @@ caret_blink = true
 
 [node name="ClassSection" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 598.0
 offset_top = 170.0
 offset_right = 838.0
@@ -141,6 +145,7 @@ caret_blink = true
 
 [node name="Password" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 598.0
 offset_top = 214.0
 offset_right = 836.0

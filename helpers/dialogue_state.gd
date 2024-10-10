@@ -15,6 +15,7 @@ var raket_sword_complete: bool = false
 var snake_defeated: bool = false
 var raket_sneaking_quest_complete: bool = false
 var raket_house_quest_complete: bool = false
+var should_I_delete_raket_stealing_scene: bool = false
 
 # For movable shiny rock cutscene
 var rock_removed: bool = false
