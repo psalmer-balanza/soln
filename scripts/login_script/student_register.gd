@@ -8,7 +8,7 @@ extends Control
 @onready var password = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
-var register_url = "http://localhost:3000/soln/register"
+var register_url = "http://localhost:3000/game/register"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,11 +19,11 @@ func _ready():
 
 func _on_register_button_button_down():
 	var credentials = {
-		"first_name": first_name.text,
-		"last_name": last_name.text,
-		"class_number": class_number.text,
-		"class_section": class_section.text,
+		"firstname": first_name.text,
+		"lastname": last_name.text,
 		"username": username.text,
+		"section": class_section.text,
+		"classnumber": class_number.text,
 		"password": password.text,
 	}
 
@@ -36,4 +36,18 @@ func _on_register_button_button_down():
 
 # Called when the HTTP request is completed.
 func _http_request_completed(result, response_code, headers, body):
-	print("logic for registering")
+	if response_code == 200:
+		var json = JSON.new()
+		var error = json.parse(body.get_string_from_utf8())
+		if error == OK:
+			var response = json.get_data()
+			if response.success:
+				# do login if registration is successful
+				print("Login successful")
+				get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+			else:
+				print("Login failed")
+		else:
+			print("Failed to parse JSON")
+	else:
+		print("HTTP request failed with code:", response_code)
