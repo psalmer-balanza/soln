@@ -66,8 +66,8 @@ scale = Vector2(1.00145, 1.00297)
 script = ExtResource("2_nubq2")
 
 [node name="Soln_background" type="AnimatedSprite2D" parent="Panel/CharacterBody2D"]
-position = Vector2(82.501, 63.3104)
-scale = Vector2(0.321171, 0.451494)
+position = Vector2(82.5098, 63.9676)
+scale = Vector2(0.286556, 0.402378)
 sprite_frames = SubResource("SpriteFrames_d42gl")
 animation = &"idle"
 frame_progress = 0.0651652
@@ -79,10 +79,10 @@ shape = SubResource("RectangleShape2D_5a0h5")
 
 [node name="StudentInformation" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 187.946
-offset_top = 109.491
-offset_right = 1251.95
-offset_bottom = 685.49
+offset_left = 139.802
+offset_top = 112.183
+offset_right = 1203.81
+offset_bottom = 688.182
 
 [node name="Username" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1

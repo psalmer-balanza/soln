@@ -44,14 +44,17 @@ animations = [{
 layout_mode = 3
 anchor_right = 1.125
 anchor_bottom = 1.123
-offset_bottom = 0.151978
+offset_left = -16.0
+offset_top = -1.0
+offset_right = -16.0
+offset_bottom = -0.848022
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vheuk")
 
 [node name="Soln_background" type="AnimatedSprite2D" parent="."]
-position = Vector2(577.301, 324.938)
-scale = Vector2(2.26156, 2.31361)
+position = Vector2(527.901, 289.719)
+scale = Vector2(2.00823, 2.02335)
 sprite_frames = SubResource("SpriteFrames_jaifq")
 animation = &"idle"
 autoplay = "idle"
@@ -59,10 +62,10 @@ frame_progress = 0.164573
 
 [node name="buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 818.0
-offset_top = 297.0
-offset_right = 1020.0
-offset_bottom = 439.0
+offset_left = 759.0
+offset_top = 243.0
+offset_right = 961.0
+offset_bottom = 385.0
 theme_override_constants/separation = 20
 
 [node name="play" type="Button" parent="buttons"]

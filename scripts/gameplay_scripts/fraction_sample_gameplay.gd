@@ -3,6 +3,7 @@ extends Control
 @onready var correct_ans_count = 0
 @onready var wrong_ans_count = 0
 @onready var unsimplified_ans_count = 0
+var current_player_username = PlayerState.player_username
 
 var fraction_questions = [
 	[4, 3, 1, 3],  # First fraction
@@ -34,7 +35,9 @@ var current_question_index = 0  # Track which question the player is on
 @onready var second_num_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
 @onready var second_denum_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
 @onready var display_answer: Label = $addition/VBoxContainer/result
+@onready var http_request: HTTPRequest = HTTPRequest.new()
 
+var statistics_url = "http://localhost:3000/game/updatestatistics"
 var first_num: int
 var first_denum: int
 var second_num: int
@@ -44,6 +47,10 @@ var is_simplified = false
 func _ready():
 	initiate_questions()
 	print("Current questline is: ", DialogueState.current_quest)
+	
+	# Create an HTTP request node and connect its completion signal.
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
 	
 func _on_questions_loaded():
 	#if DialogueState.current_quest == "dead_robots":
@@ -77,7 +84,6 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 	if first_denominator == second_denominator:
 		var added_numerator = first_numerator + second_numerator
 		
-
 		if is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
 				if DialogueState.current_quest == "dead_robots":
@@ -232,9 +238,43 @@ func next_question_or_finish():
 		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
 		print("What I need to do now is map each of these attempts per question,
 		connect to question IDs too")
-		
 		display_answer.text = "All questions completed! Returning to the world..."
-		return_to_world()
+		
+		var statistics_data = {
+			"username": current_player_username,
+			"num_correct_ans": correct_ans_count,
+			"num_wrong_ans": wrong_ans_count,
+			"total_attempts": total_ans_count,
+			"num_unsimplified_ans": unsimplified_ans_count,
+		}
+		
+		var json_body = JSON.stringify(statistics_data)
+		print(json_body)
+		var headers = ["Content-type: application/json"]
+		
+		print("before http request")
+		# Perform a POST request. The URL below returns JSON as of writing.
+		http_request.request(statistics_url, headers, HTTPClient.METHOD_POST, json_body)
+
+# Called when the HTTP request is completed.
+func _http_request_completed(result, response_code, headers, body):
+	print("http request completed")
+	if response_code == 200:
+		var json = JSON.new()
+		var error = json.parse(body.get_string_from_utf8())
+		if error == OK:
+			var response = json.get_data()
+			# RESPONSE IS RETURNING FALSE EVEN THOUGH THE LOGIN IS SUCCESSFUL
+			if !response.success:
+				print("statistics updated")
+				return_to_world()
+			else:
+				print("Login failed")
+		else:
+			print("Failed to parse JSON")
+	else:
+		print("HTTP request failed with code:", response_code)
+
 
 # Function to return to the world scene
 func return_to_world():
