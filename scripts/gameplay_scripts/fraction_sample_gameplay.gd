@@ -1,13 +1,14 @@
 extends Control
 
 var fraction_questions = [
-	[[2, 3], [1, 3]],  # First fraction
+	[[420, 3], [1, 3]],  # First fraction
 	[[3, 2], [1, 2]],  # Second fraction
 	[[3, 2], [2, 5]],  # Third fraction
 ]
 
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
+	# fraction_questions = GetFractions["saisai_rock"]
 	if DialogueState.current_quest == "saisai_rock":
 		fraction_questions = [
 			[[5, 4], [3, 4]],  # First fraction
@@ -40,22 +41,30 @@ var is_simplified = false
 var is_simplified_answer = false
 
 func _ready():
+	# First connect to the "questions_loaded" signal to know when the data is ready
+	GetFractions.connect("questions_loaded", _on_questions_loaded)
+	
 	# Start by displaying the first question
 	print("Current questline is: ", DialogueState.current_quest)
+	
+
+func _on_questions_loaded():
+	fraction_questions = GetFractions.fraction_questions
 	initiate_questions()
 	display_current_question()
+	print(fraction_questions)
 
 # Function to display the current question
 func display_current_question():
 	var current_question = fraction_questions[current_question_index]
-	var first_fraction = current_question[0]
-	var second_fraction = current_question[1]
+	#var first_fraction = current_question[0]
+	#var second_fraction = current_question[1]
 	
 	# Set the text for the first and second fractions
-	first_num = first_fraction[0]
-	first_denum = first_fraction[1]
-	second_num = second_fraction[0]
-	second_denum = second_fraction[1]
+	first_num = current_question[0]
+	first_denum = current_question[1]
+	second_num = current_question[2]
+	second_denum = current_question[3]
 	
 	# display fractions
 	first_num_label.text = str(first_num)
