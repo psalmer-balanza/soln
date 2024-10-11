@@ -5,28 +5,26 @@ extends Control
 @onready var unsimplified_ans_count = 0
 
 var fraction_questions = [
-	[[420, 3], [1, 3]],  # First fraction
-	[[3, 2], [1, 2]],  # Second fraction
-	[[3, 2], [2, 5]],  # Third fraction
+	[4, 3, 1, 3],  # First fraction
+	[3, 2, 1, 2],  # Second fraction
+	[3, 2, 2, 5],  # Third fraction
 ]
 
 # Store multiple questions as pairs of numerators and denominators
 func initiate_questions():
-	# fraction_questions = GetFractions["saisai_rock"]
+	
+	GetFractions.connect("questions_loaded", _on_questions_loaded)
 	if DialogueState.current_quest == "saisai_rock":
-		fraction_questions = [
-			[[5, 4], [3, 4]],  # First fraction
-			[[7, 10], [1, 5]],  # Second fraction
-			[[9, 5], [4, 5]],  # Third fraction
-		]
-	elif DialogueState.current_quest == "dead_robot":
+		GetFractions.post_data["MinigameID"] = 1
+		GetFractions._ready()
+		fraction_questions = GetFractions.fraction_questions
+	elif DialogueState.current_quest == "dead_robots":
 		print("Doing dead robot questions")
-		fraction_questions = [
-			[[3, 4], [1, 4]],  # First fraction
-			[[5, 6], [1, 3]],  # Second fraction
-			[[7, 5], [2, 5]],  # Third fraction
-		]
-
+		GetFractions.post_data["MinigameID"] = 2
+		GetFractions._ready()
+		fraction_questions = GetFractions.fraction_questions
+		print("we got the fractions for ded robot! ", fraction_questions)
+		
 var current_question_index = 0  # Track which question the player is on
 
 @onready var numerator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
@@ -44,18 +42,13 @@ var second_denum: int
 var is_simplified = false
 
 func _ready():
-	# First connect to the "questions_loaded" signal to know when the data is ready
-	GetFractions.connect("questions_loaded", _on_questions_loaded)
-	
-	# Start by displaying the first question
+	initiate_questions()
 	print("Current questline is: ", DialogueState.current_quest)
 	
-
 func _on_questions_loaded():
+	#if DialogueState.current_quest == "dead_robots":
+	##$AnimatedSprite2D.play("idle_robot")display_current_question()
 	fraction_questions = GetFractions.fraction_questions
-	if DialogueState.current_quest == "dead_robots":
-		$AnimatedSprite2D.play("idle_robot")
-	initiate_questions()
 	display_current_question()
 	print(fraction_questions)
 
@@ -64,6 +57,8 @@ func display_current_question():
 	var current_question = fraction_questions[current_question_index]
 	#var first_fraction = current_question[0]
 	#var second_fraction = current_question[1]
+	
+	print("in the display_current_question, the fractions are ", fraction_questions)
 	
 	# Set the text for the first and second fractions
 	first_num = current_question[0]
