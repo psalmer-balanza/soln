@@ -82,18 +82,8 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 	if first_denominator == second_denominator:
 		var added_numerator = first_numerator + second_numerator
 		
-		if check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			if DialogueState.current_quest == "dead_robots":
-				correct_answer_robot()
-			elif DialogueState.current_quest == "saisai_rock":
-				correct_answer_saisai()
-			
-			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
-			#Checker for correct
-			correct_ans_count += 1
-			next_question_or_finish()  # Move to the next question or finish the exercise
-			
-		elif is_simplified:
+
+		if is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
 				if DialogueState.current_quest == "dead_robots":
 					correct_answer_robot()
@@ -134,6 +124,18 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+				
+		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
+			
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			#Checker for correct
+			correct_ans_count += 1
+			next_question_or_finish()  # Move to the next question or finish the exercise
+			
 		else:
 			if DialogueState.current_quest == "dead_robots":
 				wrong_answer_robot()
@@ -149,17 +151,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
-		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
-			if DialogueState.current_quest == "dead_robots":
-				correct_answer_robot()
-			elif DialogueState.current_quest == "saisai_rock":
-				correct_answer_saisai()
-			#Checker for correct
-			correct_ans_count += 1
-			next_question_or_finish()  # Move to the next question or finish the exercise
-			
-		elif is_simplified:
+		if is_simplified:
 			if check_simplified_form(added_adjusted_numerator, lcd):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				if DialogueState.current_quest == "dead_robots":
@@ -195,6 +187,17 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+				
+		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			if DialogueState.current_quest == "dead_robots":
+				correct_answer_robot()
+			elif DialogueState.current_quest == "saisai_rock":
+				correct_answer_saisai()
+			#Checker for correct
+			correct_ans_count += 1
+			next_question_or_finish()  # Move to the next question or finish the exercise
+			
 		else:
 			if DialogueState.current_quest == "dead_robots":
 				wrong_answer_robot()

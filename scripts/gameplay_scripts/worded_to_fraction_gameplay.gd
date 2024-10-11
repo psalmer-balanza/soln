@@ -151,18 +151,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		# If denominators are the same, just add the numerators
 		var added_numerator = first_numerator + second_numerator
 		
-		if check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
-			if DialogueState.current_npc == "old_peculiar":
-				$AnimationPlayer.play("spin")
-				await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("spin")
-			await $AnimationPlayer.animation_finished
-			# Checker for correct
-			correct_ans_count += 1
-			next_question_or_finish()  # Move to the next question or finish the exercise
-		
-		elif is_simplified:
+		if is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
@@ -192,6 +181,18 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+		
+		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			if DialogueState.current_npc == "old_peculiar":
+				$AnimationPlayer.play("spin")
+				await $AnimationPlayer.animation_finished
+			$AnimationPlayer.play("spin")
+			await $AnimationPlayer.animation_finished
+			# Checker for correct
+			correct_ans_count += 1
+			next_question_or_finish()  # Move to the next question or finish the exercise
+		
 		else:
 			#$AnimationPlayer.play("wrong_answer_saisai")
 			#await $AnimationPlayer.animation_finished
