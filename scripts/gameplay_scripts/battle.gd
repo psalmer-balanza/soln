@@ -6,7 +6,7 @@ extends Control
 @onready var question_bg = $"Question BG"
 
 func _ready() -> void:
-	Global.Enemy_HP = 100
+	GetQuiz.Enemy_HP = 100
 
 func _process(delta: float) -> void:
 	enemy_hp.value = Global.Enemy_HP
