@@ -22,6 +22,8 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 PlayerState="*res://helpers/player_state.gd"
 Global="*res://helpers/global.gd"
 DialogueState="*res://helpers/dialogue_state.gd"
+GetQuiz="*res://helpers/get_boss_questions.gd"
+GetFractions="*res://helpers/get_fraction_questions.gd"
 
 [dialogue_manager]
 
@@ -33,7 +35,6 @@ general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 
