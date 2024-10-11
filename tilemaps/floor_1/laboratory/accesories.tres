@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://djr7yvjxd4hws"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://djr7yvjxd4hws"]
 
 [ext_resource type="Texture2D" uid="uid://b8n7vl0qmb4xy" path="res://assets/floor_1/laboratory/floor accesories.png" id="1_moygt"]
+[ext_resource type="Texture2D" uid="uid://dlwftcurewfym" path="res://scenes/levels/test_floor2/pipe_decor.png" id="2_j3ti0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05sda"]
 texture = ExtResource("1_moygt")
@@ -31,7 +32,21 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.592, -9.82154, 13.8905, -9.40062, 13.7886, 9.19239, -14.3114, 9.26031)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjd6l"]
+texture = ExtResource("2_j3ti0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.3125, -16, -14.375, 6, -8.125, 10.75, 8.375, 11, 14.25, 5.875, 13.9654, -16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.877, -16, -14.1421, 6.27557, -8.39689, 10.5182, -5.03814, 10.9602, 5.39169, 10.9602, 8.13173, 10.4298, 14.1421, 6.8059, 13.877, -16)
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_05sda")
+sources/3 = SubResource("TileSetAtlasSource_xjd6l")

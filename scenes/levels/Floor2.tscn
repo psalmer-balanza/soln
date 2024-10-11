@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="5_g8opa"]
 [ext_resource type="Texture2D" uid="uid://b58aj7c5ga2ov" path="res://scenes/levels/test_floor2/falling_water.png" id="5_jvexc"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="5_qdfio"]
-[ext_resource type="TileSet" uid="uid://bgjpnl2hfvf4o" path="res://tilemaps/floor_2/pipe_walkway.tres" id="6_dk1yb"]
+[ext_resource type="TileSet" uid="uid://bgjpnl2hfvf4o" path="res://tilemaps/floor_2/floor_2/pipe_walkway.tres" id="6_dk1yb"]
 [ext_resource type="TileSet" uid="uid://cbn7paj54rxku" path="res://tilemaps/floor_2/water.tres" id="6_qnjl2"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="8_i4yxi"]
 
@@ -634,7 +634,7 @@ _data = {
 [node name="Floor2" type="Node2D"]
 script = ExtResource("1_dkfmh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
 offset_left = -1895.0
 offset_top = -2962.0
@@ -872,11 +872,6 @@ modulate = Color(0.458824, 1, 0.996078, 1)
 tile_map_data = PackedByteArray("AAADAA0AAAACAAoAAAAEAA0AAAAGAAsAAAADAAwAAAAIAA0AAAACAA0AAAALAAoAAAADAA4AAAAJAAgAAAAEAA4AAAAOAAwAAAAEAAwAAAAOAAsAAAACAAwAAAANAAsAAAACAA4AAAANAAwAAAA=")
 tile_set = SubResource("TileSet_wflby")
 
-[node name="above_ground" type="TileMapLayer" parent="."]
-modulate = Color(0.458824, 1, 0.996078, 1)
-tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAA=")
-tile_set = ExtResource("5_qdfio")
-
 [node name="rooms" type="Node2D" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
 
@@ -915,6 +910,11 @@ tile_set = ExtResource("3_8oq75")
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
 position = Vector2(34, 81)
 
+[node name="foreground" type="TileMapLayer" parent="."]
+modulate = Color(0.458824, 1, 0.996078, 1)
+tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAD//yAAAwAAAAIAAAD//x4AAwAAAAAAAAD//x8AAwABAAEAABANAB8AAwAAAAAAAAANACAAAwAAAAEAAAANACEAAwAAAAIAAAAuABoAAwAAAAAAAAAuABsAAwAAAAEAAAAuABwAAwAAAAIAAAA7ABUAAwAAAAEAAAA7ABQAAwAAAAAAAAA7ABYAAwAAAAIAAAD8//b/AwAAAAAAAAD8//f/AwAAAAEAAAD8//j/AwAAAAIAAAAEAAQAAwACAAEAAAADAAQAAwADAAEAABADAAUAAwADAAIAABAFAAQAAwADAAEAAAAFAAUAAwADAAIAAAD+/x8AAwADAAEAABD+/yAAAwADAAIAABBEAPP/AwADAAEAAABEAPT/AwADAAIAAABDAPP/AwACAAEAAABCAPP/AwACAAEAAABBAPP/AwACAAEAAABAAPP/AwACAAEAAAA/APP/AwACAAEAAAA+APP/AwACAAEAAAA9APP/AwACAAEAAAA8APP/AwADAAEAABA8APT/AwADAAIAABA3APP/AwAAAAAAAAA3APT/AwAAAAEAAAA3APX/AwAAAAIAAAAzAPf/AwAAAAAAAAAzAPj/AwAAAAEAAAAzAPn/AwAAAAIAAABCAPr/AwAAAAAAAABCAPv/AwABAAEAABBCAPz/AwAAAAIAAABhAPr/AwAAAAAAAABhAPv/AwAAAAEAAABhAPz/AwAAAAIAAABhAPP/AwAAAAAAAABhAPT/AwAAAAEAAABhAPX/AwAAAAIAAAB2APr/AwAAAAAAAAB2APv/AwAAAAEAAAB2APz/AwAAAAIAAAB2APP/AwAAAAAAAAB2APT/AwAAAAEAAAB2APX/AwAAAAIAAABjAPH/AwAAAAAAAABjAPL/AwAAAAEAAABjAPP/AwAAAAIAAAB0APH/AwAAAAAAAAB0APL/AwAAAAEAAAB0APP/AwAAAAIAAABjAPz/AwAAAAAAAABjAP3/AwAAAAEAAABjAP7/AwAAAAIAAAB0APz/AwAAAAAAAAB0AP3/AwAAAAEAAAB0AP7/AwAAAAIAAABBAPv/AwACAAEAAABAAPv/AwADAAEAABBAAPz/AwADAAIAABAxACEAAwADAAEAABAxACIAAwADAAIAABAyACEAAwACAAEAAAAzACEAAwACAAEAAAA0ACEAAwADAAEAAAA0ACIAAwADAAIAAAABACIAAwADAAEAABABACMAAwADAAIAABACACIAAwACAAEAAAADACIAAwACAAEAAAAEACIAAwACAAEAAAAFACIAAwACAAEAAAAGACIAAwADAAEAAAAGACMAAwADAAIAAAA=")
+tile_set = ExtResource("5_qdfio")
+
 [node name="tooltipls" type="Node2D" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
 
@@ -937,6 +937,7 @@ remove water in
 rooms"
 
 [node name="dark" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [editable path="tooltipls/monitor1"]
