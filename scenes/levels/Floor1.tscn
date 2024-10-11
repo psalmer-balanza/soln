@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
 [ext_resource type="AudioStream" uid="uid://bd1rmqsqkqxmb" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).mp3" id="2_5mmam"]
-[ext_resource type="AudioStream" uid="uid://bw8w8v52noelv" path="res://audio/background_music/Important Theme Song.mp3" id="2_gc0en"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
+[ext_resource type="AudioStream" uid="uid://cgap8td34xy3s" path="res://audio/background_music/Totally Copyright Free Music.mp3" id="3_g73gv"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
@@ -791,7 +791,7 @@ volume_db = -35.604
 pitch_scale = 1.07
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_gc0en")
+stream = ExtResource("3_g73gv")
 volume_db = -28.108
 autoplay = true
 
