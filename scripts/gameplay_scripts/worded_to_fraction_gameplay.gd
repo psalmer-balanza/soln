@@ -122,7 +122,7 @@ func _on_submit_answer_button_down():
 	var answer_denominator = int(denominator_answer.text)
 
 	# Validate the inputted fractions against the question
-	if not input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
+	if input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
 		# $AnimationPlayer.play("wrong_answer_saisai")
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
 		return
@@ -136,7 +136,14 @@ func input_matches_question(first_numerator: int, first_denominator: int, second
 	var expected_first_fraction = current_question[0]
 	var expected_second_fraction = current_question[1]
 	
-	return first_numerator == expected_first_fraction[0] and first_denominator == expected_first_fraction[1] and second_numerator == expected_second_fraction[0] and second_denominator == expected_second_fraction[1]
+	if first_numerator == expected_first_fraction[0] and first_denominator == expected_first_fraction[1] and second_numerator == expected_second_fraction[0] and second_denominator == expected_second_fraction[1]:
+		print("input first")
+		return true
+	elif first_numerator == expected_second_fraction[0] and first_denominator == expected_second_fraction[1] and second_numerator == expected_first_fraction[0] and second_denominator == expected_first_fraction[1]:
+		print("print second")
+		return true
+	
+	return false
 
 # Check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int, answer_numerator: int, answer_denominator: int):
@@ -145,7 +152,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_numerator = first_numerator + second_numerator
 		
 		if check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
 			if DialogueState.current_npc == "old_peculiar":
 				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
@@ -238,7 +245,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
 			#Checker for correct
 			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise

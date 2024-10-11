@@ -141,7 +141,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		var added_adjusted_numerator = adjusted_first_numerator + adjusted_second_numerator
 		
 		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advanced thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
 			if DialogueState.current_quest == "dead_robots":
 				correct_answer_robot()
 			elif DialogueState.current_quest == "saisai_rock":
