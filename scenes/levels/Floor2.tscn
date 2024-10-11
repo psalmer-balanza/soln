@@ -937,7 +937,6 @@ remove water in
 rooms"
 
 [node name="dark" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [editable path="tooltipls/monitor1"]
