@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
 [ext_resource type="AudioStream" uid="uid://bd1rmqsqkqxmb" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).mp3" id="2_5mmam"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
-[ext_resource type="AudioStream" uid="uid://cgap8td34xy3s" path="res://audio/background_music/Totally Copyright Free Music.mp3" id="3_g73gv"]
+[ext_resource type="AudioStream" uid="uid://dxoypcig23tqn" path="res://audio/background_music/Farming - Don't Starve Together  8-Bit Cover.mp3" id="3_2cehf"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
@@ -791,8 +791,8 @@ volume_db = -35.604
 pitch_scale = 1.07
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_g73gv")
-volume_db = -28.108
+stream = ExtResource("3_2cehf")
+volume_db = -12.18
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -908,7 +908,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1121, 1059)
+position = Vector2(353, 132)
 
 [node name="in_front_details" type="Node2D" parent="."]
 
@@ -1005,7 +1005,7 @@ position = Vector2(294, 82)
 shape = SubResource("RectangleShape2D_5exya")
 
 [node name="DeadRobotScene" parent="." instance=ExtResource("26_5o1n3")]
-position = Vector2(958, 1011)
+position = Vector2(981, 1024)
 
 [node name="RaketStealing" parent="." instance=ExtResource("24_yrk65")]
 position = Vector2(1186, 1051)

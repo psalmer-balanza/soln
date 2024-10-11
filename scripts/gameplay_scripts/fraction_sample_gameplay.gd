@@ -286,7 +286,33 @@ func return_to_world():
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_submit_answer_pressed() -> void:
+	# Validate the numerator and denominator inputs
+	if !is_valid_integer(numerator_input.text) or !is_valid_integer(denominator_input.text):
+		display_answer.text = "Please enter valid numbers."
+		print("Invalid input detected: Non-integer value entered.")
+		return  # Exit the function if input is invalid
+	
+	# Check if the inputs are empty
+	if numerator_input.text == "" or denominator_input.text == "":
+		display_answer.text = "Please fill in both the numerator and denominator."
+		print("Empty input detected.")
+		return  # Exit the function if any input is empty
+	
+	# Convert text to integers and proceed to check the answer
+	var input_numerator = int(numerator_input.text)
+	var input_denominator = int(denominator_input.text)
+
+	print("Valid input: ", input_numerator, "/", input_denominator)
+
+	# Call the fraction checker with validated input
 	fraction_addition_checker(first_num, first_denum, second_num, second_denum)
+
+
+# Helper function to check if a string is a valid integer
+func is_valid_integer(value: String) -> bool:
+	# Try converting the string to an integer, and return true if successful
+	var number = value.to_int()
+	return str(number) == value.strip_edges()
 
 func _on_button_pressed() -> void:
 	return_to_world()

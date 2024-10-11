@@ -2,10 +2,11 @@ extends State
 class_name PlayerDialogueState
 @export var player: CharacterBody2D
 @onready var actionable_finder: Area2D = $"../../ActionableFinder"
+@onready var walking_sfx: AudioStreamPlayer = $"../../WalkingSFX"
 
 
 func Enter():
-
+	walking_sfx.stop()
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
 	sprite.play("idle")
 	player.velocity = Vector2.ZERO

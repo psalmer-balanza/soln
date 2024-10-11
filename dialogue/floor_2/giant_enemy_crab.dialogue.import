@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bp1rvdruol0f4"
+path="res://.godot/imported/giant_enemy_crab.dialogue-614f90a645793dc4e903c9be227d220a.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/giant_enemy_crab.dialogue"
+dest_files=["res://.godot/imported/giant_enemy_crab.dialogue-614f90a645793dc4e903c9be227d220a.tres"]
+
+[params]
+
+defaults=true
