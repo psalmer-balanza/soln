@@ -1,8 +1,10 @@
-[gd_scene load_steps=55 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=57 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_3mv17"]
-[ext_resource type="Script" path="res://scenes/levels/floor_1.gd" id="1_akh82"]
+[ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
+[ext_resource type="AudioStream" uid="uid://bd1rmqsqkqxmb" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).mp3" id="2_5mmam"]
+[ext_resource type="AudioStream" uid="uid://bw8w8v52noelv" path="res://audio/background_music/Important Theme Song.mp3" id="2_gc0en"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
@@ -14,14 +16,14 @@
 [ext_resource type="TileSet" uid="uid://cuah0bg365ii6" path="res://tilemaps/floor_1/cave/wall.tres" id="9_tb47j"]
 [ext_resource type="Texture2D" uid="uid://cc5vm5n4jm4dy" path="res://assets/floor_1/saisai_house/rock path (vertical).png" id="10_u20xf"]
 [ext_resource type="Texture2D" uid="uid://cbppcwcekgoq5" path="res://assets/floor_1/raket_house/Forge Assets.png" id="11_mlm4i"]
-[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/saisai.tscn" id="12_aajla"]
+[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/floor1_characters/saisai.tscn" id="12_aajla"]
 [ext_resource type="Texture2D" uid="uid://b25wc43pwb376" path="res://assets/floor_1/raket_house/NEW raket house 128x128.png" id="12_af725"]
-[ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/snekkers.tscn" id="14_5ewdd"]
+[ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/floor1_characters/snekkers.tscn" id="14_5ewdd"]
 [ext_resource type="Texture2D" uid="uid://ctryrrodivep0" path="res://scenes/levels/test_floor1/All in one ground Decor.png" id="14_m21wj"]
-[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="14_mjtyp"]
+[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="14_mjtyp"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="16_awl35"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
-[ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/racket.tscn" id="17_frjke"]
+[ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="17_frjke"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/raket_stealing.tscn" id="24_yrk65"]
 [ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="25_t57pw"]
@@ -783,6 +785,16 @@ size = Vector2(111, 20)
 [node name="Floor1" type="Node2D"]
 script = ExtResource("1_akh82")
 
+[node name="StartupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5mmam")
+volume_db = -35.604
+pitch_scale = 1.07
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gc0en")
+volume_db = -28.108
+autoplay = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
 offset_left = -1895.0
@@ -798,7 +810,6 @@ tile_map_data = PackedByteArray("AAADAAUAAAAQAAQAAAAEAAYAAAAQAAQAAAAFAAYAAAAQAAQ
 tile_set = SubResource("TileSet_2lq6h")
 
 [node name="below water" type="TileMapLayer" parent="ground_and_water"]
-visible = false
 tile_map_data = PackedByteArray("AAAJAAAAAAAAAAAAACALAAgAAAAAAAEAAAARAA4AAAAAAAEAAAARABcAAAAAAAAAACAJAB8AAAAAAAEAAAAbAB0AAAAAAAAAACAcABYAAAAAAAEAAAABABUAAAAAAAEAAAABAAkAAAAAAAEAAAALAAkAAAAAAAAAACARAA8AAAAAAAAAACAcABcAAAAAAAAAACAJACAAAAAAAAAAACABABYAAAAAAAAAACABAAoAAAAAAAAAACA=")
 tile_set = SubResource("TileSet_6aa8u")
 
@@ -808,7 +819,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAPAAgAAAAAAAEAAAAPAAgAAAAAAAIAAAAPAAg
 tile_set = SubResource("TileSet_jog5g")
 
 [node name="above water" type="TileMapLayer" parent="ground_and_water"]
-visible = false
 tile_map_data = PackedByteArray("AAABAAgAAAAAAAEAAAABAAcAAAAAAAEAAAABAAYAAAAAAAEAAAALAAcAAAAAAAEAAAALAAYAAAAAAAEAAAALAAUAAAAAAAEAAAALAAQAAAAAAAEAAAABABQAAAAAAAEAAAABABMAAAAAAAEAAAABABIAAAAAAAEAAAARAA0AAAAAAAEAAAARAAwAAAAAAAEAAAARAAsAAAAAAAEAAAAcABUAAAAAAAEAAAAcABQAAAAAAAEAAAAcABMAAAAAAAEAAAAcABIAAAAAAAEAAAARABYAAAAAAAEAAAARABUAAAAAAAEAAAARABQAAAAAAAEAAAAJAB4AAAAAAAEAAAAJAB0AAAAAAAEAAAAJABwAAAAAAAEAAAAJABsAAAAAAAEAAAAbABwAAAAAAAEAAAAbABsAAAAAAAEAAAAbABoAAAAAAAEAAAAbABkAAAAAAAEAAAAJABoAAAAAAAAAAAARABMAAAAAAAAAAAAcABEAAAAAAAAAAAAbABgAAAAAAAAAAAARAAoAAAAAAAAAAAALAAMAAAAAAAAAAAABAAUAAAAAAAAAAAABABEAAAAAAAAAAAAJAP//AAAAAAEAAAAJAP7/AAAAAAEAAAAJAP3/AAAAAAEAAAAJAPz/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fd8e0")
 
@@ -898,7 +908,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(965, 1051)
+position = Vector2(1121, 1059)
 
 [node name="in_front_details" type="Node2D" parent="."]
 
@@ -995,7 +1005,7 @@ position = Vector2(294, 82)
 shape = SubResource("RectangleShape2D_5exya")
 
 [node name="DeadRobotScene" parent="." instance=ExtResource("26_5o1n3")]
-position = Vector2(948, 1014)
+position = Vector2(958, 1011)
 
 [node name="RaketStealing" parent="." instance=ExtResource("24_yrk65")]
 position = Vector2(1186, 1051)

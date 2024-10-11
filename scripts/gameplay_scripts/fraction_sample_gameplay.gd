@@ -3,6 +3,10 @@ extends Control
 @onready var correct_ans_count = 0
 @onready var wrong_ans_count = 0
 @onready var unsimplified_ans_count = 0
+@onready var correct_answer_sfx: AudioStreamPlayer = $CorrectAnswerSFX
+@onready var wrong_answer_sfx: AudioStreamPlayer = $WrongAnswerSFX
+
+
 var current_player_username = PlayerState.player_username
 
 var fraction_questions = [
@@ -288,21 +292,25 @@ func _on_button_pressed() -> void:
 	return_to_world()
 	
 func correct_answer_saisai() -> void:
+	correct_answer_sfx.play()
 	$AnimationPlayer.play("correct_answer_saisai")
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("saisai_idle")
 
 func wrong_answer_saisai() -> void:
+	wrong_answer_sfx.play()
 	$AnimationPlayer.play("wrong_answer_saisai")
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("saisai_idle")
 
 func correct_answer_robot() -> void:
+	correct_answer_sfx.play()
 	$AnimationPlayer.play("right_answer_robot")
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("robot_idle")
 
 func wrong_answer_robot() -> void:
+	wrong_answer_sfx.play()
 	$AnimationPlayer.play("wrong_answer_robot")
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("robot_idle")

@@ -1,17 +1,19 @@
-[gd_scene load_steps=30 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=32 format=4 uid="uid://32iomad28t5n"]
 
-[ext_resource type="Script" path="res://scenes/levels/floor_2.gd" id="1_dkfmh"]
+[ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
 [ext_resource type="Texture2D" uid="uid://c1i0ubr1y8d54" path="res://scenes/levels/test_floor2/pipes_side.png" id="3_5onoa"]
 [ext_resource type="TileSet" uid="uid://cv6gtkstr2nfo" path="res://tilemaps/floor_2/room.tres" id="3_8oq75"]
 [ext_resource type="Texture2D" uid="uid://cfad566d0o20d" path="res://scenes/levels/test_floor2/waterpipe_entrance.png" id="4_mldc0"]
-[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/main_character.tscn" id="5_g8opa"]
+[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="5_g8opa"]
 [ext_resource type="Texture2D" uid="uid://b58aj7c5ga2ov" path="res://scenes/levels/test_floor2/falling_water.png" id="5_jvexc"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="5_qdfio"]
 [ext_resource type="TileSet" uid="uid://bgjpnl2hfvf4o" path="res://tilemaps/floor_2/floor_2/pipe_walkway.tres" id="6_dk1yb"]
 [ext_resource type="Texture2D" uid="uid://bvnaxri8tl12r" path="res://scenes/levels/test_floor2/pipe_below.png" id="6_opsxw"]
 [ext_resource type="TileSet" uid="uid://cbn7paj54rxku" path="res://tilemaps/floor_2/water.tres" id="6_qnjl2"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="8_i4yxi"]
+[ext_resource type="PackedScene" uid="uid://bx608nh6yagqs" path="res://scenes/characters_scenes/floor2_characters/Giant Enemy Crab.tscn" id="13_lbwep"]
+[ext_resource type="PackedScene" uid="uid://dfm66kpn4gpd6" path="res://scenes/characters_scenes/floor2_characters/Rat.tscn" id="14_362hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gg524"]
 texture = ExtResource("3_5onoa")
@@ -958,5 +960,11 @@ rooms"
 
 [node name="dark" type="CanvasModulate" parent="."]
 color = Color(0.323096, 0.268242, 0.383669, 1)
+
+[node name="GiantEnemyCrab" parent="." instance=ExtResource("13_lbwep")]
+position = Vector2(125, 95)
+
+[node name="Rat" parent="." instance=ExtResource("14_362hh")]
+position = Vector2(-63, 92)
 
 [editable path="tooltipls/monitor1"]

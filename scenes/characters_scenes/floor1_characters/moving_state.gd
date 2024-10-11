@@ -4,18 +4,21 @@ class_name MovingState
 
 var player: CharacterBody2D
 @onready var auto_start_encounter_finder = $"../../AutoStartEncounterFinder"
-var auto_start_encounters: Array[Area2D] = []
+@onready var walking_sfx: AudioStreamPlayer = $"../../WalkingSFX"
 
+var auto_start_encounters: Array[Area2D] = []
 func Enter():
 	
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
 	sprite.play("walk")
+	walking_sfx.play() # Play walking sfx when in the moving state
 
 func Update(delta: float):
 	auto_start_encounters = auto_start_encounter_finder.get_overlapping_areas()
 	
 	if not (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down")):
 		Transitioned.emit(self, "IdleState")
+		walking_sfx.stop()
 		return
 		
 	if Input.is_action_just_pressed("ui_accept"):
