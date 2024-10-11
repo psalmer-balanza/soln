@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cbn7paj54rxku"]
+
+[ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_fmr7q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfdda"]
+texture = ExtResource("1_fmr7q")
+texture_region_size = Vector2i(32, 32)
+30:16/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_dfdda")

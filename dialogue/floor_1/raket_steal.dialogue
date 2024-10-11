@@ -12,6 +12,7 @@ if not raket_sneaking_quest_complete
 	Masked Figure: Ha! What a poor excuse, but I see that you are serious about it, let's make a deal? 
 	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
 	Deal. Hit me with your best shot!
+	set raket_sneaking_quest_complete = true
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 elif raket_sneaking_quest_complete
 	Masked Figure: You actually completed the problems! I’m impressed!
@@ -22,6 +23,10 @@ elif raket_sneaking_quest_complete
 	Masked Figure: Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared.
 	Well, she does. So, how about we head to your house and share this pie?
 	Raket: I'd like that. Let’s go and slice it up.
+	set should_I_delete_raket_stealing_scene = true
+
+
+
 => end
 
 ~ end

@@ -11,6 +11,7 @@ if not raket_house_quest_complete
 	Isn’t 4/10 too much for me? The pie is for you…
 	Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+	set raket_quest_progress = 1
 elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 	Raket: Great job, Sol’n! Now that we have all the ore pieces, I can finally build this sword.
 	Raket: This is where Yzel's animation plays
@@ -20,6 +21,7 @@ elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade a
 	Raket: This is where earthquake plays
 	Raket: Oh no! The snake is waking up! Take these, and be ready! You need to defeat the snake in the cave.
 	set raket_sword_complete = true
+	set raket_quest_progress = 3
 elif raket_house_quest_complete
 	Raket: See I told you I will still have more of the pie slices to eat...
 	Raket: Don’t worry I want to share this pie to you as a form of thanks since you delivered the message from Saisai.
@@ -40,6 +42,8 @@ elif raket_house_quest_complete
 	- Sword pieces? Sure! I’m up for the challenge
 	Raket: Great! There. Just go down that path and follow it. 
 	Raket: It leads directly to the cave. Goodluck Sol’n!
+	set unlock_cave_collision = true
+	set raket_quest_progress = 2
 elif sword_bottom or sword_guard or sword_lower_blade or sword_middle_blade or sword_top_blade
 	Raket: What is this, it's still missing a few pieces. Go back! Don't come back until you have them all!
 

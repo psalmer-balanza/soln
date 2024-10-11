@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw7ejsmdlwoyr"]
+[gd_scene load_steps=8 format=3 uid="uid://bw7ejsmdlwoyr"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_scripts/firefly.gd" id="1_68yv4"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inlt7"]
 lifetime_randomness = 0.2
@@ -59,6 +61,7 @@ _data = {
 }
 
 [node name="firefly" type="Node2D"]
+script = ExtResource("1_68yv4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 6

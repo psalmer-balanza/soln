@@ -16,6 +16,7 @@ elif saisai_quest_progress == 2
 	Saisai: Here are the directions to my raccoon friend's house. [wait=1] 
 	Saisai: Take the pie, and may the pastry gods be with you!
 	Saisai: Safe travels, pie hero!
+	set saisai_quest_progress = 3
 
 => end
 

@@ -13,4 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if DialogueState.unlock_cave_collision:
+		$Racket/BarrierFromCave.disabled = true
+	if DialogueState.saisai_quest_progress == 3:
+		$Saisai/BarrierFromBridge.disabled = true
