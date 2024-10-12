@@ -6,8 +6,8 @@ extends Control
 @onready var correct_answer_sfx: AudioStreamPlayer = $CorrectAnswerSFX
 @onready var wrong_answer_sfx: AudioStreamPlayer = $WrongAnswerSFX
 
-
 var current_player_username = PlayerState.player_username
+var current_minigame_id
 
 var fraction_questions = [
 	[4, 3, 1, 3],  # First fraction
@@ -21,11 +21,13 @@ func initiate_questions():
 	GetFractions.connect("questions_loaded", _on_questions_loaded)
 	if DialogueState.current_quest == "saisai_rock":
 		GetFractions.post_data["MinigameID"] = 1
+		current_minigame_id = GetFractions.post_data["MinigameID"]
 		GetFractions._ready()
 		fraction_questions = GetFractions.fraction_questions
 	elif DialogueState.current_quest == "dead_robots":
 		print("Doing dead robot questions")
 		GetFractions.post_data["MinigameID"] = 2
+		current_minigame_id = GetFractions.post_data["MinigameID"]
 		GetFractions._ready()
 		fraction_questions = GetFractions.fraction_questions
 		print("we got the fractions for ded robot! ", fraction_questions)
@@ -82,6 +84,7 @@ func display_current_question():
 	first_denum_label.text = str(first_denum)
 	second_num_label.text = str(second_num)
 	second_denum_label.text = str(second_denum)
+	
 
 # Function to check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
@@ -99,8 +102,9 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				display_answer.text = "Try again. \nCheck your GCD value."
 				is_simplified = true
 				if DialogueState.current_quest == "dead_robots":
 					wrong_answer_robot()
@@ -114,9 +118,8 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_answer_robot()
 			elif DialogueState.current_quest == "saisai_rock":
 				correct_answer_saisai()
-			display_answer.text = "Good job! \nCorrect answer!"
-
-			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)): 
+				
+			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_input.text)):
 				if DialogueState.current_quest == "dead_robots":
 					correct_answer_robot()
 				elif DialogueState.current_quest == "saisai_rock":
@@ -126,6 +129,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
@@ -136,11 +140,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			elif DialogueState.current_quest == "saisai_rock":
 				correct_answer_saisai()
 			
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered its simplified form."
 			#Checker for correct
 			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
-			
+	
 		else:
 			if DialogueState.current_quest == "dead_robots":
 				wrong_answer_robot()
@@ -148,7 +152,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				wrong_answer_saisai()
 			#Checker for wrong ans
 			wrong_ans_count += 1
-			display_answer.text = "Try again."
+			display_answer.text = "Try again. Check your\n numerator or denominator"
 			
 	else:  # DIFFERENT DENOMINATORS
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
@@ -167,8 +171,9 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+			
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				display_answer.text = "Try again. \nCheck your GCD value."
 				if DialogueState.current_quest == "dead_robots":
 					wrong_answer_robot()
 				elif DialogueState.current_quest == "saisai_rock":
@@ -182,19 +187,20 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_answer_robot()
 			elif DialogueState.current_quest == "saisai_rock":
 				correct_answer_saisai()
-			display_answer.text = "Good job! \nCorrect answer!"
+
 			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, lcd): 
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 				
-		if check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
+			display_answer.text = "Advance thinking! \nYou entered its simplified form."
 			if DialogueState.current_quest == "dead_robots":
 				correct_answer_robot()
 			elif DialogueState.current_quest == "saisai_rock":
@@ -231,6 +237,7 @@ func next_question_or_finish():
 		numerator_input.clear()
 		denominator_input.clear()
 		display_current_question()  # Update the UI with the next question
+		
 	else:
 		# If all questions are answered, return to the world
 		# compile and send to db for zen/julliard
@@ -242,10 +249,15 @@ func next_question_or_finish():
 		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
 		print("What I need to do now is map each of these attempts per question,
 		connect to question IDs too")
-		display_answer.text = "All questions completed! Returning to the world..."
+		print("Current minigame id: ", current_minigame_id)
+		numerator_input.editable = false
+		denominator_input.editable = false
+		display_answer.text = "All questions completed!\nReturning to the world..."
+		await get_tree().create_timer(3.0).timeout
 		
 		var statistics_data = {
 			"username": current_player_username,
+			"minigame_id": current_minigame_id,
 			"num_correct_ans": correct_ans_count,
 			"num_wrong_ans": wrong_ans_count,
 			"total_attempts": total_ans_count,
@@ -256,13 +268,11 @@ func next_question_or_finish():
 		print(json_body)
 		var headers = ["Content-type: application/json"]
 		
-		print("before http request")
 		# Perform a POST request. The URL below returns JSON as of writing.
 		http_request.request(statistics_url, headers, HTTPClient.METHOD_POST, json_body)
 
 # Called when the HTTP request is completed.
 func _http_request_completed(result, response_code, headers, body):
-	print("http request completed")
 	if response_code == 200:
 		var json = JSON.new()
 		var error = json.parse(body.get_string_from_utf8())
@@ -306,7 +316,6 @@ func _on_submit_answer_pressed() -> void:
 
 	# Call the fraction checker with validated input
 	fraction_addition_checker(first_num, first_denum, second_num, second_denum)
-
 
 # Helper function to check if a string is a valid integer
 func is_valid_integer(value: String) -> bool:

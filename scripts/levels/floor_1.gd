@@ -10,7 +10,7 @@ func _ready():
 		if player_node:
 			player_node.position = PlayerState.saved_position
 			print("Restored player position: ", PlayerState.saved_position)
-	else: 
+	else:
 		print("First time initializing floor1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

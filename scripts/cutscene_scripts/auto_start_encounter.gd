@@ -10,7 +10,6 @@ extends Area2D
 # Deletes the collision shape after interaction
 func delete_auto_actionable():
 	collision_shape_2d.disabled = true
-	collision_shape_2d.queue_free()
 
 # Activated when main character walks into a autostart scene
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
@@ -20,4 +19,4 @@ func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index)
 		DialogueState.in_dialogue = true
 		PlayerState.player_in_dialogue = true
 		DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
-		delete_auto_actionable()
+		call_deferred("delete_auto_actionable")

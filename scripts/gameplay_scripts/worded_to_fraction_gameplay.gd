@@ -29,6 +29,8 @@ var current_question_index = 0  # Track which question the player is on
 @onready var npc_sprite = $NPC_Sprites
 @onready var current_npc = DialogueState.current_npc
 var is_simplified = false
+var current_player_username = PlayerState.player_username
+var current_minigame_id = 1 # PLACEHOLDER
 
 func _ready():
 	print("ready")
@@ -123,12 +125,33 @@ func _on_submit_answer_button_down():
 
 	# Validate the inputted fractions against the question
 	if input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
-		# $AnimationPlayer.play("wrong_answer_saisai")
+		# Check if the inputs are empty
+		if numerator_answer.text == "" or denominator_answer.text == "":
+			display_answer.text = "Please fill in both the numerator and denominator."
+			print("Empty input detected.")
+			return  # Exit the function if any input is empty
+		
+		# Validate the numerator and denominator inputs
+		elif !is_valid_integer(numerator_answer.text) or !is_valid_integer(denominator_answer.text):
+			display_answer.text = "Please enter valid numbers."
+			print("Invalid input detected: Non-integer value entered.")
+			return  # Exit the function if input is invalid
+			
+		else:
+			# Check the user's input against the current question
+			fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
+		
+	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
-		return
+		
 
-	# Check the user's input against the current question
-	fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
+
+# Helper function to check if a string is a valid integer
+func is_valid_integer(value: String) -> bool:
+	# Try converting the string to an integer, and return true if successful
+	var number = value.to_int()
+	return str(number) == value.strip_edges()
+
 
 # Validate if inputted fractions match the current question's fractions
 func input_matches_question(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int) -> bool:
@@ -158,14 +181,15 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
+				
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				display_answer.text = "Try again. \nCheck your GCD value."
 				is_simplified = true
 				#Checker for wrong ans
 				wrong_ans_count += 1
 		
 		elif added_numerator == answer_numerator and first_denominator == answer_denominator:
-			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_answer.text)): 
+			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_answer.text)):
 				if DialogueState.current_npc == "old_peculiar":
 					$AnimationPlayer.play("spin")
 					await $AnimationPlayer.animation_finished
@@ -178,12 +202,13 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered its simplified form."
 			if DialogueState.current_npc == "old_peculiar":
 				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
@@ -197,7 +222,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			#$AnimationPlayer.play("wrong_answer_saisai")
 			#await $AnimationPlayer.animation_finished
 			#$AnimationPlayer.play("idle_saisai")
-			display_answer.text = "Try again."
+			display_answer.text = "Try again. Check your numerator\n or denominator."
 	else:
 		# If denominators are different, find the least common denominator (LCD)
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
@@ -222,13 +247,13 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				display_answer.text = "Try again. \nCheck your GCD value."
 				is_simplified = true
 				#Checker for wrong ans
 				wrong_ans_count += 1
 		
 		elif added_adjusted_numerator == answer_numerator and lcd == answer_denominator:
-			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, int(denominator_answer.text)): 
+			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, int(denominator_answer.text)):
 				if DialogueState.current_npc == "old_peculiar":
 					$AnimationPlayer.play("spin")
 					await $AnimationPlayer.animation_finished
@@ -241,12 +266,13 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered\n its simplified form."
+			display_answer.text = "Advance thinking! \nYou entered its simplified form."
 			#Checker for correct
 			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
@@ -263,7 +289,7 @@ func check_simplified_form(correct_numerator: int, correct_denominator: int) -> 
 	var simplified_denominator = correct_denominator / gcd_value
 
 	if simplified_numerator == int(numerator_answer.text) and simplified_denominator == int(denominator_answer.text):
-			return true
+		return true
 		
 	return false
 
@@ -273,8 +299,27 @@ func next_question_or_finish():
 		current_question_index += 1  # Move to the next question
 		display_current_question()  # Update the UI with the next question
 	else:
-		# If all questions are answered, return to the world
-		display_answer.text = "All questions completed! Returning to the world..."
+		print("Simple addition correct answers: ", correct_ans_count)
+		print("Simple addition wrong answers: ", wrong_ans_count)
+		var total_ans_count = correct_ans_count + wrong_ans_count
+		print("Simple addition total attempts: ", total_ans_count)
+		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
+		print("What I need to do now is map each of these attempts per question,
+		connect to question IDs too")
+		print("Current minigame id: ", current_minigame_id)
+		numerator_answer.editable = false
+		denominator_answer.editable = false
+		display_answer.text = "All questions completed!\nReturning to the world..."
+		await get_tree().create_timer(3.0).timeout
+		
+		var statistics_data = {
+			"username": current_player_username,
+			"minigame_id": current_minigame_id,
+			"num_correct_ans": correct_ans_count,
+			"num_wrong_ans": wrong_ans_count,
+			"total_attempts": total_ans_count,
+			"num_unsimplified_ans": unsimplified_ans_count,
+		}
 		return_to_world()
 
 # Return to the world scene
