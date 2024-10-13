@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://2kaqp1f7ukyk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
-[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="2_teu7h"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_teu7h"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_tmrgo"]
 [ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/characters/old_mc/mc idle front.png" id="4_j4xl2"]
 [ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="4_vo60v"]

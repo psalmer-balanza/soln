@@ -962,9 +962,9 @@ rooms"
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="GiantEnemyCrab" parent="." instance=ExtResource("13_lbwep")]
-position = Vector2(165, 82)
+position = Vector2(3489, -248)
 
 [node name="Rat" parent="." instance=ExtResource("14_362hh")]
-position = Vector2(-63, 92)
+position = Vector2(1737, -279)
 
 [editable path="tooltipls/monitor1"]
