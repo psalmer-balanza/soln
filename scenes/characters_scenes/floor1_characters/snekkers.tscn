@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
-radius = 107.117
+radius = 74.027
 
 [node name="Snekkers" type="CharacterBody2D"]
 
@@ -98,7 +98,7 @@ frame_progress = 0.0746695
 dialogue_resource = ExtResource("3_5hdfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(1, 3)
+position = Vector2(2, 22)
 shape = SubResource("CircleShape2D_jh85t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

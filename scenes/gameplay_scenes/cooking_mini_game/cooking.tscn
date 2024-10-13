@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=27 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
+[ext_resource type="AudioStream" uid="uid://ndwegmlysqlk" path="res://audio/background_music/Saisai Cooking.mp3" id="1_74ssu"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
 [ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
 [ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
@@ -50,6 +51,11 @@ height = 61.9512
 size = Vector2(54.8781, 20)
 
 [node name="Cooking" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_74ssu")
+volume_db = -43.099
+autoplay = true
 
 [node name="Counter" type="Sprite2D" parent="."]
 self_modulate = Color(0.929715, 0.929715, 0.929715, 1)
@@ -493,14 +499,38 @@ text = "OK"
 flat = true
 
 [node name="cook_button" type="Button" parent="."]
-offset_left = 734.0
-offset_top = 399.0
-offset_right = 806.0
-offset_bottom = 423.0
+offset_left = 585.0
+offset_top = 394.0
+offset_right = 951.0
+offset_bottom = 431.0
 theme_override_colors/font_disabled_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
 text = "COOK"
 flat = true
+
+[node name="ButterLabel" type="Label" parent="."]
+offset_left = 77.0
+offset_top = 292.0
+offset_right = 298.0
+offset_bottom = 313.0
+text = "BUTTER"
+horizontal_alignment = 1
+
+[node name="MushroomLabel" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 459.0
+offset_right = 305.0
+offset_bottom = 480.0
+text = "MUSHROOM"
+horizontal_alignment = 1
+
+[node name="GarlicLabel" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 426.0
+offset_right = 540.0
+offset_bottom = 447.0
+text = "GARLIC"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]

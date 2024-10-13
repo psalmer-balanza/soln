@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwqgqjuufunw3"
-path="res://.godot/imported/Raket idle animation.png-4675e02e6d698c17712147d13eeef87c.ctex"
+uid="uid://bfl2h2w5xaxe"
+path="res://.godot/imported/dialogue box.png-2cc072f9705e42b97a8f62ee5305f3f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/racket/Raket idle animation.png"
-dest_files=["res://.godot/imported/Raket idle animation.png-4675e02e6d698c17712147d13eeef87c.ctex"]
+source_file="res://dialogue/dialogue box.png"
+dest_files=["res://.godot/imported/dialogue box.png-2cc072f9705e42b97a8f62ee5305f3f0.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=3 uid="uid://blfecn4rxpx7i"]
 
-[ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/characters/old_mc/mc idle front.png" id="1_4qyjy"]
+[ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/floor_1/npc/mc idle front.png" id="1_4qyjy"]
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/dead_robot_scene.gd" id="1_hppjd"]
-[ext_resource type="Texture2D" uid="uid://o8432g311xtr" path="res://assets/characters/old_mc/mc idle back.png" id="2_4b2q3"]
+[ext_resource type="Texture2D" uid="uid://o8432g311xtr" path="res://assets/floor_1/npc/mc idle back.png" id="2_4b2q3"]
 [ext_resource type="Resource" uid="uid://ch1mjyw8ve82" path="res://dialogue/floor_1/dead_robot_scene.dialogue" id="4_5j3d2"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_start_encounter.tscn" id="4_m50f8"]
 

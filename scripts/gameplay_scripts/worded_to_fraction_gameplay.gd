@@ -80,7 +80,7 @@ func initiate_questions():
 			"Add these fractions: 2/3 + 1/3.",
 			"Combine these: 2/5 + 2/5."
 		]
-	elif DialogueState.current_quest == "raket_house":
+	elif DialogueState.current_quest == "raket_worded":
 		print("Current quest is raket house")
 		fraction_questions = [
 			[[1, 2], [1, 2]],  # First question fractions
@@ -326,3 +326,7 @@ func next_question_or_finish():
 func return_to_world():
 	print("Returning")
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+
+
+func _on_button_button_down() -> void:
+	return_to_world()

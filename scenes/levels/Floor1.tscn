@@ -851,45 +851,6 @@ autoplay = "waves"
 visible = false
 polygon = PackedVector2Array(444, 124, 260, 124, 254, 113, 241, 115, 206, 106, 206, 144, 205, 146, 187, 146, 188, 266, 204, 269, 222, 302, 229, 324, 250, 324, 252, 334, 283, 345, 299, 366, 302, 384, 309, 387, 320, 387, 320, 718, 253, 718, 253, 748, 226, 770, 236, 797, 277, 825, 300, 846, 303, 878, 307, 896, 300, 926, 302, 944, 287, 990, 291, 1009, 252, 1022, 255, 1042, 254, 1103, 283, 1149, 827, 1149, 866, 1153, 865, 1133, 862, 1101, 879, 1088, 1230, 1088, 1243, 1134, 1246, 1153, 1249, 1157, 1273, 1157, 1275, 1157, 1291, 1178, 1296, 1195, 1312, 1196, 1317, 1220, 1377, 1220, 1362, 1198, 1359, 1178, 1375, 1178, 1391, 1196, 1397, 1220, 1408, 1220, 1408, 1422, 1347, 1422, 1344, 1397, 1345, 1262, 1206, 1240, 1116, 1168, 920, 1179, 818, 1286, 205, 1264, 114, 1062, 144, 752, 232, 429, 94, 284, 122, 98, 229, -29, 540, -29, 689, 104, 640, 390, 556, 497, 563, 690, 832, 797, 919, 885, 984, 982, 1158, 984, 1257, 827, 1652, 853, 1810, 948, 1815, 1113, 1808, 1290, 1552, 1292, 1535, 1420, 1472, 1422, 1472, 1220, 1486, 1198, 1485, 1181, 1500, 1180, 1519, 1196, 1582, 1196, 1554, 1167, 1553, 1147, 1520, 1137, 1517, 1116, 1533, 1116, 1582, 1101, 1596, 1101, 1630, 1068, 1616, 1050, 1613, 1037, 1566, 1009, 1537, 992, 1532, 941, 1502, 945, 1496, 948, 1486, 946, 1470, 931, 1459, 931, 1444, 939, 1457, 980, 1279, 982, 1263, 990, 1266, 1008, 1266, 1010, 1250, 1010, 1230, 1024, 880, 1024, 819, 1010, 817, 989, 796, 970, 773, 974, 768, 992, 766, 996, 748, 995, 750, 988, 750, 973, 702, 976, 701, 978, 689, 979, 658, 961, 657, 941, 644, 923, 444, 922, 443, 940, 439, 943, 434, 947, 421, 947, 412, 946, 408, 946, 401, 944, 405, 924, 420, 896, 431, 914, 444, 914, 448, 838, 530, 832, 477, 801, 480, 782, 477, 717, 384, 718, 384, 387, 451, 384, 449, 362, 495, 351, 492, 332, 527, 303, 526, 284, 541, 253, 581, 252, 580, 150, 558, 147, 556, 125, 546, 109, 542, 93, 523, 98, 511, 99, 495, 97, 499, 112, 494, 116, 483, 114)
 
-[node name="firefly" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(349, 747)
-
-[node name="firefly2" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(376, 776)
-
-[node name="firefly3" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(525, 964)
-
-[node name="firefly4" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(515, 1009)
-
-[node name="firefly5" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(853, 1053)
-
-[node name="firefly6" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1401, 1037)
-
-[node name="firefly7" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1355, 1058)
-
-[node name="firefly8" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1298, 1061)
-
-[node name="firefly9" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1441, 1423)
-
-[node name="firefly10" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1417, 1499)
-
-[node name="firefly11" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(1407, 1576)
-
-[node name="firefly12" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(845, 1680)
-
-[node name="firefly13" parent="ground_and_water/mushroom_forest_collision" instance=ExtResource("6_5ydh2")]
-position = Vector2(917, 1705)
-
 [node name="locations" type="Node2D" parent="."]
 
 [node name="laboratory_floor" type="TileMapLayer" parent="locations"]
@@ -901,7 +862,7 @@ tile_map_data = PackedByteArray("AAAEAAEAAQAAAAAAAAAEAAIAAQAAAAEAAAAGAAEAAQAAAAQ
 tile_set = ExtResource("4_1k7vt")
 
 [node name="saisai_house" type="TileMapLayer" parent="locations"]
-tile_map_data = PackedByteArray("AAAKAA0AAAAFAAAAAAAKAA4AAAAFAAEAAAAJAA8AAAAEAAIAAAAGAA0AAAABAAAAAAAGAA4AAAABAAEAAAAGAA8AAQAAAAAAAAAHAA8AAQAAAAAAAAAFAA8AAgAAAAAAAAAFAA4AAwAAAAAAAAAFAA0AAwAAAAAAAAAJABAAAgAAAAAAAAAKABAAAQAAAAAAAAALABAAAQAAAAAAAAAMABAAAQAAAAAAAAAFABAAAAACAAMAAAAHABAAAAACAAMAAAAHAA0AAAACAAAAAAAHAA4AAAACAAEAAAAIAA4AAAADAAEAAAAIAA0AAAADAAAAAAAJAA0AAAAEAAAAAAAJAA4AAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAKAA0AAAAFAAAAAAAKAA4AAAAFAAEAAAAJAA8AAAAEAAIAAAAGAA0AAAABAAAAAAAGAA4AAAABAAEAAAAGAA8AAQAAAAAAAAAHAA8AAQAAAAAAAAAFAA8AAgAAAAAAAAAFAA4AAwAAAAAAAAAFAA0AAwAAAAAAAAAJABAAAgAAAAAAAAAKABAAAQAAAAAAAAALABAAAQAAAAAAAAAMABAAAQAAAAAAAAAFABAAAAACAAMAAAAHABAAAAACAAMAAAAHAA0AAAACAAAAAAAHAA4AAAACAAEAAAAIAA4AAAADAAEAAAAIAA0AAAADAAAAAAAJAA0AAAAEAAAAAAAJAA4AAAAEAAEAAAAKAA8AAAAFAAMAAAAEABEAAAABAAUAAAAFABEAAAACAAUAAAALAA8AAAAGAAQAAAA=")
 tile_set = SubResource("TileSet_sbqc4")
 
 [node name="racket house" type="TileMapLayer" parent="locations"]
@@ -909,7 +870,8 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(358, 146)
+z_index = 1
+position = Vector2(1270, 1044)
 
 [node name="in_front_details" type="Node2D" parent="."]
 
@@ -924,7 +886,7 @@ tile_set = ExtResource("9_tb47j")
 [node name="decorations" type="Node2D" parent="."]
 
 [node name="decorations" type="TileMapLayer" parent="decorations"]
-tile_map_data = PackedByteArray("AAANAAQAAAAcAAAAAAAPAAUAAAAgAAAAAAAeAAUAAAAcAAAAAAAgAAQAAAAkAAAAAAAiAAUAAAAgAAAAAAAjAAcAAAAkAAAAAAAMAAcAAAAkAAAAAAAQAAAAAAAcAAAAAAASAAEAAAAgAAAAAAAWAAAAAAAcAAAAAAAcAAAAAAAgAAAAAAAcAAMAAAAcAAAAAAAeAAEAAAAcAAAAAAAiAA8AAAAkAAAAAAAhABEAAAAgAAAAAAAjABIAAAAcAAAAAAANABIAAAAcAAAAAAAMABAAAAAgAAAAAAARABUAAAAgAAAAAAASABYAAAAkAAAAAAAcABYAAAAcAAAAAAAfABQAAAAkAAAAAAApADoAAAAoAAAAAAAtADgAAAAgAAAAAAArADsAAAAwAAAAAAASADYAAAAoAAAAAAAQADgAAAAwAAAAAAASADkAAAAsAAAAAAARAD0AAAAoAAAAAAAOAEIAAAAcAAAAAAARAEcAAAAkAAAAAAAVAEcAAAAcAAAAAAAZAEcAAAAcAAAAAAAdAEcAAAAgAAAAAAAhAEcAAAAkAAAAAAAlAEcAAAAkAAAAAAApAEcAAAAkAAAAAAAtAEcAAAAcAAAAAAAzAEcAAAAkAAAAAAA2AEYAAAAcAAAAAAA2AEQAAAAgAAAAAAAvAEkAAAAkAAAAAAAqAEgAAAAgAAAAAAAPAEMAAAAkAAAAAAANAEUAAAAgAAAAAAAXAEkAAAAcAAAAAAAbAEkAAAAkAAAAAAAfAEkAAAAgAAAAAAAiAEkAAAAkAAAAAAAmAEkAAAAcAAAAAAAsAEoAAAAkAAAAAAAyAEoAAAAcAAAAAAAvADwAAAAgAAAAAAAzAD0AAAAcAAAAAAA3ADwAAAAgAAAAAAAvADsAAAAkAAAAAAAyADsAAAAcAAAAAAA2ADoAAAAgAAAAAAAwADcAAAAkAAAAAAAwADgAAAAcAAAAAAA0ADgAAAAcAAAAAAAqADYAAAAcAAAAAAAtADQAAAAgAAAAAAAyADQAAAAgAAAAAAAeACwAAAAkAAAAAAAeADAAAAAgAAAAAAAPADQAAAAkAAAAAAASADQAAAAgAAAAAAANADAAAAAgAAAAAAAOADEAAAAkAAAAAAANADoAAAAcAAAAAAAOADwAAAAgAAAAAAAPAD8AAAAkAAAAAABRADkAAAAgAAAAAABNADsAAAAgAAAAAABOAD0AAAAcAAAAAABqADwAAAAgAAAAAABpAD8AAAAcAAAAAABqAEEAAAAkAAAAAABpAEUAAAAgAAAAAABqAEYAAAAcAAAAAABdAEkAAAAkAAAAAABfAEoAAAAgAAAAAABjAEkAAAAkAAAAAABnAEkAAAAgAAAAAABjAEoAAAAcAAAAAABNAEYAAAAkAAAAAABgADwAAAAoAAAAAABiAD0AAAAwAAAAAABmADwAAAAsAAAAAABlAEAAAAAwAAAAAABmAEIAAAAsAAAAAABbADgAAAAgAAAAAABdADkAAAAkAAAAAABjAEQAAAAkAAAAAABlAEYAAAAcAAAAAABfAEUAAAAkAAAAAABhAEcAAAAcAAAAAABgADoAAAAkAAAAAABiADgAAAAkAAAAAABkADkAAAAgAAAAAABnADgAAAAcAAAAAAAeAC4AAAAcAAAAAAAhADIAAAAgAAAAAAARACoAAAAcAAAAAAATACoAAAAgAAAAAAAYACoAAAAkAAAAAAAaACoAAAAcAAAAAAAMADUAAAAgAAAAAAANADcAAAAgAAAAAAAMAD4AAAAcAAAAAAAMAEEAAAAgAAAAAAAQAEoAAAAgAAAAAAATAEkAAAAkAAAAAABQAEkAAAAkAAAAAABRAEoAAAAcAAAAAABVAEkAAAAcAAAAAABWAEoAAAAgAAAAAAAaADkAAAAkAAAAAAA=")
+tile_map_data = PackedByteArray("AAANAAQAAAAcAAAAAAAPAAUAAAAgAAAAAAAeAAUAAAAcAAAAAAAgAAQAAAAkAAAAAAAiAAUAAAAgAAAAAAAjAAcAAAAkAAAAAAAMAAcAAAAkAAAAAAAQAAAAAAAcAAAAAAASAAEAAAAgAAAAAAAWAAAAAAAcAAAAAAAcAAAAAAAgAAAAAAAcAAMAAAAcAAAAAAAeAAEAAAAcAAAAAAAiAA8AAAAkAAAAAAAhABEAAAAgAAAAAAAjABIAAAAcAAAAAAANABIAAAAcAAAAAAAMABAAAAAgAAAAAAARABUAAAAgAAAAAAASABYAAAAkAAAAAAAcABYAAAAcAAAAAAAfABQAAAAkAAAAAAApADoAAAAoAAAAAAAtADgAAAAgAAAAAAArADsAAAAwAAAAAAASADYAAAAoAAAAAAAQADgAAAAwAAAAAAASADkAAAAsAAAAAAARAD0AAAAoAAAAAAAOAEIAAAAcAAAAAAARAEcAAAAkAAAAAAAVAEcAAAAcAAAAAAAZAEcAAAAcAAAAAAAdAEcAAAAgAAAAAAAhAEcAAAAkAAAAAAAlAEcAAAAkAAAAAAApAEcAAAAkAAAAAAAtAEcAAAAcAAAAAAAzAEcAAAAkAAAAAAA2AEYAAAAcAAAAAAA2AEQAAAAgAAAAAAAvAEkAAAAkAAAAAAAqAEgAAAAgAAAAAAAPAEMAAAAkAAAAAAANAEUAAAAgAAAAAAAXAEkAAAAcAAAAAAAbAEkAAAAkAAAAAAAfAEkAAAAgAAAAAAAiAEkAAAAkAAAAAAAmAEkAAAAcAAAAAAAsAEoAAAAkAAAAAAAyAEoAAAAcAAAAAAAzAD0AAAAcAAAAAAA3ADwAAAAgAAAAAAAyADsAAAAcAAAAAAA2ADoAAAAgAAAAAAAwADcAAAAkAAAAAAAwADgAAAAcAAAAAAA0ADgAAAAcAAAAAAAqADYAAAAcAAAAAAAtADQAAAAgAAAAAAAyADQAAAAgAAAAAAAeACwAAAAkAAAAAAAeADAAAAAgAAAAAAAPADQAAAAkAAAAAAASADQAAAAgAAAAAAANADAAAAAgAAAAAAAOADEAAAAkAAAAAAANADoAAAAcAAAAAAAOADwAAAAgAAAAAAAPAD8AAAAkAAAAAABRADkAAAAgAAAAAABNADsAAAAgAAAAAABOAD0AAAAcAAAAAABqADwAAAAgAAAAAABpAD8AAAAcAAAAAABqAEEAAAAkAAAAAABpAEUAAAAgAAAAAABqAEYAAAAcAAAAAABdAEkAAAAkAAAAAABfAEoAAAAgAAAAAABjAEkAAAAkAAAAAABnAEkAAAAgAAAAAABjAEoAAAAcAAAAAABNAEYAAAAkAAAAAABgADwAAAAoAAAAAABiAD0AAAAwAAAAAABmADwAAAAsAAAAAABlAEAAAAAwAAAAAABmAEIAAAAsAAAAAABbADgAAAAgAAAAAABdADkAAAAkAAAAAABjAEQAAAAkAAAAAABlAEYAAAAcAAAAAABfAEUAAAAkAAAAAABhAEcAAAAcAAAAAABgADoAAAAkAAAAAABiADgAAAAkAAAAAABkADkAAAAgAAAAAABnADgAAAAcAAAAAAAeAC4AAAAcAAAAAAAhADIAAAAgAAAAAAARACoAAAAcAAAAAAATACoAAAAgAAAAAAAYACoAAAAkAAAAAAAaACoAAAAcAAAAAAAMADUAAAAgAAAAAAANADcAAAAgAAAAAAAMAD4AAAAcAAAAAAAMAEEAAAAgAAAAAAAQAEoAAAAgAAAAAAATAEkAAAAkAAAAAABQAEkAAAAkAAAAAABRAEoAAAAcAAAAAABVAEkAAAAcAAAAAABWAEoAAAAgAAAAAAAaADkAAAAkAAAAAAA=")
 tile_set = SubResource("TileSet_ul4d6")
 
 [node name="laboratory_accessories" type="TileMapLayer" parent="decorations"]
@@ -939,10 +901,6 @@ position = Vector2(346, 376)
 
 [node name="CollisionShape2D" parent="obstacles/MovableShinyRock/Actionable" index="0"]
 position = Vector2(9, 8)
-
-[node name="cutscenes" type="Node2D" parent="."]
-
-[node name="gudie" type="Node2D" parent="."]
 
 [node name="tooltips" type="Node2D" parent="."]
 
@@ -998,8 +956,19 @@ follow the fireflies"
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
-[node name="SaisaiRockScene" parent="." instance=ExtResource("16_awl35")]
+[node name="Cutscenes" type="Node2D" parent="."]
 position = Vector2(321, 800)
+
+[node name="SaisaiRockScene" parent="Cutscenes" instance=ExtResource("16_awl35")]
+
+[node name="DeadRobotScene" parent="Cutscenes" instance=ExtResource("26_5o1n3")]
+position = Vector2(658, 216)
+
+[node name="RaketStealing" parent="Cutscenes" instance=ExtResource("24_yrk65")]
+position = Vector2(865, 251)
+
+[node name="CollectingSwordPieces" parent="Cutscenes" instance=ExtResource("25_t57pw")]
+position = Vector2(856, 887)
 
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(577, 972)
@@ -1008,12 +977,6 @@ position = Vector2(577, 972)
 position = Vector2(294, 82)
 shape = SubResource("RectangleShape2D_5exya")
 
-[node name="DeadRobotScene" parent="." instance=ExtResource("26_5o1n3")]
-position = Vector2(979, 1016)
-
-[node name="RaketStealing" parent="." instance=ExtResource("24_yrk65")]
-position = Vector2(1186, 1051)
-
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
 position = Vector2(1433, 1022)
 
@@ -1021,14 +984,85 @@ position = Vector2(1433, 1022)
 position = Vector2(6, 187)
 shape = SubResource("RectangleShape2D_48qww")
 
-[node name="CollectingSwordPieces" parent="." instance=ExtResource("25_t57pw")]
-position = Vector2(1177, 1687)
-
 [node name="Snekkers" parent="." instance=ExtResource("14_5ewdd")]
 position = Vector2(994, 1776)
 
 [node name="PipeEntranceScene" parent="." instance=ExtResource("27_55muk")]
 position = Vector2(873, 1548)
+
+[node name="Fireflies" type="Node2D" parent="."]
+position = Vector2(415, 335)
+
+[node name="firefly" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+
+[node name="firefly2" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(-63, 49)
+
+[node name="firefly3" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(-16, 461)
+
+[node name="firefly4" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(-88, 464)
+
+[node name="firefly5" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(-126, 384)
+
+[node name="firefly6" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(160, 628)
+
+[node name="firefly" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1429, 1024)
+
+[node name="firefly2" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1284, 1068)
+
+[node name="firefly3" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1343, 1066)
+
+[node name="firefly4" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1388, 1042)
+
+[node name="firefly5" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1439, 1562)
+
+[node name="firefly6" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1413, 1639)
+
+[node name="firefly7" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1323, 1677)
+
+[node name="firefly8" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1226, 1724)
+
+[node name="firefly9" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1423, 1748)
+
+[node name="firefly10" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1252, 1850)
+
+[node name="firefly11" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1365, 1842)
+
+[node name="firefly12" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1031, 1832)
+
+[node name="firefly13" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(962, 1831)
+
+[node name="firefly14" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(986, 1839)
+
+[node name="firefly15" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(914, 1657)
+
+[node name="firefly16" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(834, 1653)
+
+[node name="firefly17" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(875, 1666)
+
+[node name="firefly18" parent="." instance=ExtResource("6_5ydh2")]
+position = Vector2(1011, 1842)
 
 [editable path="obstacles/MovableShinyRock"]
 [editable path="tooltips/monitor1"]
