@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://2kaqp1f7ukyk"]
+[gd_scene load_steps=32 format=3 uid="uid://d12j8haieiyg2"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="2_teu7h"]

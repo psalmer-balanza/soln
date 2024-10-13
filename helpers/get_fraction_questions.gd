@@ -30,7 +30,7 @@ func _http_request_completed(_result, response_code, _headers, body):
 			# Emit signal once questions are loaded
 			emit_signal("questions_loaded")
 	else:
-		print("HTTP request failed with code:", response_code)
+		print("HTTP request failed with code: error in get fractions", response_code)
 
 func constructFractionQuestions(response):
 	fraction_questions = []
@@ -38,5 +38,5 @@ func constructFractionQuestions(response):
 		var fraction = response[i]
 		fraction_questions.append([fraction["fraction1_numerator"], fraction["fraction1_denominator"],
 									fraction["fraction2_numerator"], fraction["fraction2_denominator"],
-									fraction["question_id"]])
+									"+", fraction["question_id"]])
 	return fraction_questions

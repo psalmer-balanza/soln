@@ -1,22 +1,16 @@
 extends Node
 
-# for boss battle scene
-var Enemy_HP = 100
-var Current_HP = 100
-var Question = false
-var tilemap: TileMapLayer
-var Question_Dictionary
 signal questions_loaded
 
+var fraction_questions = []
+var post_data = {"MinigameID": 3}
+
 func _ready():
-	var getquestions_url = "http://localhost:3000/game/getmcquestions"
+	var getquestions_url = "http://localhost:3000/game/getworded"
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 
-	var post_data = {
-		"MinigameID": 5
-				}
 	var json_body = JSON.stringify(post_data)
 	var headers = ["Content-type: application/json"]
 	
@@ -32,26 +26,17 @@ func _http_request_completed(_result, response_code, _headers, body):
 		var error = json.parse(body.get_string_from_utf8())
 		if error == OK:
 			var response = json.get_data()
-			Question_Dictionary = constructQuestionDictionary(response)
+			fraction_questions = constructFractionQuestions(response)
 			# Emit signal once questions are loaded
 			emit_signal("questions_loaded")
 	else:
-		print("HTTP request failed with code: error in get boss?", response_code)
+		print("HTTP request failed with code: error in get worded", response_code)
 
-func constructQuestionDictionary(response):
-	Question_Dictionary = []
+func constructFractionQuestions(response):
+	fraction_questions = []
 	for i in range(response.size()):
-		var question = response[i]
-		Question_Dictionary += [[
-			question["question_text"], 
-			question["option_1"], 
-			question["option_2"], 
-			question["option_3"], 
-			question["option_4"], 
-			question["correct_answer"]
-			]]
-		
-	return Question_Dictionary
-
-# for smithing mini game
-var ores_inside:int = 0
+		var fraction = response[i]
+		fraction_questions.append([fraction["question_text"], fraction["fraction1_numerator"],
+									fraction["fraction1_denominator"], fraction["fraction2_numerator"],
+									fraction["fraction2_denominator"], fraction["question_id"]])
+	return fraction_questions

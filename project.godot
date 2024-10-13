@@ -24,6 +24,7 @@ Global="*res://helpers/global.gd"
 DialogueState="*res://helpers/dialogue_state.gd"
 GetQuiz="*res://helpers/get_boss_questions.gd"
 GetFractions="*res://helpers/get_fraction_questions.gd"
+GetWorded="*res://helpers/get_worded_questions.gd"
 
 [dialogue_manager]
 
