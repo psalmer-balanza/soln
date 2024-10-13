@@ -53,3 +53,7 @@ func _http_request_completed(result, response_code, headers, body):
 			print("Failed to parse JSON")
 	else:
 		print("HTTP request failed with code:", response_code)
+
+
+func _on_check_button_button_down():
+	pass # Replace with function body.

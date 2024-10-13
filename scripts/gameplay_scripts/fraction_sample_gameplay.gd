@@ -41,6 +41,7 @@ var current_question_index = 0  # Track which question the player is on
 @onready var second_num_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
 @onready var second_denum_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
 @onready var display_answer: Label = $addition/VBoxContainer/result
+@onready var submit_answer = $submit/SubmitAnswer
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
 var statistics_url = "http://localhost:3000/game/updatestatistics"
@@ -252,6 +253,7 @@ func next_question_or_finish():
 		print("Current minigame id: ", current_minigame_id)
 		numerator_input.editable = false
 		denominator_input.editable = false
+		submit_answer.disabled = true
 		display_answer.text = "All questions completed!\nReturning to the world..."
 		await get_tree().create_timer(3.0).timeout
 		
