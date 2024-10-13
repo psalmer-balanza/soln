@@ -24,6 +24,7 @@ var current_question_index = 0  # Track which question the player is on
 @onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer/NumeratorAnswer
 @onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer2/DenominatorAnswer
 @onready var display_answer: Label = $DisplayAnswer/UserAnswer
+@onready var submit_answer = $SubmitAnswer
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
 @onready var npc_sprite = $NPC_Sprites
@@ -309,6 +310,11 @@ func next_question_or_finish():
 		print("Current minigame id: ", current_minigame_id)
 		numerator_answer.editable = false
 		denominator_answer.editable = false
+		first_fraction_numerator.editable = false
+		first_fraction_denominator.editable = false
+		second_fraction_numerator.editable = false
+		second_fraction_denominator.editable = false
+		submit_answer.disabled = true
 		display_answer.text = "All questions completed!\nReturning to the world..."
 		await get_tree().create_timer(3.0).timeout
 		
