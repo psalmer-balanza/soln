@@ -25,8 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="17_frjke"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
-[ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/raket_stealing.tscn" id="24_yrk65"]
-[ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="25_t57pw"]
+[ext_resource type="PackedScene" path="res://scenes/cutscenes/raket_stealing.tscn" id="24_yrk65"]
+[ext_resource type="PackedScene" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="25_t57pw"]
 [ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="26_5o1n3"]
 [ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/pipe_entrance_scene.tscn" id="27_55muk"]
 
@@ -909,7 +909,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(358, 146)
+position = Vector2(352, 153)
 
 [node name="in_front_details" type="Node2D" parent="."]
 

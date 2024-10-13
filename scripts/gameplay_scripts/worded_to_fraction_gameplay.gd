@@ -2,15 +2,12 @@ extends Node2D
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	[[3, 2], [2, 5]],  # First question fractions
-	[[5, 7], [2, 7]],  # Second question fractions
-	[[2, 5], [2, 5]],  # Third question fractions
+	["Combine these fractions: 3/4 + 1/4.", 3, 4, 1, 4],  # First question fractions
+	["Find the sum of these fractions: 5/7 + 2/7.", 5, 7, 2, 7],  # Second question fractions
+	["Add these fractions: 2/5 + 2/5.", 2, 5, 2, 5],  # Third question fractions
 	]
-var question_texts = [
-	"Combine these fractions: 3/4 + 1/4.",
-	"Find the sum of these fractions: 5/7 + 2/7.",
-	"Add these fractions: 2/5 + 2/5."
-	]  # List to store question context text for each round
+
+ # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on
 @onready var correct_ans_count = 0
 @onready var wrong_ans_count = 0
@@ -24,6 +21,7 @@ var current_question_index = 0  # Track which question the player is on
 @onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer/NumeratorAnswer
 @onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer2/DenominatorAnswer
 @onready var display_answer: Label = $DisplayAnswer/UserAnswer
+@onready var submit_answer = $SubmitAnswer
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
 @onready var npc_sprite = $NPC_Sprites
@@ -33,10 +31,16 @@ var current_player_username = PlayerState.player_username
 var current_minigame_id = 1 # PLACEHOLDER
 
 func _ready():
-	print("ready")
 	npc_active()
 	initiate_questions()
+	
+func _on_questions_loaded():
+	#if DialogueState.current_quest == "dead_robots":
+	##$AnimatedSprite2D.play("idle_robot")display_current_question()
+	fraction_questions = GetWorded.fraction_questions
 	display_current_question()
+	print(fraction_questions)	
+	
 
 func npc_active():
 	npc_sprite.play(current_npc)
@@ -56,42 +60,20 @@ func npc_active():
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
 	print(DialogueState.current_quest)
+	GetWorded.connect("questions_loaded", _on_questions_loaded)
 	if DialogueState.current_quest == "raket_stealing":
 		print("Current quest is raket stealing")
-		fraction_questions = [
-			[[1, 4], [3, 4]],  # First question fractions
-			[[3, 7], [3, 7]],  # Second question fractions
-			[[2, 5], [2, 5]],  # Third question fractions
-		]
-		question_texts = [
-			"Combine these fractions: 1/4 + 3/4.",
-			"Find the sum of these fractions: 3/7 + 3/7.",
-			"Add these fractions: 2/5 + 2/5."
-		]
-	elif DialogueState.current_quest == "dead_robot":
-		print("Current quest is dead robot")
-		fraction_questions = [
-			[[1, 4], [3, 4]],  # First question fractions
-			[[2, 3], [1, 3]],  # Second question fractions
-			[[2, 5], [2, 5]],  # Third question fractions
-		]
-		question_texts = [
-			"What is 1/4 + 3/4?",
-			"Add these fractions: 2/3 + 1/3.",
-			"Combine these: 2/5 + 2/5."
-		]
+		GetWorded.post_data["MinigameID"] = 3
+		current_minigame_id = GetWorded.post_data["MinigameID"]
+		GetWorded._ready()
+		fraction_questions = GetWorded.fraction_questions
+	
 	elif DialogueState.current_quest == "raket_house":
 		print("Current quest is raket house")
-		fraction_questions = [
-			[[1, 2], [1, 2]],  # First question fractions
-			[[2, 3], [1, 3]],  # Second question fractions
-			[[2, 5], [2, 5]],  # Third question fractions
-		]
-		question_texts = [
-			"What is 1/2 + 1/2?",
-			"Add these fractions: 2/3 + 1/3.",
-			"Combine these: 2/5 + 2/5."
-		]
+		GetWorded.post_data["MinigameID"] = 4
+		current_minigame_id = GetWorded.post_data["MinigameID"]
+		GetWorded._ready()
+		fraction_questions = GetWorded.fraction_questions
 	else:
 		print("No quest?")
 
@@ -99,8 +81,8 @@ func initiate_questions():
 func display_current_question():
 	print(fraction_questions[current_question_index])
 	var current_question = fraction_questions[current_question_index]
-	var first_fraction = current_question[0]
-	var second_fraction = current_question[1]
+	#var first_fraction = current_question[0]
+	#var second_fraction = current_question[1]
 	
 	# Set the text for the fractions to be input by the player
 	first_fraction_numerator.text = ""
@@ -111,7 +93,7 @@ func display_current_question():
 	denominator_answer.text = ""
 	
 	# Set the question text for the current round
-	question_label.text = question_texts[current_question_index]
+	question_label.text = current_question[0]
 
 # Called when the submit answer button is pressed
 func _on_submit_answer_button_down():
@@ -156,13 +138,17 @@ func is_valid_integer(value: String) -> bool:
 # Validate if inputted fractions match the current question's fractions
 func input_matches_question(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int) -> bool:
 	var current_question = fraction_questions[current_question_index]
-	var expected_first_fraction = current_question[0]
-	var expected_second_fraction = current_question[1]
+	#var expected_first_fraction = current_question[0]
+	#var expected_second_fraction = current_question[1]
+	print("im in input_matches_question")
+	print(current_question)
+	print("first numerator : ", current_question[1])
+	print("first denominator : ", current_question[2])
 	
-	if first_numerator == expected_first_fraction[0] and first_denominator == expected_first_fraction[1] and second_numerator == expected_second_fraction[0] and second_denominator == expected_second_fraction[1]:
+	if first_numerator == current_question[1] and first_denominator == current_question[2] and second_numerator == current_question[3] and second_denominator == current_question[4]:
 		print("input first")
 		return true
-	elif first_numerator == expected_second_fraction[0] and first_denominator == expected_second_fraction[1] and second_numerator == expected_first_fraction[0] and second_denominator == expected_first_fraction[1]:
+	elif first_numerator == current_question[3] and first_denominator == current_question[4] and second_numerator == current_question[1] and second_denominator == current_question[2]:
 		print("print second")
 		return true
 	
@@ -309,6 +295,11 @@ func next_question_or_finish():
 		print("Current minigame id: ", current_minigame_id)
 		numerator_answer.editable = false
 		denominator_answer.editable = false
+		first_fraction_numerator.editable = false
+		first_fraction_denominator.editable = false
+		second_fraction_numerator.editable = false
+		second_fraction_denominator.editable = false
+		submit_answer.disabled = true
 		display_answer.text = "All questions completed!\nReturning to the world..."
 		await get_tree().create_timer(3.0).timeout
 		
