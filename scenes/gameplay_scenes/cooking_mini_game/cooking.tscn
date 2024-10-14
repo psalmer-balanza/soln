@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dtabsf06518kj" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom3.png" id="8_y8gyd"]
 [ext_resource type="Texture2D" uid="uid://dc00bclfoft36" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic1.png" id="9_rkfkf"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.gd" id="9_w5g8j"]
-[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="9_xpmrs"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="9_xpmrs"]
 [ext_resource type="Texture2D" uid="uid://5gnbmfdli4cm" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic2.png" id="10_m7kdp"]
 [ext_resource type="Texture2D" uid="uid://bd0dc0xljuqdy" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic3.png" id="11_bgxjc"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="11_e1to4"]

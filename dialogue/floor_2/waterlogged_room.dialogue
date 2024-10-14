@@ -1,0 +1,16 @@
+~ start
+set in_dialogue = true
+
+It seems that the room is flooded with water,
+stopping you from passing through
+
+~ question
+Do you want to use the bucket to remove the water from the room?
+
+- yes
+	You have successfully removed the water from the room
+- no
+	Are you sure
+	=> question
+
+=> END

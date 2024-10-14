@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://f7you6f3klj0"]
+[gd_scene load_steps=13 format=3 uid="uid://f7you6f3klj0"]
 
 [ext_resource type="Script" path="res://scripts/login_script/student_register.gd" id="1_3k471"]
 [ext_resource type="Script" path="res://scripts/login_script/soln_bg_animation.gd" id="1_lpcqc"]
 [ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="2_xd708"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_hu7dh"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1bv1d"]
+[ext_resource type="PackedScene" uid="uid://b3kvpase6wbh3" path="res://scenes/student_scene/hide_password.tscn" id="5_w83xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
 atlas = ExtResource("2_xd708")
@@ -154,6 +155,14 @@ scale = Vector2(0.99258, 0.982386)
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Password"
 caret_blink = true
+secret = true
+
+[node name="HidePassword" parent="StudentInformation/Password" instance=ExtResource("5_w83xd")]
+layout_mode = 0
+offset_left = 192.428
+offset_top = 2.03586
+offset_right = 236.428
+offset_bottom = 26.0359
 
 [node name="StudentRegister" type="RichTextLabel" parent="StudentInformation"]
 texture_filter = 1

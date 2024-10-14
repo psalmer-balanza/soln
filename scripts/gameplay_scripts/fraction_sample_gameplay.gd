@@ -30,7 +30,6 @@ func initiate_questions():
 		current_minigame_id = GetFractions.post_data["MinigameID"]
 		GetFractions._ready()
 		fraction_questions = GetFractions.fraction_questions
-		print("we got the fractions for ded robot! ", fraction_questions)
 		
 var current_question_index = 0  # Track which question the player is on
 
@@ -41,6 +40,7 @@ var current_question_index = 0  # Track which question the player is on
 @onready var second_num_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
 @onready var second_denum_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
 @onready var display_answer: Label = $addition/VBoxContainer/result
+@onready var submit_answer = $submit/SubmitAnswer
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 
 var statistics_url = "http://localhost:3000/game/updatestatistics"
@@ -63,15 +63,10 @@ func _on_questions_loaded():
 	##$AnimatedSprite2D.play("idle_robot")display_current_question()
 	fraction_questions = GetFractions.fraction_questions
 	display_current_question()
-	print(fraction_questions)
 
 # Function to display the current question
 func display_current_question():
 	var current_question = fraction_questions[current_question_index]
-	#var first_fraction = current_question[0]
-	#var second_fraction = current_question[1]
-	
-	print("in the display_current_question, the fractions are ", fraction_questions)
 	
 	# Set the text for the first and second fractions
 	first_num = current_question[0]
@@ -252,6 +247,7 @@ func next_question_or_finish():
 		print("Current minigame id: ", current_minigame_id)
 		numerator_input.editable = false
 		denominator_input.editable = false
+		submit_answer.disabled = true
 		display_answer.text = "All questions completed!\nReturning to the world..."
 		await get_tree().create_timer(3.0).timeout
 		
