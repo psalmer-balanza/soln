@@ -10,6 +10,12 @@ func _process(_delta):
 		has_moved_rock = true
 	if DialogueState.remove_saisai_speech_bubble == true: 
 		$Saisai/SpeechBalloon.visible = false
+	if DialogueState.disable_saisai_moving_rocks_quest:
+		$Saisai/Actionable/CollisionShape2D.disabled = true
+
+func _ready():
+	if DialogueState.disable_saisai_moving_rocks_quest:
+		$Saisai/Actionable/CollisionShape2D.disabled = true
 
 func play_move_rock() -> void:
 	DialogueState.remove_saisai_speech_bubble = true 

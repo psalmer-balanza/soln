@@ -25,6 +25,7 @@ DialogueState="*res://helpers/dialogue_state.gd"
 GetQuiz="*res://helpers/get_boss_questions.gd"
 GetFractions="*res://helpers/get_fraction_questions.gd"
 QuestionsLoader="*res://helpers/questions_loader.gd"
+GetWorded="*res://helpers/get_worded_questions.gd"
 
 [dialogue_manager]
 

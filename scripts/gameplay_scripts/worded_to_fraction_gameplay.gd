@@ -264,7 +264,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			
 		else:
 			#$AnimationPlayer.play("wrong_answer_saisai")
-			display_answer.text = "Try \nagain."
+			display_answer.text = "Try again. Check your numerator\n or denominator."
 
 # Function to check for the simplified answer
 func check_simplified_form(correct_numerator: int, correct_denominator: int) -> bool:

@@ -27,6 +27,7 @@ func _http_request_completed(_result, response_code, _headers, body):
 		if error == OK:
 			var response = json.get_data()
 			worded_questions = constructFractionQuestions(response)
+			print(worded_questions)
 			# Emit signal once questions are loaded
 			emit_signal("questions_loaded")
 	else:

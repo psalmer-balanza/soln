@@ -13,6 +13,7 @@ if saisai_moving_rocks_quest_done
 	do saisai_move_rocks_cutscene()
 	set saisai_quest_progress = 1
 	set remove_saisai_speech_bubble = false
+	set disable_saisai_moving_rocks_quest = true
 else 
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
