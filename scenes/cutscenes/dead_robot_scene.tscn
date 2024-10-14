@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/dead_robot_scene.gd" id="1_hppjd"]
 [ext_resource type="Texture2D" uid="uid://o8432g311xtr" path="res://assets/floor_1/npc/mc idle back.png" id="2_4b2q3"]
 [ext_resource type="Resource" uid="uid://ch1mjyw8ve82" path="res://dialogue/floor_1/dead_robot_scene.dialogue" id="4_5j3d2"]
-[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_start_encounter.tscn" id="4_m50f8"]
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="4_m50f8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ce2hw"]
 atlas = ExtResource("1_4qyjy")
@@ -547,9 +547,9 @@ libraries = {
 }
 autoplay = "robots_default"
 
-[node name="Actionable2" parent="." instance=ExtResource("4_m50f8")]
+[node name="AutoActionable" parent="." instance=ExtResource("4_m50f8")]
 dialogue_resource = ExtResource("4_5j3d2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(71, 41)
 shape = SubResource("CapsuleShape2D_e8rbd")
