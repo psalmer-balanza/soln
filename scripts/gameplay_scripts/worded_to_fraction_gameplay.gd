@@ -37,9 +37,8 @@ func _ready():
 func _on_questions_loaded():
 	#if DialogueState.current_quest == "dead_robots":
 	##$AnimatedSprite2D.play("idle_robot")display_current_question()
-	fraction_questions = GetWorded.fraction_questions
+	fraction_questions = GetWorded.worded_questions
 	display_current_question()
-	print(fraction_questions)	
 	
 
 func npc_active():
@@ -66,14 +65,14 @@ func initiate_questions():
 		GetWorded.post_data["MinigameID"] = 3
 		current_minigame_id = GetWorded.post_data["MinigameID"]
 		GetWorded._ready()
-		fraction_questions = GetWorded.fraction_questions
+		fraction_questions = GetWorded.worded_questions
 	
 	elif DialogueState.current_quest == "raket_house":
 		print("Current quest is raket house")
 		GetWorded.post_data["MinigameID"] = 4
 		current_minigame_id = GetWorded.post_data["MinigameID"]
 		GetWorded._ready()
-		fraction_questions = GetWorded.fraction_questions
+		fraction_questions = GetWorded.worded_questions
 	else:
 		print("No quest?")
 

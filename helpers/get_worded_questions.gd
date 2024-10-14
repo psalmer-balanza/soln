@@ -2,7 +2,7 @@ extends Node
 
 signal questions_loaded
 
-var fraction_questions = []
+var worded_questions = []
 var post_data = {"MinigameID": 3}
 
 func _ready():
@@ -26,17 +26,17 @@ func _http_request_completed(_result, response_code, _headers, body):
 		var error = json.parse(body.get_string_from_utf8())
 		if error == OK:
 			var response = json.get_data()
-			fraction_questions = constructFractionQuestions(response)
+			worded_questions = constructFractionQuestions(response)
 			# Emit signal once questions are loaded
 			emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get worded", response_code)
 
 func constructFractionQuestions(response):
-	fraction_questions = []
+	worded_questions = []
 	for i in range(response.size()):
 		var fraction = response[i]
-		fraction_questions.append([fraction["question_text"], fraction["fraction1_numerator"],
+		worded_questions.append([fraction["question_text"], fraction["fraction1_numerator"],
 									fraction["fraction1_denominator"], fraction["fraction2_numerator"],
 									fraction["fraction2_denominator"], fraction["question_id"]])
-	return fraction_questions
+	return worded_questions

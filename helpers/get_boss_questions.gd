@@ -5,8 +5,9 @@ var Enemy_HP = 100
 var Current_HP = 100
 var Question = false
 var tilemap: TileMapLayer
-var Question_Dictionary
+var mc_questions
 signal questions_loaded
+var post_data = { "MinigameID": 5 }
 
 func _ready():
 	var getquestions_url = "http://localhost:3000/game/getmcquestions"
@@ -14,9 +15,6 @@ func _ready():
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
 
-	var post_data = {
-		"MinigameID": 5
-				}
 	var json_body = JSON.stringify(post_data)
 	var headers = ["Content-type: application/json"]
 	
@@ -32,17 +30,17 @@ func _http_request_completed(_result, response_code, _headers, body):
 		var error = json.parse(body.get_string_from_utf8())
 		if error == OK:
 			var response = json.get_data()
-			Question_Dictionary = constructQuestionDictionary(response)
+			mc_questions = constructQuestionDictionary(response)
 			# Emit signal once questions are loaded
 			emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get boss?", response_code)
 
 func constructQuestionDictionary(response):
-	Question_Dictionary = []
+	mc_questions = []
 	for i in range(response.size()):
 		var question = response[i]
-		Question_Dictionary += [[
+		mc_questions += [[
 			question["question_text"], 
 			question["option_1"], 
 			question["option_2"], 
@@ -51,7 +49,7 @@ func constructQuestionDictionary(response):
 			question["correct_answer"]
 			]]
 		
-	return Question_Dictionary
+	return mc_questions
 
 # for smithing mini game
 var ores_inside:int = 0
