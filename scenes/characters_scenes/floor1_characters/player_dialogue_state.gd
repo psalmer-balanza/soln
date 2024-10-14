@@ -5,6 +5,7 @@ class_name PlayerDialogueState
 @onready var walking_sfx: AudioStreamPlayer = $"../../WalkingSFX"
 
 
+
 func Enter():
 	walking_sfx.stop()
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
