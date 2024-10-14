@@ -9,7 +9,7 @@ var mc_questions
 signal questions_loaded
 var post_data = { "MinigameID": 5 }
 
-func _ready():
+func post():
 	var getquestions_url = "http://localhost:3000/game/getmcquestions"
 	var http_request = HTTPRequest.new()
 	add_child(http_request)

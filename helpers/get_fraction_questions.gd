@@ -5,7 +5,7 @@ signal questions_loaded
 var fraction_questions = []
 var post_data = {"MinigameID": 1}
 
-func _ready():
+func post():
 	var getquestions_url = "http://localhost:3000/game/getfractions"
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
