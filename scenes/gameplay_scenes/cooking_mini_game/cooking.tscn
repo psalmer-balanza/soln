@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="AudioStream" uid="uid://ndwegmlysqlk" path="res://audio/background_music/Saisai Cooking.mp3" id="1_74ssu"]
@@ -21,6 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
 [ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="22_bgp80"]
+[ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="24_b43bd"]
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
+[ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shvq1"]
 lifetime_randomness = 0.5
@@ -139,7 +144,9 @@ script = ExtResource("1_5cav8")
 position = Vector2(768.5, 267.75)
 shape = SubResource("RectangleShape2D_njprm")
 
-[node name="ItemContainer" type="Node" parent="."]
+[node name="ItemContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="butter1" parent="ItemContainer" instance=ExtResource("5_l2lsw")]
 position = Vector2(136, 197)
@@ -385,7 +392,6 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.713726)
 layout_mode = 0
 offset_left = -87.0
 offset_top = -83.0
@@ -393,57 +399,9 @@ offset_right = 1083.0
 offset_bottom = 653.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
-[node name="Congrats" type="Control" parent="UI/Control"]
+[node name="Congrats" parent="UI/Control" instance=ExtResource("22_bgp80")]
 visible = false
-anchors_preset = 0
-offset_left = 324.0
-offset_top = 187.0
-offset_right = 364.0
-offset_bottom = 227.0
-
-[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/Congrats"]
-layout_mode = 0
-offset_right = 374.0
-offset_bottom = 204.0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Control/Congrats/MarginContainer2"]
-layout_mode = 2
-texture = ExtResource("9_xpmrs")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/Congrats/MarginContainer2"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 100
-
-[node name="Label" type="Label" parent="UI/Control/Congrats/MarginContainer2/MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/font = ExtResource("8_joskm")
-text = "Congratulations:
-You have perfectly 
-followed the recipe"
-horizontal_alignment = 1
-
-[node name="correct" type="Button" parent="UI/Control/Congrats"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 104.0
-offset_right = 326.0
-offset_bottom = 163.0
-size_flags_vertical = 8
-theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
-theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.276189, 0.227463, 0.329893, 1)
-theme_override_fonts/font = ExtResource("8_joskm")
-theme_override_font_sizes/font_size = 50
-text = "OK"
-flat = true
+next_scene = ExtResource("23_tlpu8")
 
 [node name="Oh no" type="Control" parent="UI/Control"]
 visible = false
@@ -498,15 +456,26 @@ theme_override_font_sizes/font_size = 50
 text = "OK"
 flat = true
 
-[node name="cook_button" type="Button" parent="."]
-offset_left = 585.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 589.0
 offset_top = 394.0
-offset_right = 951.0
-offset_bottom = 431.0
+offset_right = 945.0
+offset_bottom = 434.0
+
+[node name="cook_button" type="Button" parent="MarginContainer"]
+layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
 text = "COOK"
 flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("24_j3b2b")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
 [node name="ButterLabel" type="Label" parent="."]
 offset_left = 77.0
@@ -532,6 +501,116 @@ offset_bottom = 447.0
 text = "GARLIC"
 horizontal_alignment = 1
 
+[node name="Tutorials" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_ek2r0")
+
+[node name="QuickTutorial" parent="Tutorials" instance=ExtResource("24_b43bd")]
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="MarginContainer" parent="Tutorials/QuickTutorial/filter" index="0"]
+offset_left = 540.0
+
+[node name="MarginContainer3" parent="Tutorials/QuickTutorial/filter" index="1"]
+offset_top = -3.0
+offset_right = 288.0
+
+[node name="MarginContainer4" parent="Tutorials/QuickTutorial/filter" index="2"]
+offset_left = 328.0
+
+[node name="MarginContainer5" parent="Tutorials/QuickTutorial/filter" index="3"]
+offset_left = 328.0
+offset_right = 500.0
+offset_bottom = 190.0
+
+[node name="Label" parent="Tutorials/QuickTutorial/Content" index="1"]
+text = "Click on the ingridients to pick them up"
+
+[node name="Close" parent="Tutorials/QuickTutorial" index="2"]
+offset_left = 25.0
+offset_top = 459.0
+offset_right = 127.0
+offset_bottom = 499.0
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial/Close" index="0"]
+text = "NEXT"
+
+[node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("24_b43bd")]
+visible = false
+
+[node name="MarginContainer" parent="Tutorials/QuickTutorial2/filter" index="0"]
+offset_left = 540.0
+offset_top = 443.0
+
+[node name="MarginContainer3" parent="Tutorials/QuickTutorial2/filter" index="1"]
+offset_top = -3.0
+offset_right = 288.0
+
+[node name="MarginContainer4" parent="Tutorials/QuickTutorial2/filter" index="2"]
+offset_left = 328.0
+offset_top = -2.0
+
+[node name="MarginContainer5" parent="Tutorials/QuickTutorial2/filter" index="3"]
+offset_left = 554.0
+offset_right = 1021.0
+offset_bottom = 83.0
+
+[node name="MarginContainer6" parent="Tutorials/QuickTutorial2/filter" index="4"]
+offset_right = 981.0
+
+[node name="Content" parent="Tutorials/QuickTutorial2" index="1"]
+offset_left = 28.0
+offset_top = 16.0
+offset_right = 417.0
+offset_bottom = 416.0
+
+[node name="Label" parent="Tutorials/QuickTutorial2/Content" index="1"]
+text = "Place them in the board. Click again to drop the ingridient"
+
+[node name="Close" parent="Tutorials/QuickTutorial2" index="2"]
+offset_left = 25.0
+offset_top = 459.0
+offset_right = 127.0
+offset_bottom = 499.0
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial2/Close" index="0"]
+text = "NEXT"
+
+[node name="QuickTutorial3" parent="Tutorials" instance=ExtResource("24_b43bd")]
+visible = false
+
+[node name="MarginContainer" parent="Tutorials/QuickTutorial3/filter" index="0"]
+offset_left = 540.0
+
+[node name="MarginContainer3" parent="Tutorials/QuickTutorial3/filter" index="1"]
+offset_top = 114.0
+offset_right = 221.0
+
+[node name="MarginContainer4" parent="Tutorials/QuickTutorial3/filter" index="2"]
+offset_left = 261.0
+offset_top = -12.0
+offset_right = 500.0
+
+[node name="MarginContainer5" parent="Tutorials/QuickTutorial3/filter" index="3"]
+offset_left = 237.0
+offset_right = 221.0
+offset_bottom = 75.0
+
+[node name="MarginContainer6" parent="Tutorials/QuickTutorial3/filter" index="4"]
+offset_left = 24.0
+offset_right = 426.0
+
+[node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
+text = "Follow the recipe and if you're ready click on the cook button"
+
+[node name="Close" parent="Tutorials/QuickTutorial3" index="2"]
+offset_left = 24.0
+offset_right = 126.0
+
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]
 [connection signal="body_entered" from="garlic" to="garlic" method="_on_body_entered"]
@@ -540,9 +619,10 @@ horizontal_alignment = 1
 [connection signal="body_exited" from="mushroom" to="mushroom" method="_on_body_exited"]
 [connection signal="body_entered" from="butter" to="butter" method="_on_body_entered"]
 [connection signal="body_exited" from="butter" to="butter" method="_on_body_exited"]
-[connection signal="pressed" from="UI/Control/Congrats/correct" to="board" method="_on_correct_pressed"]
 [connection signal="pressed" from="UI/Control/Oh no/incorrect" to="board" method="_on_incorrect_pressed"]
-[connection signal="pressed" from="cook_button" to="board" method="_on_cook_button_pressed"]
+[connection signal="pressed" from="MarginContainer/cook_button" to="board" method="_on_cook_button_pressed"]
+[connection signal="change" from="Tutorials/QuickTutorial" to="Tutorials" method="_on_quick_tutorial_change"]
+[connection signal="change" from="Tutorials/QuickTutorial2" to="Tutorials" method="_on_quick_tutorial_2_change"]
 
 [editable path="ItemContainer/butter2"]
 [editable path="ItemContainer/mushroom2"]
@@ -553,3 +633,6 @@ horizontal_alignment = 1
 [editable path="ItemContainer/garlic4"]
 [editable path="ItemContainer/garlic5"]
 [editable path="ItemContainer/garlic6"]
+[editable path="Tutorials/QuickTutorial"]
+[editable path="Tutorials/QuickTutorial2"]
+[editable path="Tutorials/QuickTutorial3"]

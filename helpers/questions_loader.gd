@@ -2,29 +2,37 @@ extends Node
 
 var addition_questions: Array = []
 var subtraction_questions: Array = []
+var saisai_questions:Array = []
+var old_robot:Array = []
 
 # Called when the node enters the scene tree for the first time.
 # Load all the questions from the database
 func _ready() -> void:
 	
 	# TODO replace with questions from the data base in the same format
-	#addition_questions = [
-		#[1, 2, 1, 2, "+", 1], # fraction addition questions
-		#[1, 3, 1, 2, "+", 2],
-		#[2, 5, 1, 2, "+", 3],
-		#
-		#["what is 1/2 + 1/2", 1, 2, 1, 2, "+", 4], #worded questions
-		#["what is 1/3 + 1/3", 1, 3, 1, 3, "+", 5],
-		#
-		#["what is 1/4 + 1/4?", "2/4", "1/3", "2/2", "1/2", "+", 6], #quiz questions
-	#]
-	#subtraction_questions = [
-		#[2, 3, 1, 3, "-"],
-		#[4, 5, 1, 2, "-"],
-		#[2, 5, 1, 4, "-"]
-	#]
-	addition_questions = []
-	compile_addition_questions()
+	addition_questions = [
+		[1, 2, 1, 2, "+", 1], # fraction addition questions
+		[1, 3, 1, 2, "+", 2],
+		[2, 5, 1, 2, "+", 3]
+	]
+	subtraction_questions = [
+		[2, 3, 1, 3, "-"],
+		[4, 5, 1, 2, "-"],
+		[2, 5, 1, 4, "-"]
+	]
+	saisai_questions = [
+		[1, 2, 1, 2, "+", 1],
+		[1, 3, 1, 3, "+", 2],
+		[2, 5, 1, 5, "+", 3]
+	]
+	old_robot = [
+		[1, 4, 1, 2, "+", 1],
+		[1, 2, 1, 3, "+", 2],
+		[2, 5, 1, 2, "+", 3]
+	]
+	
+	#addition_questions = []
+	#compile_addition_questions()
 
 var fraction_questions = []
 var worded_questions = []

@@ -869,11 +869,9 @@ tile_set = SubResource("TileSet_sbqc4")
 tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAEAAAAUAA4AAQABAAAAAAAUAA8AAQABAAEAAAAVAA4AAQACAAAAAAAWAA4AAQADAAAAAAAWAA8AAQADAAEAAAAXAA8AAAACAAIAAAAYABAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_cdkk8")
 
-
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(352, 320)
 scale = Vector2(1, 0.991779)
-
 
 [node name="in_front_details" type="Node2D" parent="."]
 
