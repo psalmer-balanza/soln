@@ -1,5 +1,6 @@
 ~ start
 set in_dialogue = true
+set current_quest = "movable_rock"
 
 A large rock blocks your path, and a magical inscription appears on its surface.  
 For some reason, this inscription is quite familiar to you, where do you know it from?
@@ -11,7 +12,8 @@ One traveler takes 1/4 of the rock's mass, and another takes 2/4.
 How much of the rock's mass have we taken together?"
 
 - 3/4
-	Correct! The magical force recognizes your wisdom, and the path is cleared! [do remove_rock()]
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
 	=> end
 - 1/2
 	That's incorrect. You've miscalculated. The rock remains intact. [wait=1]

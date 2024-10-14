@@ -5,7 +5,7 @@ extends Node2D
 var has_hidden_rock = false
 
 func _process(_delta):
-	if DialogueState.rock_removed and not has_hidden_rock:
+	if DialogueState.current_quest == "movable_rock_done" and not has_hidden_rock:
 		hide_rock()
 		has_hidden_rock = true
 

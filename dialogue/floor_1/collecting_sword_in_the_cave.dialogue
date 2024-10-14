@@ -3,17 +3,18 @@
 set in_dialogue = true
 This must be the sword handle, one of the shards.
 You see a familiar inscription on the handle of the sword. Though it's a little more complicated this time.
-It reads\: "One shard holds 5/6 of the sword's strength, while another holds 1/3. What is the total strength of the sword when combined?"
-- 5/6 + 1/3 = 6/6
+It reads\: "What is the least common multiple (LCM) of 6 and 8?"
+- 48
 	Nothing happens, maybe that wasn't the right answer?
 	=> sword_bottom
-- 5/6 + 1/3 = 7/6
+- 24
 	The inscriptions glows, and you pick up the piece. Well done!
+	set sword_bottom = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
-	do pick_sword_bottom()
+		set current_quest = "raket_sword_pieces_complete"
 	=> end
-- 5/6 + 1/3 = 8/6
+- 36
 	Nothing happens, maybe that wasn't the right answer?
 	=> sword_bottom
 
@@ -23,18 +24,19 @@ It reads\: "One shard holds 5/6 of the sword's strength, while another holds 1/3
 
 set in_dialogue = true
 You find the guard of the sword, resting among ancient carvings. Another inscription is etched into its surface.
-It reads: "This shard holds 2/3 of the sword's strength, and another shard holds 3/9. Combine their power."
-- 2/3 + 3/9 = 1
+It reads: "What is the missing denominator to make 2/5 equal to 6/(blank)?"
+- The missing denominator is 10
 	The sword guard remains unchanged. Seems incorrect...
 	=> sword_guard
-- 2/3 + 3/9 = 3/3
+- The missing denominator is 12
 	Nothing happens. That doesn't seem right...
 	=> sword_guard
-- 2/3 + 3/9 = 1
+- The missing denominator is 18
 	The inscription glows, and you lift the shard. Nice work!
+	set sword_guard = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
-	do pick_sword_guard()
+		set current_quest = "raket_sword_pieces_complete"
 	=> end
 => end
 
@@ -51,9 +53,10 @@ It reads: "This shard holds 3/5 of the sword's strength, while another holds 2/1
 	=> sword_lower_blade
 - 3/5 + 2/10 = 8/10
 	The inscription glows softly. You pull out the shard. Well done!
+	set sword_lower_blade = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
-	do pick_sword_lower_blade()
+		set current_quest = "raket_sword_pieces_complete"
 	 => end
 => end 
 
@@ -67,9 +70,10 @@ It reads: "One shard holds 4/7 of the sword’s strength, and another holds 1/7.
 	=> sword_middle_blade
 - 4/7 + 1/7 = 5/7
 	The inscription glows, and the shard loosens. Good job!
+	set sword_middle_blade = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
-	do pick_sword_middle_blade()
+		set current_quest = "raket_sword_pieces_complete"
 	=> end
 - 4/7 + 1/7 = 7/7
 	Nothing happens. Seems incorrect...
@@ -86,9 +90,10 @@ It reads: "This shard contains 2/4 of the sword’s strength, while another cont
 	=> sword_top_blade
 - 2/4 + 1/8 = 5/8
 	The runes glow brightly. You carefully take the shard. Well done!
+	set sword_top_blade = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
-	do pick_sword_top_blade()
+		set current_quest = "raket_sword_pieces_complete"
 	=> end
 - 2/4 + 1/8 = 4/8
 	Nothing changes. That doesn't seem right...

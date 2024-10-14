@@ -68,6 +68,7 @@ func initiate_questions():
 		fraction_questions = GetWorded.worded_questions
 	
 	elif DialogueState.current_quest == "raket_house":
+
 		print("Current quest is raket house")
 		GetWorded.post_data["MinigameID"] = 4
 		current_minigame_id = GetWorded.post_data["MinigameID"]
@@ -316,3 +317,7 @@ func next_question_or_finish():
 func return_to_world():
 	print("Returning")
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+
+
+func _on_button_button_down() -> void:
+	return_to_world()

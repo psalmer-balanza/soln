@@ -9,11 +9,11 @@ if saisai_moving_rocks_quest_done
 	Saisai: Oh! Um, if it’s not too much trouble, could you help me with another task?
 	Saisai: I was going to bake a pie... and I could really use a little help. It’s for... a friend of mine. I'd love it if you could join me!
 	- Sure thing!
-		Saisai: Okay, see you there!
-	do saisai_move_rocks_cutscene()
-	set saisai_quest_progress = 1
-	set remove_saisai_speech_bubble = false
-	set disable_saisai_moving_rocks_quest = true
+		Saisai: Okay, see you there! 
+		set current_quest = "saisai_house_invite"
+		set saisai_quest_progress = 1
+		set remove_saisai_speech_bubble = false
+		=> end
 else 
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
@@ -22,6 +22,7 @@ else
 	Saisai: Maybe you could lend me a hand? Pretty pleeeease?
 
 	- Sure
+		set current_quest = "saisai_wheelbarrow"
 		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn", "res://scenes/levels/Floor1.tscn")
 		set saisai_moving_rocks_quest_done = true
 	- (Leave)

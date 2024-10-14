@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var move_speed := 10.0  # Speed of movement
-@export var wander_time_max := 2.0  # Maximum time for wandering in one direction
+@export var move_speed := 5.0  # Speed of movement
+@export var wander_time_max := 1.0  # Maximum time for wandering in one direction
 @export var wander_time_min := 0.5  # Minimum time for wandering in one direction
 
 var move_direction: Vector2 = Vector2.ZERO

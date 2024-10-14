@@ -9,19 +9,26 @@ if not raket_sneaking_quest_complete
 	Hey! Stop right there! That pie isn't for you!
 	Masked Figure: It's mine now ! Who are you and what are you doing here?
 	I'm Sol’n, I'm here to deliver this pie to someone
-	Masked Figure: Ha! What a poor excuse, but I see that you are serious about it, let's make a deal? 
+	Masked Figure: Hmmm… I see. But im practicing how to be ninja and the challenge was to take a pie.
+	Masked Figure: I see that you are serious about it, let's make a deal?
 	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
 	Deal. Hit me with your best shot!
 	set raket_sneaking_quest_complete = true
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 elif raket_sneaking_quest_complete
-	Masked Figure: You actually completed the problems! I’m impressed!
+	I did it! I solved the fractions! [wait=0.5] Now hold on... stealing is bad, okay?
+	Masked Figure: But it's the first step to being a ninja... I have to be stealthy.
+	You can still be a ninja without stealing. 
+	You were totally stealthy, you caught me by surprise. 
 	Thank you. Now, why did you steal the pie in the first place?
+	Masked Figure: I was stealthy? [wait=0.5] Hmmm… It would be boring but I wouldn’t want to run into trouble in the future. 
+	Masked Figure: Ok, I won’t steal
 	Masked Figure: Ah… It's been a while since someone visited me. 
 	Masked Figure: I used to have a friend named Saisai, but we fought, and I haven’t seen her in ages.
 	Actually, this pie is from Saisai. She wanted to apologize to her friend, Raket the Raccoon.
-	Masked Figure: Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared.
+	Raket: Wait, Saisai? This pie for me? I’m… Raket the Raccoon! I didn’t know she still cared.
 	Well, she does. So, how about we head to your house and share this pie?
+	set current_quest = "share_pie_with_raket"
 	Raket: I'd like that. Let’s go and slice it up.
 	set should_I_delete_raket_stealing_scene = true
 

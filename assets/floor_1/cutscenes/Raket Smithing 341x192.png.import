@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnupb6135utyu"
-path="res://.godot/imported/mc idle front.png-1e248f10a0ec9765b675fa8acf161a81.ctex"
+uid="uid://dtasqkj3bgk3y"
+path="res://.godot/imported/Raket Smithing 341x192.png-a0ab02b73a27f6d33e7705cae45b8666.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/old_mc/mc idle front.png"
-dest_files=["res://.godot/imported/mc idle front.png-1e248f10a0ec9765b675fa8acf161a81.ctex"]
+source_file="res://assets/floor_1/cutscenes/Raket Smithing 341x192.png"
+dest_files=["res://.godot/imported/Raket Smithing 341x192.png-a0ab02b73a27f6d33e7705cae45b8666.ctex"]
 
 [params]
 

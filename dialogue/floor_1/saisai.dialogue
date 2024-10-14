@@ -4,6 +4,7 @@ set current_npc = "saisai"
 if saisai_quest_progress == 1
 	Saisai: Oh!! You’re here! Welcome to my place. It’s kinda messy, but I’m really happy you came. 
 	Saisai: So, I guess we can get started on the pie now! I’ve got everything ready, but...
+	set current_quest = "saisai_pie_making"
 	Saisai: I’m not really great at this kind of thing. Would you mind helping me mix the ingredients?
 	Saisai: I hope that’s okay. I really want the pie to turn out just right... it’s my way of apologizing you see?
 	Saisai: But, um, let’s not worry about that right now. Let's just have fun baking!
@@ -16,6 +17,8 @@ elif saisai_quest_progress == 2
 	Saisai: Here are the directions to my raccoon friend's house. [wait=1] 
 	Saisai: Take the pie, and may the pastry gods be with you!
 	Saisai: Safe travels, pie hero!
+	(The directions she gave are quite confusing)
+	set current_quest = "find_raket_house"
 	set saisai_quest_progress = 3
 
 => end

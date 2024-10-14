@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=62 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
+[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://s6tji0jcmfyh" path="res://audio/sound_effects/Walking (Actually Royalty Free).mp3" id="2_uxt3b"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/idle_state.gd" id="8_5n5vl"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/moving_state.gd" id="9_bdkni"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/player_dialogue_state.gd" id="10_uarnf"]
+[ext_resource type="Texture2D" uid="uid://dtasqkj3bgk3y" path="res://assets/floor_1/cutscenes/Raket Smithing 341x192.png" id="13_s1eyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7731s"]
 atlas = ExtResource("2_emqss")
@@ -279,8 +281,188 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.83945, 0.770642)
 
+[sub_resource type="Animation" id="Animation_rg2ej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8t6ig"]
+resource_name = "raket_smithing"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PointLight2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_4p0ka"]
+resource_name = "raket_smithing_default"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svsy2"]
+_data = {
+"RESET": SubResource("Animation_rg2ej"),
+"raket_smithing": SubResource("Animation_8t6ig"),
+"raket_smithing_default": SubResource("Animation_4p0ka")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnnpq"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(0, 0, 341, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxniv"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(341, 0, 341, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lx5h"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(0, 192, 341, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwuua"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(341, 192, 341, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt265"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(0, 384, 341, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7jkf"]
+atlas = ExtResource("13_s1eyi")
+region = Rect2(341, 384, 341, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4kgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnnpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxniv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lx5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwuua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt265")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7jkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="MainCharacter" type="CharacterBody2D"]
 script = ExtResource("1_vdtrp")
+
+[node name="ObjectiveOverlay" parent="." instance=ExtResource("2_n3dp3")]
+position = Vector2(39, 31)
 
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_uxt3b")
@@ -329,3 +511,13 @@ script = ExtResource("10_uarnf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-10, 5, -10, 12, -8, 12, -8, 15, -2, 15, -2, 12, 2, 12, 2, 15, 8, 15, 8, 12, 10, 12, 10, 5, 15, 5, 15, -5, 16, -5, 16, -8, 15, -8, 15, -14, 14, -15, 7, -15, 7, -16, 5, -16, 5, -15, -3, -15, -3, -16, -6, -16, -6, -15, -13, -15, -14, -14, -14, -8, -15, -8, -15, -1, -14, -1, -14, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RaketSmithing")
+libraries = {
+"": SubResource("AnimationLibrary_svsy2")
+}
+
+[node name="RaketSmithing" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y4kgx")
+frame = 1

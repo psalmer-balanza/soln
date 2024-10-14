@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://rfc1juq6dx1x"]
 
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/racket.gd" id="1_cx7ye"]
-[ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/characters/racket/Raket idle animation.png" id="1_m1kvl"]
+[ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/floor_1/npc/Raket idle animation.png" id="1_m1kvl"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_2dxdd"]
 [ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/speech_baloon.tscn" id="2_keiic"]
 [ext_resource type="Resource" uid="uid://cuf74adcdsdsl" path="res://dialogue/floor_1/raket_house.dialogue" id="3_e5lo0"]

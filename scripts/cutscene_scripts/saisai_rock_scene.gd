@@ -5,7 +5,7 @@ var has_moved_rock = false
 var show_speech_bubble = true
 
 func _process(_delta):
-	if DialogueState.saisai_rock_moved and not has_moved_rock:
+	if DialogueState.current_quest == "saisai_house_invite" and not has_moved_rock:
 		play_move_rock()
 		has_moved_rock = true
 	if DialogueState.remove_saisai_speech_bubble == true: 

@@ -14,11 +14,9 @@ func Enter():
 	var actionables = actionable_finder.get_overlapping_areas()
 
 	if actionables.size() > 0:
-		print("Dialogue found")
 		actionables[0].action()  # Trigger the dialogue interaction
 	else:
 		Transitioned.emit(self, "IdleState")
-		print("No dialogue found")
 
 
 func Update(delta: float):
