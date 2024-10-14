@@ -18,17 +18,18 @@ func _ready():
 	# Initialize the state machine
 	state_machine.initial_state = $StateMachine/IdleState
 	print('hello')
-	animation_player.play("raket_smithing_default")
-
+	$RaketSmithing.visible = false
 func _physics_process(delta):
 	# Delegate the state management to the state machine
 	state_machine._physics_process(delta)
 	move_and_slide()
 	if DialogueState.do_raket_blacksmith_animation and not raket_blacksmithing_scene_done:
 		print("Entered")
+		$RaketSmithing.visible = true
 		raket_blacksmithing_scene_done = true
 		animation_player.play("raket_smithing")
 		await animation_player.animation_finished
+		$RaketSmithing.visible = false
 
 
 func _process(delta):
