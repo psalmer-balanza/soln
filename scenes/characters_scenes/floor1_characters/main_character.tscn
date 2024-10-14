@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
-[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
+[ext_resource type="PackedScene" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://s6tji0jcmfyh" path="res://audio/sound_effects/Walking (Actually Royalty Free).mp3" id="2_uxt3b"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]

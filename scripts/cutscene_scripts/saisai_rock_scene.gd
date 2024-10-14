@@ -3,6 +3,7 @@ extends Node2D
 
 var has_moved_rock = false
 var show_speech_bubble = true
+@onready var saisai_rock_scene = $"."
 
 func _process(_delta):
 	if DialogueState.current_quest == "saisai_house_invite" and not has_moved_rock:
@@ -15,7 +16,7 @@ func _process(_delta):
 
 func _ready():
 	if DialogueState.disable_saisai_moving_rocks_quest:
-		$Saisai/Actionable/CollisionShape2D.disabled = true
+		saisai_rock_scene.queue_free()
 
 func play_move_rock() -> void:
 	DialogueState.remove_saisai_speech_bubble = true 

@@ -3,7 +3,7 @@ extends Node
 var current_quest: String = "starting"
 
 var saisai_moving_rocks_quest_done: bool = false
-var disable_saisai_moving_rocks_quest:bool = false
+var disable_saisai_moving_rocks_quest: bool = false
 var saisai_baking_quest_done
 var in_dialogue: bool = false
 var evil_soln_quest_status: int = 0

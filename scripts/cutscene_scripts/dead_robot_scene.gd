@@ -1,6 +1,7 @@
 extends Node2D
-@onready var animation_player: AnimationPlayer = $"AnimationPlayer"
 
+@onready var animation_player: AnimationPlayer = $"AnimationPlayer"
+@onready var dead_robot_scene = $"."
 
 var has_robot_appeared = false
 var has_robot_disappeared = false
@@ -14,8 +15,7 @@ func _process(_delta):
 
 func _ready():
 	if DialogueState.disable_dead_robot_quest:
-		$Actionable2/CollisionShape2D.disabled = true
-
+		dead_robot_scene.queue_free()
 
 func robots_appear() -> void:
 	animation_player.play("robots_appear")

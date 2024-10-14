@@ -27,7 +27,7 @@ func save_player_position_and_change_scene(new_scene: String, current_scene: Str
 	else:
 		print("Player node not found")
 
-	
+
 func change_scene(new_scene: String):
 	print("Changing to new scene: ", new_scene)
 	get_tree().change_scene_to_file(new_scene)

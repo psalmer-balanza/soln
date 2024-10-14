@@ -79,7 +79,6 @@ func display_current_question():
 	first_denum_label.text = str(first_denum)
 	second_num_label.text = str(second_num)
 	second_denum_label.text = str(second_denum)
-	
 
 # Function to check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
