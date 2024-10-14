@@ -5,8 +5,8 @@ set in_dialogue = true
 if not raket_house_quest_complete
 	set current_quest = "raket_house"
 	Raket: By the way, I’m Raket the blacksmith racoon. What’s your name? 
-	- Oh, I’m Sol’n.
-	Raket: Well then Sol’n how about we cut the pie into 10 slices?
+	- Oh, I’m {{player_username}}.
+	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
 	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
 	Raket: There will still be a few left for me to eat for dinner.
 	Isn’t 4/10 too much for me? The pie is for you…
@@ -15,13 +15,13 @@ if not raket_house_quest_complete
 	set current_quest = "raket_worded"
 	set raket_quest_progress = 1
 elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
-	Raket: Great job, Sol’n! Now that we have all the ore pieces, I can finally build this sword.
+	Raket: Great job, {{player_username}} Now that we have all the ore pieces, I can finally build this sword.
 	set do_raket_blacksmith_animation = true
-	Raket: Look at this beauty! You did it, Sol’n. This sword is perfect.
+	Raket: Look at this beauty! You did it, {{player_username}}. This sword is perfect.
 	What will you do with it?
 	Raket: Well I plan to-
-	Raket: This is where earthquake plays
-	Raket: Oh no! The snake is waking up! Take these, and be ready! You need to defeat the snake in the cave.
+	*The ground shakes tremendously*
+	Raket: Oh no! The snake is getting riled up! Take these, and be ready! You need to defeat the snake in the cave.
 	set current_quest = "face_the_snake"
 	set raket_sword_complete = true
 	set raket_quest_progress = 3

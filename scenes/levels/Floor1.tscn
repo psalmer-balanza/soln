@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_3mv17"]
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
-[ext_resource type="AudioStream" uid="uid://bd1rmqsqkqxmb" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).mp3" id="2_5mmam"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
-[ext_resource type="AudioStream" uid="uid://dxoypcig23tqn" path="res://audio/background_music/Farming - Don't Starve Together  8-Bit Cover.mp3" id="3_2cehf"]
+[ext_resource type="AudioStream" uid="uid://do78b3lo3fvf6" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).wav" id="2_xrlkj"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
+[ext_resource type="AudioStream" uid="uid://d3ry0b283onvp" path="res://audio/background_music/Farming - Dont Starve Together 8-Bit Cover.wav" id="3_ijcau"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
 [ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/levels/test_floor1/firefly.tscn" id="6_5ydh2"]
@@ -786,12 +786,12 @@ size = Vector2(111, 20)
 script = ExtResource("1_akh82")
 
 [node name="StartupSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5mmam")
-volume_db = -35.604
+stream = ExtResource("2_xrlkj")
+volume_db = -13.048
 pitch_scale = 1.07
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_2cehf")
+stream = ExtResource("3_ijcau")
 volume_db = -12.18
 autoplay = true
 
@@ -870,7 +870,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(962, 1053)
+position = Vector2(359, 730)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -915,6 +915,9 @@ scale = Vector2(0.25, 0.25)
 offset_top = 0.0
 offset_right = 214.0
 offset_bottom = 79.0
+
+[node name="MarginContainer" parent="tooltips/monitor1/MarginContainer2" index="1"]
+visible = false
 
 [node name="Label" parent="tooltips/monitor1/MarginContainer2/MarginContainer" index="0"]
 text = "use WASD keys
@@ -962,7 +965,7 @@ position = Vector2(321, 800)
 [node name="SaisaiRockScene" parent="Cutscenes" instance=ExtResource("16_awl35")]
 
 [node name="DeadRobotScene" parent="Cutscenes" instance=ExtResource("26_5o1n3")]
-position = Vector2(658, 216)
+position = Vector2(689, 228)
 
 [node name="RaketStealing" parent="Cutscenes" instance=ExtResource("24_yrk65")]
 position = Vector2(865, 251)
@@ -1010,59 +1013,59 @@ position = Vector2(-126, 384)
 [node name="firefly6" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(160, 628)
 
-[node name="firefly" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1429, 1024)
+[node name="firefly7" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(1014, 689)
 
-[node name="firefly2" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1284, 1068)
+[node name="firefly8" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(869, 733)
 
-[node name="firefly3" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1343, 1066)
+[node name="firefly9" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(928, 731)
 
-[node name="firefly4" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1388, 1042)
+[node name="firefly10" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(941, 664)
 
-[node name="firefly5" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1439, 1562)
+[node name="firefly11" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(1024, 1227)
 
-[node name="firefly6" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1413, 1639)
+[node name="firefly12" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(998, 1304)
 
-[node name="firefly7" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1323, 1677)
+[node name="firefly13" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(908, 1342)
 
-[node name="firefly8" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1226, 1724)
+[node name="firefly14" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(811, 1389)
 
-[node name="firefly9" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1423, 1748)
+[node name="firefly15" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(1008, 1413)
 
-[node name="firefly10" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1252, 1850)
+[node name="firefly16" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(837, 1515)
 
-[node name="firefly11" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1365, 1842)
+[node name="firefly17" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(950, 1507)
 
-[node name="firefly12" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1031, 1832)
+[node name="firefly18" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(616, 1497)
 
-[node name="firefly13" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(962, 1831)
+[node name="firefly19" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(547, 1496)
 
-[node name="firefly14" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(986, 1839)
+[node name="firefly20" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(571, 1504)
 
-[node name="firefly15" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(914, 1657)
+[node name="firefly21" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(499, 1322)
 
-[node name="firefly16" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(834, 1653)
+[node name="firefly22" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(419, 1318)
 
-[node name="firefly17" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(875, 1666)
+[node name="firefly23" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(460, 1331)
 
-[node name="firefly18" parent="." instance=ExtResource("6_5ydh2")]
-position = Vector2(1011, 1842)
+[node name="firefly24" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(596, 1507)
 
 [editable path="obstacles/MovableShinyRock"]
 [editable path="tooltips/monitor1"]

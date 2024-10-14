@@ -12,21 +12,23 @@ func Enter():
 	player.velocity = Vector2.ZERO
 	# Trigger dialogue once
 	var actionables = actionable_finder.get_overlapping_areas()
-
 	if actionables.size() > 0:
-		actionables[0].action()  # Trigger the dialogue interaction
-	else:
-		Transitioned.emit(self, "IdleState")
+		actionables[0].action()  # Trigger the dialogue interactiondddddddd
+	
+	start_dialogue_wait()
 
+# Asynchronously wait for the dialogue to end
+func start_dialogue_wait() -> void:
+	await DialogueManager.dialogue_ended  # Wait for the dialogue to end
+	Transitioned.emit(self, "IdleState")  # Transition back to IdleState when dialogue ends
 
 func Update(delta: float):
-	if DialogueState.in_dialogue == false:
-		await get_tree().create_timer(1.0).timeout
-		Transitioned.emit(self, "IdleState")
+	print("dialogue")
+	pass
 
 # Player must not move during dialogue so do NOTHING HERE
 func Physics_Update(delta: float):
-	pass
+	player.velocity = Vector2.ZERO  # Reinforce that the player cannot move
 	
 func Exit():
 	pass

@@ -53,7 +53,10 @@ var is_simplified = false
 func _ready():
 	initiate_questions()
 	print("Current questline is: ", DialogueState.current_quest)
-	
+	if DialogueState.current_quest == "dead_robots":
+		$AnimationPlayer.play("idle_robot")
+	elif DialogueState.current_quest == "saisai_rock":
+		$AnimationPlayer.play("default")
 	# Create an HTTP request node and connect its completion signal.
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)

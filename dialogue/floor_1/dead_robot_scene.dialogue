@@ -1,4 +1,5 @@
 ~ start
+
 set current_quest = "dead_robot"
 set current_npc = "old_peculiar"
 set in_dialogue = true
@@ -13,6 +14,7 @@ if dead_robot_quest_status == "first_time"
 elif dead_robot_quest_status == "done"
 	Old Peculiar: Thank you... you have proven yourself worthy
 	Old Peculiar: We can move to the archive folder without any regrets now...
+	Old Peculiar: With our test being finished, you are now capable of even higher modes of solving fractions...
 	Old Peculiar: Best of luck to you, chosen one...
 	do dead_robot_scene_finished()
 	set disable_dead_robot_quest = true

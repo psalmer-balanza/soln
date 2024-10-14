@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ctvi66js487e3"
+path="res://.godot/imported/saisai_area_barrier.dialogue-8e5e2f1f3372380a55c231b3c3550f80.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/saisai_area_barrier.dialogue"
+dest_files=["res://.godot/imported/saisai_area_barrier.dialogue-8e5e2f1f3372380a55c231b3c3550f80.tres"]
+
+[params]
+
+defaults=true

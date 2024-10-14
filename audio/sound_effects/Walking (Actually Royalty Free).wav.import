@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1vxqv2kfntrb"
+path="res://.godot/imported/Walking (Actually Royalty Free).wav-21134b1b07bcfeb4c5ad1d663860d057.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/Walking (Actually Royalty Free).wav"
+dest_files=["res://.godot/imported/Walking (Actually Royalty Free).wav-21134b1b07bcfeb4c5ad1d663860d057.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

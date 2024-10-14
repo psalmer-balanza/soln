@@ -1,8 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=30 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
-[ext_resource type="AudioStream" uid="uid://ndwegmlysqlk" path="res://audio/background_music/Saisai Cooking.mp3" id="1_74ssu"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
+[ext_resource type="AudioStream" uid="uid://wmegma5lylop" path="res://audio/background_music/Saisai Cooking.wav" id="1_tup5s"]
 [ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
 [ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
 [ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
@@ -21,9 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
 [ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
-[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="22_bgp80"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
-[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="24_b43bd"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 
@@ -58,8 +56,8 @@ size = Vector2(54.8781, 20)
 [node name="Cooking" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_74ssu")
-volume_db = -43.099
+stream = ExtResource("1_tup5s")
+volume_db = -26.234
 autoplay = true
 
 [node name="Counter" type="Sprite2D" parent="."]
@@ -261,14 +259,14 @@ offset_top = -17.0
 offset_right = -36.0
 offset_bottom = -8.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Tutorials_QuickTutorial_Content#Label" type="Label" parent="."]
 offset_left = 461.0
 offset_top = 94.0
 offset_right = 557.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
-text = "Items: "
+text = "Click on the ingridients to pick them up"
 
 [node name="garlic" type="Area2D" parent="."]
 position = Vector2(509, 291)
@@ -399,9 +397,19 @@ offset_right = 1083.0
 offset_bottom = 653.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
-[node name="Congrats" parent="UI/Control" instance=ExtResource("22_bgp80")]
+[node name="Congrats" parent="UI/Control"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 visible = false
 next_scene = ExtResource("23_tlpu8")
+script = null
 
 [node name="Oh no" type="Control" parent="UI/Control"]
 visible = false
@@ -456,20 +464,20 @@ theme_override_font_sizes/font_size = 50
 text = "OK"
 flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 589.0
+[node name="Tutorials_QuickTutorial_filter#MarginContainer" type="MarginContainer" parent="."]
+offset_left = 540.0
 offset_top = 394.0
 offset_right = 945.0
 offset_bottom = 434.0
 
-[node name="cook_button" type="Button" parent="MarginContainer"]
+[node name="cook_button" type="Button" parent="Tutorials_QuickTutorial_filter#MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
 text = "COOK"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Tutorials_QuickTutorial_filter#MarginContainer"]
 layout_mode = 2
 texture = ExtResource("24_j3b2b")
 patch_margin_left = 20
@@ -508,108 +516,45 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("24_ek2r0")
 
-[node name="QuickTutorial" parent="Tutorials" instance=ExtResource("24_b43bd")]
+[node name="QuickTutorial" parent="Tutorials"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 offset_right = 1024.0
 offset_bottom = 576.0
+script = null
 
-[node name="MarginContainer" parent="Tutorials/QuickTutorial/filter" index="0"]
-offset_left = 540.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial/filter" index="1"]
-offset_top = -3.0
-offset_right = 288.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial/filter" index="2"]
-offset_left = 328.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial/filter" index="3"]
-offset_left = 328.0
-offset_right = 500.0
-offset_bottom = 190.0
-
-[node name="Label" parent="Tutorials/QuickTutorial/Content" index="1"]
-text = "Click on the ingridients to pick them up"
-
-[node name="Close" parent="Tutorials/QuickTutorial" index="2"]
-offset_left = 25.0
-offset_top = 459.0
-offset_right = 127.0
-offset_bottom = 499.0
-
-[node name="CloseButton" parent="Tutorials/QuickTutorial/Close" index="0"]
-text = "NEXT"
-
-[node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("24_b43bd")]
+[node name="QuickTutorial2" parent="Tutorials"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 visible = false
+script = null
 
-[node name="MarginContainer" parent="Tutorials/QuickTutorial2/filter" index="0"]
-offset_left = 540.0
-offset_top = 443.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial2/filter" index="1"]
-offset_top = -3.0
-offset_right = 288.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial2/filter" index="2"]
-offset_left = 328.0
-offset_top = -2.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial2/filter" index="3"]
-offset_left = 554.0
-offset_right = 1021.0
-offset_bottom = 83.0
-
-[node name="MarginContainer6" parent="Tutorials/QuickTutorial2/filter" index="4"]
-offset_right = 981.0
-
-[node name="Content" parent="Tutorials/QuickTutorial2" index="1"]
-offset_left = 28.0
-offset_top = 16.0
-offset_right = 417.0
-offset_bottom = 416.0
-
-[node name="Label" parent="Tutorials/QuickTutorial2/Content" index="1"]
-text = "Place them in the board. Click again to drop the ingridient"
-
-[node name="Close" parent="Tutorials/QuickTutorial2" index="2"]
-offset_left = 25.0
-offset_top = 459.0
-offset_right = 127.0
-offset_bottom = 499.0
-
-[node name="CloseButton" parent="Tutorials/QuickTutorial2/Close" index="0"]
-text = "NEXT"
-
-[node name="QuickTutorial3" parent="Tutorials" instance=ExtResource("24_b43bd")]
+[node name="QuickTutorial3" parent="Tutorials"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 visible = false
-
-[node name="MarginContainer" parent="Tutorials/QuickTutorial3/filter" index="0"]
-offset_left = 540.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial3/filter" index="1"]
-offset_top = 114.0
-offset_right = 221.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial3/filter" index="2"]
-offset_left = 261.0
-offset_top = -12.0
-offset_right = 500.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial3/filter" index="3"]
-offset_left = 237.0
-offset_right = 221.0
-offset_bottom = 75.0
-
-[node name="MarginContainer6" parent="Tutorials/QuickTutorial3/filter" index="4"]
-offset_left = 24.0
-offset_right = 426.0
-
-[node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
-text = "Follow the recipe and if you're ready click on the cook button"
-
-[node name="Close" parent="Tutorials/QuickTutorial3" index="2"]
-offset_left = 24.0
-offset_right = 126.0
+script = null
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]
@@ -620,9 +565,6 @@ offset_right = 126.0
 [connection signal="body_entered" from="butter" to="butter" method="_on_body_entered"]
 [connection signal="body_exited" from="butter" to="butter" method="_on_body_exited"]
 [connection signal="pressed" from="UI/Control/Oh no/incorrect" to="board" method="_on_incorrect_pressed"]
-[connection signal="pressed" from="MarginContainer/cook_button" to="board" method="_on_cook_button_pressed"]
-[connection signal="change" from="Tutorials/QuickTutorial" to="Tutorials" method="_on_quick_tutorial_change"]
-[connection signal="change" from="Tutorials/QuickTutorial2" to="Tutorials" method="_on_quick_tutorial_2_change"]
 
 [editable path="ItemContainer/butter2"]
 [editable path="ItemContainer/mushroom2"]
@@ -633,6 +575,3 @@ offset_right = 126.0
 [editable path="ItemContainer/garlic4"]
 [editable path="ItemContainer/garlic5"]
 [editable path="ItemContainer/garlic6"]
-[editable path="Tutorials/QuickTutorial"]
-[editable path="Tutorials/QuickTutorial2"]
-[editable path="Tutorials/QuickTutorial3"]

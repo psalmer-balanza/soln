@@ -1,0 +1,7 @@
+~ start
+set in_dialogue = true
+It seems there's still more to do here. I should turn back for now.
+~ end
+set in_dialogue = false
+=> END
+=> END

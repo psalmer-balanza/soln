@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
-[ext_resource type="PackedScene" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
-[ext_resource type="AudioStream" uid="uid://s6tji0jcmfyh" path="res://audio/sound_effects/Walking (Actually Royalty Free).mp3" id="2_uxt3b"]
+[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
+[ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
@@ -465,7 +465,7 @@ script = ExtResource("1_vdtrp")
 position = Vector2(39, 31)
 
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_uxt3b")
+stream = ExtResource("3_4puxp")
 volume_db = -14.991
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -518,6 +518,11 @@ libraries = {
 "": SubResource("AnimationLibrary_svsy2")
 }
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="RaketSmithing" type="AnimatedSprite2D" parent="."]
+z_index = 100
 sprite_frames = SubResource("SpriteFrames_y4kgx")
 frame = 1

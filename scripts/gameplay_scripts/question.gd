@@ -44,7 +44,7 @@ func _check_answer():
 	if answer == correct_answer:
 		GetQuiz.Enemy_HP -= 10
 		visible=false
-		question_dictionary.remove_at(index)
+		Global.Question_Dictionary.remove_at(index)
 		#This current quest changer should be wherever the final question/end of quiz is
 		DialogueState.current_quest = "snake_quiz_complete"
 		mc_questions.remove_at(index)

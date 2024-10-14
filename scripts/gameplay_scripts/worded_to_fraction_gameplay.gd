@@ -2,9 +2,9 @@ extends Node2D
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["Combine these fractions: 3/4 + 1/4.", 3, 4, 1, 4],  # First question fractions
-	["Find the sum of these fractions: 5/7 + 2/7.", 5, 7, 2, 7],  # Second question fractions
-	["Add these fractions: 2/5 + 2/5.", 2, 5, 2, 5],  # Third question fractions
+	["A magician was cooking two batches of magical mushrooms. In the first batch, she used 2/5 of his total magic power, and in the second batch, he used 3/10​. How much magic power did she use in total?", 2, 5, 3, 10],  # First question fractions
+	["Next one! I had a stock of potions. I used 3/8​ of them in the morning and 5/12 in the afternoon. How many potions did I use in total?", 3, 8, 5, 12],  # Second question fractions
+	["Last one! I was baking pies. One pie was sliced into 3/6 ​, and another was sliced into 5/6​. How much pie do I have altogether?", 3, 6, 5, 6],  # Third question fractions
 	]
 
  # List to store question context text for each round
@@ -48,8 +48,6 @@ func npc_active():
 	elif current_npc == "raket":
 		npc_sprite.play("raket")
 		DialogueState.raket_house_quest_complete = true
-	elif current_npc == "old_peculiar":
-		npc_sprite.play("old_robot")
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure")
 	else:

@@ -1,10 +1,10 @@
 [gd_scene load_steps=45 format=3 uid="uid://djk22k3j63p7n"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
-[ext_resource type="AudioStream" uid="uid://n8odmxv6jbjf" path="res://audio/sound_effects/Correct Answer.mp3" id="2_2gr4x"]
+[ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="2_p6143"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_1p88m"]
-[ext_resource type="AudioStream" uid="uid://dyuxo8pg4cy21" path="res://audio/sound_effects/Wrong Answer.mp3" id="3_ybf48"]
+[ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_pjytp"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1trgt"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_deff5"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="6_ah1tw"]
@@ -421,11 +421,11 @@ size_flags_horizontal = 4
 script = ExtResource("1_0dox2")
 
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_2gr4x")
+stream = ExtResource("2_p6143")
 volume_db = -23.423
 
 [node name="WrongAnswerSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ybf48")
+stream = ExtResource("3_pjytp")
 volume_db = -25.297
 
 [node name="bg" type="ColorRect" parent="."]

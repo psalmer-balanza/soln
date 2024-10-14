@@ -548,8 +548,9 @@ libraries = {
 autoplay = "robots_default"
 
 [node name="Actionable2" parent="." instance=ExtResource("4_m50f8")]
+position = Vector2(70, 30)
 dialogue_resource = ExtResource("4_5j3d2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
-position = Vector2(71, 41)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_e8rbd")
