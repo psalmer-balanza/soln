@@ -15,6 +15,7 @@ elif dead_robot_quest_status == "done"
 	Old Peculiar: We can move to the archive folder without any regrets now...
 	Old Peculiar: Best of luck to you, chosen one...
 	do dead_robot_scene_finished()
+	set disable_dead_robot_quest = true
 	=> end
 => end
 

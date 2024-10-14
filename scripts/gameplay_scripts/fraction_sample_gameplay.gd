@@ -22,13 +22,13 @@ func initiate_questions():
 	if DialogueState.current_quest == "saisai_rock":
 		GetFractions.post_data["MinigameID"] = 1
 		current_minigame_id = GetFractions.post_data["MinigameID"]
-		GetFractions._ready()
+		GetFractions.post()
 		fraction_questions = GetFractions.fraction_questions
 	elif DialogueState.current_quest == "dead_robots":
 		print("Doing dead robot questions")
 		GetFractions.post_data["MinigameID"] = 2
 		current_minigame_id = GetFractions.post_data["MinigameID"]
-		GetFractions._ready()
+		GetFractions.post()
 		fraction_questions = GetFractions.fraction_questions
 		
 var current_question_index = 0  # Track which question the player is on

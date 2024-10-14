@@ -11,7 +11,12 @@ func _process(_delta):
 		has_robot_appeared = true
 	if DialogueState.dead_robot_disappeared and not has_robot_disappeared:
 		robots_disappear()
-		
+
+func _ready():
+	if DialogueState.disable_dead_robot_quest:
+		$Actionable2/CollisionShape2D.disabled = true
+
+
 func robots_appear() -> void:
 	animation_player.play("robots_appear")
 	await animation_player.animation_finished

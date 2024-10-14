@@ -27,6 +27,7 @@ How much of the rock's mass have we taken together?"
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 
+set disable_rock_removed = true
 ~ end
 set in_dialogue = false
 => END
