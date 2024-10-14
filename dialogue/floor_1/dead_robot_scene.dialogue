@@ -7,7 +7,7 @@ if dead_robot_quest_status == "first_time"
 	Old Peculiar: Hello there...
 	Old Peculiar: We are the spirits of the land, we see that you have arisen from your slumber...
 	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn", "res://scenes/levels/Floor1.tscn")
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction_old_robot.tscn", "res://scenes/levels/Floor1.tscn")
 	set dead_robot_quest_status = "done"
 	=> end
 elif dead_robot_quest_status == "done"

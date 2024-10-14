@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@export var do: String
+@export var quest_number: int
 
 signal all_done
 signal correct
@@ -35,11 +35,11 @@ func _ready() -> void:
 	_display_question()
 
 func _load_questions():
-	match do:
-		"add":
-			questions = QuestionsLoader.addition_questions
-		"minus":
-			questions = QuestionsLoader.subtraction_questions
+	match quest_number:
+		1:
+			questions = QuestionsLoader.saisai_questions
+		2:
+			questions = QuestionsLoader.old_robot
 
 func _display_question():
 	if question_index == questions.size():
