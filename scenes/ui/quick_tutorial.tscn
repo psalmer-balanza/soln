@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbry446v48htq"]
+
+[ext_resource type="Script" path="res://scripts/UI/quick_tutorial.gd" id="1_uotad"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_f3qmj"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_l34cy"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ogdd3"]
+[ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_jcy53"]
+
+[node name="QuickTutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uotad")
+
+[node name="filter" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="filter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 554.0
+offset_right = 983.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer"]
+layout_mode = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.858824)
+
+[node name="MarginContainer3" type="MarginContainer" parent="filter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 333.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer3"]
+layout_mode = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.858824)
+
+[node name="MarginContainer4" type="MarginContainer" parent="filter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 373.0
+offset_top = 390.0
+offset_right = 514.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer4"]
+layout_mode = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.858824)
+
+[node name="MarginContainer5" type="MarginContainer" parent="filter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 373.0
+offset_right = 514.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer5"]
+layout_mode = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.858824)
+
+[node name="MarginContainer6" type="MarginContainer" parent="filter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 357.0
+offset_right = 532.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer6"]
+layout_mode = 2
+color = Color(0.207843, 0.168627, 0.25098, 0)
+
+[node name="Content" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 55.0
+offset_right = 978.0
+offset_bottom = 455.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Content"]
+layout_mode = 2
+texture = ExtResource("2_f3qmj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Label" type="Label" parent="Content"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.152941, 0.121569, 0.184314, 1)
+theme_override_fonts/font = ExtResource("3_l34cy")
+theme_override_font_sizes/font_size = 30
+text = "Answer the question by providing the correct numerator and denominator in the spaces provided"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Close" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 458.0
+offset_right = 140.0
+offset_bottom = 498.0
+scale = Vector2(2, 2)
+
+[node name="CloseButton" type="Button" parent="Close"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ogdd3")
+text = "CLOSE"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Close"]
+layout_mode = 2
+texture = ExtResource("5_jcy53")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[connection signal="pressed" from="Close/CloseButton" to="." method="_on_close_button_pressed"]
