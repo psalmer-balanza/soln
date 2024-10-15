@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brh6b8ufqdjks"
-path="res://.godot/imported/board_box.png-f78ec05e6554cca4e7414c737918322e.ctex"
+path="res://.godot/imported/board_box.png-d02e4de44e261d8743b7c56f917db77c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png"
-dest_files=["res://.godot/imported/board_box.png-f78ec05e6554cca4e7414c737918322e.ctex"]
+source_file="res://scenes/gameplay_scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png"
+dest_files=["res://.godot/imported/board_box.png-d02e4de44e261d8743b7c56f917db77c.ctex"]
 
 [params]
 

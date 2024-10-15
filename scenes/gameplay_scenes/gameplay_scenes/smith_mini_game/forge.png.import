@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch8nph2tfja2j"
-path="res://.godot/imported/forge.png-ed11b611597a63a5c4b3c279d05a096c.ctex"
+path="res://.godot/imported/forge.png-58e13d8498140e51c5abc4b1f51178f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/smith_mini_game/forge.png"
-dest_files=["res://.godot/imported/forge.png-ed11b611597a63a5c4b3c279d05a096c.ctex"]
+source_file="res://scenes/gameplay_scenes/gameplay_scenes/smith_mini_game/forge.png"
+dest_files=["res://.godot/imported/forge.png-58e13d8498140e51c5abc4b1f51178f7.ctex"]
 
 [params]
 

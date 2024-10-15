@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsn4t8knd5gqc"
-path="res://.godot/imported/liquid_metal.png-0fd5edaf47efd1241502e58343ba756f.ctex"
+path="res://.godot/imported/liquid_metal.png-82860e3b079eaaf8066a69aaa3c6b35e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/smith_mini_game/liquid_metal.png"
-dest_files=["res://.godot/imported/liquid_metal.png-0fd5edaf47efd1241502e58343ba756f.ctex"]
+source_file="res://scenes/gameplay_scenes/gameplay_scenes/smith_mini_game/liquid_metal.png"
+dest_files=["res://.godot/imported/liquid_metal.png-82860e3b079eaaf8066a69aaa3c6b35e.ctex"]
 
 [params]
 

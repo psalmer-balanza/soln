@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwwt0hbpbb0lk"
-path="res://.godot/imported/garlic4.png-8d4920ceab903bddfca791eb4068648f.ctex"
+path="res://.godot/imported/garlic4.png-a235cd98963c01e5d5aa3d848f4c526c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png"
-dest_files=["res://.godot/imported/garlic4.png-8d4920ceab903bddfca791eb4068648f.ctex"]
+source_file="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png"
+dest_files=["res://.godot/imported/garlic4.png-a235cd98963c01e5d5aa3d848f4c526c.ctex"]
 
 [params]
 

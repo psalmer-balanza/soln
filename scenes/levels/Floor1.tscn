@@ -621,7 +621,6 @@ texture_region_size = Vector2i(64, 64)
 14:6/0 = 0
 18:6/0 = 0
 
-
 [sub_resource type="TileSet" id="TileSet_1w7gf"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_o6bls")
@@ -847,7 +846,6 @@ libraries = {
 }
 autoplay = "waves"
 
-
 [node name="mushroom_forest_collision" type="StaticBody2D" parent="ground_and_water"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_and_water/mushroom_forest_collision"]
@@ -875,8 +873,8 @@ tile_set = SubResource("TileSet_cdkk8")
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(365, 731)
 scale = Vector2(1, 0.991779)
-[node name="in_front_details" type="Node2D" parent="."]
 
+[node name="in_front_details" type="Node2D" parent="."]
 
 [node name="cave wall upper" type="TileMapLayer" parent="in_front_details"]
 tile_map_data = PackedByteArray("AAANAB4AAAACAAgAAAAOAB4AAAACAAgAAAAPAB4AAAACAAgAAAAQAB4AAAACAAgAAAARAB4AAAACAAgAAAASAB4AAAACAAgAAAATAB4AAAACAAgAAAAUAB4AAAACAAgAAAAVAB4AAAACAAgAAAAWAB4AAAACAAgAAAAYABwAAAACAAgAAAAXAB0AAAACAAgAAAAMAB0AAAACAAgAAAALABwAAAACAAgAAAA=")
@@ -1069,7 +1067,6 @@ position = Vector2(596, 1507)
 
 [node name="BarrierRaketHouse" parent="." instance=ExtResource("27_gjv3b")]
 position = Vector2(1600, 1284)
-
 
 [editable path="obstacles/MovableShinyRock"]
 [editable path="tooltips/monitor1"]
