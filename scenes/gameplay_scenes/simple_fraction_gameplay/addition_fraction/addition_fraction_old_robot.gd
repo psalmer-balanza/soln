@@ -23,11 +23,13 @@ func _on_fraction_problem_all_done() -> void:
 
 func _on_fraction_problem_correct() -> void:
 	print("seggs842")
+	$CorrectAnswerSFX.play()
 	animation_player.play("correct")
 	await animation_player.animation_finished
 	animation_player.play("idle")
 
 func _on_fraction_problem_incorrect() -> void:
+	$WrongAnswerSFX.play()
 	animation_player.play("wrong")
 	await animation_player.animation_finished
 	animation_player.play("idle")
