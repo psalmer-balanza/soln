@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_cuid1"]
 [ext_resource type="Script" path="res://scripts/login_script/soln_bg_animation.gd" id="2_nubq2"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_u5qk6"]
-[ext_resource type="PackedScene" uid="uid://b3kvpase6wbh3" path="res://scenes/student_scene/hide_password.tscn" id="5_yjt28"]
+[ext_resource type="PackedScene" uid="uid://bcui7ofr241ek" path="res://scenes/student_scene/hide_password.tscn" id="5_yjt28"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
 atlas = ExtResource("1_axrn5")
