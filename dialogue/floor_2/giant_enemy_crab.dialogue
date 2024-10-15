@@ -1,0 +1,8 @@
+~ start
+set in_dialogue = true
+Shellbot: I AM THE ENEMY.
+
+~ end
+set in_dialogue = false
+=> END
+=> END

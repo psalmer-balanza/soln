@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6xwc5smmiwmn"]
 
-[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="1_7rom6"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="1_7rom6"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_dq07d"]
 
 [sub_resource type="Animation" id="Animation_pehjs"]

@@ -1,68 +1,27 @@
 ~ start
 set in_dialogue = true
 set current_npc = "saisai"
-Saisai: Whoa! Hey there! Didn't see you coming, sneaky! [wait=0.5] You've got a light fragment in your lantern, huh? [wait=0.5]
-Saisai: Shiny! My raccoon friend has one just like it on his house. I can give you directions, but first... [wait=1.5]
-
-Saisai: [#curious, #skeptical] You see, I have these pies, and they're not just any kinda pie—they're special pies! Made from swamp berries that only grow once every blue moon! [wait=1] I need to get it to my raccoon friend, but I need to make sure you're worthy of this noble pie-carrying mission. Think you can handle a little test? [wait=1] Just a small task to prove you're the chosen one!
-
-- Sure, I'll take the test.
-	=> saisai_fraction_test
-- I don't have time for this shite! *run away*. => end
-
-~ saisai_fraction_test
-Saisai: Great! Let's start simple. [wait=0.5] If we cut this pie into 4 pieces and you take 1/4 and I take 1/4, how much of the pie is taken?
-
-- 1/2
-	Saisai: Correct! [wait=0.5] See, that wasn't so hard! Let's try another. [wait=1]
-	=> saisai_second_question
-- 1/4
-	Saisai: Nope, that’s not right. Let’s try again! [wait=1]
-	=> saisai_fraction_test
-- 2/4
-	Saisai: Close, but you can simplify that! Try again. [wait=1]
-	=> saisai_fraction_test
-
-~ saisai_second_question
-Saisai: Now, let's say we cut another pie into 3 pieces. If you take 1/3 and I take 1/3, how much pie have we taken together?
-
-- 2/3
-	Saisai: That's right! [wait=0.5] You're a natural at this! Let's do one more. [wait=1]
-	=> saisai_final_question
-- 1/3
-	Saisai: Not quite! Remember, it's you AND me taking pieces. [wait=1]
-	=> saisai_second_question
-- 1
-	Saisai: A whole pie? Not quite! Let’s try that again. [wait=1]
-	=> saisai_second_question
-
-~ saisai_final_question
-Saisai: One more before the final test! We have a pie cut into 6 pieces. If you take 2/6 and I take 1/6, how much of the pie have we taken together?
-
-- 1/2
-	Saisai: [#happy] Perfect! You’re really good at this. [wait=1] You did it! You actually did it! Perfectly, too. I'm impressed! You're officially the best pie-carrying hero in the swamp. [wait=2]
-	=> saisai_mission_complete
-- 3/6
-	Saisai: Close! But you can simplify that. [wait=1] Try again! 
-	=> saisai_final_question
-- 1/3
-	Saisai: Hmm, not quite. Think about it and try again! [wait=1]
-	=> saisai_final_question
-	
-
-~ saisai_mission_complete
-Saisai: Now let's try a real problem. Are you ready? [do save_player_position_and_change_scene("res://scenes/gameplay_scenes/cooking_mini_game/cooking.tscn" ,"res://scenes/levels/Floor1.tscn")]
-
-Saisai: Here are the directions to my raccoon friend's house. [wait=1] Take the pie, and may the pastry gods be with you! [wait=2] Safe travels, pie hero!
+if saisai_quest_progress == 1
+	Saisai: Oh!! You’re here! Welcome to my place. It’s kinda messy, but I’m really happy you came. 
+	Saisai: So, I guess we can get started on the pie now! I’ve got everything ready, but...
+	set current_quest = "saisai_pie_making"
+	Saisai: I’m not really great at this kind of thing. Would you mind helping me mix the ingredients?
+	Saisai: I hope that’s okay. I really want the pie to turn out just right... it’s my way of apologizing you see?
+	Saisai: But, um, let’s not worry about that right now. Let's just have fun baking!
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/cooking_mini_game/cooking.tscn" ,"res://scenes/levels/Floor1.tscn")
+	set saisai_quest_progress = 2
+elif saisai_quest_progress == 2
+	Saisai: [#happy] To be honest... I’ve been having a bit of a fight with my friend, Raket the Raccoon. 
+	Saisai: I wanted to bake this pie as a way to make up with him.
+	Saisai: Would you mind taking it to him for me? I’d be so grateful, I just can’t face him right now.
+	Saisai: Here are the directions to my raccoon friend's house. [wait=1] 
+	Saisai: Take the pie, and may the pastry gods be with you!
+	Saisai: Safe travels, pie hero!
+	(The directions she gave are quite confusing)
+	set current_quest = "find_raket_house"
+	set saisai_quest_progress = 3
 
 => end
-
-~ saisai_repeat_test
-Saisai: Ready to try the pie test again?
-
-- Yes, let's do it!
-	=> saisai_fraction_test
-- No, maybe later. => end
 
 ~ end
 set in_dialogue = false

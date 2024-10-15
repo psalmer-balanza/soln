@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=29 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
+[ext_resource type="AudioStream" uid="uid://wmegma5lylop" path="res://audio/background_music/Saisai Cooking.wav" id="1_tup5s"]
 [ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="3_pm2kx"]
 [ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="4_2ja0j"]
 [ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
@@ -13,13 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://dtabsf06518kj" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom3.png" id="8_y8gyd"]
 [ext_resource type="Texture2D" uid="uid://dc00bclfoft36" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic1.png" id="9_rkfkf"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.gd" id="9_w5g8j"]
-[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/text box/speech_bubble.png" id="9_xpmrs"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="9_xpmrs"]
 [ext_resource type="Texture2D" uid="uid://5gnbmfdli4cm" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic2.png" id="10_m7kdp"]
 [ext_resource type="Texture2D" uid="uid://bd0dc0xljuqdy" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic3.png" id="11_bgxjc"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="11_e1to4"]
 [ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
 [ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
+[ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shvq1"]
 lifetime_randomness = 0.5
@@ -50,6 +53,11 @@ height = 61.9512
 size = Vector2(54.8781, 20)
 
 [node name="Cooking" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tup5s")
+volume_db = -26.234
+autoplay = true
 
 [node name="Counter" type="Sprite2D" parent="."]
 self_modulate = Color(0.929715, 0.929715, 0.929715, 1)
@@ -133,7 +141,9 @@ script = ExtResource("1_5cav8")
 position = Vector2(768.5, 267.75)
 shape = SubResource("RectangleShape2D_njprm")
 
-[node name="ItemContainer" type="Node" parent="."]
+[node name="ItemContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="butter1" parent="ItemContainer" instance=ExtResource("5_l2lsw")]
 position = Vector2(136, 197)
@@ -248,14 +258,14 @@ offset_top = -17.0
 offset_right = -36.0
 offset_bottom = -8.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Tutorials_QuickTutorial_Content#Label" type="Label" parent="."]
 offset_left = 461.0
 offset_top = 94.0
 offset_right = 557.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
-text = "Items: "
+text = "Click on the ingridients to pick them up"
 
 [node name="garlic" type="Area2D" parent="."]
 position = Vector2(509, 291)
@@ -379,65 +389,12 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="UI/Control"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.713726)
 layout_mode = 0
 offset_left = -87.0
 offset_top = -83.0
 offset_right = 1083.0
 offset_bottom = 653.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
-
-[node name="Congrats" type="Control" parent="UI/Control"]
-visible = false
-anchors_preset = 0
-offset_left = 324.0
-offset_top = 187.0
-offset_right = 364.0
-offset_bottom = 227.0
-
-[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/Congrats"]
-layout_mode = 0
-offset_right = 374.0
-offset_bottom = 204.0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Control/Congrats/MarginContainer2"]
-layout_mode = 2
-texture = ExtResource("9_xpmrs")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/Congrats/MarginContainer2"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 100
-
-[node name="Label" type="Label" parent="UI/Control/Congrats/MarginContainer2/MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/font = ExtResource("8_joskm")
-text = "Congratulations:
-You have perfectly 
-followed the recipe"
-horizontal_alignment = 1
-
-[node name="correct" type="Button" parent="UI/Control/Congrats"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 104.0
-offset_right = 326.0
-offset_bottom = 163.0
-size_flags_vertical = 8
-theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
-theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.276189, 0.227463, 0.329893, 1)
-theme_override_fonts/font = ExtResource("8_joskm")
-theme_override_font_sizes/font_size = 50
-text = "OK"
-flat = true
 
 [node name="Oh no" type="Control" parent="UI/Control"]
 visible = false
@@ -492,15 +449,57 @@ theme_override_font_sizes/font_size = 50
 text = "OK"
 flat = true
 
-[node name="cook_button" type="Button" parent="."]
-offset_left = 734.0
-offset_top = 399.0
-offset_right = 806.0
-offset_bottom = 423.0
+[node name="Tutorials_QuickTutorial_filter#MarginContainer" type="MarginContainer" parent="."]
+offset_left = 540.0
+offset_top = 394.0
+offset_right = 945.0
+offset_bottom = 434.0
+
+[node name="cook_button" type="Button" parent="Tutorials_QuickTutorial_filter#MarginContainer"]
+layout_mode = 2
 theme_override_colors/font_disabled_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
 text = "COOK"
 flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tutorials_QuickTutorial_filter#MarginContainer"]
+layout_mode = 2
+texture = ExtResource("24_j3b2b")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="ButterLabel" type="Label" parent="."]
+offset_left = 77.0
+offset_top = 292.0
+offset_right = 298.0
+offset_bottom = 313.0
+text = "BUTTER"
+horizontal_alignment = 1
+
+[node name="MushroomLabel" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 459.0
+offset_right = 305.0
+offset_bottom = 480.0
+text = "MUSHROOM"
+horizontal_alignment = 1
+
+[node name="GarlicLabel" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 426.0
+offset_right = 540.0
+offset_bottom = 447.0
+text = "GARLIC"
+horizontal_alignment = 1
+
+[node name="Tutorials" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_ek2r0")
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]
@@ -510,9 +509,7 @@ flat = true
 [connection signal="body_exited" from="mushroom" to="mushroom" method="_on_body_exited"]
 [connection signal="body_entered" from="butter" to="butter" method="_on_body_entered"]
 [connection signal="body_exited" from="butter" to="butter" method="_on_body_exited"]
-[connection signal="pressed" from="UI/Control/Congrats/correct" to="board" method="_on_correct_pressed"]
 [connection signal="pressed" from="UI/Control/Oh no/incorrect" to="board" method="_on_incorrect_pressed"]
-[connection signal="pressed" from="cook_button" to="board" method="_on_cook_button_pressed"]
 
 [editable path="ItemContainer/butter2"]
 [editable path="ItemContainer/mushroom2"]

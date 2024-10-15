@@ -13,6 +13,11 @@ func _process(_delta):
 		raket_delete_node()
 		raket_steal_quest = true
 
+func _ready():
+	print("initialized")
+	if DialogueState.should_I_delete_raket_stealing_scene:
+		$Actionable2/CollisionShape2D.disabled = true
+
 func raket_stealing() -> void:
 	print("raket is here")
 	animation_player.play("raket_stealing")

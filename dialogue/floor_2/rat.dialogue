@@ -1,0 +1,8 @@
+~ start
+set in_dialogue = true
+Rat: Oh hi.
+
+~ end
+set in_dialogue = false
+=> END
+=> END

@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=12 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue_balloon/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://bfl2h2w5xaxe" path="res://dialogue/dialogue box.png" id="2_ce08o"]
 [ext_resource type="FontFile" uid="uid://die4hdtmo5chc" path="res://dialogue/Retro Gaming.ttf" id="2_k3wn5"]
-[ext_resource type="Texture2D" uid="uid://dj2fy33o1m3ib" path="res://dialogue/dialogue box .png" id="2_qm8bp"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Theme" uid="uid://dytyv4wft7gjb" path="res://dialogue/dialogue_theme.tres" id="6_ut6d7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -85,18 +86,32 @@ offset_left = 24.0
 offset_top = 352.0
 offset_right = 1015.0
 offset_bottom = 552.0
-texture = ExtResource("2_qm8bp")
+texture = ExtResource("2_ce08o")
 expand_mode = 1
+
+[node name="DialogueLabel" parent="Balloon/TextureRect" instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+offset_left = 56.0
+offset_top = 94.0
+offset_right = 848.0
+offset_bottom = 150.0
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_fonts/normal_font = ExtResource("2_k3wn5")
+text = "Dialogue..."
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = 82.0
-offset_right = -102.0
-offset_bottom = -36.0
+offset_left = 29.0
+offset_top = 31.0
+offset_right = -701.0
+offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -115,24 +130,16 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/TextureRect/Dialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/normal_font = ExtResource("2_k3wn5")
-text = "Dialogue..."
-
 [node name="Portrait" type="TextureRect" parent="Balloon"]
 unique_name_in_owner = true
 z_index = -1
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-offset_left = 661.0
-offset_top = 20.0
-offset_right = 1173.0
-offset_bottom = 532.0
+offset_left = 583.0
+offset_top = 26.0
+offset_right = 979.0
+offset_bottom = 422.0
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
@@ -143,7 +150,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -472.0
 offset_top = -520.0
-offset_right = 36.0
+offset_right = 122.0
 offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -152,12 +159,17 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
+theme = ExtResource("6_ut6d7")
 theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
+theme = ExtResource("6_ut6d7")
+theme_override_colors/icon_focus_color = Color(0.576471, 0.247059, 0.270588, 1)
+theme_override_colors/icon_hover_color = Color(0.576471, 0.247059, 0.270588, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.576471, 0.247059, 0.270588, 1)
 text = "Response example"
 text_overrun_behavior = 3
 

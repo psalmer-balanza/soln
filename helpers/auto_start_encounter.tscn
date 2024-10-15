@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://nw64sg18ajk6"]
-
-[ext_resource type="Script" path="res://scripts/cutscene_scripts/auto_start_encounter.gd" id="1_rooms"]
-
-[node name="Actionable2" type="Area2D"]
-script = ExtResource("1_rooms")
-
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

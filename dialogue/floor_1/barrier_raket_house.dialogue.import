@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dfpdv6s5djkwf"
+path="res://.godot/imported/barrier_raket_house.dialogue-c92c74256bbfc98190f75ec1fbbeee40.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/barrier_raket_house.dialogue"
+dest_files=["res://.godot/imported/barrier_raket_house.dialogue-c92c74256bbfc98190f75ec1fbbeee40.tres"]
+
+[params]
+
+defaults=true

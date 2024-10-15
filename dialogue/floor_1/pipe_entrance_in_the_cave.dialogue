@@ -1,7 +1,7 @@
 ~ start
 set in_dialogue = true
 
-if snake_defeated
+if current_quest == "you_may_leave_floor_1"
 	This must be the exit that Raket was talking about.
 	It seems to connect to higher floors, would you like to enter it?
 	- Yeah
@@ -9,7 +9,7 @@ if snake_defeated
 	- (Leave)
 		
 	=> end
-else if not snake_defeated
+else if not current_quest == "you_may_leave_floor_1"
 	This must be the exit that Raket was talking about.
 	It's not time to leave yet, let's head back.
 	=> end
