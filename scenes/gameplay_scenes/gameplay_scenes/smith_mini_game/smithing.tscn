@@ -1,0 +1,193 @@
+[gd_scene load_steps=13 format=3 uid="uid://56ih4e3nx56m"]
+
+[ext_resource type="Texture2D" uid="uid://ch8nph2tfja2j" path="res://scenes/gameplay_scenes/smith_mini_game/forge.png" id="1_4wtr5"]
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/smith_mini_game/smithing.gd" id="1_ta33t"]
+[ext_resource type="PackedScene" uid="uid://boce8o260p7il" path="res://scenes/gameplay_scenes/smith_mini_game/ore.tscn" id="2_gkncs"]
+[ext_resource type="Texture2D" uid="uid://dsn4t8knd5gqc" path="res://scenes/gameplay_scenes/smith_mini_game/liquid_metal.png" id="3_6vvy4"]
+
+[sub_resource type="Animation" id="Animation_t17m3"]
+resource_name = "0"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(511, 368)]
+}
+
+[sub_resource type="Animation" id="Animation_jxx30"]
+resource_name = "100"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 256), Vector2(511, 253)]
+}
+
+[sub_resource type="Animation" id="Animation_ihx6x"]
+resource_name = "20"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 349), Vector2(511, 346)]
+}
+
+[sub_resource type="Animation" id="Animation_gwnnv"]
+resource_name = "40"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 324), Vector2(511, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_hgrpn"]
+resource_name = "60"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(511, 300), Vector2(511, 297)]
+}
+
+[sub_resource type="Animation" id="Animation_k223k"]
+resource_name = "80"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(511, 279), Vector2(511, 276), Vector2(511, 279)]
+}
+
+[sub_resource type="Animation" id="Animation_adwqp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LiquidMetal:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(511, 256)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovrax"]
+_data = {
+"0": SubResource("Animation_t17m3"),
+"100": SubResource("Animation_jxx30"),
+"20": SubResource("Animation_ihx6x"),
+"40": SubResource("Animation_gwnnv"),
+"60": SubResource("Animation_hgrpn"),
+"80": SubResource("Animation_k223k"),
+"RESET": SubResource("Animation_adwqp")
+}
+
+[node name="Smithing" type="Node2D"]
+script = ExtResource("1_ta33t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+color = Color(0.207843, 0.168627, 0.25098, 1)
+
+[node name="ore_container" type="Node" parent="."]
+
+[node name="Ore" parent="ore_container" instance=ExtResource("2_gkncs")]
+position = Vector2(140, 167)
+scale = Vector2(4, 4)
+
+[node name="Ore2" parent="ore_container" instance=ExtResource("2_gkncs")]
+position = Vector2(212, 252)
+scale = Vector2(4, 4)
+
+[node name="Ore3" parent="ore_container" instance=ExtResource("2_gkncs")]
+position = Vector2(127, 302)
+scale = Vector2(4, 4)
+
+[node name="Ore4" parent="ore_container" instance=ExtResource("2_gkncs")]
+position = Vector2(194, 360)
+scale = Vector2(4, 4)
+
+[node name="Ore5" parent="ore_container" instance=ExtResource("2_gkncs")]
+position = Vector2(287, 137)
+scale = Vector2(4, 4)
+
+[node name="LiquidMetal" type="Sprite2D" parent="."]
+position = Vector2(511, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("3_6vvy4")
+
+[node name="Forge" type="Sprite2D" parent="."]
+position = Vector2(511, 285)
+scale = Vector2(4, 4)
+texture = ExtResource("1_4wtr5")
+
+[node name="melting_pot" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="melting_pot"]
+visible = false
+polygon = PackedVector2Array(415, 216, 607, 216, 607, 220, 615, 220, 615, 224, 619, 224, 619, 232, 623, 232, 623, 312, 619, 312, 619, 320, 615, 320, 615, 324, 607, 324, 607, 328, 415, 328, 415, 324, 407, 324, 407, 320, 403, 320, 403, 312, 403, 312, 399, 312, 399, 232, 403, 232, 403, 224, 407, 224, 407, 220, 415, 220)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 487.0
+offset_top = 162.0
+offset_right = 531.0
+offset_bottom = 183.0
+text = "test"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ovrax")
+}
+
+[connection signal="body_entered" from="melting_pot" to="." method="_on_melting_pot_body_entered"]
+[connection signal="body_exited" from="melting_pot" to="." method="_on_melting_pot_body_exited"]

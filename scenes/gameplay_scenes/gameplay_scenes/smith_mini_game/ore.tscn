@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://boce8o260p7il"]
+
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/smith_mini_game/ore.gd" id="1_r5j8h"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_guubc"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnkfb"]
+size = Vector2(10, 10)
+
+[node name="Ore" type="CharacterBody2D"]
+script = ExtResource("1_r5j8h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_guubc")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mnkfb")
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
