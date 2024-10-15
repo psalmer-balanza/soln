@@ -209,12 +209,12 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		else:
-      $WrongAnswerSFX.play()
+			$WrongAnswerSFX.play()
 			#$AnimationPlayer.play("wrong_answer_saisai")
 			#await $AnimationPlayer.animation_finished
 			#$AnimationPlayer.play("idle_saisai")
-
 			display_answer.text = "Try again. Check your numerator\n or denominator."
+			
 	else:
 		# If denominators are different, find the least common denominator (LCD)
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
