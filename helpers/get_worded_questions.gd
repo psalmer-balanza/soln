@@ -6,7 +6,7 @@ var worded_questions = []
 var post_data = {"MinigameID": 3}
 
 func post():
-	var getquestions_url = "http://30.30.28.52:3000/game/getworded"
+	var getquestions_url = "http://localhost:3000/game/getworded"
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)

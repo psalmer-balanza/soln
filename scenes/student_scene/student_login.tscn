@@ -1,0 +1,145 @@
+[gd_scene load_steps=13 format=3 uid="uid://b5urnt05hl4eu"]
+
+[ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="1_axrn5"]
+[ext_resource type="Script" path="res://scripts/login_script/student_main_menu.gd" id="1_cihcj"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_cuid1"]
+[ext_resource type="Script" path="res://scripts/login_script/soln_bg_animation.gd" id="2_nubq2"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_u5qk6"]
+[ext_resource type="PackedScene" uid="uid://bcui7ofr241ek" path="res://scenes/student_scene/hide_password.tscn" id="5_yjt28"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
+atlas = ExtResource("1_axrn5")
+region = Rect2(0, 0, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7c3h"]
+atlas = ExtResource("1_axrn5")
+region = Rect2(0, 281, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwxq"]
+atlas = ExtResource("1_axrn5")
+region = Rect2(0, 562, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3miy"]
+atlas = ExtResource("1_axrn5")
+region = Rect2(0, 843, 510, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d42gl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ciok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7c3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3miy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a0h5"]
+
+[node name="StudentLoginControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.0801, 1.11425)
+script = ExtResource("1_cihcj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.46513, 4.57422)
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Panel"]
+texture_filter = 1
+scale = Vector2(1.00145, 1.00297)
+script = ExtResource("2_nubq2")
+
+[node name="Soln_background" type="AnimatedSprite2D" parent="Panel/CharacterBody2D"]
+position = Vector2(82.5098, 63.9676)
+scale = Vector2(0.286556, 0.402378)
+sprite_frames = SubResource("SpriteFrames_d42gl")
+animation = &"idle"
+frame_progress = 0.0651652
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/CharacterBody2D"]
+visible = false
+position = Vector2(75.0395, 166.771)
+shape = SubResource("RectangleShape2D_5a0h5")
+
+[node name="StudentInformation" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 139.802
+offset_top = 112.183
+offset_right = 1203.81
+offset_bottom = 688.182
+
+[node name="Username" type="LineEdit" parent="StudentInformation"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 435.042
+offset_top = 161.0
+offset_right = 673.042
+offset_bottom = 192.0
+scale = Vector2(0.99258, 0.982386)
+theme_override_fonts/font = ExtResource("2_cuid1")
+placeholder_text = "Username"
+caret_blink = true
+
+[node name="Password" type="LineEdit" parent="StudentInformation"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 435.144
+offset_top = 205.519
+offset_right = 672.144
+offset_bottom = 236.519
+theme_override_fonts/font = ExtResource("2_cuid1")
+placeholder_text = "Password"
+caret_blink = true
+secret = true
+
+[node name="HidePassword" parent="StudentInformation/Password" instance=ExtResource("5_yjt28")]
+layout_mode = 0
+offset_left = 188.872
+offset_top = 3.59037
+offset_right = 232.872
+offset_bottom = 27.5904
+
+[node name="StudentLogin" type="RichTextLabel" parent="StudentInformation"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 434.219
+offset_top = 123.85
+offset_right = 659.219
+offset_bottom = 163.85
+theme_override_fonts/normal_font = ExtResource("4_u5qk6")
+text = "Student Login"
+
+[node name="LoginButton" type="Button" parent="StudentInformation"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 507.36
+offset_top = 248.597
+offset_right = 591.36
+offset_bottom = 279.597
+theme_override_fonts/font = ExtResource("4_u5qk6")
+text = "Login"
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(535.136, 292.574)
+rotation = -3.14159
+scale = Vector2(1029.97, -605.692)
+
+[connection signal="button_down" from="StudentInformation/LoginButton" to="." method="_on_login_button_button_down"]

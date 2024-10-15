@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfm66kpn4gpd6"]
+
+[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/speech_baloon.tscn" id="1_a4g70"]
+[ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Rat.png" id="2_wigot"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_py6w3"]
+[ext_resource type="Resource" uid="uid://74h8yop65tth" path="res://dialogue/floor_2/rat.dialogue" id="4_4cnpv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xenot"]
+atlas = ExtResource("2_wigot")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muopd"]
+atlas = ExtResource("2_wigot")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l60lo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xenot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muopd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i174b"]
+radius = 66.0303
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf70j"]
+radius = 18.0
+height = 54.0
+
+[node name="Rat" type="CharacterBody2D"]
+
+[node name="SpeechBalloon" parent="." instance=ExtResource("1_a4g70")]
+position = Vector2(-2, -51)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l60lo")
+autoplay = "default"
+frame_progress = 0.365744
+
+[node name="Actionable" parent="." instance=ExtResource("3_py6w3")]
+dialogue_resource = ExtResource("4_4cnpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_i174b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yf70j")

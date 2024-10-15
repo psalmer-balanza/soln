@@ -1,9 +1,12 @@
 ~ start
 set in_dialogue = true
-Snekkers: Hi there! Remember to remove the set "raket_sword_complete"  line after this!
-set current_quest = "snake_quiz_complete"
 if current_quest == "snake_quiz_complete"
 	=> Snekkers_mission_complete
+if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
+	#if sword_pieces_complete:
+	Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+	Snekkers: Leave me be!
+	=> end
 	
 if raket_sword_complete
 	Snekkers: You again?! What do you want?!
@@ -44,6 +47,7 @@ Snekkers: Well what do you think?
 ~ Snekkers_next_Dialogue
 I see… [wait=0.5] Wait, did you say inscriptions?! I can help you with that!
 Snekkers: Uh, sure [wait=2] 
+
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.tscn", "res://scenes/levels/Floor1.tscn")
 
 => end
@@ -52,6 +56,7 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.ts
 Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
 Snekkers: You must be the chosen one! There was a tale...
 set current_quest = "you_may_leave_floor_1"
+
 
 => end
 

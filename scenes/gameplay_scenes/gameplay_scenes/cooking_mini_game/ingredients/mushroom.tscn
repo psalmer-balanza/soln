@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsnkeuwbelwou"]
+
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/item.gd" id="1_fm6se"]
+[ext_resource type="Texture2D" uid="uid://btfnqua6mpgnc" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom1.png" id="2_popev"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpo3a"]
+radius = 9.5
+height = 21.0
+
+[node name="mushroom" type="CharacterBody2D"]
+script = ExtResource("1_fm6se")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.1, 4.1)
+texture = ExtResource("2_popev")
+
+[node name="ingredient" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -18.0
+offset_right = -7.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.65)
+pivot_offset = Vector2(29, 14)
+size_flags_horizontal = 6
+action_mode = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CapsuleShape2D_bpo3a")
+
+[connection signal="pressed" from="Sprite2D/ingredient" to="." method="_on_ingredient_pressed"]

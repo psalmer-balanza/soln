@@ -15,10 +15,6 @@ var questions: Array = [
 ]
 
 var question_index:int = 0
-
-
-
-
 # numerator and denominator of first and second fraction
 @onready var denum1 = $VBoxContainer/Problem/Fraction1/VBoxContainer/Denominator
 @onready var num1 = $VBoxContainer/Problem/Fraction1/VBoxContainer/Numerator
@@ -58,6 +54,7 @@ func _load_questions():
 func _on_questions_loaded():
 	questions = GetFractions.fraction_questions
 	_display_question()
+
 
 func _display_question():
 	if question_index == questions.size():

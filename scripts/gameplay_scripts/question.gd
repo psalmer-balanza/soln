@@ -17,6 +17,7 @@ func _ready():
 	GetQuiz.connect("questions_loaded", _on_questions_loaded)
 	GetQuiz.post()
 
+
 func _on_questions_loaded():
 	mc_questions = GetQuiz.mc_questions
 	print("question dictionary size: ", mc_questions.size())
@@ -46,6 +47,7 @@ func _check_answer():
 		GetQuiz.Enemy_HP -= 10
 		visible=false
 		#GetQuiz.Question_Dictionary.remove_at(index)
+
 		#This current quest changer should be wherever the final question/end of quiz is
 		DialogueState.current_quest = "snake_quiz_complete"
 		mc_questions.remove_at(index)

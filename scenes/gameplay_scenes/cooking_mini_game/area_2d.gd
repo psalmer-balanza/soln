@@ -17,10 +17,10 @@ var wrong_color: Color = Color('#933f45')
 var needed_butter:int = 1
 var butter_container:Array[String] = []
 
-var needed_mushroom:int = 1
+var needed_mushroom:int = 2
 var mushroom_container:Array[String] = []
 
-var needed_garlic:int = 1
+var needed_garlic:int = 2
 var garlic_container:Array[String] = []
 
 var container:Array[String] = []

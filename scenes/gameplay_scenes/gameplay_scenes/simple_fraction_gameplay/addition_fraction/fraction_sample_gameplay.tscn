@@ -1,0 +1,665 @@
+[gd_scene load_steps=45 format=3 uid="uid://djk22k3j63p7n"]
+
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
+[ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="2_p6143"]
+[ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_1p88m"]
+[ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_pjytp"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1trgt"]
+[ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_deff5"]
+[ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="6_ah1tw"]
+[ext_resource type="Texture2D" uid="uid://d2bqbxcw8qjy5" path="res://assets/main_character/mc_idle_front.png" id="7_d0kf4"]
+[ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/Saisai Disappointed.png" id="7_mw8yk"]
+[ext_resource type="Texture2D" uid="uid://bjdn5kjtbxs5l" path="res://assets/floor_1/npc/Old Peculiar Correct.png" id="8_82yj1"]
+[ext_resource type="Texture2D" uid="uid://3d18d0olryjn" path="res://assets/floor_1/npc/Old Peculiar Wrong Answer.png" id="9_ry3aq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tttc"]
+atlas = ExtResource("6_ah1tw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4pik"]
+atlas = ExtResource("6_ah1tw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umlf1"]
+atlas = ExtResource("6_ah1tw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onvai"]
+atlas = ExtResource("6_ah1tw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aukoq"]
+atlas = ExtResource("6_ah1tw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_une2x"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmuv4"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m7kd"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efyfm"]
+atlas = ExtResource("7_d0kf4")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opff4"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahwbr"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1e0e"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq7lq"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojbwm"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_makv0"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqjwg"]
+atlas = ExtResource("8_82yj1")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnep8"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e04r"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lu10"]
+atlas = ExtResource("9_ry3aq")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmacm"]
+atlas = ExtResource("7_mw8yk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gafw"]
+atlas = ExtResource("7_mw8yk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsmre"]
+atlas = ExtResource("7_mw8yk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71ury"]
+atlas = ExtResource("7_mw8yk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3dsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tttc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4pik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umlf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onvai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aukoq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_une2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmuv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m7kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efyfm")
+}],
+"loop": true,
+"name": &"idle_robot",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opff4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahwbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1e0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq7lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojbwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_makv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqjwg")
+}],
+"loop": true,
+"name": &"right_answer_robot",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnep8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e04r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lu10")
+}],
+"loop": true,
+"name": &"wrong_answer_robot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmacm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gafw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsmre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71ury")
+}],
+"loop": true,
+"name": &"wrong_answer_sai",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_b6yom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wrong_answer"]
+}
+
+[sub_resource type="Animation" id="Animation_etxce"]
+resource_name = "correct_answer_saisai"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_11una"]
+resource_name = "right_answer_robot"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"right_answer_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_s2543"]
+resource_name = "robot_idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_mqkyb"]
+resource_name = "saisai_idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 0, 1, 2, 0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_shji1"]
+resource_name = "wrong_answer_robot"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wrong_answer_robot"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2, 2, 2, 1, 1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_q2dwf"]
+resource_name = "wrong_answer_saisai"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"wrong_answer_sai"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvjtx"]
+_data = {
+"RESET": SubResource("Animation_b6yom"),
+"correct_answer_saisai": SubResource("Animation_etxce"),
+"right_answer_robot": SubResource("Animation_11una"),
+"robot_idle": SubResource("Animation_s2543"),
+"saisai_idle": SubResource("Animation_mqkyb"),
+"wrong_answer_robot": SubResource("Animation_shji1"),
+"wrong_answer_saisai": SubResource("Animation_q2dwf")
+}
+
+[node name="FractionAdditionGameplay" type="Control"]
+layout_mode = 3
+anchor_left = 0.067
+anchor_right = 0.465
+anchor_bottom = 0.403
+offset_left = 12.816
+offset_top = 78.0
+offset_right = -445.68
+offset_bottom = -183.144
+size_flags_horizontal = 4
+script = ExtResource("1_0dox2")
+
+[node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p6143")
+volume_db = -23.423
+
+[node name="WrongAnswerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pjytp")
+volume_db = -25.297
+
+[node name="bg" type="ColorRect" parent="."]
+self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
+layout_mode = 0
+offset_left = -114.0
+offset_top = -106.0
+offset_right = 970.0
+offset_bottom = 512.0
+color = Color(0.207843, 0.168627, 0.25098, 1)
+
+[node name="board" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -42.0
+offset_right = 63.0
+offset_bottom = 21.0
+scale = Vector2(8, 8)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="board"]
+layout_mode = 2
+texture = ExtResource("2_uweop")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="addition" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 77.576
+offset_top = 55.0
+offset_right = 443.576
+offset_bottom = 246.0
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="addition"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="result" type="Label" parent="addition/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_1p88m")
+text = "Fraction Addition"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="addition/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="first_fraction" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="fraction" type="VBoxContainer" parent="addition/VBoxContainer/HBoxContainer/first_fraction"]
+layout_mode = 2
+
+[node name="numerator" type="Label" parent="addition/VBoxContainer/HBoxContainer/first_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "1"
+horizontal_alignment = 1
+
+[node name="divider" type="Label" parent="addition/VBoxContainer/HBoxContainer/first_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "-"
+horizontal_alignment = 1
+
+[node name="denominator" type="Label" parent="addition/VBoxContainer/HBoxContainer/first_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "4"
+horizontal_alignment = 1
+
+[node name="operrand" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="addition/VBoxContainer/HBoxContainer/operrand"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "+"
+horizontal_alignment = 1
+
+[node name="second_fraction" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="fraction" type="VBoxContainer" parent="addition/VBoxContainer/HBoxContainer/second_fraction"]
+layout_mode = 2
+
+[node name="numerator" type="Label" parent="addition/VBoxContainer/HBoxContainer/second_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "2"
+horizontal_alignment = 1
+
+[node name="divider" type="Label" parent="addition/VBoxContainer/HBoxContainer/second_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "-"
+horizontal_alignment = 1
+
+[node name="denominator" type="Label" parent="addition/VBoxContainer/HBoxContainer/second_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "4"
+horizontal_alignment = 1
+
+[node name="equal" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="addition/VBoxContainer/HBoxContainer/equal"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "="
+horizontal_alignment = 1
+
+[node name="answer_fraction" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="fraction" type="VBoxContainer" parent="addition/VBoxContainer/HBoxContainer/answer_fraction"]
+layout_mode = 2
+
+[node name="numerator" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction"]
+layout_mode = 2
+
+[node name="NumeratorAnswer" type="LineEdit" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1p88m")
+placeholder_text = "0"
+alignment = 1
+max_length = 2
+flat = true
+caret_blink = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator"]
+layout_mode = 2
+texture = ExtResource("5_deff5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="divider" type="Label" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "-"
+horizontal_alignment = 1
+
+[node name="denominator" type="MarginContainer" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction"]
+layout_mode = 2
+
+[node name="DenominatorAnswer" type="LineEdit" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1p88m")
+placeholder_text = "0"
+alignment = 1
+max_length = 2
+flat = true
+caret_blink = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator"]
+layout_mode = 2
+texture = ExtResource("5_deff5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="submit" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 390.576
+offset_top = 319.0
+offset_right = 492.576
+offset_bottom = 359.0
+scale = Vector2(2, 2)
+
+[node name="SubmitAnswer" type="Button" parent="submit"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "SUBMIT"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="submit"]
+layout_mode = 2
+texture = ExtResource("5_deff5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="return" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 638.576
+offset_top = 319.0
+offset_right = 742.576
+offset_bottom = 359.0
+scale = Vector2(2, 2)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="return"]
+layout_mode = 2
+texture = ExtResource("5_deff5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Button" type="Button" parent="return"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_1trgt")
+text = "RETURN"
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(79.576, 325)
+scale = Vector2(6.65625, 6.65625)
+sprite_frames = SubResource("SpriteFrames_s3dsx")
+animation = &"wrong_answer"
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jvjtx")
+}
+autoplay = "saisai_idle"
+
+[connection signal="pressed" from="submit/SubmitAnswer" to="." method="_on_submit_answer_pressed"]
+[connection signal="pressed" from="return/Button" to="." method="_on_button_pressed"]
