@@ -1,24 +1,25 @@
 [gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
 
+[ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="AudioStream" uid="uid://wmegma5lylop" path="res://audio/background_music/Saisai Cooking.wav" id="1_74ssu"]
-[ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
-[ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
+[ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
+[ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.gd" id="7_bp1rw"]
-[ext_resource type="Texture2D" uid="uid://bl3556jsoq41c" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/mushroom2.png" id="7_yvvxj"]
+[ext_resource type="Texture2D" uid="uid://bl3556jsoq41c" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom2.png" id="7_yvvxj"]
 [ext_resource type="PackedScene" uid="uid://coy5hqh7nwvkl" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.tscn" id="8_jj4o2"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_joskm"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.gd" id="8_patd2"]
-[ext_resource type="Texture2D" uid="uid://dtabsf06518kj" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/mushroom3.png" id="8_y8gyd"]
-[ext_resource type="Texture2D" uid="uid://dc00bclfoft36" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic1.png" id="9_rkfkf"]
+[ext_resource type="Texture2D" uid="uid://dtabsf06518kj" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/mushroom3.png" id="8_y8gyd"]
+[ext_resource type="Texture2D" uid="uid://dc00bclfoft36" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic1.png" id="9_rkfkf"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/butter.gd" id="9_w5g8j"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="9_xpmrs"]
-[ext_resource type="Texture2D" uid="uid://5gnbmfdli4cm" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic2.png" id="10_m7kdp"]
+[ext_resource type="Texture2D" uid="uid://5gnbmfdli4cm" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic2.png" id="10_m7kdp"]
 [ext_resource type="PackedScene" uid="uid://bsnkeuwbelwou" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/ingredients/mushroom.tscn" id="10_mv11s"]
-[ext_resource type="Texture2D" uid="uid://bd0dc0xljuqdy" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic3.png" id="11_bgxjc"]
+[ext_resource type="Texture2D" uid="uid://bd0dc0xljuqdy" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic3.png" id="11_bgxjc"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="11_e1to4"]
-[ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
+[ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
 [ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="13_j0int"]
-[ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
+[ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="22_bgp80"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
@@ -40,139 +41,6 @@ initial_velocity_max = 130.0
 gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 3.0
-
-[sub_resource type="GDScript" id="GDScript_c18vb"]
-script/source = "extends Area2D
-
-@onready var item_container = $\"../ItemContainer\"
-@onready var label = $\"../Label\"
-@onready var butter_label:Label = $\"../Counter/recipe/MarginContainer/VBoxContainer/butter\"
-@onready var mushroom_label:Label = $\"../Counter/recipe/MarginContainer/VBoxContainer/mushroom\"
-@onready var garic_label:Label = $\"../Counter/recipe/MarginContainer/VBoxContainer/garlic\"
-@onready var correct_screen = $\"../UI/Control/Congrats\"
-@onready var incorrect_screen = $\"../UI/Control/Oh no\"
-@onready var color_rect = $\"../UI/Control/ColorRect\"
-@onready var particle = $\"../Counter/particle\"
-
-var pass_color:Color = Color('#508d76')
-var def_color:Color = Color('#352b40')
-var wrong_color: Color = Color('#933f45')
-
-var needed_butter:int = 1
-var butter_container:Array[String] = []
-
-var needed_mushroom:int = 2
-var mushroom_container:Array[String] = []
-
-var needed_garlic:int = 2
-var garlic_container:Array[String] = []
-
-var container:Array[String] = []
-
-var conditions_met:bool = false
-
-func _process(delta: float) -> void:
-	var fraction = _add_fractions(2, 3, 6, butter_container.size(), mushroom_container.size(), garlic_container.size())
-	label.text = \"INGREDIENTS: \" + (
-		str(butter_container.size())+ \"/2 + \" + str(mushroom_container.size())+ \"/3 + \" + str(garlic_container.size())+ \"/6 \"
-		) + \"\\n\" + \"= \" + str(fraction[0]) + \"/\" + str(fraction[1])
-
-func _check_conditions():
-	if needed_butter == butter_container.size():
-		butter_label.set(\"theme_override_colors/font_color\", pass_color)
-		particle.emitting = true
-	else:
-		butter_label.set(\"theme_override_colors/font_color\", wrong_color)
-	if needed_mushroom == mushroom_container.size():
-		mushroom_label.set(\"theme_override_colors/font_color\", pass_color)
-		particle.emitting = true
-	else:
-		mushroom_label.set(\"theme_override_colors/font_color\", wrong_color)
-	if needed_garlic == garlic_container.size():
-		garic_label.set(\"theme_override_colors/font_color\", pass_color)
-		particle.emitting = true
-	else:
-		garic_label.set(\"theme_override_colors/font_color\", wrong_color)
-	
-	if needed_butter == butter_container.size() && needed_mushroom == mushroom_container.size() && needed_garlic == garlic_container.size():
-		conditions_met = true
-	else:
-		conditions_met = false
-
-func _correct_condition(label:Label):
-	label.set(\"theme_override_colors/font_color\", pass_color)
-	particle.emitting = true
-
-func _string_checker(name:String, item:CharacterBody2D) -> bool:
-	if item.name.contains(name):
-		return true
-	return false
-
-func _on_body_entered(body: Node2D) -> void:
-	if _string_checker(\"butter\", body):
-		butter_container.append(body.name)
-	elif _string_checker(\"mushroom\", body):
-		mushroom_container.append(body.name)
-	elif _string_checker(\"garlic\", body):
-		garlic_container.append(body.name)
-	_check_conditions()
-
-func _on_body_exited(body: Node2D) -> void:
-	if _string_checker(\"butter\", body):
-		butter_container.erase(body.name)
-	elif _string_checker(\"mushroom\", body):
-		mushroom_container.erase(body.name)
-	elif _string_checker(\"garlic\", body):
-		garlic_container.erase(body.name)
-	_check_conditions()
-
-func _on_cook_button_pressed() -> void:
-	color_rect.visible = true
-	if conditions_met:
-		correct_screen.visible = true
-	else:
-		incorrect_screen.visible = true
-
-func _on_incorrect_pressed() -> void:
-	incorrect_screen.visible = false
-	color_rect.visible =  false
-
-func _add_fractions(denom1:int, denom2:int, denom3:int, nume1:int, nume2:int, nume3:int):
-	var numerator:int
-	var denominator:int
-	var fraction:Array [int] = [0,0]
-	
-	# first and second number
-	fraction = fraction_addition(nume1, denom1, nume2, denom2)
-	
-	# second and third number
-	fraction = fraction_addition(fraction[0], fraction[1], nume3, denom3)
-	
-	return fraction
-
-func fraction_addition(
-	first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int
-	):
-	var numerator:int = 0
-	var denominator:int = 0
-	var fraction:Array[int] = [0,0]
-	
-	if first_denominator == second_denominator:
-		numerator = first_numerator + second_numerator
-		denominator = first_denominator
-	
-	else: # DIFFERENT DANAMANATORS
-		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
-		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
-		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
-		numerator = adjusted_first_numerator + adjusted_second_numerator
-		denominator = lcd
-	
-	fraction[0] = numerator
-	fraction[1] = denominator
-	
-	return fraction
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njprm"]
 size = Vector2(363, 246.5)
@@ -270,7 +138,7 @@ lifetime = 0.3
 one_shot = true
 
 [node name="board" type="Area2D" parent="."]
-script = SubResource("GDScript_c18vb")
+script = ExtResource("1_5cav8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 position = Vector2(768.5, 267.75)
@@ -369,14 +237,14 @@ texture = ExtResource("13_tbs6y")
 offset_top = -20.0
 offset_bottom = -7.0
 
-[node name="Tutorials_QuickTutorial_Content#Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 offset_left = 461.0
 offset_top = 94.0
 offset_right = 557.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
-text = "Click on the ingridients to pick them up"
+text = "Items: "
 
 [node name="garlic" type="Area2D" parent="."]
 position = Vector2(509, 291)
