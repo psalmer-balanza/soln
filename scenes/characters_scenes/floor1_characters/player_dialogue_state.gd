@@ -24,7 +24,6 @@ func start_dialogue_wait() -> void:
 	Transitioned.emit(self, "IdleState")  # Transition back to IdleState when dialogue ends
 
 func Update(delta: float):
-	print("dialogue")
 	pass
 
 # Player must not move during dialogue so do NOTHING HERE

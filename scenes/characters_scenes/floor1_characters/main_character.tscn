@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=54 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/idle_state.gd" id="8_5n5vl"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/moving_state.gd" id="9_bdkni"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/player_dialogue_state.gd" id="10_uarnf"]
-[ext_resource type="Texture2D" uid="uid://dtasqkj3bgk3y" path="res://assets/floor_1/cutscenes/Raket Smithing 341x192.png" id="13_s1eyi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7731s"]
 atlas = ExtResource("2_emqss")
@@ -408,56 +407,6 @@ _data = {
 "raket_smithing_default": SubResource("Animation_4p0ka")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnnpq"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(0, 0, 341, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxniv"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(341, 0, 341, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lx5h"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(0, 192, 341, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwuua"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(341, 192, 341, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bt265"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(0, 384, 341, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b7jkf"]
-atlas = ExtResource("13_s1eyi")
-region = Rect2(341, 384, 341, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y4kgx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fnnpq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lxniv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8lx5h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vwuua")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bt265")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b7jkf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [node name="MainCharacter" type="CharacterBody2D"]
 script = ExtResource("1_vdtrp")
 
@@ -513,16 +462,7 @@ script = ExtResource("10_uarnf")
 polygon = PackedVector2Array(-10, 5, -10, 12, -8, 12, -8, 15, -2, 15, -2, 12, 2, 12, 2, 15, 8, 15, 8, 12, 10, 12, 10, 5, 15, 5, 15, -5, 16, -5, 16, -8, 15, -8, 15, -14, 14, -15, 7, -15, 7, -16, 5, -16, 5, -15, -3, -15, -3, -16, -6, -16, -6, -15, -13, -15, -14, -14, -14, -8, -15, -8, -15, -1, -14, -1, -14, 5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../RaketSmithing")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_svsy2")
 }
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RaketSmithing" type="AnimatedSprite2D" parent="."]
-z_index = 100
-sprite_frames = SubResource("SpriteFrames_y4kgx")
-frame = 1

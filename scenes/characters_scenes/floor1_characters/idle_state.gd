@@ -49,5 +49,4 @@ func Update(delta: float):
 
 
 func Physics_Update(delta: float):
-	print("idle")
 	player.velocity = player.velocity.move_toward(Vector2.ZERO, player.movement_speed * delta)

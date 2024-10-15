@@ -18,7 +18,7 @@ func _ready():
 	# Initialize the state machine
 	state_machine.initial_state = $StateMachine/IdleState
 	print('hello')
-	$RaketSmithing.visible = false
+	#$RaketSmithing.visible = false
 func _physics_process(delta):
 	# Delegate the state management to the state machine
 	state_machine._physics_process(delta)
@@ -29,7 +29,7 @@ func _physics_process(delta):
 		raket_blacksmithing_scene_done = true
 		animation_player.play("raket_smithing")
 		await animation_player.animation_finished
-		$RaketSmithing.visible = false
+		#$RaketSmithing.visible = false
 
 
 func _process(delta):

@@ -1,17 +1,28 @@
 extends Control
 
-@onready var congrats_screen = $Congrats
+@onready var congrats_screen = $Congratulations
 @onready var fraction_problem = $FractionProblem
 
-@onready var animation_player: AnimatedSprite2D = $Robot
+var animation_player: AnimatedSprite2D
+
+@onready var current_quest: String = DialogueState.current_quest
 
 func _ready() -> void:
+	match current_quest:
+		"saisai_wheelbarrow":
+			animation_player = $Saisai
+			fraction_problem.quest_number = 1
+		"dead_robots":
+			animation_player = $Robot
+			fraction_problem.quest_number = 2
+	
 	animation_player.visible = true
 
 func _on_fraction_problem_all_done() -> void:
-	congrats_screen.visible = true
+	$Congratulations.visible = true
 
 func _on_fraction_problem_correct() -> void:
+	print("seggs842")
 	animation_player.play("correct")
 	await animation_player.animation_finished
 	animation_player.play("idle")

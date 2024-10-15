@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=29 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://cwwt0hbpbb0lk" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic4.png" id="12_pxebw"]
 [ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
-[ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 
@@ -397,20 +396,6 @@ offset_right = 1083.0
 offset_bottom = 653.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
-[node name="Congrats" parent="UI/Control"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-next_scene = ExtResource("23_tlpu8")
-script = null
-
 [node name="Oh no" type="Control" parent="UI/Control"]
 visible = false
 anchors_preset = 0
@@ -515,46 +500,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("24_ek2r0")
-
-[node name="QuickTutorial" parent="Tutorials"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-offset_right = 1024.0
-offset_bottom = 576.0
-script = null
-
-[node name="QuickTutorial2" parent="Tutorials"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
-
-[node name="QuickTutorial3" parent="Tutorials"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]

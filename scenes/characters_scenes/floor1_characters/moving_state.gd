@@ -42,7 +42,6 @@ func Physics_Update(delta: float):
 		Input.get_axis("ui_left", "ui_right"),
 		Input.get_axis("ui_up", "ui_down")
 	).normalized()
-	print("moving")
 	# Handle animations based on direction
 	if character_direction.x < 0 and character_direction.y == 0:
 		player.get_node("AnimatedSprite2D").play("walk")
