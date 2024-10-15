@@ -26,8 +26,6 @@ else
 		set current_quest = "saisai_wheelbarrow"
 		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
 		set saisai_moving_rocks_quest_done = true
-	- (Leave)
-		=> end
 
 => end
 

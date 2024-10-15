@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 	else:
 		question.hide()
 		question_bg.hide()
+	
+	if GetQuiz.Enemy_HP == 0:
+		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_attack_pressed() -> void:
 	GetQuiz.Question = true

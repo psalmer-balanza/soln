@@ -15,6 +15,8 @@ var question
 func _ready():
 	# First connect to the "questions_loaded" signal to know when the data is ready
 	GetQuiz.connect("questions_loaded", _on_questions_loaded)
+	GetQuiz.post()
+
 
 func _on_questions_loaded():
 	mc_questions = GetQuiz.mc_questions
@@ -44,7 +46,8 @@ func _check_answer():
 	if answer == correct_answer:
 		GetQuiz.Enemy_HP -= 10
 		visible=false
-		Global.Question_Dictionary.remove_at(index)
+		#GetQuiz.Question_Dictionary.remove_at(index)
+
 		#This current quest changer should be wherever the final question/end of quiz is
 		DialogueState.current_quest = "snake_quiz_complete"
 		mc_questions.remove_at(index)

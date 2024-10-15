@@ -8,9 +8,13 @@ signal incorrect
 
 # place questions here
 # question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
-var questions: Array = []
-var question_index:int = 0
+var questions: Array = [
+	[4, 3, 1, 3, "+"],  # First fraction
+	[3, 2, 1, 2, "+"],  # Second fraction
+	[3, 2, 2, 5, "+"],  # Third fraction
+]
 
+var question_index:int = 0
 # numerator and denominator of first and second fraction
 @onready var denum1 = $VBoxContainer/Problem/Fraction1/VBoxContainer/Denominator
 @onready var num1 = $VBoxContainer/Problem/Fraction1/VBoxContainer/Numerator
@@ -33,14 +37,24 @@ var correct_answer: Array [int] = []
 func _ready() -> void:
 	_load_questions()
 	_display_question()
+	
 
 func _load_questions():
-	print("lol", quest_number)
+	print("current quast is ", DialogueState.current_quest)
+	#GetFractions.connect("questions_loaded", _on_questions_loaded)
 	match DialogueState.current_quest:
 		"saisai_wheelbarrow":
-			questions = QuestionsLoader.saisai_questions
+			print("readllY>>")
+			#GetFractions.post_data["MinigameID"] = 1
+			#GetFractions.post()
 		"dead_robots":
-			questions = QuestionsLoader.old_robot
+			GetFractions.post_data["MinigameID"] = 2
+			GetFractions.post()
+
+func _on_questions_loaded():
+	questions = GetFractions.fraction_questions
+	_display_question()
+
 
 func _display_question():
 	if question_index == questions.size():

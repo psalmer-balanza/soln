@@ -2,11 +2,16 @@ extends Node
 
 signal questions_loaded
 
-var fraction_questions = []
+var fraction_questions = [
+	[4, 3, 1, 3],  # First fraction
+	[3, 2, 1, 2],  # Second fraction
+	[3, 2, 2, 5],  # Third fraction
+]
 var post_data = {"MinigameID": 1}
 
 func post():
 	var getquestions_url = "http://localhost:3000/game/getfractions"
+	print(getquestions_url)
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)

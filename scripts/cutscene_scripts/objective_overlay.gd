@@ -24,7 +24,7 @@ func _ready() -> void:
 		"raket_sword_pieces_complete": false,
 		"face_the_snake": false,
 		"snake_quiz_complete": false,
-		"placeholder_8123": false,
+		"you_may_leave_floor_1": false,
 		"placeholder_93123": false,
 		"placeholder_812133": false,
 		"placeholder_93121233": false,
@@ -60,8 +60,8 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Face Snekkers the Snake in the cave.")
 		"snake_quiz_complete":
 			handle_quest_label(cq, "Learn about the chosen one.")
-		"placeholder1":
-			handle_quest_label(cq, "Learn more about these")
+		"you_may_leave_floor_1":
+			handle_quest_label(cq, "Go to the sewer pipe.")
 		"placeholder1":
 			handle_quest_label(cq, "Learn more about these")
 		"placeholder1":

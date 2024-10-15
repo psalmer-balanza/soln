@@ -11,6 +11,7 @@ var post_data = { "MinigameID": 5 }
 
 func post():
 	var getquestions_url = "http://localhost:3000/game/getmcquestions"
+  print("HEY REMEMBER THIS URL?? ", getquestions_url)
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
@@ -32,6 +33,8 @@ func _http_request_completed(_result, response_code, _headers, body):
 			var response = json.get_data()
 			mc_questions = constructQuestionDictionary(response)
 			# Emit signal once questions are loaded
+			print("show smethings")
+			print(mc_questions)
 			emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get boss?", response_code)

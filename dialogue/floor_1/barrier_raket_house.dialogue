@@ -1,0 +1,7 @@
+~ start
+set in_dialogue = true
+Narrator: Shibal
+=> end
+~ end
+set in_dialogue = false
+=> END

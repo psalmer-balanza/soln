@@ -58,6 +58,7 @@ func npc_active():
 func initiate_questions():
 	print(DialogueState.current_quest)
 	GetWorded.connect("questions_loaded", _on_questions_loaded)
+
 	if DialogueState.current_quest == "raket_stealing":
 		print("Current quest is raket stealing")
 		GetWorded.post_data["MinigameID"] = 3
@@ -122,6 +123,7 @@ func _on_submit_answer_button_down():
 			fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
 		
 	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
+		$WrongAnswerSFX.play()
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
 		
 
@@ -160,6 +162,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		
 		if is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
+				$CorrectAnswerSFX.play()
 				display_answer.text = "Nice! \nCorrect simplified form."
 				is_simplified = false
 				#Checker for correct
@@ -167,6 +170,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				next_question_or_finish()  # Move to the next question or finish the exercise
 				
 			else:
+				$WrongAnswerSFX.play()
 				display_answer.text = "Try again. \nCheck your GCD value."
 				is_simplified = true
 				#Checker for wrong ans
@@ -180,19 +184,21 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 					#$AnimationPlayer.play("idle_ropbot")
 				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
-				
+				$CorrectAnswerSFX.play()
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				$CorrectAnswerSFX.play()
 				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered its simplified form."
+			$CorrectAnswerSFX.play()
+			display_answer.text = "Advanced thinking! \nYou entered its simplified form."
 			if DialogueState.current_npc == "old_peculiar":
 				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
@@ -203,9 +209,11 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 			next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		else:
+      $WrongAnswerSFX.play()
 			#$AnimationPlayer.play("wrong_answer_saisai")
 			#await $AnimationPlayer.animation_finished
 			#$AnimationPlayer.play("idle_saisai")
+
 			display_answer.text = "Try again. Check your numerator\n or denominator."
 	else:
 		# If denominators are different, find the least common denominator (LCD)
@@ -231,6 +239,7 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 			else:
+				$WrongAnswerSFX.play()
 				display_answer.text = "Try again. \nCheck your GCD value."
 				is_simplified = true
 				#Checker for wrong ans
@@ -244,24 +253,28 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 					#$AnimationPlayer.play("idle_ropbot")
 				$AnimationPlayer.play("spin")
 				await $AnimationPlayer.animation_finished
-				
+				$CorrectAnswerSFX.play()
+
 				display_answer.text = "Good job! \nBut answer can be simplified."
 				is_simplified = true
 				#Checker for unsimplified ans
 				unsimplified_ans_count += 1
 			else:
+				$CorrectAnswerSFX.play()
 				display_answer.text = "Great job! \nCorrect answer!"
 				#Checker for correct
 				correct_ans_count += 1
 				next_question_or_finish()  # Move to the next question or finish the exercise
 		
 		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			display_answer.text = "Advance thinking! \nYou entered its simplified form."
+			$CorrectAnswerSFX.play()
+			display_answer.text = "Advanced thinking! \nYou entered its simplified form."
 			#Checker for correct
 			correct_ans_count += 1
 			next_question_or_finish()  # Move to the next question or finish the exercise
 			
 		else:
+			$WrongAnswerSFX.play()
 			#$AnimationPlayer.play("wrong_answer_saisai")
 			display_answer.text = "Try again. Check your numerator\n or denominator."
 

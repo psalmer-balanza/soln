@@ -12,7 +12,7 @@ if not raket_house_quest_complete
 	Isn’t 4/10 too much for me? The pie is for you…
 	Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
-	set current_quest = "raket_worded"
+	set current_quest = "raket_house"
 	set raket_quest_progress = 1
 elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 	Raket: Great job, {{player_username}} Now that we have all the ore pieces, I can finally build this sword.

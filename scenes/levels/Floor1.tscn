@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=58 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_3mv17"]
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="25_t57pw"]
 [ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="26_5o1n3"]
 [ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/pipe_entrance_scene.tscn" id="27_55muk"]
+[ext_resource type="PackedScene" uid="uid://xnm2hgu0mopn" path="res://scenes/cutscenes/barrier_raket_house.tscn" id="27_gjv3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pbk6"]
 texture = ExtResource("1_3mv17")
@@ -620,6 +621,7 @@ texture_region_size = Vector2i(64, 64)
 14:6/0 = 0
 18:6/0 = 0
 
+
 [sub_resource type="TileSet" id="TileSet_1w7gf"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_o6bls")
@@ -777,7 +779,7 @@ texture = ExtResource("14_m21wj")
 sources/0 = SubResource("TileSetAtlasSource_ifwp7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5exya"]
-size = Vector2(33, 188)
+size = Vector2(33, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48qww"]
 size = Vector2(111, 20)
@@ -845,6 +847,7 @@ libraries = {
 }
 autoplay = "waves"
 
+
 [node name="mushroom_forest_collision" type="StaticBody2D" parent="ground_and_water"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground_and_water/mushroom_forest_collision"]
@@ -870,10 +873,10 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(347, 759)
+position = Vector2(365, 731)
 scale = Vector2(1, 0.991779)
-
 [node name="in_front_details" type="Node2D" parent="."]
+
 
 [node name="cave wall upper" type="TileMapLayer" parent="in_front_details"]
 tile_map_data = PackedByteArray("AAANAB4AAAACAAgAAAAOAB4AAAACAAgAAAAPAB4AAAACAAgAAAAQAB4AAAACAAgAAAARAB4AAAACAAgAAAASAB4AAAACAAgAAAATAB4AAAACAAgAAAAUAB4AAAACAAgAAAAVAB4AAAACAAgAAAAWAB4AAAACAAgAAAAYABwAAAACAAgAAAAXAB0AAAACAAgAAAAMAB0AAAACAAgAAAALABwAAAACAAgAAAA=")
@@ -974,14 +977,14 @@ position = Vector2(856, 887)
 position = Vector2(577, 972)
 
 [node name="BarrierFromBridge" type="CollisionShape2D" parent="Saisai"]
-position = Vector2(294, 82)
+position = Vector2(294, 25.5)
 shape = SubResource("RectangleShape2D_5exya")
 
 [node name="Racket" parent="." instance=ExtResource("17_frjke")]
 position = Vector2(1433, 1022)
 
 [node name="BarrierFromCave" type="CollisionShape2D" parent="Racket"]
-position = Vector2(6, 187)
+position = Vector2(5, 210)
 shape = SubResource("RectangleShape2D_48qww")
 
 [node name="Snekkers" parent="." instance=ExtResource("14_5ewdd")]
@@ -1017,7 +1020,7 @@ position = Vector2(1014, 689)
 position = Vector2(869, 733)
 
 [node name="firefly9" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(928, 731)
+position = Vector2(931, 727)
 
 [node name="firefly10" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(941, 664)
@@ -1063,6 +1066,10 @@ position = Vector2(460, 1331)
 
 [node name="firefly24" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(596, 1507)
+
+[node name="BarrierRaketHouse" parent="." instance=ExtResource("27_gjv3b")]
+position = Vector2(1600, 1284)
+
 
 [editable path="obstacles/MovableShinyRock"]
 [editable path="tooltips/monitor1"]

@@ -1,5 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
 
+
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
 [ext_resource type="AudioStream" uid="uid://wmegma5lylop" path="res://audio/background_music/Saisai Cooking.wav" id="1_74ssu"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
@@ -237,14 +238,14 @@ texture = ExtResource("13_tbs6y")
 offset_top = -20.0
 offset_bottom = -7.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Tutorials_QuickTutorial_Content#Label" type="Label" parent="."]
 offset_left = 461.0
 offset_top = 94.0
 offset_right = 557.0
 offset_bottom = 115.0
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_fonts/font = ExtResource("8_joskm")
-text = "Items: "
+text = "Click on the ingridients to pick them up"
 
 [node name="garlic" type="Area2D" parent="."]
 position = Vector2(509, 291)
@@ -484,6 +485,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("24_ek2r0")
 
+
 [node name="QuickTutorial" parent="Tutorials" instance=ExtResource("24_b43bd")]
 offset_right = 1024.0
 offset_bottom = 576.0
@@ -586,6 +588,7 @@ text = "Follow the recipe and if you're ready click on the cook button"
 [node name="Close" parent="Tutorials/QuickTutorial3" index="2"]
 offset_left = 24.0
 offset_right = 126.0
+
 
 [connection signal="body_entered" from="board" to="board" method="_on_body_entered"]
 [connection signal="body_exited" from="board" to="board" method="_on_body_exited"]
