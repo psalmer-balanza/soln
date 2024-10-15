@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@export var quest_number: int
+var quest_number: int
 
 signal all_done
 signal correct
@@ -35,10 +35,11 @@ func _ready() -> void:
 	_display_question()
 
 func _load_questions():
-	match quest_number:
-		1:
+	print("lol", quest_number)
+	match DialogueState.current_quest:
+		"saisai_wheelbarrow":
 			questions = QuestionsLoader.saisai_questions
-		2:
+		"dead_robots":
 			questions = QuestionsLoader.old_robot
 
 func _display_question():
