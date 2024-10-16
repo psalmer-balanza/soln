@@ -1,5 +1,8 @@
 extends Node2D
 
+signal correct
+signal incorrect
+
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	["A magician was cooking two batches of magical mushrooms. In the first batch, she used 2/5 of his total magic power, and in the second batch, he used 3/10​. How much magic power did she use in total?", 2, 5, 3, 10],  # First question fractions
@@ -116,12 +119,14 @@ func _on_submit_answer_button_down():
 		# Check if the inputs are empty
 		if numerator_answer.text == "" or denominator_answer.text == "":
 			display_answer.text = "Please fill in both the numerator and denominator."
+			emit_signal("incorrect")
 			print("Empty input detected.")
 			return  # Exit the function if any input is empty
 		
 		# Validate the numerator and denominator inputs
 		elif !is_valid_integer(numerator_answer.text) or !is_valid_integer(denominator_answer.text):
 			display_answer.text = "Please enter valid numbers."
+			emit_signal("incorrect")
 			print("Invalid input detected: Non-integer value entered.")
 			return  # Exit the function if input is invalid
 			
@@ -130,9 +135,8 @@ func _on_submit_answer_button_down():
 			fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
 		
 	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
-		$WrongAnswerSFX.play()
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
-		
+		emit_signal("incorrect")
 
 
 # Helper function to check if a string is a valid integer
@@ -148,9 +152,6 @@ func input_matches_question(first_numerator: int, first_denominator: int, second
 	#var expected_first_fraction = current_question[0]
 	#var expected_second_fraction = current_question[1]
 	print("im in input_matches_question")
-	print(current_question)
-	print("first numerator : ", current_question[1])
-	print("first denominator : ", current_question[2])
 	
 	if first_numerator == current_question[1] and first_denominator == current_question[2] and second_numerator == current_question[3] and second_denominator == current_question[4]:
 		print("input first")
@@ -161,69 +162,36 @@ func input_matches_question(first_numerator: int, first_denominator: int, second
 	
 	return false
 
-# Check the fraction addition answer
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int, answer_numerator: int, answer_denominator: int):
+	# If denominators are the same, just add the numerators
 	if first_denominator == second_denominator:
-		# If denominators are the same, just add the numerators
 		var added_numerator = first_numerator + second_numerator
 		
 		if is_simplified:
 			if check_simplified_form(added_numerator, first_denominator):
-				$CorrectAnswerSFX.play()
-				display_answer.text = "Nice! \nCorrect simplified form."
+				handle_correct("Nice! \nCorrect simplified form.")
 				is_simplified = false
-				#Checker for correct
-				correct_ans_count += 1
-				next_question_or_finish()  # Move to the next question or finish the exercise
 				
 			else:
-				$WrongAnswerSFX.play()
-				display_answer.text = "Try again. \nCheck your GCD value."
+				handle_incorrect("Try again. \nCheck your GCD value.")
 				is_simplified = true
-				#Checker for wrong ans
-				wrong_ans_count += 1
 		
 		elif added_numerator == answer_numerator and first_denominator == answer_denominator:
 			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_answer.text)):
-				if DialogueState.current_npc == "old_peculiar":
-					$AnimationPlayer.play("spin")
-					await $AnimationPlayer.animation_finished
-					#$AnimationPlayer.play("idle_ropbot")
-				$AnimationPlayer.play("spin")
-				await $AnimationPlayer.animation_finished
-				$CorrectAnswerSFX.play()
-				display_answer.text = "Good job! \nBut answer can be simplified."
+				handle_correct_unsimplified("Good job! \nBut answer can be simplified.")
 				is_simplified = true
-				#Checker for unsimplified ans
-				unsimplified_ans_count += 1
+				
 			else:
-				$CorrectAnswerSFX.play()
-				display_answer.text = "Great job! \nCorrect answer!"
-				#Checker for correct
-				correct_ans_count += 1
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				handle_correct("Great job! \nCorrect answer!")
 		
 		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
-			$CorrectAnswerSFX.play()
-			display_answer.text = "Advanced thinking! \nYou entered its simplified form."
-			if DialogueState.current_npc == "old_peculiar":
-				$AnimationPlayer.play("spin")
-				await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("spin")
-			await $AnimationPlayer.animation_finished
-			# Checker for correct
-			correct_ans_count += 1
-			next_question_or_finish()  # Move to the next question or finish the exercise
+			handle_correct("Advanced thinking! \nYou entered its simplified form.")
 		
 		else:
-			$WrongAnswerSFX.play()
-			#$AnimationPlayer.play("wrong_answer_saisai")
-			#await $AnimationPlayer.animation_finished
-			#$AnimationPlayer.play("idle_saisai")
-			display_answer.text = "Try again. Check your numerator\n or denominator."
-			
+			handle_incorrect("Try again. Check your numerator\n or denominator.")
+
+	# If denominators are different, find the least common denominator (LCD)
 	else:
-		# If denominators are different, find the least common denominator (LCD)
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
 		
 		# Adjust the numerators to the same denominator
@@ -233,57 +201,45 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 		
 		if is_simplified:
 			if check_simplified_form(added_adjusted_numerator, lcd):
-				if DialogueState.current_npc == "old_peculiar":
-					$AnimationPlayer.play("spin")
-					await $AnimationPlayer.animation_finished
-					#$AnimationPlayer.play("idle_ropbot")
-				$AnimationPlayer.play("spin")
-				await $AnimationPlayer.animation_finished
-				
-				display_answer.text = "Nice! \nCorrect simplified form."
+				handle_correct("Nice! \nCorrect simplified form.")
 				is_simplified = false
-				#Checker for correct
-				correct_ans_count += 1
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				
 			else:
-				$WrongAnswerSFX.play()
-				display_answer.text = "Try again. \nCheck your GCD value."
+				handle_incorrect("Try again. \nCheck your GCD value.")
 				is_simplified = true
-				#Checker for wrong ans
-				wrong_ans_count += 1
 		
 		elif added_adjusted_numerator == answer_numerator and lcd == answer_denominator:
 			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, int(denominator_answer.text)):
-				if DialogueState.current_npc == "old_peculiar":
-					$AnimationPlayer.play("spin")
-					await $AnimationPlayer.animation_finished
-					#$AnimationPlayer.play("idle_ropbot")
-				$AnimationPlayer.play("spin")
-				await $AnimationPlayer.animation_finished
-				$CorrectAnswerSFX.play()
-
-				display_answer.text = "Good job! \nBut answer can be simplified."
+				handle_correct_unsimplified("Good job! \nBut answer can be simplified.")
 				is_simplified = true
-				#Checker for unsimplified ans
-				unsimplified_ans_count += 1
+				
 			else:
-				$CorrectAnswerSFX.play()
-				display_answer.text = "Great job! \nCorrect answer!"
-				#Checker for correct
-				correct_ans_count += 1
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				handle_correct("Great job! \nCorrect answer!")
 		
 		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
-			$CorrectAnswerSFX.play()
-			display_answer.text = "Advanced thinking! \nYou entered its simplified form."
-			#Checker for correct
-			correct_ans_count += 1
-			next_question_or_finish()  # Move to the next question or finish the exercise
+			handle_correct("Advanced thinking! \nYou entered its simplified form.")
 			
 		else:
-			$WrongAnswerSFX.play()
-			#$AnimationPlayer.play("wrong_answer_saisai")
-			display_answer.text = "Try again. Check your numerator\n or denominator."
+			handle_incorrect("Try again. Check your numerator\n or denominator.")
+
+# Handle correct answer
+func handle_correct(message: String):
+	display_answer.text = message
+	emit_signal("correct")
+	correct_ans_count += 1
+	next_question_or_finish() # Move to the next question or finish the exercise
+
+# Handle correct unsimplified answer
+func handle_correct_unsimplified(message: String):
+	display_answer.text = message
+	emit_signal("correct")
+	unsimplified_ans_count += 1
+
+# Handle incorrect answer
+func handle_incorrect(message: String):
+	display_answer.text = message
+	emit_signal("incorrect")
+	wrong_ans_count += 1
 
 # Function to check for the simplified answer
 func check_simplified_form(correct_numerator: int, correct_denominator: int) -> bool:
@@ -311,14 +267,9 @@ func next_question_or_finish():
 		print("What I need to do now is map each of these attempts per question,
 		connect to question IDs too")
 		print("Current minigame id: ", current_minigame_id)
-		numerator_answer.editable = false
-		denominator_answer.editable = false
-		first_fraction_numerator.editable = false
-		first_fraction_denominator.editable = false
-		second_fraction_numerator.editable = false
-		second_fraction_denominator.editable = false
-		submit_answer.disabled = true
-		display_answer.text = "All questions completed!\nReturning to the world..."
+		disable_inputs()
+		question_label.text = "All questions completed!\nReturning to the world..."
+		
 		await get_tree().create_timer(3.0).timeout
 		
 		var statistics_data = {
@@ -331,6 +282,16 @@ func next_question_or_finish():
 		}
 		return_to_world()
 
+# Disabling inputs
+func disable_inputs():
+	numerator_answer.editable = false
+	denominator_answer.editable = false
+	first_fraction_numerator.editable = false
+	first_fraction_denominator.editable = false
+	second_fraction_numerator.editable = false
+	second_fraction_denominator.editable = false
+	submit_answer.disabled = true
+
 # Return to the world scene
 func return_to_world():
 	print("Returning")
@@ -338,3 +299,13 @@ func return_to_world():
 
 func _on_button_button_down() -> void:
 	return_to_world()
+
+# Plays when the player inputs a correct answer
+func _on_correct_answer():
+	$CorrectAnswerSFX.play()
+	$AnimationPlayer.play("spin")
+	await $AnimationPlayer.animation_finished
+
+# Plays when the player inputs an incorrect answer
+func _on_incorrect_answer():
+	$WrongAnswerSFX.play()

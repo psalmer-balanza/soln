@@ -229,9 +229,8 @@ autowrap_mode = 2
 position = Vector2(856, 120)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"raket"
+animation = &"masked_figure"
 autoplay = "old_robot"
-frame_progress = 0.345265
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -521,6 +520,8 @@ volume_db = -23.583
 stream = ExtResource("13_44j4r")
 volume_db = -24.36
 
+[connection signal="correct" from="." to="." method="_on_correct_answer"]
+[connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]
