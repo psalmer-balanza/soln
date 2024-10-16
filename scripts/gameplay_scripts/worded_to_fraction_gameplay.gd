@@ -6,6 +6,13 @@ var fraction_questions = [
 	["Next one! I had a stock of potions. I used 3/8​ of them in the morning and 5/12 in the afternoon. How many potions did I use in total?", 3, 8, 5, 12],  # Second question fractions
 	["Last one! I was baking pies. One pie was sliced into 3/6 ​, and another was sliced into 5/6​. How much pie do I have altogether?", 3, 6, 5, 6],  # Third question fractions
 	]
+	
+var fraction_questions_house = [
+	["A wizard brewed two potions. For the first potion, he used 1/4 of his magical herbs, and for the second potion, he used 1/2 of the herbs. How much of his herbs did he use in total?", 1, 4, 2, 4],
+	["A sorceress enchanted two magical scrolls. She used 3/10 of her spell ink on the first scroll and 2/5 on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5],
+	["In a mystical forest, a fairy sprinkled 1/3 of her glitter on one flower and 1/6 on another. How much glitter did she use altogether?", 1, 3, 1, 6],
+];
+
 
  # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on
@@ -33,6 +40,7 @@ var current_minigame_id = 1 # PLACEHOLDER
 func _ready():
 	npc_active()
 	initiate_questions()
+	display_current_question()
 	
 func _on_questions_loaded():
 	#if DialogueState.current_quest == "dead_robots":
@@ -64,7 +72,6 @@ func initiate_questions():
 		GetWorded.post_data["MinigameID"] = 3
 		current_minigame_id = GetWorded.post_data["MinigameID"]
 		GetWorded.post()
-		fraction_questions = GetWorded.worded_questions
 	
 	elif DialogueState.current_quest == "raket_house":
 
@@ -72,7 +79,7 @@ func initiate_questions():
 		GetWorded.post_data["MinigameID"] = 4
 		current_minigame_id = GetWorded.post_data["MinigameID"]
 		GetWorded.post()
-		fraction_questions = GetWorded.worded_questions
+		fraction_questions = fraction_questions_house
 	else:
 		print("No quest?")
 
