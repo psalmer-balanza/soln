@@ -7,8 +7,9 @@ extends Control
 @onready var class_section = $StudentInformation/ClassSection
 @onready var password = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
+@onready var ip_address_input = $StudentInformation/IPAddress
 
-var register_url = "http://localhost:3000/game/register"
+var register_url = "http://" + Global.host_ip + ":3000/game/register"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +19,9 @@ func _ready():
 
 
 func _on_register_button_button_down():
+	print("Current IP address: ", ip_address_input.text)
+	Global.host_ip = ip_address_input.text
+	
 	var credentials = {
 		"firstname": first_name.text,
 		"lastname": last_name.text,
@@ -43,7 +47,7 @@ func _http_request_completed(result, response_code, headers, body):
 			var response = json.get_data()
 			print("Response: ", response.success)
 			# RESPONSE IS RETURNING FALSE EVEN THOUGH THE REGISTRATION IS SUCCESSFUL
-			if !response.success:
+			if response.success:
 				# do login if registration is successful
 				print("Registration successful")
 				get_tree().change_scene_to_file("res://scenes/student_scene/student_login.tscn")

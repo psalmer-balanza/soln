@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="2_xd708"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_hu7dh"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_1bv1d"]
-[ext_resource type="PackedScene" uid="uid://b3kvpase6wbh3" path="res://scenes/student_scene/hide_password.tscn" id="5_w83xd"]
+[ext_resource type="PackedScene" uid="uid://bcui7ofr241ek" path="res://scenes/student_scene/hide_password.tscn" id="5_w83xd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
 atlas = ExtResource("2_xd708")
@@ -86,13 +86,24 @@ offset_top = 111.0
 offset_right = 1217.0
 offset_bottom = 686.999
 
+[node name="IPAddress" type="LineEdit" parent="StudentInformation"]
+texture_filter = 1
+offset_left = 619.0
+offset_top = 107.0
+offset_right = 857.0
+offset_bottom = 138.0
+scale = Vector2(0.99258, 0.982386)
+theme_override_fonts/font = ExtResource("3_hu7dh")
+placeholder_text = "IP Address"
+caret_blink = true
+
 [node name="FirstName" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 335.0
-offset_top = 128.0
-offset_right = 573.0
-offset_bottom = 159.0
+offset_left = 355.0
+offset_top = 148.0
+offset_right = 593.0
+offset_bottom = 179.0
 scale = Vector2(0.99258, 0.982386)
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "First Name"
@@ -101,10 +112,10 @@ caret_blink = true
 [node name="LastName" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 334.0
-offset_top = 170.0
-offset_right = 571.0
-offset_bottom = 201.0
+offset_left = 354.0
+offset_top = 190.0
+offset_right = 591.0
+offset_bottom = 221.0
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Last Name"
 caret_blink = true
@@ -112,10 +123,10 @@ caret_blink = true
 [node name="Username" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 336.0
-offset_top = 211.0
-offset_right = 573.0
-offset_bottom = 242.0
+offset_left = 356.0
+offset_top = 231.0
+offset_right = 593.0
+offset_bottom = 262.0
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Username"
 caret_blink = true
@@ -123,10 +134,10 @@ caret_blink = true
 [node name="ClassNumber" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 599.0
-offset_top = 128.0
-offset_right = 837.0
-offset_bottom = 159.0
+offset_left = 619.0
+offset_top = 148.0
+offset_right = 857.0
+offset_bottom = 179.0
 scale = Vector2(0.99258, 0.982386)
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Class Number"
@@ -135,10 +146,10 @@ caret_blink = true
 [node name="ClassSection" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 598.0
-offset_top = 170.0
-offset_right = 838.0
-offset_bottom = 201.0
+offset_left = 618.0
+offset_top = 190.0
+offset_right = 858.0
+offset_bottom = 221.0
 scale = Vector2(0.99258, 0.982386)
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Class Section"
@@ -147,10 +158,10 @@ caret_blink = true
 [node name="Password" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 598.0
-offset_top = 214.0
-offset_right = 836.0
-offset_bottom = 245.0
+offset_left = 618.0
+offset_top = 234.0
+offset_right = 856.0
+offset_bottom = 265.0
 scale = Vector2(0.99258, 0.982386)
 theme_override_fonts/font = ExtResource("3_hu7dh")
 placeholder_text = "Password"
@@ -167,20 +178,20 @@ offset_bottom = 26.0359
 [node name="StudentRegister" type="RichTextLabel" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 451.0
-offset_top = 93.0
-offset_right = 782.0
-offset_bottom = 133.0
+offset_left = 356.0
+offset_top = 110.0
+offset_right = 598.0
+offset_bottom = 150.0
 theme_override_fonts/normal_font = ExtResource("4_1bv1d")
 text = "Student Register"
 
 [node name="RegisterButton" type="Button" parent="StudentInformation"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 498.0
-offset_top = 254.0
-offset_right = 663.0
-offset_bottom = 311.0
+offset_left = 518.0
+offset_top = 274.0
+offset_right = 683.0
+offset_bottom = 331.0
 theme_override_fonts/font = ExtResource("4_1bv1d")
 text = "Register"
 flat = true

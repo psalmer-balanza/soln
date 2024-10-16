@@ -53,8 +53,8 @@ grow_vertical = 2
 script = ExtResource("1_vheuk")
 
 [node name="Soln_background" type="AnimatedSprite2D" parent="."]
-position = Vector2(527.901, 289.719)
-scale = Vector2(2.00823, 2.02335)
+position = Vector2(529, 288.64)
+scale = Vector2(2.00823, 2.04726)
 sprite_frames = SubResource("SpriteFrames_jaifq")
 animation = &"idle"
 autoplay = "idle"
