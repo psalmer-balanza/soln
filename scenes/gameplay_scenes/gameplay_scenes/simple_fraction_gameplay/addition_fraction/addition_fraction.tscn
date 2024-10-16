@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://uxhww4buavkv"]
+[gd_scene load_steps=44 format=3 uid="uid://uxhww4buavkv"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction_old_robot.gd" id="1_0j6rn"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_7i5ep"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://35ry4fuvvgrx" path="res://assets/floor_1/npc/Saisai_correct.png" id="7_qnkp3"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="8_ab82f"]
 [ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/Saisai Disappointed.png" id="9_yvbhj"]
-[ext_resource type="PackedScene" uid="uid://d2dwegmuu746k" path="res://scenes/ui/OldCongratulations.tscn" id="10_owc4i"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="10_0mj3o"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="11_6nh2b"]
+[ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="11_pxuf4"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="12_ofel6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ihx"]
@@ -303,9 +304,9 @@ sprite_frames = SubResource("SpriteFrames_xl1ss")
 animation = &"wrong"
 autoplay = "idle"
 
-[node name="Congratulations" parent="." instance=ExtResource("10_owc4i")]
+[node name="Congrats" parent="." instance=ExtResource("10_0mj3o")]
 visible = false
-layout_mode = 1
+next_scene = ExtResource("11_pxuf4")
 
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6nh2b")

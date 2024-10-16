@@ -19,7 +19,7 @@ func _ready() -> void:
 	animation_player.visible = true
 
 func _on_fraction_problem_all_done() -> void:
-	$Congratulations.visible = true
+	$Congrats.visible = true
 
 func _on_fraction_problem_correct() -> void:
 	print("seggs842")
