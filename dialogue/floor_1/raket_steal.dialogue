@@ -7,7 +7,7 @@ if not raket_sneaking_quest_complete
 	do raket_steal_scene()
 	*A masked figure takes the pie off your hands before you could notice*
 	Hey! Stop right there! That pie isn't for you!
-	Masked Figure: It's mine now ! Who are you and what are you doing here?
+	Masked Figure: It's mine now! Who are you and what are you doing here?
 	I'm {{player_username}}, I'm here to deliver this pie to someone
 	Masked Figure: Hmmm… I see. But im practicing how to be ninja and the challenge was to take a pie.
 	Masked Figure: I see that you are serious about it, let's make a deal?

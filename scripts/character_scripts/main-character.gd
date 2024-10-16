@@ -17,7 +17,6 @@ func _ready():
 	state_machine.set_player(self)
 	# Initialize the state machine
 	state_machine.initial_state = $StateMachine/IdleState
-	print('hello')
 	#$RaketSmithing.visible = false
 func _physics_process(delta):
 	# Delegate the state management to the state machine

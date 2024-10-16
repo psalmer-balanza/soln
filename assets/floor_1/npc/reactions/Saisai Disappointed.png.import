@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3d18d0olryjn"
-path="res://.godot/imported/Old Peculiar Wrong Answer.png-9fab0df26ea1d344893bf447d4470ef5.ctex"
+uid="uid://dxwfqyv350leo"
+path="res://.godot/imported/Saisai Disappointed.png-87c3b00bc5e94d6c44477090ebcaf0ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/Old Peculiar Wrong Answer.png"
-dest_files=["res://.godot/imported/Old Peculiar Wrong Answer.png-9fab0df26ea1d344893bf447d4470ef5.ctex"]
+source_file="res://assets/floor_1/npc/reactions/Saisai Disappointed.png"
+dest_files=["res://.godot/imported/Saisai Disappointed.png-87c3b00bc5e94d6c44477090ebcaf0ba.ctex"]
 
 [params]
 

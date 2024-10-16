@@ -419,9 +419,8 @@ volume_db = -14.991
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.597807
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

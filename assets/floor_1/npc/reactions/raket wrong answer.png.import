@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxwfqyv350leo"
-path="res://.godot/imported/Saisai Disappointed.png-d1a8ec8ac430abd43f2be35cf465afdd.ctex"
+uid="uid://cq26hp0n7mmv2"
+path="res://.godot/imported/raket wrong answer.png-912e24d77c6c0917e8bff86bf0feb6e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/Saisai Disappointed.png"
-dest_files=["res://.godot/imported/Saisai Disappointed.png-d1a8ec8ac430abd43f2be35cf465afdd.ctex"]
+source_file="res://assets/floor_1/npc/reactions/raket wrong answer.png"
+dest_files=["res://.godot/imported/raket wrong answer.png-912e24d77c6c0917e8bff86bf0feb6e4.ctex"]
 
 [params]
 

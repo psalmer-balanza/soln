@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjdn5kjtbxs5l"
-path="res://.godot/imported/Old Peculiar Correct.png-c1c2381a4821f9f7069c4d15107d03a2.ctex"
+uid="uid://bii2pqay365r6"
+path="res://.godot/imported/raket right answer.png-36b1733bc2aaef85f76ceaf68876db6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/Old Peculiar Correct.png"
-dest_files=["res://.godot/imported/Old Peculiar Correct.png-c1c2381a4821f9f7069c4d15107d03a2.ctex"]
+source_file="res://assets/floor_1/npc/reactions/raket right answer.png"
+dest_files=["res://.godot/imported/raket right answer.png-36b1733bc2aaef85f76ceaf68876db6f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://35ry4fuvvgrx"
-path="res://.godot/imported/Saisai_correct.png-93bc0765a3925b42b23ca862a4af29ad.ctex"
+uid="uid://c3kclf3andxv2"
+path="res://.godot/imported/unhappy racoon sprite.png-76ec887cbf85208e20bbec72242cebd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/Saisai_correct.png"
-dest_files=["res://.godot/imported/Saisai_correct.png-93bc0765a3925b42b23ca862a4af29ad.ctex"]
+source_file="res://assets/floor_1/npc/reactions/unhappy racoon sprite.png"
+dest_files=["res://.godot/imported/unhappy racoon sprite.png-76ec887cbf85208e20bbec72242cebd7.ctex"]
 
 [params]
 

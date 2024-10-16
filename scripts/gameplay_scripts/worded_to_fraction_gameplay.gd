@@ -11,7 +11,7 @@ var fraction_questions = [
 	]
 	
 var fraction_questions_house = [
-	["A wizard brewed two potions. For the first potion, he used 1/4 of his magical herbs, and for the second potion, he used 1/2 of the herbs. How much of his herbs did he use in total?", 1, 4, 2, 4],
+	["A wizard brewed two potions. For the first potion, he used 1/4 of his magical herbs, and for the second potion, he used 1/2 of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2],
 	["A sorceress enchanted two magical scrolls. She used 3/10 of her spell ink on the first scroll and 2/5 on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5],
 	["In a mystical forest, a fairy sprinkled 1/3 of her glitter on one flower and 1/6 on another. How much glitter did she use altogether?", 1, 3, 1, 6],
 ];
@@ -54,16 +54,14 @@ func _on_questions_loaded():
 
 func npc_active():
 	npc_sprite.play(current_npc)
-	if current_npc == "saisai":
-		npc_sprite.play("saisai")
-	elif current_npc == "raket":
+	if current_npc == "raket":
 		npc_sprite.play("raket")
 		DialogueState.raket_house_quest_complete = true
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure")
 	else:
 		print(current_npc)
-		print("no active npc")
+		print("Worded Gameplay: No active npc found!")
 
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
@@ -303,9 +301,25 @@ func _on_button_button_down() -> void:
 # Plays when the player inputs a correct answer
 func _on_correct_answer():
 	$CorrectAnswerSFX.play()
-	$AnimationPlayer.play("spin")
-	await $AnimationPlayer.animation_finished
+	if current_npc == "raket":
+		npc_sprite.play("raket_correct")
+		await npc_sprite.animation_finished
+		npc_sprite.play("raket")
+		DialogueState.raket_house_quest_complete = true
+	elif current_npc == "masked_figure":
+		npc_sprite.play("masked_figure_correct")
+		await npc_sprite.animation_finished
+		npc_sprite.play("masked_figure")
 
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
 	$WrongAnswerSFX.play()
+	if current_npc == "raket":
+		npc_sprite.play("raket_wrong")
+		await npc_sprite.animation_finished
+		npc_sprite.play("raket")
+		DialogueState.raket_house_quest_complete = true
+	elif current_npc == "masked_figure":
+		npc_sprite.play("masked_figure_wrong")
+		await npc_sprite.animation_finished
+		npc_sprite.play("masked_figure")

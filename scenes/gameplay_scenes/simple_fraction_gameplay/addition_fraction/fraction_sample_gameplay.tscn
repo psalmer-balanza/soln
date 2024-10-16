@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="5_deff5"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="6_ah1tw"]
 [ext_resource type="Texture2D" uid="uid://d2bqbxcw8qjy5" path="res://assets/main_character/mc_idle_front.png" id="7_d0kf4"]
-[ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/Saisai Disappointed.png" id="7_mw8yk"]
-[ext_resource type="Texture2D" uid="uid://bjdn5kjtbxs5l" path="res://assets/floor_1/npc/Old Peculiar Correct.png" id="8_82yj1"]
-[ext_resource type="Texture2D" uid="uid://3d18d0olryjn" path="res://assets/floor_1/npc/Old Peculiar Wrong Answer.png" id="9_ry3aq"]
+[ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/reactions/Saisai Disappointed.png" id="7_mw8yk"]
+[ext_resource type="Texture2D" uid="uid://bjdn5kjtbxs5l" path="res://assets/floor_1/npc/reactions/Old Peculiar Correct.png" id="8_82yj1"]
+[ext_resource type="Texture2D" uid="uid://3d18d0olryjn" path="res://assets/floor_1/npc/reactions/Old Peculiar Wrong Answer.png" id="9_ry3aq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tttc"]
 atlas = ExtResource("6_ah1tw")
