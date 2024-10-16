@@ -10,7 +10,7 @@ signal questions_loaded
 var post_data = { "MinigameID": 5 }
 
 func post():
-	var getquestions_url = "http://localhost:3000/game/getmcquestions"
+	var getquestions_url = "http://" + Global.host_ip + ":3000/game/getmcquestions"
 	print("HEY REMEMBER THIS URL?? ", getquestions_url)
 	var http_request = HTTPRequest.new()
 	add_child(http_request)

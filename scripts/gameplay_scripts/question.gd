@@ -13,6 +13,20 @@ var rng = RandomNumberGenerator.new()
 var question
 
 func _ready():
+	#OFFLINE VALUES FOR QUIZ
+	mc_questions = [
+	["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
+	["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
+	["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
+	["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
+	["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1", "1/2"],
+	["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
+	["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
+	["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "7/12", "7/12"],
+	["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
+	["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
+]
+	
 	# First connect to the "questions_loaded" signal to know when the data is ready
 	GetQuiz.connect("questions_loaded", _on_questions_loaded)
 	GetQuiz.post()

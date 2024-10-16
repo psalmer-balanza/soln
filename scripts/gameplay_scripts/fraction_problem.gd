@@ -41,7 +41,7 @@ func _ready() -> void:
 
 func _load_questions():
 	print("current quast is ", DialogueState.current_quest)
-	#GetFractions.connect("questions_loaded", _on_questions_loaded)
+	GetFractions.connect("questions_loaded", _on_questions_loaded)
 	match DialogueState.current_quest:
 		"saisai_wheelbarrow":
 			print("readllY>>")
