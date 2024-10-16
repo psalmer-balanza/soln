@@ -45,8 +45,8 @@ func _load_questions():
 	match DialogueState.current_quest:
 		"saisai_wheelbarrow":
 			print("readllY>>")
-			#GetFractions.post_data["MinigameID"] = 1
-			#GetFractions.post()
+			GetFractions.post_data["MinigameID"] = 1
+			GetFractions.post()
 		"dead_robots":
 			GetFractions.post_data["MinigameID"] = 2
 			GetFractions.post()

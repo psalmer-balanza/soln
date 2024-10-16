@@ -12,6 +12,7 @@ func _process(_delta):
 func _ready():
 	if DialogueState.disable_rock_removed:
 		$Actionable/CollisionShape2D.disabled = true
+		hide_rock()
 
 func hide_rock() -> void:
 	$Actionable/CollisionShape2D.disabled = true
