@@ -545,7 +545,7 @@ offset_right = 417.0
 offset_bottom = 416.0
 
 [node name="Label" parent="Tutorials/QuickTutorial2/Content" index="1"]
-text = "Place them in the board. Click again to drop the ingridient"
+text = "Place them in the board. Click again to drop the ingredient"
 
 [node name="Close" parent="Tutorials/QuickTutorial2" index="2"]
 offset_left = 25.0

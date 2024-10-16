@@ -22,6 +22,7 @@ func _ready() -> void:
 		"raket_sword_quest": false,
 		"raket_worded": false,
 		"raket_sword_pieces_complete": false,
+		"sword_finished": false,
 		"face_the_snake": false,
 		"snake_quiz_complete": false,
 		"you_may_leave_floor_1": false,
@@ -56,6 +57,8 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Find the sword materials in the cave.")
 		"raket_sword_pieces_complete":
 			handle_quest_label(cq, "Return to Raket with the sword materials.")
+		"sword_finished":
+			handle_quest_label(cq, "Talk to Raket and see the result of the smithing.")
 		"face_the_snake":
 			handle_quest_label(cq, "Face Snekkers the Snake in the cave.")
 		"snake_quiz_complete":

@@ -14,9 +14,7 @@ if not raket_house_quest_complete
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set current_quest = "raket_house"
 	set raket_quest_progress = 1
-elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
-	Raket: Great job, {{player_username}} Now that we have all the ore pieces, I can finally build this sword.
-	set do_raket_blacksmith_animation = true
+elif current_quest == "sword_finished"
 	Raket: Look at this beauty! You did it, {{player_username}}. This sword is perfect.
 	What will you do with it?
 	Raket: Well I plan to-
@@ -25,6 +23,12 @@ elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade a
 	set current_quest = "face_the_snake"
 	set raket_sword_complete = true
 	set raket_quest_progress = 3
+elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+	set current_quest = "sword_finished"
+	Raket: Great job, {{player_username}}!!!
+	Raket: Now that we have all the ore pieces, I can finally build this sword. 
+	Raket: Stand back! This may get hot. [wait=5] [do save_player_position_and_change_scene("res://scenes/cutscenes/raket_smithing_cutscene.tscn" ,"res://scenes/levels/Floor1.tscn")]
+	=> end
 elif raket_house_quest_complete
 	Raket: See I told you I will still have more of the pie slices to eat...
 	Raket: Don’t worry I want to share this pie to you as a form of thanks since you delivered the message from Saisai.

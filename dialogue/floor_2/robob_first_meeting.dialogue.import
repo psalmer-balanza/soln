@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b6l6hitn5eqeb"
+path="res://.godot/imported/robob_first_meeting.dialogue-b3986b228c83ada709e3980237526d86.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/robob_first_meeting.dialogue"
+dest_files=["res://.godot/imported/robob_first_meeting.dialogue-b3986b228c83ada709e3980237526d86.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,8 @@
+~ start
+set in_dialogue = true
+Robob: Hey buddy.
+
+
+~ end
+set in_dialogue = false
+=> END

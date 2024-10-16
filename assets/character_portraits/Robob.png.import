@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwujbnjbdmrne"
-path="res://.godot/imported/gʻiant enemy crab spritesheet.png-39fb42c71a934f30955ddb1e4824aa30.ctex"
+uid="uid://dxyj3n4g3rk2v"
+path="res://.godot/imported/Robob.png-96521415f973061109bb4315b1d67901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_2/npc/gʻiant enemy crab spritesheet.png"
-dest_files=["res://.godot/imported/gʻiant enemy crab spritesheet.png-39fb42c71a934f30955ddb1e4824aa30.ctex"]
+source_file="res://assets/character_portraits/Robob.png"
+dest_files=["res://.godot/imported/Robob.png-96521415f973061109bb4315b1d67901.ctex"]
 
 [params]
 
