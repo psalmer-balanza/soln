@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://djk22k3j63p7n"]
 
-[ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_sample_gameplay.gd" id="1_0dox2"]
+[ext_resource type="Script" path="res://archived files/fraction_sample_gameplay.gd" id="1_0dox2"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="2_p6143"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_uweop"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_1p88m"]

@@ -19,6 +19,7 @@ func _ready():
 		saisai_rock_scene.queue_free()
 
 func play_move_rock() -> void:
+	# Remove speech bvubble and saisai collision
 	DialogueState.remove_saisai_speech_bubble = true 
 	$Saisai/CollisionPolygon2D.disabled = true
 	animation_player.play("saisai_move_rock")
@@ -28,9 +29,18 @@ func play_move_rock() -> void:
 	$Saisai/AnimatedSprite2D.visible = false
 	$WheelbarrowWithRocks.visible = false
 	DialogueState.in_dialogue = false
+	
 	$RegularRock/Barrier.disabled = true
+	$RegularRock/CollisionShape2D.disabled = true
+	$RegularRock2/CollisionShape2D.disabled = true
+	$RegularRock2/Sprite2D.visible = false
+	$RegularRock3/CollisionShape2D.disabled = true
+	$RegularRock3/Sprite2D.visible = false
+	
+	
 	$WheelbarrowWithRocks/CollisionPolygon2D.disabled = true
 	$Wheelbarrow/CollisionPolygon2D.disabled = true
+	
 	DialogueState.remove_saisai_speech_bubble = false
 	has_moved_rock = true
 	

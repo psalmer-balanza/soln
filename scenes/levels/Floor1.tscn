@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
 [ext_resource type="AudioStream" uid="uid://do78b3lo3fvf6" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).wav" id="2_xrlkj"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
-[ext_resource type="AudioStream" uid="uid://d3ry0b283onvp" path="res://audio/background_music/Farming - Dont Starve Together 8-Bit Cover.wav" id="3_ijcau"]
+[ext_resource type="AudioStream" uid="uid://bh04jdxjn25mf" path="res://audio/background_music/8-bit-horror-noises-63944.mp3" id="3_skoeq"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="6_1gvms"]
 [ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/levels/test_floor1/firefly.tscn" id="6_5ydh2"]
@@ -789,13 +789,14 @@ script = ExtResource("1_akh82")
 
 [node name="StartupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xrlkj")
-volume_db = -13.048
-pitch_scale = 1.07
+volume_db = -18.67
+pitch_scale = 1.25
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ijcau")
+stream = ExtResource("3_skoeq")
 volume_db = -12.18
 autoplay = true
+parameters/looping = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
@@ -872,7 +873,7 @@ tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAE
 tile_set = SubResource("TileSet_cdkk8")
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(351, 133)
+position = Vector2(376, 730)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -1019,10 +1020,10 @@ position = Vector2(1014, 689)
 position = Vector2(869, 733)
 
 [node name="firefly9" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(931, 727)
+position = Vector2(918, 717)
 
 [node name="firefly10" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(941, 664)
+position = Vector2(964, 698)
 
 [node name="firefly11" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(1024, 1227)

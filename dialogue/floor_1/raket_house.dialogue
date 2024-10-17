@@ -46,7 +46,7 @@ elif raket_house_quest_complete
 	Raket: Oh I might need a small favor from you. 
 	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
 	Raket: Think you can help me find them?
-	- Sword pieces? Sure! I’m up for the challenge
+	- Sword pieces? I’m up for the challenge!
 	set current_quest = "raket_sword_quest"
 	Raket: Great! There. Just go down that path and follow it. 
 	Raket: It leads directly to the cave. Goodluck Sol’n!

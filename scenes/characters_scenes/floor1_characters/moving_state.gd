@@ -14,7 +14,7 @@ func Enter():
 	sprite.play("walk")
 	walking_sfx.play() # Play walking sfx when in the moving state
 
-func Update(delta: float):
+func Update(_delta: float):
 	auto_start_encounters = auto_start_encounter_finder.get_overlapping_areas()
 	
 	if DialogueState.in_dialogue:
@@ -36,7 +36,7 @@ func Update(delta: float):
 		Transitioned.emit(self, "PlayerDialogueState")
 		return  # Exit early if a dialogue starts
 
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	# This is for direction, takes it from input
 	var character_direction = Vector2(
 		Input.get_axis("ui_left", "ui_right"),
@@ -58,7 +58,7 @@ func Physics_Update(delta: float):
 	player.velocity = character_direction * player.movement_speed
 
 
-func _on_auto_start_encounter_finder_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+func _on_auto_start_encounter_finder_body_shape_entered(body):
 	# Check if the body is the player character
 	print("The player name is ", body.name)
 	if body.name == "MainCharacter":  # Adjust this check for your actual player node

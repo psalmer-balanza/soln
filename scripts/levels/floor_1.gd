@@ -14,7 +14,7 @@ func _ready():
 		print("First time initializing floor1")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if DialogueState.unlock_cave_collision:
 		$Racket/BarrierFromCave.disabled = true
 	if DialogueState.saisai_quest_progress == 3:

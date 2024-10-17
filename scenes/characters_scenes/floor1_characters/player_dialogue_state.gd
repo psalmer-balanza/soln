@@ -23,11 +23,11 @@ func start_dialogue_wait() -> void:
 	await DialogueManager.dialogue_ended  # Wait for the dialogue to end
 	Transitioned.emit(self, "IdleState")  # Transition back to IdleState when dialogue ends
 
-func Update(delta: float):
+func Update(_delta: float):
 	pass
 
 # Player must not move during dialogue so do NOTHING HERE
-func Physics_Update(delta: float):
+func Physics_Update(_delta: float):
 	player.velocity = Vector2.ZERO  # Reinforce that the player cannot move
 	
 func Exit():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cboj5uc2cb5at"]
+[gd_scene load_steps=34 format=3 uid="uid://cboj5uc2cb5at"]
 
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/saisai_rock_scene.gd" id="1_83gal"]
 [ext_resource type="Texture2D" uid="uid://bcgx2awlqi1yl" path="res://assets/floor_1/cutscenes/pile of shiny rocks for saisai cutscne (1).png" id="2_oy8wx"]
@@ -13,6 +13,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u56d"]
 size = Vector2(270, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5utmx"]
+radius = 11.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kehd"]
 atlas = ExtResource("5_5sasn")
@@ -349,13 +352,37 @@ z_index = 1
 position = Vector2(4, -1)
 texture = ExtResource("2_oy8wx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RegularRock"]
-position = Vector2(4, -1)
-polygon = PackedVector2Array(-6, -2, -6, -1, -7, -1, -7, 0, -8, 0, -8, 3, -7, 3, -7, 4, 1, 4, 1, 3, 2, 3, 2, -1, 0, -1, 0, -2)
-
 [node name="Barrier" type="CollisionShape2D" parent="RegularRock"]
 position = Vector2(28, 10)
 shape = SubResource("RectangleShape2D_1u56d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RegularRock"]
+position = Vector2(4, -1)
+shape = SubResource("CircleShape2D_5utmx")
+
+[node name="RegularRock2" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(20, 17)
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularRock2"]
+position = Vector2(4, -1)
+texture = ExtResource("2_oy8wx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RegularRock2"]
+position = Vector2(4, -1)
+shape = SubResource("CircleShape2D_5utmx")
+
+[node name="RegularRock3" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(49, 21)
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularRock3"]
+position = Vector2(4, -1)
+texture = ExtResource("2_oy8wx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RegularRock3"]
+position = Vector2(6, -1)
+shape = SubResource("CircleShape2D_5utmx")
 
 [node name="Saisai" parent="." instance=ExtResource("4_uv76i")]
 position = Vector2(75, -1)

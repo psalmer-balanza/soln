@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkqfovnosijms"]
+[gd_scene load_steps=7 format=3 uid="uid://dkqfovnosijms"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_problem.gd" id="1_3lx3t"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_mxrjf"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="2_60jsg"]
 [ext_resource type="Script" path="res://helpers/text_control.gd" id="3_8ipeh"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="3_vgptb"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="6_6gx5x"]
 
 [node name="FractionProblem" type="MarginContainer"]
 offset_right = 40.0
@@ -28,7 +29,7 @@ theme_override_constants/separation = 10
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mxrjf")
-text = "Anwer the Question"
+text = "Answer the Question"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -194,6 +195,10 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
+
+[node name="Congrats" parent="." instance=ExtResource("6_6gx5x")]
+visible = false
+layout_mode = 2
 
 [connection signal="text_changed" from="VBoxContainer/Problem/Answer/Fraction/Numerator/NumeratorAnswer" to="VBoxContainer/Problem/Answer/Fraction/TextControl" method="_on_numerator_answer_text_changed"]
 [connection signal="text_changed" from="VBoxContainer/Problem/Answer/Fraction/Denominator/DenominatorAnswer" to="VBoxContainer/Problem/Answer/Fraction/TextControl" method="_on_denominator_answer_text_changed"]

@@ -148,10 +148,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -472.0
-offset_top = -520.0
-offset_right = 122.0
-offset_bottom = -200.0
+offset_left = -480.0
+offset_top = -509.0
+offset_right = 154.0
+offset_bottom = -189.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -170,7 +170,9 @@ theme = ExtResource("6_ut6d7")
 theme_override_colors/icon_focus_color = Color(0.576471, 0.247059, 0.270588, 1)
 theme_override_colors/icon_hover_color = Color(0.576471, 0.247059, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.576471, 0.247059, 0.270588, 1)
-text = "Response example"
+theme_override_fonts/font = ExtResource("2_k3wn5")
+theme_override_font_sizes/font_size = 18
+text = "You don't happen to be a morning person right?"
 text_overrun_behavior = 3
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

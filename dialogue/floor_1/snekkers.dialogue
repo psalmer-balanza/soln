@@ -59,7 +59,6 @@ Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving
 Snekkers: You must be the chosen one! There was a tale...
 set current_quest = "you_may_leave_floor_1"
 
-
 => end
 
 ~ end

@@ -59,6 +59,7 @@ _data = {
 }
 
 [node name="firefly" type="Node2D"]
+position = Vector2(146, 85)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 6
@@ -66,6 +67,7 @@ process_material = SubResource("ParticleProcessMaterial_inlt7")
 lifetime = 2.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2, -4)
 color = Color(1, 1, 0.372549, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_5i0r1")
