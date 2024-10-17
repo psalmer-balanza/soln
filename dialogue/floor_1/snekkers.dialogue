@@ -1,5 +1,7 @@
 ~ start
 set in_dialogue = true
+if current_quest == "you_may_leave_floor_1"
+	Snekkers: Go on, hero, the sewer gate is open now...
 if current_quest == "snake_quiz_complete"
 	=> Snekkers_mission_complete
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
