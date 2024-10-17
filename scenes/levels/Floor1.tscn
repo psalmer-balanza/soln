@@ -794,7 +794,7 @@ pitch_scale = 1.25
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_skoeq")
-volume_db = -12.18
+volume_db = -30.751
 autoplay = true
 parameters/looping = true
 

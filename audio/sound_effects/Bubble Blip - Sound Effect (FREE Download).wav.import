@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkr5ahibjsli6"
+path="res://.godot/imported/Bubble Blip - Sound Effect (FREE Download).wav-dc1c2c1e56d78b6228ebc0374aca5a78.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/Bubble Blip - Sound Effect (FREE Download).wav"
+dest_files=["res://.godot/imported/Bubble Blip - Sound Effect (FREE Download).wav-dc1c2c1e56d78b6228ebc0374aca5a78.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

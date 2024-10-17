@@ -13,6 +13,8 @@ extends CanvasLayer
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+@onready var talking_sounds: AudioStreamPlayer = $TalkingSounds
+
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -166,5 +168,9 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if not letter in [".", " "]:
+		talking_sounds.play()
 
 #endregion
