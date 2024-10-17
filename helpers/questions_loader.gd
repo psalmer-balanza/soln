@@ -1,74 +1,118 @@
 extends Node
 
-var addition_questions: Array = []
-var subtraction_questions: Array = []
-var saisai_questions:Array = []
-var old_robot:Array = []
+var saisai_questions: Array = []
+var robot_questions: Array = []
+var racket_steal_questions: Array = []
+var racket_house_questions: Array = []
+var snekkers_questions: Array = []
+var minigameID
+signal questions_loaded
 
 # Called when the node enters the scene tree for the first time.
 # Load all the questions from the database
 func _ready() -> void:
+	pass
 	
-	# TODO replace with questions from the data base in the same format
-	addition_questions = [
-		[1, 2, 1, 2, "+", 1], # fraction addition questions
-		[1, 3, 1, 2, "+", 2],
-		[2, 5, 1, 2, "+", 3]
-	]
-	subtraction_questions = [
-		[2, 3, 1, 3, "-"],
-		[4, 5, 1, 2, "-"],
-		[2, 5, 1, 4, "-"]
-	]
-	saisai_questions = [
-		[1, 2, 1, 2, "+", 1],
-		[1, 3, 1, 3, "+", 2],
-		[2, 5, 1, 5, "+", 3]
-	]
-	old_robot = [
-		[1, 4, 1, 2, "+", 1],
-		[1, 2, 1, 3, "+", 2],
-		[2, 5, 1, 2, "+", 3]
-	]
-	
-	#addition_questions = []
-	#compile_addition_questions()
 
-var fraction_questions = []
-var worded_questions = []
-var mc_questions = []
+func get_saisai_questions():
+	minigameID = 1
+	post(minigameID)
 
-func compile_addition_questions():
-	get_fraction_questions(1)
-	get_fraction_questions(2)
-	await get_tree().create_timer(1).timeout # some delay to have all the http requests finish
+func get_robot_questions():
+	minigameID = 2
+	post(minigameID)
 	
-	addition_questions = fraction_questions
-	print("start of addition_questions loaded")
-	print(addition_questions)
-	print("end of addition_questions")
+func get_racket_steal_questions():
+	minigameID = 3
+	post(minigameID)
 
+func get_racket_house_questions():
+	minigameID = 4
+	post(minigameID)
+	
+func get_snekkers_questions():
+	minigameID = 5
+	post(minigameID)
+	
+func post(minigameID):
+	var post_data = {}
+	post_data["MinigameID"] = minigameID
+	var url 
+	
+	if minigameID == 1 || minigameID == 2:
+		url = "http://localhost:3000/game/getfractions"
+	elif minigameID == 3 || minigameID == 4:
+		url = "http://localhost:3000/game/getworded"
+	elif minigameID == 5:
+		url = "http://localhost:3000/game/getmcquestions"	
 
-func get_fraction_questions(minigame_id):
-	GetFractions.connect("questions_loaded", _on_fraction_questions_loaded)
-	GetFractions.post_data["MinigameID"] = minigame_id
-	GetFractions.post()
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
+
+	var json_body = JSON.stringify(post_data)
+	var headers = ["Content-type: application/json"]
 	
-func _on_fraction_questions_loaded():
-	fraction_questions.append(GetFractions.fraction_questions) 
+	# execute POST request
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
+	if error != OK:
+		print("error: unable to make request")
+		
+# Called when the HTTP request is completed.
+func _http_request_completed(_result, response_code, _headers, body):
+	if response_code == 200:
+		var json = JSON.new()
+		var error = json.parse(body.get_string_from_utf8())
+		if error == OK:
+			var response = json.get_data()
+			if minigameID == 1:
+				saisai_questions = constructFractionQuestions(response)
+				emit_signal("questions_loaded")
+			elif minigameID == 2:
+				robot_questions = constructFractionQuestions(response)
+				emit_signal("questions_loaded")
+			elif minigameID == 3:
+				racket_steal_questions = constructWordedQuestions(response)
+				emit_signal("questions_loaded")
+			elif minigameID == 4:
+				racket_house_questions = constructWordedQuestions(response)
+				emit_signal("questions_loaded")
+			elif minigameID == 5:
+				snekkers_questions = constructQuizQuestions(response)
+				emit_signal("questions_loaded")
+	else:
+		print("HTTP request failed with code: error in get fractions", response_code)
+
+func constructFractionQuestions(response):
+	var questions = []
+	for i in range(response.size()):
+		var fraction = response[i]
+		questions.append([fraction["fraction1_numerator"], fraction["fraction1_denominator"],
+									fraction["fraction2_numerator"], fraction["fraction2_denominator"],
+									"+", fraction["question_id"]])
+	return questions
 	
-func get_worded_questions(minigame_id):
-	GetWorded.connect("questions_loaded", _on_worded_questions_loaded)
-	GetWorded.post_data["MinigameID"] = minigame_id
-	GetWorded.post()
 	
-func _on_worded_questions_loaded():
-	worded_questions.append(GetWorded.worded_questions)
-	
-func get_multiple_choice_questions(minigame_id):
-	GetQuiz.connect("questions_loaded", _on_mc_questions_loaded)
-	GetQuiz.post_data["MinigameID"] = minigame_id
-	GetQuiz.post()
-	
-func _on_mc_questions_loaded():
-	mc_questions.append(GetQuiz.mc_questions) 
+func constructWordedQuestions(response):
+	var questions = []
+	for i in range(response.size()):
+		var fraction = response[i]
+		questions.append([fraction["question_text"], fraction["fraction1_numerator"],
+									fraction["fraction1_denominator"], fraction["fraction2_numerator"],
+									fraction["fraction2_denominator"], fraction["question_id"]])
+	return questions
+
+func constructQuizQuestions(response):
+	var questions = []
+	for i in range(response.size()):
+		var question = response[i]
+		questions += [[
+			question["question_text"], 
+			question["option_1"], 
+			question["option_2"], 
+			question["option_3"], 
+			question["option_4"], 
+			question["correct_answer"]
+			]]
+		
+	return questions

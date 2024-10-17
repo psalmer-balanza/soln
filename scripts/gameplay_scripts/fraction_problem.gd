@@ -41,18 +41,19 @@ func _ready() -> void:
 
 func _load_questions():
 	print("current quast is ", DialogueState.current_quest)
-	GetFractions.connect("questions_loaded", _on_questions_loaded)
+	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 	match DialogueState.current_quest:
 		"saisai_wheelbarrow":
-			print("readllY>>")
-			GetFractions.post_data["MinigameID"] = 1
-			GetFractions.post()
+			QuestionsLoader.get_saisai_questions()
 		"dead_robots":
-			GetFractions.post_data["MinigameID"] = 2
-			GetFractions.post()
+			QuestionsLoader.get_robot_questions()
 
 func _on_questions_loaded():
-	questions = GetFractions.fraction_questions
+	match DialogueState.current_quest:
+		"saisai_wheelbarrow":
+			questions = QuestionsLoader.saisai_questions
+		"dead_robots":
+			questions = QuestionsLoader.robot_questions
 	_display_question()
 
 

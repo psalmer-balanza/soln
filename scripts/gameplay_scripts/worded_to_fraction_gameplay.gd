@@ -46,9 +46,11 @@ func _ready():
 	display_current_question()
 	
 func _on_questions_loaded():
-	#if DialogueState.current_quest == "dead_robots":
-	##$AnimatedSprite2D.play("idle_robot")display_current_question()
-	fraction_questions = GetWorded.worded_questions
+	if DialogueState.current_quest == "raket_stealing":
+		fraction_questions = QuestionsLoader.racket_steal_questions
+	elif DialogueState.current_quest == "raket_house":
+		fraction_questions = QuestionsLoader.racket_house_questions	
+		
 	display_current_question()
 	
 
@@ -66,20 +68,18 @@ func npc_active():
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
 	print(DialogueState.current_quest)
-	GetWorded.connect("questions_loaded", _on_questions_loaded)
+	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 
 	if DialogueState.current_quest == "raket_stealing":
 		print("Current quest is raket stealing")
-		GetWorded.post_data["MinigameID"] = 3
 		current_minigame_id = GetWorded.post_data["MinigameID"]
-		GetWorded.post()
+		QuestionsLoader.get_racket_steal_questions()
 	
 	elif DialogueState.current_quest == "raket_house":
 
 		print("Current quest is raket house")
-		GetWorded.post_data["MinigameID"] = 4
 		current_minigame_id = GetWorded.post_data["MinigameID"]
-		GetWorded.post()
+		QuestionsLoader.get_racket_house_questions()
 		fraction_questions = fraction_questions_house
 	else:
 		print("No quest?")
