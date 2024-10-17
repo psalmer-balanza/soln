@@ -5,7 +5,9 @@ var robot_questions: Array = []
 var racket_steal_questions: Array = []
 var racket_house_questions: Array = []
 var snekkers_questions: Array = []
+var post_data = {}
 var minigameID
+
 signal questions_loaded
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +37,6 @@ func get_snekkers_questions():
 	post(minigameID)
 	
 func post(minigameID):
-	var post_data = {}
 	post_data["MinigameID"] = minigameID
 	var url 
 	

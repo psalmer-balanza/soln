@@ -72,15 +72,16 @@ func initiate_questions():
 
 	if DialogueState.current_quest == "raket_stealing":
 		print("Current quest is raket stealing")
-		current_minigame_id = GetWorded.post_data["MinigameID"]
 		QuestionsLoader.get_racket_steal_questions()
+		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
+		print("current minigame id ", current_minigame_id)
 	
 	elif DialogueState.current_quest == "raket_house":
-
-		print("Current quest is raket house")
-		current_minigame_id = GetWorded.post_data["MinigameID"]
 		QuestionsLoader.get_racket_house_questions()
+		print("Current quest is raket house")
+		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
 		fraction_questions = fraction_questions_house
+		
 	else:
 		print("No quest?")
 
