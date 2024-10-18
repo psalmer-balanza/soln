@@ -6,10 +6,12 @@ var character_direction : Vector2
 
 # Use the state machine
 @onready var state_machine: Node = $StateMachine  # Assuming the state machine is a child of the player
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var actionable_finder: Area2D = $ActionableFinder
 
 func _ready():
+	animation_player.play("spawn_in")
 	# Pass the player (self) to the state machine
 	state_machine.set_player(self)
 	# Initialize the state machine
