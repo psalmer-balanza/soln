@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xnm2hgu0mopn"]
+
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="1_0mwgx"]
+[ext_resource type="Resource" uid="uid://dfpdv6s5djkwf" path="res://dialogue/floor_1/barrier_raket_house.dialogue" id="2_ihfxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq2fr"]
+size = Vector2(178, 20)
+
+[node name="BarrierRaketHouse" type="Node2D"]
+
+[node name="AutoActionable" parent="." instance=ExtResource("1_0mwgx")]
+dialogue_resource = ExtResource("2_ihfxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+shape = SubResource("RectangleShape2D_tq2fr")
