@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bivjj6edlk0j"]
+
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="1_w6vj7"]
+[ext_resource type="Resource" uid="uid://twxe74r43861" path="res://dialogue/floor_2/fresh_spawn.dialogue" id="2_fdoha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ud6dv"]
+radius = 31.0161
+
+[node name="FreshSpawnDialogue" type="Node2D"]
+
+[node name="AutoActionable" parent="." instance=ExtResource("1_w6vj7")]
+dialogue_resource = ExtResource("2_fdoha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+shape = SubResource("CircleShape2D_ud6dv")
