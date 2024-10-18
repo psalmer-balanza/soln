@@ -1,0 +1,661 @@
+[gd_scene load_steps=38 format=3 uid="uid://b5ooe8vsvk548"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_scripts/collecting_sword_pieces.gd" id="1_k2e4n"]
+[ext_resource type="Texture2D" uid="uid://buv7kkl2vlpp6" path="res://assets/floor_1/cutscenes/bubble bubble (blue).png" id="2_gg43a"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_rcnqd"]
+[ext_resource type="Resource" uid="uid://bxo6j35kps37h" path="res://dialogue/floor_1/collecting_sword_in_the_cave.dialogue" id="3_1j8at"]
+[ext_resource type="Texture2D" uid="uid://bm0wuvocqv62e" path="res://assets/floor_1/cutscenes/bubble bubble.png" id="5_ap43o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35otj"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q7es"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh1oj"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo70m"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx2xh"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh1mj"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikh4e"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lqqc"]
+atlas = ExtResource("2_gg43a")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxlfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35otj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q7es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh1oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo70m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx2xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh1mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikh4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lqqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xwhp"]
+radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_nugb7"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5rd1"]
+gradient = SubResource("Gradient_nugb7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.825688, 0.233945)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_668o2"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw7iq"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_max0j"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1ywo"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncbjp"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm7rw"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwea8"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6qtm"]
+atlas = ExtResource("5_ap43o")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y70eu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_668o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw7iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_max0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1ywo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncbjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm7rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwea8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6qtm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0x8vj"]
+radius = 39.0128
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvw83"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_200xd"]
+radius = 37.0135
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4tcv"]
+radius = 39.0128
+
+[sub_resource type="Animation" id="Animation_5tpgg"]
+resource_name = "1st_disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qavo6"]
+resource_name = "2nd_disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../2nd (Sword Guard):modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../2nd (Sword Guard)/Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../2nd (Sword Guard)/Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_duult"]
+resource_name = "3rd_disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../3rd (Sword Lower Blade):modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../3rd (Sword Lower Blade)/Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../3rd (Sword Lower Blade)/Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_47t76"]
+resource_name = "4th_disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../4th (Sword Middle Blade):modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../4th (Sword Middle Blade)/Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../4th (Sword Middle Blade)/Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dlsdb"]
+resource_name = "5th_disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../5th (Sword Top Blade):modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../5th (Sword Top Blade)/Light:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../5th (Sword Top Blade)/Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r3x4p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../2nd (Sword Guard):modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../3rd (Sword Lower Blade):modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../4th (Sword Middle Blade):modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../5th (Sword Top Blade):modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Light:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../2nd (Sword Guard)/Light:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../3rd (Sword Lower Blade)/Light:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../4th (Sword Middle Blade)/Light:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../5th (Sword Top Blade)/Light:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../2nd (Sword Guard)/Light:energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Light:energy")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../3rd (Sword Lower Blade)/Light:energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../4th (Sword Middle Blade)/Light:energy")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../5th (Sword Top Blade)/Light:energy")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01qx2"]
+_data = {
+"1st_disappear": SubResource("Animation_5tpgg"),
+"2nd_disappear": SubResource("Animation_qavo6"),
+"3rd_disappear": SubResource("Animation_duult"),
+"4th_disappear": SubResource("Animation_47t76"),
+"5th_disappear": SubResource("Animation_dlsdb"),
+"RESET": SubResource("Animation_r3x4p")
+}
+
+[node name="CollectingSwordPieces" type="Node2D"]
+script = ExtResource("1_k2e4n")
+
+[node name="1st (Sword Bottom)" type="AnimatedSprite2D" parent="."]
+position = Vector2(47, 54)
+sprite_frames = SubResource("SpriteFrames_lxlfp")
+autoplay = "default"
+frame_progress = 0.997455
+
+[node name="Actionable" parent="1st (Sword Bottom)" instance=ExtResource("2_rcnqd")]
+position = Vector2(-79, -44)
+dialogue_resource = ExtResource("3_1j8at")
+dialogue_start = "sword_bottom"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1st (Sword Bottom)/Actionable"]
+position = Vector2(79, 57)
+shape = SubResource("CircleShape2D_5xwhp")
+
+[node name="Light" type="PointLight2D" parent="1st (Sword Bottom)"]
+position = Vector2(1, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_h5rd1")
+
+[node name="2nd (Sword Guard)" type="AnimatedSprite2D" parent="."]
+position = Vector2(70, 171)
+sprite_frames = SubResource("SpriteFrames_y70eu")
+autoplay = "default"
+frame_progress = 0.0384617
+
+[node name="Actionable" parent="2nd (Sword Guard)" instance=ExtResource("2_rcnqd")]
+position = Vector2(-42, 95)
+dialogue_resource = ExtResource("3_1j8at")
+dialogue_start = "sword_guard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2nd (Sword Guard)/Actionable"]
+position = Vector2(43, -86)
+shape = SubResource("CircleShape2D_0x8vj")
+
+[node name="Light" type="PointLight2D" parent="2nd (Sword Guard)"]
+position = Vector2(1, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_h5rd1")
+
+[node name="3rd (Sword Lower Blade)" type="AnimatedSprite2D" parent="."]
+position = Vector2(190, 169)
+sprite_frames = SubResource("SpriteFrames_lxlfp")
+autoplay = "default"
+frame_progress = 0.73259
+
+[node name="Actionable" parent="3rd (Sword Lower Blade)" instance=ExtResource("2_rcnqd")]
+position = Vector2(6, -133)
+dialogue_resource = ExtResource("3_1j8at")
+dialogue_start = "sword_lower_blade"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3rd (Sword Lower Blade)/Actionable"]
+position = Vector2(-5, 139)
+shape = SubResource("CircleShape2D_cvw83")
+
+[node name="Light" type="PointLight2D" parent="3rd (Sword Lower Blade)"]
+position = Vector2(1, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_h5rd1")
+
+[node name="4th (Sword Middle Blade)" type="AnimatedSprite2D" parent="."]
+position = Vector2(146, 9)
+sprite_frames = SubResource("SpriteFrames_y70eu")
+autoplay = "default"
+frame_progress = 0.877325
+
+[node name="Actionable" parent="4th (Sword Middle Blade)" instance=ExtResource("2_rcnqd")]
+position = Vector2(-16, 10)
+dialogue_resource = ExtResource("3_1j8at")
+dialogue_start = "sword_middle_blade"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4th (Sword Middle Blade)/Actionable"]
+position = Vector2(16, -3)
+shape = SubResource("CircleShape2D_200xd")
+
+[node name="Light" type="PointLight2D" parent="4th (Sword Middle Blade)"]
+position = Vector2(1, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_h5rd1")
+
+[node name="5th (Sword Top Blade)" type="AnimatedSprite2D" parent="."]
+position = Vector2(247, 77)
+sprite_frames = SubResource("SpriteFrames_lxlfp")
+autoplay = "default"
+frame_progress = 0.66872
+
+[node name="Actionable" parent="5th (Sword Top Blade)" instance=ExtResource("2_rcnqd")]
+position = Vector2(-351, -127)
+dialogue_resource = ExtResource("3_1j8at")
+dialogue_start = "sword_top_blade"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5th (Sword Top Blade)/Actionable"]
+position = Vector2(350, 130)
+shape = SubResource("CircleShape2D_w4tcv")
+
+[node name="Light" type="PointLight2D" parent="5th (Sword Top Blade)"]
+position = Vector2(1, 5)
+energy = 0.5
+texture = SubResource("GradientTexture2D_h5rd1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../1st (Sword Bottom)")
+libraries = {
+"": SubResource("AnimationLibrary_01qx2")
+}
