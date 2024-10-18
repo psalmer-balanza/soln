@@ -18,7 +18,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="filter"]
+[node name="right" type="MarginContainer" parent="filter"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,11 +29,11 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="filter/right"]
 layout_mode = 2
 color = Color(0.207843, 0.168627, 0.25098, 0.858824)
 
-[node name="MarginContainer3" type="MarginContainer" parent="filter"]
+[node name="left" type="MarginContainer" parent="filter"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,11 +44,11 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer3"]
+[node name="ColorRect" type="ColorRect" parent="filter/left"]
 layout_mode = 2
 color = Color(0.207843, 0.168627, 0.25098, 0.858824)
 
-[node name="MarginContainer4" type="MarginContainer" parent="filter"]
+[node name="bottom" type="MarginContainer" parent="filter"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,11 +60,11 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer4"]
+[node name="ColorRect" type="ColorRect" parent="filter/bottom"]
 layout_mode = 2
 color = Color(0.207843, 0.168627, 0.25098, 0.858824)
 
-[node name="MarginContainer5" type="MarginContainer" parent="filter"]
+[node name="top" type="MarginContainer" parent="filter"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,11 +75,11 @@ offset_bottom = 179.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer5"]
+[node name="ColorRect" type="ColorRect" parent="filter/top"]
 layout_mode = 2
 color = Color(0.207843, 0.168627, 0.25098, 0.858824)
 
-[node name="MarginContainer6" type="MarginContainer" parent="filter"]
+[node name="stopper" type="MarginContainer" parent="filter"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +90,7 @@ offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="filter/MarginContainer6"]
+[node name="ColorRect" type="ColorRect" parent="filter/stopper"]
 layout_mode = 2
 color = Color(0.207843, 0.168627, 0.25098, 0)
 

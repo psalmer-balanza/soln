@@ -2,6 +2,7 @@ extends Control
 
 @onready var congrats_screen = $Congratulations
 @onready var fraction_problem = $FractionProblem
+@onready var quick_tutorial = $Tutorials/QuickTutorial
 
 var animation_player: AnimatedSprite2D
 

@@ -10,3 +10,7 @@ var Enemy_HP = 100
 var Current_HP = 100
 var Question = false
 var tilemap: TileMapLayer
+
+# tutorial
+var has_done_same_denum_tutorial: bool = false
+var has_done_diff_denum_tutorial: bool = false

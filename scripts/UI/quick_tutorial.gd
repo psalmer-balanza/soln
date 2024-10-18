@@ -1,7 +1,8 @@
 extends Control
 
-signal change
+@export var next:Control
 
 func _on_close_button_pressed() -> void:
-	emit_signal("change")
+	if next != null:
+		next.visible = true
 	visible = false

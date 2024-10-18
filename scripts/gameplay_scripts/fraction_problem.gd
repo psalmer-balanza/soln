@@ -31,6 +31,11 @@ var question_index:int = 0
 
 @onready var submit_button = $VBoxContainer/Submit/SubmitAnswer
 
+# Tutorials
+@onready var quick_tutorial = $"../Tutorials/QuickTutorial"
+@onready var quick_tutorial_3 = $"../Tutorials/QuickTutorial3"
+@onready var label_4 = $"../Tutorials/QuickTutorial4/Content/Label"
+
 var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
 
@@ -70,7 +75,24 @@ func _display_question():
 		num2.text = str(questions[question_index][2])
 		denum2.text = str(questions[question_index][3])
 		operator.text = str(questions[question_index][4])
+		
+		tutorial(denum1.text, denum2.text)
 
+
+func tutorial(denum1: String, denum2: String):
+		# Tutorial for same denominator
+		if denum1 == denum2 and !Global.has_done_same_denum_tutorial:
+			quick_tutorial.visible = true
+			Global.has_done_same_denum_tutorial = true
+			
+		# Tutorial for different denominator
+		elif denum1 != denum2 and !Global.has_done_diff_denum_tutorial:
+			quick_tutorial_3.visible = true
+			Global.has_done_same_denum_tutorial = true
+			var lcd = GlobalFractionFunctions.get_lcd(int(denum1), int(denum2))
+			
+			label_4.text = "In this example,\n " + str(denum1) + " and " + str(denum2) + " has an LCM of " + str(lcd)
+	
 func _disable_questions():
 	emit_signal("all_done")
 	

@@ -484,9 +484,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("24_ek2r0")
 
-[node name="QuickTutorial" parent="Tutorials" instance=ExtResource("24_b43bd")]
+[node name="QuickTutorial" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("24_b43bd")]
 offset_right = 1024.0
 offset_bottom = 576.0
+next = NodePath("../QuickTutorial2")
 
 [node name="MarginContainer" parent="Tutorials/QuickTutorial/filter" index="0"]
 offset_left = 540.0
@@ -515,8 +516,9 @@ offset_bottom = 499.0
 [node name="CloseButton" parent="Tutorials/QuickTutorial/Close" index="0"]
 text = "NEXT"
 
-[node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("24_b43bd")]
+[node name="QuickTutorial2" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("24_b43bd")]
 visible = false
+next = NodePath("../QuickTutorial3")
 
 [node name="MarginContainer" parent="Tutorials/QuickTutorial2/filter" index="0"]
 offset_left = 540.0
@@ -597,8 +599,6 @@ offset_right = 126.0
 [connection signal="body_exited" from="butter" to="butter" method="_on_body_exited"]
 [connection signal="pressed" from="UI/Control/Oh no/incorrect" to="board" method="_on_incorrect_pressed"]
 [connection signal="pressed" from="MarginContainer/cook_button" to="board" method="_on_cook_button_pressed"]
-[connection signal="change" from="Tutorials/QuickTutorial" to="Tutorials" method="_on_quick_tutorial_change"]
-[connection signal="change" from="Tutorials/QuickTutorial2" to="Tutorials" method="_on_quick_tutorial_2_change"]
 
 [editable path="ItemContainer/butter2"]
 [editable path="ItemContainer/mushroom2"]

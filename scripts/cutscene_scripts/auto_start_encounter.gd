@@ -12,7 +12,7 @@ func disable_auto_actionable():
 	collision_shape_2d.disabled = true
 
 # Activated when main character walks into a autostart scene
-func _on_area_shape_entered():
+func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	# To prevent spawning multiple dialogues
 	if not PlayerState.player_in_dialogue:
 		print("shape entered")

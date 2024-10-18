@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d12j8haieiyg2"]
+[gd_scene load_steps=38 format=3 uid="uid://d12j8haieiyg2"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_teu7h"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_ewn1i"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="12_2iwgc"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="13_44j4r"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="14_sbx04"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
 atlas = ExtResource("4_vo60v")
@@ -540,6 +541,8 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
+[node name="QuickTutorial" parent="." instance=ExtResource("14_sbx04")]
+
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2iwgc")
 volume_db = -23.583
@@ -553,3 +556,5 @@ volume_db = -24.36
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]
+
+[editable path="QuickTutorial"]
