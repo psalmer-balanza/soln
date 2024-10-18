@@ -1,17 +1,17 @@
-[gd_scene load_steps=50 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=51 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
-[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/objective_overlay.tscn" id="2_n3dp3"]
+[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/floor1/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
 [ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
-[ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/state_machine.gd" id="7_u7ptv"]
-[ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/idle_state.gd" id="8_5n5vl"]
-[ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/moving_state.gd" id="9_bdkni"]
-[ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/player_dialogue_state.gd" id="10_uarnf"]
+[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
+[ext_resource type="Script" path="res://scripts/states/idle_state.gd" id="8_5n5vl"]
+[ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="9_bdkni"]
+[ext_resource type="Script" path="res://scripts/states/player_dialogue_state.gd" id="10_uarnf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7731s"]
 atlas = ExtResource("2_emqss")
@@ -268,6 +268,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob2iv"]
 radius = 33.0151
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bynmx"]
+radius = 26.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wr5f8"]
 radius = 40.3113
 
@@ -304,11 +307,21 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 shape = SubResource("CircleShape2D_ob2iv")
+debug_color = Color(0.729412, 0.47451, 0, 0.0627451)
+
+[node name="RadialDialogueIndicatorFinder" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadialDialogueIndicatorFinder"]
+shape = SubResource("CircleShape2D_bynmx")
+debug_color = Color(0.753369, 0.457743, 1.15514e-06, 0.180392)
 
 [node name="AutoStartEncounterFinder" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoStartEncounterFinder"]
 shape = SubResource("CircleShape2D_wr5f8")
+debug_color = Color(0.696507, 0.480085, 0.335533, 0.156863)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(1, 7)

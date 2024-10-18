@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://cvn3kdgd4qnx5"]
 
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="1_54fms"]
-[ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/saisai.gd" id="1_x55dq"]
+[ext_resource type="Script" path="res://scripts/character_scripts/npc/saisai.gd" id="1_x55dq"]
 [ext_resource type="Texture2D" uid="uid://dg5umwl6c1mbx" path="res://assets/floor_1/cutscenes/Saisai Moving Colored Rock.png" id="2_2s37p"]
-[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/speech_baloon.tscn" id="2_wlxon"]
+[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/floor1/radial_dialogue_indicator.tscn" id="2_mid76"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_ysvw2"]
 [ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="3_crl56"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="3_h52pa"]
@@ -151,8 +151,8 @@ radius = 30.0167
 [node name="Saisai" type="CharacterBody2D"]
 script = ExtResource("1_x55dq")
 
-[node name="SpeechBalloon" parent="." instance=ExtResource("2_wlxon")]
-position = Vector2(2, -39)
+[node name="RadialDialogueIndicator" parent="." instance=ExtResource("2_mid76")]
+position = Vector2(-89, -56)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -4)

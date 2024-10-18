@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 @onready var talking_sounds: AudioStreamPlayer = $TalkingSounds
+@onready var next_dialogue_indicator: TextureRect = $Balloon/TextureRect/NextDialogueIndicator
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -22,7 +23,12 @@ var resource: DialogueResource
 var temporary_game_states: Array = []
 
 ## See if we are waiting for the player
-var is_waiting_for_input: bool = false
+var is_waiting_for_input: bool = false:
+	set(value): #Indicator visible when waiting for input 
+		is_waiting_for_input = value
+		next_dialogue_indicator.visible = value
+	get:
+		return is_waiting_for_input
 
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
@@ -95,6 +101,7 @@ var dialogue_line: DialogueLine:
 
 func _ready() -> void:
 	balloon.hide()
+	next_dialogue_indicator.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
 	# If the responses menu doesn't have a next action set, use this one
@@ -171,6 +178,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
 	if not letter in [".", " "]:
+		talking_sounds.pitch_scale = randf_range(0.8, 1.2)
 		talking_sounds.play()
 
 #endregion

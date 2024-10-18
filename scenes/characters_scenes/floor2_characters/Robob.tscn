@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bx608nh6yagqs"]
 
-[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/speech_baloon.tscn" id="1_tlx6y"]
+[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/floor1/speech_baloon.tscn" id="1_tlx6y"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_6m72f"]
 [ext_resource type="Resource" uid="uid://b6l6hitn5eqeb" path="res://dialogue/floor_2/robob_first_meeting.dialogue" id="3_4v4ui"]
 [ext_resource type="Texture2D" uid="uid://ov35wo6p8nd3" path="res://assets/floor_2/npc/Robob spritesheet.png" id="4_0v6u5"]

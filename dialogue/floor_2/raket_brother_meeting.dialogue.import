@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ce10v6bqdq75y"
+path="res://.godot/imported/raket_brother_meeting.dialogue-d508bcc13702ecc9fffb0633f7fb5de8.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/raket_brother_meeting.dialogue"
+dest_files=["res://.godot/imported/raket_brother_meeting.dialogue-d508bcc13702ecc9fffb0633f7fb5de8.tres"]
+
+[params]
+
+defaults=true

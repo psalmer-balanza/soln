@@ -1,7 +1,7 @@
 extends Node2D
 @onready var label: Label = $Label
 var quest_status := {}
-
+@onready var typing_sfx: AudioStreamPlayer = $TypingSFX
 # Typewriter effect variables
 @export var typing_speed := 0.05  # Speed of the typewriter effect
 var typewriter_timer := 0.0
@@ -31,6 +31,7 @@ func _ready() -> void:
 		"placeholder_93121233": false,
 		"placeholder_10": false
 	}
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var cq = DialogueState.current_quest
@@ -77,6 +78,9 @@ func _process(delta: float) -> void:
 			typewriter_timer = typing_speed
 			current_characters += 1
 			label.visible_characters = current_characters
+			if typing_sfx.playing == false:  # Avoid overlapping sounds
+				typing_sfx.pitch_scale = randf_range(0.70, 0.95)
+				typing_sfx.play()
 
 func handle_quest_label(quest_name: String, objective_text: String) -> void:
 	if not quest_status[quest_name]:

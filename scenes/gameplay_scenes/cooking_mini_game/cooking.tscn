@@ -489,21 +489,6 @@ offset_right = 1024.0
 offset_bottom = 576.0
 next = NodePath("../QuickTutorial2")
 
-[node name="MarginContainer" parent="Tutorials/QuickTutorial/filter" index="0"]
-offset_left = 540.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial/filter" index="1"]
-offset_top = -3.0
-offset_right = 288.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial/filter" index="2"]
-offset_left = 328.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial/filter" index="3"]
-offset_left = 328.0
-offset_right = 500.0
-offset_bottom = 190.0
-
 [node name="Label" parent="Tutorials/QuickTutorial/Content" index="1"]
 text = "Click on the ingredients to pick them up"
 
@@ -519,26 +504,6 @@ text = "NEXT"
 [node name="QuickTutorial2" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("24_b43bd")]
 visible = false
 next = NodePath("../QuickTutorial3")
-
-[node name="MarginContainer" parent="Tutorials/QuickTutorial2/filter" index="0"]
-offset_left = 540.0
-offset_top = 443.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial2/filter" index="1"]
-offset_top = -3.0
-offset_right = 288.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial2/filter" index="2"]
-offset_left = 328.0
-offset_top = -2.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial2/filter" index="3"]
-offset_left = 554.0
-offset_right = 1021.0
-offset_bottom = 83.0
-
-[node name="MarginContainer6" parent="Tutorials/QuickTutorial2/filter" index="4"]
-offset_right = 981.0
 
 [node name="Content" parent="Tutorials/QuickTutorial2" index="1"]
 offset_left = 28.0
@@ -560,27 +525,6 @@ text = "NEXT"
 
 [node name="QuickTutorial3" parent="Tutorials" instance=ExtResource("24_b43bd")]
 visible = false
-
-[node name="MarginContainer" parent="Tutorials/QuickTutorial3/filter" index="0"]
-offset_left = 540.0
-
-[node name="MarginContainer3" parent="Tutorials/QuickTutorial3/filter" index="1"]
-offset_top = 114.0
-offset_right = 221.0
-
-[node name="MarginContainer4" parent="Tutorials/QuickTutorial3/filter" index="2"]
-offset_left = 261.0
-offset_top = -12.0
-offset_right = 500.0
-
-[node name="MarginContainer5" parent="Tutorials/QuickTutorial3/filter" index="3"]
-offset_left = 237.0
-offset_right = 221.0
-offset_bottom = 75.0
-
-[node name="MarginContainer6" parent="Tutorials/QuickTutorial3/filter" index="4"]
-offset_left = 24.0
-offset_right = 426.0
 
 [node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
 text = "Follow the recipe and if you're ready click on the cook button"

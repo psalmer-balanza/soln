@@ -14,15 +14,15 @@ if saisai_moving_rocks_quest_done
 		set saisai_quest_progress = 1
 		set remove_saisai_speech_bubble = false
 		set disable_saisai_moving_rocks_quest = true
-		(She didn't mention where her house was)
+		(Wait... she didn't mention where her house was)
 		=> end
 else 
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
 	Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 
-	Saisai: And I can’t even budge them! Isn’t that silly? Teehee~.
+	Saisai: And I can’t even budge them! Isn’t that silly? Teehee~
 	Saisai: Maybe you could lend me a hand? Pretty pleeeease?
-	(The inscriptions are upside down)
+	(Aren't these inscriptions upside down?)
 	- Sure
 		set current_quest = "saisai_wheelbarrow"
 		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")

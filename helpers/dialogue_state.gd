@@ -33,8 +33,6 @@ var do_raket_blacksmith_animation: bool = false
 var dead_robot_appeared: bool = false
 func dead_robot_scene():
 	dead_robot_appeared = true
-	emit_signal("dead_robot_scene")
-	current_quest = "dead_robots"
 
 var dead_robot_disappeared: bool = false
 func dead_robot_scene_finished():

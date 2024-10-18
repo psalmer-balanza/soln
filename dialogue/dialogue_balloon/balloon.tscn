@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=17 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue_balloon/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bfl2h2w5xaxe" path="res://dialogue/dialogue box.png" id="2_ce08o"]
 [ext_resource type="FontFile" uid="uid://die4hdtmo5chc" path="res://dialogue/Retro Gaming.ttf" id="2_k3wn5"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://82f2xr1nobr6" path="res://dialogue/Next Dialogue Indicator.png" id="5_pe3ru"]
 [ext_resource type="Theme" uid="uid://dytyv4wft7gjb" path="res://dialogue/dialogue_theme.tres" id="6_ut6d7"]
-[ext_resource type="AudioStream" uid="uid://dkr5ahibjsli6" path="res://audio/sound_effects/Bubble Blip - Sound Effect (FREE Download).wav" id="7_vu4ma"]
+[ext_resource type="AudioStream" uid="uid://dgvieh0twi3t5" path="res://audio/sound_effects/Bubble Blip - Sound Effect (FREE Download).wav" id="7_vu4ma"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -66,6 +67,64 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+
+[sub_resource type="Animation" id="Animation_82s65"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(918, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(136, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_crkge"]
+resource_name = "bobbing_default"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(918, -0.25, 0, 0.25, 0, 918, -0.25, 0, 0.25, 0, 918, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(136, -0.25, 0, 0.25, 0, 128, -0.25, 0, 0.25, 0, 136, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ri7k3"]
+_data = {
+"RESET": SubResource("Animation_82s65"),
+"bobbing_default": SubResource("Animation_crkge")
+}
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -132,6 +191,21 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
+[node name="NextDialogueIndicator" type="TextureRect" parent="Balloon/TextureRect"]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 136.0
+offset_right = 965.0
+offset_bottom = 183.0
+texture = ExtResource("5_pe3ru")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/TextureRect/NextDialogueIndicator"]
+libraries = {
+"": SubResource("AnimationLibrary_ri7k3")
+}
+autoplay = "bobbing_default"
+
 [node name="Portrait" type="TextureRect" parent="Balloon"]
 unique_name_in_owner = true
 z_index = -1
@@ -179,7 +253,8 @@ text_overrun_behavior = 3
 
 [node name="TalkingSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_vu4ma")
-volume_db = -27.238
+volume_db = -24.762
+pitch_scale = 1.33
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="spoke" from="Balloon/TextureRect/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

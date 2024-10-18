@@ -18,6 +18,7 @@ script = ExtResource("1_bf44x")
 
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
+layout_mode = 0
 offset_left = -32.0
 offset_top = -13.0
 offset_right = 1052.0
@@ -25,6 +26,7 @@ offset_bottom = 605.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="board" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 87.0
 offset_top = 44.0
 offset_right = 170.0
@@ -40,6 +42,7 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="subtraction" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 122.0
 offset_right = 418.0
@@ -190,6 +193,7 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="submit" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 367.0
 offset_right = 402.0

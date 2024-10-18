@@ -1,0 +1,7 @@
+~ start
+set in_dialogue = true
+
+Woah where am I? [wait=0.5] There must be something in here that can tell me where to go.
+~ end
+set in_dialogue = false
+=> END

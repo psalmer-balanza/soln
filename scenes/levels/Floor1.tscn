@@ -21,15 +21,15 @@
 [ext_resource type="PackedScene" uid="uid://trxctaaesrgo" path="res://scenes/characters_scenes/floor1_characters/snekkers.tscn" id="14_5ewdd"]
 [ext_resource type="Texture2D" uid="uid://ctryrrodivep0" path="res://scenes/levels/test_floor1/All in one ground Decor.png" id="14_m21wj"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="14_mjtyp"]
-[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/saisai_rock_scene.tscn" id="16_awl35"]
+[ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/floor1/saisai_rock_scene.tscn" id="16_awl35"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="17_frjke"]
-[ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/movable_shiny_rock.tscn" id="19_7pd8a"]
-[ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/raket_stealing.tscn" id="24_yrk65"]
-[ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/collecting_sword_pieces.tscn" id="25_t57pw"]
-[ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/dead_robot_scene.tscn" id="26_5o1n3"]
-[ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/pipe_entrance_scene.tscn" id="27_55muk"]
-[ext_resource type="PackedScene" uid="uid://xnm2hgu0mopn" path="res://scenes/cutscenes/barrier_raket_house.tscn" id="27_gjv3b"]
+[ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/floor1/movable_shiny_rock.tscn" id="19_7pd8a"]
+[ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/floor1/raket_stealing.tscn" id="24_yrk65"]
+[ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/floor1/collecting_sword_pieces.tscn" id="25_t57pw"]
+[ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/floor1/dead_robot_scene.tscn" id="26_5o1n3"]
+[ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/floor1/pipe_entrance_scene.tscn" id="27_55muk"]
+[ext_resource type="PackedScene" uid="uid://xnm2hgu0mopn" path="res://scenes/cutscenes/floor1/barrier_raket_house.tscn" id="27_gjv3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pbk6"]
 texture = ExtResource("1_3mv17")
@@ -871,8 +871,11 @@ tile_set = SubResource("TileSet_sbqc4")
 tile_map_data = PackedByteArray("AAAVAA8AAQACAAEAAAATAA4AAQAAAAAAAAATAA8AAQAAAAEAAAAUAA4AAQABAAAAAAAUAA8AAQABAAEAAAAVAA4AAQACAAAAAAAWAA4AAQADAAAAAAAWAA8AAQADAAEAAAAXAA8AAAACAAIAAAAYABAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_cdkk8")
 
+[node name="DeadRobotScene" parent="." instance=ExtResource("26_5o1n3")]
+position = Vector2(971, 1010)
+
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(362, 755)
+position = Vector2(994, 1049)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -962,9 +965,6 @@ color = Color(0.323096, 0.268242, 0.383669, 1)
 position = Vector2(321, 800)
 
 [node name="SaisaiRockScene" parent="Cutscenes" instance=ExtResource("16_awl35")]
-
-[node name="DeadRobotScene" parent="Cutscenes" instance=ExtResource("26_5o1n3")]
-position = Vector2(635, 224)
 
 [node name="RaketStealing" parent="Cutscenes" instance=ExtResource("24_yrk65")]
 position = Vector2(865, 251)

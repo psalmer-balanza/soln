@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://twxe74r43861"
+path="res://.godot/imported/fresh_spawn.dialogue-08c29866c6f53810b2d55ac4c86aa3ee.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/fresh_spawn.dialogue"
+dest_files=["res://.godot/imported/fresh_spawn.dialogue-08c29866c6f53810b2d55ac4c86aa3ee.tres"]
+
+[params]
+
+defaults=true

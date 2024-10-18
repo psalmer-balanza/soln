@@ -16,7 +16,7 @@ func _ready():
 
 func hide_rock() -> void:
 	$Actionable/CollisionShape2D.disabled = true
-	$ExclamationMark.visible = false
+	$RadialDialogueIndicator.visible = false
 	animation_player.play("rock_disappear")
 	await animation_player.animation_finished
 	print("Rock disappeared")
