@@ -22,20 +22,17 @@ func Update(_delta: float):
 	# If they already in dialogue then just bring you back to the dialogue state
 	# This is for when you return FROM a different scene to floor1 and 
 	# you aren't already in the dialogue state
-	if DialogueState.in_dialogue:
+	if DialogueState.in_dialogue and not in_dialogue:
 		Transitioned.emit(self, "PlayerDialogueState") 
-
-	# Prevent player from entering dialogue state multiple times
-	if in_dialogue:
-		return  # Do not process input while in dialogue
 
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		Transitioned.emit(self, "MovingState")
 		return
 		
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and not in_dialogue:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
+			print("ui accep")
 			in_dialogue = true
 			Transitioned.emit(self, "PlayerDialogueState") 
 		else:
