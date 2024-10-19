@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		"movable_rock":
 			handle_quest_label(cq, "Remove the rock in your path.")
 		"movable_rock_done":
-			handle_quest_label(cq, "Learn more about these \"fractions.\"")
+			handle_quest_label(cq, "Cross the bridge.")
 		"saisai_wheelbarrow":
 			handle_quest_label(cq, "Assist the rabbit creature.")
 		"saisai_house_invite":
