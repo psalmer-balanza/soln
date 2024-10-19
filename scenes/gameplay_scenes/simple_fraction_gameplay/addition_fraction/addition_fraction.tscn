@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cl832rhbalsgq"]
+[gd_scene load_steps=46 format=3 uid="uid://cl832rhbalsgq"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction_old_robot.gd" id="1_0j6rn"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_7i5ep"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="11_6nh2b"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="11_pxuf4"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="12_ofel6"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="12_vjqqi"]
 [ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="12_x1v8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ihx"]
@@ -314,6 +315,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="HelpButton" type="Button" parent="Tutorials"]
+self_modulate = Color(0.462745, 0.764706, 0.47451, 1)
+layout_mode = 0
+offset_left = 76.0
+offset_top = 103.0
+offset_right = 150.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("12_vjqqi")
+text = "Help?"
+
 [node name="QuickTutorial" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
 visible = false
 next = NodePath("../QuickTutorial2")
@@ -369,6 +380,7 @@ next = NodePath("../QuickTutorial5")
 
 [node name="right" parent="Tutorials/QuickTutorial4/filter" index="0"]
 offset_left = 314.0
+offset_right = 986.0
 
 [node name="left" parent="Tutorials/QuickTutorial4/filter" index="1"]
 offset_right = 64.0
@@ -380,7 +392,7 @@ offset_right = 274.0
 
 [node name="top" parent="Tutorials/QuickTutorial4/filter" index="3"]
 offset_left = 104.0
-offset_right = 274.0
+offset_right = 276.0
 
 [node name="Label" parent="Tutorials/QuickTutorial4/Content" index="1"]
 text = ""
@@ -397,11 +409,15 @@ offset_right = 51.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial5/filter" index="2"]
 offset_left = 91.0
+offset_top = 378.0
 offset_right = 135.0
 
 [node name="top" parent="Tutorials/QuickTutorial5/filter" index="3"]
 offset_left = 91.0
 offset_right = 136.0
+
+[node name="Label" parent="Tutorials/QuickTutorial5/Content" index="1"]
+text = ""
 
 [node name="QuickTutorial6" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
 visible = false
@@ -421,6 +437,9 @@ offset_right = 135.0
 offset_left = 91.0
 offset_right = 136.0
 
+[node name="Label" parent="Tutorials/QuickTutorial6/Content" index="1"]
+text = ""
+
 [node name="QuickTutorial7" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
 visible = false
 next = NodePath("../QuickTutorial8")
@@ -438,6 +457,9 @@ offset_right = 261.0
 [node name="top" parent="Tutorials/QuickTutorial7/filter" index="3"]
 offset_left = 242.0
 offset_right = 261.0
+
+[node name="Label" parent="Tutorials/QuickTutorial7/Content" index="1"]
+text = ""
 
 [node name="QuickTutorial8" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
 visible = false
@@ -457,6 +479,9 @@ offset_right = 261.0
 offset_left = 242.0
 offset_right = 261.0
 
+[node name="Label" parent="Tutorials/QuickTutorial8/Content" index="1"]
+text = ""
+
 [node name="QuickTutorial9" parent="Tutorials" instance=ExtResource("12_x1v8c")]
 visible = false
 
@@ -474,6 +499,9 @@ offset_right = 529.0
 offset_left = 378.0
 offset_right = 529.0
 
+[node name="Label" parent="Tutorials/QuickTutorial9/Content" index="1"]
+text = ""
+
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6nh2b")
 volume_db = -33.73
@@ -485,6 +513,7 @@ volume_db = -27.171
 [connection signal="all_done" from="FractionProblem" to="." method="_on_fraction_problem_all_done"]
 [connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]
 [connection signal="incorrect" from="FractionProblem" to="." method="_on_fraction_problem_incorrect"]
+[connection signal="button_down" from="Tutorials/HelpButton" to="." method="_on_help_button_button_down"]
 
 [editable path="Tutorials/QuickTutorial"]
 [editable path="Tutorials/QuickTutorial2"]

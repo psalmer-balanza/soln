@@ -9,7 +9,7 @@ signal incorrect
 # place questions here
 # question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
 var questions: Array = [
-	[3, 2, 2, 5, "+"],  # First fraction
+	[4, 5, 1, 3, "+"],  # First fraction
 	[3, 2, 1, 2, "+"],  # Second fraction
 	[4, 3, 1, 3, "+"],  # Third fraction
 ]
@@ -83,20 +83,18 @@ func _display_question():
 		num2.text = str(questions[question_index][2])
 		denum2.text = str(questions[question_index][3])
 		operator.text = str(questions[question_index][4])
-		
-		tutorial(num1.text, denum1.text, num2.text, denum2.text)
 
 # Tutorial for same and different denominators
-func tutorial(num1: String, denum1: String, num2: String, denum2: String):
+func show_tutorial(num1: String, denum1: String, num2: String, denum2: String):
 		# Tutorial for same denominator
-		if denum1 == denum2 and !Global.has_done_same_denum_tutorial:
+		if denum1 == denum2:
+			print("same denominator tutorial")
 			quick_tutorial.visible = true
-			Global.has_done_same_denum_tutorial = true
 			
 		# Tutorial for different denominator
-		elif denum1 != denum2 and !Global.has_done_diff_denum_tutorial:
+		elif denum1 != denum2:
+			print("diff denominator tutorial")
 			quick_tutorial_3.visible = true
-			Global.has_done_diff_denum_tutorial = true
 			var lcd = GlobalFractionFunctions.get_lcd(int(denum1), int(denum2))
 			var balanced_values = GlobalFractionFunctions.balance_num_and_denum(int(num1), int(denum1), int(num2), int(denum2), lcd)
 		
