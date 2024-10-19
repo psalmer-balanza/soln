@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=62 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
 [ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
+[ext_resource type="Texture2D" uid="uid://cbt2kcvcmhgou" path="res://assets/main_character/main_character_wakeup.png" id="7_c02fe"]
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
 [ext_resource type="Script" path="res://scripts/states/idle_state.gd" id="8_5n5vl"]
 [ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="9_bdkni"]
@@ -92,6 +93,34 @@ region = Rect2(0, 384, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdyue"]
 atlas = ExtResource("4_mkejk")
 region = Rect2(0, 448, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryec8"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swhuu"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyxw0"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sv48"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ickr0"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv46j"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v07s"]
+atlas = ExtResource("7_c02fe")
+region = Rect2(0, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0657c"]
 atlas = ExtResource("3_csoht")
@@ -220,6 +249,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ryec8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swhuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyxw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sv48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ickr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv46j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v07s")
+}],
+"loop": false,
+"name": &"spawn-in",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0657c")
 }, {
 "duration": 1.0,
@@ -309,7 +364,7 @@ tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.2),
+"times": PackedFloat32Array(0, 0.6, 1.2),
 "transitions": PackedFloat32Array(0.101532, 2.21914, 1),
 "update": 0,
 "values": [Vector2(10, 10), Vector2(9, 9), Vector2(3, 3)]
@@ -333,13 +388,14 @@ volume_db = -14.991
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
 [node name="ActionableFinder" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 
@@ -348,6 +404,7 @@ shape = SubResource("CircleShape2D_ob2iv")
 debug_color = Color(0.729412, 0.47451, 0, 0.0627451)
 
 [node name="RadialDialogueIndicatorFinder" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 32
 
@@ -356,6 +413,7 @@ shape = SubResource("CircleShape2D_bynmx")
 debug_color = Color(0.753369, 0.457743, 1.15514e-06, 0.180392)
 
 [node name="AutoStartEncounterFinder" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoStartEncounterFinder"]
 shape = SubResource("CircleShape2D_wr5f8")
@@ -382,9 +440,12 @@ script = ExtResource("9_bdkni")
 script = ExtResource("10_uarnf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-10, 5, -10, 12, -8, 12, -8, 15, -2, 15, -2, 12, 2, 12, 2, 15, 8, 15, 8, 12, 10, 12, 10, 5, 15, 5, 15, -5, 16, -5, 16, -8, 15, -8, 15, -14, 14, -15, 7, -15, 7, -16, 5, -16, 5, -15, -3, -15, -3, -16, -6, -16, -6, -15, -13, -15, -14, -14, -14, -8, -15, -8, -15, -1, -14, -1, -14, 5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h2kok")
 }
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
