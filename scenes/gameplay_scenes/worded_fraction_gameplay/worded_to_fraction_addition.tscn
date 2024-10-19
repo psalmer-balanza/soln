@@ -548,12 +548,6 @@ volume_db = -23.583
 stream = ExtResource("13_44j4r")
 volume_db = -24.36
 
-[node name="Tutorials" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1025.0
-offset_bottom = 578.0
-
 [connection signal="correct" from="." to="." method="_on_correct_answer"]
 [connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

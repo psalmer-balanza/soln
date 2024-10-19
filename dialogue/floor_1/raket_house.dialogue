@@ -27,7 +27,7 @@ elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade a
 	set current_quest = "sword_finished"
 	Raket: Great job, {{player_username}}!!!
 	Raket: Now that we have all the ore pieces, I can finally build this sword. 
-	Raket: Stand back! This may get hot. [wait=5] [do save_player_position_and_change_scene("res://scenes/cutscenes/raket_smithing_cutscene.tscn" ,"res://scenes/levels/Floor1.tscn")]
+	Raket: Stand back! This may get hot. [wait=5] [do save_player_position_and_change_scene("res://scenes/cutscenes/floor1/raket_smithing_cutscene.tscn" ,"res://scenes/levels/Floor1.tscn")]
 	=> end
 elif raket_house_quest_complete
 	Raket: See I told you I will still have more of the pie slices to eat...
