@@ -363,8 +363,9 @@ offset_right = 271.0
 [node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
 text = "To add fractions with the different denominators, first find the Least Common Denominator (LCD)."
 
-[node name="QuickTutorial4" parent="Tutorials" instance=ExtResource("12_x1v8c")]
+[node name="QuickTutorial4" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
 visible = false
+next = NodePath("../QuickTutorial5")
 
 [node name="right" parent="Tutorials/QuickTutorial4/filter" index="0"]
 offset_left = 314.0
@@ -384,6 +385,95 @@ offset_right = 274.0
 [node name="Label" parent="Tutorials/QuickTutorial4/Content" index="1"]
 text = ""
 
+[node name="QuickTutorial5" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
+next = NodePath("../QuickTutorial6")
+
+[node name="right" parent="Tutorials/QuickTutorial5/filter" index="0"]
+offset_left = 175.0
+
+[node name="left" parent="Tutorials/QuickTutorial5/filter" index="1"]
+offset_right = 51.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial5/filter" index="2"]
+offset_left = 91.0
+offset_right = 135.0
+
+[node name="top" parent="Tutorials/QuickTutorial5/filter" index="3"]
+offset_left = 91.0
+offset_right = 136.0
+
+[node name="QuickTutorial6" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
+next = NodePath("../QuickTutorial7")
+
+[node name="right" parent="Tutorials/QuickTutorial6/filter" index="0"]
+offset_left = 175.0
+
+[node name="left" parent="Tutorials/QuickTutorial6/filter" index="1"]
+offset_right = 51.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial6/filter" index="2"]
+offset_left = 91.0
+offset_right = 135.0
+
+[node name="top" parent="Tutorials/QuickTutorial6/filter" index="3"]
+offset_left = 91.0
+offset_right = 136.0
+
+[node name="QuickTutorial7" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
+next = NodePath("../QuickTutorial8")
+
+[node name="right" parent="Tutorials/QuickTutorial7/filter" index="0"]
+offset_left = 301.0
+
+[node name="left" parent="Tutorials/QuickTutorial7/filter" index="1"]
+offset_right = 202.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial7/filter" index="2"]
+offset_left = 242.0
+offset_right = 261.0
+
+[node name="top" parent="Tutorials/QuickTutorial7/filter" index="3"]
+offset_left = 242.0
+offset_right = 261.0
+
+[node name="QuickTutorial8" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
+next = NodePath("../QuickTutorial9")
+
+[node name="right" parent="Tutorials/QuickTutorial8/filter" index="0"]
+offset_left = 301.0
+
+[node name="left" parent="Tutorials/QuickTutorial8/filter" index="1"]
+offset_right = 202.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial8/filter" index="2"]
+offset_left = 242.0
+offset_right = 261.0
+
+[node name="top" parent="Tutorials/QuickTutorial8/filter" index="3"]
+offset_left = 242.0
+offset_right = 261.0
+
+[node name="QuickTutorial9" parent="Tutorials" instance=ExtResource("12_x1v8c")]
+visible = false
+
+[node name="right" parent="Tutorials/QuickTutorial9/filter" index="0"]
+offset_left = 569.0
+
+[node name="left" parent="Tutorials/QuickTutorial9/filter" index="1"]
+offset_right = 338.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial9/filter" index="2"]
+offset_left = 378.0
+offset_right = 529.0
+
+[node name="top" parent="Tutorials/QuickTutorial9/filter" index="3"]
+offset_left = 378.0
+offset_right = 529.0
+
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6nh2b")
 volume_db = -33.73
@@ -400,3 +490,8 @@ volume_db = -27.171
 [editable path="Tutorials/QuickTutorial2"]
 [editable path="Tutorials/QuickTutorial3"]
 [editable path="Tutorials/QuickTutorial4"]
+[editable path="Tutorials/QuickTutorial5"]
+[editable path="Tutorials/QuickTutorial6"]
+[editable path="Tutorials/QuickTutorial7"]
+[editable path="Tutorials/QuickTutorial8"]
+[editable path="Tutorials/QuickTutorial9"]

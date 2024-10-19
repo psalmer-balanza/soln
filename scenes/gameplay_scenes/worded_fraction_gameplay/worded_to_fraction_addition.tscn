@@ -541,7 +541,13 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="QuickTutorial" parent="." instance=ExtResource("14_sbx04")]
+[node name="Tutorials" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuickTutorial" parent="Tutorials" instance=ExtResource("14_sbx04")]
 
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2iwgc")
@@ -556,5 +562,3 @@ volume_db = -24.36
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]
-
-[editable path="QuickTutorial"]
