@@ -2,6 +2,7 @@ extends Control
 
 @onready var inner_dial = $safe_dial/inner
 @onready var congrats = $Congrats
+@onready var fade = $fade
 
 var safe_opened = false
 
@@ -20,7 +21,10 @@ func _on_fraction_problem_correct() -> void:
 	tween.tween_property(inner_dial, "rotation", new_rotation, .75)
 	await tween.finished
 	if safe_opened:
-		congrats.visible = true
+		fade.play("fade")
 
 func _on_fraction_problem_all_done() -> void:
 	safe_opened = true
+
+func _on_fade_animation_finished(anim_name: StringName) -> void:
+	congrats.visible = true

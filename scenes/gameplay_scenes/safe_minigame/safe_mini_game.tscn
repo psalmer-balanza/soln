@@ -1,12 +1,74 @@
-[gd_scene load_steps=8 format=3 uid="uid://qj4ux4unjrtb"]
+[gd_scene load_steps=12 format=3 uid="uid://qj4ux4unjrtb"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.gd" id="1_68juf"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="1_b05pv"]
 [ext_resource type="PackedScene" uid="uid://dkqfovnosijms" path="res://scenes/gameplay_scenes/fraction_problem.tscn" id="2_7cpns"]
+[ext_resource type="Texture2D" uid="uid://d4lgw4mbdykeu" path="res://scenes/gameplay_scenes/safe_minigame/safe.png" id="2_vk0uk"]
 [ext_resource type="Texture2D" uid="uid://bm0qrmx2u7mct" path="res://scenes/gameplay_scenes/safe_minigame/inner_dial.png" id="3_h2cti"]
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="6_fn7s7"]
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="7_yiq1x"]
+
+[sub_resource type="Animation" id="Animation_wp1mo"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("board:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("board:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hvgnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("board:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("board:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68a3l"]
+_data = {
+"RESET": SubResource("Animation_hvgnm"),
+"fade": SubResource("Animation_wp1mo")
+}
 
 [node name="safe_mini_game" type="Control"]
 layout_mode = 3
@@ -19,18 +81,29 @@ script = ExtResource("1_68juf")
 
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
+layout_mode = 0
 offset_left = -32.0
 offset_top = -13.0
 offset_right = 1052.0
 offset_bottom = 605.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -67.0
+offset_top = 5.0
+offset_right = 189.0
+offset_bottom = 133.0
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("2_vk0uk")
+
 [node name="board" type="MarginContainer" parent="."]
-offset_left = 43.0
-offset_top = 31.0
-offset_right = 116.0
-offset_bottom = 94.0
-scale = Vector2(8, 8)
+layout_mode = 0
+offset_left = 103.0
+offset_top = 70.0
+offset_right = 343.0
+offset_bottom = 245.0
+scale = Vector2(2.6, 2.6)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="board"]
 layout_mode = 2
@@ -40,20 +113,16 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="FractionProblem" parent="." instance=ExtResource("2_7cpns")]
-offset_left = 74.0
-offset_top = 88.0
-offset_right = 334.0
-offset_bottom = 296.0
-scale = Vector2(2, 2)
+[node name="FractionProblem" parent="board" instance=ExtResource("2_7cpns")]
+layout_mode = 2
 
 [node name="safe_dial" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 727.0
-offset_top = 194.0
-offset_right = 767.0
-offset_bottom = 234.0
-scale = Vector2(5, 5)
+offset_left = 793.0
+offset_top = 220.0
+offset_right = 833.0
+offset_bottom = 260.0
+scale = Vector2(3.3, 3.3)
 
 [node name="inner" type="TextureRect" parent="safe_dial"]
 layout_mode = 1
@@ -87,7 +156,13 @@ text = "Congratulations:
 You have cracked
 the safe open"
 
-[connection signal="all_done" from="FractionProblem" to="." method="_on_fraction_problem_all_done"]
-[connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]
+[node name="fade" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_68a3l")
+}
+
+[connection signal="all_done" from="board/FractionProblem" to="." method="_on_fraction_problem_all_done"]
+[connection signal="correct" from="board/FractionProblem" to="." method="_on_fraction_problem_correct"]
+[connection signal="animation_finished" from="fade" to="." method="_on_fade_animation_finished"]
 
 [editable path="Congrats"]
