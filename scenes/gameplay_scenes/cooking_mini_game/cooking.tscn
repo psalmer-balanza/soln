@@ -489,6 +489,16 @@ offset_right = 1024.0
 offset_bottom = 576.0
 next = NodePath("../QuickTutorial2")
 
+[node name="left" parent="Tutorials/QuickTutorial/filter" index="1"]
+offset_right = 277.0
+
+[node name="bottom" parent="Tutorials/QuickTutorial/filter" index="2"]
+offset_left = 317.0
+offset_top = 402.0
+
+[node name="top" parent="Tutorials/QuickTutorial/filter" index="3"]
+offset_left = 317.0
+
 [node name="Label" parent="Tutorials/QuickTutorial/Content" index="1"]
 text = "Click on the ingredients to pick them up"
 
