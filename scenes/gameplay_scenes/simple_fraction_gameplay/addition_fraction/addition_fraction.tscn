@@ -9,12 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://35ry4fuvvgrx" path="res://assets/floor_1/npc/reactions/Saisai_correct.png" id="7_qnkp3"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="8_ab82f"]
 [ext_resource type="Texture2D" uid="uid://dxwfqyv350leo" path="res://assets/floor_1/npc/reactions/Saisai Disappointed.png" id="9_yvbhj"]
-[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="10_0mj3o"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scripts/UI/congratulations.tscn" id="10_0mj3o"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="11_6nh2b"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="11_pxuf4"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="12_ofel6"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="12_vjqqi"]
-[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="12_x1v8c"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scripts/UI/quick_tutorial.tscn" id="12_x1v8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ihx"]
 atlas = ExtResource("4_bregm")

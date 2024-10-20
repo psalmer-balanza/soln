@@ -6,8 +6,35 @@
 [ext_resource type="Texture2D" uid="uid://d4lgw4mbdykeu" path="res://scenes/gameplay_scenes/safe_minigame/safe.png" id="2_vk0uk"]
 [ext_resource type="Texture2D" uid="uid://bm0qrmx2u7mct" path="res://scenes/gameplay_scenes/safe_minigame/inner_dial.png" id="3_h2cti"]
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
-[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="6_fn7s7"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scripts/UI/congratulations.tscn" id="6_fn7s7"]
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="7_yiq1x"]
+
+[sub_resource type="Animation" id="Animation_hvgnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("board:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("board:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wp1mo"]
 resource_name = "fade"
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_hvgnm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("board:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("board:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68a3l"]

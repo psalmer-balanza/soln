@@ -11,7 +11,7 @@
 [ext_resource type="TileSet" uid="uid://bgjpnl2hfvf4o" path="res://tilemaps/floor_2/floor_2/pipe_walkway.tres" id="6_dk1yb"]
 [ext_resource type="Texture2D" uid="uid://bvnaxri8tl12r" path="res://scenes/levels/test_floor2/pipe_below.png" id="6_opsxw"]
 [ext_resource type="TileSet" uid="uid://cbn7paj54rxku" path="res://tilemaps/floor_2/water.tres" id="6_qnjl2"]
-[ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="8_i4yxi"]
+[ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scripts/UI/text_box.tscn" id="8_i4yxi"]
 [ext_resource type="PackedScene" uid="uid://bx608nh6yagqs" path="res://scenes/characters_scenes/floor2_characters/Robob.tscn" id="13_lbwep"]
 [ext_resource type="PackedScene" uid="uid://dfm66kpn4gpd6" path="res://scenes/characters_scenes/floor2_characters/Rat.tscn" id="14_362hh"]
 [ext_resource type="PackedScene" uid="uid://bivjj6edlk0j" path="res://scenes/cutscenes/floor2/fresh_spawn_dialogue.tscn" id="14_onlp4"]

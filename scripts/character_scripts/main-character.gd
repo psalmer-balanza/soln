@@ -10,11 +10,12 @@ var character_direction : Vector2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var actionable_finder: Area2D = $ActionableFinder
+@onready var startup_sound: AudioStreamPlayer = $StartupSound
 
 func _ready():
 	animated_sprite_2d.play("spawn-in")
 	animation_player.play("spawn_in")
-	
+
 	# Pass the player (self) to the state machine
 	state_machine.set_player(self)
 	# Initialize the state machine
@@ -33,4 +34,3 @@ func get_player_position() -> Vector2:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite_2d.play("idle")
-	

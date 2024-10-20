@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/floor1/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
+[ext_resource type="AudioStream" uid="uid://do78b3lo3fvf6" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).wav" id="3_cw7p2"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
 [ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
@@ -338,21 +339,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.83945, 0.770642)
 
-[sub_resource type="Animation" id="Animation_827wa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3, 3)]
-}
-
 [sub_resource type="Animation" id="Animation_htfb4"]
 resource_name = "spawn_in"
 length = 2.0
@@ -369,10 +355,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(10, 10), Vector2(9, 9), Vector2(3, 3)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartupSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h2kok"]
 _data = {
-"RESET": SubResource("Animation_827wa"),
 "spawn_in": SubResource("Animation_htfb4")
 }
 
@@ -381,6 +378,11 @@ script = ExtResource("1_vdtrp")
 
 [node name="ObjectiveOverlay" parent="." instance=ExtResource("2_n3dp3")]
 position = Vector2(39, 31)
+
+[node name="StartupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cw7p2")
+volume_db = -18.67
+pitch_scale = 1.25
 
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4puxp")
@@ -392,7 +394,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(10, 10)
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0
