@@ -1,27 +1,21 @@
 extends Control
 
-@onready var numerator_input: LineEdit = $subtraction/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
-@onready var denominator_input: LineEdit = $subtraction/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
-@onready var first_num_label: Label = $subtraction/VBoxContainer/HBoxContainer/first_fraction/fraction/numerator
-@onready var first_denum_label: Label = $subtraction/VBoxContainer/HBoxContainer/first_fraction/fraction/denominator
-@onready var second_num_label: Label = $subtraction/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
-@onready var second_denum_label: Label = $subtraction/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
-@onready var display_answer: Label = $subtraction/VBoxContainer/result
+# NOTE: 3 fraction problems per waterlogged room
 
-var first_num: int
-var first_denum: int
-var second_num: int
-var second_denum: int
-var is_simplified = false
+@onready var water_level_bar = $water_level/TextureProgressBar
+@onready var congrats = $Congrats
 
-func _subtraction_checker():
-	pass
+var current_water_level = 100
 
+func _process(delta: float) -> void:
+	water_level_bar.value = current_water_level
+	if current_water_level == 0:
+		congrats.visible = true
 
-func _on_submit_answer_pressed() -> void:
-	first_num = 
-	first_denum = first_denum_label
-	second_num
-	second_denum
-	
-	
+func _on_fraction_problem_correct() -> void:
+	var new_level = current_water_level - 35
+	var tween = get_tree().create_tween()
+	if new_level < 0 :
+		new_level = 0
+	tween.tween_property(self, "current_water_level", new_level, .5)
+	print(current_water_level)
