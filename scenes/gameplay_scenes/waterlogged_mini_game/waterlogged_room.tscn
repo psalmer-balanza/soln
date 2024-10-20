@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://btejnuyvn865g"]
+
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/waterlogged_room.gd" id="1_tkp4a"]
+[ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_lxvcq"]
+[ext_resource type="PackedScene" uid="uid://dkqfovnosijms" path="res://scenes/gameplay_scenes/fraction_problem.tscn" id="3_o28af"]
+[ext_resource type="Texture2D" uid="uid://ccplo5vljcw1e" path="res://assets/ui/progress_bar/New Piskel(1).png" id="4_xl110"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="5_05cjd"]
+[ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="6_ayggq"]
+
+[node name="waterlogged_room" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkp4a")
+
+[node name="bg" type="ColorRect" parent="."]
+self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
+layout_mode = 0
+offset_left = -32.0
+offset_top = -13.0
+offset_right = 1052.0
+offset_bottom = 605.0
+color = Color(0.207843, 0.168627, 0.25098, 1)
+
+[node name="board" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 44.0
+offset_right = 170.0
+offset_bottom = 107.0
+scale = Vector2(8, 8)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="board"]
+layout_mode = 2
+texture = ExtResource("2_lxvcq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="FractionProblem" parent="." instance=ExtResource("3_o28af")]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 101.0
+offset_right = 418.0
+offset_bottom = 309.0
+scale = Vector2(2, 2)
+
+[node name="water_level" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 27.0
+offset_right = 1012.0
+offset_bottom = 564.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="water_level"]
+layout_mode = 2
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("4_xl110")
+
+[node name="Congrats" parent="." instance=ExtResource("5_05cjd")]
+visible = false
+next_scene = ExtResource("6_ayggq")
+
+[node name="Label" parent="Congrats/MarginContainer2/MarginContainer" index="0"]
+text = "Congratulations:
+You have
+successfully
+drained the room"
+
+[connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]
+
+[editable path="Congrats"]
