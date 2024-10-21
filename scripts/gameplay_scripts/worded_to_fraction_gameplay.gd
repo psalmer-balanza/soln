@@ -324,3 +324,4 @@ func _on_incorrect_answer():
 		npc_sprite.play("masked_figure_wrong")
 		await npc_sprite.animation_finished
 		npc_sprite.play("masked_figure")
+	Global.user_energy -= 1
