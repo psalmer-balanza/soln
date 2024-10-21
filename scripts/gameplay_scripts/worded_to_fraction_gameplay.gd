@@ -6,7 +6,7 @@ signal incorrect
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	["A magician was cooking two batches of magical mushrooms. In the first batch, she used 2/5 of his total magic power, and in the second batch, he used 3/10​. How much magic power did she use in total?", 2, 5, 3, 10],  # First question fractions
-	["Next one! I had a stock of potions. I used 3/8​ of them in the morning and 5/12 in the afternoon. How many potions did I use in total?", 3, 4, 5, 12],  # Second question fractions
+	["Next one! I had a stock of potions. I used 3/8​ of them in the morning and 5/12 in the afternoon. How many potions did I use in total?", 3, 8, 5, 12],  # Second question fractions
 	["Last one! I was baking pies. One pie was sliced into 3/6 ​, and another was sliced into 5/6​. How much pie do I have altogether?", 3, 6, 5, 6],  # Third question fractions
 	]
 	
