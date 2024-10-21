@@ -3,7 +3,7 @@ set in_dialogue = true
 set current_quest = "movable_rock"
 
 A large rock blocks your path, and a magical inscription appears on its surface.  
-For some reason, this inscription is quite familiar to you, where do you know it from?
+For some reason, this inscription is quite familiar to you.
 To clear the path, solve this riddle inscribed on the rock:
 
 ~ question

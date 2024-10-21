@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://lhpwdogx8dj8"]
 
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/raket_smithing_cutscene.gd" id="1_0v167"]
-[ext_resource type="AudioStream" uid="uid://b66s4apq4ebex" path="res://audio/sound_effects/Raket Smithing.wav" id="2_ycl1b"]
+[ext_resource type="AudioStream" uid="uid://dcb0u78xotq6h" path="res://audio/sound_effects/Raket Smithing.wav" id="2_ycl1b"]
 [ext_resource type="Texture2D" uid="uid://dtasqkj3bgk3y" path="res://assets/floor_1/cutscenes/Raket Smithing 341x192.png" id="3_uxh16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frevl"]

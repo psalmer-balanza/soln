@@ -952,7 +952,6 @@ offset_bottom = 435.0
 scale = Vector2(0.25, 0.25)
 
 [node name="MarginContainer2" parent="tooltipls/monitor1" index="0"]
-offset_top = 0.0
 offset_right = 242.0
 offset_bottom = 98.0
 

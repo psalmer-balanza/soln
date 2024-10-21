@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cvn3kdgd4qnx5"]
+[gd_scene load_steps=29 format=3 uid="uid://cvn3kdgd4qnx5"]
 
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="1_54fms"]
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/saisai.gd" id="1_x55dq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="3_crl56"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="3_h52pa"]
 [ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="5_bsl4d"]
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="9_ga67n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kehd"]
 atlas = ExtResource("2_2s37p")
@@ -148,6 +149,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
 radius = 30.0167
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayirp"]
+radius = 97.0464
+
 [node name="Saisai" type="CharacterBody2D"]
 script = ExtResource("1_x55dq")
 
@@ -167,8 +171,18 @@ dialogue_resource = ExtResource("3_crl56")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(3, -5)
 shape = SubResource("CircleShape2D_jh85t")
+debug_color = Color(0, 0.6, 0.701961, 0.184314)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(3.00001, -5.00003)
 scale = Vector2(1.73366, 1.60069)
 polygon = PackedVector2Array(-2.30726, -8.12148, 2.30725, -8.12148, 5.19132, -4.37309, 5.76814, -0.624711, 9.22902, 3.7484, 9.22902, 6.24732, 7.49858, 8.12152, 5.76814, 8.12152, 4.0377, 6.24732, 2.88407, 6.24732, 2.30725, 7.49679, 2.30725, 8.12152, -2.30726, 8.12152, -2.88408, 6.87206, -4.0377, 6.87206, -4.61452, 8.12152, -5.76815, 8.12152, -8.07541, 6.24732, -8.07541, 4.99786, -6.92178, 2.49894, -6.34496, 2.49894, -6.34496, 0.62475, -5.19133, 1.90735e-05, -5.19133, -1.87417, -4.61452, -1.87417, -4.61452, -4.37309, -4.0377, -4.37309, -4.0377, -5.62256, -3.46089, -5.62256, -3.46089, -6.87202)
+
+[node name="AutoActionable" parent="." instance=ExtResource("9_ga67n")]
+dialogue_resource = ExtResource("3_crl56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+position = Vector2(5, -2)
+shape = SubResource("CircleShape2D_ayirp")
+disabled = true
+debug_color = Color(0, 0.6, 0.701961, 0.109804)

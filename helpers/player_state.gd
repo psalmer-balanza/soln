@@ -6,6 +6,10 @@ var saved_position: Vector2
 var saved_scene: String = "res://scenes/levels/Floor1.tscn"
 var player_in_dialogue: bool = false
 var player_username: String = "Sol'n"
+var player_badges = {
+	"bowl": false,
+	"carrot": false
+}
 
 func save_player_state(position: Vector2, current_scene: String):
 	saved_position = position
@@ -26,7 +30,6 @@ func save_player_position_and_change_scene(new_scene: String, current_scene: Str
 		change_scene(new_scene)
 	else:
 		print("Player node not found")
-
 
 func change_scene(new_scene: String):
 	print("Changing to new scene: ", new_scene)

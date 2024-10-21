@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=65 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -6,8 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
 [ext_resource type="AudioStream" uid="uid://do78b3lo3fvf6" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).wav" id="3_cw7p2"]
+[ext_resource type="Texture2D" uid="uid://b58l5o00kvl2b" path="res://assets/main_character/onscreen_badges/The Cake.png" id="3_jfdhw"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
+[ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="3_mm6sa"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
+[ext_resource type="Texture2D" uid="uid://dahjr18jm1lbr" path="res://assets/main_character/onscreen_badges/The Bowl.png" id="4_vs3nv"]
 [ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
 [ext_resource type="Texture2D" uid="uid://cbt2kcvcmhgou" path="res://assets/main_character/main_character_wakeup.png" id="7_c02fe"]
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
@@ -379,6 +382,50 @@ script = ExtResource("1_vdtrp")
 [node name="ObjectiveOverlay" parent="." instance=ExtResource("2_n3dp3")]
 position = Vector2(39, 31)
 
+[node name="OnscreenBadges" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -51.0
+offset_top = -28.0
+offset_right = -11.0
+offset_bottom = 12.0
+script = ExtResource("3_mm6sa")
+
+[node name="Label" type="Label" parent="OnscreenBadges"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = -65.0
+offset_right = 328.0
+offset_bottom = -29.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 28
+text = "Badges:"
+
+[node name="Badges" type="Control" parent="OnscreenBadges"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bowl" type="TextureRect" parent="OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 202.0
+offset_top = -60.0
+offset_right = 266.0
+offset_bottom = 4.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_vs3nv")
+
+[node name="CakeBadge" type="TextureRect" parent="OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = -50.0
+offset_right = 265.0
+offset_bottom = 14.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_jfdhw")
+
 [node name="StartupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cw7p2")
 volume_db = -18.67
@@ -394,7 +441,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(10, 10)
+zoom = Vector2(3, 3)
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 collision_layer = 0

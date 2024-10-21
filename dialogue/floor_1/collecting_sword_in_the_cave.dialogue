@@ -3,7 +3,7 @@
 set in_dialogue = true
 This glowing material must be one of the materials needed by Raket.
 You see a familiar inscription on the handle of the sword. Though it's a little more complicated this time.
-It reads\: "What is the least common multiple (LCM) of 6 and 8?"
+It reads "What is the least common multiple (LCM) of 6 and 8?"
 - 48
 	Nothing happens, maybe that wasn't the right answer?
 	=> sword_bottom
@@ -25,7 +25,7 @@ It reads\: "What is the least common multiple (LCM) of 6 and 8?"
 set in_dialogue = true
 You find a glowing material in the ground, resting among ancient carvings. 
 Another inscription is etched into its surface.
-It reads: "What is denominator is needed to make 2/5 equal in value to 6/(blank)?"
+It reads "What is denominator is needed to make 2/5 equal in value to 6/(blank)?"
 - The missing denominator is 10
 	The sword guard remains unchanged. Seems incorrect...
 	=> sword_guard
@@ -46,7 +46,7 @@ It reads: "What is denominator is needed to make 2/5 equal in value to 6/(blank)
 set in_dialogue = true
 You discover the another shiny material wedged between some rocks. 
 An inscription runs along its edge.
-It reads: "This shard holds 3/5 of the sword's strength, while another holds 2/10. What is their combined strength?"
+It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10. What is their combined strength?"
 - 3/5 + 2/10 = 5/5
 	The inscription remains dull. That doesn’t seem right...
 	=> sword_lower_blade
@@ -66,7 +66,7 @@ It reads: "This shard holds 3/5 of the sword's strength, while another holds 2/1
 
 set in_dialogue = true
 A glowing material lies partially buried. Ancient symbols are engraved on its surface.
-It reads: "One shard holds 4/7 of the sword’s strength, and another holds 1/7. What is the total strength of these two shards?"
+It reads "One shard holds 4/7 of the sword’s strength, and another holds 1/7. What is the total strength of these two shards?"
 - 4/7 + 1/7 = 6/7
 	The symbols remain lifeless. That can't be right...
 	=> sword_middle_blade
@@ -86,7 +86,7 @@ It reads: "One shard holds 4/7 of the sword’s strength, and another holds 1/7.
 
 set in_dialogue = true
 Another glowing piece rests atop a pedestal, its surface covered in runes.
-It reads: "This shard contains 2/4 of the sword’s strength, while another contains 1/8. Combine their power."
+It reads "This shard contains 2/4 of the sword’s strength, while another contains 1/8. Combine their power."
 - 2/4 + 1/8 = 3/8
 	The runes flicker briefly but fade. Incorrect...
 	=> sword_top_blade
