@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmk45dgiv0bgk"]
+
+[ext_resource type="Script" path="res://scripts/main_menu_scripts/start_menu.gd" id="1_a73is"]
+[ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="2_ve64s"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fknky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
+atlas = ExtResource("2_ve64s")
+region = Rect2(0, 0, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7c3h"]
+atlas = ExtResource("2_ve64s")
+region = Rect2(0, 281, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwxq"]
+atlas = ExtResource("2_ve64s")
+region = Rect2(0, 562, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3miy"]
+atlas = ExtResource("2_ve64s")
+region = Rect2(0, 843, 510, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jaifq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ciok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7c3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3miy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.125
+anchor_bottom = 1.123
+offset_left = -16.0
+offset_top = -1.0
+offset_right = -121.0
+offset_bottom = -65.848
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a73is")
+
+[node name="SolnBackground" type="AnimatedSprite2D" parent="."]
+position = Vector2(529, 290)
+scale = Vector2(2.00823, 2.02335)
+sprite_frames = SubResource("SpriteFrames_jaifq")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.164573
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 243.0
+offset_right = 971.0
+offset_bottom = 385.0
+theme_override_constants/separation = 20
+
+[node name="Register" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fknky")
+theme_override_font_sizes/font_size = 25
+text = "Register"
+flat = true
+
+[node name="Login" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fknky")
+theme_override_font_sizes/font_size = 25
+text = "Login"
+flat = true
+
+[node name="OfflineMode" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fknky")
+theme_override_font_sizes/font_size = 25
+text = "Play Offline"
+flat = true
+
+[connection signal="button_down" from="Buttons/Register" to="." method="_on_register_button_down"]
+[connection signal="button_down" from="Buttons/Login" to="." method="_on_login_button_down"]
+[connection signal="button_down" from="Buttons/OfflineMode" to="." method="_on_offline_mode_button_down"]
