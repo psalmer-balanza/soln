@@ -113,6 +113,7 @@ func _check_answer():
 		return
 	if user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
 		result_display.text = "Correct Answer"
+		Global.is_simplified_tutorial = false
 		emit_signal("correct")
 		next()
 	elif user_answer[0] == correct_answer[0] and not user_answer[1] == correct_answer[1]:

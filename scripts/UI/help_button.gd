@@ -34,7 +34,6 @@ func _on_button_down():
 		if Global.is_simplified_tutorial:
 			quick_tutorial_9.visible = true
 			label_9.text = "To simplify, first identify their common divisor then divide it to the numerator and denominator to get the simplifed form."
-			Global.is_simplified_tutorial = false
 			return
 		
 		# Tutorial for same denominator
