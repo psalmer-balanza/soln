@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://d12j8haieiyg2"]
+[gd_scene load_steps=38 format=3 uid="uid://d12j8haieiyg2"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
+[ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="2_iw1wy"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_teu7h"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_tmrgo"]
 [ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="4_vo60v"]
@@ -222,14 +223,29 @@ animations = [{
 [node name="WordedFractionGameplay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 28.0
+offset_bottom = 31.0
+scale = Vector2(0.95, 0.95)
 script = ExtResource("1_2emhg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.730216, 0.730216, 0.730216, 1)
 layout_mode = 0
-offset_right = 1023.0
-offset_bottom = 577.0
+offset_left = -69.0
+offset_top = -46.0
+offset_right = 1093.0
+offset_bottom = 631.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
+
+[node name="EnergyBar" parent="." instance=ExtResource("2_iw1wy")]
+layout_mode = 1
+offset_left = 212.632
+offset_top = 11.5789
+offset_right = 212.632
+offset_bottom = 11.5789
+scale = Vector2(4, 4)
 
 [node name="question" type="MarginContainer" parent="."]
 layout_mode = 0
