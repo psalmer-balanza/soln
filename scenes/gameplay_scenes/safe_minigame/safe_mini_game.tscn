@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qj4ux4unjrtb"]
+[gd_scene load_steps=10 format=3 uid="uid://qj4ux4unjrtb"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.gd" id="1_68juf"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="1_b05pv"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d4lgw4mbdykeu" path="res://scenes/gameplay_scenes/safe_minigame/safe.png" id="2_vk0uk"]
 [ext_resource type="Texture2D" uid="uid://bm0qrmx2u7mct" path="res://scenes/gameplay_scenes/safe_minigame/inner_dial.png" id="3_h2cti"]
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
-[ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="7_yiq1x"]
 
 [sub_resource type="Animation" id="Animation_hvgnm"]
 length = 0.001
@@ -145,20 +144,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_5i4qd")
-
-[node name="Congrats" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-next_scene = ExtResource("7_yiq1x")
-script = null
 
 [node name="fade" type="AnimationPlayer" parent="."]
 libraries = {

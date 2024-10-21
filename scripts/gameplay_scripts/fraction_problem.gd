@@ -205,3 +205,7 @@ func is_simplified():
 func next():
 	question_index += 1
 	_display_question()
+
+
+func _on_incorrect() -> void:
+	Global.user_energy -= 1

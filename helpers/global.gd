@@ -11,5 +11,7 @@ var Current_HP = 100
 var Question = false
 var tilemap: TileMapLayer
 
+var user_energy = 3
+
 # tutorial
 var is_simplified_tutorial: bool = false
