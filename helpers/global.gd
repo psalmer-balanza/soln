@@ -12,5 +12,4 @@ var Question = false
 var tilemap: TileMapLayer
 
 # tutorial
-var has_done_same_denum_tutorial: bool = false
-var has_done_diff_denum_tutorial: bool = false
+var is_simplified_tutorial: bool = false

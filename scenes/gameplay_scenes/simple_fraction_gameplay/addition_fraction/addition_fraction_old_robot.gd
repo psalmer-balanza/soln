@@ -34,7 +34,3 @@ func _on_fraction_problem_incorrect() -> void:
 	animation_player.play("wrong")
 	await animation_player.animation_finished
 	animation_player.play("idle")
-
-
-func _on_help_button_button_down():
-	fraction_problem.show_tutorial(fraction_problem.num1.text, fraction_problem.denum1.text, fraction_problem.num2.text, fraction_problem.denum2.text)
