@@ -41,11 +41,11 @@ func post(minigameID):
 	var url 
 	
 	if minigameID == 1 || minigameID == 2:
-		url = "http://localhost:3000/game/getfractions"
+		url = "http://"+ Global.host_ip +":3000/game/getfractions"
 	elif minigameID == 3 || minigameID == 4:
-		url = "http://localhost:3000/game/getworded"
+		url = "http://"+ Global.host_ip +":3000/game/getworded"
 	elif minigameID == 5:
-		url = "http://localhost:3000/game/getmcquestions"	
+		url = "http://"+ Global.host_ip +":3000/game/getmcquestions"	
 
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -113,7 +113,8 @@ func constructQuizQuestions(response):
 			question["option_2"], 
 			question["option_3"], 
 			question["option_4"], 
-			question["correct_answer"]
+			question["correct_answer"],
+			question["question_id"]
 			]]
 		
 	return questions
