@@ -9,6 +9,14 @@ func _process(_delta):
 	if DialogueState.current_quest == "saisai_house_invite" and not has_moved_rock:
 		play_move_rock()
 		has_moved_rock = true
+	elif DialogueState.current_quest == "saisai_wheelbarrow":
+		$Saisai/Actionable/CollisionShape2D.disabled = true
+		$Saisai/AutoActionable/CollisionShape2D.disabled = false
+	elif DialogueState.current_quest == "saisai_house_invite":
+		$Saisai/AutoActionable/CollisionShape2D.disabled = true
+		$Saisai/Actionable/CollisionShape2D.disabled = true
+		
+		
 	if DialogueState.remove_saisai_speech_bubble == true: 
 		$Saisai/RadialDialogueIndicator.visible = false
 	if DialogueState.disable_saisai_moving_rocks_quest:

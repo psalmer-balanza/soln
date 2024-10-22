@@ -15,7 +15,7 @@ func disable_auto_actionable():
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	# To prevent spawning multiple dialogues
 	if not PlayerState.player_in_dialogue:
-		print("shape entered")
+		print("Auto actionable shape entered")
 		DialogueState.in_dialogue = true
 		PlayerState.player_in_dialogue = true
 		DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)

@@ -17,6 +17,7 @@ func Enter():
 		print("No player")
 
 func Update(_delta: float):
+	print("idle")
 	auto_start_encounters = auto_start_encounter_finder.get_overlapping_areas()
 	
 	# If they already in dialogue then just bring you back to the dialogue state

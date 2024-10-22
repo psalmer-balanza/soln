@@ -11,7 +11,9 @@ if saisai_quest_progress == 1
 	Saisai: But, um, let’s not worry about that right now. Let's just have fun baking!
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/cooking_mini_game/cooking.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set saisai_quest_progress = 2
+	=> end
 elif saisai_quest_progress == 2
+	set saisai_quest_progress = 3
 	Saisai: To be honest... I’ve been having a bit of a fight with my friend, Raket the Raccoon. 
 	Saisai: I wanted to bake this pie as a way to make up with him.
 	Saisai: Would you mind taking it to him for me? I’d be so grateful, I just can’t face him right now.
@@ -24,7 +26,7 @@ elif saisai_quest_progress == 2
 	Saisai: Safe travels, pie hero!
 	(The directions she gave are quite confusing)
 	set current_quest = "find_raket_house"
-	set saisai_quest_progress = 3
+	=> end
 
 => end
 

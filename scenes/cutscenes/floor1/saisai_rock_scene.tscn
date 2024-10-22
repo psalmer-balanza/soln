@@ -399,6 +399,9 @@ dialogue_resource = ExtResource("8_gewpo")
 [node name="CollisionPolygon2D" parent="Saisai" index="3"]
 position = Vector2(3, -5)
 
+[node name="AutoActionable" parent="Saisai" index="4"]
+dialogue_resource = ExtResource("8_gewpo")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wmth6")
