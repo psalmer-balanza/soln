@@ -3,6 +3,9 @@ extends Control
 signal correct
 signal incorrect
 
+
+## UPDATE THE WORDED QUESTIONS SINCE THE QUESTIONS ARE NOW RANDOM
+
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	["A magician was cooking two batches of magical mushrooms. In the first batch, she used 2/5 of his total magic power, and in the second batch, he used 3/10​. How much magic power did she use in total?", 2, 5, 3, 10],  # First question fractions
@@ -40,21 +43,39 @@ var is_simplified = false
 var current_player_username = PlayerState.player_username
 var current_minigame_id = 1 # PLACEHOLDER
 
+var current_chosen_questions: Array = []
+var chosen_index_questions: Array[int] = []
+
 func _ready():
 	npc_active()
 	
 	if Global.is_online:
+		print("online mode")
 		initiate_questions() # get questions from db
+	
 	else: # else get offline questions
+		print("offline mode")
+		print("Current quest is ", DialogueState.current_quest)
+		if DialogueState.current_quest == "raket_stealing":
+			Global.choose_question(fraction_questions)
+			fraction_questions = Global.randomize_questions(fraction_questions, current_chosen_questions, chosen_index_questions)
+			
 		if DialogueState.current_quest == "raket_house":
-			fraction_questions = fraction_questions_house
+			Global.choose_question(fraction_questions_house)
+			fraction_questions = Global.randomize_questions(fraction_questions_house, current_chosen_questions, chosen_index_questions)
+			
 		display_current_question()
 	
 func _on_questions_loaded():
 	if DialogueState.current_quest == "raket_stealing":
-		fraction_questions = QuestionsLoader.racket_steal_questions
+		Global.choose_question(fraction_questions_house)
+		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_steal_questions, current_chosen_questions, chosen_index_questions)
+		
+	
 	elif DialogueState.current_quest == "raket_house":
-		fraction_questions = QuestionsLoader.racket_house_questions	
+		Global.choose_question(fraction_questions_house)
+		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_house_questions, current_chosen_questions, chosen_index_questions)
+		
 		
 	display_current_question()
 	

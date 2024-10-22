@@ -20,3 +20,34 @@ var user_energy = 3
 
 # tutorial
 var is_simplified_tutorial: bool = false
+
+
+func choose_question(question_array_size: Array) -> int:
+	return RandomNumberGenerator.new().randi_range(0, question_array_size.size()) - 1
+
+
+# 1st parameter: Array of questions to be chosen
+# 2nd parameter: Array of chosen questions
+# 3rd parameter: Track the questions that have been chosen
+func randomize_questions(questions_array: Array, current_chosen_questions: Array, chosen_index_questions: Array[int]) -> Array:
+	var is_chosen = false
+	
+	while chosen_index_questions.size() != 3:
+		var random_number_question = choose_question(questions_array)
+		
+		for current_chosen_index_question in chosen_index_questions:
+			if current_chosen_index_question == random_number_question:
+				is_chosen = true
+		
+		# If already added question dont add
+		if is_chosen:
+			print("Question already added")
+			is_chosen = false
+			
+		# Add if question is new
+		else: 
+			chosen_index_questions.append(random_number_question)
+			current_chosen_questions.append(questions_array[random_number_question])
+	
+	return current_chosen_questions
+	print("Current chosen questions are ", current_chosen_questions)

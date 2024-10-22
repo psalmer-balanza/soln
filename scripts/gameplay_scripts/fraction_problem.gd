@@ -60,36 +60,10 @@ func _ready() -> void:
 		_load_questions()
 	else: # else display hard coded values
 		print("offline mode")
-		_randomize_questions()
+		Global.choose_question(questions)
+		Global.randomize_questions(questions, current_chosen_questions, chosen_index_questions)
 		_display_question()
-		
 
-
-# Choose random questions
-func _choose_question() -> int:
-	return RandomNumberGenerator.new().randi_range(0, questions.size()) - 1
-
-func _randomize_questions():
-	var is_chosen = false
-	
-	while chosen_index_questions.size() != 3:
-		var random_number_question = _choose_question()
-		
-		for current_chosen_index_question in chosen_index_questions:
-			if current_chosen_index_question == random_number_question:
-				is_chosen = true
-		
-		# If already added question dont add
-		if is_chosen:
-			print("Question already added")
-			is_chosen = false
-			
-		# Add if question is new
-		else: 
-			chosen_index_questions.append(random_number_question)
-			current_chosen_questions.append(questions[random_number_question])
-	
-	print("Current chosen questions are ", current_chosen_questions)
 
 func _load_questions():
 	print("current quast is ", DialogueState.current_quest)
@@ -107,7 +81,8 @@ func _on_questions_loaded():
 		"dead_robots":
 			questions = QuestionsLoader.robot_questions
 	
-	_randomize_questions()
+	Global.choose_question(questions)
+	Global.randomize_questions(questions, current_chosen_questions, chosen_index_questions)
 	_display_question()
 
 
