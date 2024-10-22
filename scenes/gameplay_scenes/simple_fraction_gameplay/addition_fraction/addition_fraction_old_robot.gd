@@ -23,7 +23,6 @@ func _on_fraction_problem_all_done() -> void:
 	$Congrats.visible = true
 
 func _on_fraction_problem_correct() -> void:
-	print("seggs842")
 	$CorrectAnswerSFX.play()
 	animation_player.play("correct")
 	await animation_player.animation_finished

@@ -383,6 +383,7 @@ script = ExtResource("1_vdtrp")
 position = Vector2(39, 31)
 
 [node name="OnscreenBadges" type="Control" parent="."]
+z_index = 99
 layout_mode = 3
 anchors_preset = 0
 offset_left = -51.0

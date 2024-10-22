@@ -1,9 +1,8 @@
 ~ start
 set in_dialogue = true
-set current_npc = "saisai"
-set current_quest = "saisai_rock"
 
-if saisai_moving_rocks_quest_done
+#When you finish the simple addition
+if current_quest == "saisai_wheelbarrow"
 	Saisai: Yay! Thank you soooo much! Now my garden is gonna be the prettiest ever with these shiny rocks! 
 	Saisai: You're the best~!
 	Saisai: Oh! Um, if it’s not too much trouble, could you help me with another task?
@@ -12,22 +11,21 @@ if saisai_moving_rocks_quest_done
 		Saisai: Okay, see you there! 
 		set current_quest = "saisai_house_invite"
 		set saisai_quest_progress = 1
-		set remove_saisai_speech_bubble = false
-		set disable_saisai_moving_rocks_quest = true
 		(Wait... she didn't mention where her house was)
 		=> end
+#Before finishing simple addition (first meet)
 else 
+	set current_quest = "saisai_rock"
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
 	Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 
-	Saisai: And I can’t even budge them! Isn’t that silly? Teehee~
-	Saisai: Maybe you could lend me a hand? Pretty pleeeease?
+	Saisai: And I can’t even budge them! Isn’t that silly? Ehe~
+	Saisai: Maybe you could lend me a hand by solving the inscriptions? Pretty pleeeease?
 	(Aren't these inscriptions upside down?)
 	- Sure
-		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
-		set saisai_moving_rocks_quest_done = true
 		set current_quest = "saisai_wheelbarrow"
-=> end
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+		=> end
 
 ~ end
 set in_dialogue = false

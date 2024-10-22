@@ -1,16 +1,13 @@
 extends Node
 
 var current_quest: String = "starting"
-
-var saisai_moving_rocks_quest_done: bool = false
-var disable_saisai_moving_rocks_quest: bool = false
-var saisai_baking_quest_done
 var in_dialogue: bool = false
+
 var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
 var disable_dead_robot_quest: bool = false
 var earthquake_scene: String = "first_time"
-var saisai_quest_progress: int = 0
+
 var current_npc: String = "none"
 var sword_pieces_complete = false
 var raket_sword_complete: bool = false
@@ -19,7 +16,7 @@ var raket_sneaking_quest_complete: bool = false
 var raket_house_quest_complete: bool = false
 var should_I_delete_raket_stealing_scene: bool = false
 var unlock_cave_collision: bool = false
-var remove_saisai_speech_bubble: bool = false
+
 var raket_quest_progress: int = 0
 
 # For movable shiny rock cutscene
