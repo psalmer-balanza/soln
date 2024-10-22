@@ -13,28 +13,29 @@ var rng = RandomNumberGenerator.new()
 var question
 
 func _ready():
-	#OFFLINE VALUES FOR QUIZ
-	mc_questions = [
-	["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
-	["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
-	["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
-	["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
-	["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1/2", "1/2"],
-	["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
-	["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
-	["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "8/12"],
-	["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
-	["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
-]
 	
-	# First connect to the "questions_loaded" signal to know when the data is ready
-	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
-	QuestionsLoader.get_snekkers_questions()
-
+	if Global.is_online:
+		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
+		QuestionsLoader.get_snekkers_questions()
+	else:
+		# else get OFFLINE VALUES FOR QUIZ
+		mc_questions = [
+		["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
+		["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
+		["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
+		["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
+		["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1/2", "1/2"],
+		["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
+		["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
+		["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "8/12"],
+		["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
+		["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
+		]
 
 func _on_questions_loaded():
 	mc_questions = QuestionsLoader.snekkers_questions
-	print("question dictionary size: ", mc_questions.size())
+	# score = questions.size() MINUS no_of_wrong_attempts
+	Global.total_score = mc_questions.size()
 
 # can change for better randomness using shuffle bags
 func _choose_question() -> int:
@@ -60,13 +61,14 @@ func _check_answer():
 	if answer == correct_answer:
 		Global.Enemy_HP -= 10
 		visible=false
-		#GetQuiz.Question_Dictionary.remove_at(index)
 
 		#This current quest changer should be wherever the final question/end of quiz is
 		DialogueState.current_quest = "snake_quiz_complete"
 		mc_questions.remove_at(index)
 	else:
 		print("Incorrect answer")
+		if Global.is_online:
+			Global.total_score -= 1
 	Global.Question = false
 
 func _on_draw() -> void:

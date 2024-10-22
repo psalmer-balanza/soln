@@ -42,8 +42,13 @@ var current_minigame_id = 1 # PLACEHOLDER
 
 func _ready():
 	npc_active()
-	initiate_questions()
-	display_current_question()
+	
+	if Global.is_online:
+		initiate_questions() # get questions from db
+	else: # else get offline questions
+		if DialogueState.current_quest == "raket_house":
+			fraction_questions = fraction_questions_house
+		display_current_question()
 	
 func _on_questions_loaded():
 	if DialogueState.current_quest == "raket_stealing":

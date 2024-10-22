@@ -37,8 +37,10 @@ var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
 
 func _ready() -> void:
-	_load_questions()
-	_display_question()
+	if Global.is_online:
+		_load_questions()
+	else: # else display hard coded values
+		_display_question()
 	
 
 func _load_questions():
