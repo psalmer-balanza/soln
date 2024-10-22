@@ -25,14 +25,14 @@ It reads "What is the least common multiple (LCM) of 6 and 8?"
 set in_dialogue = true
 You find a glowing material in the ground, resting among ancient carvings. 
 Another inscription is etched into its surface.
-It reads "What is denominator is needed to make 2/5 equal in value to 6/(blank)?"
+It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)?"
 - The missing denominator is 10
 	The sword guard remains unchanged. Seems incorrect...
 	=> sword_guard
 - The missing denominator is 12
 	Nothing happens. That doesn't seem right...
 	=> sword_guard
-- The missing denominator is 18
+- The missing denominator is 9
 	Sword Guard: The inscription glows, and you lift what looks to be a sword guard. Nice work!
 	set sword_guard = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade

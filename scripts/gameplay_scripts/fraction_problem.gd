@@ -50,6 +50,7 @@ var question_index:int = 0
 @onready var result_display = $VBoxContainer/Result
 
 @onready var submit_button = $VBoxContainer/Submit/SubmitAnswer
+@onready var help_button = $"../Tutorials/HelpButton"
 
 var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
@@ -87,7 +88,7 @@ func _on_questions_loaded():
 
 
 func _display_question():
-	if question_index == questions.size():
+	if question_index == current_chosen_questions.size():
 		print("no more questions")
 		_disable_questions()
 		
@@ -103,6 +104,8 @@ func _display_question():
 
 func _disable_questions():
 	emit_signal("all_done")
+	help_button.visible = false
+	help_button.disabled = true
 	
 	num1.text = "0"
 	denum1.text = "0"
@@ -116,6 +119,7 @@ func _disable_questions():
 	submit_button.disabled = true
 	
 	result_display.text = "You have answered all the questions"
+
 
 func _on_submit_answer_pressed() -> void:
 	correct_answer.clear()
