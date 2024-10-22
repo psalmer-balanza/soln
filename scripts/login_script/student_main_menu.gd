@@ -39,6 +39,7 @@ func _http_request_completed(result, response_code, headers, body):
 			if !response.success:
 				print("Login successful")
 				PlayerState.player_username = username.text
+				Global.is_online = true
 				get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 				#get_tree().change_scene_to_file("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn")
 			else:
