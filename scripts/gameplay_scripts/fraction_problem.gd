@@ -9,12 +9,30 @@ signal incorrect
 # place questions here
 # question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
 var questions: Array = [
-	[4, 5, 1, 3, "+"],  # First fraction
-	[3, 2, 1, 2, "+"],  # Second fraction
-	[4, 3, 1, 3, "+"],  # Third fraction
+	[4, 3, 1, 3, "+"],
+	[3, 2, 1, 2, "+"],
+	[4, 5, 1, 3, "+"],
+	[7, 8, 5, 8, "+"],
+	[3, 4, 2, 4, "+"],
+	[9, 10, 2, 5, "+"],
+	[11, 6, 5, 6, "+"],
+	[5, 7, 3, 7, "+"],
+	[6, 9, 2, 9, "+"],
+	[8, 5, 1, 5, "+"],
+	[10, 3, 4, 3, "+"],
+	[12, 4, 3, 4, "+"],
+	[2, 3, 7, 9, "+"],
+	[1, 2, 1, 3, "+"],
+	[7, 10, 9, 10, "+"],
+	[5, 6, 3, 8, "+"],
+	[4, 9, 2, 3, "+"],
+	[6, 11, 5, 11, "+"],
+	[7, 4, 3, 4, "+"],
+	[9, 5, 8, 5, "+"],
 ]
-## REARRANGE SO THAT SAME DENUM FIRST THEN DIFF DENUMS
 
+var current_chosen_questions: Array = []
+var chosen_index_questions: Array[int] = []
 
 var question_index:int = 0
 # numerator and denominator of first and second fraction
@@ -38,10 +56,40 @@ var correct_answer: Array [int] = []
 
 func _ready() -> void:
 	if Global.is_online:
+		print("online mode")
 		_load_questions()
 	else: # else display hard coded values
+		print("offline mode")
+		_randomize_questions()
 		_display_question()
+		
+
+
+# Choose random questions
+func _choose_question() -> int:
+	return RandomNumberGenerator.new().randi_range(0, questions.size()) - 1
+
+func _randomize_questions():
+	var is_chosen = false
 	
+	while chosen_index_questions.size() != 3:
+		var random_number_question = _choose_question()
+		
+		for current_chosen_index_question in chosen_index_questions:
+			if current_chosen_index_question == random_number_question:
+				is_chosen = true
+		
+		# If already added question dont add
+		if is_chosen:
+			print("Question already added")
+			is_chosen = false
+			
+		# Add if question is new
+		else: 
+			chosen_index_questions.append(random_number_question)
+			current_chosen_questions.append(questions[random_number_question])
+	
+	print("Current chosen questions are ", current_chosen_questions)
 
 func _load_questions():
 	print("current quast is ", DialogueState.current_quest)
@@ -58,6 +106,8 @@ func _on_questions_loaded():
 			questions = QuestionsLoader.saisai_questions
 		"dead_robots":
 			questions = QuestionsLoader.robot_questions
+	
+	_randomize_questions()
 	_display_question()
 
 
@@ -65,15 +115,16 @@ func _display_question():
 	if question_index == questions.size():
 		print("no more questions")
 		_disable_questions()
+		
 	else :
 		num_input.clear()
 		denum_input.clear()
 		
-		num1.text = str(questions[question_index][0])
-		denum1.text = str(questions[question_index][1])
-		num2.text = str(questions[question_index][2])
-		denum2.text = str(questions[question_index][3])
-		operator.text = str(questions[question_index][4])
+		num1.text = str(current_chosen_questions[question_index][0])
+		denum1.text = str(current_chosen_questions[question_index][1])
+		num2.text = str(current_chosen_questions[question_index][2])
+		denum2.text = str(current_chosen_questions[question_index][3])
+		operator.text = str(current_chosen_questions[question_index][4])
 
 func _disable_questions():
 	emit_signal("all_done")

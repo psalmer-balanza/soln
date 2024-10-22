@@ -7,7 +7,7 @@ extends Control
 @onready var denum2_text = $"../../FractionProblem/VBoxContainer/Problem/Fraction2/VBoxContainer/Denominator"
 
 
-# Tutorials
+# Tutorials scenes
 @onready var quick_tutorial = $"../QuickTutorial"
 @onready var quick_tutorial_3 = $"../QuickTutorial3"
 @onready var quick_tutorial_9 = $"../QuickTutorial9"
@@ -20,10 +20,6 @@ extends Control
 
 
 # Tutorial for same and different denominators
-func show_tutorial(num1: String, denum1: String, num2: String, denum2: String):
-	pass
-
-
 func _on_button_down():
 		var num1 = num1_text.text
 		var denum1 = denum1_text.text
@@ -33,7 +29,7 @@ func _on_button_down():
 		# Answer can be simplified
 		if Global.is_simplified_tutorial:
 			quick_tutorial_9.visible = true
-			label_9.text = "To simplify, first identify their common divisor then divide it to the numerator and denominator to get the simplifed form."
+			label_9.text = "To simplify, identify the common number that the numerator and denominator can be divided with."
 			return
 		
 		# Tutorial for same denominator

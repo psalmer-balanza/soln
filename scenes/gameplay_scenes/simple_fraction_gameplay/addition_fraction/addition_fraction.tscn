@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cl832rhbalsgq"]
+[gd_scene load_steps=47 format=3 uid="uid://cl832rhbalsgq"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction_old_robot.gd" id="1_0j6rn"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_7i5ep"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="11_pxuf4"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="12_ofel6"]
 [ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="12_x1v8c"]
+[ext_resource type="PackedScene" uid="uid://rt1ablaat1qg" path="res://scenes/ui/help_button.tscn" id="13_3j4mi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ihx"]
 atlas = ExtResource("4_bregm")
@@ -319,29 +320,19 @@ visible = false
 next_scene = ExtResource("11_pxuf4")
 
 [node name="Tutorials" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HelpButton" parent="Tutorials"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="HelpButton" parent="Tutorials" instance=ExtResource("13_3j4mi")]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 107.0
-offset_right = 148.0
-offset_bottom = 136.0
-script = null
+offset_left = 102.0
+offset_top = 172.0
+offset_right = 176.0
+offset_bottom = 196.0
 
 [node name="QuickTutorial" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
 next = NodePath("../QuickTutorial2")
 
 [node name="right" parent="Tutorials/QuickTutorial/filter" index="0"]
@@ -371,6 +362,7 @@ offset_bottom = 384.0
 text = "To add fractions with the same denominators, simply add the numerators and copy the denominator."
 
 [node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("12_x1v8c")]
+visible = false
 
 [node name="right" parent="Tutorials/QuickTutorial2/filter" index="0"]
 offset_left = 0.0
@@ -392,6 +384,7 @@ offset_bottom = 403.0
 text = "Then, type the correct numerator and denominator in the spaces provided."
 
 [node name="QuickTutorial3" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_x1v8c")]
+visible = false
 next = NodePath("../QuickTutorial4")
 
 [node name="right" parent="Tutorials/QuickTutorial3/filter" index="0"]
@@ -402,12 +395,13 @@ offset_right = 59.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial3/filter" index="2"]
 offset_left = 99.0
-offset_top = 374.0
+offset_top = 401.0
 offset_right = 271.0
 
 [node name="top" parent="Tutorials/QuickTutorial3/filter" index="3"]
 offset_left = 99.0
 offset_right = 271.0
+offset_bottom = 248.0
 
 [node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
 text = "To add fractions with the different denominators, first find the Least Common Denominator (LCD)."
@@ -425,12 +419,13 @@ offset_right = 64.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial4/filter" index="2"]
 offset_left = 102.0
-offset_top = 358.0
+offset_top = 404.0
 offset_right = 274.0
 
 [node name="top" parent="Tutorials/QuickTutorial4/filter" index="3"]
 offset_left = 104.0
-offset_right = 276.0
+offset_right = 274.0
+offset_bottom = 253.0
 
 [node name="Label" parent="Tutorials/QuickTutorial4/Content" index="1"]
 text = ""
@@ -440,19 +435,19 @@ visible = false
 next = NodePath("../QuickTutorial6")
 
 [node name="right" parent="Tutorials/QuickTutorial5/filter" index="0"]
-offset_left = 175.0
+offset_left = 201.0
 
 [node name="left" parent="Tutorials/QuickTutorial5/filter" index="1"]
 offset_right = 51.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial5/filter" index="2"]
 offset_left = 91.0
-offset_top = 378.0
-offset_right = 135.0
+offset_top = 401.0
+offset_right = 161.0
 
 [node name="top" parent="Tutorials/QuickTutorial5/filter" index="3"]
 offset_left = 91.0
-offset_right = 136.0
+offset_right = 161.0
 
 [node name="Label" parent="Tutorials/QuickTutorial5/Content" index="1"]
 text = ""
@@ -462,18 +457,18 @@ visible = false
 next = NodePath("../QuickTutorial7")
 
 [node name="right" parent="Tutorials/QuickTutorial6/filter" index="0"]
-offset_left = 175.0
+offset_left = 198.0
 
 [node name="left" parent="Tutorials/QuickTutorial6/filter" index="1"]
 offset_right = 51.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial6/filter" index="2"]
 offset_left = 91.0
-offset_right = 135.0
+offset_right = 158.0
 
 [node name="top" parent="Tutorials/QuickTutorial6/filter" index="3"]
 offset_left = 91.0
-offset_right = 136.0
+offset_right = 159.0
 
 [node name="Label" parent="Tutorials/QuickTutorial6/Content" index="1"]
 text = ""
@@ -495,6 +490,7 @@ offset_right = 261.0
 [node name="top" parent="Tutorials/QuickTutorial7/filter" index="3"]
 offset_left = 242.0
 offset_right = 261.0
+offset_bottom = 250.0
 
 [node name="Label" parent="Tutorials/QuickTutorial7/Content" index="1"]
 text = ""
@@ -516,6 +512,7 @@ offset_right = 261.0
 [node name="top" parent="Tutorials/QuickTutorial8/filter" index="3"]
 offset_left = 242.0
 offset_right = 261.0
+offset_bottom = 252.0
 
 [node name="Label" parent="Tutorials/QuickTutorial8/Content" index="1"]
 text = ""
@@ -527,15 +524,17 @@ visible = false
 offset_left = 569.0
 
 [node name="left" parent="Tutorials/QuickTutorial9/filter" index="1"]
-offset_right = 338.0
+offset_right = 320.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial9/filter" index="2"]
-offset_left = 378.0
+offset_left = 360.0
+offset_top = 406.0
 offset_right = 529.0
 
 [node name="top" parent="Tutorials/QuickTutorial9/filter" index="3"]
-offset_left = 378.0
+offset_left = 360.0
 offset_right = 529.0
+offset_bottom = 237.0
 
 [node name="Label" parent="Tutorials/QuickTutorial9/Content" index="1"]
 text = ""
