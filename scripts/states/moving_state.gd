@@ -16,7 +16,6 @@ func Enter():
 
 func Update(_delta: float):
 	auto_start_encounters = auto_start_encounter_finder.get_overlapping_areas()
-	print("moving")
 	if DialogueState.in_dialogue:
 		Transitioned.emit(self, "PlayerDialogueState") 
 	if not (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down")):

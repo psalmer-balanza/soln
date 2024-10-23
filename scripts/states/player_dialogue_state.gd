@@ -22,10 +22,8 @@ func Enter():
 func start_dialogue_wait() -> void:
 	await DialogueManager.dialogue_ended  # Wait for the dialogue to end
 	#await get_tree().create_timer(1.0).timeout
-	print("dialogue ended")
 	Transitioned.emit(self, "IdleState")  # Transition back to IdleState when dialogue ends
 func Update(_delta: float):
-	print("dialog")
 	pass
 
 # Player must not move during dialogue so do NOTHING HERE

@@ -10,7 +10,6 @@ if current_quest == "saisai_wheelbarrow"
 	- Sure thing!
 		Saisai: Okay, see you there! 
 		set current_quest = "saisai_house_invite"
-		set saisai_quest_progress = 1
 		(Wait... she didn't mention where her house was)
 		=> end
 #Before finishing simple addition (first meet)
