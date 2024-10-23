@@ -1,4 +1,5 @@
 extends Node2D
+var remove_saisai_barrier = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(DialogueState.current_quest)
@@ -14,5 +15,6 @@ func _ready():
 func _process(_delta: float) -> void:
 	if DialogueState.unlock_cave_collision:
 		$Racket/BarrierFromCave.disabled = true
-	if DialogueState.saisai_quest_progress == 3:
+	if DialogueState.current_quest == "find_raket_house" or remove_saisai_barrier:
 		$Saisai/BarrierFromBridge.disabled = true
+		remove_saisai_barrier = true
