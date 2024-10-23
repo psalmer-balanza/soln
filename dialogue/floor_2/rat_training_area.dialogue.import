@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://y83t81wmmpjx"
+path="res://.godot/imported/rat_training_area.dialogue-e1f57884662abd31760ffcf8189486b2.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/rat_training_area.dialogue"
+dest_files=["res://.godot/imported/rat_training_area.dialogue-e1f57884662abd31760ffcf8189486b2.tres"]
+
+[params]
+
+defaults=true

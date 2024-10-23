@@ -1,0 +1,26 @@
+~ start
+set in_dialogue = true
+
+Wizard Rat: We are here.
+Robot: Where exactly?
+Wizard Rat: This is my training area. Over the years, I've gathered many inscriptions, hoping to uncover their connection to the darkness. 
+Wizard Rat: [wait=0.5] But ever since the darkness spread through our land, [wait=0.5] our friend Crab has been cursed with barnacles. 
+Wizard Rat: [wait=0.5] It's made him irritable and hard to reason with.
+Wizard Rat: And from what you told me I guess now you’re here you're our only hope.
+Wizard Rat: Are you ready?
+
+- On second thought I’m not ready
+	=> end
+-I’m ready
+	[wait=2] (Worded gameplay)
+
+~ gilbert_wrong_answer_dialogue
+Gilbert: Oops try again
+
+~ gilbert_right_answer_dialogue
+Gilbert: You did it [wait=5] You’re ready.  
+
+=> end
+~ end
+set in_dialogue = false
+=> END

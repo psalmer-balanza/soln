@@ -2,7 +2,32 @@
 set in_dialogue = true
 Shellbot: I AM THE ENEMY.
 
+Robot: Woah, it's messy in here
+Crab Boss: Who dares disturb my quarters?
+Robot: I’m here to help. The wizard rat said—
+Crab Boss: Help? With what?
+Robot: The barnacles stuck to you. I can remove them. The wizard rat said they were bonded by inscriptions.
+Crab boss: Barnacles? Hah, like you'd be any help. Prove it!
+  
+(Crab boss gameplay)
+=> end
+Crab Boss: Huh... well, you did it. I feel lighter already.
+
+Crab Boss: Maybe you're more useful than you look. But don't think this makes us friends.
+Robot: I’m not here for friendship. The darkness is making everyone sick, and you’re needed. The Wizard Rat sent me.
+Crab Boss: Well you did your part, so I’ll help you. [wai=0.5] Here, I’ve got some scrolls that might be useful. Let me read one to you.
+Crab Boss: Long ago, there was a powerful chimera, the guardian of the Light. 
+Crab Boss: Its body was a blend of many creatures—strong, fierce, and wise. 
+Crab Boss: The chimera’s sole duty was to protect the Light that kept the darkness at bay, a force that sustained life across the land.
+Robot: What happened?
+Crab Boss: One day, an evil sorcerer, driven by greed and ambition, sought the Light for himself. He waited until the chimera was weakened, then struck. The sorcerer twisted the light into something dark, corrupting everything in its path. 
+Crab Boss: The chimera fought to regain the Light, but it was too late. The sorcerer vanished, taking the Light into the shadows…
+Robot: Wait, what happened next?
+Crab Boss: That’s all the scroll says. But if this story is true, then go little one. Find the other scrolls and get more information.
+
+~ success_barnacle_removal
+
+=> end
 ~ end
 set in_dialogue = false
-=> END
 => END

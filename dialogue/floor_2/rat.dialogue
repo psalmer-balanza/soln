@@ -12,7 +12,8 @@ Rat:  I can tell you more but for a price. [wait=0.5] I smell that you have some
 	=> end
 
 ~ Rat_next_Dialogue
-Wizard Rat: Ok truth be told I don’t know much about the prophecy either but it has to do something with the inscriptions and [wait=0.5]  
+Wizard Rat: Ok... truth be told, I don’t know much about the prophecy either.
+Wizard Rat: But it has to do something with the inscriptions and [wait=0.5]  
 Wizard Rat: Since the light house has gone dark many of the predators have been getting sick. [wait=1] 
 Wizard Rat: It isn’t much information but I hope it helps. [wait=1] 
 Wizard Rat: I think there are scrolls on the floor above but I can't get to it because the mean crab is in the way. 
@@ -20,7 +21,7 @@ Wizard Rat: [wait=0.5] I’ll help you but you have to help me get to the upper 
 
 
 - Deal
-	[wait=2] (Go to rat and wizard dialogue function)
+	Wizard Rat: [wait=2] We venture upwards! But be warned... along the way I’ll be training you using inscriptions.
 - No deal
 	=> end
 

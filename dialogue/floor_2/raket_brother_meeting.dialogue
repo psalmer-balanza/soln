@@ -16,11 +16,14 @@ Raket2: My name is Gilbert and my brother is Raket. [wait=1] You met my brother?
 Well I helped the Snake get rid of his headaches by solving these inscriptions.
 Raket2: What?? [wait=1] This is great news! We have to tell the Wizard rat!
 The Wizard rat? 
-Raket2: Yes the Wizard rat!  Long ago there was a prophecy where there was a chosen one who can help us all from this great darkness but that's as far as I know [wait=1] The wizard rat knows more but we need Cheddar Change to convince him to help.
-Raket2: I found Cheddar Change a while back but it's stuck inside this vault. You know how to solve these problems right? Can you open it for me?
+Raket2: Yes the Wizard rat!  Long ago there was a prophecy where there was a chosen one who can help us all from this great darkness... but that's as far as I know.
+Raket2: [wait=1] The wizard rat knows more, but we need Cheddar Change to convince him to help.
+Raket2: I found Cheddar Change a while back but it's stuck inside this vault. 
+Raket2: You know how to solve these problems right? Can you open it for me?
 
 - Ok
-	[wait=2] Insert gameplay here
+	Subtraction gameplay
+	#do save_player_position_and_change_scene("res://scenes/gameplay_scenes/subraction_fraction/fraction_subtraction_gameplay.tscn" ,"res://scenes/levels/test_floor1/test_floor2.tscn")
 	=> end
 - I don’t want to
 	=> end

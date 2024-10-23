@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=37 format=4 uid="uid://32iomad28t5n"]
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bx608nh6yagqs" path="res://scenes/characters_scenes/floor2_characters/Robob.tscn" id="13_lbwep"]
 [ext_resource type="PackedScene" uid="uid://dfm66kpn4gpd6" path="res://scenes/characters_scenes/floor2_characters/Rat.tscn" id="14_362hh"]
 [ext_resource type="PackedScene" uid="uid://bivjj6edlk0j" path="res://scenes/cutscenes/floor2/fresh_spawn_dialogue.tscn" id="14_onlp4"]
+[ext_resource type="Resource" uid="uid://y83t81wmmpjx" path="res://dialogue/floor_2/rat_training_area.dialogue" id="15_m63yj"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="16_4qn67"]
 [ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/raket_brother_meeting.dialogue" id="17_fs00t"]
 [ext_resource type="PackedScene" uid="uid://dc2a3a5irn808" path="res://scenes/characters_scenes/floor2_characters/Giant Enemy Crab.tscn" id="18_vr7qy"]
@@ -970,6 +971,12 @@ position = Vector2(33, 78)
 [node name="Rat" parent="." instance=ExtResource("14_362hh")]
 position = Vector2(1728, 969)
 
+[node name="Rat2" parent="." instance=ExtResource("14_362hh")]
+position = Vector2(1822, -170)
+
+[node name="Actionable" parent="Rat2" index="2"]
+dialogue_resource = ExtResource("15_m63yj")
+
 [node name="Robob" parent="." instance=ExtResource("13_lbwep")]
 position = Vector2(158, 67)
 
@@ -983,4 +990,5 @@ dialogue_resource = ExtResource("17_fs00t")
 position = Vector2(3412, -225)
 
 [editable path="tooltipls/monitor1"]
+[editable path="Rat2"]
 [editable path="Racket"]
