@@ -7,6 +7,7 @@ var saved_scene: String = "res://scenes/levels/Floor1.tscn"
 var player_in_dialogue: bool = false
 var player_username: String = "Sol'n"
 var player_badges = {
+	"shiny_rock": false,
 	"bowl": false,
 	"carrot": false
 }

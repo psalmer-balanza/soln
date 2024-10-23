@@ -44,19 +44,20 @@ func play_move_rock() -> void:
 	# HIDE SAISAI AND HER WHEELBARROW
 	$Saisai/AnimatedSprite2D.visible = false
 	$WheelbarrowWithRocks.visible = false
-	
+	animation_player.play("fireflies_fade")
+	await animation_player.animation_finished
 	# REMOVE ROCKS AND THEIR COLLISION SHAPES
 	$RegularRock/Barrier.disabled = true
 	$RegularRock/CollisionShape2D.disabled = true
 	$RegularRock2/CollisionShape2D.disabled = true
 	$RegularRock2/Sprite2D.visible = false
-	$RegularRock3/CollisionShape2D.disabled = true
-	$RegularRock3/Sprite2D.visible = false
 	
 	# HIDE THESE THINGS ONCE THEY ARE OFFSCREEN
 	$WheelbarrowWithRocks/CollisionPolygon2D.disabled = true
 	$Wheelbarrow/CollisionPolygon2D.disabled = true
-	
+	$firefly.visible = false
+	$firefly2.visible = false
+
 	remove_saisai_speech_bubble = false
 	has_moved_rock = true
 	disable_saisai_moving_rocks_quest = true

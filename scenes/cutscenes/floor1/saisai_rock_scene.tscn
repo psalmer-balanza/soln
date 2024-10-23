@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://cboj5uc2cb5at"]
+[gd_scene load_steps=38 format=3 uid="uid://cboj5uc2cb5at"]
 
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/saisai_rock_scene.gd" id="1_dy5bx"]
 [ext_resource type="Texture2D" uid="uid://bcgx2awlqi1yl" path="res://assets/floor_1/cutscenes/pile of shiny rocks for saisai cutscne (1).png" id="2_r0u5n"]
+[ext_resource type="Texture2D" uid="uid://2ribuc4mgrjf" path="res://assets/floor_1/cutscenes/Shiny Rock Barrier.png" id="3_7jh6e"]
 [ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/floor1_characters/saisai.tscn" id="3_fckah"]
 [ext_resource type="Texture2D" uid="uid://dg5umwl6c1mbx" path="res://assets/floor_1/cutscenes/Saisai Moving Colored Rock.png" id="4_egb74"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="5_lu12e"]
@@ -10,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://d2ary7dmkm8rm" path="res://dialogue/floor_1/saisai_moving_rocks.dialogue" id="8_gewpo"]
 [ext_resource type="Texture2D" uid="uid://bk7tu0h8oyped" path="res://assets/floor_1/cutscenes/Wheelbarrow No Rocks.png" id="9_uivmv"]
 [ext_resource type="Texture2D" uid="uid://bjfxam8cjgyre" path="res://assets/floor_1/cutscenes/Wheelbarrow With Rocks.png" id="10_0oqn5"]
+[ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/levels/test_floor1/firefly.tscn" id="11_wqkp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u56d"]
 size = Vector2(270, 20)
@@ -153,37 +155,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_wwgu5"]
-length = 5.0
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Saisai/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Saisai/AnimatedSprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_qxw56"]
 resource_name = "moving_wheelbarrow"
-length = 5.0
+length = 4.0
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -216,7 +190,7 @@ tracks/2/path = NodePath("Saisai:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 2, 5),
+"times": PackedFloat32Array(0, 0.5, 1.5, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(75, -1), Vector2(75, -1), Vector2(69, 9), Vector2(69, 160)]
@@ -228,7 +202,7 @@ tracks/3/path = NodePath("WheelbarrowWithRocks:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2, 5),
+"times": PackedFloat32Array(1.5, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-20, 7), Vector2(-20, 158)]
@@ -240,7 +214,7 @@ tracks/4/path = NodePath("Saisai/AnimatedSprite2D:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
@@ -252,7 +226,7 @@ tracks/5/path = NodePath("Saisai/AnimatedSprite2D:animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2, 5),
+"times": PackedFloat32Array(0, 1.5, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [&"idle", &"wheel_barrow_walking_solo", &"wheel_barrow_walking"]
@@ -264,15 +238,27 @@ tracks/6/path = NodePath("Saisai/AnimatedSprite2D:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(1.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RegularRock2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_wpewc"]
 resource_name = "saisai_move_rock"
-length = 5.0
+length = 4.5
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -317,10 +303,10 @@ tracks/3/path = NodePath("Saisai/AnimatedSprite2D:animation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2.25, 4.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.25, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [&"holding_regular_rock", &"idle"]
+"values": [&"idle", &"holding_regular_rock", &"idle"]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -335,9 +321,144 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_1cn2p"]
+resource_name = "fireflies"
+length = 5.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("firefly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.75, 5),
+"transitions": PackedFloat32Array(1.86607, 1, 0.203063),
+"update": 0,
+"values": [Vector2(128, 17), Vector2(81, 36), Vector2(128, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("firefly2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.25, 5),
+"transitions": PackedFloat32Array(0.535887, 1, 2.63902),
+"update": 0,
+"values": [Vector2(38, 34), Vector2(20, 10), Vector2(38, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_x2ju0"]
+resource_name = "fireflies_fade"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("firefly2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("firefly:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("firefly/PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("firefly2/PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6p88g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("firefly/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("firefly2/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Saisai/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RegularRock2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wmth6"]
 _data = {
-"RESET": SubResource("Animation_wwgu5"),
+"RESET": SubResource("Animation_6p88g"),
+"fireflies": SubResource("Animation_1cn2p"),
+"fireflies_fade": SubResource("Animation_x2ju0"),
 "moving_wheelbarrow": SubResource("Animation_qxw56"),
 "saisai_move_rock": SubResource("Animation_wpewc")
 }
@@ -362,26 +483,14 @@ shape = SubResource("CircleShape2D_5utmx")
 
 [node name="RegularRock2" type="StaticBody2D" parent="."]
 z_index = 1
-position = Vector2(20, 17)
+position = Vector2(31, 24)
 
 [node name="Sprite2D" type="Sprite2D" parent="RegularRock2"]
 position = Vector2(4, -1)
-texture = ExtResource("2_r0u5n")
+texture = ExtResource("3_7jh6e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RegularRock2"]
 position = Vector2(4, -1)
-shape = SubResource("CircleShape2D_5utmx")
-
-[node name="RegularRock3" type="StaticBody2D" parent="."]
-z_index = 1
-position = Vector2(49, 21)
-
-[node name="Sprite2D" type="Sprite2D" parent="RegularRock3"]
-position = Vector2(4, -1)
-texture = ExtResource("2_r0u5n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RegularRock3"]
-position = Vector2(6, -1)
 shape = SubResource("CircleShape2D_5utmx")
 
 [node name="Saisai" parent="." instance=ExtResource("3_fckah")]
@@ -406,6 +515,7 @@ dialogue_resource = ExtResource("8_gewpo")
 libraries = {
 "": SubResource("AnimationLibrary_wmth6")
 }
+autoplay = "fireflies"
 
 [node name="Wheelbarrow" type="StaticBody2D" parent="."]
 position = Vector2(-20, 7)
@@ -428,4 +538,12 @@ texture = ExtResource("10_0oqn5")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WheelbarrowWithRocks"]
 polygon = PackedVector2Array(95, -9, 100, -6, 100, 1, 103, 3, 104, 9, 105, 10, 107, 10, 108, 9, 122, 10, 125, 13, 130, 13, 134, 10, 135, 8, 135, 3, 133, 1, 133, -3, 131, -4, 128, -6, 126, -8, 123, -9, 116, -10, 110, -12, 107, -12, 105, -12, 99, -15, 97, -15, 96, -14)
 
+[node name="firefly" parent="." instance=ExtResource("11_wqkp7")]
+position = Vector2(128, 17)
+
+[node name="firefly2" parent="." instance=ExtResource("11_wqkp7")]
+position = Vector2(38, 34)
+
 [editable path="Saisai"]
+[editable path="firefly"]
+[editable path="firefly2"]

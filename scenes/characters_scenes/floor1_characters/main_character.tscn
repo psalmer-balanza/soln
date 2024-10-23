@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=66 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="3_mm6sa"]
 [ext_resource type="Texture2D" uid="uid://bc4n87b1tlvtf" path="res://assets/main_character/mc _walk _side.png" id="4_mkejk"]
 [ext_resource type="Texture2D" uid="uid://dahjr18jm1lbr" path="res://assets/main_character/onscreen_badges/The Bowl.png" id="4_vs3nv"]
+[ext_resource type="Texture2D" uid="uid://b3lprn6nf8rf0" path="res://assets/main_character/onscreen_badges/The Shiny Rock.png" id="6_g43x7"]
 [ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
 [ext_resource type="Texture2D" uid="uid://cbt2kcvcmhgou" path="res://assets/main_character/main_character_wakeup.png" id="7_c02fe"]
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
@@ -407,7 +408,17 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Bowl" type="TextureRect" parent="OnscreenBadges/Badges"]
+[node name="ShinyRockBadge" type="TextureRect" parent="OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 193.0
+offset_top = -57.0
+offset_right = 233.0
+offset_bottom = -17.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_g43x7")
+
+[node name="BowlBadge" type="TextureRect" parent="OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
 offset_left = 202.0

@@ -963,6 +963,12 @@ position = Vector2(321, 800)
 
 [node name="SaisaiRockScene" parent="Cutscenes" instance=ExtResource("16_awl35")]
 
+[node name="CollisionPolygon2D" parent="Cutscenes/SaisaiRockScene/Wheelbarrow" index="1"]
+visible = false
+
+[node name="CollisionPolygon2D" parent="Cutscenes/SaisaiRockScene/WheelbarrowWithRocks" index="1"]
+visible = false
+
 [node name="RaketStealing" parent="Cutscenes" instance=ExtResource("24_yrk65")]
 position = Vector2(865, 251)
 
@@ -996,12 +1002,6 @@ position = Vector2(415, 335)
 
 [node name="firefly2" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(-63, 49)
-
-[node name="firefly3" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(-16, 461)
-
-[node name="firefly4" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(-88, 464)
 
 [node name="firefly5" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(-126, 384)
@@ -1070,3 +1070,7 @@ position = Vector2(1600, 1284)
 [editable path="tooltips/monitor1"]
 [editable path="tooltips/monitor2"]
 [editable path="tooltips/monitor3"]
+[editable path="Cutscenes/SaisaiRockScene"]
+[editable path="Cutscenes/SaisaiRockScene/Saisai"]
+[editable path="Cutscenes/SaisaiRockScene/firefly"]
+[editable path="Cutscenes/SaisaiRockScene/firefly2"]

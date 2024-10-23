@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw7ejsmdlwoyr"]
+[gd_scene load_steps=8 format=3 uid="uid://bw7ejsmdlwoyr"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inlt7"]
 lifetime_randomness = 0.2
@@ -35,6 +35,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0.807339, 0.169725)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_eogpp"]
 resource_name = "flicker"
@@ -52,9 +64,26 @@ tracks/0/keys = {
 "values": [Vector2(0.807339, 0.169725), Vector2(0.756881, 0.243119)]
 }
 
+[sub_resource type="Animation" id="Animation_v7c03"]
+resource_name = "disappear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uhe8u"]
 _data = {
 "RESET": SubResource("Animation_27q2o"),
+"disappear": SubResource("Animation_v7c03"),
 "flicker": SubResource("Animation_eogpp")
 }
 
