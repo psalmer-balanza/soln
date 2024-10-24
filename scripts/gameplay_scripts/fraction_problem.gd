@@ -141,7 +141,6 @@ func _check_answer():
 	if not is_simplified():
 		result_display.text = "Answer can still be simplified"
 		Global.is_simplified_tutorial = true
-		emit_signal("incorrect")
 		return
 	if user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
 		result_display.text = "Correct Answer"
