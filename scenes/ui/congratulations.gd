@@ -12,4 +12,6 @@ func _ready() -> void:
 	elif DialogueState.current_quest == "dead_robots":
 		label.text = "Congratulations:\nYou have passed\nOld Peculiar's trial!"
 func _on_correct_pressed():
+	print("Hello")
 	get_tree().change_scene_to_packed(next_scene)
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=40 format=4 uid="uid://32iomad28t5n"]
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="16_4qn67"]
 [ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/raket_brother_meeting.dialogue" id="17_fs00t"]
 [ext_resource type="PackedScene" uid="uid://dc2a3a5irn808" path="res://scenes/characters_scenes/floor2_characters/Giant Enemy Crab.tscn" id="18_vr7qy"]
+[ext_resource type="PackedScene" uid="uid://bxmj5sxbr5016" path="res://scenes/cutscenes/floor2/waterlogged_1.tscn" id="20_24fd3"]
+[ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
+[ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gg524"]
 texture = ExtResource("3_5onoa")
@@ -935,7 +938,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(34, 81)
+position = Vector2(49, 1050)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
@@ -963,6 +966,7 @@ remove water in
 rooms"
 
 [node name="dark" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="FreshSpawnDialogue" parent="." instance=ExtResource("14_onlp4")]
@@ -971,24 +975,33 @@ position = Vector2(33, 78)
 [node name="Rat" parent="." instance=ExtResource("14_362hh")]
 position = Vector2(1728, 969)
 
-[node name="Rat2" parent="." instance=ExtResource("14_362hh")]
+[node name="RatTrainingArea" parent="." instance=ExtResource("14_362hh")]
 position = Vector2(1822, -170)
 
-[node name="Actionable" parent="Rat2" index="2"]
+[node name="Actionable" parent="RatTrainingArea" index="2"]
 dialogue_resource = ExtResource("15_m63yj")
 
 [node name="Robob" parent="." instance=ExtResource("13_lbwep")]
 position = Vector2(158, 67)
 
-[node name="Racket" parent="." instance=ExtResource("16_4qn67")]
+[node name="Chip" parent="." instance=ExtResource("16_4qn67")]
 position = Vector2(102, 1025)
 
-[node name="Actionable" parent="Racket" index="3"]
+[node name="Actionable" parent="Chip" index="3"]
 dialogue_resource = ExtResource("17_fs00t")
 
 [node name="Giant Enemy Crab" parent="." instance=ExtResource("18_vr7qy")]
 position = Vector2(3412, -225)
 
+[node name="Waterlogged1" parent="." instance=ExtResource("20_24fd3")]
+position = Vector2(39, 693)
+
+[node name="Waterlogged2" parent="." instance=ExtResource("21_22hcu")]
+position = Vector2(1241, 996)
+
+[node name="Waterlogged3" parent="." instance=ExtResource("22_kq6do")]
+position = Vector2(1760, 405)
+
 [editable path="tooltipls/monitor1"]
-[editable path="Rat2"]
-[editable path="Racket"]
+[editable path="RatTrainingArea"]
+[editable path="Chip"]

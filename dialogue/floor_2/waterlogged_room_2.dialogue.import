@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bqrmrqfhlrbkc"
+path="res://.godot/imported/waterlogged_room_2.dialogue-98342c5bd35339d7f263abdd44763ad0.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/waterlogged_room_2.dialogue"
+dest_files=["res://.godot/imported/waterlogged_room_2.dialogue-98342c5bd35339d7f263abdd44763ad0.tres"]
+
+[params]
+
+defaults=true

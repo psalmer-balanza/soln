@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qj4ux4unjrtb"]
+[gd_scene load_steps=11 format=3 uid="uid://qj4ux4unjrtb"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.gd" id="1_68juf"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="1_b05pv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4lgw4mbdykeu" path="res://scenes/gameplay_scenes/safe_minigame/safe.png" id="2_vk0uk"]
 [ext_resource type="Texture2D" uid="uid://bm0qrmx2u7mct" path="res://scenes/gameplay_scenes/safe_minigame/inner_dial.png" id="3_h2cti"]
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="7_ciky7"]
 
 [sub_resource type="Animation" id="Animation_hvgnm"]
 length = 0.001
@@ -149,6 +150,9 @@ texture = ExtResource("4_5i4qd")
 libraries = {
 "": SubResource("AnimationLibrary_68a3l")
 }
+
+[node name="Congrats" parent="." instance=ExtResource("7_ciky7")]
+visible = false
 
 [connection signal="all_done" from="board/FractionProblem" to="." method="_on_fraction_problem_all_done"]
 [connection signal="correct" from="board/FractionProblem" to="." method="_on_fraction_problem_correct"]

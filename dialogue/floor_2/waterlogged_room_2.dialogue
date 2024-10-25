@@ -1,0 +1,10 @@
+~ start
+set in_dialogue = true
+
+Hello this is water game 2
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
+=> end
+
+~ end
+set in_dialogue = false
+=> END

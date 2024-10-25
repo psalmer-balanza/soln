@@ -1,7 +1,8 @@
 extends Node
 
 # For saving states
-var first_time_initializing_floor_scene: bool = true
+var first_time_initializing_first_floor_scene: bool = true
+var first_time_initializing_second_floor_scene: bool = true
 var saved_position: Vector2
 var saved_scene: String = "res://scenes/levels/Floor1.tscn"
 var player_in_dialogue: bool = false
@@ -19,7 +20,10 @@ func save_player_state(position: Vector2, current_scene: String):
 # First argument: where you wanna go
 # Second argument: where you are
 func save_player_position_and_change_scene(new_scene: String, current_scene: String):
-	first_time_initializing_floor_scene = false
+	if current_scene == "res://scenes/levels/Floor1.tscn":
+		first_time_initializing_first_floor_scene = false
+	elif current_scene == "res://scenes/levels/Floor2.tscn":
+		first_time_initializing_second_floor_scene = false
 	# Assuming you have a reference to the player node in the current scene
 	var current1_scene = get_tree().current_scene
 	var player_node = current1_scene.get_node("MainCharacter")  # Adjust this path to match your scene tree

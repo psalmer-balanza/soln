@@ -23,7 +23,7 @@ Raket2: You know how to solve these problems right? Can you open it for me?
 
 - Ok
 	Subtraction gameplay
-	#do save_player_position_and_change_scene("res://scenes/gameplay_scenes/subraction_fraction/fraction_subtraction_gameplay.tscn" ,"res://scenes/levels/test_floor1/test_floor2.tscn")
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.tscn" ,"res://scenes/levels/Floor2.tscn")
 	=> end
 - I don’t want to
 	=> end

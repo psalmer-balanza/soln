@@ -50,7 +50,7 @@ var question_index:int = 0
 @onready var result_display = $VBoxContainer/Result
 
 @onready var submit_button = $VBoxContainer/Submit/SubmitAnswer
-@onready var help_button = $"../Tutorials/HelpButton"
+# @onready var help_button = $"../Tutorials/HelpButton"
 
 var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
@@ -104,8 +104,9 @@ func _display_question():
 
 func _disable_questions():
 	emit_signal("all_done")
-	help_button.visible = false
-	help_button.disabled = true
+	# THERE IS NO HELP BUTTON IN WATERLOGGED
+	#help_button.visible = false
+	#help_button.disabled = true
 	
 	num1.text = "0"
 	denum1.text = "0"

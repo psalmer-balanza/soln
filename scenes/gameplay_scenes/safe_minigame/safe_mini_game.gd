@@ -27,4 +27,7 @@ func _on_fraction_problem_all_done() -> void:
 	safe_opened = true
 
 func _on_fade_animation_finished(anim_name: StringName) -> void:
+	
+	print("No congratulations in safe mini game scene")
+	#NO CONGRATS SCENE
 	congrats.visible = true
