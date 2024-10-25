@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh1bpynddf5nt"]
+
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="1_72hag"]
+[ext_resource type="Resource" uid="uid://c4v08fwjvqd7y" path="res://dialogue/floor_2/waterlogged_room_3.dialogue" id="2_lur7e"]
+[ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/floor1/exclamation_mark.tscn" id="3_ja6li"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xonip"]
+radius = 39.1152
+
+[node name="Waterlogged1" type="Node2D"]
+
+[node name="Actionable" parent="." instance=ExtResource("1_72hag")]
+dialogue_resource = ExtResource("2_lur7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_xonip")
+
+[node name="ExclamationMark" parent="." instance=ExtResource("3_ja6li")]
