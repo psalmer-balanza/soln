@@ -10,26 +10,27 @@ signal incorrect
 # question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
 var questions = [
 	[1, 4, 1, 6, "+"],    
-	[1, 3, 1, 6, "+"],    
-	[2, 5, 1, 5, "+"],    
-	[1, 8, 3, 8, "+"],    
-	[2, 7, 3, 14, "+"],   
-	[1, 6, 1, 3, "+"],    
-	[3, 10, 1, 5, "+"],   
-	[2, 9, 1, 6, "+"],    
-	[1, 4, 1, 8, "+"],    
-	[2, 15, 4, 15, "+"],  
-	[1, 5, 3, 10, "+"],
-	[1, 7, 2, 14, "+"],  
-	[3, 8, 1, 8, "+"],
-	[1, 12, 1, 4, "+"], 
-	[2, 10, 3, 10, "+"],
-	[1, 9, 2, 9, "+"],   
-	[3, 16, 1, 8, "+"],   
-	[1, 6, 1, 12, "+"],  
-	[2, 8, 1, 4, "+"],   
+	[1, 3, 2, 6, "+"],    
+	[2, 5, 3, 10, "+"],   
+	[1, 8, 2, 8, "+"],    
+	[3, 7, 1, 14, "+"],   
+	[1, 6, 2, 3, "+"],    
+	[3, 10, 2, 5, "+"],   
+	[2, 9, 1, 3, "+"],    
+	[1, 4, 3, 8, "+"],    
+	[2, 15, 5, 15, "+"],  
 	[1, 5, 2, 10, "+"],
-];
+	[1, 7, 3, 14, "+"],   
+	[3, 8, 2, 8, "+"],
+	[1, 12, 1, 4, "+"],   
+	[2, 10, 1, 5, "+"],
+	[1, 9, 4, 9, "+"],   
+	[3, 16, 5, 8, "+"],   
+	[1, 6, 1, 12, "+"],   
+	[2, 8, 3, 4, "+"],   
+	[1, 5, 3, 10, "+"]
+]
+
 
 var current_chosen_questions: Array = []
 var chosen_index_questions: Array[int] = []
@@ -139,6 +140,14 @@ func _check_answer():
 		result_display.text = "Zero can't be the denominator"
 		emit_signal("incorrect")
 		return
+	if user_answer[0] == correct_answer[0] and not user_answer[1] == correct_answer[1]:
+		result_display.text = "Incorrect Denominator Try Again"
+		emit_signal("incorrect")
+		return
+	if not user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
+		result_display.text = "Incorrect Numerator Try Again"
+		emit_signal("incorrect")
+		return
 	if not is_simplified():
 		result_display.text = "Answer can still be simplified"
 		Global.is_simplified_tutorial = true
@@ -148,12 +157,6 @@ func _check_answer():
 		Global.is_simplified_tutorial = false
 		emit_signal("correct")
 		next()
-	elif user_answer[0] == correct_answer[0] and not user_answer[1] == correct_answer[1]:
-		result_display.text = "Incorrect Denominator Try Again"
-		emit_signal("incorrect")
-	elif not user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
-		result_display.text = "Incorrect Numerator Try Again"
-		emit_signal("incorrect")
 	else:
 		result_display.text = "Incorrect Answer"
 		emit_signal("incorrect")
