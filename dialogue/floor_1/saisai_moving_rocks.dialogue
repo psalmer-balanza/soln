@@ -7,7 +7,7 @@ if current_quest == "saisai_wheelbarrow"
 	Saisai: You're the best~!
 	Saisai: Here, you can have one!
 	set player_badges["shiny_rock"] = true
-	(You receive a shiny rock badge)
+	(You receive a shiny rock badge!)
 	Saisai: Oh! Um, if it’s not too much trouble, could you help me with another task?
 	Saisai: I was going to bake a pie... and I could really use a little help. It’s for a friend of mine. I'd love it if you could join me!
 	- Sure thing!

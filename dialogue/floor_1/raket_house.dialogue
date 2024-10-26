@@ -16,6 +16,8 @@ if not raket_house_quest_complete
 	set raket_quest_progress = 1
 elif current_quest == "sword_finished"
 	Raket: Look at this beauty! You did it, {{player_username}}. This sword is perfect.
+	set player_badges["sword"] = true
+	(You receive a sword badge!)
 	What will you do with it?
 	Raket: Well I plan to-
 	*The ground shakes tremendously*

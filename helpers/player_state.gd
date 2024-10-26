@@ -10,7 +10,10 @@ var player_username: String = "Sol'n"
 var player_badges = {
 	"shiny_rock": false,
 	"bowl": false,
-	"carrot": false
+	"carrot": false,
+	"cake": false,
+	"sword": false,
+	"mushroom": false
 }
 
 func save_player_state(position: Vector2, current_scene: String):

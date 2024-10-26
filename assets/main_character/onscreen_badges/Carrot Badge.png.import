@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dahjr18jm1lbr"
-path="res://.godot/imported/The Bowl.png-813a83428e0520af8c4625b2132c460b.ctex"
+uid="uid://ccg1w10hdovbu"
+path="res://.godot/imported/Carrot Badge.png-a7f4342477e4e322dc8aadf52c05edfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/onscreen_badges/The Bowl.png"
-dest_files=["res://.godot/imported/The Bowl.png-813a83428e0520af8c4625b2132c460b.ctex"]
+source_file="res://assets/main_character/onscreen_badges/Carrot Badge.png"
+dest_files=["res://.godot/imported/Carrot Badge.png-a7f4342477e4e322dc8aadf52c05edfc.ctex"]
 
 [params]
 

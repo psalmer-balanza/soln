@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b58l5o00kvl2b"
-path="res://.godot/imported/The Cake.png-2a9eddd19de09fab63f6d147ae33a3ad.ctex"
+uid="uid://b3lprn6nf8rf0"
+path="res://.godot/imported/Shiny Rock Badge.png-b6df9f2f10b8aec3ff89fa5476c06a31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/onscreen_badges/The Cake.png"
-dest_files=["res://.godot/imported/The Cake.png-2a9eddd19de09fab63f6d147ae33a3ad.ctex"]
+source_file="res://assets/main_character/onscreen_badges/Shiny Rock Badge.png"
+dest_files=["res://.godot/imported/Shiny Rock Badge.png-b6df9f2f10b8aec3ff89fa5476c06a31.ctex"]
 
 [params]
 

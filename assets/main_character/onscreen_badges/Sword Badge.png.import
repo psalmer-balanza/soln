@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3lprn6nf8rf0"
-path="res://.godot/imported/The Shiny Rock.png-445b42ab1526a2f143ee4f94e2480958.ctex"
+uid="uid://8ubg4diy2ger"
+path="res://.godot/imported/Sword Badge.png-68fc0c04c4c7e31ca2e84bad8eecf253.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_character/onscreen_badges/The Shiny Rock.png"
-dest_files=["res://.godot/imported/The Shiny Rock.png-445b42ab1526a2f143ee4f94e2480958.ctex"]
+source_file="res://assets/main_character/onscreen_badges/Sword Badge.png"
+dest_files=["res://.godot/imported/Sword Badge.png-68fc0c04c4c7e31ca2e84bad8eecf253.ctex"]
 
 [params]
 

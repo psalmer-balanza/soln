@@ -23,6 +23,9 @@ elif raket_sneaking_quest_complete
 	Thank you. Now, why did you steal the pie in the first place?
 	Masked Figure: I was stealthy? [wait=0.5]Hmmm… It would be boring but I wouldn’t want to run into trouble in the future. 
 	Masked Figure: Ok, I won’t steal
+	Masked Figure: Here, speaking of baked goods, you can have a cake slice baked by an old friend.
+	set player_badges["cake"] = true
+	(You receive a cake badge!)
 	Masked Figure: Ah… It's been a while since someone visited me. 
 	Masked Figure: I used to have a friend named Saisai, but we fought, and I haven’t seen her in ages.
 	Actually, this pie is from Saisai. She wanted to apologize to her friend, Raket the Raccoon.

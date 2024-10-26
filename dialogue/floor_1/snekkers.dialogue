@@ -58,6 +58,11 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.ts
 ~ Snekkers_mission_complete
 Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
 Snekkers: You must be the chosen one! There was a tale...
+Snekkers: Looks like the mushrooms magic don't work anymore...
+Snekkers: They actually look nice when they aren't being annoying
+Snekkers: Here, you can have one to admire
+set player_badges["mushroom"] = true
+(You received a mushroom badge!)
 set current_quest = "you_may_leave_floor_1"
 
 => end
