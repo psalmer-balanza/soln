@@ -67,7 +67,6 @@ func _http_request_completed(_result, response_code, _headers, body):
 		if error == OK:
 			var response = json.get_data()
 			if minigameID == 1:
-				# randomize re
 				saisai_questions = constructFractionQuestions(response)
 				emit_signal("questions_loaded")
 			elif minigameID == 2:

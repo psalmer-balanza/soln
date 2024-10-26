@@ -34,6 +34,8 @@ var questions = [
 
 var current_chosen_questions: Array = []
 var chosen_index_questions: Array[int] = []
+var num_right_ans: int
+var num_wrong_ans: int
 
 var question_index:int = 0
 # numerator and denominator of first and second fraction
@@ -51,7 +53,6 @@ var question_index:int = 0
 @onready var result_display = $VBoxContainer/Result
 
 @onready var submit_button = $VBoxContainer/Submit/SubmitAnswer
-# @onready var help_button = $"../Tutorials/HelpButton"
 
 var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
@@ -92,6 +93,11 @@ func _display_question():
 	if question_index == current_chosen_questions.size():
 		print("no more questions")
 		_disable_questions()
+		match DialogueState.current_quest:
+			"saisai_wheelbarrow":
+				Statistics.update_saisai_statistics(num_right_ans, num_wrong_ans)
+			"dead_robots":
+				Statistics.update_dead_robot_statistics(num_right_ans, num_wrong_ans)
 		
 	else :
 		num_input.clear()
@@ -138,27 +144,33 @@ func _on_submit_answer_pressed() -> void:
 func _check_answer():
 	if user_answer[1] == 0:
 		result_display.text = "Zero can't be the denominator"
+		num_wrong_ans += 1
 		emit_signal("incorrect")
 		return
 	if user_answer[0] == correct_answer[0] and not user_answer[1] == correct_answer[1]:
 		result_display.text = "Incorrect Denominator Try Again"
+		num_wrong_ans += 1
 		emit_signal("incorrect")
 		return
 	if not user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
 		result_display.text = "Incorrect Numerator Try Again"
+		num_wrong_ans += 1
 		emit_signal("incorrect")
 		return
 	if not is_simplified():
 		result_display.text = "Answer can still be simplified"
+		num_right_ans += 1
 		Global.is_simplified_tutorial = true
 		return
 	if user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
 		result_display.text = "Correct Answer"
+		num_right_ans += 1
 		Global.is_simplified_tutorial = false
 		emit_signal("correct")
 		next()
 	else:
 		result_display.text = "Incorrect Answer"
+		num_wrong_ans += 1
 		emit_signal("incorrect")
 	print(correct_answer)
 
