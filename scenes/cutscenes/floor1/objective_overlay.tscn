@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl2yfrm37a7ju"]
+[gd_scene load_steps=3 format=3 uid="uid://dl2yfrm37a7ju"]
 
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/objective_overlay.gd" id="1_71tqq"]
-[ext_resource type="FontFile" uid="uid://die4hdtmo5chc" path="res://dialogue/Retro Gaming.ttf" id="2_k07cs"]
 [ext_resource type="AudioStream" uid="uid://b31iowja1x54q" path="res://audio/sound_effects/Typing Sound Effect.wav" id="3_wy1pr"]
 
 [node name="ObjectiveOverlay" type="Node2D"]
@@ -16,7 +15,6 @@ offset_bottom = 189.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_colors/font_shadow_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/font = ExtResource("2_k07cs")
 theme_override_font_sizes/font_size = 28
 text = "Current Objective: Explore the lands"
 visible_characters = 0

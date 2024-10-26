@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=16 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://dialogue/dialogue_balloon/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://bfl2h2w5xaxe" path="res://dialogue/dialogue box.png" id="2_ce08o"]
-[ext_resource type="FontFile" uid="uid://die4hdtmo5chc" path="res://dialogue/Retro Gaming.ttf" id="2_k3wn5"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://82f2xr1nobr6" path="res://dialogue/Next Dialogue Indicator.png" id="5_pe3ru"]
 [ext_resource type="Theme" uid="uid://dytyv4wft7gjb" path="res://dialogue/dialogue_theme.tres" id="6_ut6d7"]
@@ -172,7 +171,6 @@ offset_right = 848.0
 offset_bottom = 150.0
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/normal_font = ExtResource("2_k3wn5")
 text = "Dialogue..."
 seconds_per_step = 0.04
 
@@ -197,7 +195,6 @@ modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_k3wn5")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -258,7 +255,6 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-theme = ExtResource("6_ut6d7")
 theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")
@@ -269,7 +265,6 @@ theme = ExtResource("6_ut6d7")
 theme_override_colors/icon_focus_color = Color(0.576471, 0.247059, 0.270588, 1)
 theme_override_colors/icon_hover_color = Color(0.576471, 0.247059, 0.270588, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.576471, 0.247059, 0.270588, 1)
-theme_override_fonts/font = ExtResource("2_k3wn5")
 theme_override_font_sizes/font_size = 18
 text = "You don't happen to be a morning person right?"
 text_overrun_behavior = 3
