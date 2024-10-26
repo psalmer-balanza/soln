@@ -101,10 +101,11 @@ _data = {
 [node name="RaketStealing" type="Node2D"]
 script = ExtResource("1_oee2b")
 
-[node name="Actionable2" parent="." instance=ExtResource("1_h0iyx")]
+[node name="AutoActionable" parent="." instance=ExtResource("1_h0iyx")]
 dialogue_resource = ExtResource("2_hw68m")
+quest_name = "raket_stealing_quest"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_nf4ak")
 

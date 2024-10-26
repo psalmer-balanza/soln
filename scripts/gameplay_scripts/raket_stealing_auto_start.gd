@@ -1,6 +1,6 @@
 extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var actionable_collision: CollisionShape2D = $Actionable2/CollisionShape2D
+@onready var actionable_collision: CollisionShape2D = $AutoActionable/CollisionShape2D
 @onready var raket_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var raket_steal = false
 var raket_steal_quest = false
@@ -12,11 +12,6 @@ func _process(_delta):
 	if DialogueState.raket_sneaking_quest_complete and not raket_steal_quest:
 		raket_delete_node()
 		raket_steal_quest = true
-
-func _ready():
-	print("initialized")
-	if DialogueState.should_I_delete_raket_stealing_scene:
-		$Actionable2/CollisionShape2D.disabled = true
 
 func raket_stealing() -> void:
 	print("raket is here")

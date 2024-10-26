@@ -10,6 +10,8 @@ radius = 31.0161
 
 [node name="AutoActionable" parent="." instance=ExtResource("1_w6vj7")]
 dialogue_resource = ExtResource("2_fdoha")
+dialogue_start = "start"
+is_quest_complete = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 shape = SubResource("CircleShape2D_ud6dv")

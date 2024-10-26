@@ -48,3 +48,15 @@ var sword_guard: bool = false
 var sword_lower_blade: bool = false
 var sword_middle_blade: bool = false
 var sword_top_blade: bool = false
+
+
+func get_quest_status(quest_name: String) -> bool:
+	var is_quest_compelete = false
+	
+	if quest_name == "dead_robot_quest":
+		is_quest_compelete = disable_dead_robot_quest
+		
+	if quest_name == "raket_stealing_quest":
+		is_quest_compelete = should_I_delete_raket_stealing_scene
+	
+	return is_quest_compelete

@@ -553,6 +553,7 @@ autoplay = "robots_default"
 
 [node name="AutoActionable" parent="." instance=ExtResource("4_naa7k")]
 dialogue_resource = ExtResource("5_3v5xd")
+quest_name = "dead_robot_quest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(123, 36)
