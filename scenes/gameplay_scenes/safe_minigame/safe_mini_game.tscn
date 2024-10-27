@@ -157,3 +157,5 @@ visible = false
 [connection signal="all_done" from="board/FractionProblem" to="." method="_on_fraction_problem_all_done"]
 [connection signal="correct" from="board/FractionProblem" to="." method="_on_fraction_problem_correct"]
 [connection signal="animation_finished" from="fade" to="." method="_on_fade_animation_finished"]
+
+[editable path="Congrats"]

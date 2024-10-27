@@ -3,10 +3,9 @@ extends Node2D
 var quest_status := {}
 @onready var typing_sfx: AudioStreamPlayer = $TypingSFX
 # Typewriter effect variables
-@export var typing_speed := 0.05  # Speed of the typewriter effect
+@export var typing_speed := 0.069  # Speed of the typewriter effect
 var typewriter_timer := 0.0
 var current_characters := 0  # Tracks visible characters for the typewriter effect
-var full_text := ""  # The full text to display
 
 func _ready() -> void:
 	#LOCAL VAERIABLE SO THAT IT DOESNT DO ANIMATIONS IN PROCES DELTA MULTIPLE TIMES
@@ -26,10 +25,26 @@ func _ready() -> void:
 		"face_the_snake": false,
 		"snake_quiz_complete": false,
 		"you_may_leave_floor_1": false,
-		"placeholder_93123": false,
-		"placeholder_812133": false,
-		"placeholder_93121233": false,
-		"placeholder_10": false
+
+		#FLOOR 2 QUESTS
+		"entered_floor_2": false,
+		"robob_first_meet": false,
+		"after_robob": false,
+		"water_room_1": false,
+		"after_wr_1": false,
+		"meeting_chip": false,
+		"after_chip": false,
+		"water_room_2": false,
+		"after_wr_2": false,
+		"meeting_wizard": false,
+		"after_wizard": false,
+		"water_room_3": false,
+		"after_wr_3": false,
+		"wizard_training_room": false,
+		"after_training_room": false,
+		"robob_21f31irst_meet": false,
+		"robob_3first_meet": false,
+		"robob_3first13_meet": false
 	}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,10 +81,17 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Learn about the chosen one.")
 		"you_may_leave_floor_1":
 			handle_quest_label(cq, "Go to the sewer pipe.")
-		"placeholder1":
-			handle_quest_label(cq, "Learn more about these")
-		"placeholder1":
-			handle_quest_label(cq, "Learn more about these")
+		#FLOOR 2 
+		"entered_floor_2":
+			handle_quest_label(cq, "Explore this new area.")
+		"robob_first_meet":
+			handle_quest_label(cq, "Learn more about the floor from Robob.")
+		"after_robob":
+			handle_quest_label(cq, "Find the waterlogged room.")
+		"water_room_1":
+			handle_quest_label(cq, "Clear the water from the room.")
+		"after_wr_1":
+			handle_quest_label(cq, "Cross the room.")
 			
 	# Typewriter effect update
 	if current_characters < label.text.length():
@@ -79,7 +101,7 @@ func _process(delta: float) -> void:
 			current_characters += 1
 			label.visible_characters = current_characters
 			if typing_sfx.playing == false:  # Avoid overlapping sounds
-				typing_sfx.pitch_scale = randf_range(0.70, 0.95)
+				typing_sfx.pitch_scale = randf_range(0.53, 0.73)
 				typing_sfx.play()
 
 func handle_quest_label(quest_name: String, objective_text: String) -> void:

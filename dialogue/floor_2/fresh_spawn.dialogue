@@ -1,7 +1,8 @@
 ~ start
 set in_dialogue = true
-
-Woah where am I? [wait=0.5] There must be something in here that can tell me where to go.
+set current_quest = "entered_floor_2"
+Woah where am I? [wait=0.5] 
+There must be something in here that can tell me where to go.
 ~ end
 set in_dialogue = false
 => END

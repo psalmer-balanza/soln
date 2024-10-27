@@ -1,6 +1,8 @@
 ~ start
 set in_dialogue = true
+set current_quest = "robob_first_meet"
 Robob: Hey buddy.
+set current_quest = "after_robob"
 
 
 ~ end

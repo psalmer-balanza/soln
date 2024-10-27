@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://ce10v6bqdq75y"
+path="res://.godot/imported/chip.dialogue-490c47439e6a494a5944d7a36cf1cc18.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/chip.dialogue"
+dest_files=["res://.godot/imported/chip.dialogue-490c47439e6a494a5944d7a36cf1cc18.tres"]
+
+[params]
+
+defaults=true

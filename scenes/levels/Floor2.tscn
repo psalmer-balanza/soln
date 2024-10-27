@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=41 format=4 uid="uid://32iomad28t5n"]
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
+[ext_resource type="AudioStream" uid="uid://cnadtpkp13mnb" path="res://audio/background_music/Super Mario 64 - Dire Dire Docks ⧸ Jolly Roger Bay Music.wav" id="2_ccceh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
 [ext_resource type="Texture2D" uid="uid://c1i0ubr1y8d54" path="res://scenes/levels/test_floor2/pipes_side.png" id="3_5onoa"]
 [ext_resource type="TileSet" uid="uid://cv6gtkstr2nfo" path="res://tilemaps/floor_2/room.tres" id="3_8oq75"]
@@ -17,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bivjj6edlk0j" path="res://scenes/cutscenes/floor2/fresh_spawn_dialogue.tscn" id="14_onlp4"]
 [ext_resource type="Resource" uid="uid://y83t81wmmpjx" path="res://dialogue/floor_2/rat_training_area.dialogue" id="15_m63yj"]
 [ext_resource type="PackedScene" uid="uid://rfc1juq6dx1x" path="res://scenes/characters_scenes/floor1_characters/racket.tscn" id="16_4qn67"]
-[ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/raket_brother_meeting.dialogue" id="17_fs00t"]
+[ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/chip.dialogue" id="17_fs00t"]
 [ext_resource type="PackedScene" uid="uid://dc2a3a5irn808" path="res://scenes/characters_scenes/floor2_characters/Giant Enemy Crab.tscn" id="18_vr7qy"]
 [ext_resource type="PackedScene" uid="uid://bxmj5sxbr5016" path="res://scenes/cutscenes/floor2/waterlogged_1.tscn" id="20_24fd3"]
 [ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
@@ -658,6 +659,11 @@ _data = {
 [node name="Floor2" type="Node2D"]
 script = ExtResource("1_dkfmh")
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ccceh")
+volume_db = -21.55
+autoplay = true
+
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
 offset_left = -1895.0
@@ -938,7 +944,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(49, 1050)
+position = Vector2(31, 75)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
@@ -957,7 +963,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="MarginContainer2" parent="tooltipls/monitor1" index="0"]
 offset_right = 242.0
-offset_bottom = 98.0
+offset_bottom = 102.0
 
 [node name="Label" parent="tooltipls/monitor1/MarginContainer2/MarginContainer" index="0"]
 text = "you can use

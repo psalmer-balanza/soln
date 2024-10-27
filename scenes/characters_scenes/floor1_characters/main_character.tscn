@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/floor1/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking (Actually Royalty Free).wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://dta7ryqekyn1j" path="res://assets/main_character/mc_walk_back.png" id="3_csoht"]
-[ext_resource type="AudioStream" uid="uid://do78b3lo3fvf6" path="res://audio/sound_effects/Zaku Startup (NOT ROYALTY FREE).wav" id="3_cw7p2"]
 [ext_resource type="Texture2D" uid="uid://b58l5o00kvl2b" path="res://assets/main_character/onscreen_badges/Cake Badge.png" id="3_jfdhw"]
 [ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
 [ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="3_mm6sa"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
 [ext_resource type="Script" path="res://scripts/states/idle_state.gd" id="8_5n5vl"]
 [ext_resource type="Texture2D" uid="uid://8ubg4diy2ger" path="res://assets/main_character/onscreen_badges/Sword Badge.png" id="8_make3"]
+[ext_resource type="AudioStream" uid="uid://ss166am0xg8v" path="res://audio/sound_effects/Computer Startup SFX.wav" id="9_4p2n0"]
 [ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="9_bdkni"]
 [ext_resource type="Script" path="res://scripts/states/player_dialogue_state.gd" id="10_uarnf"]
 
@@ -467,13 +467,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="StartupSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_cw7p2")
-volume_db = -18.67
-pitch_scale = 1.25
+stream = ExtResource("9_4p2n0")
+volume_db = -12.111
+pitch_scale = 0.78
 
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4puxp")
 volume_db = -14.991
+bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
