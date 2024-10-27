@@ -1,6 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 scenes/levels/Floor1.tscn
-*.tscn
 scripts/gameplay_scripts/fraction_sample_gameplay.gd
 scripts/gameplay_scripts/fraction_problem.gd
