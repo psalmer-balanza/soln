@@ -875,7 +875,7 @@ tile_set = SubResource("TileSet_cdkk8")
 position = Vector2(971, 1010)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(349, 145)
+position = Vector2(1278, 1026)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -918,7 +918,7 @@ scale = Vector2(0.25, 0.25)
 
 [node name="MarginContainer2" parent="tooltips/monitor1" index="0"]
 offset_right = 214.0
-offset_bottom = 82.0
+offset_bottom = 100.0
 
 [node name="Label" parent="tooltips/monitor1/MarginContainer2/MarginContainer" index="0"]
 text = "use WASD keys
@@ -1016,7 +1016,7 @@ position = Vector2(1014, 689)
 position = Vector2(869, 733)
 
 [node name="firefly9" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(918, 717)
+position = Vector2(921, 731)
 
 [node name="firefly10" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(964, 698)

@@ -38,11 +38,11 @@ var current_question_index = 0  # Track which question the player is on
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
 @onready var npc_sprite = $NPC_Sprites
-@onready var current_npc = DialogueState.current_npc
+
 var is_simplified = false
 var current_player_username = PlayerState.player_username
 var current_minigame_id = 1 # PLACEHOLDER
-
+var current_npc = ""
 var current_chosen_questions: Array = []
 var chosen_index_questions: Array[int] = []
 
@@ -81,15 +81,14 @@ func _on_questions_loaded():
 	
 
 func npc_active():
-	npc_sprite.play(current_npc)
-	if current_npc == "raket":
-		npc_sprite.play("raket")
-		DialogueState.raket_house_quest_complete = true
-	elif current_npc == "masked_figure":
-		npc_sprite.play("masked_figure")
+	current_npc = "default"
+	if DialogueState.current_quest == "raket_house":
+		current_npc = "raket"
+	elif DialogueState.current_quest == "raket_stealing":
+		current_npc = "masked_figure"
 	else:
-		print(current_npc)
-		print("Worded Gameplay: No active npc found!")
+		print("No npc found!")
+	npc_sprite.play(current_npc)
 
 # Initialize questions and context texts based on the current quest
 func initiate_questions():
@@ -107,7 +106,6 @@ func initiate_questions():
 		print("Current quest is raket house")
 		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
 		fraction_questions = fraction_questions_house
-		
 	else:
 		print("No quest?")
 
@@ -320,6 +318,11 @@ func disable_inputs():
 # Return to the world scene
 func return_to_world():
 	print("Returning")
+	if DialogueState.current_quest == "raket_stealing":
+		print("")
+	if DialogueState.current_quest == "raket_house":
+		print("IGHDSAD UIHASDUHASD")
+		DialogueState.current_quest = "raket_house_worded_complete"
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_button_button_down() -> void:

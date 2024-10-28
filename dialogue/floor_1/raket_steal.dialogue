@@ -1,6 +1,5 @@
 ~ start
 set current_quest = "raket_stealing"
-set current_npc = "masked_figure"
 set in_dialogue = true
 
 if not raket_sneaking_quest_complete

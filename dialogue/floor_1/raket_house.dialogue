@@ -1,19 +1,16 @@
 ~ start
-
-set current_npc = "raket"
+sadfasdf
 set in_dialogue = true
-if not raket_house_quest_complete
-	set current_quest = "raket_house"
+if current_quest == "find_raket_house" or current_quest == "starting"
 	Raket: By the way, I’m Raket the blacksmith racoon. What’s your name? 
 	- Oh, I’m {{player_username}}.
 	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
 	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
 	Raket: There will still be a few left for me to eat for dinner.
 	Isn’t 4/10 too much for me? The pie is for you…
-	Raket: I don’t think so lets try solving it how much will we eat later and how much will be left for me then.
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+	Raket: I don’t think so. Let's try solving it how much will we eat later and how much will be left for me then.
 	set current_quest = "raket_house"
-	set raket_quest_progress = 1
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 elif current_quest == "sword_finished"
 	Raket: Look at this beauty! You did it, {{player_username}}. This sword is perfect.
 	set player_badges["sword"] = true
@@ -25,18 +22,20 @@ elif current_quest == "sword_finished"
 	set current_quest = "face_the_snake"
 	set raket_sword_complete = true
 	set raket_quest_progress = 3
-elif sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
-	set current_quest = "sword_finished"
+elif current_quest == "raket_sword_pieces_complete"
 	Raket: Great job, {{player_username}}!!!
 	Raket: Now that we have all the ore pieces, I can finally build this sword. 
+	set current_quest = "sword_finished"
 	Raket: Stand back! This may get hot. [wait=5] [do save_player_position_and_change_scene("res://scenes/cutscenes/floor1/raket_smithing_cutscene.tscn" ,"res://scenes/levels/Floor1.tscn")]
 	=> end
-elif raket_house_quest_complete
-	Raket: See I told you I will still have more of the pie slices to eat...
-	Raket: Don’t worry I want to share this pie to you as a form of thanks since you delivered the message from Saisai.
+# NEEDS AUTO ACTIONABLE
+elif current_quest == "raket_house_worded_complete"
+	Raket: See? I told you I will still have more of the pie slices to eat...
+	Raket: Don’t worry, I want to share this pie with you as a form of thanks since you delivered it for Saisai.
 	Okay then... Thank you !
 	Raket: Oh I noticed you have some energy on your chest right there! 
 	What energy? 
+	set current_quest = "raket_sword_quest"
 	Raket: That light on your chest.
 	Oh, What is this energy for? 
 	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
@@ -49,12 +48,10 @@ elif raket_house_quest_complete
 	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
 	Raket: Think you can help me find them?
 	- Sword pieces? I’m up for the challenge!
-	set current_quest = "raket_sword_quest"
 	Raket: Great! There. Just go down that path and follow it. 
 	Raket: It leads directly to the cave. Goodluck Sol’n!
 	set unlock_cave_collision = true
-	set raket_quest_progress = 2
-elif sword_bottom or sword_guard or sword_lower_blade or sword_middle_blade or sword_top_blade
+elif sword_bottom or sword_guard or sword_lower_blade or sword_middle_blade or sword_top_blade and current_quest == "raket_sword_quest"
 	Raket: What is this, it's still missing a few pieces. Go back! Don't come back until you have them all!
 
 
