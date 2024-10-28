@@ -278,7 +278,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"spawn-in",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -478,7 +478,7 @@ bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dempq")
-animation = &"idle"
+animation = &"spawn-in"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]

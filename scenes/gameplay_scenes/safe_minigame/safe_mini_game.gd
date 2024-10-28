@@ -3,6 +3,7 @@ extends Control
 @onready var inner_dial = $safe_dial/inner
 @onready var congrats = $Congrats
 @onready var fade = $fade
+@onready var timer = $Timer
 
 var safe_opened = false
 
@@ -22,12 +23,10 @@ func _on_fraction_problem_correct() -> void:
 	await tween.finished
 	if safe_opened:
 		fade.play("fade")
+		timer.start()
 
 func _on_fraction_problem_all_done() -> void:
 	safe_opened = true
 
-func _on_fade_animation_finished(anim_name: StringName) -> void:
-	
-	print("No congratulations in safe mini game scene")
-	#NO CONGRATS SCENE
+func _on_timer_timeout() -> void:
 	congrats.visible = true

@@ -45,9 +45,9 @@ patch_margin_bottom = 8
 layout_mode = 0
 offset_left = 118.0
 offset_top = 101.0
-offset_right = 418.0
-offset_bottom = 309.0
-scale = Vector2(2, 2)
+offset_right = 519.0
+offset_bottom = 378.0
+scale = Vector2(1.5, 1.5)
 
 [node name="water_level" type="MarginContainer" parent="."]
 layout_mode = 0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://1dslg5j6n866"]
+
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="1_ql07w"]
+[ext_resource type="Resource" uid="uid://dfdj1kxxlnucs" path="res://dialogue/floor_2/waterlogged_room_1.dialogue" id="2_7v3gm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdjmt"]
+size = Vector2(68, 13)
+
+[node name="waterlogged_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AutoActionable" parent="." instance=ExtResource("1_ql07w")]
+dialogue_resource = ExtResource("2_7v3gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+shape = SubResource("RectangleShape2D_pdjmt")

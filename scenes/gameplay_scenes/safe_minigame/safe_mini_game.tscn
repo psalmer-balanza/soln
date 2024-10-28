@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qj4ux4unjrtb"]
+[gd_scene load_steps=12 format=3 uid="uid://qj4ux4unjrtb"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.gd" id="1_68juf"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="1_b05pv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0qrmx2u7mct" path="res://scenes/gameplay_scenes/safe_minigame/inner_dial.png" id="3_h2cti"]
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="7_ciky7"]
+[ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="8_o2j1d"]
 
 [sub_resource type="Animation" id="Animation_hvgnm"]
 length = 0.001
@@ -29,6 +30,30 @@ tracks/1/path = NodePath("board:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FractionProblem:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FractionProblem:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -57,6 +82,30 @@ tracks/1/path = NodePath("board:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FractionProblem:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FractionProblem:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -112,8 +161,13 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="FractionProblem" parent="board" instance=ExtResource("2_7cpns")]
+[node name="FractionProblem" parent="." instance=ExtResource("2_7cpns")]
 layout_mode = 2
+offset_left = 103.0
+offset_top = 70.0
+offset_right = 519.0
+offset_bottom = 372.0
+scale = Vector2(1.5, 1.5)
 
 [node name="safe_dial" type="Control" parent="."]
 anchors_preset = 0
@@ -153,9 +207,19 @@ libraries = {
 
 [node name="Congrats" parent="." instance=ExtResource("7_ciky7")]
 visible = false
+next_scene = ExtResource("8_o2j1d")
 
-[connection signal="all_done" from="board/FractionProblem" to="." method="_on_fraction_problem_all_done"]
-[connection signal="correct" from="board/FractionProblem" to="." method="_on_fraction_problem_correct"]
-[connection signal="animation_finished" from="fade" to="." method="_on_fade_animation_finished"]
+[node name="Label" parent="Congrats/MarginContainer2/MarginContainer" index="0"]
+text = "Congratulations:
+You have opened
+the safe"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="all_done" from="FractionProblem" to="." method="_on_fraction_problem_all_done"]
+[connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Congrats"]
