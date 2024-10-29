@@ -5,7 +5,7 @@ extends Control
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 @onready var ip_address_input = $StudentInformation/IPAddress
 
-var login_url = "http://" + Global.host_ip + ":3000/game/login"
+var login_url
 
 func _ready():
 	# Create an HTTP request node and connect its completion signal.
@@ -15,6 +15,7 @@ func _ready():
 func _on_login_button_button_down():
 	print("Current IP address: ", ip_address_input.text)
 	Global.host_ip = ip_address_input.text
+	login_url = "http://" + Global.host_ip + ":3000/game/login"
 	
 	print("username: " + username.text + " " + "password: " + password.text)
 	var credentials = {

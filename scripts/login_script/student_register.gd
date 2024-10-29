@@ -9,7 +9,7 @@ extends Control
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 @onready var ip_address_input = $StudentInformation/IPAddress
 
-var register_url = "http://" + Global.host_ip + ":3000/game/register"
+var register_url
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +21,7 @@ func _ready():
 func _on_register_button_button_down():
 	print("Current IP address: ", ip_address_input.text)
 	Global.host_ip = ip_address_input.text
+	register_url = "http://" + Global.host_ip + ":3000/game/register"
 	
 	var credentials = {
 		"firstname": first_name.text,
