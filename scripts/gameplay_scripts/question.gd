@@ -27,7 +27,7 @@ func _ready():
 		["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1/2", "1/2"],
 		["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
 		["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
-		["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "8/12"],
+		["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "2/3"],
 		["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
 		["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
 		]
@@ -63,7 +63,7 @@ func _check_answer():
 		visible=false
 
 		#This current quest changer should be wherever the final question/end of quiz is
-		DialogueState.current_quest = "snake_quiz_complete"
+		
 		mc_questions.remove_at(index)
 	else:
 		print("Incorrect answer")
