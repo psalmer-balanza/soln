@@ -12,6 +12,5 @@ func _process(_delta):
 		$RadialDialogueIndicator.visible = false
 
 func manual_actionable(is_enabled: bool):
-	print(is_enabled)
 	$Actionable/CollisionShape2D.disabled = !is_enabled
 	$AutoActionable/CollisionShape2D.disabled = is_enabled

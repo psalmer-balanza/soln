@@ -335,7 +335,7 @@ func _on_correct_answer():
 		npc_sprite.play("raket_correct")
 		await npc_sprite.animation_finished
 		npc_sprite.play("raket")
-		DialogueState.raket_house_quest_complete = true
+		
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure_correct")
 		await npc_sprite.animation_finished
@@ -348,7 +348,7 @@ func _on_incorrect_answer():
 		npc_sprite.play("raket_wrong")
 		await npc_sprite.animation_finished
 		npc_sprite.play("raket")
-		DialogueState.raket_house_quest_complete = true
+		
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure_wrong")
 		await npc_sprite.animation_finished

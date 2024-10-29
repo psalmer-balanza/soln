@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://djmytl8d74p23"]
+[gd_scene load_steps=15 format=3 uid="uid://rfc1juq6dx1x"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/racket.gd" id="1_cx7ye"]
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/floor_1/npc/Raket idle animation.png" id="1_m1kvl"]
