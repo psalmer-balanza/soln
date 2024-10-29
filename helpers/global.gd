@@ -6,6 +6,10 @@ var host_ip = "localhost"
 # to know if the game is on online or offline mode
 var is_online = false # set to true if student logs into online mode
 
+# classroomID of a student
+var classroomID
+
+
 # for smithing mini game
 var ores_inside:int = 0
 
