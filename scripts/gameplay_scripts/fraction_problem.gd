@@ -15,7 +15,7 @@ var questions = [
 func load_default_questions():
 	# place questions here
 	# question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
-	if DialogueState.current_quest in ["water_room_1", "after_wr_1", "water_room_2", "after_wr_2", "water_room_3", "after_wr_3"]:
+	if DialogueState.current_quest in ["water_room_1", "after_wr_1", "water_room_2", "after_wr_2", "water_room_3", "after_wr_3", "meeting_chip", "after_chip"]:
 		questions = [
 			[3, 4, 1, 6, "-"],    
 			[2, 3, 1, 6, "-"],    

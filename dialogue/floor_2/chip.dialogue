@@ -25,6 +25,7 @@ Raket2: You know how to solve these problems right? Can you open it for me?
 - Ok
 	Subtraction gameplay
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.tscn" ,"res://scenes/levels/Floor2.tscn")
+	set current_quest = "after_chip"
 	=> end
 - I don’t want to
 	=> end
