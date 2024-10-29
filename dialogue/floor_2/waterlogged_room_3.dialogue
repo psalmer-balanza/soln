@@ -1,8 +1,9 @@
 ~ start
 set in_dialogue = true
-
+set current_quest = "water_room_3"
 Hello this is water game 3
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
+set current_quest = "after_wr_3"
 => end
 
 ~ end

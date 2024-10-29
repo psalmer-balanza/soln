@@ -47,11 +47,11 @@ animations = [{
 radius = 5.0
 height = 18.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q33bp"]
-radius = 28.0179
+[sub_resource type="CircleShape2D" id="CircleShape2D_yvtu3"]
+radius = 20.025
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6bse"]
-radius = 50.04
+radius = 28.0179
 
 [node name="Racket" type="CharacterBody2D"]
 script = ExtResource("1_cx7ye")
@@ -70,14 +70,18 @@ shape = SubResource("CapsuleShape2D_g5lww")
 
 [node name="Actionable" parent="." instance=ExtResource("2_2dxdd")]
 dialogue_resource = ExtResource("3_e5lo0")
+dialogue_start = "manual"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-shape = SubResource("CircleShape2D_q33bp")
-debug_color = Color(0, 0.6, 0.701961, 0.145098)
+shape = SubResource("CircleShape2D_yvtu3")
+disabled = true
+debug_color = Color(0.741099, 0.393037, 0.655135, 0.42)
 
-[node name="AutoActionable" parent="." instance=ExtResource("6_0wesy")]
+[node name="AutoActionable2" parent="." instance=ExtResource("6_0wesy")]
 dialogue_resource = ExtResource("3_e5lo0")
+dialogue_start = "auto"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable2"]
 shape = SubResource("CircleShape2D_v6bse")
-debug_color = Color(0, 0.6, 0.701961, 0.168627)
+disabled = true
+debug_color = Color(0.28436, 0.617745, 0.375285, 0.168627)
