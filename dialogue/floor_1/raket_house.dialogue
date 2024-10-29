@@ -1,7 +1,6 @@
 ~ start
-sadfasdf
 set in_dialogue = true
-if current_quest == "find_raket_house" or current_quest == "starting"
+if current_quest == "share_pie_with_raket" or current_quest == "starting"
 	Raket: By the way, I’m Raket the blacksmith racoon. What’s your name? 
 	- Oh, I’m {{player_username}}.
 	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
@@ -35,7 +34,6 @@ elif current_quest == "raket_house_worded_complete"
 	Okay then... Thank you !
 	Raket: Oh I noticed you have some energy on your chest right there! 
 	What energy? 
-	set current_quest = "raket_sword_quest"
 	Raket: That light on your chest.
 	Oh, What is this energy for? 
 	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
@@ -48,6 +46,7 @@ elif current_quest == "raket_house_worded_complete"
 	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
 	Raket: Think you can help me find them?
 	- Sword pieces? I’m up for the challenge!
+	set current_quest = "raket_sword_quest"
 	Raket: Great! There. Just go down that path and follow it. 
 	Raket: It leads directly to the cave. Goodluck Sol’n!
 	set unlock_cave_collision = true
