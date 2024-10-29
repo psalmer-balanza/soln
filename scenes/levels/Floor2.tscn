@@ -656,6 +656,7 @@ _data = {
 }
 
 [node name="Floor2" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_dkfmh")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
