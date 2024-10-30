@@ -9,6 +9,7 @@ var is_online = false # set to true if student logs into online mode
 # classroomID of a student
 var classroomID
 
+var current_floor = 1
 
 # for smithing mini game
 var ores_inside:int = 0
@@ -24,6 +25,11 @@ var user_energy = 3
 
 # tutorial
 var is_simplified_tutorial: bool = false
+
+func _process(delta: float) -> void:
+	if user_energy == 0:
+		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
+		user_energy = 3
 
 
 func choose_question(question_array_size: Array) -> int:
