@@ -36,23 +36,6 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0.643137)]
 }
 
-[sub_resource type="Animation" id="Animation_jv3l8"]
-resource_name = "wave"
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("room1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -2)]
-}
-
 [sub_resource type="Animation" id="Animation_nyo5s"]
 resource_name = "disappear"
 length = 2.0
@@ -82,6 +65,23 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jv3l8"]
+resource_name = "wave"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uexfa"]
 _data = {
 "RESET": SubResource("Animation_fn7p3"),
@@ -94,6 +94,7 @@ script = ExtResource("1_pcxck")
 
 [node name="AutoActionable" parent="." instance=ExtResource("1_s7vu2")]
 dialogue_resource = ExtResource("2_rjvax")
+quest_name = "water_logged_1_quest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(0, 34)

@@ -7,7 +7,6 @@ extends Area2D
 # To know the current quest
 @export var quest_name: String
 
-@onready var dead_robot_scene = $".."
 @onready var collision_shape_2d = $CollisionShape2D
 
 # Disable the auto actionable after a gameplay

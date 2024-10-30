@@ -9,9 +9,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqfrf"]
 size = Vector2(20, 127)
 
-[sub_resource type="Animation" id="Animation_qsgq0"]
-resource_name = "wave"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_47ao5"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,10 +18,22 @@ tracks/0/path = NodePath("room2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(3.80952, 18.0952), Vector2(3.81, 16.095)]
+"values": [Vector2(3.80952, 18.0952)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("room2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.643137)]
 }
 
 [sub_resource type="Animation" id="Animation_mmlb1"]
@@ -54,8 +65,9 @@ tracks/1/keys = {
 "values": [Vector2(3.81, 16.095), Vector2(3.80952, 18.0952)]
 }
 
-[sub_resource type="Animation" id="Animation_47ao5"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_qsgq0"]
+resource_name = "wave"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,22 +75,10 @@ tracks/0/path = NodePath("room2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.80952, 18.0952)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("room2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.643137)]
+"values": [Vector2(3.80952, 18.0952), Vector2(3.81, 16.095)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qypps"]
@@ -93,6 +93,7 @@ script = ExtResource("1_lhmxe")
 
 [node name="AutoActionable" parent="." instance=ExtResource("1_nuqfr")]
 dialogue_resource = ExtResource("2_dbfsw")
+quest_name = "water_logged_2_quest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(-70, -15)

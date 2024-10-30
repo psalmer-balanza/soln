@@ -342,6 +342,7 @@ func _on_correct_answer():
 
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
+	Global.user_energy -= 1
 	$WrongAnswerSFX.play()
 	if current_npc == "raket":
 		npc_sprite.play("raket_wrong")
@@ -351,4 +352,3 @@ func _on_incorrect_answer():
 		npc_sprite.play("masked_figure_wrong")
 		await npc_sprite.animation_finished
 		npc_sprite.play("masked_figure")
-	Global.user_energy -= 1

@@ -32,7 +32,7 @@ elif raket_sneaking_quest_complete
 	Well, she does. So, how about we head to your house and share this pie?
 	set current_quest = "share_pie_with_raket"
 	Raket: I'd like that. Let’s go and slice it up.
-	set should_I_delete_raket_stealing_scene = true
+	set disable_raket_stealing_quest = true
 
 
 
