@@ -1,0 +1,165 @@
+[gd_scene load_steps=19 format=4 uid="uid://dnq1la7m7qs1j"]
+
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/giant_enemy_crab_battle.gd" id="1_i06mh"]
+[ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_vkh37"]
+[ext_resource type="Texture2D" uid="uid://dwujbnjbdmrne" path="res://assets/floor_2/npc/GIANT ENEMY CRAB spritesheet.png" id="3_kd7ni"]
+[ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="4_lmp4l"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_wqr1t"]
+[ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="6_bgkqy"]
+[ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="7_1r8aj"]
+[ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="8_r1swt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmxk2"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2dx0"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiav5"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55j32"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maoqt"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu1vl"]
+atlas = ExtResource("3_kd7ni")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pnjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmxk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2dx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiav5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55j32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maoqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu1vl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt5kp"]
+bg_color = Color(0.941176, 0.913725, 0.788235, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycwsl"]
+texture = ExtResource("7_1r8aj")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3x3ed"]
+tile_size = Vector2i(64, 64)
+sources/2 = SubResource("TileSetAtlasSource_ycwsl")
+
+[node name="GiantEnemyCrabBattle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i06mh")
+
+[node name="bg" type="ColorRect" parent="."]
+self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207843, 0.168627, 0.25098, 1)
+
+[node name="board" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 87.0
+scale = Vector2(8, 8)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="board"]
+layout_mode = 2
+texture = ExtResource("2_vkh37")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Enemy Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(517, 301)
+scale = Vector2(4.42188, 4.00781)
+sprite_frames = SubResource("SpriteFrames_5pnjk")
+autoplay = "default"
+frame_progress = 0.354547
+
+[node name="Enemy HP" type="ProgressBar" parent="."]
+layout_mode = 2
+offset_left = 88.0
+offset_top = 109.0
+offset_right = 512.0
+offset_bottom = 129.0
+scale = Vector2(2, 2)
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
+theme_override_fonts/font = ExtResource("4_lmp4l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mt5kp")
+value = 100.0
+rounded = true
+
+[node name="Attack" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 433.0
+offset_top = 438.0
+offset_right = 591.0
+offset_bottom = 505.0
+
+[node name="Attack" type="Button" parent="Attack"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_wqr1t")
+theme_override_font_sizes/font_size = 25
+text = "ATTACK
+"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Attack"]
+layout_mode = 2
+texture = ExtResource("6_bgkqy")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Question BG" type="TileMapLayer" parent="."]
+visible = false
+modulate = Color(0.340339, 0.340339, 0.340339, 1)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAP//AgAAAAAAAAABAAAAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAACAAEAAgAAAAAAAAACAAIAAgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_3x3ed")
+
+[node name="Question" parent="." instance=ExtResource("8_r1swt")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
+[connection signal="draw" from="Question" to="Question" method="_on_draw"]

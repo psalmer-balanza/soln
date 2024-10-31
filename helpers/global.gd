@@ -11,11 +11,16 @@ var current_floor = 1
 var ores_inside:int = 0
 
 # for snekkers battle scene
-var Enemy_HP = 100
-var Current_HP = 100
-var Question = false
+var Snekker_HP = 100
+var Snekker_Current_HP = 100
+var Snekker_question = false
 var tilemap: TileMapLayer
 var total_score
+
+# for giant enemy crab battle scene
+var Giant_Enemy_Crab_HP = 100
+var Giant_Enemy_Crab_Current_HP = 100
+var Giant_Enemy_Crab_question = false
 
 var user_energy = 3
 

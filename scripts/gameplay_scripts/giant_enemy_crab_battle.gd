@@ -6,21 +6,21 @@ extends Control
 @onready var question_bg = $"Question BG"
 
 func _ready() -> void:
-	Global.Snekker_HP = 100
+	Global.Giant_Enemy_Crab_HP = 100
 
 func _process(delta: float) -> void:
-	enemy_hp.value = Global.Snekker_HP
-	if Global.Snekker_question == true:
+	enemy_hp.value = Global.Giant_Enemy_Crab_HP
+	if Global.Giant_Enemy_Crab_question == true:
 		question.show()
 		question_bg.show()
 	else:
 		question.hide()
 		question_bg.hide()
 	
-	if Global.Snekker_HP == 0:
-		DialogueState.current_quest = "snake_quiz_complete"
+	if Global.Giant_Enemy_Crab_HP == 0:
+		DialogueState.current_quest = "PUT PROPER VARIABLE WHEN ENEMY CRAB DEFEATED"
 		Statistics.post(PlayerState.player_username, 5, Global.total_score)
-		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
 
 func _on_attack_pressed() -> void:
-	Global.Snekker_question = true
+	Global.Giant_Enemy_Crab_question = true

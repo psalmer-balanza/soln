@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5xwhp"]
-radius = 40.0
+radius = 24.0208
 
 [sub_resource type="Gradient" id="Gradient_nugb7"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -147,16 +147,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x8vj"]
-radius = 39.0128
+radius = 24.0832
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvw83"]
-radius = 35.0
+radius = 23.0868
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_200xd"]
-radius = 37.0135
+radius = 25.0799
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4tcv"]
-radius = 39.0128
+radius = 26.0192
 
 [sub_resource type="Animation" id="Animation_5tpgg"]
 resource_name = "1st_disappear"
@@ -555,7 +555,7 @@ _data = {
 script = ExtResource("1_k2e4n")
 
 [node name="1st (Sword Bottom)" type="AnimatedSprite2D" parent="."]
-position = Vector2(47, 54)
+position = Vector2(37, 54)
 sprite_frames = SubResource("SpriteFrames_lxlfp")
 autoplay = "default"
 frame_progress = 0.997455
@@ -575,7 +575,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_h5rd1")
 
 [node name="2nd (Sword Guard)" type="AnimatedSprite2D" parent="."]
-position = Vector2(70, 171)
+position = Vector2(67, 171)
 sprite_frames = SubResource("SpriteFrames_y70eu")
 autoplay = "default"
 frame_progress = 0.0384617
@@ -595,7 +595,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_h5rd1")
 
 [node name="3rd (Sword Lower Blade)" type="AnimatedSprite2D" parent="."]
-position = Vector2(190, 169)
+position = Vector2(194, 174)
 sprite_frames = SubResource("SpriteFrames_lxlfp")
 autoplay = "default"
 frame_progress = 0.73259
@@ -615,7 +615,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_h5rd1")
 
 [node name="4th (Sword Middle Blade)" type="AnimatedSprite2D" parent="."]
-position = Vector2(146, 9)
+position = Vector2(144, 9)
 sprite_frames = SubResource("SpriteFrames_y70eu")
 autoplay = "default"
 frame_progress = 0.877325
@@ -635,7 +635,7 @@ energy = 0.5
 texture = SubResource("GradientTexture2D_h5rd1")
 
 [node name="5th (Sword Top Blade)" type="AnimatedSprite2D" parent="."]
-position = Vector2(247, 77)
+position = Vector2(249, 80)
 sprite_frames = SubResource("SpriteFrames_lxlfp")
 autoplay = "default"
 frame_progress = 0.66872

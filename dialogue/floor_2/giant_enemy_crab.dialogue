@@ -8,8 +8,8 @@ Robot: I’m here to help. The wizard rat said—
 Crab Boss: Help? With what?
 Robot: The barnacles stuck to you. I can remove them. The wizard rat said they were bonded by inscriptions.
 Crab boss: Barnacles? Hah, like you'd be any help. Prove it!
-  
-(Crab boss gameplay)
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/giant_enemy_crab_game/giant_enemy_crab_battle.tscn", "res://scenes/levels/Floor2.tscn")
+
 => end
 Crab Boss: Huh... well, you did it. I feel lighter already.
 

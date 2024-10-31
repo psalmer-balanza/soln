@@ -9,7 +9,7 @@ extends Area2D
 
 @onready var collision_shape_2d = $CollisionShape2D
 
-# Disable the auto actionable after a gameplay
+# To disable the auto actionable after a gameplay
 var is_quest_complete: bool
 
 func _ready():

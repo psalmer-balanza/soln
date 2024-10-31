@@ -20,19 +20,34 @@ func _ready():
 		QuestionsLoader.get_snekkers_questions()
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
-		mc_questions = [
-		["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
-		["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
-		["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
-		["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
-		["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1/2", "1/2"],
-		["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
-		["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
-		["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "2/3"],
-		["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
-		["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
-		]
-
+		if DialogueState.current_quest == "face_the_snake":
+			mc_questions = [
+			["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
+			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
+			["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
+			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
+			["What is 3/8 + 1/8?", "4/8", "5/8", "6/8", "1/2", "1/2"],
+			["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
+			["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
+			["What is 5/12 + 1/4?", "1/3", "3/4", "2/3", "8/12", "2/3"],
+			["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
+			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
+			]
+		
+		else:
+			mc_questions = [
+			["What is 1/2 - 1/4?", "1/2", "1/4", "1/8", "3/4", "1/4"],
+			["What is 2/3 - 1/3?", "1/3", "2/3", "1/2", "1", "1/3"],
+			["What is 4/5 - 1/5?", "2/5", "3/5", "1/5", "4/5", "3/5"],
+			["What is 2/3 - 1/6?", "1/6", "1/2", "1/3", "5/6", "1/2"],
+			["What is 5/8 - 1/8?", "4/8", "3/8", "5/8", "1/2", "1/2"],
+			["What is 2/2 - 1/2?", "1/2", "1/4", "3/4", "2/4", "1/2"],
+			["What is 5/6 - 1/3?", "1/2", "1/3", "2/3", "5/6", "1/2"],
+			["What is 3/4 - 1/4?", "2/4", "1/4", "3/4", "1", "1/2"],
+			["What is 7/10 - 3/10?", "1/5", "4/10", "7/10", "1/2", "4/10"],
+			["What is 3/4 - 1/2?", "1/4", "1/2", "1/3", "2/4", "1/4"]
+			]
+			
 func _on_questions_loaded():
 	mc_questions = QuestionsLoader.snekkers_questions
 	mc_choice_ids = QuestionsLoader.snekkers_choice_ids
@@ -65,17 +80,18 @@ func _on_choice_4_pressed() -> void:
 
 func _check_answer():
 	if answer == correct_answer:
-		Global.Enemy_HP -= 10
+		Global.Snekker_HP -= 10
+		Global.Giant_Enemy_Crab_HP -= 10
 		visible=false
-
-		#This current quest should be wherever the final question/end of quiz is
+		#This current quest changer should be wherever the final question/end of quiz is
 		
 		mc_questions.remove_at(index)
 	else:
 		print("Incorrect answer")
 		if Global.is_online:
 			Global.total_score -= 1
-	Global.Question = false
+	Global.Snekker_question = false
+	Global.Giant_Enemy_Crab_question = false
 
 func _on_draw() -> void:
 	index = _choose_question()
