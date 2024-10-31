@@ -17,7 +17,8 @@ func _process(_delta):
 	elif DialogueState.current_quest == "saisai_house_invite":
 		$Saisai/AutoActionable/CollisionShape2D.disabled = true
 		$Saisai/Actionable/CollisionShape2D.disabled = true
-		
+	elif DialogueState.current_quest == "moving_rock_done" or DialogueState.current_quest == "starting":
+		$Saisai/Actionable/CollisionShape2D.disabled = false
 		
 	if remove_saisai_speech_bubble == true: 
 		$Saisai/RadialDialogueIndicator.visible = false
@@ -26,9 +27,13 @@ func _process(_delta):
 
 func _ready():
 	var cq = DialogueState.current_quest
-	if cq not in ["starting", "movable_rock", "movable_rock_done", "saisai_wheelbarrow", "saisai_house_invite"]:
+	if cq not in ["starting", "movable_rock", "movable_rock_done", "saisai_wheelbarrow", "saisai_house_invite", "saisai_wheelbarrow_gameplay_done"]:
 		print("Current quest: \"", cq, "\". Deleting Saisai wheelbarrow scene")
 		saisai_rock_scene.queue_free()
+		#AUTO DIALOGUE AFTER RETURNING TO THE SCENE, WHETHER YOU FAILED OR NOT
+	if cq == "saisai_wheelbarrow" or cq == "saisai_wheelbarrow_gameplay_done":
+		$Saisai/Actionable/CollisionShape2D.disabled = true
+		$Saisai/AutoActionable/CollisionShape2D.disabled = false
 
 func play_move_rock() -> void:
 	# Remove speech bvubble and saisai collision

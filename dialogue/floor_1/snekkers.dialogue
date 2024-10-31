@@ -56,6 +56,7 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.ts
 => end
 
 ~ Snekkers_mission_complete
+
 Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
 Snekkers: You must be the chosen one! There was a tale...
 Snekkers: Looks like the mushrooms magic don't work anymore...

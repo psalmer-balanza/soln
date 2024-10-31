@@ -16,10 +16,14 @@ func _ready() -> void:
 		"dead_robots":
 			animation_player = $Robot
 			fraction_problem.quest_number = 2
-	
 	animation_player.visible = true
 
 func _on_fraction_problem_all_done() -> void:
+	if current_quest == "saisai_wheelbarrow":
+		print("All done with simple, current quest is: ", current_quest)
+		DialogueState.current_quest = "saisai_wheelbarrow_gameplay_done"
+	elif current_quest == "dead_robots":
+		DialogueState.current_quest = "dead_robots_gameplay_done"
 	$Congrats.visible = true
 
 func _on_fraction_problem_correct() -> void:

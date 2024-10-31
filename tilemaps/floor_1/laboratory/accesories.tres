@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://djr7yvjxd4hws"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://djr7yvjxd4hws"]
 
 [ext_resource type="Texture2D" uid="uid://b8n7vl0qmb4xy" path="res://assets/floor_1/laboratory/floor accesories.png" id="1_moygt"]
 [ext_resource type="Texture2D" uid="uid://dlwftcurewfym" path="res://scenes/levels/test_floor2/pipe_decor.png" id="2_j3ti0"]
+[ext_resource type="Texture2D" uid="uid://bdss6ist58rs1" path="res://assets/floor_2/npc/gʻiant enemy crab area.png" id="2_s263i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05sda"]
 texture = ExtResource("1_moygt")
@@ -32,6 +33,33 @@ texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.592, -9.82154, 13.8905, -9.40062, 13.7886, 9.19239, -14.3114, 9.26031)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvwv8"]
+texture = ExtResource("2_s263i")
+texture_region_size = Vector2i(32, 32)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjd6l"]
 texture = ExtResource("2_j3ti0")
 texture_region_size = Vector2i(32, 32)
@@ -50,3 +78,4 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_05sda")
 sources/3 = SubResource("TileSetAtlasSource_xjd6l")
+sources/1 = SubResource("TileSetAtlasSource_uvwv8")

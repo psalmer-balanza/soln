@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://trxctaaesrgo"]
+[gd_scene load_steps=19 format=3 uid="uid://trxctaaesrgo"]
 
+[ext_resource type="Script" path="res://scripts/character_scripts/npc/snekkers.gd" id="1_djawe"]
 [ext_resource type="Texture2D" uid="uid://t5dv1qsdwnh" path="res://assets/floor_1/npc/snekkers_idle.png" id="1_e7326"]
 [ext_resource type="Texture2D" uid="uid://b1vquni7mt1co" path="res://assets/floor_1/npc/snekkers2.0.png" id="1_ks8aa"]
 [ext_resource type="Resource" uid="uid://bo6dh3eso0qgw" path="res://dialogue/floor_1/snekkers.dialogue" id="3_5hdfo"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_kipv2"]
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="5_yf50a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnnra"]
 atlas = ExtResource("1_ks8aa")
@@ -84,7 +86,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
 radius = 74.027
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v184n"]
+radius = 89.1403
+
 [node name="Snekkers" type="CharacterBody2D"]
+script = ExtResource("1_djawe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.40928, 19.4093)
@@ -105,3 +111,10 @@ shape = SubResource("CircleShape2D_jh85t")
 position = Vector2(1.08254, 19.1106)
 scale = Vector2(2.80162, 2.80162)
 polygon = PackedVector2Array(-10.1333, -10.6667, -10.1333, -4.8, -8.53333, -2.13333, -8.53333, 2.66667, -9.06667, 6.4, -11.2, 8.53333, -11.2, 12.8, -9.06667, 14.9333, 9.6, 14.9333, 11.7333, 13.8667, 13.3333, 11.7333, 13.3333, 9.6, 13.8667, 9.6, 13.8667, 6.93333, 13.3333, 5.33333, 11.2, 1.06667, 11.7333, -1.6, 11.7333, -6.4, 10.1333, -10.1333, 4.8, -13.8667, -5.33333, -13.8667)
+
+[node name="AutoActionable" parent="." instance=ExtResource("5_yf50a")]
+dialogue_resource = ExtResource("3_5hdfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+position = Vector2(2, 23)
+shape = SubResource("CircleShape2D_v184n")

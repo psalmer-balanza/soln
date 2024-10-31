@@ -25,7 +25,7 @@ func _process(_delta):
 		auto_actionable_collision.disabled = true
 		radial_dialogue_indicator.visible = false
 		disable_saisai_quest = true
-		
+
 func _ready():
 	if disable_saisai_quest:
 		saisai.queue_free()

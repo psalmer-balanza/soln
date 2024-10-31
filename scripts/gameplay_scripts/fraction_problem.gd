@@ -6,30 +6,59 @@ signal all_done
 signal correct
 signal incorrect
 
-# place questions here
 # question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
 var questions = [
 	[1, 4, 1, 6, "+"],    
 	[1, 3, 2, 6, "+"],    
-	[2, 5, 3, 10, "+"],   
-	[1, 8, 2, 8, "+"],    
-	[3, 7, 1, 14, "+"],   
-	[1, 6, 2, 3, "+"],    
-	[3, 10, 2, 5, "+"],   
-	[2, 9, 1, 3, "+"],    
-	[1, 4, 3, 8, "+"],    
-	[2, 15, 5, 15, "+"],  
-	[1, 5, 2, 10, "+"],
-	[1, 7, 3, 14, "+"],   
-	[3, 8, 2, 8, "+"],
-	[1, 12, 1, 4, "+"],   
-	[2, 10, 1, 5, "+"],
-	[1, 9, 4, 9, "+"],   
-	[3, 16, 5, 8, "+"],   
-	[1, 6, 1, 12, "+"],   
-	[2, 8, 3, 4, "+"],   
-	[1, 5, 3, 10, "+"]
-]
+	[2, 5, 3, 10, "+"]]
+
+func load_default_questions():
+	# place questions here
+	# question format per index in array is another array [numerator 1, denominator 1, numerator 2, denominator 2, operation]
+	if DialogueState.current_quest in ["water_room_1", "after_wr_1", "water_room_2", "after_wr_2", "water_room_3", "after_wr_3", "meeting_chip", "after_chip"]:
+		questions = [
+			[3, 4, 1, 6, "-"],    
+			[2, 3, 1, 6, "-"],    
+			[4, 5, 3, 10, "-"],   
+			[5, 8, 2, 8, "-"],    
+			[5, 7, 1, 14, "-"],   
+			[3, 6, 2, 3, "-"],    
+			[3, 10, 2, 5, "-"],   
+			[4, 9, 1, 3, "-"],    
+			[3, 4, 1, 8, "-"],    
+			[5, 15, 2, 15, "-"],  
+			[3, 5, 2, 10, "-"],
+			[4, 7, 3, 14, "-"],   
+			[5, 8, 2, 8, "-"],
+			[3, 12, 1, 4, "-"],   
+			[4, 10, 1, 5, "-"],
+			[5, 9, 4, 9, "-"],   
+			[7, 16, 5, 8, "-"],   
+			[3, 6, 1, 12, "-"],   
+			[5, 8, 3, 4, "-"],   
+			[4, 5, 3, 10, "-"]]
+	else:
+		questions = [
+			[1, 4, 1, 6, "+"],    
+			[1, 3, 2, 6, "+"],    
+			[2, 5, 3, 10, "+"],   
+			[1, 8, 2, 8, "+"],    
+			[3, 7, 1, 14, "+"],   
+			[1, 6, 2, 3, "+"],    
+			[3, 10, 2, 5, "+"],   
+			[2, 9, 1, 3, "+"],    
+			[1, 4, 3, 8, "+"],    
+			[2, 15, 5, 15, "+"],  
+			[1, 5, 2, 10, "+"],
+			[1, 7, 3, 14, "+"],   
+			[3, 8, 2, 8, "+"],
+			[1, 12, 1, 4, "+"],   
+			[2, 10, 1, 5, "+"],
+			[1, 9, 4, 9, "+"],   
+			[3, 16, 5, 8, "+"],   
+			[1, 6, 1, 12, "+"],   
+			[2, 8, 3, 4, "+"],   
+			[1, 5, 3, 10, "+"]]
 
 
 var current_chosen_questions: Array = []
@@ -58,6 +87,8 @@ var user_answer: Array [int] = []
 var correct_answer: Array [int] = []
 
 func _ready() -> void:
+	#Load the questions variable with placeholders for addition and subtraction
+	load_default_questions()
 	if Global.is_online:
 		print("online mode")
 		_load_questions()

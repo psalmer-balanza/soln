@@ -11,6 +11,8 @@ func _ready():
 			print("Restored player position: ", PlayerState.saved_position)
 	else:
 		print("First time initializing Floor2, starting at spawn area")
+		Global.current_floor = 2
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

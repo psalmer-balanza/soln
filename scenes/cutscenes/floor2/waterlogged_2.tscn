@@ -1,19 +1,115 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd28wrjjp4wrg"]
+[gd_scene load_steps=11 format=4 uid="uid://cd28wrjjp4wrg"]
 
-[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="1_dk2g4"]
-[ext_resource type="Resource" uid="uid://c0fmdvf82nrvd" path="res://dialogue/floor_2/waterlogged_room_1.dialogue" id="2_nxish"]
+[ext_resource type="Script" path="res://scripts/cutscene_scripts/waterlogged_2.gd" id="1_lhmxe"]
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="1_nuqfr"]
+[ext_resource type="Resource" uid="uid://bqrmrqfhlrbkc" path="res://dialogue/floor_2/waterlogged_room_2.dialogue" id="2_dbfsw"]
 [ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/floor1/exclamation_mark.tscn" id="3_y2obc"]
+[ext_resource type="TileSet" uid="uid://cbn7paj54rxku" path="res://tilemaps/floor_2/water.tres" id="4_asubl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xonip"]
-radius = 39.1152
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqfrf"]
+size = Vector2(20, 127)
+
+[sub_resource type="Animation" id="Animation_47ao5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.80952, 18.0952)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("room2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.643137)]
+}
+
+[sub_resource type="Animation" id="Animation_mmlb1"]
+resource_name = "disappear"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.643137), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("room2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.81, 16.095), Vector2(3.80952, 18.0952)]
+}
+
+[sub_resource type="Animation" id="Animation_qsgq0"]
+resource_name = "wave"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("room2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.80952, 18.0952), Vector2(3.81, 16.095)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qypps"]
+_data = {
+"RESET": SubResource("Animation_47ao5"),
+"disappear": SubResource("Animation_mmlb1"),
+"wave": SubResource("Animation_qsgq0")
+}
 
 [node name="Waterlogged1" type="Node2D"]
+script = ExtResource("1_lhmxe")
 
-[node name="Actionable" parent="." instance=ExtResource("1_dk2g4")]
-dialogue_resource = ExtResource("2_nxish")
+[node name="AutoActionable" parent="." instance=ExtResource("1_nuqfr")]
+dialogue_resource = ExtResource("2_dbfsw")
+quest_name = "water_logged_2_quest"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_xonip")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+position = Vector2(-70, -15)
+shape = SubResource("RectangleShape2D_cqfrf")
 
 [node name="ExclamationMark" parent="." instance=ExtResource("3_y2obc")]
+position = Vector2(-97, -10)
+
+[node name="room2" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.643137)
+position = Vector2(3.80952, 18.0952)
+tile_map_data = PackedByteArray("AAD9//7/AAAeABAAAAD9////AAAeABAAAAD9/wAAAAAeABAAAAD+//3/AAAeABAAAAD+//7/AAAeABAAAAD+////AAAeABAAAAD+/wAAAAAeABAAAAD+/wEAAAAeABAAAAD///3/AAAeABAAAAD///7/AAAeABAAAAD/////AAAeABAAAAD//wAAAAAeABAAAAD//wEAAAAeABAAAAAAAP3/AAAeABAAAAAAAP7/AAAeABAAAAAAAP//AAAeABAAAAAAAAAAAAAeABAAAAAAAAEAAAAeABAAAAABAP3/AAAeABAAAAABAP7/AAAeABAAAAABAP//AAAeABAAAAABAAAAAAAeABAAAAABAAEAAAAeABAAAAACAP7/AAAeABAAAAACAP//AAAeABAAAAACAAAAAAAeABAAAAD9//3/AAAeABAAAAD+//z/AAAeABAAAAD///z/AAAeABAAAAAAAPz/AAAeABAAAAABAPz/AAAeABAAAAACAP3/AAAeABAAAAA=")
+tile_set = ExtResource("4_asubl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qypps")
+}
+autoplay = "wave"

@@ -1,17 +1,9 @@
 ~ start
 
-set current_quest = "dead_robots"
-
 set in_dialogue = true
 do dead_robot_scene()
-if dead_robot_quest_status == "first_time"
-	Old Peculiar: Hello there...
-	Old Peculiar: We are the spirits of the land, we see that you have arisen from your slumber...
-	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
-	set dead_robot_quest_status = "done"
-	=> end
-elif dead_robot_quest_status == "done"
+
+if current_quest == "dead_robots_gameplay_done"
 	Old Peculiar: Thank you... you have proven yourself worthy
 	Old Peculiar: We can move to the archive folder without any regrets now...
 	Old Peculiar: With our test being finished, you are now capable of even higher modes of solving fractions...
@@ -21,8 +13,23 @@ elif dead_robot_quest_status == "done"
 		set player_badges["carrot"] = true
 		(What do I do with this?)
 	Old Peculiar: Best of luck to you, chosen one...
-	do dead_robot_scene_finished()
-	set disable_dead_robot_quest = true
+	set current_quest = "dead_robots_done"
+	=> end
+elif current_quest == "dead_robots":
+	Old Peculiar: Uh... I don't think that's right...
+	Old Peculiar: Why don't we try again...
+	- I won't give up!
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+	
+else 
+	set current_quest = "dead_robots_appear"
+	Old Peculiar: Hello there...
+	Old Peculiar: We are the spirits of the land, we see that you have arisen from your slumber...
+	Old Peculiar: Do you deem yourself worthy?
+	- Worthy of what?
+	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
+	set current_quest = "dead_robots"
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
 	=> end
 => end
 

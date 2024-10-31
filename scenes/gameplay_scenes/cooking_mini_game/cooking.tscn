@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://c1air8h2xo8we" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.tscn" id="13_j0int"]
 [ext_resource type="Texture2D" uid="uid://b8ky883nsqi4l" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/garlic5.png" id="13_tbs6y"]
 [ext_resource type="Texture2D" uid="uid://b7sp6g52cvjm" path="res://assets/ui/particle/particle.png" id="20_8wgsf"]
-[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scripts/UI/congratulations.tscn" id="22_bgp80"]
+[ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="22_bgp80"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
-[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scripts/UI/quick_tutorial.tscn" id="24_b43bd"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="24_b43bd"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 

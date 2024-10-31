@@ -1,8 +1,7 @@
 ~ start
 set in_dialogue = true
-
 #When you finish the simple addition
-if current_quest == "saisai_wheelbarrow"
+if current_quest == "saisai_wheelbarrow_gameplay_done"
 	Saisai: Yay! Thank you soooo much! Now my garden is gonna be the prettiest ever with these shiny rocks! 
 	Saisai: You're the best~!
 	Saisai: Here, you can have one!
@@ -15,9 +14,16 @@ if current_quest == "saisai_wheelbarrow"
 		set current_quest = "saisai_house_invite"
 		(Wait... she didn't mention where her house was)
 		=> end
+elif current_quest == "saisai_wheelbarrow":
+	Saisai: Woah! I don't think that was right
+	Saisai: Are the rocks going to explode now?
+	- Let me try again!
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+		=> end
+#	- Uh oh... I'll be back!
+#		=> end
 #Before finishing simple addition (first meet)
 else 
-	set current_quest = "saisai_rock"
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
 	Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 
@@ -28,7 +34,7 @@ else
 		set current_quest = "saisai_wheelbarrow"
 		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
 		=> end
-
+=> end
 ~ end
 set in_dialogue = false
 => END

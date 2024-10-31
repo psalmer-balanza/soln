@@ -82,7 +82,7 @@ func _on_questions_loaded():
 
 func npc_active():
 	current_npc = "default"
-	if DialogueState.current_quest == "raket_house":
+	if DialogueState.current_quest == "share_pie_with_raket" or DialogueState.current_quest == "raket_house":
 		current_npc = "raket"
 	elif DialogueState.current_quest == "raket_stealing":
 		current_npc = "masked_figure"
@@ -319,7 +319,7 @@ func disable_inputs():
 func return_to_world():
 	print("Returning")
 	if DialogueState.current_quest == "raket_stealing":
-		print("")
+		DialogueState.current_quest = "raket_stealing_gameplay_done"
 	if DialogueState.current_quest == "raket_house":
 		print("IGHDSAD UIHASDUHASD")
 		DialogueState.current_quest = "raket_house_worded_complete"
@@ -335,7 +335,6 @@ func _on_correct_answer():
 		npc_sprite.play("raket_correct")
 		await npc_sprite.animation_finished
 		npc_sprite.play("raket")
-		DialogueState.raket_house_quest_complete = true
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure_correct")
 		await npc_sprite.animation_finished
@@ -343,14 +342,13 @@ func _on_correct_answer():
 
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
+	Global.user_energy -= 1
 	$WrongAnswerSFX.play()
 	if current_npc == "raket":
 		npc_sprite.play("raket_wrong")
 		await npc_sprite.animation_finished
 		npc_sprite.play("raket")
-		DialogueState.raket_house_quest_complete = true
 	elif current_npc == "masked_figure":
 		npc_sprite.play("masked_figure_wrong")
 		await npc_sprite.animation_finished
 		npc_sprite.play("masked_figure")
-	Global.user_energy -= 1

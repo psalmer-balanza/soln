@@ -5,16 +5,22 @@ var in_dialogue: bool = false
 
 var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
-var disable_dead_robot_quest: bool = false
 
-#
+# Variables for disabling auto actionables PERMANENTLY after they have been complete
+var disable_dead_robot_quest: bool = false
+var disable_raket_stealing_quest: bool = false
+var disable_fresh_dialogue_quest: bool = false
+var disable_water_logged_1_quest: bool = false
+var disable_water_logged_2_quest: bool = false
+var disable_water_logged_3_quest: bool = false
+
 #var current_npc: String = "none"
 #var sword_pieces_complete = false
 var raket_sword_complete: bool = false
 #var snake_defeated: bool = false
 var raket_sneaking_quest_complete: bool = false
 #var raket_house_quest_complete: bool = false
-var should_I_delete_raket_stealing_scene: bool = false
+
 var unlock_cave_collision: bool = false
 
 var raket_quest_progress: int = 0
@@ -57,6 +63,18 @@ func get_quest_status(quest_name: String) -> bool:
 		is_quest_compelete = disable_dead_robot_quest
 		
 	if quest_name == "raket_stealing_quest":
-		is_quest_compelete = should_I_delete_raket_stealing_scene
+		is_quest_compelete = disable_raket_stealing_quest
 	
+	if quest_name == "fresh_dialogue_quest":
+		is_quest_compelete = disable_fresh_dialogue_quest
+	
+	if quest_name == "water_logged_1_quest":
+		is_quest_compelete = disable_water_logged_1_quest
+	
+	if quest_name == "water_logged_2_quest":
+		is_quest_compelete = disable_water_logged_2_quest
+	
+	if quest_name == "water_logged_3_quest":
+		is_quest_compelete = disable_water_logged_3_quest
+		
 	return is_quest_compelete
