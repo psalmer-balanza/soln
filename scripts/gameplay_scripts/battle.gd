@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		question_bg.hide()
 	
 	if Global.Enemy_HP == 0:
-		Statistics.post(PlayerState.player_username, 5, Global.total_score)
+		Statistics.postQuizScore(PlayerState.player_username, Global.classroomID, 5, Global.total_score)
 		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_attack_pressed() -> void:
