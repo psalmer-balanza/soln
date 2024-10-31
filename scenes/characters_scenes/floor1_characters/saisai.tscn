@@ -150,7 +150,7 @@ animations = [{
 radius = 30.0167
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayirp"]
-radius = 97.0464
+radius = 58.1378
 
 [node name="Saisai" type="CharacterBody2D"]
 script = ExtResource("1_x55dq")
@@ -171,7 +171,8 @@ dialogue_resource = ExtResource("3_crl56")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(3, -5)
 shape = SubResource("CircleShape2D_jh85t")
-debug_color = Color(0, 0.6, 0.701961, 0.184314)
+disabled = true
+debug_color = Color(0.254076, 0.622156, 0.376476, 0.403922)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(3.00001, -5.00003)
@@ -185,4 +186,4 @@ dialogue_resource = ExtResource("3_crl56")
 position = Vector2(5, -2)
 shape = SubResource("CircleShape2D_ayirp")
 disabled = true
-debug_color = Color(0, 0.6, 0.701961, 0.109804)
+debug_color = Color(0.85098, 0.278431, 0.627451, 0.133333)
