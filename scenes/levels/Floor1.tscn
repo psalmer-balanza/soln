@@ -875,7 +875,7 @@ tile_set = SubResource("TileSet_cdkk8")
 position = Vector2(971, 1010)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1292, 1110)
+position = Vector2(1317, 1067)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -986,7 +986,7 @@ shape = SubResource("RectangleShape2D_5exya")
 position = Vector2(1422, 1020)
 
 [node name="BarrierFromCave" type="CollisionShape2D" parent="Racket"]
-position = Vector2(5, 210)
+position = Vector2(17, 210)
 shape = SubResource("RectangleShape2D_48qww")
 
 [node name="Snekkers" parent="." instance=ExtResource("14_5ewdd")]

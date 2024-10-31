@@ -667,10 +667,10 @@ autoplay = true
 
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
-offset_left = -1895.0
-offset_top = -2962.0
-offset_right = 6629.0
-offset_bottom = 3915.0
+offset_left = -2308.0
+offset_top = -3130.0
+offset_right = 6216.0
+offset_bottom = 3747.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="below_rooms" type="TileMapLayer" parent="."]
@@ -943,7 +943,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(1762, 512)
+position = Vector2(3343, -220)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
