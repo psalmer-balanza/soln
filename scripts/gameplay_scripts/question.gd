@@ -20,6 +20,7 @@ func _ready():
 		QuestionsLoader.get_snekkers_questions()
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
+		print("Current quest is: ", DialogueState.current_quest)
 		if DialogueState.current_quest == "face_the_snake":
 			mc_questions = [
 			["What is 1/4 + 1/4?", "1/2", "3/4", "1", "1/8", "1/2"],
@@ -35,6 +36,7 @@ func _ready():
 			]
 		
 		else:
+			print("Current quest is: ", DialogueState.current_quest)
 			mc_questions = [
 			["What is 1/2 - 1/4?", "1/2", "1/4", "1/8", "3/4", "1/4"],
 			["What is 2/3 - 1/3?", "1/3", "2/3", "1/2", "1", "1/3"],

@@ -26,6 +26,7 @@ func _on_fraction_problem_correct() -> void:
 		timer.start()
 
 func _on_fraction_problem_all_done() -> void:
+	DialogueState.current_quest = "chip_gameplay_done"
 	safe_opened = true
 
 func _on_timer_timeout() -> void:

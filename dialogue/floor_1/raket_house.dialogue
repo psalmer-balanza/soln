@@ -43,7 +43,6 @@ if current_quest == "sword_finished"
 	=> end
 #AUTO 
 elif current_quest == "raket_house_worded_complete"
-	current_quest {{current_quest}}
 	set current_quest = "raket_sword_quest"
 	Raket: See? I told you I will still have more of the pie slices to eat...
 	Raket: Don’t worry, I want to share this pie with you as a form of thanks since you delivered it for Saisai.
