@@ -20,6 +20,8 @@ func _process(_delta):
 		$RadialDialogueIndicator.visible = true
 	elif DialogueState.current_quest == "sword_finished":
 		enable_auto_dialogue(true)
+	elif DialogueState.current_quest == "raket_house":
+		enable_auto_dialogue(true)
 func enable_auto_dialogue(is_enabled: bool):
 	manual_actionable.disabled = is_enabled
 	auto_actionable.disabled = !is_enabled

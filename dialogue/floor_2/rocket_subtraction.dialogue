@@ -1,8 +1,0 @@
-~ start
-
-Raket: Hello
-- Hello (Enter subtraction)
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/subraction_fraction/fraction_subtraction_gameplay.tscn" ,"res://scenes/levels/test_floor1/test_floor2.tscn")
-- Bye
-
-=> END

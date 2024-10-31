@@ -1,20 +1,14 @@
 ~ start
-set current_quest = "raket_stealing"
+
 set in_dialogue = true
 
-if not raket_sneaking_quest_complete
-	do raket_steal_scene()
-	*A masked figure takes the pie off your hands before you could notice*
-	Hey! Stop right there! That pie isn't for you!
-	Masked Figure: It's mine now! Who are you and what are you doing here?
-	I'm {{player_username}}, I'm here to deliver this pie to someone
-	Masked Figure: Hmmm… I see. But im practicing how to be ninja and the challenge was to take a pie.
-	Masked Figure: I see that you are serious about it, let's make a deal?
-	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
-	Deal. Hit me with your best shot!
-	set raket_sneaking_quest_complete = true
+if current_quest == "raket_stealing":
+	Masked Figure: Haha I win!
+	Masked Figure: But that was too easy... now I kinda feel bad...
+	Masked Figure: How about I give you another try?
+	- Fine! Bring it on!
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
-elif raket_sneaking_quest_complete
+elif current_quest == "raket_stealing_gameplay_done"
 	I did it! I solved the fractions! [wait=0.5] Now hold on... stealing is bad, okay?
 	Masked Figure: But it's the first step to being a ninja... I have to be stealthy.
 	You can still be a ninja without stealing. 
@@ -33,7 +27,19 @@ elif raket_sneaking_quest_complete
 	set current_quest = "share_pie_with_raket"
 	Raket: I'd like that. Let’s go and slice it up.
 	set disable_raket_stealing_quest = true
-
+else
+	do raket_steal_scene()
+	*A masked figure takes the pie off your hands before you could notice*
+	Hey! Stop right there! That pie isn't for you!
+	Masked Figure: It's mine now! Who are you and what are you doing here?
+	I'm {{player_username}}, I'm here to deliver this pie to someone
+	Masked Figure: Hmmm… I see. But im practicing how to be ninja and the challenge was to take a pie.
+	Masked Figure: I see that you are serious about it, let's make a deal?
+	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
+	Deal. Hit me with your best shot!
+	set raket_sneaking_quest_complete = true
+	set current_quest = "raket_stealing"
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 
 
 => end

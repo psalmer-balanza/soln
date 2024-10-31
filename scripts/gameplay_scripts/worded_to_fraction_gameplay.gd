@@ -319,7 +319,7 @@ func disable_inputs():
 func return_to_world():
 	print("Returning")
 	if DialogueState.current_quest == "raket_stealing":
-		print("")
+		DialogueState.current_quest = "raket_stealing_gameplay_done"
 	if DialogueState.current_quest == "raket_house":
 		print("IGHDSAD UIHASDUHASD")
 		DialogueState.current_quest = "raket_house_worded_complete"

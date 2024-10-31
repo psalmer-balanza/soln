@@ -18,7 +18,6 @@ func raket_stealing() -> void:
 	animation_player.play("raket_stealing")
 	await animation_player.animation_finished
 	raket_steal = true
-	
+
 func raket_delete_node() -> void:
 	raket_sprite.visible = false
-	

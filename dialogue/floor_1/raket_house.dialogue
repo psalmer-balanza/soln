@@ -2,7 +2,6 @@
 set in_dialogue = true
 #MANUAL ACTIONABLE
 if current_quest == "share_pie_with_raket" or current_quest == "starting"
-	set current_quest = "raket_house"
 	Raket: By the way, I’m Raket the blacksmith racoon. What’s your name? 
 	- Oh, I’m {{player_username}}.
 	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
@@ -10,8 +9,8 @@ if current_quest == "share_pie_with_raket" or current_quest == "starting"
 	Raket: There will still be a few left for me to eat for dinner.
 	Isn’t 4/10 too much for me? The pie is for you…
 	Raket: I don’t think so. Let's try solving it how much will we eat later and how much will be left for me then.
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set current_quest = "raket_house"
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 	=> end
 #MANUAL
 elif current_quest == "raket_sword_pieces_complete"
@@ -48,26 +47,31 @@ elif current_quest == "raket_house_worded_complete"
 	set current_quest = "raket_sword_quest"
 	Raket: See? I told you I will still have more of the pie slices to eat...
 	Raket: Don’t worry, I want to share this pie with you as a form of thanks since you delivered it for Saisai.
-#	Okay then... Thank you !
-#	Raket: Oh I noticed you have some energy on your chest right there! 
-#	What energy? 
-#	Raket: That light on your chest.
-#	Oh, What is this energy for? 
-#	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
-#	Raket: But that's all I know from that old thing.
-#	Is there a way for me to know the rest of the prophecy? 
-#	Raket: Yeah but you have to go to the top of the lighthouse to find out, 
-#	Raket: But the only exit to this place is the pipe behind Snekkers the angry Snake. 
-#	Raket: He lives in that cave right there. 
-#	Raket: Oh I might need a small favor from you. 
-#	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
-#	Raket: Think you can help me find them?
-#	- Sword pieces? I’m up for the challenge!
-#	Raket: Great! There. Just go down that path and follow it. 
-#	Raket: It leads directly to the cave. Goodluck Sol’n!
+	Okay then... Thank you !
+	Raket: Oh I noticed you have some energy on your chest right there! 
+	What energy? 
+	Raket: That light on your chest.
+	Oh, What is this energy for? 
+	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
+	Raket: But that's all I know from that old thing.
+	Is there a way for me to know the rest of the prophecy? 
+	Raket: Yeah but you have to go to the top of the lighthouse to find out, 
+	Raket: But the only exit to this place is the pipe behind Snekkers the angry Snake. 
+	Raket: He lives in that cave right there. 
+	Raket: Oh I might need a small favor from you. 
+	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
+	Raket: Think you can help me find them?
+	- Sword pieces? I’m up for the challenge!
+	Raket: Great! There. Just go down that path and follow it. 
+	Raket: It leads directly to the cave. Goodluck Sol’n!
 	set unlock_cave_collision = true
 	set current_quest = "raket_sword_quest"
 	=> end
+elif current_quest == "raket_house"
+	Raket: This pie is looking a bit off. Should we try again?
+	- Yeah
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+		=> end
 
 => end
 
