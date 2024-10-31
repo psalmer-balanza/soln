@@ -2,12 +2,8 @@ extends Node
 
 # openlabserver is 30.30.28.52
 var host_ip = "localhost"
-
 # to know if the game is on online or offline mode
 var is_online = false # set to true if student logs into online mode
-
-# classroomID of a student
-var classroomID
 
 var current_floor = 1
 

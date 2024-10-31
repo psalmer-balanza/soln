@@ -6,7 +6,11 @@ var first_time_initializing_second_floor_scene: bool = true
 var saved_position: Vector2
 var saved_scene: String = "res://scenes/levels/Floor1.tscn"
 var player_in_dialogue: bool = false
+# player details
 var player_username: String = "Sol'n"
+var classroom_id = 1
+var student_id = 1
+
 var player_badges = {
 	"shiny_rock": false,
 	"bowl": false,

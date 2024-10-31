@@ -5,6 +5,8 @@ var robot_questions: Array = []
 var racket_steal_questions: Array = []
 var racket_house_questions: Array = []
 var snekkers_questions: Array = []
+var snekkers_choice_ids: Array = []
+
 var post_data = {}
 var minigameID
 
@@ -80,6 +82,7 @@ func _http_request_completed(_result, response_code, _headers, body):
 				emit_signal("questions_loaded")
 			elif minigameID == 5:
 				snekkers_questions = constructQuizQuestions(response)
+				snekkers_choice_ids = getChoiceIDs(response)
 				emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get fractions", response_code)
@@ -107,14 +110,42 @@ func constructQuizQuestions(response):
 	var questions = []
 	for i in range(response.size()):
 		var question = response[i]
+		
+		# first extract correct answer
+		var correctAnswer
+		correctAnswer = getCorrectAnswer(question)
+		
 		questions += [[
 			question["question_text"], 
-			question["option_1"], 
-			question["option_2"], 
-			question["option_3"], 
-			question["option_4"], 
-			question["correct_answer"],
+			question["choices"][0]["choice_text"],
+			question["choices"][1]["choice_text"], 
+			question["choices"][2]["choice_text"], 
+			question["choices"][3]["choice_text"], 
+			correctAnswer,
 			question["question_id"]
 			]]
 		
 	return questions
+
+# helper function for constructQuizQuestions
+func getCorrectAnswer(question):
+	var correctAnswer
+
+	for i in range(4):
+		if (question["choices"][i]["is_correct"] == true):
+			return question["choices"][i]["choice_text"]
+			
+func getChoiceIDs(response):
+	var choiceIDs = []
+	for i in range(response.size()):
+		var question = response[i]
+		
+		choiceIDs += [[
+			question["choices"][0]["choice_id"],
+			question["choices"][1]["choice_id"], 
+			question["choices"][2]["choice_id"], 
+			question["choices"][3]["choice_id"], 
+			]]
+	print("when retrieving, choiceIDs are", choiceIDs)
+		
+	return choiceIDs

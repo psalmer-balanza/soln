@@ -6,6 +6,7 @@ extends Control
 @onready var c3:Button = $"container/VBoxContainer/Answers/c/Choice 3"
 @onready var c4:Button = $"container/VBoxContainer/Answers/d/Choice 4"
 @onready var mc_questions
+@onready var mc_choice_ids
 var index
 var correct_answer
 var answer
@@ -34,6 +35,7 @@ func _ready():
 
 func _on_questions_loaded():
 	mc_questions = QuestionsLoader.snekkers_questions
+	mc_choice_ids = QuestionsLoader.snekkers_choice_ids
 	# score = questions.size() MINUS no_of_wrong_attempts
 	Global.total_score = mc_questions.size()
 
@@ -44,25 +46,29 @@ func _choose_question() -> int:
 func _on_choice_1_pressed() -> void:
 	answer = c1.text
 	_check_answer()
+	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
 
 func _on_choice_2_pressed() -> void:
 	answer = c2.text
 	_check_answer()
-
+	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
+	
 func _on_choice_3_pressed() -> void:
 	answer = c3.text
 	_check_answer()
+	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
 
 func _on_choice_4_pressed() -> void:
 	answer = c4.text
 	_check_answer()
+	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
 
 func _check_answer():
 	if answer == correct_answer:
 		Global.Enemy_HP -= 10
 		visible=false
 
-		#This current quest changer should be wherever the final question/end of quiz is
+		#This current quest should be wherever the final question/end of quiz is
 		
 		mc_questions.remove_at(index)
 	else:
