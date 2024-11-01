@@ -81,6 +81,7 @@ frame_progress = 0.381721
 
 [node name="Actionable" parent="." instance=ExtResource("4_capci")]
 dialogue_resource = ExtResource("5_x7twu")
+dialogue_start = "manual"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_5ifwa")
@@ -92,6 +93,7 @@ shape = SubResource("CapsuleShape2D_ike75")
 
 [node name="AutoActionable" parent="." instance=ExtResource("7_yihbf")]
 dialogue_resource = ExtResource("5_x7twu")
+dialogue_start = "auto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 shape = SubResource("CircleShape2D_jliig")

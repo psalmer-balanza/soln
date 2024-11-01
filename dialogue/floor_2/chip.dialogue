@@ -1,23 +1,17 @@
-~ start
+#MANUAL
+~ manual
+{{current_quest}}
 set in_dialogue = true
-if current_quest == "chip_gameplay_done":
-	=> worded_done_dialogue
-elif current_quest == "meeting_chip"
-	=> restart_dialogue
-else 
-	=> dialogue
-	
-~ dialogue
 Hello? Is anybody there?
 Chip: Woaahh! A visitor, I haven't had one in so long.
 - Wait... Raket?
-	=> gilbert_dialogue
+	=> chip_dialogue
 - How did you...
-	=> gilbert_dialogue
+	=> chip_dialogue
 - Wait a minute...
-	=> gilbert_dialogue
+	=> chip_dialogue
 
-~ gilbert_dialogue
+~ chip_dialogue
 Chip: Raket? [wait=0.5]You know my brother??
 Brother??
 Chip: My name is Gilbert and my brother is Raket. [wait=1] You met my brother? But how did you get up here without waking the snake?
@@ -28,20 +22,29 @@ Chip: Yes the Wizard rat!  Long ago there was a prophecy where there was a chose
 Chip: [wait=1] The wizard rat knows more, but we need Cheddar Change to convince him to help.
 Chip: I found Cheddar Change a while back but it's stuck inside this vault. 
 Chip: You know how to solve these problems right? Can you open it for me?
-
 - Ok
-	set current_quest = "meeting_chip"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.tscn" ,"res://scenes/levels/Floor2.tscn")
+	set current_quest = "meeting_chip"
 	=> end
 - I don’t want to
 	=> end
-
+	
+~ auto
+{{current_quest}}
+set in_dialogue = true
+if current_quest == "chip_gameplay_done":
+	=> worded_done_dialogue
+elif current_quest == "meeting_chip"
+	=> restart_dialogue
+	
+#AUTO
 ~ restart_dialogue
 Chip: I don't think that's quite right, the safe isn't budging
 Chip: Wanna try again?
 - Of course!
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.tscn" ,"res://scenes/levels/Floor2.tscn")
 	=> end
+	
 ~ worded_done_dialogue
 Chip: Yes this is it! This is the Cheddar Change!
 Chip: It's all yours! Now go and find that wizard rat!

@@ -9,7 +9,14 @@ var current_water_level = 100
 
 func _process(delta: float) -> void:
 	water_level_bar.value = current_water_level
+	#LEVEL COMPLETE!!!
 	if current_water_level == 0:
+		if DialogueState.current_quest == "water_room_1":
+			DialogueState.current_quest = "after_wr_1"
+		elif DialogueState.current_quest == "water_room_2":
+			DialogueState.current_quest = "after_wr_2"
+		elif DialogueState.current_quest == "water_room_3":
+			DialogueState.current_quest = "after_wr_3" 
 		congrats.visible = true
 
 func _on_fraction_problem_correct() -> void:
