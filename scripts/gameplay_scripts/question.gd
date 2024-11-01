@@ -61,29 +61,34 @@ func _choose_question() -> int:
 	return RandomNumberGenerator.new().randi_range(0, mc_questions.size()) - 1
 
 func _on_choice_1_pressed() -> void:
-	answer = c1.text
-	_check_answer()
+	# post statistic if online
 	if Global.is_online:
 		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
+	answer = c1.text
+	_check_answer()
+	
 
 func _on_choice_2_pressed() -> void:
-	answer = c2.text
-	_check_answer()
+	# post statistic if online
 	if Global.is_online:
 		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
+	answer = c2.text
+	_check_answer()
 	
 func _on_choice_3_pressed() -> void:
-	answer = c3.text
-	_check_answer()
+	# post statistic if online
 	if Global.is_online:
 		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
-
-func _on_choice_4_pressed() -> void:
-	answer = c4.text
+	answer = c3.text
 	_check_answer()
+	
+func _on_choice_4_pressed() -> void:
+	# post statistic if online
 	if Global.is_online:
 		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
-
+	answer = c4.text
+	_check_answer()
+	
 func _check_answer():
 	if answer == correct_answer:
 		Global.Snekker_HP -= 10
@@ -92,6 +97,7 @@ func _check_answer():
 		#This current quest changer should be wherever the final question/end of quiz is
 		
 		mc_questions.remove_at(index)
+		mc_choice_ids.remove_at(index)
 	else:
 		print("Incorrect answer")
 		if Global.is_online:
@@ -101,7 +107,10 @@ func _check_answer():
 
 func _on_draw() -> void:
 	index = _choose_question()
+	print("Questions: ")
 	print(mc_questions)
+	print("Choice IDs")
+	print(mc_choice_ids)
 	question = mc_questions[index]
 	content.text = question[0]
 	c1.text = question[1]
