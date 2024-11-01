@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	
 	if Global.Snekker_HP == 0:
 		DialogueState.current_quest = "snake_quiz_complete"
-		Statistics.post(PlayerState.player_username, 5, Global.total_score)
+		Statistics.postQuizScore(PlayerState.student_id, PlayerState.classroom_id, 5, Global.total_score)
 		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
 func _on_attack_pressed() -> void:

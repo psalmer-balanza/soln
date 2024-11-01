@@ -46,7 +46,7 @@ func post_question_score(username, questionID, minigameID, num_right_attempts, n
 		print("error: unable to make request")
 
 
-func postQuizScore(username, classroomID, minigameID, score):
+func postQuizScore(studentID, classroomID, minigameID, score):
 	var url = "http://"+ Global.host_ip +":3000/game/add/statistics/quiz"
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -55,7 +55,7 @@ func postQuizScore(username, classroomID, minigameID, score):
 	var post_data = {
 		"ClassroomID": classroomID,
 		"MinigameID": minigameID,
-		"Username": username,
+		"StudentID": studentID,
 		"Score": score
 	}
 	

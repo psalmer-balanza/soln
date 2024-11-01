@@ -14,7 +14,7 @@ var rng = RandomNumberGenerator.new()
 var question
 
 func _ready():
-	
+	# dont forget to put true back to Global.is_online
 	if Global.is_online:
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 		QuestionsLoader.get_snekkers_questions()
@@ -63,22 +63,26 @@ func _choose_question() -> int:
 func _on_choice_1_pressed() -> void:
 	answer = c1.text
 	_check_answer()
-	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
+	if Global.is_online:
+		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
 
 func _on_choice_2_pressed() -> void:
 	answer = c2.text
 	_check_answer()
-	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
+	if Global.is_online:
+		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
 	
 func _on_choice_3_pressed() -> void:
 	answer = c3.text
 	_check_answer()
-	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
+	if Global.is_online:
+		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
 
 func _on_choice_4_pressed() -> void:
 	answer = c4.text
 	_check_answer()
-	Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
+	if Global.is_online:
+		Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
 
 func _check_answer():
 	if answer == correct_answer:
