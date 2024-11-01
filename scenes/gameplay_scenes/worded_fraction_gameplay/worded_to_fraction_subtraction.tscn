@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d3li7qguhm3e0"]
+[gd_scene load_steps=41 format=3 uid="uid://d3li7qguhm3e0"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_subtraction_gameplay.gd" id="1_3v0i1"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_7hs2c"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="8_pyrl6"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_05esg"]
 [ext_resource type="Texture2D" uid="uid://bii2pqay365r6" path="res://assets/floor_1/npc/reactions/raket right answer.png" id="9_ufabg"]
+[ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Rat spritesheet.png" id="10_pcr5b"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_tw1ng"]
 [ext_resource type="Texture2D" uid="uid://cq26hp0n7mmv2" path="res://assets/floor_1/npc/reactions/raket wrong answer.png" id="10_xu4xp"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="17_qy7u5"]
@@ -96,6 +97,14 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kx4pi"]
 atlas = ExtResource("10_xu4xp")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny68d"]
+atlas = ExtResource("10_pcr5b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaqyb"]
+atlas = ExtResource("10_pcr5b")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p2kin"]
 animations = [{
@@ -218,6 +227,17 @@ animations = [{
 "loop": false,
 "name": &"raket_wrong",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny68d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaqyb")
+}],
+"loop": true,
+"name": &"wizard_rat",
+"speed": 5.0
 }]
 
 [node name="WordedFractionGameplay" type="Control"]
@@ -273,17 +293,18 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/font = ExtResource("3_nmmeg")
+theme_override_font_sizes/font_size = 24
 text = "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\""
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="NPC_Sprites" type="AnimatedSprite2D" parent="."]
-position = Vector2(856, 120)
+position = Vector2(921.053, 115.789)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"masked_figure"
+animation = &"wizard_rat"
 autoplay = "masked_figure"
+frame_progress = 0.816303
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
@@ -367,7 +388,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="solution/opperand"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_05esg")
-text = "+"
+text = "-"
 
 [node name="second_fraction" type="MarginContainer" parent="solution"]
 layout_mode = 2
@@ -541,7 +562,7 @@ grow_vertical = 2
 [node name="UserAnswer" type="Label" parent="DisplayAnswer"]
 texture_filter = 1
 layout_mode = 2
-theme_override_fonts/font = ExtResource("9_05esg")
+theme_override_font_sizes/font_size = 24
 text = "Display if answer is right or wrong."
 horizontal_alignment = 1
 
