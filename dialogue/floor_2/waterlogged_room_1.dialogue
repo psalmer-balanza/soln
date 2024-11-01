@@ -12,7 +12,6 @@ Hello this is water game 1
 
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
 set current_quest = "water_room_1"
-set disable_water_logged_1_quest = true
 => end
 
 ~ retry_dialogue
@@ -22,6 +21,7 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogg
 => end
 
 ~ success_dialogue
+set disable_water_logged_1_quest = true
 You win hehe
 => end
 
