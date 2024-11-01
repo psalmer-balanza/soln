@@ -1,126 +1,268 @@
 extends Control
 
-var fraction_questions = [
-	[[2, 3], [1, 3]],  # First fraction
-	[[3, 2], [1, 2]],  # Second fraction
-	[[3, 2], [2, 5]],  # Third fraction
-]
+signal correct
+signal incorrect
+
+
+## UPDATE THE WORDED QUESTIONS SINCE THE QUESTIONS ARE NOW RANDOM
 
 # Store multiple questions as pairs of numerators and denominators
-func initiate_questions():
-	if DialogueState.current_quest == "saisai_rock":
-		fraction_questions = [
-			[[5, 4], [3, 4]],  # First fraction
-			[[7, 10], [1, 5]],  # Second fraction
-			[[9, 5], [4, 5]],  # Third fraction
-		]
-	elif DialogueState.current_quest == "dead_robot":
-		print("Doing dead robot questions")
-		fraction_questions = [
-			[[3, 4], [1, 4]],  # First fraction
-			[[5, 6], [1, 3]],  # Second fraction
-			[[7, 5], [2, 5]],  # Third fraction
-		]
+var fraction_questions = [
+	["A water tank was initially filled with 2/5 of its capacity. After some usage, another 3/10 was drained. How much water remains in the tank?", 2, 5, 3, 10],
+	["A pipe was carrying water to a water supply. In the morning, 3/8 of the water supply was filled, but 5/12 was drained in the afternoon. How much water remains in the reservoir?", 3, 8, 5, 12],
+	["Two sections of a pipeline had been filled. The first section was filled to 3/6 of its capacity, and the second section was drained to 5/6 of its capacity. What is the remaining capacity in the pipes?", 3, 6, 5, 6]
+]
+	
+var fraction_questions_house = [
+	["A wizard brewed two potions. For the first potion, he used 1/4 of his magical herbs, and for the second potion, he used 1/2 of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2],
+	["A sorceress enchanted two magical scrolls. She used 3/10 of her spell ink on the first scroll and 2/5 on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5],
+	["In a mystical forest, a fairy sprinkled 1/3 of her glitter on one flower and 1/6 on another. How much glitter did she use altogether?", 1, 3, 1, 6],
+]
 
+
+ # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on
+@onready var correct_ans_count = 0
+@onready var wrong_ans_count = 0
+@onready var unsimplified_ans_count = 0
 
-@onready var numerator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/numerator/NumeratorAnswer
-@onready var denominator_input: LineEdit = $addition/VBoxContainer/HBoxContainer/answer_fraction/fraction/denominator/DenominatorAnswer
-@onready var first_num_label: Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/numerator
-@onready var first_denum_label: Label = $addition/VBoxContainer/HBoxContainer/first_fraction/fraction/denominator
-@onready var second_num_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/numerator
-@onready var second_denum_label: Label = $addition/VBoxContainer/HBoxContainer/second_fraction/fraction/denominator
-@onready var display_answer: Label = $addition/VBoxContainer/result
+# Nodes for user inputs and display
+@onready var first_fraction_numerator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer/FirstFractionNumerator
+@onready var first_fraction_denominator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer2/FirstFractionDenominator
+@onready var second_fraction_numerator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer/SecondFractionNumerator
+@onready var second_fraction_denominator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer2/SecondFractionDenominator
+@onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer/NumeratorAnswer
+@onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer2/DenominatorAnswer
+@onready var display_answer: Label = $DisplayAnswer/UserAnswer
+@onready var submit_answer = $SubmitAnswer
+@onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text
 
-var first_num: int
-var first_denum: int
-var second_num: int
-var second_denum: int
+@onready var npc_sprite = $NPC_Sprites
+
 var is_simplified = false
+var current_player_username = PlayerState.player_username
+var current_minigame_id = 1 # PLACEHOLDER
+var current_npc = ""
+var current_chosen_questions: Array = []
+var chosen_index_questions: Array[int] = []
 
 func _ready():
-	# Start by displaying the first question
-	print("Current questline is: ", DialogueState.current_quest)
-	initiate_questions()
+	npc_active()
+	
+	if Global.is_online:
+		print("online mode")
+		initiate_questions() # get questions from db
+	
+	else: # else get offline questions
+		print("offline mode")
+		print("Current quest is ", DialogueState.current_quest)
+		if DialogueState.current_quest == "raket_stealing":
+			Global.choose_question(fraction_questions)
+			fraction_questions = Global.randomize_questions(fraction_questions, current_chosen_questions, chosen_index_questions)
+			
+		if DialogueState.current_quest == "raket_house":
+			Global.choose_question(fraction_questions_house)
+			fraction_questions = Global.randomize_questions(fraction_questions_house, current_chosen_questions, chosen_index_questions)
+			
+		display_current_question()
+	
+func _on_questions_loaded():
+	if DialogueState.current_quest == "raket_stealing":
+		Global.choose_question(fraction_questions_house)
+		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_steal_questions, current_chosen_questions, chosen_index_questions)
+		
+	
+	elif DialogueState.current_quest == "raket_house":
+		Global.choose_question(fraction_questions_house)
+		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_house_questions, current_chosen_questions, chosen_index_questions)
+		
+		
 	display_current_question()
+	
 
-# Function to display the current question
+func npc_active():
+	current_npc = "default"
+	if DialogueState.current_quest == "share_pie_with_raket" or DialogueState.current_quest == "raket_house":
+		current_npc = "raket"
+	elif DialogueState.current_quest == "raket_stealing":
+		current_npc = "masked_figure"
+	else:
+		print("No npc found!")
+	npc_sprite.play(current_npc)
+
+# Initialize questions and context texts based on the current quest
+func initiate_questions():
+	print(DialogueState.current_quest)
+	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
+
+	if DialogueState.current_quest == "raket_stealing":
+		print("Current quest is raket stealing")
+		QuestionsLoader.get_racket_steal_questions()
+		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
+		print("current minigame id ", current_minigame_id)
+	
+	elif DialogueState.current_quest == "raket_house":
+		QuestionsLoader.get_racket_house_questions()
+		print("Current quest is raket house")
+		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
+		fraction_questions = fraction_questions_house
+	else:
+		print("No quest?")
+
+# Display the current question and update the label text
 func display_current_question():
+	print(fraction_questions[current_question_index])
 	var current_question = fraction_questions[current_question_index]
-	var first_fraction = current_question[0]
-	var second_fraction = current_question[1]
+	#var first_fraction = current_question[0]
+	#var second_fraction = current_question[1]
 	
-	# Set the text for the first and second fractions
-	first_num = first_fraction[0]
-	first_denum = first_fraction[1]
-	second_num = second_fraction[0]
-	second_denum = second_fraction[1]
+	# Set the text for the fractions to be input by the player
+	first_fraction_numerator.text = ""
+	first_fraction_denominator.text = ""
+	second_fraction_numerator.text = ""
+	second_fraction_denominator.text = ""
+	numerator_answer.text = ""
+	denominator_answer.text = ""
 	
-	# display fractions
-	first_num_label.text = str(first_num)
-	first_denum_label.text = str(first_denum)
-	second_num_label.text = str(second_num)
-	second_denum_label.text = str(second_denum)
+	# Set the question text for the current round
+	question_label.text = current_question[0]
 
-# Function to check the fraction subtraction answer
-func fraction_subtraction_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int):
+# Called when the submit answer button is pressed
+func _on_submit_answer_button_down():
+	# Retrieve input values
+	var first_numerator = int(first_fraction_numerator.text)
+	var first_denominator = int(first_fraction_denominator.text)
+	var second_numerator = int(second_fraction_numerator.text)
+	var second_denominator = int(second_fraction_denominator.text)
+	var answer_numerator = int(numerator_answer.text)
+	var answer_denominator = int(denominator_answer.text)
+
+	# Validate the inputted fractions against the question
+	if input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
+		# Check if the inputs are empty
+		if numerator_answer.text == "" or denominator_answer.text == "":
+			display_answer.text = "Please fill in both the numerator and denominator."
+			emit_signal("incorrect")
+			print("Empty input detected.")
+			return  # Exit the function if any input is empty
+		
+		# Validate the numerator and denominator inputs
+		elif !is_valid_integer(numerator_answer.text) or !is_valid_integer(denominator_answer.text):
+			display_answer.text = "Please enter valid numbers."
+			emit_signal("incorrect")
+			print("Invalid input detected: Non-integer value entered.")
+			return  # Exit the function if input is invalid
+			
+		else:
+			# Check the user's input against the current question
+			fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
+		
+	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
+		display_answer.text = "Incorrect fractions. Please input the correct fractions."
+		emit_signal("incorrect")
+
+
+# Helper function to check if a string is a valid integer
+func is_valid_integer(value: String) -> bool:
+	# Try converting the string to an integer, and return true if successful
+	var number = value.to_int()
+	return str(number) == value.strip_edges()
+
+
+# Validate if inputted fractions match the current question's fractions
+func input_matches_question(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int) -> bool:
+	var current_question = fraction_questions[current_question_index]
+	#var expected_first_fraction = current_question[0]
+	#var expected_second_fraction = current_question[1]
+	print("im in input_matches_question")
+	
+	if first_numerator == current_question[1] and first_denominator == current_question[2] and second_numerator == current_question[3] and second_denominator == current_question[4]:
+		print("input first")
+		return true
+	elif first_numerator == current_question[3] and first_denominator == current_question[4] and second_numerator == current_question[1] and second_denominator == current_question[2]:
+		print("print second")
+		return true
+	
+	return false
+
+func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int, answer_numerator: int, answer_denominator: int):
+	# If denominators are the same, just add the numerators
 	if first_denominator == second_denominator:
-		var subtracted_numerator = first_numerator - second_numerator
+		var added_numerator = first_numerator - second_numerator
 		
 		if is_simplified:
-			if check_simplified_form(subtracted_numerator, first_denominator):
-				display_answer.text = "Nice! \nCorrect simplified form."
+			if check_simplified_form(added_numerator, first_denominator):
+				handle_correct("Nice! \nCorrect simplified form.")
 				is_simplified = false
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				handle_incorrect("Try again. \nCheck your GCD value.")
+				is_simplified = true
+		
+		elif added_numerator == answer_numerator and first_denominator == answer_denominator:
+			if GlobalFractionFunctions.check_lowest_form(added_numerator, int(denominator_answer.text)):
+				handle_correct_unsimplified("Good job! \nBut answer can be simplified.")
 				is_simplified = true
 				
-		elif subtracted_numerator == int(numerator_input.text) and first_denominator == int(denominator_input.text):
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(subtracted_numerator, int(denominator_input.text)): 
-				display_answer.text = "Good job! \nBut answer can be simplified."
-				is_simplified = true
 			else:
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				handle_correct("Great job! \nCorrect answer!")
+		
+		elif check_simplified_form(added_numerator, first_denominator) and !is_simplified:
+			handle_correct("Advanced thinking! \nYou entered its simplified form.")
+		
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
-			display_answer.text = "Try again."
-			
-	else:  # DIFFERENT DENOMINATORS
+			handle_incorrect("Try again. Check your numerator\n or denominator.")
+
+	# If denominators are different, find the least common denominator (LCD)
+	else:
 		var lcd = GlobalFractionFunctions.get_lcd(first_denominator, second_denominator)
+		
+		# Adjust the numerators to the same denominator
 		var adjusted_first_numerator = first_numerator * (lcd / first_denominator)
 		var adjusted_second_numerator = second_numerator * (lcd / second_denominator)
-		var subtracted_adjusted_numerator = adjusted_first_numerator - adjusted_second_numerator
+		var added_adjusted_numerator = adjusted_first_numerator - adjusted_second_numerator
 		
 		if is_simplified:
-			if check_simplified_form(subtracted_adjusted_numerator, lcd):
-				display_answer.text = "Nice! \nCorrect simplified form."
+			if check_simplified_form(added_adjusted_numerator, lcd):
+				handle_correct("Nice! \nCorrect simplified form.")
 				is_simplified = false
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				
 			else:
-				display_answer.text = "Try again! \nCheck your GCD value."
+				handle_incorrect("Try again. \nCheck your GCD value.")
 				is_simplified = true
-	
-		elif subtracted_adjusted_numerator == int(numerator_input.text) and lcd == int(denominator_input.text):
-			$AnimationPlayer.play("correct_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
-			display_answer.text = "Good job! \nCorrect answer!"
-			if GlobalFractionFunctions.check_lowest_form(subtracted_adjusted_numerator, lcd): 
-				display_answer.text = "Good job! \nBut answer can be simplified."
+		
+		elif added_adjusted_numerator == answer_numerator and lcd == answer_denominator:
+			if GlobalFractionFunctions.check_lowest_form(added_adjusted_numerator, int(denominator_answer.text)):
+				handle_correct_unsimplified("Good job! \nBut answer can be simplified.")
 				is_simplified = true
+				
 			else:
-				next_question_or_finish()  # Move to the next question or finish the exercise
+				handle_correct("Great job! \nCorrect answer!")
+		
+		elif check_simplified_form(added_adjusted_numerator, lcd) and !is_simplified:
+			handle_correct("Advanced thinking! \nYou entered its simplified form.")
+			
 		else:
-			$AnimationPlayer.play("wrong_answer_saisai")
-			await $AnimationPlayer.animation_finished
-			$AnimationPlayer.play("saisai_idle")
-			display_answer.text = "Try again."
+			handle_incorrect("Try again. Check your numerator\n or denominator.")
+
+# Handle correct answer
+func handle_correct(message: String):
+	display_answer.text = message
+	emit_signal("correct")
+	correct_ans_count += 1
+	next_question_or_finish() # Move to the next question or finish the exercise
+
+# Handle correct unsimplified answer
+func handle_correct_unsimplified(message: String):
+	display_answer.text = message
+	emit_signal("correct")
+	unsimplified_ans_count += 1
+
+# Handle incorrect answer
+func handle_incorrect(message: String):
+	display_answer.text = message
+	emit_signal("incorrect")
+	wrong_ans_count += 1
 
 # Function to check for the simplified answer
 func check_simplified_form(correct_numerator: int, correct_denominator: int) -> bool:
@@ -129,30 +271,84 @@ func check_simplified_form(correct_numerator: int, correct_denominator: int) -> 
 	var simplified_numerator = correct_numerator / gcd_value
 	var simplified_denominator = correct_denominator / gcd_value
 
-	if simplified_numerator == int(numerator_input.text) and simplified_denominator == int(denominator_input.text):
-			return true
+	if simplified_numerator == int(numerator_answer.text) and simplified_denominator == int(denominator_answer.text):
+		return true
 		
 	return false
 
-# Function to either move to the next question or finish
+# Move to the next question or finish the exercise
 func next_question_or_finish():
 	if current_question_index < fraction_questions.size() - 1:
 		current_question_index += 1  # Move to the next question
-		numerator_input.clear()
-		denominator_input.clear()
 		display_current_question()  # Update the UI with the next question
 	else:
-		# If all questions are answered, return to the world
-		display_answer.text = "All questions completed! Returning to the world..."
+		print("Simple addition correct answers: ", correct_ans_count)
+		print("Simple addition wrong answers: ", wrong_ans_count)
+		var total_ans_count = correct_ans_count + wrong_ans_count
+		print("Simple addition total attempts: ", total_ans_count)
+		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
+		print("What I need to do now is map each of these attempts per question,
+		connect to question IDs too")
+		print("Current minigame id: ", current_minigame_id)
+		disable_inputs()
+		question_label.text = "All questions completed!\nReturning to the world..."
+		
+		await get_tree().create_timer(3.0).timeout
+		
+		var statistics_data = {
+			"username": current_player_username,
+			"minigame_id": current_minigame_id,
+			"num_correct_ans": correct_ans_count,
+			"num_wrong_ans": wrong_ans_count,
+			"total_attempts": total_ans_count,
+			"num_unsimplified_ans": unsimplified_ans_count,
+		}
 		return_to_world()
 
-# Function to return to the world scene
+# Disabling inputs
+func disable_inputs():
+	numerator_answer.editable = false
+	denominator_answer.editable = false
+	first_fraction_numerator.editable = false
+	first_fraction_denominator.editable = false
+	second_fraction_numerator.editable = false
+	second_fraction_denominator.editable = false
+	submit_answer.disabled = true
+
+# Return to the world scene
 func return_to_world():
 	print("Returning")
-	get_tree().change_scene_to_file("res://scenes/levels/test_floor1/test_floor2.tscn")
+	if DialogueState.current_quest == "raket_stealing":
+		DialogueState.current_quest = "raket_stealing_gameplay_done"
+	if DialogueState.current_quest == "raket_house":
+		print("IGHDSAD UIHASDUHASD")
+		DialogueState.current_quest = "raket_house_worded_complete"
+	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
-func _on_submit_answer_pressed() -> void:
-	fraction_subtraction_checker(first_num, first_denum, second_num, second_denum)
-
-func _on_button_pressed() -> void:
+func _on_button_button_down() -> void:
 	return_to_world()
+
+# Plays when the player inputs a correct answer
+func _on_correct_answer():
+	$CorrectAnswerSFX.play()
+	if current_npc == "raket":
+		npc_sprite.play("raket_correct")
+		await npc_sprite.animation_finished
+		npc_sprite.play("raket")
+	elif current_npc == "masked_figure":
+		npc_sprite.play("masked_figure_correct")
+		await npc_sprite.animation_finished
+		npc_sprite.play("masked_figure")
+
+# Plays when the player inputs an incorrect answer
+func _on_incorrect_answer():
+	Global.user_energy -= 1
+	$WrongAnswerSFX.play()
+	if current_npc == "raket":
+		npc_sprite.play("raket_wrong")
+		await npc_sprite.animation_finished
+		npc_sprite.play("raket")
+	elif current_npc == "masked_figure":
+		npc_sprite.play("masked_figure_wrong")
+		await npc_sprite.animation_finished
+		npc_sprite.play("masked_figure")

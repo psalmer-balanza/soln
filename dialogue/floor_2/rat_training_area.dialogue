@@ -10,9 +10,18 @@ Wizard Rat: And from what you told me I guess now you’re here you're our only 
 Wizard Rat: Are you ready?
 
 - On second thought I’m not ready
+	Wizard Rat: Take your time to get ready.
 	=> end
--I’m ready
-	[wait=2] (Worded gameplay)
+- I’m ready
+	Wizard Rat: That's the courage.
+	=> wizard_next_Dialogue
+
+~ wizard_next_Dialogue
+This is a new inscription better be prepared on what I can see.
+Wizard Rat: You could do this I believe in you. [wait=2]
+
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
+=> end
 
 ~ gilbert_wrong_answer_dialogue
 Gilbert: Oops try again

@@ -1,30 +1,68 @@
-[gd_scene load_steps=27 format=3 uid="uid://db1jixm625c55"]
+[gd_scene load_steps=38 format=3 uid="uid://d3li7qguhm3e0"]
 
-[ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay_subtraction.gd" id="1_4rl55"]
+[ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_subtraction_gameplay.gd" id="1_3v0i1"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_7hs2c"]
+[ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="2_gwan3"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_nmmeg"]
-[ext_resource type="Texture2D" uid="uid://cnupb6135utyu" path="res://assets/floor_1/npc/mc idle front.png" id="4_4ftj2"]
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/floor_1/npc/Raket idle animation.png" id="5_8wxc3"]
-[ext_resource type="Texture2D" uid="uid://c5gdhgtl035jq" path="res://assets/floor_1/cutscenes/Saisai Wheelbarrow Walking Solo.png" id="6_jjnh3"]
+[ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="5_t1n7a"]
+[ext_resource type="Texture2D" uid="uid://b8a3c1sdxsqwv" path="res://assets/floor_1/npc/reactions/happy racoon sprite.png" id="6_e31xs"]
 [ext_resource type="Texture2D" uid="uid://v37nxstby7g0" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board.png" id="7_da0m5"]
+[ext_resource type="Texture2D" uid="uid://c3kclf3andxv2" path="res://assets/floor_1/npc/reactions/unhappy racoon sprite.png" id="7_jeq4t"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="8_pyrl6"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_05esg"]
+[ext_resource type="Texture2D" uid="uid://bii2pqay365r6" path="res://assets/floor_1/npc/reactions/raket right answer.png" id="9_ufabg"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_tw1ng"]
+[ext_resource type="Texture2D" uid="uid://cq26hp0n7mmv2" path="res://assets/floor_1/npc/reactions/raket wrong answer.png" id="10_xu4xp"]
+[ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="17_qy7u5"]
+[ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="18_81rye"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_red00"]
-atlas = ExtResource("4_4ftj2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
+atlas = ExtResource("5_t1n7a")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_by4vq"]
-atlas = ExtResource("4_4ftj2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aikm4"]
+atlas = ExtResource("5_t1n7a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxmdt"]
+atlas = ExtResource("5_t1n7a")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mvpi"]
-atlas = ExtResource("4_4ftj2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy17n"]
+atlas = ExtResource("5_t1n7a")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xmfg"]
+atlas = ExtResource("6_e31xs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5psgd"]
+atlas = ExtResource("6_e31xs")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k0lf"]
+atlas = ExtResource("6_e31xs")
 region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7fk2"]
-atlas = ExtResource("4_4ftj2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2k3e"]
+atlas = ExtResource("6_e31xs")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g2cc"]
+atlas = ExtResource("7_jeq4t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbl1h"]
+atlas = ExtResource("7_jeq4t")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5i6q"]
+atlas = ExtResource("7_jeq4t")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mxpf"]
+atlas = ExtResource("7_jeq4t")
 region = Rect2(0, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mua4a"]
@@ -43,40 +81,80 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("5_8wxc3")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ykdic"]
-atlas = ExtResource("6_jjnh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt1kh"]
+atlas = ExtResource("9_ufabg")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xclf"]
-atlas = ExtResource("6_jjnh3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhlhr"]
-atlas = ExtResource("6_jjnh3")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx6wp"]
+atlas = ExtResource("9_ufabg")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lsxeb"]
-atlas = ExtResource("6_jjnh3")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bg12"]
+atlas = ExtResource("10_xu4xp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx4pi"]
+atlas = ExtResource("10_xu4xp")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p2kin"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_red00")
+"texture": SubResource("AtlasTexture_s6je1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_by4vq")
+"texture": SubResource("AtlasTexture_aikm4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7mvpi")
+"texture": SubResource("AtlasTexture_uxmdt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j7fk2")
+"texture": SubResource("AtlasTexture_qy17n")
 }],
 "loop": true,
-"name": &"old_robot",
-"speed": 8.0
+"name": &"masked_figure",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xmfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5psgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k0lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2k3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k0lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2k3e")
+}],
+"loop": false,
+"name": &"masked_figure_correct",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g2cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbl1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5i6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mxpf")
+}],
+"loop": false,
+"name": &"masked_figure_wrong",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -92,74 +170,85 @@ animations = [{
 "texture": SubResource("AtlasTexture_xejf3")
 }],
 "loop": true,
-"name": &"racket",
-"speed": 8.0
+"name": &"raket",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ykdic")
+"texture": SubResource("AtlasTexture_qt1kh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6xclf")
+"texture": SubResource("AtlasTexture_yx6wp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rhlhr")
+"texture": SubResource("AtlasTexture_qt1kh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lsxeb")
+"texture": SubResource("AtlasTexture_yx6wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt1kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx6wp")
 }],
-"loop": true,
-"name": &"saisai",
-"speed": 8.0
+"loop": false,
+"name": &"raket_correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bg12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx4pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bg12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx4pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bg12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx4pi")
+}],
+"loop": false,
+"name": &"raket_wrong",
+"speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_bvvel"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NPC_Sprites:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_hsrhq"]
-resource_name = "spin"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NPC_Sprites:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -6.28319, -6.28319, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j2dn"]
-_data = {
-"RESET": SubResource("Animation_bvvel"),
-"spin": SubResource("Animation_hsrhq")
-}
-
-[node name="WordedFractionGameplay" type="Node2D"]
-script = ExtResource("1_4rl55")
+[node name="WordedFractionGameplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 28.0
+offset_bottom = 31.0
+scale = Vector2(0.95, 0.95)
+script = ExtResource("1_3v0i1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.730216, 0.730216, 0.730216, 1)
-offset_right = 1023.0
-offset_bottom = 577.0
+layout_mode = 0
+offset_left = -69.0
+offset_top = -46.0
+offset_right = 1093.0
+offset_bottom = 631.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
+[node name="EnergyBar" parent="." instance=ExtResource("2_gwan3")]
+layout_mode = 1
+offset_left = 212.632
+offset_top = 11.5789
+offset_right = 212.632
+offset_bottom = 11.5789
+scale = Vector2(4, 4)
+
 [node name="question" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 44.0
 offset_right = 748.0
@@ -193,15 +282,12 @@ autowrap_mode = 2
 position = Vector2(856, 120)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"old_robot"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6j2dn")
-}
+animation = &"masked_figure"
+autoplay = "masked_figure"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
+layout_mode = 0
 offset_top = 2.0
 offset_right = 256.0
 offset_bottom = 146.0
@@ -210,6 +296,7 @@ texture = ExtResource("7_da0m5")
 
 [node name="solution" type="HBoxContainer" parent="."]
 z_index = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -280,7 +367,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="solution/opperand"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_05esg")
-text = "-"
+text = "+"
 
 [node name="second_fraction" type="MarginContainer" parent="solution"]
 layout_mode = 2
@@ -396,6 +483,7 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="submit" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 458.0
 offset_right = 458.0
@@ -417,17 +505,27 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 478.0
+offset_right = 994.0
+offset_bottom = 507.0
+text = "HACK"
+
 [node name="SubmitAnswer" type="Button" parent="."]
-offset_left = 463.0
-offset_top = 501.0
-offset_right = 565.0
-offset_bottom = 525.0
+layout_mode = 0
+offset_left = 357.0
+offset_top = 479.0
+offset_right = 669.0
+offset_bottom = 548.0
 theme_override_fonts/font = ExtResource("9_05esg")
 text = "SUBMIT"
 flat = true
 
 [node name="DisplayAnswer" type="MarginContainer" parent="."]
 z_index = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -448,6 +546,8 @@ text = "Display if answer is right or wrong."
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 881.0
 offset_top = 495.0
 offset_right = 985.0
@@ -467,5 +567,16 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
+[node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_qy7u5")
+volume_db = -23.583
+
+[node name="WrongAnswerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_81rye")
+volume_db = -24.36
+
+[connection signal="correct" from="." to="." method="_on_correct_answer"]
+[connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]
