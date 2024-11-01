@@ -1,10 +1,28 @@
 ~ start
+if current_quest == "after_wr_3":
+	=> success_dialogue
+elif current_quest == "water_room_3":
+	=> retry_dialogue
+else:
+	=> first_dialogue
+
+~ first_dialogue
 set in_dialogue = true
-set current_quest = "water_room_3"
 Hello this is water game 3
+
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
-set current_quest = "after_wr_3"
-set disable_water_logged_3_quest = true
+set current_quest = "water_room_3"
+=> end
+
+~ retry_dialogue
+Try again?
+- Ok
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
+=> end
+
+~ success_dialogue
+set disable_water_logged_1_quest = true
+You win hehe
 => end
 
 ~ end
