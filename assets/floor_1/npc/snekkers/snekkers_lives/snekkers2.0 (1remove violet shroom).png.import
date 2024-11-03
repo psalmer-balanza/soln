@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1vquni7mt1co"
-path="res://.godot/imported/snekkers2.0.png-643eea7044fdae1a960e79aa43e96128.ctex"
+uid="uid://dgxxado766wpa"
+path="res://.godot/imported/snekkers2.0 (1remove violet shroom).png-35428098a51a3453541b1572e11dfd8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/floor_1/npc/snekkers2.0.png"
-dest_files=["res://.godot/imported/snekkers2.0.png-643eea7044fdae1a960e79aa43e96128.ctex"]
+source_file="res://assets/floor_1/npc/snekkers/snekkers_lives/snekkers2.0 (1remove violet shroom).png"
+dest_files=["res://.godot/imported/snekkers2.0 (1remove violet shroom).png-35428098a51a3453541b1572e11dfd8e.ctex"]
 
 [params]
 

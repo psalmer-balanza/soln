@@ -30,7 +30,8 @@ func post_question_score(username, questionID, minigameID, num_right_attempts, n
 	http_request.request_completed.connect(self._http_request_completed)
 	
 	var post_data = {
-		"username": username,
+		"classroom_id": PlayerState.classroom_id,
+		"student_id": PlayerState.student_id,
 		"question_id": questionID,
 		"minigame_id": minigameID,
 		"num_right_attempts": num_right_attempts,
