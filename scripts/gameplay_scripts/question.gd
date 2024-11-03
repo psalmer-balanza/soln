@@ -97,7 +97,7 @@ func _check_answer():
 		#This current quest changer should be wherever the final question/end of quiz is
 		
 		mc_questions.remove_at(index)
-		#mc_choice_ids.remove_at(index)
+		mc_choice_ids.remove_at(index)
 	else:
 		print("Incorrect answer")
 		if Global.is_online:
