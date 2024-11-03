@@ -1,35 +1,46 @@
 ~ start
 set in_dialogue = true
+if current_quest == "wizard_training_room"
+	=> wrong_answer_dialogue
+elif current_quest == "wizard_training_room_worded_complete"
+	=> right_answer_dialogue
+else
+	=> first_meeting
 
+~ first_meeting
 Wizard Rat: We are here.
 Robot: Where exactly?
 Wizard Rat: This is my training area. Over the years, I've gathered many inscriptions, hoping to uncover their connection to the darkness. 
-Wizard Rat: [wait=0.5] But ever since the darkness spread through our land, [wait=0.5] our friend Crab has been cursed with barnacles. 
-Wizard Rat: [wait=0.5] It's made him irritable and hard to reason with.
+Wizard Rat: But ever since the darkness spread through our land, [wait=0.5] our friend Crab has been cursed with barnacles. 
+Wizard Rat: It's made him irritable and hard to reason with.
 Wizard Rat: And from what you told me I guess now you’re here you're our only hope.
 Wizard Rat: Are you ready?
-
+- I’m ready
+	Wizard Rat: That's the courage.
+	=> wizard_next_dialogue
 - On second thought I’m not ready
 	Wizard Rat: Take your time to get ready.
 	=> end
-- I’m ready
-	Wizard Rat: That's the courage.
-	=> wizard_next_Dialogue
+=> end
 
-~ wizard_next_Dialogue
-This is a new inscription better be prepared on what I can see.
-Wizard Rat: You could do this I believe in you. [wait=2]
-
+~ wizard_next_dialogue
+This is a new inscription... better be prepared on what I can see.
+Wizard Rat: You could do this, I believe in you. [wait=2]
+set current_quest = "wizard_training_room"
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
 => end
 
-~ gilbert_wrong_answer_dialogue
-Gilbert: Oops try again
-
-~ gilbert_right_answer_dialogue
-Gilbert: You did it [wait=5] You’re ready.  
-
+~ wrong_answer_dialogue
+Wizard Rat: Oops try again
+- Okay
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
 => end
+
+~ right_answer_dialogue
+Wizard Rat: You did it! You’re ready.  
+set current_quest = "after_wizard_training_room"
+=> end
+
 ~ end
 set in_dialogue = false
 => END

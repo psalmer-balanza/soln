@@ -36,12 +36,12 @@ func _ready() -> void:
 		"after_chip": false,
 		"water_room_2": false,
 		"after_wr_2": false,
-		"meeting_wizard": false,
-		"after_wizard": false,
+		"meeting_wizard_rat": false,
+		"after_meeting_wizard_rat": false,
 		"water_room_3": false,
 		"after_wr_3": false,
 		"wizard_training_room": false,
-		"after_training_room": false,
+		"after_wizard_training_room": false,
 		"robob_21f31irst_meet": false,
 		"robob_3first_meet": false,
 		"robob_3first13_meet": false
@@ -92,6 +92,20 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Clear the water from the room.")
 		"after_wr_1":
 			handle_quest_label(cq, "Cross the room.")
+		"after_chip":
+			handle_quest_label(cq, "Find the wizard rat.")
+		"water_room_2":
+			handle_quest_label(cq, "Clear the water from the room.")
+		"after_wr_2":
+			handle_quest_label(cq, "Cross the room and find the wizard rat.")
+		"meeting_wizard_rat":
+			handle_quest_label(cq, "Learn more from the wizard rat.")
+		"after_meeting_wizard_rat":
+			handle_quest_label(cq, "Find the wizard rat's training area.")
+		"wizard_training_room":
+			handle_quest_label(cq, "Pass the wizard rat's trials.")
+		"after_wizard_training_room":
+			handle_quest_label(cq, "Face the Giant Enemy Crab.")
 			
 	# Typewriter effect update
 	if current_characters < label.text.length():

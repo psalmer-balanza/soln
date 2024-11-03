@@ -1,6 +1,5 @@
 #MANUAL
 ~ manual
-{{current_quest}}
 set in_dialogue = true
 Hello? Is anybody there?
 Chip: Woaahh! A visitor, I haven't had one in so long.
@@ -30,7 +29,6 @@ Chip: You know how to solve these problems right? Can you open it for me?
 	=> end
 	
 ~ auto
-{{current_quest}}
 set in_dialogue = true
 if current_quest == "chip_gameplay_done":
 	=> worded_done_dialogue

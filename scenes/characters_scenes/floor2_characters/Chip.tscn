@@ -1,57 +1,42 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8j4ddys6yksg"]
+[gd_scene load_steps=15 format=3 uid="uid://c8j4ddys6yksg"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/chip.gd" id="1_5nhf0"]
 [ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/floor1/radial_dialogue_indicator.tscn" id="2_xaurd"]
-[ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Rat spritesheet.png" id="3_o2k3l"]
+[ext_resource type="Texture2D" uid="uid://c54pml34xfu2" path="res://assets/floor_2/npc/chip idle animation.png" id="3_shyqj"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_capci"]
-[ext_resource type="Texture2D" uid="uid://bcwo6kvwrvp2x" path="res://assets/floor_1/npc/racoon ninja sprite.png" id="4_faj62"]
 [ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/chip.dialogue" id="5_x7twu"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="7_yihbf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xenot"]
-atlas = ExtResource("3_o2k3l")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1u0n"]
+atlas = ExtResource("3_shyqj")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_muopd"]
-atlas = ExtResource("3_o2k3l")
-region = Rect2(0, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyhnq"]
+atlas = ExtResource("3_shyqj")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5cbk"]
-atlas = ExtResource("4_faj62")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_46s15"]
+atlas = ExtResource("3_shyqj")
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ftddm"]
-atlas = ExtResource("4_faj62")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ler87"]
-atlas = ExtResource("4_faj62")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ibq3"]
-atlas = ExtResource("4_faj62")
-region = Rect2(64, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h7jy"]
+atlas = ExtResource("3_shyqj")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whsvm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xenot")
+"texture": SubResource("AtlasTexture_o1u0n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_muopd")
+"texture": SubResource("AtlasTexture_oyhnq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u5cbk")
+"texture": SubResource("AtlasTexture_46s15")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ftddm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ler87")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ibq3")
+"texture": SubResource("AtlasTexture_3h7jy")
 }],
 "loop": true,
 "name": &"default",
@@ -62,8 +47,8 @@ animations = [{
 radius = 49.0918
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ike75"]
-radius = 18.0
-height = 54.0
+radius = 6.0
+height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jliig"]
 radius = 66.0681
@@ -77,7 +62,7 @@ position = Vector2(-94, -52)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_whsvm")
 autoplay = "default"
-frame_progress = 0.381721
+frame_progress = 0.549606
 
 [node name="Actionable" parent="." instance=ExtResource("4_capci")]
 dialogue_resource = ExtResource("5_x7twu")

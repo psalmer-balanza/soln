@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d3li7qguhm3e0"]
+[gd_scene load_steps=44 format=3 uid="uid://d3li7qguhm3e0"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_subtraction_gameplay.gd" id="1_3v0i1"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_7hs2c"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="8_pyrl6"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_05esg"]
 [ext_resource type="Texture2D" uid="uid://bii2pqay365r6" path="res://assets/floor_1/npc/reactions/raket right answer.png" id="9_ufabg"]
-[ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Rat spritesheet.png" id="10_pcr5b"]
+[ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Wizard Rat.png" id="10_pcr5b"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_tw1ng"]
 [ext_resource type="Texture2D" uid="uid://cq26hp0n7mmv2" path="res://assets/floor_1/npc/reactions/raket wrong answer.png" id="10_xu4xp"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="17_qy7u5"]
@@ -103,6 +103,18 @@ atlas = ExtResource("10_pcr5b")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xaqyb"]
+atlas = ExtResource("10_pcr5b")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ejcc"]
+atlas = ExtResource("10_pcr5b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtp2g"]
+atlas = ExtResource("10_pcr5b")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbydi"]
 atlas = ExtResource("10_pcr5b")
 region = Rect2(0, 64, 64, 64)
 
@@ -238,6 +250,20 @@ animations = [{
 "loop": true,
 "name": &"wizard_rat",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ejcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbydi")
+}],
+"loop": true,
+"name": &"wizard_rat_correct",
+"speed": 5.0
 }]
 
 [node name="WordedFractionGameplay" type="Control"]
@@ -299,12 +325,11 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="NPC_Sprites" type="AnimatedSprite2D" parent="."]
-position = Vector2(921.053, 115.789)
+position = Vector2(890.526, 130.526)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"wizard_rat"
+animation = &"wizard_rat_correct"
 autoplay = "masked_figure"
-frame_progress = 0.816303
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1

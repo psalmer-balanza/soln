@@ -88,6 +88,7 @@ offset_bottom = 686.999
 
 [node name="IPAddress" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 619.0
 offset_top = 107.0
 offset_right = 857.0

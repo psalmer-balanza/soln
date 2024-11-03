@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cuh7w1ri3ti64"
+path="res://.godot/imported/Forest Lullaby (floor1).wav-d3ba53cf3bd336711ff1112679378de6.sample"
+
+[deps]
+
+source_file="res://audio/background_music/Forest Lullaby (floor1).wav"
+dest_files=["res://.godot/imported/Forest Lullaby (floor1).wav-d3ba53cf3bd336711ff1112679378de6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=3
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,13 +1,13 @@
 ~ start
 set in_dialogue = true
-
+set current_quest = "meeting_wizard_rat"
 Rat: Hmmmm… [wait=1] I smell Cheddar change. Who’s there?
-Robot:  I’m Robot. I was wondering if you could help me. 
+Robot: I’m {{player_username}}. I was wondering if you could help me. 
 Rat: Hmmm… Help with what?
 Robot: Everybody keeps saying something about a prophecy and they told me you knew more.
-Rat:  I can tell you more but for a price. [wait=0.5] I smell that you have something I like. If you give it to me, I'll tell you what I know.
+Rat: I can tell you more but for a price. [wait=0.5] I smell that you have something I like. If you give it to me, I'll tell you what I know.
 - I have Cheddar Change for you 
-	[wait=2]=> Rat_next_Dialogue
+	=> Rat_next_Dialogue
 - I don’t have anything for you
 	=> end
 
@@ -17,11 +17,13 @@ Wizard Rat: But it has to do something with the inscriptions and [wait=0.5]
 Wizard Rat: Since the light house has gone dark many of the predators have been getting sick. [wait=1] 
 Wizard Rat: It isn’t much information but I hope it helps. [wait=1] 
 Wizard Rat: I think there are scrolls on the floor above but I can't get to it because the mean crab is in the way. 
-Wizard Rat: [wait=0.5] I’ll help you but you have to help me get to the upper floor.
-
-
+Wizard Rat: I’ll help you but you have to help me get to the upper floor.
 - Deal
-	Wizard Rat: [wait=2] We venture upwards! But be warned... along the way I’ll be training you using inscriptions.
+	Wizard Rat: We venture upwards! But be warned... the path there won't be easy.
+	Wizard Rat: Wizard Rat, AWAY!!!
+	set current_quest = "after_meeting_wizard_rat"
+	Robot: Where did he just go???
+	=> end
 - No deal
 	=> end
 
