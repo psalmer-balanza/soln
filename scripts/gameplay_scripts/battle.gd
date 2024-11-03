@@ -4,6 +4,7 @@ extends Control
 @onready var question = $Question
 @onready var actions = $Actions
 @onready var question_bg = $"Question BG"
+@onready var snekker_sprite = $"Enemy Sprite"
 
 func _ready() -> void:
 	Global.Snekker_HP = 100
@@ -17,7 +18,16 @@ func _process(delta: float) -> void:
 		question.hide()
 		question_bg.hide()
 	
-	if Global.Snekker_HP == 0:
+	if Global.Snekker_HP == 80:
+		snekker_sprite.play("damaged_life_1")
+		
+	elif Global.Snekker_HP == 50:
+		snekker_sprite.play("damaged_life_2")
+	
+	elif Global.Snekker_HP == 20:
+		snekker_sprite.play("damaged_life_3")
+		
+	elif Global.Snekker_HP == 0:
 		DialogueState.current_quest = "snake_quiz_complete"
 		Statistics.postQuizScore(PlayerState.student_id, PlayerState.classroom_id, 5, Global.total_score)
 		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")

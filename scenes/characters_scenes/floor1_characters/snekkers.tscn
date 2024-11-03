@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://trxctaaesrgo"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/snekkers.gd" id="1_djawe"]
-[ext_resource type="Texture2D" uid="uid://t5dv1qsdwnh" path="res://assets/floor_1/npc/snekkers_idle.png" id="1_e7326"]
-[ext_resource type="Texture2D" uid="uid://b1vquni7mt1co" path="res://assets/floor_1/npc/snekkers2.0.png" id="1_ks8aa"]
+[ext_resource type="Texture2D" uid="uid://t5dv1qsdwnh" path="res://assets/floor_1/npc/snekkers/snekkers_idle.png" id="1_e7326"]
+[ext_resource type="Texture2D" uid="uid://b1vquni7mt1co" path="res://assets/floor_1/npc/snekkers/snekkers2.0.png" id="1_ks8aa"]
 [ext_resource type="Resource" uid="uid://bo6dh3eso0qgw" path="res://dialogue/floor_1/snekkers.dialogue" id="3_5hdfo"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_kipv2"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="5_yf50a"]
@@ -98,7 +98,6 @@ scale = Vector2(1.39346, 1.39346)
 sprite_frames = SubResource("SpriteFrames_iifh7")
 animation = &"big_idle"
 autoplay = "big_idle"
-frame_progress = 0.0746695
 
 [node name="Actionable" parent="." instance=ExtResource("4_kipv2")]
 dialogue_resource = ExtResource("3_5hdfo")

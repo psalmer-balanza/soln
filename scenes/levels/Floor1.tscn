@@ -879,7 +879,7 @@ tile_set = SubResource("TileSet_cdkk8")
 position = Vector2(971, 1010)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1349, 1106)
+position = Vector2(1069, 1682)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
