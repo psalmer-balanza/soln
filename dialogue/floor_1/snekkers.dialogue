@@ -1,6 +1,6 @@
 ~ start
 set in_dialogue = true
- set current_quest = "face_the_snake"
+set current_quest = "face_the_snake"
 if current_quest == "you_may_leave_floor_1"
 	Snekkers: Go on, hero, the sewer gate is open now...
 	=> end
