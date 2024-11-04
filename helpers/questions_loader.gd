@@ -6,6 +6,8 @@ var racket_steal_questions: Array = []
 var racket_house_questions: Array = []
 var snekkers_questions: Array = []
 var snekkers_choice_ids: Array = []
+var crab_questions: Array = []
+var crab_choice_ids: Array = []
 
 var post_data = {}
 var minigameID
@@ -37,6 +39,10 @@ func get_racket_house_questions():
 func get_snekkers_questions():
 	minigameID = 5
 	post(minigameID)
+
+func get_crab_questions():
+	minigameID = 11
+	post(minigameID)
 	
 func post(minigameID):
 	post_data["MinigameID"] = minigameID
@@ -46,7 +52,7 @@ func post(minigameID):
 		url = "http://"+ Global.host_ip +":3000/game/getfractions"
 	elif minigameID == 3 || minigameID == 4:
 		url = "http://"+ Global.host_ip +":3000/game/getworded"
-	elif minigameID == 5:
+	elif minigameID == 5 || minigameID == 11:
 		url = "http://"+ Global.host_ip +":3000/game/getmcquestions"	
 
 	var http_request = HTTPRequest.new()
@@ -83,6 +89,10 @@ func _http_request_completed(_result, response_code, _headers, body):
 			elif minigameID == 5:
 				snekkers_questions = constructQuizQuestions(response)
 				snekkers_choice_ids = getChoiceIDs(response)
+				emit_signal("questions_loaded")
+			elif minigameID == 11:
+				crab_questions = constructQuizQuestions(response)
+				crab_choice_ids = getChoiceIDs(response)
 				emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get fractions", response_code)
@@ -124,7 +134,9 @@ func constructQuizQuestions(response):
 			correctAnswer,
 			question["question_id"]
 			]]
-		
+			
+	print(questions)
+
 	return questions
 
 # helper function for constructQuizQuestions
@@ -146,6 +158,7 @@ func getChoiceIDs(response):
 			question["choices"][2]["choice_id"], 
 			question["choices"][3]["choice_id"], 
 			]]
-	print("when retrieving, choiceIDs are", choiceIDs)
+			
+	#print("when retrieving, choiceIDs are", choiceIDs)
 		
 	return choiceIDs
