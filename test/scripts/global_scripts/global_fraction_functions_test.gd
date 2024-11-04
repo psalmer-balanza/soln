@@ -11,6 +11,10 @@ func test_gcd() -> void:
 	var test_script = auto_free(preload(__source).new())
 	assert_int(test_script.gcd(5,10)).is_equal(5)
 	
+func test_gcd_sim() -> void:
+	var test_script = auto_free(preload(__source).new())
+	assert_int(test_script.gcd(10,10)).is_equal(10)
+	
 func test_gcd_inc() -> void:
 	var test_script = auto_free(preload(__source).new())
 	assert_int(test_script.gcd(5,10)).is_not_equal(10)

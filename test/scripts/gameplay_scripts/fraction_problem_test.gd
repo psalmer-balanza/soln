@@ -13,6 +13,8 @@ func mock_check_answer():
 func mock_display_question():
 	pass
 
+func mock_next():
+	pass
 
 
 func test__check_answer_is_zero() -> void:
@@ -71,6 +73,7 @@ func test__check_answer_correct() -> void:
 	test_script.result_display = Label.new()
 	add_child(test_script.result_display)
 	
+	
 	var fraction: Array[int] = [5,3]
 	var cor_ans: Array[int] = [5,3]
 	
@@ -100,7 +103,6 @@ func test__check_answer_correct() -> void:
 func test_simplify_fraction() -> void:
 	var test_script = auto_free(preload(__source).new())
 	assert_array(test_script.simplify_fraction(5,10)).is_equal([1,2])
-	
 
 func test_simplify_fraction_inc() -> void:
 	var test_script = auto_free(preload(__source).new())
