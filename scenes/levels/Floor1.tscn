@@ -835,10 +835,10 @@ autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
-offset_left = -1895.0
-offset_top = -1097.0
-offset_right = 4315.0
-offset_bottom = 3915.0
+offset_left = -1853.0
+offset_top = -1070.0
+offset_right = 4357.0
+offset_bottom = 3942.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="ground_and_water" type="Node2D" parent="."]
@@ -909,6 +909,11 @@ tile_set = SubResource("TileSet_cdkk8")
 
 [node name="DeadRobotScene" parent="." instance=ExtResource("26_5o1n3")]
 position = Vector2(971, 1010)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(0, -0.000137329)
+scale = Vector2(1, 1)
+color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
 position = Vector2(354, 169)
@@ -990,9 +995,6 @@ offset_bottom = 79.0
 [node name="Label" parent="tooltips/monitor3/MarginContainer2/MarginContainer" index="0"]
 text = "If you're feeling lost
 follow the fireflies"
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="Cutscenes" type="Node2D" parent="."]
 position = Vector2(321, 800)

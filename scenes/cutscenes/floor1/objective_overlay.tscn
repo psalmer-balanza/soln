@@ -3,15 +3,18 @@
 [ext_resource type="Script" path="res://scripts/character_scripts/objective_overlay.gd" id="1_71tqq"]
 [ext_resource type="AudioStream" uid="uid://b31iowja1x54q" path="res://audio/sound_effects/Typing Sound Effect.wav" id="3_wy1pr"]
 
-[node name="ObjectiveOverlay" type="Node2D"]
+[node name="ObjectiveOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_71tqq")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
-offset_left = -204.0
-offset_top = -121.0
-offset_right = 696.0
-offset_bottom = 189.0
+layout_mode = 0
+offset_left = 28.0
+offset_top = 23.0
+offset_right = 928.0
+offset_bottom = 333.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.941176, 0.913725, 0.788235, 1)
 theme_override_colors/font_shadow_color = Color(0.207843, 0.168627, 0.25098, 1)

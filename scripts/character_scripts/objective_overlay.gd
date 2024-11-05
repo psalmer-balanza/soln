@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @onready var label: Label = $Label
 var quest_status := {}
 @onready var typing_sfx: AudioStreamPlayer = $TypingSFX
@@ -106,7 +106,6 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Pass the wizard rat's trials.")
 		"after_wizard_training_room":
 			handle_quest_label(cq, "Face the Giant Enemy Crab.")
-			
 	# Typewriter effect update
 	if current_characters < label.text.length():
 		typewriter_timer -= delta
