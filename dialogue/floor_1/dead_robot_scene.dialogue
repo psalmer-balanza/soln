@@ -14,6 +14,7 @@ if current_quest == "dead_robots_gameplay_done"
 		(What do I do with this?)
 	Old Peculiar: Best of luck to you, chosen one...
 	set current_quest = "dead_robots_done"
+	set disable_dead_robot_quest = true
 	=> end
 elif current_quest == "dead_robots":
 	Old Peculiar: Uh... I don't think that's right...
@@ -30,6 +31,7 @@ else
 	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
 	set current_quest = "dead_robots"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+	
 	=> end
 => end
 
