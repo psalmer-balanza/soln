@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cimrebiogqofe"]
+
+[ext_resource type="Texture2D" uid="uid://dyeaqlwgegosc" path="res://assets/floor_2/math lab (2).png" id="1_pit2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ictpk"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c20f"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpgt5"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 2000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7m3y"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 3000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho4xv"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 4000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giorg"]
+atlas = ExtResource("1_pit2r")
+region = Rect2(0, 5000, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4cikn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ictpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c20f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpgt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7m3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho4xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giorg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="MathLab" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(267, 321)
+scale = Vector2(0.46, 0.46)
+sprite_frames = SubResource("SpriteFrames_4cikn")
+autoplay = "default"
+frame_progress = 0.826182

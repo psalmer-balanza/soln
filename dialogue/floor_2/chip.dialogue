@@ -1,7 +1,7 @@
 #MANUAL
 ~ manual
 set in_dialogue = true
-Hello? Is anybody there?
+Robot: Hello? Is anybody there?
 Chip: Woaahh! A visitor, I haven't had one in so long.
 - Wait... Raket?
 	=> chip_dialogue
@@ -12,11 +12,11 @@ Chip: Woaahh! A visitor, I haven't had one in so long.
 
 ~ chip_dialogue
 Chip: Raket? [wait=0.5]You know my brother??
-Brother??
-Chip: My name is Gilbert and my brother is Raket. [wait=1] You met my brother? But how did you get up here without waking the snake?
-Well I helped the Snake get rid of his headaches by solving these inscriptions.
+Robot: Brother??
+Chip: My name is Chip, and my brother is Raket. [wait=1] You met my brother? But how did you get up here without waking the snake?
+Robot: Well I helped the Snake get rid of his headaches by solving these inscriptions.
 Chip: What?? [wait=1] This is great news! We have to tell the Wizard rat!
-The Wizard rat? 
+Robot: The Wizard rat? 
 Chip: Yes the Wizard rat!  Long ago there was a prophecy where there was a chosen one who can help us all from this great darkness... but that's as far as I know.
 Chip: [wait=1] The wizard rat knows more, but we need Cheddar Change to convince him to help.
 Chip: I found Cheddar Change a while back but it's stuck inside this vault. 

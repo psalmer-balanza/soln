@@ -284,7 +284,7 @@ autowrap_mode = 2
 position = Vector2(856, 120)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"masked_figure"
+animation = &"raket_wrong"
 autoplay = "masked_figure"
 
 [node name="TextureRect" type="TextureRect" parent="."]

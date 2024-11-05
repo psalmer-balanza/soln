@@ -328,8 +328,8 @@ autowrap_mode = 2
 position = Vector2(890.526, 130.526)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"wizard_rat_correct"
-autoplay = "masked_figure"
+animation = &"wizard_rat"
+autoplay = "wizard_rat"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1

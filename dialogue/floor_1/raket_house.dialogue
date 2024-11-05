@@ -7,7 +7,7 @@ if current_quest == "share_pie_with_raket" or current_quest == "starting"
 	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
 	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
 	Raket: There will still be a few left for me to eat for dinner.
-	Isn’t 4/10 too much for me? The pie is for you…
+	Robot: Isn’t 4/10 too much for me? The pie is for you…
 	Raket: I don’t think so. Let's try solving it how much will we eat later and how much will be left for me then.
 	set current_quest = "raket_house"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
@@ -35,7 +35,7 @@ if current_quest == "sword_finished"
 	Raket: Look at this beauty! You did it, {{player_username}}. This sword is perfect.
 	set player_badges["sword"] = true
 	(You receive a sword badge!)
-	What will you do with it?
+	Robot: What will you do with it?
 	Raket: Well I plan to-
 	*The ground shakes tremendously*
 	set current_quest = "face_the_snake"
@@ -46,14 +46,14 @@ elif current_quest == "raket_house_worded_complete"
 	set current_quest = "raket_sword_quest"
 	Raket: See? I told you I will still have more of the pie slices to eat...
 	Raket: Don’t worry, I want to share this pie with you as a form of thanks since you delivered it for Saisai.
-	Okay then... Thank you !
+	Robot: Okay then... Thank you !
 	Raket: Oh I noticed you have some energy on your chest right there! 
-	What energy? 
+	Robot: What energy? 
 	Raket: That light on your chest.
-	Oh, What is this energy for? 
+	Robot: Oh, What is this energy for? 
 	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
 	Raket: But that's all I know from that old thing.
-	Is there a way for me to know the rest of the prophecy? 
+	Robot: Is there a way for me to know the rest of the prophecy? 
 	Raket: Yeah but you have to go to the top of the lighthouse to find out, 
 	Raket: But the only exit to this place is the pipe behind Snekkers the angry Snake. 
 	Raket: He lives in that cave right there. 

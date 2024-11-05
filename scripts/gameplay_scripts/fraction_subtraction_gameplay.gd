@@ -9,7 +9,7 @@ signal incorrect
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	["A water tank was initially filled with 2/5 of its capacity. After some usage, another 3/10 was drained. How much water remains in the tank?", 2, 5, 3, 10],
-	["A pipe was carrying water to a water supply. In the morning, 3/8 of the water supply was filled, but 5/12 was drained in the afternoon. How much water remains in the reservoir?", 3, 8, 5, 12],
+	["A pipe was carrying water to a water supply. In the morning, 3/8 of the water supply was filled, but 5/6 was drained in the afternoon. How much water remains in the reservoir?", 3, 8, 5, 6],
 	["Two sections of a pipeline had been filled. The first section was filled to 3/6 of its capacity, and the second section was drained to 5/6 of its capacity. What is the remaining capacity in the pipes?", 3, 6, 5, 6]
 ]
 	
@@ -82,10 +82,8 @@ func _on_questions_loaded():
 
 func npc_active():
 	current_npc = "default"
-	if DialogueState.current_quest == "share_pie_with_raket" or DialogueState.current_quest == "raket_house":
-		current_npc = "raket"
-	elif DialogueState.current_quest == "raket_stealing":
-		current_npc = "masked_figure"
+	if DialogueState.current_quest == "wizard_training_room" or DialogueState.current_quest == "starting":
+		current_npc = "wizard_rat"
 	else:
 		print("No npc found!")
 	npc_sprite.play(current_npc)
@@ -318,12 +316,10 @@ func disable_inputs():
 # Return to the world scene
 func return_to_world():
 	print("Returning")
-	if DialogueState.current_quest == "raket_stealing":
-		DialogueState.current_quest = "raket_stealing_gameplay_done"
-	if DialogueState.current_quest == "raket_house":
-		print("IGHDSAD UIHASDUHASD")
-		DialogueState.current_quest = "raket_house_worded_complete"
-	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+	if DialogueState.current_quest == "wizard_training_room":
+		print("Wizard training complete!")
+		DialogueState.current_quest = "wizard_training_room_worded_complete"
+	get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
 
 func _on_button_button_down() -> void:
 	return_to_world()
@@ -331,24 +327,12 @@ func _on_button_button_down() -> void:
 # Plays when the player inputs a correct answer
 func _on_correct_answer():
 	$CorrectAnswerSFX.play()
-	if current_npc == "raket":
-		npc_sprite.play("raket_correct")
+	if current_npc == "wizard_rat":
+		npc_sprite.play("wizard_rat_correct")
 		await npc_sprite.animation_finished
-		npc_sprite.play("raket")
-	elif current_npc == "masked_figure":
-		npc_sprite.play("masked_figure_correct")
-		await npc_sprite.animation_finished
-		npc_sprite.play("masked_figure")
-
+		npc_sprite.play("wizard_rat")
+		
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
 	Global.user_energy -= 1
 	$WrongAnswerSFX.play()
-	if current_npc == "raket":
-		npc_sprite.play("raket_wrong")
-		await npc_sprite.animation_finished
-		npc_sprite.play("raket")
-	elif current_npc == "masked_figure":
-		npc_sprite.play("masked_figure_wrong")
-		await npc_sprite.animation_finished
-		npc_sprite.play("masked_figure")

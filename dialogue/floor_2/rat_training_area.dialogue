@@ -24,7 +24,7 @@ Wizard Rat: Are you ready?
 => end
 
 ~ wizard_next_dialogue
-This is a new inscription... better be prepared on what I can see.
+Robot: This is a new inscription... better be prepared on what I can see.
 Wizard Rat: You could do this, I believe in you. [wait=2]
 set current_quest = "wizard_training_room"
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
@@ -32,7 +32,7 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fr
 
 ~ wrong_answer_dialogue
 Wizard Rat: Oops try again
-- Okay
+- Robot: Okay
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
 => end
 

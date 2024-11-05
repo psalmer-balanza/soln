@@ -95,6 +95,7 @@ shape = SubResource("CircleShape2D_hbec7")
 dialogue_resource = ExtResource("3_oxpal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+position = Vector2(-1, -4)
 shape = SubResource("CircleShape2D_34ipf")
 disabled = true
 debug_color = Color(0.768627, 0.396078, 0.545098, 0.184314)

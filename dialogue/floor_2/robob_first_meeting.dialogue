@@ -1,10 +1,25 @@
 ~ start
 set in_dialogue = true
+if current_quest == "robob_first_meet":
+	=> first_meet
+elif current_quest == "after_robob" 
+	=> after_first_meet
+~ first_meet
 set current_quest = "robob_first_meet"
 Robob: Hey buddy.
+Robot: Hey.
+Robob: You’ve come so far.
+Robob: Here is a piece of wisdom for you.
+Robob: Ahead is a room flooded with water.
+Robob: To drain the water there is something you must do first.
+Robot: And what is that?
+Robob: Good luck buddy.
+Robot: Hold on-
 set current_quest = "after_robob"
-
-
+=> end
+~ after_first_meet
+Robob: Good luck buddy.
+Robot: Right.
 ~ end
 set in_dialogue = false
 => END

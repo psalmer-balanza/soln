@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_3mv17"]
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
 [ext_resource type="Texture2D" uid="uid://c2hwvdj2s2c4j" path="res://assets/floor_1/swamp/All in one Water.png" id="1_eabov"]
-[ext_resource type="AudioStream" uid="uid://d3ry0b283onvp" path="res://audio/background_music/Farming - Dont Starve Together 8-Bit Cover.wav" id="2_1ibpd"]
+[ext_resource type="AudioStream" uid="uid://cuh7w1ri3ti64" path="res://audio/background_music/Forest Lullaby (floor1).wav" id="2_k141v"]
 [ext_resource type="Texture2D" uid="uid://b2b3j6vayv3wh" path="res://scenes/levels/test_floor1/pipe.png" id="2_u2x0n"]
 [ext_resource type="TileSet" uid="uid://ccyenw63dh0ff" path="res://tilemaps/floor_1/laboratory/laboratory.tres" id="3_i6jqx"]
 [ext_resource type="TileSet" uid="uid://c6bbxruet16dv" path="res://tilemaps/floor_1/laboratory/spawn pod.tres" id="4_1k7vt"]
@@ -829,7 +829,7 @@ volume_db = -18.67
 pitch_scale = 1.25
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_1ibpd")
+stream = ExtResource("2_k141v")
 volume_db = -20.445
 autoplay = true
 
@@ -912,7 +912,6 @@ position = Vector2(971, 1010)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(0, -0.000137329)
-scale = Vector2(1, 1)
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]

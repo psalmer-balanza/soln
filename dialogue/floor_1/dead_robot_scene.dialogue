@@ -2,7 +2,6 @@
 
 set in_dialogue = true
 do dead_robot_scene()
-
 if current_quest == "dead_robots_gameplay_done"
 	Old Peculiar: Thank you... you have proven yourself worthy
 	Old Peculiar: We can move to the archive folder without any regrets now...

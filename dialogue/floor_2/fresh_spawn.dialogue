@@ -1,8 +1,8 @@
 ~ start
 set in_dialogue = true
 set current_quest = "entered_floor_2"
-Woah where am I? [wait=0.5] 
-There must be something in here that can tell me where to go.
+Robot: Woah where am I? [wait=0.5] 
+Robot: There must be something in here that can tell me where to go.
 set disable_fresh_dialogue_quest = true
 ~ end
 set in_dialogue = false

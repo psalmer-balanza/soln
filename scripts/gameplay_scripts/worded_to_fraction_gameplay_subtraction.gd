@@ -40,6 +40,7 @@ func npc_active():
 		npc_sprite.play("racket")
 	elif  current_npc == "old_peculiar":
 		npc_sprite.play("old_robot")
+	
 	else:
 		print("no active npc")
 
@@ -165,4 +166,4 @@ func next_question_or_finish():
 # Return to the world scene
 func return_to_world():
 	print("Returning")
-	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
