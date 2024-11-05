@@ -534,7 +534,12 @@ theme_override_font_sizes/font_size = 30
 text = "Game is paused"
 horizontal_alignment = 1
 
-[node name="Back" type="Button" parent="UI/PauseScreen/MarginContainer2/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI/PauseScreen/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Back" type="Button" parent="UI/PauseScreen/MarginContainer2/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
@@ -545,7 +550,12 @@ theme_override_font_sizes/font_size = 50
 text = "BACK"
 flat = true
 
-[node name="MainMenu" type="Button" parent="UI/PauseScreen/MarginContainer2/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="UI/PauseScreen/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="MainMenu" type="Button" parent="UI/PauseScreen/MarginContainer2/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
@@ -623,9 +633,15 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
-[connection signal="pressed" from="UI/PauseScreen/MarginContainer2/VBoxContainer/Back" to="UI/PauseScreen" method="_on_back_pressed"]
-[connection signal="pressed" from="UI/PauseScreen/MarginContainer2/VBoxContainer/MainMenu" to="UI/PauseScreen" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/MarginContainer2/VBoxContainer/MarginContainer2/Back" to="UI/PauseScreen" method="_on_back_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/MarginContainer2/VBoxContainer/MarginContainer3/MainMenu" to="UI/PauseScreen" method="_on_main_menu_pressed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="UI/ObjectiveOverlay"]
