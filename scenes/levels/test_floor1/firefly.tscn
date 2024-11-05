@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw7ejsmdlwoyr"]
+[gd_scene load_steps=11 format=3 uid="uid://bw7ejsmdlwoyr"]
+
+[ext_resource type="Script" path="res://scenes/levels/test_floor1/firefly.gd" id="1_iuyxs"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inlt7"]
 lifetime_randomness = 0.2
@@ -21,12 +23,15 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.807339, 0.169725)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dg8i1"]
+radius = 77.1038
+
 [sub_resource type="Animation" id="Animation_27q2o"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:texture:fill_to")
+tracks/0/path = NodePath("Node2D/PointLight2D:texture:fill_to")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,30 +43,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
+tracks/1/path = NodePath("Node2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_eogpp"]
-resource_name = "flicker"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:texture:fill_to")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.807339, 0.169725), Vector2(0.756881, 0.243119)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v7c03"]
@@ -70,7 +59,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("Node2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,29 +69,78 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_eogpp"]
+resource_name = "flicker"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/PointLight2D:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.807339, 0.169725), Vector2(0.756881, 0.243119)]
+}
+
+[sub_resource type="Animation" id="Animation_ubi7u"]
+resource_name = "appear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uhe8u"]
 _data = {
 "RESET": SubResource("Animation_27q2o"),
+"appear": SubResource("Animation_ubi7u"),
 "disappear": SubResource("Animation_v7c03"),
 "flicker": SubResource("Animation_eogpp")
 }
 
 [node name="firefly" type="Node2D"]
 position = Vector2(146, 85)
+script = ExtResource("1_iuyxs")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
 amount = 6
 process_material = SubResource("ParticleProcessMaterial_inlt7")
 lifetime = 2.0
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
 position = Vector2(2, -4)
 color = Color(1, 1, 0.372549, 1)
 energy = 0.5
 texture = SubResource("GradientTexture2D_5i0r1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(1, 1, 1, 0.411765)
+shape = SubResource("CircleShape2D_dg8i1")
+debug_color = Color(0.208525, 0.579719, 0.749598, 0.145098)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_uhe8u")
 }
 autoplay = "flicker"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

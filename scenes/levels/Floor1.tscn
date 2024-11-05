@@ -911,7 +911,7 @@ tile_set = SubResource("TileSet_cdkk8")
 position = Vector2(971, 1010)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(396, 893)
+position = Vector2(354, 169)
 scale = Vector2(1, 0.991779)
 
 [node name="in_front_details" type="Node2D" parent="."]
@@ -1009,7 +1009,22 @@ visible = false
 position = Vector2(865, 251)
 
 [node name="CollectingSwordPieces" parent="Cutscenes" instance=ExtResource("25_t57pw")]
-position = Vector2(856, 887)
+position = Vector2(983, 786)
+
+[node name="1st (Sword Bottom)" parent="Cutscenes/CollectingSwordPieces" index="0"]
+position = Vector2(193, -43)
+
+[node name="2nd (Sword Guard)" parent="Cutscenes/CollectingSwordPieces" index="1"]
+position = Vector2(48, 36)
+
+[node name="3rd (Sword Lower Blade)" parent="Cutscenes/CollectingSwordPieces" index="2"]
+position = Vector2(201, 231)
+
+[node name="4th (Sword Middle Blade)" parent="Cutscenes/CollectingSwordPieces" index="3"]
+position = Vector2(139, 307)
+
+[node name="5th (Sword Top Blade)" parent="Cutscenes/CollectingSwordPieces" index="4"]
+position = Vector2(196, 115)
 
 [node name="Saisai" parent="." instance=ExtResource("12_aajla")]
 position = Vector2(577, 972)
@@ -1036,69 +1051,34 @@ position = Vector2(873, 1548)
 position = Vector2(415, 335)
 
 [node name="firefly" parent="Fireflies" instance=ExtResource("6_5ydh2")]
+position = Vector2(-2, -26)
 
 [node name="firefly2" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(-63, 49)
+position = Vector2(-89, 80)
 
 [node name="firefly5" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(-126, 384)
+position = Vector2(-111, 375)
 
 [node name="firefly6" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(160, 628)
+position = Vector2(194, 644)
 
 [node name="firefly7" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(1014, 689)
+position = Vector2(957, 668)
 
 [node name="firefly8" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(869, 733)
-
-[node name="firefly9" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(921, 731)
-
-[node name="firefly10" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(964, 698)
+position = Vector2(870, 720)
 
 [node name="firefly11" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(1024, 1227)
+position = Vector2(1042, 927)
 
 [node name="firefly12" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(998, 1304)
-
-[node name="firefly13" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(908, 1342)
-
-[node name="firefly14" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(811, 1389)
-
-[node name="firefly15" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(1008, 1413)
-
-[node name="firefly16" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(837, 1515)
-
-[node name="firefly17" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(950, 1507)
+position = Vector2(1011, 1125)
 
 [node name="firefly18" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(616, 1497)
-
-[node name="firefly19" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(547, 1496)
-
-[node name="firefly20" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(571, 1504)
-
-[node name="firefly21" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(499, 1322)
+position = Vector2(612, 1465)
 
 [node name="firefly22" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(419, 1318)
-
-[node name="firefly23" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(460, 1331)
-
-[node name="firefly24" parent="Fireflies" instance=ExtResource("6_5ydh2")]
-position = Vector2(596, 1507)
+position = Vector2(440, 1300)
 
 [node name="BarrierRaketHouse" parent="." instance=ExtResource("27_gjv3b")]
 position = Vector2(1676, 1289)
@@ -1158,3 +1138,4 @@ occluder = SubResource("OccluderPolygon2D_vb12w")
 [editable path="Cutscenes/SaisaiRockScene/Saisai"]
 [editable path="Cutscenes/SaisaiRockScene/firefly"]
 [editable path="Cutscenes/SaisaiRockScene/firefly2"]
+[editable path="Cutscenes/CollectingSwordPieces"]
