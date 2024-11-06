@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=74 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="Texture2D" uid="uid://8e0ae8uex75k" path="res://assets/main_character/mc_walk_front.png" id="2_emqss"]
@@ -21,8 +21,11 @@
 [ext_resource type="AudioStream" uid="uid://ss166am0xg8v" path="res://audio/sound_effects/Computer Startup SFX.wav" id="9_4p2n0"]
 [ext_resource type="Script" path="res://scenes/characters_scenes/floor1_characters/pause_screen.gd" id="9_afhlo"]
 [ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="9_bdkni"]
+[ext_resource type="Texture2D" uid="uid://c2anop6ampj3j" path="res://assets/main_character/onscreen_badges/Mushroom Badge.png" id="9_spg6v"]
+[ext_resource type="Texture2D" uid="uid://yw8flaurllbs" path="res://assets/main_character/onscreen_badges/Crystal Ball Badge.png" id="10_2wnpe"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="10_grd3n"]
 [ext_resource type="Script" path="res://scripts/states/player_dialogue_state.gd" id="10_uarnf"]
+[ext_resource type="Texture2D" uid="uid://c7f6foub77gy8" path="res://assets/main_character/onscreen_badges/Flask Badge.png" id="11_ggigp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7731s"]
 atlas = ExtResource("2_emqss")
@@ -469,8 +472,32 @@ texture = ExtResource("8_make3")
 [node name="MushroomBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 191.0
+offset_top = -35.0
+offset_right = 269.0
+offset_bottom = 43.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_spg6v")
+
+[node name="CrystalBallBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 202.0
+offset_top = -24.0
+offset_right = 391.0
+offset_bottom = 165.0
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("10_2wnpe")
+
+[node name="FlaskBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 187.5
+offset_top = -26.25
+offset_right = 406.5
+offset_bottom = 192.75
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("11_ggigp")
 
 [node name="PauseScreen" type="Control" parent="UI"]
 visible = false

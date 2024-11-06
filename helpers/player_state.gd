@@ -17,7 +17,9 @@ var player_badges = {
 	"carrot": false,
 	"cake": false,
 	"sword": false,
-	"mushroom": false
+	"mushroom": false,
+	"flask": false,
+	"crystal_ball": false
 }
 
 func save_player_state(position: Vector2, current_scene: String):

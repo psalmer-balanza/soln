@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwnfoc7koyfka"]
+
+[ext_resource type="Texture2D" uid="uid://xlp0chm6cndw" path="res://assets/floor_2/fireee.png" id="1_k4hhi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68b0i"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 0, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtne6"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 156, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utk6y"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 312, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww5xq"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 468, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmqnd"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 624, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpuqe"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 780, 156, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwb25"]
+atlas = ExtResource("1_k4hhi")
+region = Rect2(0, 936, 156, 156)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmh2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68b0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtne6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utk6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww5xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmqnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpuqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwb25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_d0du2"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_30ul5"]
+gradient = SubResource("Gradient_d0du2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.807339, 0.169725)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hrp1"]
+radius = 4.31902
+height = 14.9202
+
+[node name="FirePedestal" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 4)
+scale = Vector2(0.455128, 0.455128)
+sprite_frames = SubResource("SpriteFrames_rmh2t")
+autoplay = "default"
+frame_progress = 0.670269
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(2.54688, 2.54688)
+color = Color(1, 0.737255, 0.372549, 0.678431)
+energy = 0.64
+texture = SubResource("GradientTexture2D_30ul5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+scale = Vector2(2.54688, 2.54688)
+shape = SubResource("CapsuleShape2D_6hrp1")

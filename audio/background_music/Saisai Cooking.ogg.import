@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgabtoa7cg2re"
+path="res://.godot/imported/Saisai Cooking.ogg-c2c6f4a038ccad3b9c457a9a4b5037d4.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/Saisai Cooking.ogg"
+dest_files=["res://.godot/imported/Saisai Cooking.ogg-c2c6f4a038ccad3b9c457a9a4b5037d4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

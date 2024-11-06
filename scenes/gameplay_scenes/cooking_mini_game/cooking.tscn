@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
 
+[ext_resource type="AudioStream" uid="uid://dgabtoa7cg2re" path="res://audio/background_music/Saisai Cooking.ogg" id="1_4ahw2"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
-[ext_resource type="AudioStream" uid="uid://wmegma5lylop" path="res://audio/background_music/Saisai Cooking.wav" id="1_74ssu"]
 [ext_resource type="Texture2D" uid="uid://b3ibr008hxvkh" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/counter.png" id="1_caplo"]
 [ext_resource type="Texture2D" uid="uid://dkeceqy1x74fx" path="res://scenes/gameplay_scenes/cooking_mini_game/assets/butter2.png" id="5_18083"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/ingredients/garlic.gd" id="7_bp1rw"]
@@ -58,7 +58,7 @@ size = Vector2(54.8781, 20)
 [node name="Cooking" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_74ssu")
+stream = ExtResource("1_4ahw2")
 volume_db = -43.099
 autoplay = true
 

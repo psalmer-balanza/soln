@@ -12,6 +12,9 @@ func _ready() -> void:
 		label.text = "Congratulations:\nYou have passed\nOld Peculiar's trial!"
 	elif DialogueState.current_quest == "meeting_chip":
 		label.text = "Congratulations:\nYou have opened the safe!"
+	elif DialogueState.current_quest == "water_room_3":
+		label.text = "Congratulations:\nYou have earned a Flask badge!"
+		
 func _on_correct_pressed():
 	print("Congratulations screen, current quest: ", DialogueState.current_quest)
 	get_tree().change_scene_to_packed(next_scene)

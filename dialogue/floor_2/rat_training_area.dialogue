@@ -31,13 +31,17 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fr
 => end
 
 ~ wrong_answer_dialogue
-Wizard Rat: Oops try again
+Wizard Rat: Oops! try again
 - Robot: Okay
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_subtraction.tscn", "res://scenes/levels/Floor2.tscn")
 => end
 
 ~ right_answer_dialogue
 Wizard Rat: You did it! You’re ready.  
+Wizard Rat: One more thing, take this crystal ball, as a token of our training.
+set player_badges["crystal_ball"] = true
+(You received a Crystal Ball badge!)
+Wizard Rat: Now go, young one, best of luck to you!
 set current_quest = "after_wizard_training_room"
 => end
 
