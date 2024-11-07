@@ -121,12 +121,12 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_qm7ct")
 
-[sub_resource type="Gradient" id="Gradient_ouq8f"]
+[sub_resource type="Gradient" id="Gradient_jh7dv"]
 offsets = PackedFloat32Array(0.415584, 1)
 colors = PackedColorArray(0.0509804, 0.0509804, 0.133333, 1, 0.0509804, 0.0509804, 0.133333, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_typjo"]
-gradient = SubResource("Gradient_ouq8f")
+gradient = SubResource("Gradient_jh7dv")
 fill_from = Vector2(0.522936, 1)
 fill_to = Vector2(0.5, 0)
 
@@ -143,7 +143,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_wfsqf")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86wc1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msuqd"]
 texture = ExtResource("2_i7bpm")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -259,7 +259,7 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_x8vic"]
 tile_size = Vector2i(64, 64)
-sources/1 = SubResource("TileSetAtlasSource_86wc1")
+sources/1 = SubResource("TileSetAtlasSource_msuqd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctjl4"]
 texture = ExtResource("2_i7bpm")
