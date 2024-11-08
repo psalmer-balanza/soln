@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cimrebiogqofe" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
 [ext_resource type="PackedScene" uid="uid://bwnfoc7koyfka" path="res://scenes/cutscenes/floor2/fire_pedestal.tscn" id="24_jvmvp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gg524"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nuae0"]
 texture = ExtResource("3_5onoa")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -53,7 +53,7 @@ texture_region_size = Vector2i(32, 32)
 5:3/0 = 0
 6:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3eux"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f130f"]
 texture = ExtResource("4_mldc0")
 texture_region_size = Vector2i(32, 32)
 3:0/0 = 0
@@ -77,7 +77,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yawyv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ve7e"]
 texture = ExtResource("5_jvexc")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(3, 3)
@@ -85,11 +85,11 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_mf1js"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_gg524")
-sources/1 = SubResource("TileSetAtlasSource_u3eux")
-sources/2 = SubResource("TileSetAtlasSource_yawyv")
+sources/0 = SubResource("TileSetAtlasSource_nuae0")
+sources/1 = SubResource("TileSetAtlasSource_f130f")
+sources/2 = SubResource("TileSetAtlasSource_2ve7e")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qm7ct"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_at7e5"]
 texture = ExtResource("5_jvexc")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(3, 1)
@@ -119,7 +119,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_ckrpr"]
 tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_qm7ct")
+sources/1 = SubResource("TileSetAtlasSource_at7e5")
 
 [sub_resource type="Gradient" id="Gradient_jh7dv"]
 offsets = PackedFloat32Array(0.415584, 1)

@@ -4,7 +4,7 @@ extends Node2D
 @onready var sprite = $Sprite2D
 
 @onready var origin = position
-var max_distance = 75
+var max_distance = 50
 
 func _process(delta: float) -> void:
 	var character_pos = character.position
