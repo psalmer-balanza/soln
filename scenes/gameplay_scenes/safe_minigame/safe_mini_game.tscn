@@ -209,10 +209,22 @@ libraries = {
 visible = false
 next_scene = ExtResource("8_o2j1d")
 
+[node name="MarginContainer2" parent="Congrats" index="1"]
+offset_left = -33.0
+offset_top = -8.0
+offset_right = 403.0
+offset_bottom = 244.0
+
 [node name="Label" parent="Congrats/MarginContainer2/MarginContainer" index="0"]
 text = "Congratulations:
 You have opened
 the safe"
+
+[node name="correct" parent="Congrats" index="2"]
+offset_left = 38.0
+offset_top = 131.0
+offset_right = 317.269
+offset_bottom = 195.269
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

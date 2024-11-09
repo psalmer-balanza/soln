@@ -9,8 +9,8 @@ signal incorrect
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
 	["A water tank was initially filled with 2/5 of its capacity. After some usage, another 3/10 was drained. How much water remains in the tank?", 2, 5, 3, 10],
-	["A pipe was carrying water to a water supply. In the morning, 3/8 of the water supply was filled, but 5/6 was drained in the afternoon. How much water remains in the reservoir?", 3, 8, 5, 6],
-	["Two sections of a pipeline had been filled. The first section was filled to 3/6 of its capacity, and the second section was drained to 5/6 of its capacity. What is the remaining capacity in the pipes?", 3, 6, 5, 6]
+	["A pipe was carrying water to a water supply. In the morning, 5/6 of the water supply was filled, but 3/8 was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8],
+	["Two sections of a pipeline had been filled. The first section was filled to 5/6 of its capacity, and the second section was drained to 3/6 of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6]
 ]
 	
 var fraction_questions_house = [
@@ -134,7 +134,8 @@ func _on_submit_answer_button_down():
 	var second_denominator = int(second_fraction_denominator.text)
 	var answer_numerator = int(numerator_answer.text)
 	var answer_denominator = int(denominator_answer.text)
-
+	
+	print("Input matches question: ", input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator))
 	# Validate the inputted fractions against the question
 	if input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
 		# Check if the inputs are empty
@@ -156,9 +157,8 @@ func _on_submit_answer_button_down():
 			fraction_addition_checker(first_numerator, first_denominator, second_numerator, second_denominator, answer_numerator, answer_denominator)
 		
 	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
-		display_answer.text = "Incorrect fractions. Please input the correct fractions."
+		display_answer.text = "Input the fractions that you have found in their proper order."
 		emit_signal("incorrect")
-
 
 # Helper function to check if a string is a valid integer
 func is_valid_integer(value: String) -> bool:
@@ -177,10 +177,6 @@ func input_matches_question(first_numerator: int, first_denominator: int, second
 	if first_numerator == current_question[1] and first_denominator == current_question[2] and second_numerator == current_question[3] and second_denominator == current_question[4]:
 		print("input first")
 		return true
-	elif first_numerator == current_question[3] and first_denominator == current_question[4] and second_numerator == current_question[1] and second_denominator == current_question[2]:
-		print("print second")
-		return true
-	
 	return false
 
 func fraction_addition_checker(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int, answer_numerator: int, answer_denominator: int):

@@ -22,8 +22,8 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogg
 => end
 
 ~ success_dialogue
-set disable_water_logged_1_quest = true
-You win hehe
+Successfully cleared the water.
+set disable_water_logged_3_quest = true
 => end
 
 ~ end

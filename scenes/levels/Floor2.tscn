@@ -957,7 +957,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(23, 76)
+position = Vector2(1687, 864)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
@@ -1013,6 +1013,7 @@ position = Vector2(4, -4)
 
 [node name="AutoActionable" parent="RatTrainingArea" instance=ExtResource("18_ncdd4")]
 dialogue_resource = ExtResource("15_m63yj")
+quest_name = "rat_wizard_training_quest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RatTrainingArea/AutoActionable"]
 shape = SubResource("CircleShape2D_ierx6")

@@ -2,7 +2,7 @@
 set in_dialogue = true
 if current_quest == "wizard_training_room"
 	=> wrong_answer_dialogue
-elif current_quest == "wizard_training_room_worded_complete"
+elif current_quest == "wizard_training_room_worded_complete" or current_quest == "after_wizard_training_room"
 	=> right_answer_dialogue
 else
 	=> first_meeting
@@ -37,12 +37,13 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fr
 => end
 
 ~ right_answer_dialogue
+set current_quest = "after_wizard_training_room"
 Wizard Rat: You did it! You’re ready.  
 Wizard Rat: One more thing, take this crystal ball, as a token of our training.
 set player_badges["crystal_ball"] = true
 (You received a Crystal Ball badge!)
 Wizard Rat: Now go, young one, best of luck to you!
-set current_quest = "after_wizard_training_room"
+set disable_rat_wizard_training_quest = true
 => end
 
 ~ end

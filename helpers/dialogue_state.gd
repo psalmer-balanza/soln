@@ -17,6 +17,7 @@ var disable_water_logged_1_quest: bool = false
 var disable_water_logged_2_quest: bool = false
 var disable_water_logged_3_quest: bool = false
 var disable_chip_quest: bool = false
+var disable_rat_wizard_training_quest: bool = false
 
 #var current_npc: String = "none"
 #var sword_pieces_complete = false
@@ -83,5 +84,8 @@ func get_quest_status(quest_name: String) -> bool:
 		
 	if quest_name == "chip_quest":
 		is_quest_compelete = disable_chip_quest
+		
+	if quest_name == "rat_wizard_training_quest":
+		is_quest_compelete = disable_rat_wizard_training_quest
 		
 	return is_quest_compelete
