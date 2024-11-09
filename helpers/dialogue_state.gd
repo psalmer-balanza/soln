@@ -34,7 +34,6 @@ var raket_quest_progress: int = 0
 var rock_removed: bool = false
 var disable_rock_removed = false
 
-#MOVE USEFUL VARIABLES HERE
 var do_raket_blacksmith_animation: bool = false
 
 # Post-Saisai robot cutscene
