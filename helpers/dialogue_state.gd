@@ -7,12 +7,16 @@ var evil_soln_quest_status: int = 0
 var dead_robot_quest_status: String = "first_time"
 
 # Variables for disabling auto actionables PERMANENTLY after they have been complete
+## FLOOR 1
 var disable_dead_robot_quest: bool = false
 var disable_raket_stealing_quest: bool = false
+
+## FLOOR 2
 var disable_fresh_dialogue_quest: bool = false
 var disable_water_logged_1_quest: bool = false
 var disable_water_logged_2_quest: bool = false
 var disable_water_logged_3_quest: bool = false
+var disable_chip_quest: bool = false
 
 #var current_npc: String = "none"
 #var sword_pieces_complete = false
@@ -76,5 +80,8 @@ func get_quest_status(quest_name: String) -> bool:
 	
 	if quest_name == "water_logged_3_quest":
 		is_quest_compelete = disable_water_logged_3_quest
+		
+	if quest_name == "chip_quest":
+		is_quest_compelete = disable_chip_quest
 		
 	return is_quest_compelete

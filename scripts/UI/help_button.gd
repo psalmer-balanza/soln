@@ -42,7 +42,7 @@ func _on_button_down():
 			var lcd = GlobalFractionFunctions.get_lcd(int(denum1), int(denum2))
 			var balanced_values = GlobalFractionFunctions.balance_num_and_denum(int(num1), int(denum1), int(num2), int(denum2), lcd)
 		
-			label_4.text = "In this example,\n " + str(denum1) + " and " + str(denum2) + " has an LCD of " + str(lcd) + "."
+			label_4.text = "To to this we need a common denominator that both fractions share. In this example, " + str(denum1) + " and " + str(denum2) + " has an LCD of " + str(lcd) + "."
 			
 			# Both fractions needs to be adjusted
 			if str(denum1) != str(lcd) and str(denum2) != str(lcd):

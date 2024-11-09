@@ -25,4 +25,3 @@ func _on_fraction_problem_correct() -> void:
 	if new_level < 0 :
 		new_level = 0
 	tween.tween_property(self, "current_water_level", new_level, .5)
-	print(current_water_level)

@@ -48,6 +48,7 @@ Chip: Yes this is it! This is the Cheddar Change!
 Chip: It's all yours! Now go and find that wizard rat!
 (You received a Cheddar Change badge!)
 set current_quest == "after_chip"
+set disable_chip_quest = true
 => end
 ~ end
 set in_dialogue = false

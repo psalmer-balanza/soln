@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if DialogueState.current_quest == "after_chip":
+	if DialogueState.disable_chip_quest:
 		$Chip/ChipBarrier.disabled = true
 	if DialogueState.current_quest == "after_meeting_wizard_rat":
 		$Rat/RatBarrier.disabled = true
