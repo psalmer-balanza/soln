@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dnq1la7m7qs1j"]
+[gd_scene load_steps=20 format=4 uid="uid://dm0y58jknrh20"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/giant_enemy_crab_battle.gd" id="1_i06mh"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_vkh37"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="6_bgkqy"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="7_1r8aj"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="8_r1swt"]
+[ext_resource type="Script" path="res://scenes/levels/camera_2d.gd" id="9_j8hd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmxk2"]
 atlas = ExtResource("3_kd7ni")
@@ -86,6 +87,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -39.0
+offset_right = 23.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.207843, 0.168627, 0.25098, 1)
@@ -160,6 +165,10 @@ tile_set = SubResource("TileSet_3x3ed")
 [node name="Question" parent="." instance=ExtResource("8_r1swt")]
 visible = false
 layout_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(510, 290)
+script = ExtResource("9_j8hd5")
 
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]

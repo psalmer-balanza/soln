@@ -7,6 +7,7 @@ extends Control
 @onready var c4:Button = $"container/VBoxContainer/Answers/d/Choice 4"
 @onready var mc_questions
 @onready var mc_choice_ids
+@onready var camera = $"../Camera2D"
 var index
 var correct_answer
 var answer
@@ -98,7 +99,9 @@ func _check_answer():
 	if answer == correct_answer:
 		Global.Snekker_HP -= 10
 		Global.Giant_Enemy_Crab_HP -= 10
+		camera.apply_shake()
 		visible=false
+		
 		#This current quest changer should be wherever the final question/end of quiz is
 		
 		mc_questions.remove_at(index)

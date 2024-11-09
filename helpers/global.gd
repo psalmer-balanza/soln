@@ -22,6 +22,11 @@ var Giant_Enemy_Crab_HP = 100
 var Giant_Enemy_Crab_Current_HP = 100
 var Giant_Enemy_Crab_question = false
 
+# for final battle
+var guardian_enemy_hp = 100
+var guardian_enemy_current_hp = 100
+var guardian_enemy_question = false
+
 var user_energy = 3
 
 # tutorial

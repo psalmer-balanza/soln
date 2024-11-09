@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dfrf0ytq1ox5x"]
+[gd_scene load_steps=35 format=4 uid="uid://dfrf0ytq1ox5x"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/battle.gd" id="1_5ad4a"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="2_nyyw0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://mpf4ptcr7lqr" path="res://assets/floor_1/npc/snekkers/snekkers_lives/snekkers2.0 (remove redshroom).png" id="5_0eyau"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="6_x7jxk"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_h80rs"]
+[ext_resource type="Script" path="res://scenes/levels/camera_2d.gd" id="12_o0dsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5n4l"]
 atlas = ExtResource("3_5tdl5")
@@ -188,6 +189,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.207843, 0.168627, 0.25098, 1)
@@ -262,6 +267,10 @@ tile_set = SubResource("TileSet_3x3ed")
 [node name="Question" parent="." instance=ExtResource("2_v4881")]
 visible = false
 layout_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(510, 290)
+script = ExtResource("12_o0dsj")
 
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]

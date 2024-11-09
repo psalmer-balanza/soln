@@ -15,22 +15,22 @@
 [ext_resource type="Texture2D" uid="uid://c7uyle1n0iooq" path="res://assets/floor_3/floor 3 bridge.png" id="9_bxmsn"]
 [ext_resource type="Texture2D" uid="uid://dkhtkxcmb6ihw" path="res://assets/floor_1/laboratory/laboratory.png" id="9_ufmla"]
 
-[sub_resource type="Gradient" id="Gradient_4pq66"]
+[sub_resource type="Gradient" id="Gradient_5owrf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_48nsj"]
-gradient = SubResource("Gradient_4pq66")
+gradient = SubResource("Gradient_5owrf")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.9, 0.2)
 metadata/_snap_enabled = true
 
-[sub_resource type="Gradient" id="Gradient_ouq8f"]
+[sub_resource type="Gradient" id="Gradient_4y36t"]
 offsets = PackedFloat32Array(0.415584, 1)
 colors = PackedColorArray(0.0509804, 0.0509804, 0.133333, 1, 0.0509804, 0.0509804, 0.133333, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_18ptw"]
-gradient = SubResource("Gradient_ouq8f")
+gradient = SubResource("Gradient_4y36t")
 fill_from = Vector2(0.522936, 1)
 fill_to = Vector2(0.5, 0)
 
@@ -266,6 +266,12 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+5:3/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+5:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjmby"]
 texture = ExtResource("9_ufmla")
@@ -404,6 +410,57 @@ sources/3 = SubResource("TileSetAtlasSource_jjmby")
 [sub_resource type="CircleShape2D" id="CircleShape2D_iqy6s"]
 radius = 31.0161
 
+[sub_resource type="Animation" id="Animation_nfry4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FinalBoss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 543)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FinalBoss/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FinalBoss/eye:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
 [sub_resource type="Animation" id="Animation_bcqmt"]
 resource_name = "rise"
 length = 7.0
@@ -454,57 +511,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(5, 5), Vector2(0.8, 0.8)]
-}
-
-[sub_resource type="Animation" id="Animation_nfry4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../FinalBoss:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 543)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../FinalBoss/PointLight2D:energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../FinalBoss/eye:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera2D:zoom")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1mgf"]
@@ -594,25 +600,24 @@ tile_map_data = PackedByteArray("AAD9/wMAAQALAAUAAAD9/wQAAQALAAUAAAD9/wUAAQALAAU
 tile_set = SubResource("TileSet_k4slb")
 
 [node name="AboveGround3" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAFAAgAAgAEAAIAAAAFAAkAAgAEAAEAAAAFAAoAAgAEAAIAAAAUAAgAAgAEAAIAABAUAAkAAgAEAAEAABAUAAoAAgAEAAIAABAFAAYAAgAEAAAAAAAFAAcAAgAEAAEAAAAUAAYAAgAEAAAAABAUAAcAAgAEAAEAABA=")
+tile_map_data = PackedByteArray("AAAFAAgAAgAEAAIAAAAFAAkAAgAEAAEAAAAFAAoAAgAEAAIAAAAUAAgAAgAEAAIAABAUAAkAAgAEAAEAABAUAAoAAgAEAAIAABAFAAYAAgAEAAAAAAAFAAcAAgAEAAEAAAAUAAYAAgAEAAAAABAUAAcAAgAEAAEAABD6/wYAAgAEAAAAABD6/wcAAgAEAAEAABD6/wgAAgAEAAIAABA=")
 tile_set = SubResource("TileSet_bewdi")
 rendering_quadrant_size = 32
 
 [node name="AboveGround" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAFAAgAAgAAAAAAAAAFAAkAAgAAAAEAAAAGAAgAAgABAAAAAAAGAAkAAgABAAEAAAAHAAgAAgACAAAAAAAHAAkAAgACAAEAAAAIAAgAAgABAAAAAAAIAAkAAgABAAEAAAAJAAgAAgACAAAAAAAJAAkAAgACAAEAAAAKAAgAAgABAAAAAAAKAAkAAgABAAEAAAALAAgAAgACAAAAAAALAAkAAgACAAEAAAAMAAgAAgABAAAAAAAMAAkAAgABAAEAAAANAAgAAgACAAAAAAANAAkAAgACAAEAAAAOAAgAAgABAAAAAAAOAAkAAgABAAEAAAAPAAgAAgACAAAAAAAPAAkAAgACAAEAAAAQAAgAAgABAAAAAAAQAAkAAgABAAEAAAARAAgAAgACAAAAAAARAAkAAgACAAEAAAASAAgAAgABAAAAAAASAAkAAgABAAEAAAATAAgAAgACAAAAAAATAAkAAgACAAEAAAAFAAoAAgAAAAIAAAAUAAgAAgADAAAAAAAUAAkAAgADAAEAAAAUAAoAAgADAAIAAAAGAAoAAgABAAIAAAAHAAoAAgACAAIAAAAIAAoAAgABAAIAAAAJAAoAAgACAAIAAAAKAAoAAgABAAIAAAALAAoAAgACAAIAAAAMAAoAAgABAAIAAAANAAoAAgACAAIAAAAOAAoAAgABAAIAAAAPAAoAAgACAAIAAAAQAAoAAgABAAIAAAARAAoAAgACAAIAAAASAAoAAgABAAIAAAATAAoAAgACAAIAAAACAAcAAwACAAoAAAADAAcAAwAAAAoAAAACAAgAAwAAAAoAAAD7/wcAAwAAAAsAAAD8/wcAAwAAAAoAAAD7/wgAAwAAAAoAAAD//woAAwAAAAsAAAAAAAoAAwAAAAsAAAA=")
-tile_set = SubResource("TileSet_bewdi")
-rendering_quadrant_size = 32
-
-[node name="AboveGround2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAFAAgAAgAEAAAAAAAFAAkAAgAEAAEAAAAFAAoAAgAEAAIAAAAUAAgAAgAEAAAAABAUAAkAAgAEAAEAABAUAAoAAgAEAAIAABA=")
+tile_map_data = PackedByteArray("AAAFAAgAAgAAAAAAAAAFAAkAAgAAAAEAAAAGAAgAAgABAAAAAAAGAAkAAgABAAEAAAAHAAgAAgACAAAAAAAHAAkAAgACAAEAAAAIAAgAAgABAAAAAAAIAAkAAgABAAEAAAAJAAgAAgACAAAAAAAJAAkAAgACAAEAAAAKAAgAAgABAAAAAAAKAAkAAgABAAEAAAALAAgAAgACAAAAAAALAAkAAgACAAEAAAAMAAgAAgABAAAAAAAMAAkAAgABAAEAAAANAAgAAgACAAAAAAANAAkAAgACAAEAAAAOAAgAAgABAAAAAAAOAAkAAgABAAEAAAAPAAgAAgACAAAAAAAPAAkAAgACAAEAAAAQAAgAAgABAAAAAAAQAAkAAgABAAEAAAARAAgAAgACAAAAAAARAAkAAgACAAEAAAASAAgAAgABAAAAAAASAAkAAgABAAEAAAATAAgAAgACAAAAAAATAAkAAgACAAEAAAAFAAoAAgAAAAIAAAAUAAgAAgADAAAAAAAUAAkAAgADAAEAAAAUAAoAAgADAAIAAAAGAAoAAgABAAIAAAAHAAoAAgACAAIAAAAIAAoAAgABAAIAAAAJAAoAAgACAAIAAAAKAAoAAgABAAIAAAALAAoAAgACAAIAAAAMAAoAAgABAAIAAAANAAoAAgACAAIAAAAOAAoAAgABAAIAAAAPAAoAAgACAAIAAAAQAAoAAgABAAIAAAARAAoAAgACAAIAAAASAAoAAgABAAIAAAATAAoAAgACAAIAAAACAAcAAwACAAoAAAADAAcAAwAAAAoAAAACAAgAAwAAAAoAAAD7/wcAAwAAAAsAAAD8/wcAAwAAAAoAAAD7/wgAAwAAAAoAAAD//woAAwAAAAsAAAAAAAoAAwAAAAsAAAD5/wgAAgACAAAAAAD5/wkAAgACAAEAAAD6/wgAAgADAAAAAAD6/wkAAgADAAEAAAD4/wgAAgABAAAAAAD4/wkAAgABAAEAAAD6/woAAgADAAEAAAD5/woAAgABAAEAAAD4/woAAgABAAEAAAD3/woAAgABAAEAAAD2/woAAgABAAEAAAD2/wsAAgABAAIAAAD3/wsAAgABAAIAAAD4/wsAAgABAAIAAAD5/wsAAgABAAIAAAA=")
 tile_set = SubResource("TileSet_bewdi")
 rendering_quadrant_size = 32
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_qpyaw")]
-position = Vector2(-135, 259)
+position = Vector2(-234, 311)
+
+[node name="AboveGround2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAgAAgAEAAAAAAAFAAkAAgAEAAEAAAAFAAoAAgAEAAIAAAAUAAgAAgAEAAAAABAUAAkAAgAEAAEAABAUAAoAAgAEAAIAABD4/wYAAgAFAAIAAAD4/wcAAgAFAAMAAAD4/wgAAgAFAAQAAAD4/wkAAgAFAAUAAAD3/wcAAgAEAAMAAAD3/wgAAgAEAAQAAAD6/wkAAgAEAAAAABD6/woAAgAEAAEAABD6/wsAAgAEAAIAABA=")
+tile_set = SubResource("TileSet_bewdi")
+rendering_quadrant_size = 32
 
 [node name="dark" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="Cutscene" type="Node2D" parent="."]
@@ -642,6 +647,34 @@ libraries = {
 position = Vector2(0, 204)
 zoom = Vector2(5, 5)
 script = ExtResource("7_hyg0m")
+
+[node name="Collision" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision"]
+polygon = PackedVector2Array(-320, 320, -256, 320, -256, 257, -197, 257, -196, 190, -193, 187, 192, 187, 197, 194, 197, 257, 641, 257, 641, 245, 210, 246, 209, 175, -209, 174, -209, 250, -269, 248, -269, 308, -320, 310)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collision"]
+polygon = PackedVector2Array(-320, 320, -320, 351, -196, 351, -195, 386, 191, 386, 197, 382, 197, 319, 643, 319, 642, 330, 207, 328, 208, 401, -205, 401, -206, 360, -321, 363, -329, 361, -328, 321)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collision"]
+polygon = PackedVector2Array(178, 218, 178, 257, 190, 257, 190, 218)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(0, 64)
+polygon = PackedVector2Array(178, 240, 178, 259, 190, 259, 190, 240)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(-368, 96)
+polygon = PackedVector2Array(178, 238, 178, 259, 190, 259, 190, 238)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(-368, -1)
+polygon = PackedVector2Array(178, 219, 178, 259, 190, 259, 190, 219)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(-424, 32)
+polygon = PackedVector2Array(178, 225, 178, 259, 190, 259, 190, 225)
 
 [connection signal="area_shape_entered" from="Cutscene/Trigger/AutoActionable" to="Cutscene/Trigger/AutoActionable" method="_on_area_shape_entered"]
 [connection signal="timeout" from="Cutscene/Timer" to="Cutscene/Trigger/AutoActionable" method="_on_timer_timeout"]

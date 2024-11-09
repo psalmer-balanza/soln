@@ -5,5 +5,6 @@ Guardian: It seems that you were the one sent to recharge the light
 Guardian: Answer my test and prove to me that you are worthy to relight the world
 
 - do the test
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/final_boss/final_battle.tscn", "res://scenes/levels/Floor3.tscn")
 
 => END
