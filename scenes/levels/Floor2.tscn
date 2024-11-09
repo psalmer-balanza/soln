@@ -962,7 +962,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(11, -73)
+position = Vector2(33, -6)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
@@ -994,7 +994,7 @@ rooms"
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="FreshSpawnDialogue" parent="." instance=ExtResource("14_onlp4")]
-position = Vector2(33, 78)
+position = Vector2(33, 7)
 
 [node name="Rat" parent="." instance=ExtResource("14_362hh")]
 position = Vector2(1728, 969)
@@ -1030,7 +1030,7 @@ position = Vector2(479, -51)
 shape = SubResource("RectangleShape2D_fsy7p")
 
 [node name="Robob" parent="." instance=ExtResource("13_lbwep")]
-position = Vector2(158, 67)
+position = Vector2(158, 71)
 
 [node name="Giant Enemy Crab" parent="." instance=ExtResource("18_vr7qy")]
 position = Vector2(3441, -185)
