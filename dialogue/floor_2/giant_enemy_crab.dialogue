@@ -1,7 +1,7 @@
 ~ start
 if current_quest == "crab_boss":
 	=> crab_meeting
-elif current_quest == "crab_quiz_successful":
+elif current_quest == "crab_quiz_successful" or "crab_quiz_after":
 	=> success_barnacle_removal
 else
 	set in_dialogue = true
