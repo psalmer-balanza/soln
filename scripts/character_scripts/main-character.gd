@@ -1,7 +1,7 @@
 # Player.gd
 extends CharacterBody2D
 
-var movement_speed : float = 400.0
+var movement_speed : float = 200.0
 var character_direction : Vector2
 
 # Use the state machine

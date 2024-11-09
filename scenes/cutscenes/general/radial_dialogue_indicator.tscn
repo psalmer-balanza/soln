@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dohtrdybsy7m4"]
 
-[ext_resource type="Script" path="res://scripts/cutscene_scripts/radial_dialogue_indicator.gd" id="1_1xd6p"]
-[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/floor1/speech_baloon.tscn" id="2_sebh8"]
+[ext_resource type="Script" path="res://scripts/cutscene_scripts/radial_dialogue_indicator.gd" id="1_cwqwk"]
+[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/general/speech_baloon.tscn" id="2_xu1e7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_orqfj"]
 radius = 77.1038
@@ -97,7 +97,7 @@ _data = {
 }
 
 [node name="RadialDialogueIndicator" type="Node2D"]
-script = ExtResource("1_1xd6p")
+script = ExtResource("1_cwqwk")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(94, 53)
@@ -109,7 +109,7 @@ modulate = Color(1, 1, 1, 0.411765)
 shape = SubResource("CircleShape2D_orqfj")
 debug_color = Color(0.208525, 0.579719, 0.749598, 0.145098)
 
-[node name="SpeechBalloon" parent="." instance=ExtResource("2_sebh8")]
+[node name="SpeechBalloon" parent="." instance=ExtResource("2_xu1e7")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(90, 4)
 

@@ -10,9 +10,9 @@ func _process(_delta):
 	elif DialogueState.current_quest == "raket_house_worded_complete":
 		enable_auto_dialogue(true)
 		$RadialDialogueIndicator.visible = false
-	elif DialogueState.current_quest == "raket_sword_quest":
+	elif DialogueState.current_quest == "raket_sword_quest" or DialogueState.current_quest == "raket_sword_quest_accepted":
 		enable_auto_dialogue(false)
-		$RadialDialogueIndicator.visible = true
+		$RadialDialogueIndicator.visible = false
 	elif DialogueState.current_quest == "face_the_snake":
 		enable_auto_dialogue(false)
 		$RadialDialogueIndicator.visible = false

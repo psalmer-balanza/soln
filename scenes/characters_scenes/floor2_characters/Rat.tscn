@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfm66kpn4gpd6"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/rat.gd" id="1_4furn"]
-[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/floor1/speech_baloon.tscn" id="1_a4g70"]
+[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/general/speech_baloon.tscn" id="1_a4g70"]
 [ext_resource type="Texture2D" uid="uid://byd46pktkxgbm" path="res://assets/floor_2/npc/Wizard Rat.png" id="2_wigot"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_py6w3"]
 [ext_resource type="Resource" uid="uid://74h8yop65tth" path="res://dialogue/floor_2/rat.dialogue" id="4_4cnpv"]

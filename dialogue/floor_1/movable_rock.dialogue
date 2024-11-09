@@ -5,8 +5,13 @@ set current_quest = "movable_rock"
 A large rock blocks your path, and a magical inscription appears on its surface.  
 For some reason, this inscription is quite familiar to you.
 To clear the path, solve this riddle inscribed on the rock:
+% => traveler_addition_question
+% => another_possible_question
+% => another_possible_question_2
+% => another_possible_question_3
+% => another_possible_question_4
 
-~ question
+~ traveler_addition_question
 "To split the rock, we divide it into portions.  
 One traveler takes 1/4 of the rock's mass, and another takes 2/4.  
 How much of the rock's mass have we taken together?"
@@ -17,17 +22,83 @@ How much of the rock's mass have we taken together?"
 	=> end
 - 1/2
 	That's incorrect. You've miscalculated. The rock remains intact. [wait=1]
-	=> question
+	=> traveler_addition_question
 - 4/4
 	That's too much! The magic won't accept this. Try again. [wait=1]
-	=> question
+	=> traveler_addition_question
 - What was that again?
-	=> question
+	=> traveler_addition_question
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 
+~ another_possible_question
+"These are fractions that have the same denominators"
+- Equal Fractions
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- Similar Fractions
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
+- Same Fractions
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- What was that again?
+	=> another_possible_question
+- Do nothing
+	The inscription fades away. The rock remains unmoved. [wait=1]
+	=> end
 
+~ another_possible_question_2
+"A fraction with a numerator that is equal to or greater than the denominator is called what?"
+- A mixed fraction
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- An improper fraction
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
+- A similar fraction
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- What was that again?
+	=> another_possible_question
+- Do nothing
+	The inscription fades away. The rock remains unmoved. [wait=1]
+	=> end
+
+~ another_possible_question_3
+"A fraction with a numerator of 1 is called a what?"
+- A base fraction
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- A unit fraction
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
+- A primary fraction
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- What was that again?
+	=> another_possible_question
+- Do nothing
+	The inscription fades away. The rock remains unmoved. [wait=1]
+	=> end
+	
+~ another_possible_question_4
+"Fractions with different denominators are called what?"
+- Equivalent fractions
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- Dissimilar fractions
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
+- Reciprocal fractions
+	Nothing happens to the rock... Try again
+	=> another_possible_question
+- What was that again?
+	=> another_possible_question
+- Do nothing
+	The inscription fades away. The rock remains unmoved. [wait=1]
+	=> end
 ~ end
 set disable_rock_removed = true
 set in_dialogue = false

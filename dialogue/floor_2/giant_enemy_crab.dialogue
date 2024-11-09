@@ -6,7 +6,7 @@ elif current_quest == "crab_quiz_successful":
 else
 	set in_dialogue = true
 	Shellbot: I AM THE ENEMY.
-	do save_player_position_and_change_scene("res://scenes/cutscenes/floor1/raket_smithing_cutscene.tscn", "res://scenes/levels/Floor2.tscn")
+	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn", "res://scenes/levels/Floor2.tscn")
 	set current_quest = "crab_boss"
 	=> end
 => end

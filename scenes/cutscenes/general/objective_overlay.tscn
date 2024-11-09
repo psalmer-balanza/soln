@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl2yfrm37a7ju"]
 
-[ext_resource type="Script" path="res://scripts/character_scripts/objective_overlay.gd" id="1_71tqq"]
-[ext_resource type="AudioStream" uid="uid://b31iowja1x54q" path="res://audio/sound_effects/Typing Sound Effect.wav" id="3_wy1pr"]
+[ext_resource type="Script" path="res://scripts/character_scripts/objective_overlay.gd" id="1_gtauc"]
+[ext_resource type="AudioStream" uid="uid://b31iowja1x54q" path="res://audio/sound_effects/Typing Sound Effect.wav" id="2_prkh1"]
 
 [node name="ObjectiveOverlay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_71tqq")
+script = ExtResource("1_gtauc")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
@@ -24,6 +24,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="TypingSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wy1pr")
+stream = ExtResource("2_prkh1")
 volume_db = -29.113
 pitch_scale = 0.63

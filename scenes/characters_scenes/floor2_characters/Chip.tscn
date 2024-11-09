@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c8j4ddys6yksg"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/chip.gd" id="1_5nhf0"]
-[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/floor1/radial_dialogue_indicator.tscn" id="2_xaurd"]
+[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/general/radial_dialogue_indicator.tscn" id="2_xaurd"]
 [ext_resource type="Texture2D" uid="uid://c54pml34xfu2" path="res://assets/floor_2/npc/chip idle animation.png" id="3_shyqj"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_capci"]
 [ext_resource type="Resource" uid="uid://ce10v6bqdq75y" path="res://dialogue/floor_2/chip.dialogue" id="5_x7twu"]

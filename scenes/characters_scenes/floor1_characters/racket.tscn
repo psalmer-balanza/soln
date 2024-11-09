@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/racket.gd" id="1_cx7ye"]
 [ext_resource type="Texture2D" uid="uid://cwqgqjuufunw3" path="res://assets/floor_1/npc/Raket idle animation.png" id="1_m1kvl"]
-[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/floor1/radial_dialogue_indicator.tscn" id="2_1wg37"]
+[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/general/radial_dialogue_indicator.tscn" id="2_1wg37"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_2dxdd"]
 [ext_resource type="Resource" uid="uid://cuf74adcdsdsl" path="res://dialogue/floor_1/raket_house.dialogue" id="3_e5lo0"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="6_0wesy"]

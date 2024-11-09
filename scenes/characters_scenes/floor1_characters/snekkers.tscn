@@ -84,10 +84,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
-radius = 74.027
+radius = 48.2597
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v184n"]
-radius = 89.1403
+radius = 59.1354
 
 [node name="Snekkers" type="CharacterBody2D"]
 script = ExtResource("1_djawe")
@@ -105,6 +105,7 @@ dialogue_resource = ExtResource("3_5hdfo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(2, 22)
 shape = SubResource("CircleShape2D_jh85t")
+debug_color = Color(0.316232, 0.596424, 0.534196, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(1.08254, 19.1106)
@@ -117,3 +118,4 @@ dialogue_resource = ExtResource("3_5hdfo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
 position = Vector2(2, 23)
 shape = SubResource("CircleShape2D_v184n")
+debug_color = Color(0.580392, 0.52549, 0.458824, 0.282353)

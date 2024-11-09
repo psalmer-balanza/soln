@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dytyv4wft7gjb"]
-
-[ext_resource type="FontFile" uid="uid://cvmu4wieqwhgv" path="res://dialogue/yoster.ttf" id="1_vitju"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dytyv4wft7gjb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn3wy"]
 content_margin_left = 4.0
@@ -90,7 +88,6 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
-Button/fonts/font = ExtResource("1_vitju")
 Button/styles/disabled = SubResource("StyleBoxFlat_dn3wy")
 Button/styles/focus = SubResource("StyleBoxFlat_jsy05")
 Button/styles/hover = SubResource("StyleBoxFlat_lsx73")

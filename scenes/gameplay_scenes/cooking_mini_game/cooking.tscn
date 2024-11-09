@@ -57,9 +57,9 @@ size = Vector2(54.8781, 20)
 
 [node name="Cooking" type="Node2D"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="CookingBGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_4ahw2")
-volume_db = -43.099
+volume_db = -22.486
 autoplay = true
 
 [node name="Counter" type="Sprite2D" parent="."]

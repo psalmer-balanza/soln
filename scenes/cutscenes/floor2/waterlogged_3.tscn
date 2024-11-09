@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/waterlogged_3.gd" id="1_vy0w5"]
 [ext_resource type="Resource" uid="uid://c4v08fwjvqd7y" path="res://dialogue/floor_2/waterlogged_room_3.dialogue" id="2_lur7e"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="2_xidai"]
-[ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/floor1/exclamation_mark.tscn" id="3_ja6li"]
+[ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/general/exclamation_mark.tscn" id="3_ja6li"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtrd5"]
 size = Vector2(126.5, 20)

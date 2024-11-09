@@ -325,9 +325,6 @@ func return_to_world():
 		DialogueState.current_quest = "raket_house_worded_complete"
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
-func _on_button_button_down() -> void:
-	return_to_world()
-
 # Plays when the player inputs a correct answer
 func _on_correct_answer():
 	$CorrectAnswerSFX.play()

@@ -1,11 +1,15 @@
 ~ start
 set in_dialogue = true
-
 if current_quest == "you_may_leave_floor_1"
 	Snekkers: Go on, hero, the sewer gate is open now...
 	=> end
 	
 if current_quest == "face_the_snake"
+	(Snekkers has fallen asleep already, but your noisy movements managed to wake him up!)
+	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn" ,"res://scenes/levels/Floor1.tscn")
+	set current_quest = "face_the_snake_post_cutscene"
+	=> end
+elif current_quest == "face_the_snake_post_cutscene"
 	Snekkers: You again?! What do you want?!
 	- You don't happen to be a morning person right?
 		=> snekkers_dialogue

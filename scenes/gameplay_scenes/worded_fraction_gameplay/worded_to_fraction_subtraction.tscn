@@ -551,14 +551,6 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 936.0
-offset_top = 478.0
-offset_right = 994.0
-offset_bottom = 507.0
-text = "HACK"
-
 [node name="SubmitAnswer" type="Button" parent="."]
 layout_mode = 0
 offset_left = 357.0
@@ -623,6 +615,5 @@ volume_db = -24.36
 
 [connection signal="correct" from="." to="." method="_on_correct_answer"]
 [connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]

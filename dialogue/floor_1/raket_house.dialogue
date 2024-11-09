@@ -8,7 +8,8 @@ if current_quest == "share_pie_with_raket" or current_quest == "starting"
 	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
 	Raket: There will still be a few left for me to eat for dinner.
 	Robot: Isn’t 4/10 too much for me? The pie is for you…
-	Raket: I don’t think so. Let's try solving it how much will we eat later and how much will be left for me then.
+	Raket: I don’t think so. Let's try solving it, see how much will we eat later and how much will be left for me.
+	- Alright
 	set current_quest = "raket_house"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 	=> end
@@ -17,15 +18,13 @@ elif current_quest == "raket_sword_pieces_complete"
 	Raket: Great job, {{player_username}}!!!
 	Raket: Now that we have all the ore pieces, I can finally build this sword. 
 	Raket: Stand back! This may get hot. [wait=5] 
-	do save_player_position_and_change_scene("res://scenes/cutscenes/floor1/raket_smithing_cutscene.tscn" ,"res://scenes/levels/Floor1.tscn")
+	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set current_quest = "sword_finished"
 	=> end
 #MANUAL
 elif sword_bottom or sword_guard or sword_lower_blade or sword_middle_blade or sword_top_blade and current_quest == "raket_sword_quest"
 	Raket: What is this, it's still missing a few pieces. Go back! Don't come back until you have them all!
 	=> end
-
-
 => end
 
 ~ auto 
@@ -44,27 +43,27 @@ if current_quest == "sword_finished"
 #AUTO 
 elif current_quest == "raket_house_worded_complete"
 	set current_quest = "raket_sword_quest"
-	Raket: See? I told you I will still have more of the pie slices to eat...
-	Raket: Don’t worry, I want to share this pie with you as a form of thanks since you delivered it for Saisai.
-	Robot: Okay then... Thank you !
-	Raket: Oh I noticed you have some energy on your chest right there! 
+	Raket: See? I told you I will still have more pie slices to eat...
+	Raket: Don’t worry, I want to share this pie with you as a form of thanks. Since you delivered it for Saisai.
+	Robot: Okay then... Thank you!
+	Raket: Oh, I noticed you have some energy on your chest right there! 
 	Robot: What energy? 
 	Raket: That light on your chest.
 	Robot: Oh, What is this energy for? 
-	Raket: I don't know but prophecy says “The one who holds the light, shall bring light to the world.” 
+	Raket: I don't know... but prophecy of The Guardian says “The one who holds the light, shall bring light to the world.” 
 	Raket: But that's all I know from that old thing.
 	Robot: Is there a way for me to know the rest of the prophecy? 
 	Raket: Yeah but you have to go to the top of the lighthouse to find out, 
-	Raket: But the only exit to this place is the pipe behind Snekkers the angry Snake. 
+	Raket: But the only exit to this place is the pipe behind Snekkers the Angry Snake. 
 	Raket: He lives in that cave right there. 
 	Raket: Oh I might need a small favor from you. 
-	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s Cave. 
+	Raket: You see, I’ve been trying to build a sword, but the pieces are hidden deep in the Snake’s cave. 
 	Raket: Think you can help me find them?
 	- Sword pieces? I’m up for the challenge!
 	Raket: Great! There. Just go down that path and follow it. 
 	Raket: It leads directly to the cave. Goodluck Sol’n!
 	set unlock_cave_collision = true
-	set current_quest = "raket_sword_quest"
+	set current_quest = "raket_sword_quest_accepted"
 	=> end
 elif current_quest == "raket_house"
 	Raket: This pie is looking a bit off. Should we try again?

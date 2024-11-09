@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Saisai Cooking.ogg-c2c6f4a038ccad3b9c457a9a4b
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

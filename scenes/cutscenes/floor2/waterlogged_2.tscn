@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/waterlogged_2.gd" id="1_lhmxe"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="1_nuqfr"]
 [ext_resource type="Resource" uid="uid://bqrmrqfhlrbkc" path="res://dialogue/floor_2/waterlogged_room_2.dialogue" id="2_dbfsw"]
-[ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/floor1/exclamation_mark.tscn" id="3_y2obc"]
+[ext_resource type="PackedScene" uid="uid://b3mhd5okfp5ed" path="res://scenes/cutscenes/general/exclamation_mark.tscn" id="3_y2obc"]
 [ext_resource type="TileSet" uid="uid://cbn7paj54rxku" path="res://tilemaps/floor_2/water.tres" id="4_asubl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqfrf"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dc2a3a5irn808"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/giant_enemy_crab.gd" id="1_6c6na"]
-[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/floor1/speech_baloon.tscn" id="1_tlx6y"]
+[ext_resource type="PackedScene" uid="uid://bmerkcvthj67x" path="res://scenes/cutscenes/general/speech_baloon.tscn" id="1_tlx6y"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_6m72f"]
 [ext_resource type="Resource" uid="uid://bp1rvdruol0f4" path="res://dialogue/floor_2/giant_enemy_crab.dialogue" id="3_oxpal"]
 [ext_resource type="Texture2D" uid="uid://dwujbnjbdmrne" path="res://assets/floor_2/npc/GIANT ENEMY CRAB spritesheet.png" id="3_u43oo"]

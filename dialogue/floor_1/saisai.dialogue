@@ -21,7 +21,7 @@ elif current_quest == "saisai_pie_making"
 	Saisai: One more thing, I wanted to give you this bowl, as a thank you.
 	Saisai: I crafted it myself, I hope you could make good use of it!
 	set player_badges["bowl"] = true
-	(You receive a bowl badge)
+	(You received a bowl badge!)
 	Saisai: Anyways, take the pie, and may the pastry gods be with you!
 	Saisai: Safe travels, pie hero!
 	(The directions she gave are quite confusing)

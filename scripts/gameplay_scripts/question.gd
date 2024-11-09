@@ -41,7 +41,6 @@ func _ready():
 			["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
 			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
 			]
-		
 		# questions for final boss
 		elif DialogueState.current_quest == "final_boss_quest":
 			mc_questions = [
@@ -66,7 +65,6 @@ func _ready():
 			["What is 7/10 - 3/10?", "1/5", "4/10", "7/10", "1/2", "4/10"],
 			["What is 3/4 - 1/2?", "1/4", "1/2", "1/3", "2/4", "1/4"]
 			]
-		
 		# questions for crab
 		else:
 			print("Current quest is: ", DialogueState.current_quest)
@@ -140,7 +138,7 @@ func _check_answer():
 		print("Incorrect answer")
 		if Global.is_online:
 			Global.total_score -= 1
-	
+
 	Global.Snekker_question = false
 	Global.Giant_Enemy_Crab_question = false
 	Global.guardian_enemy_question = false
@@ -170,6 +168,8 @@ func postStatistics(choice_index):
 				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
 			elif choice_index == 4:
 				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
+		elif DialogueState.current_quest == "final_boss_quest":
+			print("Helo final boss")
 		else:
 			if choice_index == 1:
 				Statistics.postQuizResponse(PlayerState.classroom_id, 11, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))

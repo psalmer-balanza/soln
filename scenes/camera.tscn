@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8ctefj3s0gfk"]
 
-[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/floor1/objective_overlay.tscn" id="1_d87bj"]
+[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="1_d87bj"]
 [ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="2_b30pi"]
 [ext_resource type="Texture2D" uid="uid://b3lprn6nf8rf0" path="res://assets/main_character/onscreen_badges/Shiny Rock Badge.png" id="3_p8ci1"]
 [ext_resource type="Texture2D" uid="uid://dahjr18jm1lbr" path="res://assets/main_character/onscreen_badges/Bowl Badge.png" id="4_y2ar8"]

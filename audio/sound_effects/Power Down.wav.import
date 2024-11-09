@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmydy3w8vcfvo"
+path="res://.godot/imported/Power Down.wav-1dc8d5b9491ea0cc48dc2ce5cea5f275.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/Power Down.wav"
+dest_files=["res://.godot/imported/Power Down.wav-1dc8d5b9491ea0cc48dc2ce5cea5f275.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

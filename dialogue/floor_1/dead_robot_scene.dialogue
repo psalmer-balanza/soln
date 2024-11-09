@@ -17,19 +17,21 @@ if current_quest == "dead_robots_gameplay_done"
 	=> end
 elif current_quest == "dead_robots":
 	Old Peculiar: Uh... I don't think that's right...
+	Old Peculiar: We were really hoping you were the chosen one so...
 	Old Peculiar: Why don't we try again...
 	- I won't give up!
-		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition/simple_fraction_addition.tscn", "res://scenes/levels/Floor1.tscn")
 	
 else 
 	set current_quest = "dead_robots_appear"
 	Old Peculiar: Hello there...
-	Old Peculiar: We are the spirits of the land, we see that you have arisen from your slumber...
+	Old Peculiar: We are the spirits of the land, we see that you have risen from your slumber...
 	Old Peculiar: Do you deem yourself worthy?
 	- Worthy of what?
-	Old Peculiar: Now we will test you mathematically to see if you are worthy of our blessing
+	Old Peculiar: --Now we will test you mathematically to see if you are worthy of our blessing
+	- Wait, what do you mean--
 	set current_quest = "dead_robots"
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition/simple_fraction_addition.tscn", "res://scenes/levels/Floor1.tscn")
 	
 	=> end
 => end

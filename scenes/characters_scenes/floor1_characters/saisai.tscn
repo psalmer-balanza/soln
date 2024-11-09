@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="1_54fms"]
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/saisai.gd" id="1_x55dq"]
 [ext_resource type="Texture2D" uid="uid://dg5umwl6c1mbx" path="res://assets/floor_1/cutscenes/Saisai Moving Colored Rock.png" id="2_2s37p"]
-[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/floor1/radial_dialogue_indicator.tscn" id="2_mid76"]
+[ext_resource type="PackedScene" uid="uid://dohtrdybsy7m4" path="res://scenes/cutscenes/general/radial_dialogue_indicator.tscn" id="2_mid76"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="2_ysvw2"]
 [ext_resource type="Resource" uid="uid://br2denl37ljn6" path="res://dialogue/floor_1/saisai.dialogue" id="3_crl56"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="3_h52pa"]

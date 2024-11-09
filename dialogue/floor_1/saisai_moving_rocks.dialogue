@@ -18,7 +18,7 @@ elif current_quest == "saisai_wheelbarrow":
 	Saisai: Woah! I don't think that was right
 	Saisai: Are the rocks going to explode now?
 	- Let me try again!
-		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition/simple_fraction_addition.tscn", "res://scenes/levels/Floor1.tscn")
 		=> end
 #	- Uh oh... I'll be back!
 #		=> end
@@ -32,7 +32,7 @@ else
 	(Aren't these inscriptions upside down?)
 	- Sure
 		set current_quest = "saisai_wheelbarrow"
-		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/addition_fraction.tscn", "res://scenes/levels/Floor1.tscn")
+		do save_player_position_and_change_scene("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition/simple_fraction_addition.tscn", "res://scenes/levels/Floor1.tscn")
 		=> end
 => end
 ~ end

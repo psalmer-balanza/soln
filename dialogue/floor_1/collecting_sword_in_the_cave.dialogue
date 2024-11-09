@@ -66,18 +66,18 @@ It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10
 
 set in_dialogue = true
 A glowing material lies partially buried. Ancient symbols are engraved on its surface.
-It reads "One shard holds 4/7 of the sword’s strength, and another holds 1/7. What is the total strength of these two shards?"
-- 4/7 + 1/7 = 6/7
+It reads "If I have a fraction 8/2, where the numerator is greater than the denominator, what is it called?"
+- A mixed fraction
 	The symbols remain lifeless. That can't be right...
 	=> sword_middle_blade
-- 4/7 + 1/7 = 5/7
+- An improper fraction
 	Sword Middle Blade: The inscription glows, and a sword shard loosens. Good job!
 	set sword_middle_blade = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
 		set current_quest = "raket_sword_pieces_complete"
 	=> end
-- 4/7 + 1/7 = 7/7
+- A negative fraction
 	Nothing happens. Seems incorrect...
 	=> sword_middle_blade
 => end
@@ -86,18 +86,18 @@ It reads "One shard holds 4/7 of the sword’s strength, and another holds 1/7. 
 
 set in_dialogue = true
 Another glowing piece rests atop a pedestal, its surface covered in runes.
-It reads "This shard contains 2/4 of the sword’s strength, while another contains 1/8. Combine their power."
-- 2/4 + 1/8 = 3/8
+It reads "If I have two fractions with different denominators, how do I start adding them together?"
+- Convert them to mixed fractions.
 	The runes flicker briefly but fade. Incorrect...
 	=> sword_top_blade
-- 2/4 + 1/8 = 5/8
+- Find the least common denominator (LCD) of the two denominators.
 	Sword Top Blade: The runes glow brightly. You carefully take out a sword shard. Well done!
 	set sword_top_blade = true
 	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
 		Looks like you have all the pieces, time to return to Raket!
 		set current_quest = "raket_sword_pieces_complete"
 	=> end
-- 2/4 + 1/8 = 4/8
+- Begin by adding the two numerators.
 	Nothing changes. That doesn't seem right...
 	=> sword_top_blade
 => end
