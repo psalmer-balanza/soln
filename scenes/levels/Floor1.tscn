@@ -728,11 +728,16 @@ texture = ExtResource("11_mlm4i")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(2, 1)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.6235, -12.2842, 24.2535, -12.5992, 24.75, 10, -22.6786, 9.44941)
 0:1/size_in_atlas = Vector2i(2, 1)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.2043, -11.2246, 23.3861, -12.2499, 23.3861, 13.3635, -19.3625, 12.0665)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -5.5, 13.75, -5.375, 13.625, 8, -15, 8.125)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.4681, -11.5817, 9.13171, -11.8044, 9.57716, 11.5817, -11.1362, 11.1362)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.52441, -11.1118, 8.5, -11.75, 8.5, 11, -9.5, 11.5)
 2:0/size_in_atlas = Vector2i(2, 2)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, 1, 24, 7, 15, -15.5, -20.5, -23)
@@ -832,6 +837,7 @@ pitch_scale = 1.25
 stream = ExtResource("2_07j1b")
 volume_db = -20.445
 autoplay = true
+parameters/looping = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)
@@ -915,7 +921,7 @@ position = Vector2(0, -0.000137329)
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1365, 1073)
+position = Vector2(1167, 1752)
 
 [node name="in_front_details" type="Node2D" parent="."]
 

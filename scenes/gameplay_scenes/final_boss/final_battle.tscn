@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://dnq1la7m7qs1j"]
+[gd_scene load_steps=17 format=4 uid="uid://dnq1la7m7qs1j"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/final_boss/final_battle.gd" id="1_pnlfg"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/final_boss/eye.gd" id="2_b6p6x"]
+[ext_resource type="AudioStream" uid="uid://daym4kyf7yqea" path="res://audio/background_music/Chiptune Medium Final Boss.mp3" id="2_lla2n"]
 [ext_resource type="Texture2D" uid="uid://46kc7umrw01u" path="res://assets/floor_3/eye.png" id="3_hxeh5"]
 [ext_resource type="Texture2D" uid="uid://dusw5lqjs5u6a" path="res://assets/floor_3/Final boss.png" id="4_jmgcw"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="5_q4oej"]
@@ -41,6 +42,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pnlfg")
+
+[node name="BGMFinalBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lla2n")
+volume_db = -6.207
+autoplay = true
+parameters/looping = true
 
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
