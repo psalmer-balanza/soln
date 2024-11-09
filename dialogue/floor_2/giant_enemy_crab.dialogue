@@ -1,5 +1,4 @@
 ~ start
-set current_quest = "crab_quiz_successful"
 if current_quest == "crab_boss":
 	=> crab_meeting
 elif current_quest == "crab_quiz_successful":

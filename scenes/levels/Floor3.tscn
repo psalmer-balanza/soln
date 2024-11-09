@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=4 uid="uid://ctj1htmlnn4d5"]
+[gd_scene load_steps=35 format=4 uid="uid://ctj1htmlnn4d5"]
 
 [ext_resource type="Script" path="res://scenes/levels/eye.gd" id="1_6wk5b"]
+[ext_resource type="Script" path="res://scripts/levels/floor_3.gd" id="1_c0nld"]
 [ext_resource type="Texture2D" uid="uid://dusw5lqjs5u6a" path="res://assets/floor_3/Final boss.png" id="1_ct4fq"]
 [ext_resource type="Texture2D" uid="uid://46kc7umrw01u" path="res://assets/floor_3/eye.png" id="1_xs72a"]
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="3_qpyaw"]
@@ -520,6 +521,7 @@ _data = {
 }
 
 [node name="Floor3" type="Node2D"]
+script = ExtResource("1_c0nld")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 self_modulate = Color(0.251216, 0.309573, 0.528398, 1)

@@ -1,7 +1,6 @@
 ~ start
 set in_dialogue = true
-set current_quest = "final_boss_quest"
-
+{{current_quest}}
 if current_quest == "final_boss_quiz_successful":
 	=> success_dialogue
 elif current_quest == "final_boss_quest_retry":
