@@ -10,7 +10,7 @@ Robob: Hey buddy.
 Robot: Hey.
 Robob: You’ve come so far.
 Robob: Here is a piece of wisdom for you.
-Robob: Ahead is a room flooded with water.
+Robob: This floor is filled with rooms flooded with water.
 Robob: To drain the water there is something you must do first.
 Robot: And what is that?
 Robob: Good luck buddy.
@@ -19,7 +19,7 @@ set current_quest = "after_robob"
 => end
 ~ after_first_meet
 Robob: Good luck buddy.
-Robot: Right.
+Robot: Oh... thanks.
 ~ end
 set in_dialogue = false
 => END
