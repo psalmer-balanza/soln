@@ -1,10 +1,36 @@
 ~ start
+set in_dialogue = true
+set current_quest = "final_boss_quest"
 
+if current_quest == "final_boss_quiz_successful":
+	=> success_dialogue
+elif current_quest == "final_boss_quest_retry":
+	=> retry_dialogue
+else:
+	=> first_dialogue
+
+~ first_dialogue
 Guardian: GREETINGS!
 Guardian: It seems that you were the one sent to recharge the light
 Guardian: Answer my test and prove to me that you are worthy to relight the world
 
 - do the test
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/final_boss/final_battle.tscn", "res://scenes/levels/Floor3.tscn")
+	set current_quest = "final_boss_quest_retry"
+=> end
 
+
+~ retry_dialogue
+Try again?
+- Ok
+do save_player_position_and_change_scene("res://scenes/gameplay_scenes/final_boss/final_battle.tscn", "res://scenes/levels/Floor3.tscn")
+=> end
+
+
+~ success_dialogue
+Guardian: You are worthy as the prophecy told.
+=> end
+
+~ end
+set in_dialogue = false
 => END

@@ -26,9 +26,11 @@ func _ready():
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
 		print("Current quest is: ", DialogueState.current_quest)
+		
+		# questions for snekkers
 		if DialogueState.current_quest == "face_the_snake":
 			mc_questions = [
-			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "5"],
+			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
 			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
 			["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
 			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
@@ -40,11 +42,37 @@ func _ready():
 			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
 			]
 		
+		# questions for final boss
+		elif DialogueState.current_quest == "final_boss_quest":
+			mc_questions = [
+			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
+			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
+			["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
+			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
+			["What does GCD stand for?", "Great Common Denominator", "Greatest Common Denominator", "Greatest Common Difference", "Greatest Common Divisor", "Greatest Common Divisor"],
+			["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
+			["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
+			["Which fraction is bigger: 3/4 or 2/3?", "They are equal", "2/3", "3/4", "Neither", "3/4"],
+			["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
+			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"],
+			["What is 1/2 - 1/4?", "1/2", "1/4", "1/8", "3/4", "1/4"],
+			["You start with 5/6 of a pie and give away 1/2 of the pie to a neighbor. How much fraction of pie, you have left?", "1/6", "1/3", "1/4", "1/2", "1/3"],
+			["What is 4/5 - 1/5?", "2/5", "3/5", "1/5", "4/5", "3/5"],
+			["What is 2/3 - 1/6?", "1/6", "1/2", "1/3", "5/6", "1/2"],
+			["What does LCD stand for?", "Lowest Common Divisor", "Least Common Denominator", "Levelled Common Divisor", "Lower Common Divisor", "Least Common Denominator"],
+			["What is 2/2 - 1/2?", "1/2", "1/4", "3/4", "2/4", "1/2"],
+			["What is 5/6 - 1/3?", "1/2", "1/3", "2/3", "5/6", "1/2"],
+			["What is 3/4 - 1/4?", "2/4", "1/2", "3/4", "1", "1/2"],
+			["What is 7/10 - 3/10?", "1/5", "4/10", "7/10", "1/2", "4/10"],
+			["What is 3/4 - 1/2?", "1/4", "1/2", "1/3", "2/4", "1/4"]
+			]
+		
+		# questions for crab
 		else:
 			print("Current quest is: ", DialogueState.current_quest)
 			mc_questions = [
 			["What is 1/2 - 1/4?", "1/2", "1/4", "1/8", "3/4", "1/4"],
-			["You start with 5/6 of a pie and give away 1/2 of the pie to a neighbor. What fraction do you have left?", "1/6", "1/3", "1/4", "1/2", "1/3"],
+			["You start with 5/6 of a pie and give away 1/2 of the pie to a neighbor. How much fraction of pie, you have left?", "1/6", "1/3", "1/4", "1/2", "1/3"],
 			["What is 4/5 - 1/5?", "2/5", "3/5", "1/5", "4/5", "3/5"],
 			["What is 2/3 - 1/6?", "1/6", "1/2", "1/3", "5/6", "1/2"],
 			["What does LCD stand for?", "Lowest Common Divisor", "Least Common Denominator", "Levelled Common Divisor", "Lower Common Divisor", "Least Common Denominator"],
@@ -99,6 +127,7 @@ func _check_answer():
 	if answer == correct_answer:
 		Global.Snekker_HP -= 10
 		Global.Giant_Enemy_Crab_HP -= 10
+		Global.guardian_enemy_hp -= 10
 		camera.apply_shake()
 		visible=false
 		
@@ -111,8 +140,10 @@ func _check_answer():
 		print("Incorrect answer")
 		if Global.is_online:
 			Global.total_score -= 1
+	
 	Global.Snekker_question = false
 	Global.Giant_Enemy_Crab_question = false
+	Global.guardian_enemy_question = false
 
 func _on_draw() -> void:
 	index = _choose_question()

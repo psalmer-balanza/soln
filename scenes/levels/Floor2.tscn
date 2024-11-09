@@ -957,7 +957,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(1687, 864)
+position = Vector2(3352, -196)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
