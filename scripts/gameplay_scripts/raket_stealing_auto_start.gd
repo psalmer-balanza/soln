@@ -5,6 +5,10 @@ extends Node2D
 var raket_steal = false
 var raket_steal_quest = false
 
+func _ready() -> void:
+	if DialogueState.current_quest != "dead_robots_done":
+		$AutoActionable/CollisionShape2D.disabled = true
+
 func _process(_delta):
 	if DialogueState.raket_sneaking and not raket_steal:
 		raket_stealing()
