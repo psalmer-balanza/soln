@@ -1125,9 +1125,6 @@ occluder = SubResource("OccluderPolygon2D_liomq")
 
 [node name="SaiSaiArea" type="Node" parent="Occlusions"]
 
-[node name="MushroomTop" type="LightOccluder2D" parent="Occlusions/SaiSaiArea"]
-occluder = SubResource("OccluderPolygon2D_8i07o")
-
 [node name="MushroomRight" type="LightOccluder2D" parent="Occlusions/SaiSaiArea"]
 occluder = SubResource("OccluderPolygon2D_u20uu")
 
