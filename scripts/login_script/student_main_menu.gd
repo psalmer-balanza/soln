@@ -4,6 +4,7 @@ extends Control
 @onready var password: LineEdit = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 @onready var ip_address_input = $StudentInformation/IPAddress
+@onready var error_label = $ErrorLabel
 
 var login_url
 
@@ -47,6 +48,8 @@ func _http_request_completed(result, response_code, headers, body):
 				get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")	#get_tree().change_scene_to_file("res://scenes/gameplay_scenes/simple_fraction_gameplay/addition_fraction/fraction_sample_gameplay.tscn")
 			else:
 				var error_text = response.error_text
+				error_label.text = error_text
+				print
 				print("Login failed")
 		else:
 			print("Failed to parse JSON")
