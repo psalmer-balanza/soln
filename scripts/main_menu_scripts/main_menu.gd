@@ -1,15 +1,47 @@
 extends Control
-
+##The values required in order to have the player resume the game properly
+## PlayerState.player_badges
+## DialogueState.current_quest
+## PlayerState.saved_position
+## PlayerState.
 func _ready():
 	print("Current IP address: ", Global.host_ip)
-
-func _on_play_pressed() -> void:
+	#read the db and check if it has all the parameters for loading player state
+	#if unavailable then make load game unclickable
+	#PLACEHOLER ASSUMING YO READ FROM DB
+	
+func _on_new_game_pressed() -> void:
+	#If new game, reset all variables
+	PlayerState.first_time_initializing_first_floor_scene = true
+	PlayerState.first_time_initializing_second_floor_scene = true
+	PlayerState.first_time_initializing_third_floor_scene = true
+	DialogueState.current_quest = "starting"
+	PlayerState.player_badges = {
+	"shiny_rock": false,
+	"bowl": false,
+	"carrot": false,
+	"cake": false,
+	"sword": false,
+	"mushroom": false,
+	"bucket1": false,
+	"flask": false,
+	"bucket2": false,
+	"bucket3": false,
+	"crystal_ball": false,
+	}
 	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
-
 
 func _on_options_pressed() -> void:
 	pass # Replace with function body.
 
-
 func _on_quit_pressed() -> void:
 	get_tree().quit(0)
+
+func _on_load_game_pressed() -> void:
+	match Global.current_floor:
+		"1":
+			get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+		"2":
+			get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
+		"3":
+			get_tree().change_scene_to_file("res://scenes/levels/Floor3.tscn")

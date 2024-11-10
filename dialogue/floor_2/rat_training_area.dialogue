@@ -44,6 +44,7 @@ set player_badges["crystal_ball"] = true
 (You received a Crystal Ball badge!)
 Wizard Rat: Now go, young one, best of luck to you!
 set disable_rat_wizard_training_quest = true
+Current quest is {{current_quest}}
 => end
 
 ~ end

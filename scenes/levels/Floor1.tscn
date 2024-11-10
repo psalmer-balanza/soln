@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=69 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="1_3mv17"]
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
@@ -28,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/floor1/collecting_sword_pieces.tscn" id="25_t57pw"]
 [ext_resource type="PackedScene" uid="uid://blfecn4rxpx7i" path="res://scenes/cutscenes/floor1/dead_robot_scene.tscn" id="26_5o1n3"]
 [ext_resource type="PackedScene" uid="uid://ceaj0vrfn3hs2" path="res://scenes/cutscenes/floor1/pipe_entrance_scene.tscn" id="27_55muk"]
-[ext_resource type="PackedScene" uid="uid://xnm2hgu0mopn" path="res://scenes/cutscenes/floor1/barrier_raket_house.tscn" id="27_gjv3b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2pbk6"]
 texture = ExtResource("1_3mv17")
@@ -1085,9 +1084,6 @@ position = Vector2(583, 1500)
 
 [node name="firefly22" parent="Fireflies" instance=ExtResource("6_5ydh2")]
 position = Vector2(440, 1300)
-
-[node name="BarrierRaketHouse" parent="." instance=ExtResource("27_gjv3b")]
-position = Vector2(1676, 1289)
 
 [node name="Occlusions" type="Node" parent="."]
 
