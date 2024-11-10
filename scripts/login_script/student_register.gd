@@ -8,6 +8,7 @@ extends Control
 @onready var password = $StudentInformation/Password
 @onready var http_request: HTTPRequest = HTTPRequest.new()
 @onready var ip_address_input = $StudentInformation/IPAddress
+@onready var error_label_username = $ErrorLabelUsername
 
 var register_url
 
@@ -54,6 +55,7 @@ func _http_request_completed(result, response_code, headers, body):
 			else:
 				# show error when registration failed
 				var error_text = response.error_text
+				error_label_username.text = response.error_text
 				print("Registration failed")
 		else:
 			print("Failed to parse JSON")

@@ -197,4 +197,13 @@ theme_override_fonts/font = ExtResource("4_1bv1d")
 text = "Register"
 flat = true
 
+[node name="ErrorLabelUsername" type="RichTextLabel" parent="."]
+self_modulate = Color(0.576471, 0.247059, 0.270588, 1)
+offset_left = 511.0
+offset_top = 396.0
+offset_right = 733.0
+offset_bottom = 422.0
+theme_override_fonts/normal_font = ExtResource("3_hu7dh")
+scroll_active = false
+
 [connection signal="button_down" from="StudentInformation/RegisterButton" to="." method="_on_register_button_button_down"]
