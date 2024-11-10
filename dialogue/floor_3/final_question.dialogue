@@ -1,0 +1,13 @@
+~ start
+
+This is it
+The end of the adventure
+After talking to all those people and helping them, here I am
+It seems that this will be the final step for me too
+I need to do this for this world and its people
+They need their light
+I will become the source of their light
+
+set current_quest = "ending"
+
+=> END

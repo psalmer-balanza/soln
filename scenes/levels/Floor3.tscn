@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://ctj1htmlnn4d5"]
+[gd_scene load_steps=44 format=4 uid="uid://ctj1htmlnn4d5"]
 
 [ext_resource type="Script" path="res://scenes/levels/eye.gd" id="1_6wk5b"]
 [ext_resource type="Script" path="res://scripts/levels/floor_3.gd" id="1_c0nld"]
@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://xd3vfwupcgjr" path="res://dialogue/floor_3/final_boss.dialogue" id="8_x3w2c"]
 [ext_resource type="Texture2D" uid="uid://c7uyle1n0iooq" path="res://assets/floor_3/floor 3 bridge.png" id="9_bxmsn"]
 [ext_resource type="Texture2D" uid="uid://dkhtkxcmb6ihw" path="res://assets/floor_1/laboratory/laboratory.png" id="9_ufmla"]
+[ext_resource type="Script" path="res://scenes/levels/ending_trigger.gd" id="17_2ok4b"]
+[ext_resource type="Resource" uid="uid://bc6vhvvbc8frv" path="res://dialogue/floor_3/final_question.dialogue" id="18_ga3qi"]
 
 [sub_resource type="Gradient" id="Gradient_5owrf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -651,6 +653,77 @@ _data = {
 "rise": SubResource("Animation_bcqmt")
 }
 
+[sub_resource type="Animation" id="Animation_1rd26"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MainCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-214, 310)]
+}
+
+[sub_resource type="Animation" id="Animation_5jvet"]
+resource_name = "float"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MainCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(832, 148), Vector2(832, 144)]
+}
+
+[sub_resource type="Animation" id="Animation_5hnqp"]
+resource_name = "float_down"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MainCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(832, 148), Vector2(832, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_xvthb"]
+resource_name = "float_up"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MainCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(832, 192), Vector2(832, 148)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kpk6"]
+_data = {
+"RESET": SubResource("Animation_1rd26"),
+"float": SubResource("Animation_5jvet"),
+"float_down": SubResource("Animation_5hnqp"),
+"float_up": SubResource("Animation_xvthb")
+}
+
 [node name="Floor3" type="Node2D"]
 script = ExtResource("1_c0nld")
 
@@ -739,6 +812,15 @@ offset_right = 1237.0
 offset_bottom = 164.0
 texture = SubResource("GradientTexture2D_18ptw")
 
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1239.0
+offset_top = -300.0
+offset_right = 1641.0
+offset_bottom = -128.0
+rotation = 3.14159
+texture = SubResource("GradientTexture2D_18ptw")
+
 [node name="Ground" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD9/wMAAQALAAUAAAD9/wQAAQALAAUAAAD9/wUAAQALAAUAAAD+/wMAAQALAAUAAAD+/wQAAQALAAUAAAD+/wUAAQALAAUAAAD//wMAAQALAAUAAAD//wQAAQALAAUAAAD//wUAAQALAAUAAAAAAAMAAQALAAUAAAAAAAQAAQALAAUAAAAAAAUAAQALAAUAAAABAAMAAQALAAUAAAABAAQAAQALAAUAAAABAAUAAQALAAUAAAACAAMAAQALAAUAAAACAAQAAQALAAUAAAACAAUAAQALAAUAAAD9/wIAAQAOAAYAAAD+/wIAAQAOAAYAAAD//wIAAQAOAAYAAAAAAAIAAQAOAAYAAAABAAIAAQAOAAYAAAACAAIAAQAOAAYAAAADAAMAAQANAAUAAAADAAQAAQANAAUAAAADAAUAAQANAAUAAAD8/wMAAQAPAAUAAAD8/wQAAQAPAAUAAAD8/wUAAQAPAAUAAAD9/wYAAQAOAAQAAAD+/wYAAQAOAAQAAAD//wYAAQAOAAQAAAAAAAYAAQAOAAQAAAABAAYAAQAOAAQAAAACAAYAAQAOAAQAAAADAAYAAQAJAAYAAAD8/wYAAQAIAAYAAAD8/wIAAQAIAAUAAAADAAIAAQAJAAUAAAAKAAQAAQALAAUAAAAKAAMAAQALAAUAAAAKAAUAAQALAAUAAAALAAUAAQALAAUAAAAOAAUAAQALAAUAAAAPAAUAAQALAAUAAAAPAAQAAQALAAUAAAAPAAMAAQALAAUAAAAQAAMAAQANAAUAAAAQAAQAAQANAAUAAAAQAAUAAQANAAUAAAAJAAMAAQAPAAUAAAAJAAQAAQAPAAUAAAAJAAUAAQAPAAUAAAAKAAIAAQAOAAYAAAAPAAIAAQAOAAYAAAAJAAIAAQAIAAUAAAAQAAIAAQAJAAUAAAAMAAQAAQAJAAUAAAANAAQAAQAIAAUAAAAOAAQAAQAKAAQAAAALAAQAAQAMAAQAAAAMAAUAAQAMAAQAAAANAAUAAQAKAAQAAAAOAAMAAQAPAAUAAAALAAMAAQANAAUAAAAOAAIAAQAIAAUAAAALAAIAAQAJAAUAAAAJAAYAAQAIAAYAAAAQAAYAAQAJAAYAAAAKAAYAAQAOAAQAAAALAAYAAQAOAAQAAAAMAAYAAQAOAAQAAAANAAYAAQAOAAQAAAAOAAYAAQAOAAQAAAAPAAYAAQAOAAQAAAA=")
 tile_set = SubResource("TileSet_k4slb")
@@ -754,7 +836,7 @@ tile_set = SubResource("TileSet_bewdi")
 rendering_quadrant_size = 32
 
 [node name="MainCharacter" parent="." instance=ExtResource("3_qpyaw")]
-position = Vector2(-237, 318)
+position = Vector2(-214, 310)
 
 [node name="AboveGround2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAFAAgAAgAEAAAAAAAFAAkAAgAEAAEAAAAFAAoAAgAEAAIAAAAUAAgAAgAEAAAAABAUAAkAAgAEAAEAABAUAAoAAgAEAAIAABD4/wYAAgAFAAIAAAD4/wcAAgAFAAMAAAD4/wgAAgAFAAQAAAD4/wkAAgAFAAUAAAD3/wcAAgAEAAMAAAD3/wgAAgAEAAQAAAD6/wkAAgAEAAAAABD6/woAAgAEAAEAABD6/wsAAgAEAAIAABA=")
@@ -765,33 +847,60 @@ rendering_quadrant_size = 32
 visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
-[node name="Cutscene" type="Node2D" parent="."]
+[node name="LastBossCutscene" type="Node2D" parent="."]
 
-[node name="Trigger" type="Node2D" parent="Cutscene"]
+[node name="Trigger" type="Node2D" parent="LastBossCutscene"]
 position = Vector2(0, 11)
 
-[node name="AutoActionable" type="Area2D" parent="Cutscene/Trigger"]
+[node name="AutoActionable" type="Area2D" parent="LastBossCutscene/Trigger"]
 position = Vector2(193, 276)
 script = ExtResource("7_gvrh4")
 dialogue_resource = ExtResource("8_x3w2c")
 quest_name = "final_boss"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene/Trigger/AutoActionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastBossCutscene/Trigger/AutoActionable"]
 shape = SubResource("CircleShape2D_iqy6s")
 
-[node name="Timer" type="Timer" parent="Cutscene"]
+[node name="Timer" type="Timer" parent="LastBossCutscene"]
 wait_time = 6.5
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscene"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LastBossCutscene"]
 libraries = {
 "": SubResource("AnimationLibrary_q1mgf")
 }
 
-[node name="Camera2D" type="Camera2D" parent="Cutscene"]
+[node name="Camera2D" type="Camera2D" parent="LastBossCutscene"]
 position = Vector2(0, 204)
 zoom = Vector2(5, 5)
 script = ExtResource("7_hyg0m")
+
+[node name="FinalCutscene" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FinalCutscene"]
+libraries = {
+"": SubResource("AnimationLibrary_3kpk6")
+}
+
+[node name="Camera2D" type="Camera2D" parent="FinalCutscene"]
+position = Vector2(839, 148)
+zoom = Vector2(2, 2)
+
+[node name="Timer" type="Timer" parent="FinalCutscene"]
+wait_time = 3.0
+one_shot = true
+
+[node name="FinalCutsceneTrigger" type="Node2D" parent="FinalCutscene"]
+position = Vector2(0, 11)
+
+[node name="AutoActionable" type="Area2D" parent="FinalCutscene/FinalCutsceneTrigger"]
+position = Vector2(832, 172)
+script = ExtResource("17_2ok4b")
+dialogue_resource = ExtResource("18_ga3qi")
+quest_name = "ending"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalCutscene/FinalCutsceneTrigger/AutoActionable"]
+shape = SubResource("CircleShape2D_iqy6s")
 
 [node name="Collision" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
@@ -805,8 +914,16 @@ polygon = PackedVector2Array(-320, 320, -320, 351, -196, 351, -195, 386, 191, 38
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collision"]
 polygon = PackedVector2Array(178, 218, 178, 257, 190, 257, 190, 218)
 
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(464, 0)
+polygon = PackedVector2Array(178, 218, 178, 257, 190, 257, 190, 218)
+
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collision"]
 position = Vector2(0, 64)
+polygon = PackedVector2Array(178, 240, 178, 259, 190, 259, 190, 240)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(464, 64)
 polygon = PackedVector2Array(178, 240, 178, 259, 190, 259, 190, 240)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Collision"]
@@ -821,5 +938,11 @@ polygon = PackedVector2Array(178, 219, 178, 259, 190, 259, 190, 219)
 position = Vector2(-424, 32)
 polygon = PackedVector2Array(178, 225, 178, 259, 190, 259, 190, 225)
 
-[connection signal="area_shape_entered" from="Cutscene/Trigger/AutoActionable" to="Cutscene/Trigger/AutoActionable" method="_on_area_shape_entered"]
-[connection signal="timeout" from="Cutscene/Timer" to="Cutscene/Trigger/AutoActionable" method="_on_timer_timeout"]
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Collision"]
+polygon = PackedVector2Array(637, 257, 638, 194, 641, 189, 705, 189, 709, 192, 710, 192, 710, 162, 780, 162, 780, 84, 886, 84, 886, 163, 956, 163, 956, 192, 1025, 192, 1026, 385, 1021, 387, 642, 387, 637, 383, 636, 329, 629, 330, 630, 393, 660, 397, 1037, 396, 1035, 188, 1029, 178, 963, 181, 968, 149, 895, 153, 894, 75, 773, 75, 773, 156, 705, 153, 702, 179, 633, 180, 627, 184, 627, 257)
+
+[connection signal="area_shape_entered" from="LastBossCutscene/Trigger/AutoActionable" to="LastBossCutscene/Trigger/AutoActionable" method="_on_area_shape_entered"]
+[connection signal="timeout" from="LastBossCutscene/Timer" to="LastBossCutscene/Trigger/AutoActionable" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="FinalCutscene/AnimationPlayer" to="FinalCutscene/FinalCutsceneTrigger/AutoActionable" method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="FinalCutscene/Timer" to="FinalCutscene/FinalCutsceneTrigger/AutoActionable" method="_on_timer_timeout"]
+[connection signal="area_shape_entered" from="FinalCutscene/FinalCutsceneTrigger/AutoActionable" to="FinalCutscene/FinalCutsceneTrigger/AutoActionable" method="_on_area_shape_entered"]

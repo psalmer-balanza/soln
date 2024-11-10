@@ -88,3 +88,6 @@ func get_quest_status(quest_name: String) -> bool:
 		is_quest_compelete = disable_rat_wizard_training_quest
 		
 	return is_quest_compelete
+
+func play_end_sequence():
+	current_quest = "ending"

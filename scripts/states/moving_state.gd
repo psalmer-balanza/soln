@@ -6,9 +6,12 @@ var player: CharacterBody2D
 @onready var actionable_finder: Area2D = $"../../ActionableFinder"
 @onready var auto_start_encounter_finder = $"../../AutoStartEncounterFinder"
 @onready var walking_sfx: AudioStreamPlayer = $"../../WalkingSFX"
+@onready var camera = $"../../Camera2D"
 
 var auto_start_encounters: Array[Area2D] = []
 func Enter():
+	
+	camera.make_current()
 	
 	var sprite = player.get_node("AnimatedSprite2D")  # Correctly access the child node
 	sprite.play("walk")

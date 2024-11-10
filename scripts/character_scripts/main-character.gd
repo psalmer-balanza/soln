@@ -25,12 +25,21 @@ func _physics_process(delta):
 	# Delegate the state management to the state machine
 	state_machine._physics_process(delta)
 	move_and_slide()
+
 func _process(delta):
 	state_machine._process(delta)
 # This function remains for returning the player position
 func get_player_position() -> Vector2:
 	return self.position
 
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	animated_sprite_2d.play("idle")
+
+func explode():
+	animation_player.play("sacrifice")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "sacrifice":
+		animated_sprite_2d.play("power-off")
+		await animated_sprite_2d.animation_finished
+		animated_sprite_2d.play("off")
