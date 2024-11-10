@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=49 format=4 uid="uid://32iomad28t5n"]
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
 [ext_resource type="PackedScene" uid="uid://c8j4ddys6yksg" path="res://scenes/characters_scenes/floor2_characters/Chip.tscn" id="22_r7m3a"]
 [ext_resource type="PackedScene" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
+[ext_resource type="Texture2D" uid="uid://ev3o8neo2yfn" path="res://assets/floor_2/chip assets.png" id="23_miwmk"]
 [ext_resource type="PackedScene" uid="uid://bwnfoc7koyfka" path="res://scenes/cutscenes/floor2/fire_pedestal.tscn" id="24_jvmvp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nuae0"]
@@ -670,6 +671,26 @@ size = Vector2(20, 193)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oa0i"]
 size = Vector2(20, 114)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_coiob"]
+texture = ExtResource("23_miwmk")
+texture_region_size = Vector2i(32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0052, -15.9099, -3.35876, -10.4298, 17.0646, -9.72283, 16.6677, -16.2709)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.874, -15.874, 1.98425, -15.874, 2.18268, -11.1118, -15.874, -11.1118)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.25, -13.25, 12.5, -13.5, 13.25, 13, -13, 13.75)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.75, -8.75, 13, -9.75, 12.5, 13.125, -13, 13.5)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.54074, 15.3796, -6.18718, 2.12132, 16.0724, 2.18268, 16.2635, 15.2028)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.2635, 2.82843, 4.77297, 2.82843, 3.88909, 16.0867, -15.7331, 15.7331)
+
+[sub_resource type="TileSet" id="TileSet_kqces"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_coiob")
+
 [node name="Floor2" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_dkfmh")
@@ -687,9 +708,10 @@ offset_right = 6216.0
 offset_bottom = 3747.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor2OutsideCollision" type="StaticBody2D" parent="."]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor2OutsideCollision"]
 polygon = PackedVector2Array(-92, -265, 200, -264, 202, -201, 261, -201, 263, 135, 201, 136, 200, 200, 67, 201, 67, 501, 106, 501, 108, 529, 139, 532, 140, 566, 171, 563, 172, 781, 140, 781, 141, 820, 111, 821, 108, 854, 72, 852, 68, 935, 91, 937, 92, 947, 452, 944, 455, 956, 1139, 954, 1137, 853, 1167, 852, 1172, 812, 1313, 813, 1331, 851, 1363, 850, 1360, 954, 1460, 954, 1459, 881, 1525, 882, 1524, 813, 1582, 813, 1580, 682, 1644, 683, 1645, 622, 1726, 624, 1725, 485, 1681, 487, 1683, 277, 1724, 278, 1724, -53, 1656, -50, 1651, -116, 1586, -114, 1588, -263, 1657, -270, 1655, -338, 1714, -338, 1711, -395, 2245, -396, 2252, -331, 2319, -330, 2320, -259, 3066, -259, 3063, -393, 3127, -393, 3125, -463, 3214, -462, 3785, -464, 3785, -394, 3849, -394, 3851, -56, 3808, -51, 3808, 9, 3126, 6, 3123, -54, 3061, -55, 3061, -179, 2312, -180, 2315, -111, 2196, -112, 2192, -45, 1800, -47, 1798, 272, 1833, 271, 1839, 487, 1799, 486, 1796, 623, 1876, 623, 1873, 690, 1932, 691, 1933, 1029, 1873, 1033, 1880, 1117, 1806, 1111, 1799, 1176, 1530, 1174, 1524, 1102, 1463, 1101, 1461, 1040, 1358, 1037, 1357, 1072, 1325, 1073, 1323, 1096, 1168, 1099, 1168, 1073, 1129, 1073, 1131, 1040, 456, 1035, 456, 1100, 396, 1100, 398, 1163, 351, 1165, 352, 1197, -6, 1195, -8, 1104, -81, 1102, -77, 999, -34, 997, -2, 993, -4, 833, -48, 833, -45, 812, -80, 811, -85, 783, -120, 784, -118, 564, -77, 562, -74, 521, -46, 527, -46, 500, -17, 500, -7, 203, -141, 204, -139, 151, -199, 151, -214, -207, -152, -210, -149, -264, -101, -264, -139, -308, -386, -136, -295, 849, 43, 1487, 1323, 1476, 2288, 1139, 2232, 269, 2892, 151, 3948, 212, 3951, -658, 2948, -615, 2845, -434, 2217, -557, 1479, -592, 1333, -245, 1494, 249, 1436, 655, 980, 683, 269, 791, 325, 224, 347, -406, -87, -286, -100, -265)
 
 [node name="below_rooms" type="TileMapLayer" parent="."]
@@ -1041,6 +1063,10 @@ position = Vector2(118, 1033)
 [node name="ChipBarrier" type="CollisionShape2D" parent="Chip"]
 position = Vector2(325, -27)
 shape = SubResource("RectangleShape2D_5oa0i")
+
+[node name="ChipTileset" type="TileMapLayer" parent="Chip"]
+tile_map_data = PackedByteArray("AAD7/wEAAQABAAIAAAACAAEAAQAAAAAAAAACAAIAAQAAAAEAAAADAAEAAQABAAAAAAADAAIAAQABAAEAAAAHAPz/AQAAAAIAAAA=")
+tile_set = SubResource("TileSet_kqces")
 
 [node name="MathLab" parent="." instance=ExtResource("23_gk4vy")]
 position = Vector2(1692, -606)
