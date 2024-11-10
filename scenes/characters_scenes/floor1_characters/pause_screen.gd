@@ -5,7 +5,7 @@ extends Control
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("pause"):
-		get_tree().paused = true
+		PlayerState.player_in_dialogue = true
 		_pause()
 
 func _pause():
@@ -15,8 +15,8 @@ func _pause():
 
 func _on_back_pressed() -> void:
 	print("unpaused")
-	get_tree().paused = false
 	hide()
+	PlayerState.player_in_dialogue = false
 	objective.visible = true
 	badges.visible = true
 
