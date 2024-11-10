@@ -17,6 +17,7 @@ var question
 func _ready():
 	# dont forget to put true back to Global.is_online
 	if Global.is_online:
+		print("CURRENT QUEST IS :", DialogueState.current_quest)
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 		if DialogueState.current_quest == "face_the_snake":
 			QuestionsLoader.get_snekkers_questions()
@@ -98,26 +99,26 @@ func _choose_question() -> int:
 
 func _on_choice_1_pressed() -> void:
 	# post statistic if online
-	postStatistics(1)
+	postStatistics(0)
 	answer = c1.text
 	_check_answer()
 	
 
 func _on_choice_2_pressed() -> void:
 	# post statistic if online
-	postStatistics(2)
+	postStatistics(1)
 	answer = c2.text
 	_check_answer()
 	
 func _on_choice_3_pressed() -> void:
 	# post statistic if online
-	postStatistics(3)
+	postStatistics(2)
 	answer = c3.text
 	_check_answer()
 	
 func _on_choice_4_pressed() -> void:
 	# post statistic if online
-	postStatistics(4)
+	postStatistics(3)
 	answer = c4.text
 	_check_answer()
 	
@@ -159,23 +160,12 @@ func _on_draw() -> void:
 	
 func postStatistics(choice_index):
 	if Global.is_online:
+		var minigame_id
 		if DialogueState.current_quest == "face_the_snake":
-			if choice_index == 1:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
-			elif choice_index == 2:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
-			elif choice_index == 3:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
-			elif choice_index == 4:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 5, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))
+			minigame_id = 5
 		elif DialogueState.current_quest == "final_boss_quest":
-			print("Helo final boss")
-		else:
-			if choice_index == 1:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 11, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][0]))
-			elif choice_index == 2:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 11, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][1]))
-			elif choice_index == 3:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 11, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][2]))
-			elif choice_index == 4:
-				Statistics.postQuizResponse(PlayerState.classroom_id, 11, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][3]))	
+			minigame_id = 11
+		else: # else, world 3 boss level
+			minigame_id = 12 # 12? 
+		
+		Statistics.postQuizResponse(PlayerState.classroom_id, minigame_id, int(mc_questions[index][6]), PlayerState.student_id, int(mc_choice_ids[index][choice_index]))
