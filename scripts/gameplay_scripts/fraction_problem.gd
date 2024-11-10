@@ -108,13 +108,13 @@ func _load_questions():
 		"dead_robots":
 			QuestionsLoader.get_robot_questions()
 		# ADD HERE OTHER FRACTION MINIGAMES
-		"insert_quest_name_here":
+		"water_room_1":
 			QuestionsLoader.get_water1_questions()
 		"insert_quest_name_here":
 			QuestionsLoader.get_chip_questions()
-		"insert_quest_name_here":
+		"meeting_chip":
 			QuestionsLoader.get_water2_questions()
-		"insert_quest_name_here":
+		"water_room_3":
 			QuestionsLoader.get_water3_questions()
 
 func _on_questions_loaded():
