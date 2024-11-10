@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
 [ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
 [ext_resource type="PackedScene" uid="uid://c8j4ddys6yksg" path="res://scenes/characters_scenes/floor2_characters/Chip.tscn" id="22_r7m3a"]
-[ext_resource type="PackedScene" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
+[ext_resource type="PackedScene" uid="uid://cimrebiogqofe" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
 [ext_resource type="Texture2D" uid="uid://ev3o8neo2yfn" path="res://assets/floor_2/chip assets.png" id="23_miwmk"]
 [ext_resource type="PackedScene" uid="uid://bwnfoc7koyfka" path="res://scenes/cutscenes/floor2/fire_pedestal.tscn" id="24_jvmvp"]
 
@@ -984,7 +984,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAABAAQAAAD+/xkAAAABAAQAAAD//xoAAAACAAU
 tile_set = ExtResource("3_8oq75")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(3373, -203)
+position = Vector2(1929, -191)
 
 [node name="foreground" type="TileMapLayer" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)

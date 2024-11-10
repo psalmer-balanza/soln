@@ -60,3 +60,15 @@ func boss_gameplay():
 	
 func change_scene_to_floor2():
 	get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
+	
+##The values required in order to have the player resume the game properly
+## PlayerState.player_badges
+## Global.current_floor = 1
+## DialogueState.current_quest
+## PlayerState.saved_scene
+## PlayerState.saved_position
+#EXIT LISTENER ON NOTIFICATION == 1006
+func _notification(notification) -> void:
+	if notification == 1006:
+		#part where you write the player stuff onto the database
+		print("Exiting game")
