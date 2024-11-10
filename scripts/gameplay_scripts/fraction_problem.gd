@@ -110,9 +110,9 @@ func _load_questions():
 		# ADD HERE OTHER FRACTION MINIGAMES
 		"water_room_1":
 			QuestionsLoader.get_water1_questions()
-		"insert_quest_name_here":
-			QuestionsLoader.get_chip_questions()
 		"meeting_chip":
+			QuestionsLoader.get_chip_questions()
+		"water_room_2":
 			QuestionsLoader.get_water2_questions()
 		"water_room_3":
 			QuestionsLoader.get_water3_questions()
@@ -124,13 +124,13 @@ func _on_questions_loaded():
 		"dead_robots":
 			questions = QuestionsLoader.robot_questions
 		# ADD HERE OTHER FRACTION MINIGAMES
-		"insert_quest_name_here":
+		"water_room_1":
 			questions = QuestionsLoader.water1_questions
-		"insert_quest_name_here":
+		"meeting_chip":
 			questions = QuestionsLoader.chip_questions
-		"insert_quest_name_here":
+		"water_room_2":
 			questions = QuestionsLoader.water2_questions
-		"insert_quest_name_here":
+		"water_room_3":
 			questions = QuestionsLoader.water3_questions
 			
 	Global.choose_question(questions)
