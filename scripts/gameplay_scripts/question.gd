@@ -19,7 +19,7 @@ func _ready():
 	if Global.is_online:
 		print("CURRENT QUEST IS :", DialogueState.current_quest)
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
-		if DialogueState.current_quest == "face_the_snake":
+		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			QuestionsLoader.get_snekkers_questions()
 		else:
 			print("crab questions")
@@ -29,7 +29,7 @@ func _ready():
 		print("Current quest is: ", DialogueState.current_quest)
 		
 		# questions for snekkers
-		if DialogueState.current_quest == "face_the_snake":
+		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			mc_questions = [
 			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
 			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
@@ -83,7 +83,7 @@ func _ready():
 			]
 			
 func _on_questions_loaded():
-	if DialogueState.current_quest == "face_the_snake":
+	if DialogueState.current_quest == "face_the_snake_post_cutscene":
 		mc_questions = QuestionsLoader.snekkers_questions
 		mc_choice_ids = QuestionsLoader.snekkers_choice_ids
 	elif DialogueState.current_quest == "crab_quiz_successful":
@@ -161,7 +161,7 @@ func _on_draw() -> void:
 func postStatistics(choice_index):
 	if Global.is_online:
 		var minigame_id
-		if DialogueState.current_quest == "face_the_snake":
+		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			minigame_id = 5
 		elif DialogueState.current_quest == "final_boss_quest":
 			minigame_id = 11
