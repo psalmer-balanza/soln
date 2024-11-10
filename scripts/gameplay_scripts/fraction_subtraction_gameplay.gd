@@ -12,15 +12,9 @@ var fraction_questions = [
 	["A pipe was carrying water to a water supply. In the morning, 5/6 of the water supply was filled, but 3/8 was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8],
 	["Two sections of a pipeline had been filled. The first section was filled to 5/6 of its capacity, and the second section was drained to 3/6 of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6]
 ]
-	
-var fraction_questions_house = [
-	["A wizard brewed two potions. For the first potion, he used 1/4 of his magical herbs, and for the second potion, he used 1/2 of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2],
-	["A sorceress enchanted two magical scrolls. She used 3/10 of her spell ink on the first scroll and 2/5 on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5],
-	["In a mystical forest, a fairy sprinkled 1/3 of her glitter on one flower and 1/6 on another. How much glitter did she use altogether?", 1, 3, 1, 6],
-]
 
 
- # List to store question context text for each round
+# List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on
 @onready var correct_ans_count = 0
 @onready var wrong_ans_count = 0
@@ -56,26 +50,16 @@ func _ready():
 	else: # else get offline questions
 		print("offline mode")
 		print("Current quest is ", DialogueState.current_quest)
-		if DialogueState.current_quest == "raket_stealing":
+		if DialogueState.current_quest == "wizard_training_room":
 			Global.choose_question(fraction_questions)
 			fraction_questions = Global.randomize_questions(fraction_questions, current_chosen_questions, chosen_index_questions)
-			
-		if DialogueState.current_quest == "raket_house":
-			Global.choose_question(fraction_questions_house)
-			fraction_questions = Global.randomize_questions(fraction_questions_house, current_chosen_questions, chosen_index_questions)
 			
 		display_current_question()
 	
 func _on_questions_loaded():
-	if DialogueState.current_quest == "raket_stealing":
-		Global.choose_question(fraction_questions_house)
-		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_steal_questions, current_chosen_questions, chosen_index_questions)
-		
-	
-	elif DialogueState.current_quest == "raket_house":
-		Global.choose_question(fraction_questions_house)
-		fraction_questions = Global.randomize_questions(QuestionsLoader.racket_house_questions, current_chosen_questions, chosen_index_questions)
-		
+	if DialogueState.current_quest == "wizard_training_room":
+		Global.choose_question(fraction_questions)
+		fraction_questions = Global.randomize_questions(QuestionsLoader.rat_questions, current_chosen_questions, chosen_index_questions)
 		
 	display_current_question()
 	
@@ -93,17 +77,12 @@ func initiate_questions():
 	print(DialogueState.current_quest)
 	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 
-	if DialogueState.current_quest == "raket_stealing":
-		print("Current quest is raket stealing")
-		QuestionsLoader.get_racket_steal_questions()
+	if DialogueState.current_quest == "wizard_training_room":
+		print("Current quest is ", DialogueState.current_quest)
+		QuestionsLoader.get_rat_questions()
 		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
 		print("current minigame id ", current_minigame_id)
 	
-	elif DialogueState.current_quest == "raket_house":
-		QuestionsLoader.get_racket_house_questions()
-		print("Current quest is raket house")
-		current_minigame_id = QuestionsLoader.post_data["MinigameID"]
-		fraction_questions = fraction_questions_house
 	else:
 		print("No quest?")
 
@@ -170,12 +149,8 @@ func is_valid_integer(value: String) -> bool:
 # Validate if inputted fractions match the current question's fractions
 func input_matches_question(first_numerator: int, first_denominator: int, second_numerator: int, second_denominator: int) -> bool:
 	var current_question = fraction_questions[current_question_index]
-	#var expected_first_fraction = current_question[0]
-	#var expected_second_fraction = current_question[1]
-	print("im in input_matches_question")
 	
 	if first_numerator == current_question[1] and first_denominator == current_question[2] and second_numerator == current_question[3] and second_denominator == current_question[4]:
-		print("input first")
 		return true
 	return false
 

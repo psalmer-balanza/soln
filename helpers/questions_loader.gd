@@ -49,6 +49,7 @@ func get_snekkers_questions():
 	
 func get_water1_questions():
 	minigame_id = 6
+	print("MINIGAME 6 IS TRIGGERED!!")
 	get_questions(minigame_id)
 	
 func get_chip_questions():
@@ -130,7 +131,7 @@ func _http_request_completed(_result, response_code, _headers, body):
 				crab_questions = constructQuizQuestions(response)
 				crab_choice_ids = getChoiceIDs(response)
 			elif minigame_id == 12:
-				final_boss_questions == constructQuizQuestions(response)
+				final_boss_questions = constructQuizQuestions(response)
 				final_boss_choice_ids = getChoiceIDs(response)
 			
 			emit_signal("questions_loaded")

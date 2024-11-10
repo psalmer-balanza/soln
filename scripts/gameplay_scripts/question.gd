@@ -15,15 +15,17 @@ var rng = RandomNumberGenerator.new()
 var question
 
 func _ready():
-	# dont forget to put true back to Global.is_online
 	if Global.is_online:
-		print("CURRENT QUEST IS :", DialogueState.current_quest)
+		print("CURRENT QUEST IS: ", DialogueState.current_quest)
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			QuestionsLoader.get_snekkers_questions()
-		else:
+		elif DialogueState.current_quest == "crab_boss":
 			print("crab questions")
 			QuestionsLoader.get_crab_questions()
+		else:
+			QuestionsLoader.get_final_boss_questions()
+			
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
 		print("Current quest is: ", DialogueState.current_quest)
@@ -86,9 +88,12 @@ func _on_questions_loaded():
 	if DialogueState.current_quest == "face_the_snake_post_cutscene":
 		mc_questions = QuestionsLoader.snekkers_questions
 		mc_choice_ids = QuestionsLoader.snekkers_choice_ids
-	elif DialogueState.current_quest == "crab_quiz_successful":
+	elif DialogueState.current_quest == "crab_boss":
 		mc_questions = QuestionsLoader.crab_questions
 		mc_choice_ids = QuestionsLoader.crab_choice_ids
+	else:
+		mc_questions = QuestionsLoader.final_boss_questions
+		mc_choice_ids = QuestionsLoader.final_boss_choice_ids
 	# score = questions.size() MINUS no_of_wrong_attempts
 	Global.total_score = mc_questions.size()
 
@@ -163,7 +168,7 @@ func postStatistics(choice_index):
 		var minigame_id
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			minigame_id = 5
-		elif DialogueState.current_quest == "final_boss_quest":
+		elif DialogueState.current_quest == "crab_boss":
 			minigame_id = 11
 		else: # else, world 3 boss level
 			minigame_id = 12 # 12? 
