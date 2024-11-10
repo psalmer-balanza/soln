@@ -47,12 +47,13 @@ func _http_request_completed(result, response_code, headers, body):
 		if error == OK:
 			var response = json.get_data()
 			print("Response: ", response.success)
-			# RESPONSE IS RETURNING FALSE EVEN THOUGH THE REGISTRATION IS SUCCESSFUL
 			if response.success:
 				# do login if registration is successful
 				print("Registration successful")
 				get_tree().change_scene_to_file("res://scenes/student_scene/student_login.tscn")
 			else:
+				# show error when registration failed
+				var error_text = response.error_text
 				print("Registration failed")
 		else:
 			print("Failed to parse JSON")
