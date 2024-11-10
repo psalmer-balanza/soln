@@ -107,6 +107,15 @@ func _load_questions():
 			QuestionsLoader.get_saisai_questions()
 		"dead_robots":
 			QuestionsLoader.get_robot_questions()
+		# ADD HERE OTHER FRACTION MINIGAMES
+		"insert_quest_name_here":
+			QuestionsLoader.get_water1_questions()
+		"insert_quest_name_here":
+			QuestionsLoader.get_chip_questions()
+		"insert_quest_name_here":
+			QuestionsLoader.get_water2_questions()
+		"insert_quest_name_here":
+			QuestionsLoader.get_water3_questions()
 
 func _on_questions_loaded():
 	match DialogueState.current_quest:
@@ -114,7 +123,16 @@ func _on_questions_loaded():
 			questions = QuestionsLoader.saisai_questions
 		"dead_robots":
 			questions = QuestionsLoader.robot_questions
-	
+		# ADD HERE OTHER FRACTION MINIGAMES
+		"insert_quest_name_here":
+			questions = QuestionsLoader.water1_questions
+		"insert_quest_name_here":
+			questions = QuestionsLoader.chip_questions
+		"insert_quest_name_here":
+			questions = QuestionsLoader.water2_questions
+		"insert_quest_name_here":
+			questions = QuestionsLoader.water3_questions
+			
 	Global.choose_question(questions)
 	Global.randomize_questions(questions, current_chosen_questions, chosen_index_questions)
 	_display_question()

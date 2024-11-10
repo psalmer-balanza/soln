@@ -6,11 +6,18 @@ var racket_steal_questions: Array = []
 var racket_house_questions: Array = []
 var snekkers_questions: Array = []
 var snekkers_choice_ids: Array = []
+var water1_questions: Array = []
+var chip_questions: Array = []
+var water2_questions: Array = []
+var water3_questions: Array = []
+var rat_questions: Array = []
 var crab_questions: Array = []
 var crab_choice_ids: Array = []
+var final_boss_questions: Array = []
+var final_boss_choice_ids: Array = []
 
 var post_data = {}
-var minigameID
+var minigame_id
 
 signal questions_loaded
 
@@ -21,38 +28,62 @@ func _ready() -> void:
 	
 
 func get_saisai_questions():
-	minigameID = 1
-	post(minigameID)
+	minigame_id = 1
+	get_questions(minigame_id)
 
 func get_robot_questions():
-	minigameID = 2
-	post(minigameID)
+	minigame_id = 2
+	get_questions(minigame_id)
 	
 func get_racket_steal_questions():
-	minigameID = 3
-	post(minigameID)
+	minigame_id = 3
+	get_questions(minigame_id)
 
 func get_racket_house_questions():
-	minigameID = 4
-	post(minigameID)
+	minigame_id = 4
+	get_questions(minigame_id)
 	
 func get_snekkers_questions():
-	minigameID = 5
-	post(minigameID)
-
-func get_crab_questions():
-	minigameID = 11
-	post(minigameID)
+	minigame_id = 5
+	get_questions(minigame_id)
 	
-func post(minigameID):
-	post_data["MinigameID"] = minigameID
+func get_water1_questions():
+	minigame_id = 6
+	get_questions(minigame_id)
+	
+func get_chip_questions():
+	minigame_id = 7
+	get_questions(minigame_id)
+
+func get_water2_questions():
+	minigame_id = 8
+	get_questions(minigame_id)
+	
+func get_water3_questions():
+	minigame_id = 9
+	get_questions(minigame_id)
+	
+func get_rat_questions():
+	minigame_id = 10
+	get_questions(minigame_id)
+	
+func get_crab_questions():
+	minigame_id = 11
+	get_questions(minigame_id)
+
+func get_final_boss_questions():
+	minigame_id = 12
+	get_questions(minigame_id)
+	
+func get_questions(minigame_id):
+	post_data["MinigameID"] = minigame_id
 	var url 
 	
-	if minigameID == 1 || minigameID == 2:
+	if minigame_id == 1 || minigame_id == 2 || minigame_id == 6 || minigame_id == 7 || minigame_id == 8 || minigame_id == 9:
 		url = "http://"+ Global.host_ip +":3000/game/getfractions"
-	elif minigameID == 3 || minigameID == 4:
+	elif minigame_id == 3 || minigame_id == 4 || minigame_id == 10:
 		url = "http://"+ Global.host_ip +":3000/game/getworded"
-	elif minigameID == 5 || minigameID == 11:
+	elif minigame_id == 5 || minigame_id == 11 || minigame_id == 12:
 		url = "http://"+ Global.host_ip +":3000/game/getmcquestions"	
 
 	var http_request = HTTPRequest.new()
@@ -74,36 +105,45 @@ func _http_request_completed(_result, response_code, _headers, body):
 		var error = json.parse(body.get_string_from_utf8())
 		if error == OK:
 			var response = json.get_data()
-			if minigameID == 1:
-				saisai_questions = constructFractionQuestions(response)
-				emit_signal("questions_loaded")
-			elif minigameID == 2:
-				robot_questions = constructFractionQuestions(response)
-				emit_signal("questions_loaded")
-			elif minigameID == 3:
+			if minigame_id == 1:
+				saisai_questions = constructFractionQuestions(response, "+")
+			elif minigame_id == 2:
+				robot_questions = constructFractionQuestions(response, "+")
+			elif minigame_id == 3:
 				racket_steal_questions = constructWordedQuestions(response)
-				emit_signal("questions_loaded")
-			elif minigameID == 4:
+			elif minigame_id == 4:
 				racket_house_questions = constructWordedQuestions(response)
-				emit_signal("questions_loaded")
-			elif minigameID == 5:
+			elif minigame_id == 5:
 				snekkers_questions = constructQuizQuestions(response)
 				snekkers_choice_ids = getChoiceIDs(response)
-				emit_signal("questions_loaded")
-			elif minigameID == 11:
+			elif minigame_id == 6:
+				water1_questions = constructFractionQuestions(response, "-")
+			elif minigame_id == 7:
+				chip_questions = constructFractionQuestions(response, "-")
+			elif minigame_id == 8:
+				water2_questions = constructFractionQuestions(response, "-")
+			elif minigame_id == 9:
+				water3_questions = constructFractionQuestions(response, "-")
+			elif minigame_id == 10:
+				rat_questions = constructWordedQuestions(response)
+			elif minigame_id == 11:
 				crab_questions = constructQuizQuestions(response)
 				crab_choice_ids = getChoiceIDs(response)
-				emit_signal("questions_loaded")
+			elif minigame_id == 12:
+				final_boss_questions == constructQuizQuestions(response)
+				final_boss_choice_ids = getChoiceIDs(response)
+			
+			emit_signal("questions_loaded")
 	else:
 		print("HTTP request failed with code: error in get fractions", response_code)
 
-func constructFractionQuestions(response):
+func constructFractionQuestions(response, operation):
 	var questions = []
 	for i in range(response.size()):
 		var fraction = response[i]
 		questions.append([fraction["fraction1_numerator"], fraction["fraction1_denominator"],
 									fraction["fraction2_numerator"], fraction["fraction2_denominator"],
-									"+", fraction["question_id"]])
+									operation, fraction["question_id"]])
 	return questions
 	
 	
