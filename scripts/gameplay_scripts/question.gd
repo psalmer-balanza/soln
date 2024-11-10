@@ -16,6 +16,7 @@ var question
 
 func _ready():
 	if Global.is_online:
+		print("CURRENT QUEST IS: ", DialogueState.current_quest)
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			QuestionsLoader.get_snekkers_questions()
@@ -167,7 +168,7 @@ func postStatistics(choice_index):
 		var minigame_id
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			minigame_id = 5
-		elif DialogueState.current_quest == "final_boss_quest":
+		elif DialogueState.current_quest == "crab_boss":
 			minigame_id = 11
 		else: # else, world 3 boss level
 			minigame_id = 12 # 12? 
