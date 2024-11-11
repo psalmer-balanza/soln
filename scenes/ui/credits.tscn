@@ -1,0 +1,176 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4vnrko0wnjkh"]
+
+[ext_resource type="Script" path="res://scenes/ui/credits.gd" id="1_yh7mk"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8qwun"]
+[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/Christian Music Instrumental.ogg" id="3_70v14"]
+[ext_resource type="Texture2D" uid="uid://bipet4e2rgoke" path="res://assets/character_portraits/Saisai.png" id="3_ltmjr"]
+[ext_resource type="Texture2D" uid="uid://c71niuc3mf0o7" path="res://assets/character_portraits/Raket.png" id="4_rhy5m"]
+[ext_resource type="Texture2D" uid="uid://cgqy3e524i4ci" path="res://assets/character_portraits/Rat.png" id="5_sdl2m"]
+[ext_resource type="PackedScene" uid="uid://drwponpv2ow46" path="res://scenes/ui/thankyou.tscn" id="6_j2cl5"]
+
+[sub_resource type="Animation" id="Animation_h2p0k"]
+resource_name = "roll_credits"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 640), Vector2(0, -1369)]
+}
+
+[sub_resource type="Animation" id="Animation_2vepa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ut0g"]
+_data = {
+"RESET": SubResource("Animation_2vepa"),
+"roll_credits": SubResource("Animation_h2p0k")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yh7mk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 2053.0
+offset_bottom = 1158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.8)
+
+[node name="Credits" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = 352.0
+offset_right = 2038.0
+offset_bottom = 3905.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 2
+offset_top = 10.0
+offset_right = 2550.0
+offset_bottom = 3543.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_8qwun")
+theme_override_font_sizes/font_size = 100
+text = "SOL'N Team
+
+HEX OFF
+
+Team Lead : Psalmer Balanza
+
+
+Programers
+
+Julliard Macatuggal
+
+Zen Lucas
+
+Matt Ticag
+
+
+Artists
+
+Chryzel Beray
+
+Lucas Justine
+
+
+Story
+
+Divine Alisto
+
+
+Audio
+
+Paul Dimacali
+
+
+
+
+
+
+
+
+Thank You from playing"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 1148.0
+offset_right = 761.0
+offset_bottom = 1660.0
+texture = ExtResource("3_ltmjr")
+
+[node name="TextureRect2" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_left = 1941.0
+offset_top = 2160.0
+offset_right = 2453.0
+offset_bottom = 2672.0
+texture = ExtResource("4_rhy5m")
+
+[node name="TextureRect3" type="TextureRect" parent="Credits"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 2804.0
+offset_right = 168.0
+offset_bottom = 2868.0
+scale = Vector2(8, 8)
+texture = ExtResource("5_sdl2m")
+
+[node name="ThankYou" parent="." instance=ExtResource("6_j2cl5")]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_70v14")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2ut0g")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
