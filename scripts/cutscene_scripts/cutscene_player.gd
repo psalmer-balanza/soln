@@ -8,10 +8,11 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Current quest while cutscene scene is playing: ", DialogueState.current_quest)
+	print("Current cutscene", DialogueState.current_quest)
 	if DialogueState.current_quest == "sword_finished":
 		print("playing raket's smithing")
-		raket_sfx.play()
 		animation_player.play("raket_smithing")
+		raket_sfx.play()
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 	elif DialogueState.current_quest == "face_the_snake_post_cutscene":

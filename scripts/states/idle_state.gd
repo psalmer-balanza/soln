@@ -32,7 +32,7 @@ func Update(_delta: float):
 	if Input.is_action_just_pressed("ui_accept") and not in_dialogue:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			print("ui accep")
+			print("ui accept")
 			in_dialogue = true
 			Transitioned.emit(self, "PlayerDialogueState") 
 		else:

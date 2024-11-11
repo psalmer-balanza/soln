@@ -27,8 +27,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	print(DialogueState.current_quest)
 	state_machine._process(delta)
+
 # This function remains for returning the player position
 func get_player_position() -> Vector2:
 	return self.position
