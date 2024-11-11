@@ -2,15 +2,23 @@
 set in_dialogue = true
 
 if current_quest == "crab_quiz_after":
-	This must be the exit that Raket was talking about.
-	It seems to connect to higher floors, would you like to enter it?
-	- Yeah
+	(A complicated stream of technology lays before you)
+	Robot: So this is the way to the lighthouse.
+	What is the password?
+	- 123
+		(An elevator appears before you)
+		Robot: It's time.
 		do change_scene_to_floor3()
+		=> end
 	- (Leave)
+		=> end
 	=> end
 else
-	This must be the exit that Raket was talking about.
-	It's not time to leave yet, let's head back.
+	(A complicated stream of technology lays before you)
+	What is the password?
+	- I don't know.
+	Shellbot: MY PC!
+	Robot: Oops, let me head back.
 	=> end
 
 ~ end

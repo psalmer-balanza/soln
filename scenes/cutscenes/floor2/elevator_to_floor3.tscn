@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://de0fe00ap3hcd"]
+[gd_scene load_steps=32 format=3 uid="uid://de0fe00ap3hcd"]
 
 [ext_resource type="Texture2D" uid="uid://cx33t5jdkh1y6" path="res://assets/floor_2/Computer Sprites.png" id="1_awhym"]
 [ext_resource type="Texture2D" uid="uid://c02bvh2038t0m" path="res://assets/floor_2/Terminal Sprites.png" id="2_05fpl"]
@@ -75,6 +75,9 @@ animations = [{
 "name": &"default",
 "speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr4pg"]
+size = Vector2(91, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkcud"]
 atlas = ExtResource("2_05fpl")
@@ -154,6 +157,11 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aleb7"]
+size = Vector2(92, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56pgv"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijutk"]
 radius = 57.0789
 
@@ -174,11 +182,27 @@ sprite_frames = SubResource("SpriteFrames_ic4kx")
 autoplay = "default"
 frame_progress = 0.42114
 
+[node name="Area2D" type="Area2D" parent="Monitor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitor/Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_vr4pg")
+
 [node name="ConsoleTerminal" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, 3)
 sprite_frames = SubResource("SpriteFrames_k6weg")
 autoplay = "default"
 frame_progress = 0.365332
+
+[node name="Area2D" type="Area2D" parent="ConsoleTerminal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleTerminal/Area2D"]
+position = Vector2(-16, -11)
+shape = SubResource("RectangleShape2D_aleb7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ConsoleTerminal/Area2D"]
+position = Vector2(37, 7)
+shape = SubResource("RectangleShape2D_56pgv")
 
 [node name="Actionable" parent="." instance=ExtResource("3_k4yxe")]
 position = Vector2(9, 3)
