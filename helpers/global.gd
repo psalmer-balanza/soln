@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 
 func choose_question(question_array_size: Array) -> int:
-	return RandomNumberGenerator.new().randi_range(0, question_array_size.size()) - 1
+	return RandomNumberGenerator.new().randi_range(0, question_array_size.size() - 1)
 
 
 # 1st parameter: Array of questions to be chosen
@@ -50,9 +50,12 @@ func randomize_questions(questions_array: Array, current_chosen_questions: Array
 	
 	while chosen_index_questions.size() != 3:
 		var random_number_question = choose_question(questions_array)
-		
+
 		for current_chosen_index_question in chosen_index_questions:
+			print("Current random number question is ",random_number_question)
+			print("Current chosen index ", current_chosen_index_question)
 			if current_chosen_index_question == random_number_question:
+				print("Make is_chosen true")
 				is_chosen = true
 		
 		# If already added question dont add
@@ -62,8 +65,9 @@ func randomize_questions(questions_array: Array, current_chosen_questions: Array
 			
 		# Add if question is new
 		else: 
-			chosen_index_questions.append(random_number_question)
+			chosen_index_questions.append(int(questions_array[random_number_question][5]))
 			current_chosen_questions.append(questions_array[random_number_question])
 	
+	print("Current chosen index question are ", chosen_index_questions)
+	
 	return current_chosen_questions
-	print("Current chosen questions are ", current_chosen_questions)
