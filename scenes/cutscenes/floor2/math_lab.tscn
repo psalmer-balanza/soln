@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cimrebiogqofe"]
+[gd_scene load_steps=12 format=3 uid="uid://cluuh6dtpjbqg"]
 
 [ext_resource type="Texture2D" uid="uid://dyeaqlwgegosc" path="res://assets/floor_2/math lab (2).png" id="1_pit2r"]
 
@@ -52,6 +52,15 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsf6c"]
+size = Vector2(77, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiudn"]
+size = Vector2(80, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejekn"]
+size = Vector2(142, 145)
+
 [node name="MathLab" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -60,3 +69,17 @@ scale = Vector2(0.46, 0.46)
 sprite_frames = SubResource("SpriteFrames_4cikn")
 autoplay = "default"
 frame_progress = 0.146253
+
+[node name="MathLabCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MathLabCollision"]
+position = Vector2(165.5, 299.5)
+shape = SubResource("RectangleShape2D_qsf6c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MathLabCollision"]
+position = Vector2(245, 299)
+shape = SubResource("RectangleShape2D_eiudn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MathLabCollision"]
+position = Vector2(391, 245.5)
+shape = SubResource("RectangleShape2D_ejekn")
