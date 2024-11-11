@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b7wt7s7kn0mmy"
+path="res://.godot/imported/terminal_to_floor3.dialogue-66a865979679a7afcb3135f747a7b815.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_2/terminal_to_floor3.dialogue"
+dest_files=["res://.godot/imported/terminal_to_floor3.dialogue-66a865979679a7afcb3135f747a7b815.tres"]
+
+[params]
+
+defaults=true

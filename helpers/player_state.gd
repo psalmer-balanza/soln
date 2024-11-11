@@ -61,6 +61,9 @@ func boss_gameplay():
 	
 func change_scene_to_floor2():
 	get_tree().change_scene_to_file("res://scenes/levels/Floor2.tscn")
+
+func change_scene_to_floor3():
+	get_tree().change_scene_to_file("res://scenes/levels/Floor3.tscn")
 	
 ##The values required in order to have the player resume the game properly
 ## PlayerState.player_badges
