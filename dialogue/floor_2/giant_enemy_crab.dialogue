@@ -41,7 +41,8 @@ Shellbot: I secured it to make sure no one else can access it.
 Shellbot: The password is... "123"
 Robot: ...
 Shellbot: Go on now, little robot, maybe you can save the land of Sol'n.
-
+set player_badges["shell"] = true
+(You received a shell badge!)
 => end
 
 ~ end

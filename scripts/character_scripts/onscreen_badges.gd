@@ -14,6 +14,7 @@ extends Control
 @onready var bucket_2_badge: TextureRect = $Badges/Bucket2Badge
 @onready var bucket_3_badge: TextureRect = $Badges/Bucket3Badge
 @onready var crystal_ball_badge: TextureRect = $Badges/CrystalBallBadge
+@onready var shell_badge: TextureRect = $Badges/ShellBadge
 
 ##FLOOR3 BADGES
 @onready var original_robot_badge: TextureRect = $Badges/OriginalRobotBadge
@@ -55,6 +56,9 @@ func _process(delta: float) -> void:
 	#After wizard rat training
 	if pb["crystal_ball"]:
 		crystal_ball_badge.visible = true
+	#After shell
+	if pb["shell"]:
+		shell_badge.visible = true
 	#AFTER FINISHING THE FINAL BOSS
 	if pb["original_robot"]:
 		original_robot_badge.visible = true

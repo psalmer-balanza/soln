@@ -90,6 +90,24 @@ text = "QUIT
 "
 flat = true
 
+[node name="ONLINE LABEL" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 133.0
+offset_bottom = 35.0
+text = "ONLINE MODE"
+
+[node name="OFFLINE LABEL" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 263.0
+offset_bottom = 35.0
+text = "OFFLINE MODE"
+
 [connection signal="pressed" from="buttons/new game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="buttons/load game" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]

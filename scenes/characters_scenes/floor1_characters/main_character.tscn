@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=67 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="2_n3dp3"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bq3ljnky3w0vb" path="res://assets/main_character/onscreen_badges/Water Bucket 2 Badge.png" id="12_wlmo8"]
 [ext_resource type="Texture2D" uid="uid://b40abwlfk44mg" path="res://assets/main_character/onscreen_badges/Water Bucket 3 Badge.png" id="13_7y6ey"]
 [ext_resource type="Texture2D" uid="uid://wxgbwn41vkwu" path="res://assets/character_portraits/Original Robot.png" id="15_bfv3w"]
+[ext_resource type="Texture2D" uid="uid://bh74g46qbvvxy" path="res://assets/main_character/onscreen_badges/Shell Badge.png" id="15_dnhy0"]
 [ext_resource type="Texture2D" uid="uid://bysfgt7c7ldcw" path="res://assets/main_character/main_character_game_over.png" id="21_l6q71"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak80i"]
@@ -457,9 +458,9 @@ texture = ExtResource("3_jfdhw")
 visible = false
 layout_mode = 0
 offset_left = 205.0
-offset_top = -34.0
+offset_top = -35.25
 offset_right = 269.0
-offset_bottom = 30.0
+offset_bottom = 28.75
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_make3")
 
@@ -467,29 +468,29 @@ texture = ExtResource("8_make3")
 visible = false
 layout_mode = 0
 offset_left = 194.25
-offset_top = -17.75
+offset_top = -20.75
 offset_right = 234.25
-offset_bottom = 22.25
+offset_bottom = 19.25
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_jud13")
 
 [node name="MushroomBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_left = 191.0
-offset_top = -35.0
-offset_right = 269.0
-offset_bottom = 43.0
+offset_left = 191.25
+offset_top = -36.5
+offset_right = 269.25
+offset_bottom = 41.5
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_spg6v")
 
 [node name="FlaskBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_left = 201.25
-offset_top = -24.5
-offset_right = 420.25
-offset_bottom = 194.5
+offset_left = 199.5
+offset_top = -28.0
+offset_right = 418.5
+offset_bottom = 191.0
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("11_ggigp")
 
@@ -497,39 +498,49 @@ texture = ExtResource("11_ggigp")
 visible = false
 layout_mode = 0
 offset_left = 193.75
-offset_top = -5.25
+offset_top = -10.0
 offset_right = 233.75
-offset_bottom = 34.75
+offset_bottom = 30.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_wlmo8")
 
 [node name="Bucket3Badge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_left = 207.0
-offset_top = -5.0
-offset_right = 247.0
-offset_bottom = 35.0
+offset_left = 206.0
+offset_top = -10.0
+offset_right = 246.0
+offset_bottom = 30.0
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_7y6ey")
 
 [node name="CrystalBallBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_left = 189.5
-offset_top = 2.5
-offset_right = 378.5
-offset_bottom = 191.5
+offset_left = 189.25
+offset_top = -2.25
+offset_right = 378.25
+offset_bottom = 186.75
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("10_2wnpe")
+
+[node name="ShellBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 206.25
+offset_top = 1.75
+offset_right = 246.25
+offset_bottom = 41.75
+scale = Vector2(0.269, 0.269)
+texture = ExtResource("15_dnhy0")
 
 [node name="OriginalRobotBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
 layout_mode = 0
-offset_left = 202.75
-offset_top = 2.75
-offset_right = 266.75
-offset_bottom = 66.75
+offset_left = 189.25
+offset_top = 10.75
+offset_right = 253.25
+offset_bottom = 74.75
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("15_bfv3w")
 

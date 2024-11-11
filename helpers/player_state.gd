@@ -24,6 +24,7 @@ var player_badges = {
 	"bucket2": false,
 	"bucket3": false,
 	"crystal_ball": false,
+	"shell": false,
 	"original_robot": false
 }
 
