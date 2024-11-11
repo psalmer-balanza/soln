@@ -3,6 +3,9 @@
 set in_dialogue = true
 This glowing material must be one of the materials needed by Raket.
 You see a familiar inscription on the handle of the sword. Though it's a little more complicated this time.
+% => sword_bottom_q1
+% => sword_bottom_q2
+~ sword_bottom_q1
 It reads "What is the least common multiple (LCM) of 6 and 8?"
 - 48
 	Nothing happens, maybe that wasn't the right answer?
@@ -17,14 +20,37 @@ It reads "What is the least common multiple (LCM) of 6 and 8?"
 - 36
 	Nothing happens, maybe that wasn't the right answer?
 	=> sword_bottom
-
+=> end
+~ sword_bottom_q2
+"To split the rock, we divide it into portions.  
+One traveler takes 1/4 of the rock's mass, and another takes 2/4.  
+How much of the rock's mass have we taken together?"
+- 3/4
+	Sword Handle: The inscriptions glows, and you pick up what looks to be a sword handle. Well done!
+	set sword_bottom = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	=> end
+- 1/2
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+- 4/4
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+- What was that again?
+	=> sword_bottom
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
 => end
 
 ~ sword_guard
-
 set in_dialogue = true
 You find a glowing material in the ground, resting among ancient carvings. 
 Another inscription is etched into its surface.
+% => sword_guard_q1
+% => sword_guard_q2
+~ sword_guard_q1
 It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)?"
 - The missing denominator is 10
 	The sword guard remains unchanged. Seems incorrect...
@@ -40,12 +66,31 @@ It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)
 		set current_quest = "raket_sword_pieces_complete"
 	=> end
 => end
+~ sword_guard_q2
+"These are fractions that have the same denominators"
+- Equal Fractions
+	The sword guard remains unchanged. Seems incorrect...
+	=> sword_guard
+- Similar Fractions
+	Sword Guard: The inscription glows, and you lift what looks to be a sword guard. Nice work!
+	set sword_guard = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	=> end
+- Same Fractions
+	The sword guard remains unchanged. Seems incorrect...
+	=> sword_guard
+=> end
 
 ~ sword_lower_blade
 
 set in_dialogue = true
 You discover the another shiny material wedged between some rocks. 
 An inscription runs along its edge.
+% => sword_lower_blade_q1
+% => sword_lower_blade_q2
+~ sword_lower_blade_q1
 It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10. What is their combined strength?"
 - 3/5 + 2/10 = 5/5
 	The inscription remains dull. That doesn’t seem right...
@@ -61,11 +106,29 @@ It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10
 		set current_quest = "raket_sword_pieces_complete"
 	 => end
 => end 
+~ sword_lower_blade_q2
+"A fraction with a numerator that is equal to or greater than the denominator is called what?"
+- A mixed fraction
+	Nothing changes. Maybe that wasn't correct...
+	=> sword_lower_blade
+- An improper fraction
+	Sword Lower Blade: The inscription glows softly. You pull out the shard of a blade. Well done!
+	set sword_lower_blade = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	 => end
+- A similar fraction
+	Nothing changes. Maybe that wasn't correct...
+	=> sword_lower_blade
+=> end
 
 ~ sword_middle_blade
-
 set in_dialogue = true
 A glowing material lies partially buried. Ancient symbols are engraved on its surface.
+% => sword_middle_blade_q1
+% => sword_middle_blade_q2
+~ sword_middle_blade_q1
 It reads "If I have a fraction 8/2, where the numerator is greater than the denominator, what is it called?"
 - A mixed fraction
 	The symbols remain lifeless. That can't be right...
@@ -82,10 +145,29 @@ It reads "If I have a fraction 8/2, where the numerator is greater than the deno
 	=> sword_middle_blade
 => end
 
+~ sword_middle_blade_q2
+"A fraction with a numerator of 1 is called a what?"
+- A base fraction
+	Nothing happens. Seems incorrect...
+	=> sword_middle_blade
+- A unit fraction
+	Sword Middle Blade: The inscription glows, and a sword shard loosens. Good job!
+	set sword_middle_blade = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	=> end
+- A primary fraction
+	Nothing happens. Seems incorrect...
+	=> sword_middle_blade
+	
 ~ sword_top_blade
 
 set in_dialogue = true
 Another glowing piece rests atop a pedestal, its surface covered in runes.
+% => sword_top_blade_q1
+% => sword_top_blade_q2
+~ sword_top_blade_q1
 It reads "If I have two fractions with different denominators, how do I start adding them together?"
 - Convert them to mixed fractions.
 	The runes flicker briefly but fade. Incorrect...
@@ -101,7 +183,20 @@ It reads "If I have two fractions with different denominators, how do I start ad
 	Nothing changes. That doesn't seem right...
 	=> sword_top_blade
 => end
-
+~ sword_top_blade_q2
+"Fractions with different denominators are called what?"
+- Equivalent fractions
+	The runes flicker briefly but fade. Incorrect...
+	=> sword_top_blade
+- Dissimilar fractions
+	Sword Top Blade: The runes glow brightly. You carefully take out a sword shard. Well done!
+	set sword_top_blade = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+- Reciprocal fractions
+	The runes flicker briefly but fade. Incorrect...
+	=> sword_top_blade
 ~ end
 set in_dialogue = false
 => END

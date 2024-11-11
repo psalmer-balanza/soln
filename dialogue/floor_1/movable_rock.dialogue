@@ -5,100 +5,107 @@ set current_quest = "movable_rock"
 A large rock blocks your path, and a magical inscription appears on its surface.  
 For some reason, this inscription is quite familiar to you.
 To clear the path, solve this riddle inscribed on the rock:
-% => traveler_addition_question
-% => another_possible_question
-% => another_possible_question_2
-% => another_possible_question_3
-% => another_possible_question_4
+% => rock_question_one
+% => rock_question_two
+% => rock_question_three
+% => rock_question_four
+% => rock_question_five
 
-~ traveler_addition_question
-"To split the rock, we divide it into portions.  
-One traveler takes 1/4 of the rock's mass, and another takes 2/4.  
-How much of the rock's mass have we taken together?"
-
-- 3/4
-	Correct! The magical force recognizes your wisdom, and the path is cleared! 
-	set current_quest = "movable_rock_done"
-	=> end
-- 1/2
+~ rock_question_one
+“In a fraction, what do we call the number on top?”
+- The denominator
 	That's incorrect. You've miscalculated. The rock remains intact. [wait=1]
-	=> traveler_addition_question
-- 4/4
-	That's too much! The magic won't accept this. Try again. [wait=1]
-	=> traveler_addition_question
+	=> start
+- The divider
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- The numerator
+	Correct! The magical force recognizes your wisdom, and the path is cleared! 
+	set current_quest = "movable_rock_done"
+	=> end
 - What was that again?
-	=> traveler_addition_question
+	=> rock_question_one
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 => end
-~ another_possible_question
-"These are fractions that have the same denominators"
-- Equal Fractions
-	Nothing happens to the rock... Try again
-	=> another_possible_question
-- Similar Fractions
+
+~ rock_question_two
+“In a fraction, what do we call the number in the bottom?”
+- The denominator
 	Correct! The magical force recognizes your wisdom, and the path is cleared! 
 	set current_quest = "movable_rock_done"
-- Same Fractions
-	Nothing happens to the rock... Try again
-	=> another_possible_question
+	=> end
+- The divider
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- The numerator
+	That’s incorrect, nothing seems to have happened. Try again.
+	=> end
 - What was that again?
-	=> another_possible_question
+	=> rock_question_two
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 => end
-~ another_possible_question_2
-"A fraction with a numerator that is equal to or greater than the denominator is called what?"
-- A mixed fraction
-	Nothing happens to the rock... Try again
-	=> another_possible_question
-- An improper fraction
+
+~ rock_question_three
+“In a fraction, what does LCD stand for?”
+- Largest Common Denominator
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- Lowest Common Denominator
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- Least Common Denominator
 	Correct! The magical force recognizes your wisdom, and the path is cleared! 
 	set current_quest = "movable_rock_done"
-- A similar fraction
-	Nothing happens to the rock... Try again
-	=> another_possible_question
+	=> end
 - What was that again?
-	=> another_possible_question
+	=> rock_question_three
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 => end
-~ another_possible_question_3
-"A fraction with a numerator of 1 is called a what?"
-- A base fraction
-	Nothing happens to the rock... Try again
-	=> another_possible_question
-- A unit fraction
+
+~ rock_question_four
+“In a fraction, how do you get the LCD of two different fractions?”
+- Multiply the two denominators together to find the LCD.
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- Identify the smallest number that both denominators can divide into evenly
 	Correct! The magical force recognizes your wisdom, and the path is cleared! 
 	set current_quest = "movable_rock_done"
-- A primary fraction
-	Nothing happens to the rock... Try again
-	=> another_possible_question
+	=> end
+- Add the two denominators together to find the LCD
+	The inscription fades away. Try again. [wait=1]
+	=> start
 - What was that again?
-	=> another_possible_question
+	=> rock_question_four
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
 => end
-~ another_possible_question_4
-"Fractions with different denominators are called what?"
-- Equivalent fractions
-	Nothing happens to the rock... Try again
-	=> another_possible_question
-- Dissimilar fractions
+
+~ rock_question_five
+“What does GCF stand for?”
+- Greatest Common Factor
 	Correct! The magical force recognizes your wisdom, and the path is cleared! 
 	set current_quest = "movable_rock_done"
-- Reciprocal fractions
-	Nothing happens to the rock... Try again
-	=> another_possible_question
+	=> end
+- Greatest Common Frequency
+	The inscription fades away. Try again. [wait=1]
+	=> start
+- Greatest Common Factorial
+	The inscription fades away. Try again. [wait=1]
+	=> start
 - What was that again?
-	=> another_possible_question
+	=> rock_question_five
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
+=> end
+
 => end
 ~ end
 set disable_rock_removed = true
