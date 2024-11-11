@@ -25,6 +25,7 @@ Global="*res://helpers/global.gd"
 DialogueState="*res://helpers/dialogue_state.gd"
 QuestionsLoader="*res://helpers/questions_loader.gd"
 Statistics="*res://helpers/statistics.gd"
+StateLoader="*res://helpers/save_state_loader.gd"
 
 [dialogue_manager]
 
