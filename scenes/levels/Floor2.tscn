@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://32iomad28t5n"]
+[gd_scene load_steps=52 format=4 uid="uid://32iomad28t5n"]
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://scenes/levels/test_floor1/All in one ground.png" id="2_i7bpm"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
 [ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
 [ext_resource type="PackedScene" uid="uid://c8j4ddys6yksg" path="res://scenes/characters_scenes/floor2_characters/Chip.tscn" id="22_r7m3a"]
-[ext_resource type="PackedScene" uid="uid://cluuh6dtpjbqg" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
+[ext_resource type="PackedScene" uid="uid://cimrebiogqofe" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
 [ext_resource type="Texture2D" uid="uid://ev3o8neo2yfn" path="res://assets/floor_2/chip assets.png" id="23_miwmk"]
 [ext_resource type="PackedScene" uid="uid://bwnfoc7koyfka" path="res://scenes/cutscenes/floor2/fire_pedestal.tscn" id="24_jvmvp"]
 [ext_resource type="PackedScene" uid="uid://de0fe00ap3hcd" path="res://scenes/cutscenes/floor2/elevator_to_floor3.tscn" id="26_4e2ct"]
@@ -1014,7 +1014,7 @@ tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAD//yAAAwAAAAIAAAD//x4AAwAAAAE
 tile_set = ExtResource("5_qdfio")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(3315, -275)
+position = Vector2(33, 2)
 
 [node name="tooltipls" type="Node2D" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)

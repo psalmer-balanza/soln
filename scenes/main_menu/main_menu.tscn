@@ -82,14 +82,6 @@ theme_override_font_sizes/font_size = 25
 text = "LOAD GAME"
 flat = true
 
-[node name="options" type="Button" parent="buttons"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r403t")
-theme_override_font_sizes/font_size = 25
-text = "SETTINGS
-"
-flat = true
-
 [node name="quit" type="Button" parent="buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r403t")
@@ -100,5 +92,4 @@ flat = true
 
 [connection signal="pressed" from="buttons/new game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="buttons/load game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="buttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
