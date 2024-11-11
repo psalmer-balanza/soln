@@ -9,7 +9,7 @@ else:
 ~ first_dialogue
 set in_dialogue = true
 Robot: It's another flooded room...
-
+set current_quest = "water_room_2"
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
 set current_quest = "water_room_2"
 => end
@@ -22,6 +22,8 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogg
 
 ~ success_dialogue
 Successfully cleared the water.
+set player_badges["bucket2"] = true
+(You have received your second bucket badge!)
 set disable_water_logged_1_quest = true
 => end
 

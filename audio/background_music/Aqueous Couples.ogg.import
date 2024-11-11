@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1753fuf8hhbp"
+path="res://.godot/imported/Aqueous Couples.ogg-73cc92b233cf82e1c1293f8bef74ce51.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/Aqueous Couples.ogg"
+dest_files=["res://.godot/imported/Aqueous Couples.ogg-73cc92b233cf82e1c1293f8bef74ce51.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

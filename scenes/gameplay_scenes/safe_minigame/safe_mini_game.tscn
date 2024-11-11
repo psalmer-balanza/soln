@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qj4ux4unjrtb"]
+[gd_scene load_steps=14 format=3 uid="uid://qj4ux4unjrtb"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.gd" id="1_68juf"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="1_b05pv"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="7_ciky7"]
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="8_o2j1d"]
+[ext_resource type="AudioStream" uid="uid://d2yeyatfvapw6" path="res://audio/background_music/007 Bond (Copyright Free Remix).ogg" id="9_edern"]
+[ext_resource type="AudioStream" uid="uid://b8np4hoqxna6" path="res://audio/sound_effects/floor2/Opening Metal Door.wav" id="10_ggml4"]
 
 [sub_resource type="Animation" id="Animation_hvgnm"]
 length = 0.001
@@ -229,6 +231,15 @@ offset_bottom = 195.269
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_edern")
+volume_db = -20.612
+autoplay = true
+
+[node name="CorrectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ggml4")
+volume_db = -14.991
 
 [connection signal="all_done" from="FractionProblem" to="." method="_on_fraction_problem_all_done"]
 [connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]

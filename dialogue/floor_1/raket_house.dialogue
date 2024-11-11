@@ -18,6 +18,7 @@ elif current_quest == "raket_sword_pieces_complete"
 	Raket: Great job, {{player_username}}!!!
 	Raket: Now that we have all the ore pieces, I can finally build this sword. 
 	Raket: Stand back! This may get hot. [wait=5] 
+	set current_quest = "sword_finished"
 	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set current_quest = "sword_finished"
 	=> end
@@ -50,7 +51,7 @@ elif current_quest == "raket_house_worded_complete"
 	Robot: What energy? 
 	Raket: That light on your chest.
 	Robot: Oh, What is this energy for? 
-	Raket: I don't know... but prophecy of The Guardian says “The one who holds the light, shall bring light to the world.” 
+	Raket: I don't know... but the Prophecy of The Guardian says “The one who holds the light, shall bring light to the world.” 
 	Raket: But that's all I know from that old thing.
 	Robot: Is there a way for me to know the rest of the prophecy? 
 	Raket: Yeah but you have to go to the top of the lighthouse to find out, 

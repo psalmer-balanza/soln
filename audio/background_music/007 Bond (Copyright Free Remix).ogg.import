@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2yeyatfvapw6"
+path="res://.godot/imported/007 Bond (Copyright Free Remix).ogg-dbdd0edd1898abe910abcfec323cdcbb.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/007 Bond (Copyright Free Remix).ogg"
+dest_files=["res://.godot/imported/007 Bond (Copyright Free Remix).ogg-dbdd0edd1898abe910abcfec323cdcbb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

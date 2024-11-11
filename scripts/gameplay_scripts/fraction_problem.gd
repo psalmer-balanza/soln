@@ -218,6 +218,8 @@ func _check_answer():
 		num_right_ans += 1
 		Global.is_simplified_tutorial = false
 		emit_signal("correct")
+		if DialogueState.current_quest == "water_room_1" or DialogueState.current_quest == "water_room_2" or DialogueState.current_quest == "water_room_3" or DialogueState.current_quest == "meeting_chip":
+			$"../CorrectSFX".play()
 		if Global.is_online:
 			Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 		next()

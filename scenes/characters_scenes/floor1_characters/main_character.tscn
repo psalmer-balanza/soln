@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://50xwge6vcpc3"]
+[gd_scene load_steps=66 format=3 uid="uid://50xwge6vcpc3"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
 [ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="2_n3dp3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://c7f6foub77gy8" path="res://assets/main_character/onscreen_badges/Flask Badge.png" id="11_ggigp"]
 [ext_resource type="Texture2D" uid="uid://bq3ljnky3w0vb" path="res://assets/main_character/onscreen_badges/Water Bucket 2 Badge.png" id="12_wlmo8"]
 [ext_resource type="Texture2D" uid="uid://b40abwlfk44mg" path="res://assets/main_character/onscreen_badges/Water Bucket 3 Badge.png" id="13_7y6ey"]
+[ext_resource type="Texture2D" uid="uid://wxgbwn41vkwu" path="res://assets/character_portraits/Original Robot.png" id="15_bfv3w"]
 [ext_resource type="Texture2D" uid="uid://bysfgt7c7ldcw" path="res://assets/main_character/main_character_game_over.png" id="21_l6q71"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak80i"]
@@ -521,6 +522,16 @@ offset_right = 378.5
 offset_bottom = 191.5
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("10_2wnpe")
+
+[node name="OriginalRobotBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
+visible = false
+layout_mode = 0
+offset_left = 202.75
+offset_top = 2.75
+offset_right = 266.75
+offset_bottom = 66.75
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_bfv3w")
 
 [node name="PauseScreen" type="Control" parent="UI"]
 visible = false

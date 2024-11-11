@@ -22,6 +22,7 @@ Wizard Rat: I’ll help you but you have to help me get to the upper floor.
 	Wizard Rat: We venture upwards! But be warned... the path there won't be easy.
 	Wizard Rat: Wizard Rat, AWAY!!!
 	set current_quest = "after_meeting_wizard_rat"
+	(The wizard rat disappears in the speed of light, making you wonder if he was even there in the first place)
 	Robot: Where did he just go???
 	=> end
 - No deal

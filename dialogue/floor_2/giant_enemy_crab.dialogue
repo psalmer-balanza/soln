@@ -1,5 +1,5 @@
 ~ start
-Current quest is {{current_quest}}
+
 if current_quest == "crab_boss":
 	=> crab_meeting
 elif current_quest == "crab_quiz_successful" or current_quest == "crab_quiz_after":
@@ -7,6 +7,7 @@ elif current_quest == "crab_quiz_successful" or current_quest == "crab_quiz_afte
 else
 	set in_dialogue = true
 	Shellbot: I AM THE ENEMY.
+	set current_quest = "crab_boss"
 	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn", "res://scenes/levels/Floor2.tscn")
 	set current_quest = "crab_boss"
 	=> end
@@ -28,12 +29,12 @@ Shellbot: Huh... well, you did it. I feel lighter already.
 Shellbot: Maybe you're more useful than you look. But don't think this makes us friends.
 Robot: I’m not here for friendship. The darkness is making everyone sick, and you’re needed. The Wizard Rat sent me.
 Shellbot: Well you did your part, so I’ll help you. [wait=0.5] Here, I’ve got some scrolls that might be useful. Let me read one to you.
-Shellbot: Long ago, there was a powerful chimera, the guardian of the Light. 
-Shellbot: Its body was a blend of many creatures—strong, fierce, and wise. 
-Shellbot: The chimera’s sole duty was to protect the Light that kept the darkness at bay, a force that sustained life across the land.
+Shellbot: "Long ago, there was a powerful protector, the Guardian of the Light." 
+Shellbot: "The guardian’s sole duty was to protect the Light that kept the darkness at bay, a force that sustained life across the land."
 Robot: What happened?
-Shellbot: One day, an evil sorcerer, driven by greed and ambition, sought the Light for himself. He waited until the chimera was weakened, then struck. The sorcerer twisted the light into something dark, corrupting everything in its path. 
-Shellbot: The chimera fought to regain the Light, but it was too late. The sorcerer vanished, taking the Light into the shadows…
+Shellbot: "One day, an evil sorcerer, driven by greed and ambition, sought the Light for himself. He waited until the chimera was weakened, then struck."
+Shellbot: "The sorcerer twisted the light into something dark, corrupting everything in its path."" 
+Shellbot: "The guardian fought to regain the Light, but it was too late. The sorcerer vanished, taking the Light into the shadows…"
 Robot: Wait, what happened next?
 Shellbot: That’s all the scroll says. But if this story is true, then go little one. Find the other scrolls and get more information.
 => end

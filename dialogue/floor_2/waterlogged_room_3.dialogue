@@ -10,7 +10,7 @@ else:
 set in_dialogue = true
 Robot: Is this the wizard rat's trial?
 Robot: I've done this twice already...
-
+set current_quest = "water_room_3"
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
 set current_quest = "water_room_3"
 => end
@@ -22,7 +22,9 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogg
 => end
 
 ~ success_dialogue
-Successfully cleared the water.
+Robot: Was that really the wizard rat's trial? I guess I'll go find his training area now.
+set player_badges["bucket3"] = true
+(You have received your third bucket badge!)
 set disable_water_logged_3_quest = true
 => end
 

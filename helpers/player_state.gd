@@ -24,6 +24,7 @@ var player_badges = {
 	"bucket2": false,
 	"bucket3": false,
 	"crystal_ball": false,
+	"original_robot": false
 }
 
 func save_player_state(position: Vector2, current_scene: String):

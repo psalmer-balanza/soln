@@ -22,6 +22,7 @@ Chip: [wait=1] The wizard rat knows more, but we need Cheddar Change to convince
 Chip: I found Cheddar Change a while back but it's stuck inside this vault. 
 Chip: You know how to solve these problems right? Can you open it for me?
 - Ok
+	set current_quest = "meeting_chip"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/safe_minigame/safe_mini_game.tscn" ,"res://scenes/levels/Floor2.tscn")
 	set current_quest = "meeting_chip"
 	=> end
@@ -46,7 +47,11 @@ Chip: Wanna try again?
 ~ worded_done_dialogue
 Chip: Yes this is it! This is the Cheddar Change!
 Chip: It's all yours! Now go and find that wizard rat!
-(You received a Cheddar Change badge!)
+Chip: One more thing, you can have this old trinket of mine, it used to belong to the wizard.
+Chip: I'm not sure what you could do with it though...
+Robot: Thanks!
+(You received a Flask badge!)
+set player_badges["flask"] = true
 set current_quest == "after_chip"
 set disable_chip_quest = true
 => end
