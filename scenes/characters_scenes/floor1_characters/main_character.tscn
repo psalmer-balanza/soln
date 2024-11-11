@@ -657,6 +657,7 @@ debug_color = Color(0.696507, 0.480085, 0.335533, 0.156863)
 position = Vector2(1, 7)
 color = Color(0.988235, 0.968627, 0.847059, 1)
 energy = 0.5
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_htlf5")
 texture_scale = 2.0
 
