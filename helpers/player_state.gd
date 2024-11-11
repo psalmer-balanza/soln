@@ -10,7 +10,7 @@ var player_in_dialogue: bool = false
 # player details
 var player_username: String = "Sol'n"
 var classroom_id = 1
-var student_id = 1
+var student_id = 3
 
 var player_badges = {
 	"shiny_rock": false,
