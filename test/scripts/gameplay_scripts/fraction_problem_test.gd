@@ -5,17 +5,7 @@ extends GdUnitTestSuite
 @warning_ignore('return_value_discarded')
 
 # TestSuite generated from
-const __source = 'res://scripts/gameplay_scripts/fraction_problem.gd'
-
-func mock_check_answer():
-	pass
-
-func mock_display_question():
-	pass
-
-func mock_next():
-	pass
-
+const __source = 'res://test/scripts/gameplay_scripts/fraction_addition_gameplay_test.gd'
 
 func test__check_answer_is_zero() -> void:
 	# remove this line and complete your test
@@ -48,7 +38,7 @@ func test__check_answer_wrong_denom() -> void:
 	
 	assert_str(test_script.result_display.text)
 	assert_signal(test_script).is_emitted("incorrect")
-	
+
 func test__check_answer_wrong_nume() -> void:
 	# remove this line and complete your test
 	var test_script = auto_free(preload(__source).new())
@@ -69,16 +59,20 @@ func test__check_answer_correct() -> void:
 	# remove this line and complete your test
 	
 	var test_script = auto_free(preload(__source).new())
+	var temp_parent = Node.new()
 	
 	test_script.result_display = Label.new()
 	add_child(test_script.result_display)
-	
-	
+
+
 	var fraction: Array[int] = [5,3]
 	var cor_ans: Array[int] = [5,3]
 	
 	test_script.num_input = TextEdit.new()
 	test_script.denum_input = TextEdit.new()
+	
+	temp_parent.add_child(test_script.num_input)
+	temp_parent.add_child(test_script.denum_input)
 	
 	test_script.num_input.text = "5"
 	test_script.denum_input.text = "3"
@@ -87,6 +81,11 @@ func test__check_answer_correct() -> void:
 	test_script.num2 = TextEdit.new()
 	test_script.denum1 = TextEdit.new()
 	test_script.denum2 = TextEdit.new()
+	
+	temp_parent.add_child(test_script.num1)
+	temp_parent.add_child(test_script.denum1)
+	temp_parent.add_child(test_script.num2)
+	temp_parent.add_child(test_script.denum2)
 	
 	test_script.num1.text = "5"
 	test_script.num2.text = "2"
@@ -100,6 +99,8 @@ func test__check_answer_correct() -> void:
 	assert_str(test_script.result_display.text)
 	assert_signal(test_script).is_emitted("correct")
 	
+	temp_parent.queue_free()
+
 func test_simplify_fraction() -> void:
 	var test_script = auto_free(preload(__source).new())
 	assert_array(test_script.simplify_fraction(5,10)).is_equal([1,2])
@@ -130,6 +131,11 @@ func test_addition() -> void:
 	test_script.denum1 = LineEdit.new()
 	test_script.denum2 = LineEdit.new()
 	
+	add_child(test_script.num1)
+	add_child(test_script.denum1)
+	add_child(test_script.num2)
+	add_child(test_script.denum2)
+	
 	test_script.num1.text = "3"
 	test_script.denum1.text = "4"
 	test_script.num2.text = "1"
@@ -138,6 +144,11 @@ func test_addition() -> void:
 	test_script._addition()
 	
 	assert_array(correct_answer).is_equal([1,1])
+	
+	test_script.num1.queue_free()
+	test_script.num2.queue_free()
+	test_script.denum1.queue_free()
+	test_script.denum2.queue_free()
 	
 func test_subtraction() -> void:
 	var test_script = auto_free(preload(__source).new())
@@ -149,6 +160,11 @@ func test_subtraction() -> void:
 	test_script.denum1 = LineEdit.new()
 	test_script.denum2 = LineEdit.new()
 	
+	add_child(test_script.num1)
+	add_child(test_script.denum1)
+	add_child(test_script.num2)
+	add_child(test_script.denum2)
+	
 	test_script.num1.text = "3"
 	test_script.denum1.text = "4"
 	test_script.num2.text = "1"
@@ -157,4 +173,9 @@ func test_subtraction() -> void:
 	test_script._subtraction()
 	
 	assert_array(correct_answer).is_equal([1,2])
+	
+	test_script.num1.queue_free()
+	test_script.num2.queue_free()
+	test_script.denum1.queue_free()
+	test_script.denum2.queue_free()
 	
