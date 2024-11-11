@@ -5,11 +5,6 @@ set current_quest = "movable_rock"
 A large rock blocks your path, and a magical inscription appears on its surface.  
 For some reason, this inscription is quite familiar to you.
 To clear the path, solve this riddle inscribed on the rock:
-% => rock_question_one
-% => rock_question_two
-% => rock_question_three
-% => rock_question_four
-% => rock_question_five
 
 ~ rock_question_one
 “In a fraction, what do we call the number on top?”
@@ -28,7 +23,6 @@ To clear the path, solve this riddle inscribed on the rock:
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-=> end
 
 ~ rock_question_two
 “In a fraction, what do we call the number in the bottom?”
@@ -47,8 +41,7 @@ To clear the path, solve this riddle inscribed on the rock:
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-=> end
-
+	
 ~ rock_question_three
 “In a fraction, what does LCD stand for?”
 - Largest Common Denominator
@@ -66,7 +59,6 @@ To clear the path, solve this riddle inscribed on the rock:
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-=> end
 
 ~ rock_question_four
 “In a fraction, how do you get the LCD of two different fractions?”
@@ -85,7 +77,6 @@ To clear the path, solve this riddle inscribed on the rock:
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-=> end
 
 ~ rock_question_five
 “What does GCF stand for?”
@@ -104,7 +95,6 @@ To clear the path, solve this riddle inscribed on the rock:
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-=> end
 
 => end
 ~ end
