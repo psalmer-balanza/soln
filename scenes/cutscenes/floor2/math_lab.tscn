@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cimrebiogqofe"]
+[gd_scene load_steps=9 format=3 uid="uid://cluuh6dtpjbqg"]
 
 [ext_resource type="Texture2D" uid="uid://dyeaqlwgegosc" path="res://assets/floor_2/math lab (2).png" id="1_pit2r"]
 
@@ -59,4 +59,4 @@ position = Vector2(267, 321)
 scale = Vector2(0.46, 0.46)
 sprite_frames = SubResource("SpriteFrames_4cikn")
 autoplay = "default"
-frame_progress = 0.146253
+frame_progress = 0.910559

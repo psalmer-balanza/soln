@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdf7d46axwoiq"]
+[gd_scene load_steps=4 format=3 uid="uid://drwponpv2ow46"]
 
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="1_jbt2q"]
 [ext_resource type="Script" path="res://scenes/ui/thankyou.gd" id="1_xi1eh"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_fo605"]
-[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/Christian Music Instrumental.ogg" id="3_teh2i"]
 
 [node name="ThankYou" type="Control"]
 layout_mode = 3
@@ -22,7 +21,7 @@ offset_right = 2053.0
 offset_bottom = 1158.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.207843, 0.168627, 0.25098, 0.8)
+color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -71,7 +70,7 @@ text = "CONGRATULATIONS
 Thank you for bringing
 light back to the world.
 
-Thank you for playing"
+Thank You for playing"
 horizontal_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]
@@ -89,8 +88,5 @@ theme_override_fonts/font = ExtResource("2_fo605")
 theme_override_font_sizes/font_size = 50
 text = "MAIN MENU"
 flat = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_teh2i")
 
 [connection signal="pressed" from="MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/MainMenu" to="." method="_on_main_menu_pressed"]
