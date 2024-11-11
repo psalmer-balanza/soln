@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btejnuyvn865g"]
+[gd_scene load_steps=10 format=3 uid="uid://btejnuyvn865g"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/waterlogged_room.gd" id="1_tkp4a"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_lxvcq"]
@@ -8,31 +8,37 @@
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="6_ayggq"]
 [ext_resource type="AudioStream" uid="uid://lshj1vlythct" path="res://audio/sound_effects/floor2/Water Drain SFX.wav" id="7_m3mik"]
 [ext_resource type="AudioStream" uid="uid://c1753fuf8hhbp" path="res://audio/background_music/Aqueous Couples.ogg" id="7_osn0o"]
+[ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="9_5hb1f"]
 
 [node name="waterlogged_room" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 106.0
+offset_top = 68.0
+offset_right = 106.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_tkp4a")
 
 [node name="bg" type="ColorRect" parent="."]
 self_modulate = Color(0.729412, 0.729412, 0.729412, 1)
 layout_mode = 0
-offset_left = -32.0
-offset_top = -13.0
-offset_right = 1052.0
-offset_bottom = 605.0
+offset_left = -149.0
+offset_top = -96.0
+offset_right = 1155.0
+offset_bottom = 645.0
 color = Color(0.207843, 0.168627, 0.25098, 1)
 
 [node name="board" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 44.0
-offset_right = 170.0
-offset_bottom = 107.0
+offset_left = 76.6667
+offset_top = 59.5556
+offset_right = 159.667
+offset_bottom = 122.556
 scale = Vector2(8, 8)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="board"]
@@ -45,18 +51,18 @@ patch_margin_bottom = 8
 
 [node name="FractionProblem" parent="." instance=ExtResource("3_o28af")]
 layout_mode = 0
-offset_left = 118.0
-offset_top = 101.0
-offset_right = 519.0
-offset_bottom = 378.0
+offset_left = 107.667
+offset_top = 116.556
+offset_right = 508.667
+offset_bottom = 393.556
 scale = Vector2(1.5, 1.5)
 
 [node name="water_level" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 773.0
-offset_top = 27.0
-offset_right = 1012.0
-offset_bottom = 564.0
+offset_left = 762.667
+offset_top = 42.5556
+offset_right = 1001.67
+offset_bottom = 579.556
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="water_level"]
 layout_mode = 2
@@ -83,6 +89,14 @@ volume_db = -17.802
 stream = ExtResource("7_osn0o")
 volume_db = -18.739
 autoplay = true
+
+[node name="EnergyBar" parent="." instance=ExtResource("9_5hb1f")]
+layout_mode = 1
+offset_left = -253.444
+offset_top = -262.444
+offset_right = -253.444
+offset_bottom = -262.444
+scale = Vector2(5, 5)
 
 [connection signal="correct" from="FractionProblem" to="." method="_on_fraction_problem_correct"]
 

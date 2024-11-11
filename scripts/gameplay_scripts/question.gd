@@ -50,27 +50,28 @@ func _ready():
 		## questions for final boss
 		elif DialogueState.current_quest == "final_boss_quest":
 			mc_questions = [
-			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
-			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
-			["What is one fifth + two fifths?", "1/5", "3/5", "4/5", "1", "3/5"],
-			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
-			["What does GCD stand for?", "Great Common Denominator", "Greatest Common Denominator", "Greatest Common Difference", "Greatest Common Divisor", "Greatest Common Divisor"],
-			["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
-			["What is 1/3 + 2/3?", "1/3", "1", "2", "3/3", "1"],
-			["Which fraction is bigger: 3/4 or 2/3?", "They are equal", "2/3", "3/4", "Neither", "3/4"],
-			["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
-			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"],
-			["What is 1/2 - 1/4?", "1/2", "1/4", "1/8", "3/4", "1/4"],
-			["You start with 5/6 of a pie and give away 1/2 of the pie to a neighbor. How much fraction of pie, you have left?", "1/6", "1/3", "1/4", "1/2", "1/3"],
-			["What is 4/5 - 1/5?", "2/5", "3/5", "1/5", "4/5", "3/5"],
-			["What is 2/3 - 1/6?", "1/6", "1/2", "1/3", "5/6", "1/2"],
-			["What does LCD stand for?", "Lowest Common Divisor", "Least Common Denominator", "Levelled Common Divisor", "Lower Common Divisor", "Least Common Denominator"],
-			["What is 2/2 - 1/2?", "1/2", "1/4", "3/4", "2/4", "1/2"],
-			["What is 5/6 - 1/3?", "1/2", "1/3", "2/3", "5/6", "1/2"],
-			["What is 3/4 - 1/4?", "2/4", "1/2", "3/4", "1", "1/2"],
-			["What is 7/10 - 3/10?", "1/5", "4/10", "7/10", "1/2", "4/10"],
-			["What is 3/4 - 1/2?", "1/4", "1/2", "1/3", "2/4", "1/4"]
+				["If you have a fraction 5/6, what is the numerator?", "6", "5", "10", "8", "5"],
+				["You share one thirds of a pizza with a friend and then add another one thirds of another pizza. How much pizza do you have in total?", "1/2", "2/3", "3/3", "4/3", "2/3"],
+				["Saisai ate one-fifth of a cake, and his friend ate two-fifths. Together, how much of the cake did they eat?", "1/5", "3/5", "4/5", "1", "3/5"],
+				["Robob poured 2/6 of juice into a glass and later added 1/6 more. How much juice is in the glass now?", "3/6", "4/6", "1/6", "1/2", "1/2"],
+				["In math, what does GCD stand for?", "Great Common Denominator", "Greatest Common Denominator", "Greatest Common Difference", "Greatest Common Divisor", "Greatest Common Divisor"],
+				["Chip cut her apple in half (1/2) and then cut another apple in half (2/4). How much apple does she have in total?", "3/4", "1", "1/2", "2/4", "1"],
+				["If you add 1/3 of a cup of flour to 2/3 of a cup of flour, how much do you have altogether?", "1/3", "1", "2", "3/3", "1"],
+				["You have 3/4 of a chocolate bar and your friend has 2/3 of another chocolate bar. Which fraction represents the larger portion?", "They are equal", "2/3", "3/4", "Neither", "3/4"],
+				["If 3/8 is equal to (blank)/24, what should the numerator be?", "6", "9", "12", "15", "9"],
+				["If you drink 1/6 of a bottle of water and later drink another 1/3, how much water have you consumed?", "1/2", "2/6", "3/6", "4/6", "1/2"],
+				["You had half (1/2) of a sandwich, but gave away one-quarter (1/4) to a friend. What fraction of the sandwich is left?", "1/2", "1/4", "1/8", "3/4", "1/4"],
+				["You started with 5/6 of a pie and shared half of it (1/2) with a neighbor. How much pie do you have left?", "1/6", "1/3", "1/4", "1/2", "1/3"],
+				["If you have a fraction ten over fifteen, what is the denominator?", "15", "5", "10", "8", "10"],
+				["If you have two-thirds (2/3) of a cup of milk and remove one-sixth (1/6) of it, how much milk is left?", "1/6", "1/2", "1/3", "5/6", "1/2"],
+				["In fractions, what does LCD stand for?", "Lowest Common Divisor", "Least Common Denominator", "Levelled Common Divisor", "Lower Common Divisor", "Least Common Denominator"],
+				["You have two halves (2/2) of a pie and give one-half away. How much pie do you have left?", "1/2", "1/4", "3/4", "2/4", "1/2"],
+				["If you start with 5/6 of a tank of gas and use one-third (1/3) of it, how much gas remains?", "1/2", "1/3", "2/3", "5/6", "1/2"],
+				["A recipe requires three-quarters (3/4) of a cup of sugar, but you only use one-quarter (1/4) of a cup. How much sugar do you have left?", "2/4", "1/2", "3/4", "1", "1/2"],
+				["You have 7/10 of a chocolate bar and eat 3/10. How much chocolate is left?", "1/5", "4/10", "7/10", "1/2", "4/10"],
+				["What denominator would make 4/7 equivalent to 12/(blank)?", "14", "24", "18", "21", "21"],
 			]
+
 		# questions for crab
 		else:
 			print("Current quest is: ", DialogueState.current_quest)
