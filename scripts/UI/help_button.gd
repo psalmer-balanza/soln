@@ -29,7 +29,7 @@ func _on_button_down():
 		# Answer can be simplified
 		if Global.is_simplified_tutorial:
 			quick_tutorial_9.visible = true
-			label_9.text = "To simplify, identify the common number that the numerator and denominator can be divided with."
+			label_9.text = "To simplify, identify the Greatest Common Divisor (GCD) that the numerator and denominator can be divided with."
 			return
 		
 		# Tutorial for same denominator
