@@ -22,8 +22,8 @@ var fraction_questions_house = [
 
  # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on
-@onready var correct_ans_count = 0
-@onready var wrong_ans_count = 0
+@onready var num_right_ans = 0
+@onready var num_wrong_ans = 0
 @onready var unsimplified_ans_count = 0
 
 # Nodes for user inputs and display
@@ -111,6 +111,10 @@ func initiate_questions():
 
 # Display the current question and update the label text
 func display_current_question():
+	# reset right and wrong answer count
+	num_right_ans = 0
+	num_wrong_ans = 0
+	
 	print(fraction_questions[current_question_index])
 	var current_question = fraction_questions[current_question_index]
 	#var first_fraction = current_question[0]
@@ -142,6 +146,7 @@ func _on_submit_answer_button_down():
 		# Check if the inputs are empty
 		if numerator_answer.text == "" or denominator_answer.text == "":
 			display_answer.text = "Please fill in both the numerator and denominator."
+			num_wrong_ans += 1
 			emit_signal("incorrect")
 			print("Empty input detected.")
 			return  # Exit the function if any input is empty
@@ -149,6 +154,7 @@ func _on_submit_answer_button_down():
 		# Validate the numerator and denominator inputs
 		elif !is_valid_integer(numerator_answer.text) or !is_valid_integer(denominator_answer.text):
 			display_answer.text = "Please enter valid numbers."
+			num_wrong_ans += 1
 			emit_signal("incorrect")
 			print("Invalid input detected: Non-integer value entered.")
 			return  # Exit the function if input is invalid
@@ -159,6 +165,7 @@ func _on_submit_answer_button_down():
 		
 	elif !input_matches_question(first_numerator, first_denominator, second_numerator, second_denominator):
 		display_answer.text = "Incorrect fractions. Please input the correct fractions."
+		num_wrong_ans += 1
 		emit_signal("incorrect")
 
 
@@ -248,21 +255,21 @@ func fraction_addition_checker(first_numerator: int, first_denominator: int, sec
 # Handle correct answer
 func handle_correct(message: String):
 	display_answer.text = message
+	num_right_ans += 1
 	emit_signal("correct")
-	correct_ans_count += 1
+	Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 	next_question_or_finish() # Move to the next question or finish the exercise
 
 # Handle correct unsimplified answer
 func handle_correct_unsimplified(message: String):
 	display_answer.text = message
 	emit_signal("correct")
-	unsimplified_ans_count += 1
 
 # Handle incorrect answer
 func handle_incorrect(message: String):
 	display_answer.text = message
+	num_wrong_ans += 1
 	emit_signal("incorrect")
-	wrong_ans_count += 1
 
 # Function to check for the simplified answer
 func check_simplified_form(correct_numerator: int, correct_denominator: int) -> bool:
@@ -282,27 +289,9 @@ func next_question_or_finish():
 		current_question_index += 1  # Move to the next question
 		display_current_question()  # Update the UI with the next question
 	else:
-		print("Simple addition correct answers: ", correct_ans_count)
-		print("Simple addition wrong answers: ", wrong_ans_count)
-		var total_ans_count = correct_ans_count + wrong_ans_count
-		print("Simple addition total attempts: ", total_ans_count)
-		print("Simple addition unsimplified answers: ", unsimplified_ans_count)
-		print("What I need to do now is map each of these attempts per question,
-		connect to question IDs too")
-		print("Current minigame id: ", current_minigame_id)
 		disable_inputs()
 		question_label.text = "All questions completed!\nReturning to the world..."
-		
 		await get_tree().create_timer(3.0).timeout
-		
-		var statistics_data = {
-			"username": current_player_username,
-			"minigame_id": current_minigame_id,
-			"num_correct_ans": correct_ans_count,
-			"num_wrong_ans": wrong_ans_count,
-			"total_attempts": total_ans_count,
-			"num_unsimplified_ans": unsimplified_ans_count,
-		}
 		return_to_world()
 
 # Disabling inputs
@@ -340,6 +329,10 @@ func _on_correct_answer():
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
 	Global.user_energy -= 1
+	if Global.user_energy == 0:
+		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
+
+	
 	$WrongAnswerSFX.play()
 	if current_npc == "raket":
 		npc_sprite.play("raket_wrong")

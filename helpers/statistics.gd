@@ -9,22 +9,9 @@ var current_url: String
 func _ready() -> void:
 	pass # Replace with function body.
 
-func update_saisai_statistics(num_right_attempts, num_wrong_attempts):
-	minigameID = 1
-	questionID = 1 # NEEDS TO BE UPDATED 
-	post_question_score(current_username, questionID, minigameID, num_right_attempts, num_wrong_attempts)
-
-func update_dead_robot_statistics(num_right_attempts, num_wrong_attempts):
-	minigameID = 2
-	questionID = 2 # NEEDS TO BE UPDATED 
-	post_question_score(current_username, questionID, minigameID, num_right_attempts, num_wrong_attempts)
-
-func post_question_score(username, questionID, minigameID, num_right_attempts, num_wrong_attempts):
-	if minigameID == 1:
-		current_url = "http://"+ Global.host_ip +":3000/game/update/saisai/statistics"
-	elif minigameID == 2:
-		current_url = "http://"+ Global.host_ip +":3000/game/update/robot/statistics"
-
+func post_fraction_statistics(classroom_id, student_id, question_id, minigame_id, num_right_attempts, num_wrong_attempts):
+	var url = "http://"+ Global.host_ip +":3000/game/add/statistics/fraction"
+	
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
@@ -32,33 +19,13 @@ func post_question_score(username, questionID, minigameID, num_right_attempts, n
 	var post_data = {
 		"classroom_id": PlayerState.classroom_id,
 		"student_id": PlayerState.student_id,
-		"question_id": questionID,
-		"minigame_id": minigameID,
+		"question_id": question_id,
+		"minigame_id": minigame_id,
 		"num_right_attempts": num_right_attempts,
 		"num_wrong_attempts": num_wrong_attempts,
 	}
 	
-	var json_body = JSON.stringify(post_data)
-	var headers = ["Content-type: application/json"]
-	
-	# execute POST request
-	var error = http_request.request(current_url, headers, HTTPClient.METHOD_POST, json_body)
-	if error != OK:
-		print("error: unable to make request")
-
-
-func postQuizScore(studentID, classroomID, minigameID, score):
-	var url = "http://"+ Global.host_ip +":3000/game/add/statistics/quiz"
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(self._http_request_completed)
-	
-	var post_data = {
-		"ClassroomID": classroomID,
-		"MinigameID": minigameID,
-		"StudentID": studentID,
-		"Score": score
-	}
+	print(post_data)
 	
 	var json_body = JSON.stringify(post_data)
 	var headers = ["Content-type: application/json"]
@@ -67,8 +34,7 @@ func postQuizScore(studentID, classroomID, minigameID, score):
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
 	if error != OK:
 		print("error: unable to make request")
-		
-		
+
 func postQuizResponse(classroomID, minigameID, questionID, studentID, choiceID):
 	var url = "http://"+ Global.host_ip +":3000/game/add/statistics/quiz/response"
 	print(url)
@@ -91,7 +57,27 @@ func postQuizResponse(classroomID, minigameID, questionID, studentID, choiceID):
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
 	if error != OK:
 		print("error: unable to make request")
+		
+func postQuizScore(studentID, classroomID, minigameID, score):
+	var url = "http://"+ Global.host_ip +":3000/game/add/statistics/quiz"
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed.connect(self._http_request_completed)
 	
+	var post_data = {
+		"ClassroomID": classroomID,
+		"MinigameID": minigameID,
+		"StudentID": studentID,
+		"Score": score
+	}
+	
+	var json_body = JSON.stringify(post_data)
+	var headers = ["Content-type: application/json"]
+	
+	# execute POST request
+	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
+	if error != OK:
+		print("error: unable to make request")
 		
 # Called when the HTTP request is completed.
 func _http_request_completed(_result, response_code, _headers, body):

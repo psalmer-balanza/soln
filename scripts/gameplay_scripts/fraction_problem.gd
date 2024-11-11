@@ -65,6 +65,7 @@ var current_chosen_questions: Array = []
 var chosen_index_questions: Array[int] = []
 var num_right_ans: int
 var num_wrong_ans: int
+var minigame_id
 
 var question_index:int = 0
 # numerator and denominator of first and second fraction
@@ -100,14 +101,13 @@ func _ready() -> void:
 
 
 func _load_questions():
-	print("current quast is ", DialogueState.current_quest)
+	print("current quest is ", DialogueState.current_quest)
 	QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 	match DialogueState.current_quest:
 		"saisai_wheelbarrow":
 			QuestionsLoader.get_saisai_questions()
 		"dead_robots":
 			QuestionsLoader.get_robot_questions()
-		# ADD HERE OTHER FRACTION MINIGAMES
 		"water_room_1":
 			QuestionsLoader.get_water1_questions()
 		"meeting_chip":
@@ -123,7 +123,6 @@ func _on_questions_loaded():
 			questions = QuestionsLoader.saisai_questions
 		"dead_robots":
 			questions = QuestionsLoader.robot_questions
-		# ADD HERE OTHER FRACTION MINIGAMES
 		"water_room_1":
 			questions = QuestionsLoader.water1_questions
 		"meeting_chip":
@@ -149,6 +148,10 @@ func _display_question():
 				Statistics.update_dead_robot_statistics(num_right_ans, num_wrong_ans)
 		
 	else :
+		# reset num of right and wrong answers
+		num_right_ans = 0
+		num_wrong_ans = 0
+		
 		num_input.clear()
 		denum_input.clear()
 		
@@ -208,7 +211,6 @@ func _check_answer():
 		return
 	if not is_simplified():
 		result_display.text = "Answer can still be simplified"
-		num_right_ans += 1
 		Global.is_simplified_tutorial = true
 		return
 	if user_answer[0] == correct_answer[0] and user_answer[1] == correct_answer[1]:
@@ -216,6 +218,7 @@ func _check_answer():
 		num_right_ans += 1
 		Global.is_simplified_tutorial = false
 		emit_signal("correct")
+		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 		next()
 	else:
 		result_display.text = "Incorrect Answer"
@@ -305,3 +308,6 @@ func next():
 
 func _on_incorrect() -> void:
 	Global.user_energy -= 1
+	if Global.user_energy == 0:
+		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
+		
