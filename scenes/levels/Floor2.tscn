@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
 [ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
 [ext_resource type="PackedScene" uid="uid://c8j4ddys6yksg" path="res://scenes/characters_scenes/floor2_characters/Chip.tscn" id="22_r7m3a"]
-[ext_resource type="PackedScene" uid="uid://cluuh6dtpjbqg" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
+[ext_resource type="PackedScene" uid="uid://cimrebiogqofe" path="res://scenes/cutscenes/floor2/math_lab.tscn" id="23_gk4vy"]
 [ext_resource type="Texture2D" uid="uid://ev3o8neo2yfn" path="res://assets/floor_2/chip assets.png" id="23_miwmk"]
 [ext_resource type="PackedScene" uid="uid://bwnfoc7koyfka" path="res://scenes/cutscenes/floor2/fire_pedestal.tscn" id="24_jvmvp"]
 
