@@ -57,8 +57,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		timer.start()
 		animation.play("float")
 	if anim_name == "float_down":
-		get_tree().change_scene_to_file("res://scenes/ui/thankyou.tscn")
-		# change scene to game credits
+		get_tree().change_scene_to_file("res://scenes/ui/credits.tscn")
 
 func _on_timer_timeout() -> void:
 	animation.play("float_down")
