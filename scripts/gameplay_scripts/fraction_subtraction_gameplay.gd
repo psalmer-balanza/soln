@@ -226,7 +226,8 @@ func handle_correct(message: String):
 	display_answer.text = message
 	emit_signal("correct")
 	num_right_ans += 1
-	Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
+	if Global.is_online:
+		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 	next_question_or_finish() # Move to the next question or finish the exercise
 
 # Handle correct unsimplified answer
@@ -292,6 +293,6 @@ func _on_correct_answer():
 # Plays when the player inputs an incorrect answer
 func _on_incorrect_answer():
 	Global.user_energy -= 1
-	if Global.user_energy == 0:
+	if Global.user_energy == 0 and Global.is_online:
 		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 	$WrongAnswerSFX.play()

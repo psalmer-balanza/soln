@@ -257,7 +257,8 @@ func handle_correct(message: String):
 	display_answer.text = message
 	num_right_ans += 1
 	emit_signal("correct")
-	Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
+	if Global.is_online:
+		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[current_question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
 	next_question_or_finish() # Move to the next question or finish the exercise
 
 # Handle correct unsimplified answer
