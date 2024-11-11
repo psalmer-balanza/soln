@@ -19,12 +19,9 @@ var disable_water_logged_3_quest: bool = false
 var disable_chip_quest: bool = false
 var disable_rat_wizard_training_quest: bool = false
 
-#var current_npc: String = "none"
-#var sword_pieces_complete = false
+
 var raket_sword_complete: bool = false
-#var snake_defeated: bool = false
 var raket_sneaking_quest_complete: bool = false
-#var raket_house_quest_complete: bool = false
 
 var unlock_cave_collision: bool = false
 

@@ -5,8 +5,8 @@ extends Control
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("pause"):
-		PlayerState.player_in_dialogue = true
-		_pause()
+		if !DialogueState.in_dialogue:
+			_pause()
 
 func _pause():
 	show()
