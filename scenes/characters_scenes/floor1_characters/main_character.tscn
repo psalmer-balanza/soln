@@ -1,6 +1,6 @@
 [gd_scene load_steps=67 format=3 uid="uid://50xwge6vcpc3"]
 
-[ext_resource type="Script" path="res://scripts/character_scripts/main-character.gd" id="1_vdtrp"]
+[ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_vdtrp"]
 [ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="2_n3dp3"]
 [ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking.wav" id="3_4puxp"]
 [ext_resource type="Texture2D" uid="uid://b58l5o00kvl2b" path="res://assets/main_character/onscreen_badges/Cake Badge.png" id="3_jfdhw"]

@@ -22,5 +22,13 @@ func _on_back_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	print("main menu")
-	#add game save here
+	print(PlayerState.saved_scene)
+	print(Global.current_floor)
+	print(PlayerState.first_time_initializing_first_floor_scene)
+	var saved_position = $"../..".get_player_position()
+	var saved_scene = PlayerState.saved_scene
+	PlayerState.saved_position = saved_position
+	print("Current position: ", saved_position)
+	print("Current scene: ", saved_scene)
+	#part where you write the player stuff onto the database
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")

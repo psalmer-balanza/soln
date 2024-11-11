@@ -75,5 +75,17 @@ func change_scene_to_floor3():
 #EXIT LISTENER ON NOTIFICATION == 1006
 func _notification(notification) -> void:
 	if notification == 1006:
-		#part where you write the player stuff onto the database
+		var current_scene_before_exit =  get_tree().current_scene
+		var current_player_node = current_scene_before_exit.get_node("MainCharacter")
+		print("Player node found")
+		saved_position = current_player_node.get_player_position()  # Call the function from Player.gd
+		print("Current scene: ", saved_scene)
+		print("Current position: ", saved_position)
+		
+		
+		##part where you write the player stuff onto the database
+		
+		
 		print("Exiting game")
+		print("Player node not found")
+			
