@@ -8,9 +8,9 @@ signal incorrect
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A water tank was initially filled with two fifths of its capacity. After some usage, another three tenths was drained. How much water remains in the tank?", 2, 5, 3, 10],
-	["A pipe was carrying water to a water supply. In the morning, five sixths of the water supply was filled, but three eights was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8],
-	["Two sections of a pipeline had been filled. The first section was filled to five over six of its capacity, and the second section was drained to three over six of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6]
+	["A water tank was initially filled with two fifths of its capacity. After some usage, another three tenths was drained. How much water remains in the tank?", 2, 5, 3, 10, 0],
+	["A pipe was carrying water to a water supply. In the morning, five sixths of the water supply was filled, but three eights was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8, 1],
+	["Two sections of a pipeline had been filled. The first section was filled to five over six of its capacity, and the second section was drained to three over six of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6, 2]
 ]
 
 
@@ -18,7 +18,6 @@ var fraction_questions = [
 var current_question_index = 0  # Track which question the player is on
 @onready var num_right_ans = 0
 @onready var num_wrong_ans = 0
-@onready var unsimplified_ans_count = 0
 
 # Nodes for user inputs and display
 @onready var first_fraction_numerator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer/FirstFractionNumerator
@@ -35,7 +34,7 @@ var current_question_index = 0  # Track which question the player is on
 
 var is_simplified = false
 var current_player_username = PlayerState.player_username
-var current_minigame_id = 1 # PLACEHOLDER
+var current_minigame_id = 1
 var current_npc = ""
 var current_chosen_questions: Array = []
 var chosen_index_questions: Array[int] = []

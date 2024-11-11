@@ -8,15 +8,15 @@ signal incorrect
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A magician was cooking two batches of magical mushrooms. In the first batch, she used two over five of his total magic power, and in the second batch, he used three over ten​. How much magic power did she use in total?", 2, 5, 3, 10],  # First question fractions
-	["I had a stock of potions. I used three over eight​ of them in the morning and five over twelve in the afternoon. How many potions did I use in total?", 3, 8, 5, 12],  # Second question fractions
-	["I was baking pies. One pie was sliced into three sixths​, and another was sliced into five sixths​. How much pie do I have altogether?", 3, 6, 5, 6],  # Third question fractions
+	["A magician was cooking two batches of magical mushrooms. In the first batch, she used two over five of his total magic power, and in the second batch, he used three over ten​. How much magic power did she use in total?", 2, 5, 3, 10, 0],  # First question fractions
+	["I had a stock of potions. I used three over eight​ of them in the morning and five over twelve in the afternoon. How many potions did I use in total?", 3, 8, 5, 12, 1],  # Second question fractions
+	["I was baking pies. One pie was sliced into three sixths​, and another was sliced into five sixths​. How much pie do I have altogether?", 3, 6, 5, 6, 2],  # Third question fractions
 	]
 	
 var fraction_questions_house = [
-	["A wizard brewed two potions. For the first potion, he used one fourth of his magical herbs, and for the second potion, he used one half of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2],
-	["A sorceress enchanted two magical scrolls. She used three tenths of her spell ink on the first scroll and two fifths on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5],
-	["In a mystical forest, a fairy sprinkled one over three of her glitter on one flower and one over six on another. How much glitter did she use altogether?", 1, 3, 1, 6],
+	["A wizard brewed two potions. For the first potion, he used one fourth of his magical herbs, and for the second potion, he used one half of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2, 0],
+	["A sorceress enchanted two magical scrolls. She used three tenths of her spell ink on the first scroll and two fifths on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5, 1],
+	["In a mystical forest, a fairy sprinkled one over three of her glitter on one flower and one over six on another. How much glitter did she use altogether?", 1, 3, 1, 6, 2],
 ];
 
 
