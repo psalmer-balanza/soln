@@ -3,8 +3,8 @@ set in_dialogue = true
 set current_quest = "movable_rock"
 
 A large rock blocks your path, and a magical inscription appears on its surface.  
-For some reason, this inscription is quite familiar to you.
-To clear the path, solve this riddle inscribed on the rock:
+For some reason, these inscriptions is quite familiar to you.
+To clear the path, solve these riddles inscribed on the rock:
 
 ~ rock_question_one
 “In a fraction, what do we call the number on top?”
@@ -21,7 +21,7 @@ To clear the path, solve this riddle inscribed on the rock:
 	=> rock_question_one
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_one
 
 ~ rock_question_two
 “In a fraction, what do we call the number in the bottom?”
@@ -30,24 +30,24 @@ To clear the path, solve this riddle inscribed on the rock:
 	=> rock_question_three
 - The divider
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_two
 - The numerator
 	That’s incorrect, nothing seems to have happened. Try again.
-	=> end
+	=> rock_question_two
 - What was that again?
 	=> rock_question_two
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_two
 	
 ~ rock_question_three
 “In a fraction, what does LCD stand for?”
 - Largest Common Denominator
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_three
 - Lowest Common Denominator
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_three
 - Least Common Denominator
 	Correct! The magical force recognizes your wisdom, on to the next question!
 	=> rock_question_four
@@ -55,24 +55,24 @@ To clear the path, solve this riddle inscribed on the rock:
 	=> rock_question_three
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_three
 
 ~ rock_question_four
 “In a fraction, how do you get the LCD of two different fractions?”
 - Multiply the two denominators together to find the LCD.
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_four
 - Identify the smallest number that both denominators can divide into evenly
 	Correct! The magical force recognizes your wisdom, on to the next question!
 	=> rock_question_five
 - Add the two denominators together to find the LCD
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_four
 - What was that again?
 	=> rock_question_four
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_four
 
 ~ rock_question_five
 “What does GCF stand for?”
@@ -82,15 +82,15 @@ To clear the path, solve this riddle inscribed on the rock:
 	=> end
 - Greatest Common Frequency
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_five
 - Greatest Common Factorial
 	The inscription fades away. Try again. [wait=1]
-	=> start
+	=> rock_question_four
 - What was that again?
 	=> rock_question_five
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_five
 
 => end
 ~ end
