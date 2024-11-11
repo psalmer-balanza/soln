@@ -94,7 +94,7 @@ func test__check_answer_correct() -> void:
 	
 	test_script.user_answer = fraction
 	test_script.correct_answer = cor_ans
-	test_script._check_answer()
+	test_script._check_answer_original()
 	
 	assert_str(test_script.result_display.text)
 	assert_signal(test_script).is_emitted("correct")
@@ -103,7 +103,13 @@ func test__check_answer_correct() -> void:
 
 func test_simplify_fraction() -> void:
 	var test_script = auto_free(preload(__source).new())
+	var exRes = "Answer can still be simplified"
+	test_script.result_display = Label.new()
+	add_child(test_script.result_display)
+	
 	assert_array(test_script.simplify_fraction(5,10)).is_equal([1,2])
+	
+	assert_str(test_script.result_display.text).is_equal(exRes)
 
 func test_simplify_fraction_inc() -> void:
 	var test_script = auto_free(preload(__source).new())
@@ -112,9 +118,11 @@ func test_simplify_fraction_inc() -> void:
 func test_is_simplified_not() -> void:
 	var test_script = auto_free(preload(__source).new())
 	var fraction: Array[int] = [5,10]
+	
 	test_script.user_answer = fraction
 	assert_bool(test_script.is_simplified()).is_false()
-	
+
+
 func test_is_simplified() -> void:
 	
 	var test_script = auto_free(preload(__source).new())
@@ -144,6 +152,8 @@ func test_addition() -> void:
 	test_script._addition()
 	
 	assert_array(correct_answer).is_equal([1,1])
+	
+	test_script._check_answer()
 	
 	test_script.num1.queue_free()
 	test_script.num2.queue_free()

@@ -8,7 +8,7 @@ extends 'res://scripts/gameplay_scripts/fraction_problem.gd'
 func _check_answer():
 	print("Mock _check_answer called - Pass")
 
-func _next():
+func next():
 	print(" Mock _next called - Pass ")
 
 func _addition():
