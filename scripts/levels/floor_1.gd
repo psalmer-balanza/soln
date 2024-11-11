@@ -10,6 +10,9 @@ func _ready():
 			print("Restored player position: ", PlayerState.saved_position)
 	else:
 		print("First time initializing Floor1, starting at spawn area")
+		PlayerState.saved_scene = "res://scenes/levels/Floor1.tscn"
+		Global.current_floor = 1
+		PlayerState.first_time_initializing_first_floor_scene = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

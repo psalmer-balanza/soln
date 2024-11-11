@@ -10,4 +10,6 @@ func _ready():
 			print("Restored player position: ", PlayerState.saved_position)
 	else:
 		print("First time initializing Floor3, starting at spawn area")
+		PlayerState.saved_scene = "res://scenes/levels/Floor3.tscn"
 		Global.current_floor = 3
+		PlayerState.first_time_initializing_third_floor_scene = false
