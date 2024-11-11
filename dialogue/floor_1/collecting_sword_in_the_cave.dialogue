@@ -5,6 +5,7 @@ This glowing material must be one of the materials needed by Raket.
 You see a familiar inscription on the handle of the sword. Though it's a little more complicated this time.
 % => sword_bottom_q1
 % => sword_bottom_q2
+% => sword_bottom_q3
 ~ sword_bottom_q1
 It reads "What is the least common multiple (LCM) of 6 and 8?"
 - 48
@@ -19,10 +20,11 @@ It reads "What is the least common multiple (LCM) of 6 and 8?"
 	=> end
 - 36
 	Nothing happens, maybe that wasn't the right answer?
-	=> sword_bottom
+	=> end
 => end
+
 ~ sword_bottom_q2
-"To split the rock, we divide it into portions.  
+It reads "To split the rock, we divide it into portions.  
 One traveler takes 1/4 of the rock's mass, and another takes 2/4.  
 How much of the rock's mass have we taken together?"
 - 3/4
@@ -39,17 +41,39 @@ How much of the rock's mass have we taken together?"
 	Nothing happens, maybe that wasn't the right answer?
 	=> sword_bottom
 - What was that again?
-	=> sword_bottom
+	=> sword_bottom_q2
 	Nothing happens, maybe that wasn't the right answer?
-	=> sword_bottom
+	=> end
 => end
 
+~ sword_bottom_q3
+It reads "What should you do to dissimilar fractions before adding them?"
+- Convert to similar fractions
+	Sword Handle: The inscriptions glows, and you pick up what looks to be a sword handle. Well done!
+	set sword_bottom = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Robot: Woah the shard is shining brighter compared to earlier… I have the final shard!
+		(Looks like you have all the pieces, time to return to Raket!)
+		set current_quest = "raket_sword_pieces_complete"
+	=> end
+- Convert them to improper fractions
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+- Convert them to whole numbers
+	Nothing happens, maybe that wasn't the right answer?
+	=> sword_bottom
+- What was that again?
+	=> sword_bottom
+	Nothing happens, maybe that wasn't the right answer?
+	=> end
+=> end
 ~ sword_guard
 set in_dialogue = true
 You find a glowing material in the ground, resting among ancient carvings. 
 Another inscription is etched into its surface.
 % => sword_guard_q1
 % => sword_guard_q2
+% => sword_guard_q3
 ~ sword_guard_q1
 It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)?"
 - The missing denominator is 10
@@ -67,7 +91,7 @@ It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)
 	=> end
 => end
 ~ sword_guard_q2
-"These are fractions that have the same denominators"
+It reads "These are fractions that have the same denominators"
 - Equal Fractions
 	The sword guard remains unchanged. Seems incorrect...
 	=> sword_guard
@@ -82,14 +106,29 @@ It reads "What is the denominator needed to make 2/3 equal in value to 6/(blank)
 	The sword guard remains unchanged. Seems incorrect...
 	=> sword_guard
 => end
-
+~ sword_guard_q3
+It reads "What do you call a combination of a whole number and a fraction?"
+- Equivalent Fractionss
+	The shard’s light grows weaker. Try again.
+	=> sword_guard
+- Proper Fractions
+	Wrong. The shard falls back to the ground.
+	=> sword_guard
+- Mixed Fractions
+	Sword Guard: The inscription glows, and you lift what looks to be a sword guard. Nice work!
+	set sword_guard = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	=> end
+=> end
 ~ sword_lower_blade
 
 set in_dialogue = true
-You discover the another shiny material wedged between some rocks. 
-An inscription runs along its edge.
+Another piece lying on the ground covered in ruble. Something is inscribed on it.
 % => sword_lower_blade_q1
 % => sword_lower_blade_q2
+% => sword_lower_blade_q3
 ~ sword_lower_blade_q1
 It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10. What is their combined strength?"
 - 3/5 + 2/10 = 5/5
@@ -107,7 +146,7 @@ It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10
 	 => end
 => end 
 ~ sword_lower_blade_q2
-"A fraction with a numerator that is equal to or greater than the denominator is called what?"
+It reads "A fraction with a numerator that is equal to or greater than the denominator is called what?"
 - A mixed fraction
 	Nothing changes. Maybe that wasn't correct...
 	=> sword_lower_blade
@@ -122,7 +161,21 @@ It reads "This shard holds 3/5 of the sword's strength, while another holds 2/10
 	Nothing changes. Maybe that wasn't correct...
 	=> sword_lower_blade
 => end
-
+~ sword_lower_blade_q3
+It reads "To estimate the sum or difference of mixed numbers, round each mixed number to the nearest what?"
+- Denominator
+	Nothing changes. Maybe that wasn't correct...
+	=> sword_lower_blade
+- Whole number
+	Sword Lower Blade: Correct. The light shines brighter and brighter.
+	set sword_lower_blade = true
+	if sword_bottom and sword_guard and sword_lower_blade and sword_middle_blade and sword_top_blade
+		Looks like you have all the pieces, time to return to Raket!
+		set current_quest = "raket_sword_pieces_complete"
+	 => end
+- LCD
+	Nothing changes. Maybe that wasn't correct...
+	=> sword_lower_blade
 ~ sword_middle_blade
 set in_dialogue = true
 A glowing material lies partially buried. Ancient symbols are engraved on its surface.
