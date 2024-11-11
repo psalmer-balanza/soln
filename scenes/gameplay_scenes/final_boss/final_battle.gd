@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	
 	if Global.guardian_enemy_hp == 0:
 		DialogueState.current_quest = "final_boss_quiz_successful"
-		Statistics.postQuizScore(PlayerState.player_username, PlayerState.classroom_id, 5, Global.total_score)
+		Statistics.postQuizScore(PlayerState.student_id, PlayerState.classroom_id, 12, Global.total_score)
 		get_tree().change_scene_to_file("res://scenes/levels/Floor3.tscn")
 
 func _on_attack_pressed() -> void:
