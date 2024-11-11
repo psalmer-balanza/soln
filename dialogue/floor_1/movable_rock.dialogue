@@ -71,15 +71,15 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> end
 
 ~ rock_question_five
-“What does GCF stand for?”
-- Greatest Common Factor
+“What does GCD stand for?”
+- Greatest Common Divisor
 	Correct! The magical force finally recognizes your wisdom, and the path is cleared! 
 	set current_quest = "movable_rock_done"
 	=> end
-- Greatest Common Frequency
+- Greatest Common Difference
 	The inscription fades away. Try again. [wait=1]
 	=> rock_question_five
-- Greatest Common Factorial
+- Greatest Common Denominator
 	The inscription fades away. Try again. [wait=1]
 	=> rock_question_four
 - What was that again?
