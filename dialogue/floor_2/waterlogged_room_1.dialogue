@@ -7,11 +7,11 @@ else:
 	=> first_dialogue
 
 ~ first_dialogue
-set current_quest = "water_room_1"
 set in_dialogue = true
-This isn’t good, the robot was right, I can’t pass. 
+if current_quest == "after_robob"
+	This isn’t good, the robot was right, I can’t pass. 
 Robot: It’s flooded... What should I do?
-
+set current_quest = "water_room_1"
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogged_mini_game/waterlogged_room.tscn" ,"res://scenes/levels/Floor2.tscn")
 set current_quest = "water_room_1"
 => end
@@ -24,6 +24,8 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/waterlogg
 
 ~ success_dialogue
 Successfully cleared the water.
+set player_badges["bucket1"] = true
+(You have received your first bucket badge!)
 set disable_water_logged_1_quest = true
 => end
 

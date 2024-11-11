@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ctj1htmlnn4d5"]
+[gd_scene load_steps=46 format=4 uid="uid://ctj1htmlnn4d5"]
 
 [ext_resource type="Script" path="res://scenes/levels/eye.gd" id="1_6wk5b"]
 [ext_resource type="Script" path="res://scripts/levels/floor_3.gd" id="1_c0nld"]
@@ -16,8 +16,10 @@
 [ext_resource type="Resource" uid="uid://xd3vfwupcgjr" path="res://dialogue/floor_3/final_boss.dialogue" id="8_x3w2c"]
 [ext_resource type="Texture2D" uid="uid://c7uyle1n0iooq" path="res://assets/floor_3/floor 3 bridge.png" id="9_bxmsn"]
 [ext_resource type="Texture2D" uid="uid://dkhtkxcmb6ihw" path="res://assets/floor_1/laboratory/laboratory.png" id="9_ufmla"]
+[ext_resource type="AudioStream" uid="uid://bglnsbw5ufx1" path="res://audio/sound_effects/floor3/Earfquake SFX.wav" id="17_2lngj"]
 [ext_resource type="Script" path="res://scenes/levels/ending_trigger.gd" id="17_2ok4b"]
 [ext_resource type="Resource" uid="uid://bc6vhvvbc8frv" path="res://dialogue/floor_3/final_question.dialogue" id="18_ga3qi"]
+[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/Christian Music Instrumental.ogg" id="20_464ba"]
 
 [sub_resource type="Gradient" id="Gradient_5owrf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -594,10 +596,23 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(5, 5)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GroundShakingSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bcqmt"]
 resource_name = "rise"
 length = 7.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -646,6 +661,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(5, 5), Vector2(0.8, 0.8)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GroundShakingSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1mgf"]
 _data = {
@@ -667,6 +694,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-214, 310)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../dark:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../dark:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5jvet"]
 resource_name = "float"
@@ -687,6 +738,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_5hnqp"]
 resource_name = "float_down"
 length = 5.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -698,6 +750,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(832, 148), Vector2(832, 192)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../dark:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../dark:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xvthb"]
@@ -844,7 +920,6 @@ tile_set = SubResource("TileSet_bewdi")
 rendering_quadrant_size = 32
 
 [node name="dark" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="LastBossCutscene" type="Node2D" parent="."]
@@ -874,6 +949,10 @@ libraries = {
 position = Vector2(0, 204)
 zoom = Vector2(5, 5)
 script = ExtResource("7_hyg0m")
+
+[node name="GroundShakingSFX" type="AudioStreamPlayer" parent="LastBossCutscene"]
+stream = ExtResource("17_2lngj")
+volume_db = -19.676
 
 [node name="FinalCutscene" type="Node2D" parent="."]
 
@@ -940,6 +1019,11 @@ polygon = PackedVector2Array(178, 225, 178, 259, 190, 259, 190, 225)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Collision"]
 polygon = PackedVector2Array(637, 257, 638, 194, 641, 189, 705, 189, 709, 192, 710, 192, 710, 162, 780, 162, 780, 84, 886, 84, 886, 163, 956, 163, 956, 192, 1025, 192, 1026, 385, 1021, 387, 642, 387, 637, 383, 636, 329, 629, 330, 630, 393, 660, 397, 1037, 396, 1035, 188, 1029, 178, 963, 181, 968, 149, 895, 153, 894, 75, 773, 75, 773, 156, 705, 153, 702, 179, 633, 180, 627, 184, 627, 257)
+
+[node name="FinaleBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_464ba")
+volume_db = -15.928
+autoplay = true
 
 [connection signal="area_shape_entered" from="LastBossCutscene/Trigger/AutoActionable" to="LastBossCutscene/Trigger/AutoActionable" method="_on_area_shape_entered"]
 [connection signal="timeout" from="LastBossCutscene/Timer" to="LastBossCutscene/Trigger/AutoActionable" method="_on_timer_timeout"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://dm0y58jknrh20"]
+[gd_scene load_steps=23 format=4 uid="uid://dm0y58jknrh20"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/giant_enemy_crab_battle.gd" id="1_i06mh"]
 [ext_resource type="AudioStream" uid="uid://sjrufp76dru3" path="res://audio/background_music/Water Crab.ogg" id="2_0l0x7"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_vkh37"]
+[ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="2_y8t8l"]
+[ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="3_6ys7v"]
 [ext_resource type="Texture2D" uid="uid://dwujbnjbdmrne" path="res://assets/floor_2/npc/GIANT ENEMY CRAB spritesheet.png" id="3_kd7ni"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="4_lmp4l"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_wqr1t"]
@@ -81,6 +83,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i06mh")
+
+[node name="WrongSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_y8t8l")
+volume_db = -23.498
+
+[node name="CorrectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6ys7v")
+volume_db = -22.486
 
 [node name="BGMCrab" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0l0x7")
@@ -173,6 +183,10 @@ tile_set = SubResource("TileSet_3x3ed")
 [node name="Question" parent="." instance=ExtResource("8_r1swt")]
 visible = false
 layout_mode = 1
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(510, 290)

@@ -45,7 +45,10 @@ func _ready() -> void:
 		"after_wizard_training_room": false,
 		"robob_21f31irst_meet": false,
 		"robob_3first_meet": false,
-		"robob_3first13_meet": false
+		"robob_3first13_meet": false,
+		
+		#FLOOR3
+		"end_dialogue": false,
 	}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -109,6 +112,8 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Pass the wizard rat's trials.")
 		"after_wizard_training_room":
 			handle_quest_label(cq, "Face the Giant Enemy Crab.")
+		"end_dialogue":
+			handle_quest_label(cq, "Save the world of Sol'n.")
 	# Typewriter effect update
 	if current_characters < label.text.length():
 		typewriter_timer -= delta

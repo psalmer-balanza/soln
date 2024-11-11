@@ -8,9 +8,9 @@ signal incorrect
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A water tank was initially filled with 2/5 of its capacity. After some usage, another 3/10 was drained. How much water remains in the tank?", 2, 5, 3, 10],
-	["A pipe was carrying water to a water supply. In the morning, 5/6 of the water supply was filled, but 3/8 was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8],
-	["Two sections of a pipeline had been filled. The first section was filled to 5/6 of its capacity, and the second section was drained to 3/6 of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6]
+	["A water tank was initially filled with two fifths of its capacity. After some usage, another three tenths was drained. How much water remains in the tank?", 2, 5, 3, 10],
+	["A pipe was carrying water to a water supply. In the morning, five sixths of the water supply was filled, but three eights was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8],
+	["Two sections of a pipeline had been filled. The first section was filled to five over six of its capacity, and the second section was drained to three over six of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6]
 ]
 
 

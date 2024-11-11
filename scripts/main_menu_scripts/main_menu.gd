@@ -8,11 +8,12 @@ extends Control
 ## PlayerState.first_time_initializing_first_floor_scene 
 ## PlayerState.first_time_initializing_second_floor_scene 
 ## PlayerState.first_time_initializing_third_floor_scene
+
 func _ready():
 	print("Current IP address: ", Global.host_ip)
 	#read the db and check if it has all the parameters for loading player state
 	#if unavailable then make load game unclickable
-	##PLACEHOLER ASSUMING YO READ FROM DB
+	##PLACEHOLDER ASSUMING YOU READ SAVE STATE STUFF FROM DB
 	PlayerState.player_badges = {
 		"shiny_rock": true,
 		"bowl": true,

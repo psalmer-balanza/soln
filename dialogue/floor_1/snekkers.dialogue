@@ -1,11 +1,13 @@
 ~ start
 set in_dialogue = true
+
 if current_quest == "you_may_leave_floor_1"
 	Snekkers: Go on, hero, the sewer gate is open now...
 	=> end
 	
 if current_quest == "face_the_snake"
 	(Snekkers has fallen asleep already, but your noisy movements managed to wake him up!)
+	set current_quest = "face_the_snake_post_cutscene"
 	do save_player_position_and_change_scene("res://scenes/cutscenes/general/cutscene_player.tscn" ,"res://scenes/levels/Floor1.tscn")
 	set current_quest = "face_the_snake_post_cutscene"
 	=> end
@@ -66,9 +68,14 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.ts
 
 Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
 Snekkers: You must be the chosen one! There was a tale...
+Snekkers: The guardian once spoke of a little tin can.
+Snekkers: This tin can had a light inside of it...
+Snekkers: It is said that this tin can will save the world of Sol'n by restoring its light.
+Snekkers: You seem to match its description...
+Snekkers: Anyways... those are just old stories...
 Snekkers: Looks like the mushrooms magic don't work anymore...
-Snekkers: They actually look nice when they aren't being annoying
-Snekkers: Here, you can have one to admire
+Snekkers: They actually look nice when they aren't being annoying.
+Snekkers: Here, you can have one to admire.
 set player_badges["mushroom"] = true
 (You received a mushroom badge!)
 set current_quest = "you_may_leave_floor_1"

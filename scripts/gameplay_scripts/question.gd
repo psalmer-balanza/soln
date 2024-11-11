@@ -8,6 +8,9 @@ extends Control
 @onready var mc_questions
 @onready var mc_choice_ids
 @onready var camera = $"../Camera2D"
+@onready var wrong_sfx: AudioStreamPlayer = $"../WrongSFX"
+@onready var correct_sfx: AudioStreamPlayer = $"../CorrectSFX"
+
 var index
 var correct_answer
 var answer
@@ -33,7 +36,7 @@ func _ready():
 		# questions for snekkers
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			mc_questions = [
-			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
+			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "5"],
 			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
 			["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
 			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
@@ -44,12 +47,12 @@ func _ready():
 			["What is 3/10 + 4/10?", "1/10", "1/2", "7/10", "8/10", "7/10"],
 			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
 			]
-		# questions for final boss
+		## questions for final boss
 		elif DialogueState.current_quest == "final_boss_quest":
 			mc_questions = [
 			["What is the numerator in the fraction 5/6?", "6", "5", "/", "30", "6"],
 			["What is 1/3 + 1/3?", "1/2", "2/3", "3/3", "4/3", "2/3"],
-			["What is 1/5 + 2/5?", "1/5", "3/5", "4/5", "1", "3/5"],
+			["What is one fifth + two fifths?", "1/5", "3/5", "4/5", "1", "3/5"],
 			["What is 2/6 + 1/6?", "3/6", "4/6", "1/6", "1/2", "1/2"],
 			["What does GCD stand for?", "Great Common Denominator", "Greatest Common Denominator", "Greatest Common Difference", "Greatest Common Divisor", "Greatest Common Divisor"],
 			["What is 1/2 + 2/4?", "3/4", "1", "1/2", "2/4", "1"],
@@ -128,10 +131,12 @@ func _on_choice_4_pressed() -> void:
 	_check_answer()
 	
 func _check_answer():
+	#On correct answer
 	if answer == correct_answer:
 		Global.Snekker_HP -= 10
 		Global.Giant_Enemy_Crab_HP -= 10
 		Global.guardian_enemy_hp -= 10
+		correct_sfx.play()
 		camera.apply_shake()
 		visible=false
 		
@@ -140,8 +145,10 @@ func _check_answer():
 		mc_questions.remove_at(index)
 		if Global.is_online:
 			mc_choice_ids.remove_at(index)
+	#On wrong answer
 	else:
 		print("Incorrect answer")
+		wrong_sfx.play()
 		if Global.is_online:
 			Global.total_score -= 1
 

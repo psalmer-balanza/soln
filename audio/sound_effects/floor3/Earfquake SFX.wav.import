@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bglnsbw5ufx1"
+path="res://.godot/imported/Earfquake SFX.wav-377f4d0fe0c725346f4b089edcf86465.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/floor3/Earfquake SFX.wav"
+dest_files=["res://.godot/imported/Earfquake SFX.wav-377f4d0fe0c725346f4b089edcf86465.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

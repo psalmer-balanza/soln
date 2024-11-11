@@ -14,3 +14,5 @@ func _process(delta: float) -> void:
 	elif DialogueState.current_quest == "after_wizard_training_room" or DialogueState.current_quest == "after_wr_3" or DialogueState.current_quest == "starting":
 		$"../RatTrainingArea/Actionable/CollisionShape2D".disabled = false
 		$"../RatTrainingArea/AutoActionable/CollisionShape2D".disabled = true
+	if DialogueState.current_quest == "after_wizard_training_room":
+		$SpeechBalloon.visible = false

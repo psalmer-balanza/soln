@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Water Crab.ogg-bdc5b813786c5daab5acf2b5ca6e93
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

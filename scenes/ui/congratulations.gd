@@ -11,19 +11,17 @@ func _ready() -> void:
 	elif DialogueState.current_quest == "dead_robots":
 		label.text = "Congratulations:\nYou have passed\nOld Peculiar's trial!"
 	elif DialogueState.current_quest == "meeting_chip":
-		label.text = "Congratulations:\nYou have opened the safe!"
+		label.text = "Congratulations:\nYou have opened\nthe safe!"
 	elif DialogueState.current_quest == "water_room_1":
-		label.text = "Congratulations:\nYou have earned a bucket badge!"
+		label.text = "Congratulations:\nYou have earned\na bucket badge!"
 		print("Giving player Bucket Badge 1 in the congratulations scene")
-		PlayerState.player_badges["bucket1"] = true
 	elif DialogueState.current_quest == "water_room_2":
-		label.text = "Congratulations:\nYou have earned a second bucket badge!"
+		label.text = "Congratulations:\nYou have earned\na second bucket badge!"
 		print("Giving player Bucket Badge 2 in the congratulations scene")
-		PlayerState.player_badges["bucket2"] = true
 	elif DialogueState.current_quest == "water_room_3":
-		label.text = "Congratulations:\nYou have earned a third bucket badge!"
+		label.text = "Congratulations:\nYou have earned\na third bucket badge!"
 		print("Giving player Bucket Badge 3 in the congratulations scene")
-		PlayerState.player_badges["bucket3"] = true
+
 		
 func _on_correct_pressed():
 	print("Congratulations screen, current quest: ", DialogueState.current_quest)

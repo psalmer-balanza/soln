@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://d3li7qguhm3e0"]
+[gd_scene load_steps=45 format=3 uid="uid://d3li7qguhm3e0"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/fraction_subtraction_gameplay.gd" id="1_3v0i1"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_7hs2c"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cq26hp0n7mmv2" path="res://assets/floor_1/npc/reactions/raket wrong answer.png" id="10_xu4xp"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="17_qy7u5"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="18_81rye"]
+[ext_resource type="AudioStream" uid="uid://b0d8xgbsra0tw" path="res://audio/background_music/The Magic Tree.ogg" id="18_nl7fq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
 atlas = ExtResource("5_t1n7a")
@@ -260,8 +261,35 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fbydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ejcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ejcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbydi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ejcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbydi")
 }],
-"loop": true,
+"loop": false,
 "name": &"wizard_rat_correct",
 "speed": 5.0
 }]
@@ -328,7 +356,7 @@ autowrap_mode = 2
 position = Vector2(890.526, 130.526)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_p2kin")
-animation = &"wizard_rat"
+animation = &"wizard_rat_correct"
 autoplay = "wizard_rat"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -612,6 +640,11 @@ volume_db = -23.583
 [node name="WrongAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_81rye")
 volume_db = -24.36
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_nl7fq")
+volume_db = -20.613
+autoplay = true
 
 [connection signal="correct" from="." to="." method="_on_correct_answer"]
 [connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]

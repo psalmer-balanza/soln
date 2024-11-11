@@ -31,7 +31,7 @@ How much of the rock's mass have we taken together?"
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-
+=> end
 ~ another_possible_question
 "These are fractions that have the same denominators"
 - Equal Fractions
@@ -48,7 +48,7 @@ How much of the rock's mass have we taken together?"
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-
+=> end
 ~ another_possible_question_2
 "A fraction with a numerator that is equal to or greater than the denominator is called what?"
 - A mixed fraction
@@ -65,7 +65,7 @@ How much of the rock's mass have we taken together?"
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-
+=> end
 ~ another_possible_question_3
 "A fraction with a numerator of 1 is called a what?"
 - A base fraction
@@ -82,7 +82,7 @@ How much of the rock's mass have we taken together?"
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
-	
+=> end
 ~ another_possible_question_4
 "Fractions with different denominators are called what?"
 - Equivalent fractions
@@ -99,6 +99,7 @@ How much of the rock's mass have we taken together?"
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
 	=> end
+=> end
 ~ end
 set disable_rock_removed = true
 set in_dialogue = false

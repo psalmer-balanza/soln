@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 	if DialogueState.current_quest == "after_chip":
 		$Actionable/CollisionShape2D.disabled = false
 		$AutoActionable/CollisionShape2D.disabled = true
+		$RadialDialogueIndicator.visible = false

@@ -13,6 +13,8 @@ Robob: Here is a piece of wisdom for you.
 Robob: This floor is filled with rooms flooded with water.
 Robob: To drain the water there is something you must do first.
 Robot: And what is that?
+Robob: A new form of these "inscriptions" you have been solving so far.
+Robob: Instead of adding, they subtract!
 Robob: Good luck buddy.
 Robot: Hold on-
 set current_quest = "after_robob"

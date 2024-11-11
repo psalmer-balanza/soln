@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lshj1vlythct"
+path="res://.godot/imported/Water Drain SFX.wav-137f514685205bca931caccda641fe9f.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/floor2/Water Drain SFX.wav"
+dest_files=["res://.godot/imported/Water Drain SFX.wav-137f514685205bca931caccda641fe9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
