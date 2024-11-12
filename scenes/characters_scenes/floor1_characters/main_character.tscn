@@ -1,141 +1,141 @@
 [gd_scene load_steps=67 format=3 uid="uid://50xwge6vcpc3"]
 
-[ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_6lvc4"]
-[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="2_najvd"]
-[ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="3_hbnro"]
-[ext_resource type="Texture2D" uid="uid://b3lprn6nf8rf0" path="res://assets/main_character/onscreen_badges/Shiny Rock Badge.png" id="4_pdmwu"]
-[ext_resource type="Texture2D" uid="uid://dahjr18jm1lbr" path="res://assets/main_character/onscreen_badges/Bowl Badge.png" id="5_rjtto"]
-[ext_resource type="Texture2D" uid="uid://ccg1w10hdovbu" path="res://assets/main_character/onscreen_badges/Carrot Badge.png" id="6_rr6wf"]
-[ext_resource type="Texture2D" uid="uid://b58l5o00kvl2b" path="res://assets/main_character/onscreen_badges/Cake Badge.png" id="7_ehfw8"]
-[ext_resource type="Texture2D" uid="uid://8ubg4diy2ger" path="res://assets/main_character/onscreen_badges/Sword Badge.png" id="8_roc07"]
-[ext_resource type="Texture2D" uid="uid://dtef73npb8nio" path="res://assets/main_character/onscreen_badges/Water Bucket 1 Badge.png" id="9_5qj5y"]
-[ext_resource type="Texture2D" uid="uid://c2anop6ampj3j" path="res://assets/main_character/onscreen_badges/Mushroom Badge.png" id="10_qoeya"]
-[ext_resource type="Texture2D" uid="uid://c7f6foub77gy8" path="res://assets/main_character/onscreen_badges/Flask Badge.png" id="11_0exfh"]
-[ext_resource type="Texture2D" uid="uid://bq3ljnky3w0vb" path="res://assets/main_character/onscreen_badges/Water Bucket 2 Badge.png" id="12_lnss6"]
-[ext_resource type="Texture2D" uid="uid://b40abwlfk44mg" path="res://assets/main_character/onscreen_badges/Water Bucket 3 Badge.png" id="13_lapjs"]
-[ext_resource type="Texture2D" uid="uid://yw8flaurllbs" path="res://assets/main_character/onscreen_badges/Crystal Ball Badge.png" id="14_3xdif"]
-[ext_resource type="Texture2D" uid="uid://bh74g46qbvvxy" path="res://assets/main_character/onscreen_badges/Shell Badge.png" id="15_88dpu"]
-[ext_resource type="Texture2D" uid="uid://wxgbwn41vkwu" path="res://assets/character_portraits/Original Robot.png" id="16_dwdr1"]
-[ext_resource type="Script" path="res://scripts/ui/pause_screen.gd" id="17_3xc6v"]
-[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="18_620f6"]
-[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="19_16col"]
-[ext_resource type="AudioStream" uid="uid://ss166am0xg8v" path="res://audio/sound_effects/Computer Startup SFX.wav" id="20_42qag"]
-[ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking.wav" id="21_l63kd"]
-[ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="22_ck53k"]
-[ext_resource type="Texture2D" uid="uid://bysfgt7c7ldcw" path="res://assets/main_character/main_character_game_over.png" id="23_wa8w2"]
-[ext_resource type="Texture2D" uid="uid://cbt2kcvcmhgou" path="res://assets/main_character/main_character_wakeup.png" id="24_x8phb"]
-[ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="25_y04o8"]
-[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="26_akd3j"]
-[ext_resource type="Script" path="res://scripts/states/idle_state.gd" id="27_s6wl8"]
-[ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="28_37pda"]
-[ext_resource type="Script" path="res://scripts/states/player_dialogue_state.gd" id="29_xfm1x"]
+[ext_resource type="Script" path="res://scripts/character_scripts/main_character.gd" id="1_vdtrp"]
+[ext_resource type="PackedScene" uid="uid://dl2yfrm37a7ju" path="res://scenes/cutscenes/general/objective_overlay.tscn" id="2_n3dp3"]
+[ext_resource type="AudioStream" uid="uid://c1vxqv2kfntrb" path="res://audio/sound_effects/Walking.wav" id="3_4puxp"]
+[ext_resource type="Texture2D" uid="uid://b58l5o00kvl2b" path="res://assets/main_character/onscreen_badges/Cake Badge.png" id="3_jfdhw"]
+[ext_resource type="Texture2D" uid="uid://ces0d526t6h24" path="res://assets/main_character/main_character_idle.png" id="3_kesid"]
+[ext_resource type="Script" path="res://scripts/character_scripts/onscreen_badges.gd" id="3_mm6sa"]
+[ext_resource type="Texture2D" uid="uid://dahjr18jm1lbr" path="res://assets/main_character/onscreen_badges/Bowl Badge.png" id="4_vs3nv"]
+[ext_resource type="Texture2D" uid="uid://b3lprn6nf8rf0" path="res://assets/main_character/onscreen_badges/Shiny Rock Badge.png" id="6_g43x7"]
+[ext_resource type="Texture2D" uid="uid://o1qw7cxtqh43" path="res://assets/main_character/main_character_walk.png" id="6_t5tt4"]
+[ext_resource type="Texture2D" uid="uid://cbt2kcvcmhgou" path="res://assets/main_character/main_character_wakeup.png" id="7_c02fe"]
+[ext_resource type="Texture2D" uid="uid://ccg1w10hdovbu" path="res://assets/main_character/onscreen_badges/Carrot Badge.png" id="7_p3f81"]
+[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="7_u7ptv"]
+[ext_resource type="Script" path="res://scripts/states/idle_state.gd" id="8_5n5vl"]
+[ext_resource type="Texture2D" uid="uid://8ubg4diy2ger" path="res://assets/main_character/onscreen_badges/Sword Badge.png" id="8_make3"]
+[ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="9_3lima"]
+[ext_resource type="AudioStream" uid="uid://ss166am0xg8v" path="res://audio/sound_effects/Computer Startup SFX.wav" id="9_4p2n0"]
+[ext_resource type="Script" path="res://scripts/ui/pause_screen.gd" id="9_afhlo"]
+[ext_resource type="Script" path="res://scripts/states/moving_state.gd" id="9_bdkni"]
+[ext_resource type="Texture2D" uid="uid://dtef73npb8nio" path="res://assets/main_character/onscreen_badges/Water Bucket 1 Badge.png" id="9_jud13"]
+[ext_resource type="Texture2D" uid="uid://c2anop6ampj3j" path="res://assets/main_character/onscreen_badges/Mushroom Badge.png" id="9_spg6v"]
+[ext_resource type="Texture2D" uid="uid://yw8flaurllbs" path="res://assets/main_character/onscreen_badges/Crystal Ball Badge.png" id="10_2wnpe"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="10_grd3n"]
+[ext_resource type="Script" path="res://scripts/states/player_dialogue_state.gd" id="10_uarnf"]
+[ext_resource type="Texture2D" uid="uid://c7f6foub77gy8" path="res://assets/main_character/onscreen_badges/Flask Badge.png" id="11_ggigp"]
+[ext_resource type="Texture2D" uid="uid://bq3ljnky3w0vb" path="res://assets/main_character/onscreen_badges/Water Bucket 2 Badge.png" id="12_wlmo8"]
+[ext_resource type="Texture2D" uid="uid://b40abwlfk44mg" path="res://assets/main_character/onscreen_badges/Water Bucket 3 Badge.png" id="13_7y6ey"]
+[ext_resource type="Texture2D" uid="uid://wxgbwn41vkwu" path="res://assets/character_portraits/Original Robot.png" id="15_bfv3w"]
+[ext_resource type="Texture2D" uid="uid://bh74g46qbvvxy" path="res://assets/main_character/onscreen_badges/Shell Badge.png" id="15_dnhy0"]
+[ext_resource type="Texture2D" uid="uid://bysfgt7c7ldcw" path="res://assets/main_character/main_character_game_over.png" id="21_l6q71"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak80i"]
-atlas = ExtResource("22_ck53k")
+atlas = ExtResource("3_kesid")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wp08"]
-atlas = ExtResource("22_ck53k")
+atlas = ExtResource("3_kesid")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjbwf"]
-atlas = ExtResource("22_ck53k")
+atlas = ExtResource("3_kesid")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hopbq"]
-atlas = ExtResource("22_ck53k")
+atlas = ExtResource("3_kesid")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bvuk"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bs1nq"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xn7ge"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54fn4"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4melp"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfb3e"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45n72"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu6st"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vufq"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_id1rv"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_svtfo"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8t2j"]
-atlas = ExtResource("23_wa8w2")
+atlas = ExtResource("21_l6q71")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryec8"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swhuu"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyxw0"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5sv48"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ickr0"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv46j"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1v07s"]
-atlas = ExtResource("24_x8phb")
+atlas = ExtResource("7_c02fe")
 region = Rect2(0, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p334d"]
-atlas = ExtResource("25_y04o8")
+atlas = ExtResource("6_t5tt4")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6obxu"]
-atlas = ExtResource("25_y04o8")
+atlas = ExtResource("6_t5tt4")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5y61"]
-atlas = ExtResource("25_y04o8")
+atlas = ExtResource("6_t5tt4")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70u7m"]
-atlas = ExtResource("25_y04o8")
+atlas = ExtResource("6_t5tt4")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dempq"]
@@ -369,11 +369,11 @@ _data = {
 }
 
 [node name="MainCharacter" type="CharacterBody2D"]
-script = ExtResource("1_6lvc4")
+script = ExtResource("1_vdtrp")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ObjectiveOverlay" parent="UI" instance=ExtResource("2_najvd")]
+[node name="ObjectiveOverlay" parent="UI" instance=ExtResource("2_n3dp3")]
 offset_left = 70.0
 offset_top = 71.0
 offset_right = 70.0
@@ -395,7 +395,7 @@ offset_top = 293.0
 offset_right = 174.0
 offset_bottom = 333.0
 scale = Vector2(4, 4)
-script = ExtResource("3_hbnro")
+script = ExtResource("3_mm6sa")
 
 [node name="Label" type="Label" parent="UI/OnscreenBadges"]
 layout_mode = 0
@@ -422,7 +422,7 @@ offset_top = -57.0
 offset_right = 233.0
 offset_bottom = -17.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_pdmwu")
+texture = ExtResource("6_g43x7")
 
 [node name="BowlBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -432,7 +432,7 @@ offset_top = -60.0
 offset_right = 266.0
 offset_bottom = 4.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_rjtto")
+texture = ExtResource("4_vs3nv")
 
 [node name="CarrotBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -442,7 +442,7 @@ offset_top = -48.0
 offset_right = 256.0
 offset_bottom = 16.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_rr6wf")
+texture = ExtResource("7_p3f81")
 
 [node name="CakeBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -452,7 +452,7 @@ offset_top = -50.0
 offset_right = 265.0
 offset_bottom = 14.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_ehfw8")
+texture = ExtResource("3_jfdhw")
 
 [node name="SwordBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -462,7 +462,7 @@ offset_top = -35.25
 offset_right = 269.0
 offset_bottom = 28.75
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_roc07")
+texture = ExtResource("8_make3")
 
 [node name="Bucket1Badge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -472,7 +472,7 @@ offset_top = -20.75
 offset_right = 234.25
 offset_bottom = 19.25
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_5qj5y")
+texture = ExtResource("9_jud13")
 
 [node name="MushroomBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -482,7 +482,7 @@ offset_top = -36.5
 offset_right = 269.25
 offset_bottom = 41.5
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_qoeya")
+texture = ExtResource("9_spg6v")
 
 [node name="FlaskBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -492,7 +492,7 @@ offset_top = -28.0
 offset_right = 418.5
 offset_bottom = 191.0
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("11_0exfh")
+texture = ExtResource("11_ggigp")
 
 [node name="Bucket2Badge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -502,7 +502,7 @@ offset_top = -10.0
 offset_right = 233.75
 offset_bottom = 30.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("12_lnss6")
+texture = ExtResource("12_wlmo8")
 
 [node name="Bucket3Badge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -512,7 +512,7 @@ offset_top = -10.0
 offset_right = 246.0
 offset_bottom = 30.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_lapjs")
+texture = ExtResource("13_7y6ey")
 
 [node name="CrystalBallBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -522,7 +522,7 @@ offset_top = -2.25
 offset_right = 378.25
 offset_bottom = 186.75
 scale = Vector2(0.11, 0.11)
-texture = ExtResource("14_3xdif")
+texture = ExtResource("10_2wnpe")
 
 [node name="ShellBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -532,7 +532,7 @@ offset_top = 1.75
 offset_right = 246.25
 offset_bottom = 41.75
 scale = Vector2(0.269, 0.269)
-texture = ExtResource("15_88dpu")
+texture = ExtResource("15_dnhy0")
 
 [node name="OriginalRobotBadge" type="TextureRect" parent="UI/OnscreenBadges/Badges"]
 visible = false
@@ -542,7 +542,7 @@ offset_top = 10.75
 offset_right = 253.25
 offset_bottom = 74.75
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("16_dwdr1")
+texture = ExtResource("15_bfv3w")
 
 [node name="PauseScreen" type="Control" parent="UI"]
 visible = false
@@ -551,7 +551,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-script = ExtResource("17_3xc6v")
+script = ExtResource("9_afhlo")
 
 [node name="ColorRect" type="ColorRect" parent="UI/PauseScreen"]
 layout_mode = 1
@@ -582,7 +582,7 @@ grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/PauseScreen/MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("18_620f6")
+texture = ExtResource("9_3lima")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -602,7 +602,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Label" type="Label" parent="UI/PauseScreen/MarginContainer2/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
-theme_override_fonts/font = ExtResource("19_16col")
+theme_override_fonts/font = ExtResource("10_grd3n")
 theme_override_font_sizes/font_size = 30
 text = "Game is paused"
 horizontal_alignment = 1
@@ -618,7 +618,7 @@ size_flags_vertical = 8
 theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
 theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.276189, 0.227463, 0.329893, 1)
-theme_override_fonts/font = ExtResource("19_16col")
+theme_override_fonts/font = ExtResource("10_grd3n")
 theme_override_font_sizes/font_size = 50
 text = "BACK"
 flat = true
@@ -634,18 +634,18 @@ size_flags_vertical = 8
 theme_override_colors/font_hover_pressed_color = Color(0.27451, 0.227451, 0.329412, 1)
 theme_override_colors/font_color = Color(0.207843, 0.168627, 0.25098, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.276189, 0.227463, 0.329893, 1)
-theme_override_fonts/font = ExtResource("19_16col")
+theme_override_fonts/font = ExtResource("10_grd3n")
 theme_override_font_sizes/font_size = 50
 text = "MAIN MENU"
 flat = true
 
 [node name="StartupSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_42qag")
+stream = ExtResource("9_4p2n0")
 volume_db = -12.111
 pitch_scale = 0.78
 
 [node name="WalkingSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_l63kd")
+stream = ExtResource("3_4puxp")
 volume_db = -14.991
 bus = &"SFX"
 
@@ -685,17 +685,17 @@ texture = SubResource("GradientTexture2D_htlf5")
 texture_scale = 2.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("26_akd3j")
+script = ExtResource("7_u7ptv")
 initial_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine"]
-script = ExtResource("27_s6wl8")
+script = ExtResource("8_5n5vl")
 
 [node name="MovingState" type="Node" parent="StateMachine"]
-script = ExtResource("28_37pda")
+script = ExtResource("9_bdkni")
 
 [node name="PlayerDialogueState" type="Node" parent="StateMachine"]
-script = ExtResource("29_xfm1x")
+script = ExtResource("10_uarnf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-10, 5, -10, 12, -8, 12, -8, 15, -2, 15, -2, 12, 2, 12, 2, 15, 8, 15, 8, 12, 10, 12, 10, 5, 15, 5, 15, -5, 16, -5, 16, -8, 15, -8, 15, -14, 14, -15, 7, -15, 7, -16, 5, -16, 5, -15, -3, -15, -3, -16, -6, -16, -6, -15, -13, -15, -14, -14, -14, -8, -15, -8, -15, -1, -14, -1, -14, 5)

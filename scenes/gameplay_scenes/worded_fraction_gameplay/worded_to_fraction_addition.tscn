@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d12j8haieiyg2"]
+[gd_scene load_steps=42 format=3 uid="uid://d12j8haieiyg2"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
 [ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="2_iw1wy"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="13_44j4r"]
 [ext_resource type="PackedScene" uid="uid://mmgnr4ih3lqk" path="res://scenes/ui/help_button_worded.tscn" id="15_dwrph"]
 [ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="15_mwakl"]
+[ext_resource type="AudioStream" uid="uid://bkt4jb8as3uie" path="res://audio/background_music/Simple Gameplay/Flute Adventure.ogg" id="20_801cm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
 atlas = ExtResource("4_vo60v")
@@ -779,6 +780,11 @@ volume_db = -23.583
 [node name="WrongAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_44j4r")
 volume_db = -24.36
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_801cm")
+volume_db = -24.36
+autoplay = true
 
 [connection signal="correct" from="." to="." method="_on_correct_answer"]
 [connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]

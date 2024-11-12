@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/levels/floor_3.gd" id="1_c0nld"]
 [ext_resource type="Texture2D" uid="uid://dusw5lqjs5u6a" path="res://assets/floor_3/Final boss.png" id="1_ct4fq"]
 [ext_resource type="Texture2D" uid="uid://46kc7umrw01u" path="res://assets/floor_3/eye.png" id="1_xs72a"]
-[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/MainCharacter.tscn" id="3_qpyaw"]
+[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="3_qpyaw"]
 [ext_resource type="TileSet" uid="uid://cv6gtkstr2nfo" path="res://tilemaps/floor_2/room.tres" id="4_jvjtl"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://assets/floor_1/floor1_revamp/All in one ground.png" id="5_5f7m6"]
 [ext_resource type="Texture2D" uid="uid://blu14dykmlvud" path="res://assets/floor_3/towerport.png" id="5_5nawp"]
@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://bglnsbw5ufx1" path="res://audio/sound_effects/floor3/Earfquake SFX.wav" id="17_2lngj"]
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/ending_trigger.gd" id="17_2ok4b"]
 [ext_resource type="Resource" uid="uid://bc6vhvvbc8frv" path="res://dialogue/floor_3/final_question.dialogue" id="18_ga3qi"]
-[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/Christian Music Instrumental.ogg" id="20_464ba"]
+[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/final_boss/Christian Music Instrumental.ogg" id="20_464ba"]
 
 [sub_resource type="Gradient" id="Gradient_5owrf"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1i0ubr1y8d54" path="res://assets/floor_2/pipes_side.png" id="3_5onoa"]
 [ext_resource type="TileSet" uid="uid://cv6gtkstr2nfo" path="res://tilemaps/floor_2/room.tres" id="3_8oq75"]
 [ext_resource type="Texture2D" uid="uid://cfad566d0o20d" path="res://assets/floor_2/waterpipe_entrance.png" id="4_mldc0"]
-[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/MainCharacter.tscn" id="5_g8opa"]
+[ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="5_g8opa"]
 [ext_resource type="Texture2D" uid="uid://b58aj7c5ga2ov" path="res://assets/floor_2/falling_water.png" id="5_jvexc"]
 [ext_resource type="TileSet" uid="uid://djr7yvjxd4hws" path="res://tilemaps/floor_1/laboratory/accesories.tres" id="5_qdfio"]
 [ext_resource type="TileSet" uid="uid://bgjpnl2hfvf4o" path="res://tilemaps/floor_2/floor_2/pipe_walkway.tres" id="6_dk1yb"]

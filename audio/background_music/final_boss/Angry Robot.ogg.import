@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhwvttfwhof13"
+path="res://.godot/imported/Angry Robot.ogg-981138f9017be28753d24e4edd22230d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/final_boss/Angry Robot.ogg"
+dest_files=["res://.godot/imported/Angry Robot.ogg-981138f9017be28753d24e4edd22230d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
