@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cx33t5jdkh1y6" path="res://assets/floor_2/Computer Sprites.png" id="1_awhym"]
 [ext_resource type="Texture2D" uid="uid://c02bvh2038t0m" path="res://assets/floor_2/Terminal Sprites.png" id="2_05fpl"]
-[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="3_mxrgs"]
+[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="3_vtj0y"]
 [ext_resource type="Resource" uid="uid://b7wt7s7kn0mmy" path="res://dialogue/floor_2/terminal_to_floor3.dialogue" id="4_ktjei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcki4"]
@@ -182,9 +182,9 @@ sprite_frames = SubResource("SpriteFrames_ic4kx")
 autoplay = "default"
 frame_progress = 0.42114
 
-[node name="Area2D" type="Area2D" parent="Monitor"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Monitor"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitor/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monitor/StaticBody2D"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_vr4pg")
 
@@ -194,22 +194,22 @@ sprite_frames = SubResource("SpriteFrames_k6weg")
 autoplay = "default"
 frame_progress = 0.365332
 
-[node name="Area2D" type="StaticBody2D" parent="ConsoleTerminal"]
+[node name="StaticBody2D" type="StaticBody2D" parent="ConsoleTerminal"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleTerminal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleTerminal/StaticBody2D"]
 position = Vector2(-16, -11)
 shape = SubResource("RectangleShape2D_aleb7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ConsoleTerminal/Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ConsoleTerminal/StaticBody2D"]
 position = Vector2(37, 7)
 shape = SubResource("RectangleShape2D_56pgv")
 
-[node name="AutoActionable" parent="." instance=ExtResource("3_mxrgs")]
+[node name="Actionable" parent="." instance=ExtResource("3_vtj0y")]
 position = Vector2(-7.25, 3)
 scale = Vector2(1.47656, 1.03125)
 dialogue_resource = ExtResource("4_ktjei")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoActionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(34.0318, 13.5758)
 scale = Vector2(0.67725, 0.969697)
 shape = SubResource("CircleShape2D_ijutk")
