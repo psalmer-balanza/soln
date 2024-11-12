@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://helpers/text_control.gd" id="12_th0xr"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="17_qy7u5"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="18_81rye"]
-[ext_resource type="AudioStream" uid="uid://b0d8xgbsra0tw" path="res://audio/background_music/The Magic Tree.ogg" id="18_nl7fq"]
+[ext_resource type="AudioStream" uid="uid://b0d8xgbsra0tw" path="res://audio/background_music/floor_2/The Magic Tree.ogg" id="18_nl7fq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6je1"]
 atlas = ExtResource("5_t1n7a")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://dm0y58jknrh20"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/giant_enemy_crab_battle.gd" id="1_i06mh"]
-[ext_resource type="AudioStream" uid="uid://sjrufp76dru3" path="res://audio/background_music/Water Crab.ogg" id="2_0l0x7"]
+[ext_resource type="AudioStream" uid="uid://sjrufp76dru3" path="res://audio/background_music/floor_2/Water Crab.ogg" id="2_0l0x7"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="2_vkh37"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="2_y8t8l"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="3_6ys7v"]

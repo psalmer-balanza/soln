@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="14_etncn"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="15_yrpjn"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="16_diqmv"]
-[ext_resource type="AudioStream" uid="uid://bkt4jb8as3uie" path="res://audio/background_music/Simple Gameplay/Flute Adventure.ogg" id="17_yrfqx"]
+[ext_resource type="AudioStream" uid="uid://bkt4jb8as3uie" path="res://audio/background_music/simple_gameplay/Flute Adventure.ogg" id="17_yrfqx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1ihx"]
 atlas = ExtResource("5_d8xkg")
