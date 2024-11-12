@@ -14,9 +14,9 @@ var fraction_questions = [
 	]
 	
 var fraction_questions_house = [
-	["A wizard brewed two potions. For the first potion, he used one fourth of his magical herbs, and for the second potion, he used one half of the herbs. How much of his herbs did he use in total?", 1, 4, 1, 2, 0],
-	["A sorceress enchanted two magical scrolls. She used three tenths of her spell ink on the first scroll and two fifths on the second scroll. How much spell ink did she use in total?", 3, 10, 2, 5, 1],
-	["In a mystical forest, a fairy sprinkled one over three of her glitter on one flower and one over six on another. How much glitter did she use altogether?", 1, 3, 1, 6, 2],
+	["Raket and Robot shared a pie. Raket suggested taking four over ten of the pie while Robot takes three over ten. How much of the pie will they eat together?", 4, 10, 3, 10, 0],
+	["Raket had a pie sliced into ten pieces. Raket saved two over ten for lunch and he also saved one over ten for Robot. How much pie did Raket saved for lunch?", 2, 10, 1, 10, 1],
+	["Saisai prepared a pie for Raket which you had delivered. Saisai suggested you can have five tenths, and also five tenths for Raket . How much pie can they eat in total?", 5, 12, 1, 4, 2]
 ];
 
 
