@@ -19,7 +19,7 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> rock_question_two
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_one
 
 ~ rock_question_two
 “In a fraction, what do we call the number in the bottom?”
@@ -36,7 +36,7 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> rock_question_two
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_two
 	
 ~ rock_question_three
 “In a fraction, what does LCD stand for?”
@@ -51,7 +51,7 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> rock_question_four
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_three
 
 ~ rock_question_four
 “In a fraction, how do you get the LCD of two different fractions?”
@@ -68,7 +68,7 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> rock_question_four
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_four
 
 ~ rock_question_five
 “What does GCD stand for?”
@@ -81,12 +81,12 @@ To clear the path, solve these riddles inscribed on the rock:
 	=> rock_question_five
 - Greatest Common Denominator
 	The inscription fades away. Try again. [wait=1]
-	=> rock_question_four
+	=> rock_question_five
 - What was that again?
 	=> rock_question_five
 - Do nothing
 	The inscription fades away. The rock remains unmoved. [wait=1]
-	=> end
+	=> rock_question_five
 
 => end
 ~ end
