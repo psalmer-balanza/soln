@@ -27,12 +27,12 @@ var current_question_index = 0  # Track which question the player is on
 @onready var unsimplified_ans_count = 0
 
 # Nodes for user inputs and display
-@onready var first_fraction_numerator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer/FirstFractionNumerator
-@onready var first_fraction_denominator: LineEdit = $solution/first_fraction/VBoxContainer/MarginContainer2/FirstFractionDenominator
-@onready var second_fraction_numerator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer/SecondFractionNumerator
-@onready var second_fraction_denominator: LineEdit = $solution/second_fraction/VBoxContainer/MarginContainer2/SecondFractionDenominator
-@onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer/NumeratorAnswer
-@onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/MarginContainer2/DenominatorAnswer
+@onready var first_fraction_numerator: LineEdit = $solution/first_fraction/VBoxContainer/Numerator/NumeratorAnswer
+@onready var first_fraction_denominator: LineEdit = $solution/first_fraction/VBoxContainer/Denominator/DenominatorAnswer
+@onready var second_fraction_numerator: LineEdit = $solution/second_fraction/VBoxContainer/Numerator/NumeratorAnswer
+@onready var second_fraction_denominator: LineEdit = $solution/second_fraction/VBoxContainer/Denominator/DenominatorAnswer
+@onready var numerator_answer: LineEdit = $solution/answer/VBoxContainer/Numerator/NumeratorAnswer
+@onready var denominator_answer: LineEdit = $solution/answer/VBoxContainer/Denominator/DenominatorAnswer
 @onready var display_answer: Label = $DisplayAnswer/UserAnswer
 @onready var submit_answer = $SubmitAnswer
 @onready var question_label: Label = $question/MarginContainer/Label  # Label to display question text

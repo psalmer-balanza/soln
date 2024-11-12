@@ -1,6 +1,6 @@
 extends Control
 
-@onready var congrats_screen = $Congratulations
+@onready var congrats_screen = $Congrats
 @onready var fraction_problem = $FractionProblem
 @onready var quick_tutorial = $Tutorials/QuickTutorial
 
@@ -25,6 +25,7 @@ func _on_fraction_problem_all_done() -> void:
 	elif current_quest == "dead_robots":
 		DialogueState.current_quest = "dead_robots_gameplay_done"
 	$Congrats.visible = true
+	Global.add_energy()
 
 func _on_fraction_problem_correct() -> void:
 	$CorrectAnswerSFX.play()

@@ -86,6 +86,7 @@ func _on_cook_button_pressed() -> void:
 	color_rect.visible = true
 	if conditions_met:
 		correct_screen.visible = true
+		Global.add_energy()
 	else:
 		incorrect_screen.visible = true
 

@@ -5,6 +5,8 @@ extends Control
 @onready var water_level_bar = $water_level/TextureProgressBar
 @onready var congrats = $Congrats
 
+var already_added = false
+
 var current_water_level = 100
 
 func _process(delta: float) -> void:
@@ -18,6 +20,9 @@ func _process(delta: float) -> void:
 		elif DialogueState.current_quest == "water_room_3":
 			DialogueState.current_quest = "after_wr_3" 
 		congrats.visible = true
+		if not already_added:
+			Global.add_energy()
+		
 
 func _on_fraction_problem_correct() -> void:
 	var new_level = current_water_level - 35

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d12j8haieiyg2"]
+[gd_scene load_steps=41 format=3 uid="uid://d12j8haieiyg2"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/worded_to_fraction_gameplay.gd" id="1_2emhg"]
 [ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="2_iw1wy"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cq26hp0n7mmv2" path="res://assets/floor_1/npc/reactions/raket wrong answer.png" id="9_mn21t"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="10_ewn1i"]
 [ext_resource type="AudioStream" uid="uid://c5usoabj7ebry" path="res://audio/sound_effects/Correct Answer.wav" id="12_2iwgc"]
+[ext_resource type="Script" path="res://helpers/text_control.gd" id="12_vmkse"]
 [ext_resource type="AudioStream" uid="uid://d4gfci1awar1a" path="res://audio/sound_effects/Wrong Answer.wav" id="13_44j4r"]
 [ext_resource type="PackedScene" uid="uid://mmgnr4ih3lqk" path="res://scenes/ui/help_button_worded.tscn" id="15_dwrph"]
 [ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="15_mwakl"]
@@ -317,10 +318,14 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="solution/first_fraction"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="solution/first_fraction/VBoxContainer"]
+[node name="TextControl" type="Control" parent="solution/first_fraction/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("12_vmkse")
+
+[node name="Numerator" type="MarginContainer" parent="solution/first_fraction/VBoxContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/first_fraction/VBoxContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/first_fraction/VBoxContainer/Numerator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -328,7 +333,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="FirstFractionNumerator" type="LineEdit" parent="solution/first_fraction/VBoxContainer/MarginContainer"]
+[node name="NumeratorAnswer" type="LineEdit" parent="solution/first_fraction/VBoxContainer/Numerator"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
 placeholder_text = "num"
@@ -342,10 +347,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("9_2v7cv")
 text = "-------"
 
-[node name="MarginContainer2" type="MarginContainer" parent="solution/first_fraction/VBoxContainer"]
+[node name="Denominator" type="MarginContainer" parent="solution/first_fraction/VBoxContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/first_fraction/VBoxContainer/MarginContainer2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/first_fraction/VBoxContainer/Denominator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -353,7 +358,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="FirstFractionDenominator" type="LineEdit" parent="solution/first_fraction/VBoxContainer/MarginContainer2"]
+[node name="DenominatorAnswer" type="LineEdit" parent="solution/first_fraction/VBoxContainer/Denominator"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
@@ -377,10 +382,14 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="solution/second_fraction"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="solution/second_fraction/VBoxContainer"]
+[node name="TextControl" type="Control" parent="solution/second_fraction/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("12_vmkse")
+
+[node name="Numerator" type="MarginContainer" parent="solution/second_fraction/VBoxContainer"]
 layout_mode = 2
 
-[node name="SecondFractionNumerator" type="LineEdit" parent="solution/second_fraction/VBoxContainer/MarginContainer"]
+[node name="NumeratorAnswer" type="LineEdit" parent="solution/second_fraction/VBoxContainer/Numerator"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
 placeholder_text = "num"
@@ -389,7 +398,7 @@ max_length = 2
 flat = true
 caret_blink = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/second_fraction/VBoxContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/second_fraction/VBoxContainer/Numerator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -402,10 +411,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("9_2v7cv")
 text = "-------"
 
-[node name="MarginContainer2" type="MarginContainer" parent="solution/second_fraction/VBoxContainer"]
+[node name="Denominator" type="MarginContainer" parent="solution/second_fraction/VBoxContainer"]
 layout_mode = 2
 
-[node name="SecondFractionDenominator" type="LineEdit" parent="solution/second_fraction/VBoxContainer/MarginContainer2"]
+[node name="DenominatorAnswer" type="LineEdit" parent="solution/second_fraction/VBoxContainer/Denominator"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
@@ -415,7 +424,7 @@ max_length = 2
 flat = true
 caret_blink = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/second_fraction/VBoxContainer/MarginContainer2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/second_fraction/VBoxContainer/Denominator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -438,10 +447,14 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="solution/answer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="solution/answer/VBoxContainer"]
+[node name="TextControl" type="Control" parent="solution/answer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("12_vmkse")
+
+[node name="Numerator" type="MarginContainer" parent="solution/answer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NumeratorAnswer" type="LineEdit" parent="solution/answer/VBoxContainer/MarginContainer"]
+[node name="NumeratorAnswer" type="LineEdit" parent="solution/answer/VBoxContainer/Numerator"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
 placeholder_text = "num"
@@ -450,7 +463,7 @@ max_length = 3
 flat = true
 caret_blink = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/answer/VBoxContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/answer/VBoxContainer/Numerator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -463,10 +476,10 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("9_2v7cv")
 text = "-------"
 
-[node name="MarginContainer2" type="MarginContainer" parent="solution/answer/VBoxContainer"]
+[node name="Denominator" type="MarginContainer" parent="solution/answer/VBoxContainer"]
 layout_mode = 2
 
-[node name="DenominatorAnswer" type="LineEdit" parent="solution/answer/VBoxContainer/MarginContainer2"]
+[node name="DenominatorAnswer" type="LineEdit" parent="solution/answer/VBoxContainer/Denominator"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_tmrgo")
@@ -476,7 +489,7 @@ max_length = 3
 flat = true
 caret_blink = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="solution/answer/VBoxContainer/MarginContainer2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="solution/answer/VBoxContainer/Denominator"]
 layout_mode = 2
 texture = ExtResource("8_s5m3f")
 patch_margin_left = 8
@@ -769,6 +782,12 @@ volume_db = -24.36
 
 [connection signal="correct" from="." to="." method="_on_correct_answer"]
 [connection signal="incorrect" from="." to="." method="_on_incorrect_answer"]
+[connection signal="text_changed" from="solution/first_fraction/VBoxContainer/Numerator/NumeratorAnswer" to="solution/first_fraction/VBoxContainer/TextControl" method="_on_numerator_answer_text_changed"]
+[connection signal="text_changed" from="solution/first_fraction/VBoxContainer/Denominator/DenominatorAnswer" to="solution/first_fraction/VBoxContainer/TextControl" method="_on_denominator_answer_text_changed"]
+[connection signal="text_changed" from="solution/second_fraction/VBoxContainer/Numerator/NumeratorAnswer" to="solution/second_fraction/VBoxContainer/TextControl" method="_on_numerator_answer_text_changed"]
+[connection signal="text_changed" from="solution/second_fraction/VBoxContainer/Denominator/DenominatorAnswer" to="solution/second_fraction/VBoxContainer/TextControl" method="_on_denominator_answer_text_changed"]
+[connection signal="text_changed" from="solution/answer/VBoxContainer/Numerator/NumeratorAnswer" to="solution/answer/VBoxContainer/TextControl" method="_on_numerator_answer_text_changed"]
+[connection signal="text_changed" from="solution/answer/VBoxContainer/Denominator/DenominatorAnswer" to="solution/answer/VBoxContainer/TextControl" method="_on_denominator_answer_text_changed"]
 [connection signal="button_down" from="SubmitAnswer" to="." method="_on_submit_answer_button_down"]
 [connection signal="button_down" from="MarginContainer/Button" to="." method="return_to_world"]
 
