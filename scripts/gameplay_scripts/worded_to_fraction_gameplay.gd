@@ -14,9 +14,9 @@ var fraction_questions = [
 	]
 	
 var fraction_questions_house = [
-	["Raket and Robot shared a pie. Raket suggested taking four over ten of the pie while Robot takes three over ten. How much of the pie will they eat together?", 4, 10, 3, 10, 0],
-	["Raket had a pie sliced into ten pieces. Raket saved two over ten for lunch and he also saved one over ten for Robot. How much pie did Raket saved for lunch?", 2, 10, 1, 10, 1],
-	["Saisai prepared a pie for Raket which you had delivered. Saisai suggested you can have five tenths, and also five tenths for Raket . How much pie can they eat in total?", 5, 12, 1, 4, 2]
+	["Raket and Robot shared a pie that was sliced into ten pieces. Raket took four pieces of the pie, while Robot took three pieces. How much pie will they eat together?", 4, 10, 3, 10, 0],
+	["Raket had a pie sliced into ten pieces and ate sixth tenth for breakfast and lunch. For dinner, Raket set aside two-tenths for him and one-tenth for the Robot. How much pie was saved for Robots and Rakets dinner?", 2, 10, 1, 10, 1],
+	["Saisai prepared the pie you delivered so you could give it to Raket. Saisai suggested that you can eat five-tenths of the pie while Raket can eat the remaining five pieces. How much pie was eaten in total?", 5, 10, 5, 10, 2]
 ];
 
 
