@@ -15,12 +15,9 @@ elif current_quest == "face_the_snake_post_cutscene"
 	Mushroomed Snekkers: You again?! What do you want?!
 	- You don't happen to be a morning person right?
 		=> snekkers_dialogue
-	- Nope I'm not facing an angry snake. 
-		=> end
 
 if current_quest == "snake_quiz_complete"
 	=> Snekkers_mission_complete
-	
 
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
 	#if sword_pieces_complete:
