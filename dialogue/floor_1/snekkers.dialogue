@@ -1,6 +1,6 @@
 ~ start
 set in_dialogue = true
-set current_quest = "snake_quiz_complete"
+
 if current_quest == "you_may_leave_floor_1"
 	Snekkers Healed: Go on, hero, the sewer gate is open now...
 	=> end
@@ -17,8 +17,11 @@ elif current_quest == "face_the_snake_post_cutscene"
 		=> snekkers_dialogue
 	- Nope I'm not facing an angry snake. 
 		=> end
+
 if current_quest == "snake_quiz_complete"
 	=> Snekkers_mission_complete
+	
+
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
 	#if sword_pieces_complete:
 	Mushroomed Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
