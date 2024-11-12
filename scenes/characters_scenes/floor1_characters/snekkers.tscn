@@ -1,85 +1,88 @@
-[gd_scene load_steps=19 format=3 uid="uid://trxctaaesrgo"]
+[gd_scene load_steps=20 format=3 uid="uid://trxctaaesrgo"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/snekkers.gd" id="1_djawe"]
-[ext_resource type="Texture2D" uid="uid://t5dv1qsdwnh" path="res://assets/floor_1/npc/snekkers/snekkers_idle.png" id="1_e7326"]
-[ext_resource type="Texture2D" uid="uid://b1vquni7mt1co" path="res://assets/floor_1/npc/snekkers/snekkers2.0.png" id="1_ks8aa"]
+[ext_resource type="Texture2D" uid="uid://dlgfywqxxxqsm" path="res://assets/floor_1/npc/snekkers/Snekkers-Healed-Idle.png" id="2_x2knj"]
 [ext_resource type="Resource" uid="uid://bo6dh3eso0qgw" path="res://dialogue/floor_1/snekkers.dialogue" id="3_5hdfo"]
+[ext_resource type="Texture2D" uid="uid://qral3ctdrux8" path="res://assets/floor_1/npc/snekkers/Mushroomed-Snekkers-Idle.png" id="3_okgp8"]
 [ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_kipv2"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="5_yf50a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnnra"]
-atlas = ExtResource("1_ks8aa")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rf2n"]
+atlas = ExtResource("3_okgp8")
+region = Rect2(0, 0, 1024, 1024)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssxor"]
-atlas = ExtResource("1_ks8aa")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6uj"]
+atlas = ExtResource("3_okgp8")
+region = Rect2(0, 1024, 1024, 1024)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbuk6"]
-atlas = ExtResource("1_ks8aa")
-region = Rect2(0, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0v4e"]
+atlas = ExtResource("3_okgp8")
+region = Rect2(0, 2048, 1024, 1024)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xtpn"]
-atlas = ExtResource("1_ks8aa")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kcswx"]
-atlas = ExtResource("1_e7326")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y4yui"]
-atlas = ExtResource("1_e7326")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sj5sh"]
-atlas = ExtResource("1_e7326")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1t00"]
-atlas = ExtResource("1_e7326")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ivhb"]
-atlas = ExtResource("1_e7326")
-region = Rect2(0, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ve5"]
+atlas = ExtResource("3_okgp8")
+region = Rect2(0, 3072, 1024, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iifh7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnnra")
+"texture": SubResource("AtlasTexture_5rf2n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssxor")
+"texture": SubResource("AtlasTexture_3e6uj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dbuk6")
+"texture": SubResource("AtlasTexture_w0v4e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5xtpn")
+"texture": SubResource("AtlasTexture_p4ve5")
 }],
 "loop": true,
-"name": &"big_idle",
-"speed": 3.0
-}, {
+"name": &"snekkers_mushroom_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfus6"]
+atlas = ExtResource("2_x2knj")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwibf"]
+atlas = ExtResource("2_x2knj")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqixj"]
+atlas = ExtResource("2_x2knj")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87g4p"]
+atlas = ExtResource("2_x2knj")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyqkq"]
+atlas = ExtResource("2_x2knj")
+region = Rect2(0, 2048, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5p1b"]
+animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kcswx")
+"texture": SubResource("AtlasTexture_mfus6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4yui")
+"texture": SubResource("AtlasTexture_kwibf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sj5sh")
+"texture": SubResource("AtlasTexture_gqixj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q1t00")
+"texture": SubResource("AtlasTexture_87g4p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ivhb")
+"texture": SubResource("AtlasTexture_uyqkq")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"snekkers_healed_idle",
 "speed": 5.0
 }]
 
@@ -92,12 +95,22 @@ radius = 59.1354
 [node name="Snekkers" type="CharacterBody2D"]
 script = ExtResource("1_djawe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.40928, 19.4093)
-scale = Vector2(1.39346, 1.39346)
+[node name="SnekkersMushroomed" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.500002, 19)
+scale = Vector2(0.0869141, 0.0878906)
 sprite_frames = SubResource("SpriteFrames_iifh7")
-animation = &"big_idle"
-autoplay = "big_idle"
+animation = &"snekkers_mushroom_idle"
+autoplay = "snekkers_mushroom_idle"
+frame = 2
+frame_progress = 0.831316
+
+[node name="SnekkersHealed" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0.5, 19)
+scale = Vector2(0.0849609, 0.0878906)
+sprite_frames = SubResource("SpriteFrames_t5p1b")
+animation = &"snekkers_healed_idle"
+autoplay = "snekkers_healed_idle"
 
 [node name="Actionable" parent="." instance=ExtResource("4_kipv2")]
 dialogue_resource = ExtResource("3_5hdfo")

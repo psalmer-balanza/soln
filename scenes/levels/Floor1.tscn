@@ -883,7 +883,7 @@ position = Vector2(0, -0.000137329)
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1085, 1773)
+position = Vector2(1076, 1744)
 
 [node name="in_front_details" type="Node2D" parent="."]
 

@@ -1,8 +1,8 @@
 ~ start
 set in_dialogue = true
-
+set current_quest = "snake_quiz_complete"
 if current_quest == "you_may_leave_floor_1"
-	Snekkers: Go on, hero, the sewer gate is open now...
+	Snekkers Healed: Go on, hero, the sewer gate is open now...
 	=> end
 	
 if current_quest == "face_the_snake"
@@ -12,7 +12,7 @@ if current_quest == "face_the_snake"
 	set current_quest = "face_the_snake_post_cutscene"
 	=> end
 elif current_quest == "face_the_snake_post_cutscene"
-	Snekkers: You again?! What do you want?!
+	Mushroomed Snekkers: You again?! What do you want?!
 	- You don't happen to be a morning person right?
 		=> snekkers_dialogue
 	- Nope I'm not facing an angry snake. 
@@ -21,64 +21,64 @@ if current_quest == "snake_quiz_complete"
 	=> Snekkers_mission_complete
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
 	#if sword_pieces_complete:
-	Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
-	Snekkers: Leave me be!
+	Mushroomed Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+	Mushroomed Snekkers: Leave me be!
 	=> end
 	
 
 
 if not sword_bottom and not sword_guard and not sword_lower_blade and not sword_middle_blade and not sword_top_blade
 	#if sword_pieces_complete:
-	Snekkers: Add a part here that also checks if Raket quest is ok now
-	Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
-	Snekkers: Leave me be!
+	Mushroomed Snekkers: Add a part here that also checks if Raket quest is ok now
+	Mushroomed Snekkers: Hey!!! You there![wait=0.5] Who do you think you are?! Waltzing around my cave and waking me up! [wait=0.5] 
+	Mushroomed Snekkers: Leave me be!
 	=> end
 
 
-Snekkers: Get out of here!!!
+Mushroomed Snekkers: Get out of here!!!
 
 => end
 
 ~ snekkers_dialogue
-Snekkers: Well what do you think?
+Mushroomed Snekkers: Well what do you think?
 
 - I'm sorry
-	Snekkers: A little too late for that don't you think
+	Mushroomed Snekkers: A little too late for that don't you think
 	=> Snekkers_next_Dialogue
 - I didn't mean to
-	Snekkers: Well I didn't mean to wake up either
+	Mushroomed Snekkers: Well I didn't mean to wake up either
 	=> Snekkers_next_Dialogue
 - The racoon said...
-	Snekkers:  I don't care what he said. That little racoon is preposterous thinking he can send a tin can to wake me up! [wait=0.5] 
-	Snekkers: Oh that little racoon always finding ways to bother me.
+	Mushroomed Snekkers:  I don't care what he said. That little racoon is preposterous thinking he can send a tin can to wake me up! [wait=0.5] 
+	Mushroomed Snekkers: Oh that little racoon always finding ways to bother me.
 	- That's mean..,
-	Snekkers: Listen, I don’t mean to but ever since the darkness came i've had this headache for ages.
-	Snekkers: Sleeping inscriptions on the wall of the cave are the only things that help.
+	Mushroomed Snekkers: Listen, I don’t mean to but ever since the darkness came i've had this headache for ages.
+	Mushroomed Snekkers: Sleeping inscriptions on the wall of the cave are the only things that help.
 	=> Snekkers_next_Dialogue
 
 ~ Snekkers_next_Dialogue
 I see… [wait=0.5] Wait, did you say inscriptions?! I can help you with that!
-Snekkers: Uh, sure [wait=2] 
+Mushroomed Snekkers: Uh, sure [wait=2] 
 
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.tscn", "res://scenes/levels/Floor1.tscn")
 
 => end
 
 ~ Snekkers_mission_complete
-
-Snekkers: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
-Snekkers: You must be the chosen one! There was a tale...
-Snekkers: The guardian once spoke of a little tin can.
-Snekkers: This tin can had a light inside of it...
-Snekkers: It is said that this tin can will save the world of Sol'n by restoring its light.
-Snekkers: You seem to match its description...
-Snekkers: Anyways... those are just old stories...
-Snekkers: Looks like the mushrooms magic don't work anymore...
-Snekkers: They actually look nice when they aren't being annoying.
-Snekkers: Here, you can have one to admire.
+set current_quest = "you_may_leave_floor_1"
+Snekkers Healed: Thank you! You've healed me! [wait=1] Those mushrooms have been giving me headaches for the last century! 
+Snekkers Healed: You must be the chosen one! There was a tale...
+Snekkers Healed: The guardian once spoke of a little tin can.
+Snekkers Healed: This tin can had a light inside of it...
+Snekkers Healed: It is said that this tin can will save the world of Sol'n by restoring its light.
+Snekkers Healed: You seem to match its description...
+Snekkers Healed: Anyways... those are just old stories...
+Snekkers Healed: Looks like the mushrooms magic don't work anymore...
+Snekkers Healed: They actually look nice when they aren't being annoying.
+Snekkers Healed: Here, you can have one to admire.
 set player_badges["mushroom"] = true
 (You received a mushroom badge!)
-set current_quest = "you_may_leave_floor_1"
+
 
 => end
 
