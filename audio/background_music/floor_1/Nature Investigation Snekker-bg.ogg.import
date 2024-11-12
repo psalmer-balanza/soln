@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cj5a1s616aiit"
+path="res://.godot/imported/Nature Investigation Snekker-bg.ogg-94ad5b10f25fdb81c2ca45298b73770f.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/floor_1/Nature Investigation Snekker-bg.ogg"
+dest_files=["res://.godot/imported/Nature Investigation Snekker-bg.ogg-94ad5b10f25fdb81c2ca45298b73770f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

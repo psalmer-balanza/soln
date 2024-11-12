@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=4 uid="uid://dfrf0ytq1ox5x"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/battle.gd" id="1_5ad4a"]
-[ext_resource type="AudioStream" uid="uid://cj5a1s616aiit" path="res://audio/background_music/Nature Investigation Snekker-bg.ogg" id="2_e8bak"]
+[ext_resource type="AudioStream" uid="uid://cj5a1s616aiit" path="res://audio/background_music/floor_1/Nature Investigation Snekker-bg.ogg" id="2_e8bak"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="2_nyyw0"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="2_v4881"]
 [ext_resource type="Texture2D" uid="uid://cmyscoj8ijae0" path="res://assets/floor_1/npc/snekkers/snekkers_lives/snekkers2.0 (remove one shroom).png" id="3_5tdl5"]

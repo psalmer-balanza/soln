@@ -52,13 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a73is")
 
-[node name="SolnBackground" type="AnimatedSprite2D" parent="."]
-position = Vector2(529, 290)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(528, 288)
 scale = Vector2(2.00823, 2.02335)
+
+[node name="SolnBackground" type="AnimatedSprite2D" parent="."]
+position = Vector2(527.951, 287.86)
+scale = Vector2(2.00804, 2.05082)
 sprite_frames = SubResource("SpriteFrames_jaifq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.164573
+frame_progress = 0.89831
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0

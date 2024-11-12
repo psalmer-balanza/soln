@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="5_05cjd"]
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="6_ayggq"]
 [ext_resource type="AudioStream" uid="uid://lshj1vlythct" path="res://audio/sound_effects/floor2/Water Drain SFX.wav" id="7_m3mik"]
-[ext_resource type="AudioStream" uid="uid://c1753fuf8hhbp" path="res://audio/background_music/Aqueous Couples.ogg" id="7_osn0o"]
+[ext_resource type="AudioStream" uid="uid://c1753fuf8hhbp" path="res://audio/background_music/floor_2/Aqueous Couples.ogg" id="7_osn0o"]
 [ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="9_5hb1f"]
 
 [node name="waterlogged_room" type="Control"]

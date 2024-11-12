@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/levels/floor_2.gd" id="1_dkfmh"]
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://assets/floor_1/floor1_revamp/All in one ground.png" id="2_i7bpm"]
-[ext_resource type="AudioStream" uid="uid://ck060ar0760sh" path="res://audio/background_music/Water Drops (floor2).ogg" id="2_yvoqk"]
+[ext_resource type="AudioStream" uid="uid://ck060ar0760sh" path="res://audio/background_music/floor_2/Water Drops (floor2).ogg" id="2_yvoqk"]
 [ext_resource type="Texture2D" uid="uid://c1i0ubr1y8d54" path="res://assets/floor_2/pipes_side.png" id="3_5onoa"]
 [ext_resource type="TileSet" uid="uid://cv6gtkstr2nfo" path="res://tilemaps/floor_2/room.tres" id="3_8oq75"]
 [ext_resource type="Texture2D" uid="uid://cfad566d0o20d" path="res://assets/floor_2/waterpipe_entrance.png" id="4_mldc0"]

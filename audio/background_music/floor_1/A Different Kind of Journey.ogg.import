@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bb1dgb4cfynte"
+path="res://.godot/imported/A Different Kind of Journey.ogg-2167b81ecda4692eb80ba0a1997c9c7d.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/background_music/floor_1/A Different Kind of Journey.ogg"
+dest_files=["res://.godot/imported/A Different Kind of Journey.ogg-2167b81ecda4692eb80ba0a1997c9c7d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

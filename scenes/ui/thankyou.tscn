@@ -70,7 +70,7 @@ text = "CONGRATULATIONS
 Thank you for bringing
 light back to the world.
 
-Thank You for playing"
+Thank you for playing"
 horizontal_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer2/MarginContainer/VBoxContainer"]

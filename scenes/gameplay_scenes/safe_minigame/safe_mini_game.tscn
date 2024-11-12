@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dmgo7ta1048bs" path="res://scenes/gameplay_scenes/safe_minigame/outer_dial.png" id="4_5i4qd"]
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="7_ciky7"]
 [ext_resource type="PackedScene" uid="uid://32iomad28t5n" path="res://scenes/levels/Floor2.tscn" id="8_o2j1d"]
-[ext_resource type="AudioStream" uid="uid://d2yeyatfvapw6" path="res://audio/background_music/007 Bond (Copyright Free Remix).ogg" id="9_edern"]
+[ext_resource type="AudioStream" uid="uid://d2yeyatfvapw6" path="res://audio/background_music/floor_2/007 Bond (Copyright Free Remix).ogg" id="9_edern"]
 [ext_resource type="AudioStream" uid="uid://b8np4hoqxna6" path="res://audio/sound_effects/floor2/Opening Metal Door.wav" id="10_ggml4"]
 [ext_resource type="PackedScene" uid="uid://0q0ebxluougn" path="res://scenes/ui/energy_bar.tscn" id="11_4n2je"]
 

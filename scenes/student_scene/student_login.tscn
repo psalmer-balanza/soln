@@ -67,8 +67,8 @@ scale = Vector2(1.00145, 1.00297)
 script = ExtResource("2_nubq2")
 
 [node name="Soln_background" type="AnimatedSprite2D" parent="Panel/CharacterBody2D"]
-position = Vector2(82.5098, 63.9676)
-scale = Vector2(0.286556, 0.402378)
+position = Vector2(82.6528, 63.772)
+scale = Vector2(0.287117, 0.400985)
 sprite_frames = SubResource("SpriteFrames_d42gl")
 animation = &"idle"
 frame_progress = 0.0651652
@@ -81,9 +81,9 @@ shape = SubResource("RectangleShape2D_5a0h5")
 [node name="StudentInformation" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_left = 164.8
-offset_top = 107.696
+offset_top = 106.798
 offset_right = 1228.8
-offset_bottom = 683.695
+offset_bottom = 682.797
 
 [node name="IPAddress" type="LineEdit" parent="StudentInformation"]
 texture_filter = 1
@@ -164,4 +164,13 @@ position = Vector2(535.136, 292.574)
 rotation = -3.14159
 scale = Vector2(1029.97, -605.692)
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 118.508
+offset_top = 71.7972
+offset_right = 165.508
+offset_bottom = 95.7972
+text = "BACK"
+
 [connection signal="button_down" from="StudentInformation/LoginButton" to="." method="_on_login_button_button_down"]
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]

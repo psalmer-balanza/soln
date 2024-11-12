@@ -55,3 +55,7 @@ func _http_request_completed(result, response_code, headers, body):
 			print("Failed to parse JSON")
 	else:
 		print("HTTP request failed with code:", response_code)
+
+
+func _on_back_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu/start_menu.tscn")
