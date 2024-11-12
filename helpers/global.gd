@@ -62,7 +62,7 @@ func randomize_questions(questions_array: Array, current_chosen_questions: Array
 		if is_chosen:
 			print("Question already added")
 			is_chosen = false
-			
+		
 		# Add if question is new
 		else: 
 			chosen_index_questions.append(int(questions_array[random_number_question][5]))

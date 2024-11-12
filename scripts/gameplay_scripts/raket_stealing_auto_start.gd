@@ -9,15 +9,20 @@ func _process(_delta):
 	if DialogueState.raket_sneaking and not raket_steal:
 		raket_stealing()
 		raket_steal = true
-	if DialogueState.raket_sneaking_quest_complete and not raket_steal_quest:
+	if DialogueState.raket_sneaking_quest_complete  and not raket_steal_quest:
+		print("this is executed")
+		print("Dialogue state raket sneaking quest complete ", DialogueState.raket_sneaking_quest_complete)
+		print("Raket steal quest current ", raket_steal_quest)
 		raket_delete_node()
 		raket_steal_quest = true
+
 
 func raket_stealing() -> void:
 	print("raket is here")
 	animation_player.play("raket_stealing")
 	await animation_player.animation_finished
 	raket_steal = true
+
 
 func raket_delete_node() -> void:
 	raket_sprite.visible = false

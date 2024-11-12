@@ -7,7 +7,7 @@ if current_quest == "raket_stealing":
 	Masked Figure: But that was too easy... now I kinda feel bad...
 	Masked Figure: How about I give you another try?
 	- Fine! Bring it on!
-	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
+	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn"):
 elif current_quest == "raket_stealing_gameplay_done"
 	Robot: I did it! I solved the fractions! [wait=0.5] Now hold on... stealing is bad, okay?
 	Masked Figure: But it's the first step to being a ninja... I have to be stealthy.
@@ -26,8 +26,10 @@ elif current_quest == "raket_stealing_gameplay_done"
 	Robot: Well, she does. So, how about we head to your house and share this pie?
 	set current_quest = "share_pie_with_raket"
 	Raket: I'd like that. Let’s go and slice it up.
+	set raket_sneaking_quest_complete = true
+	"Wait where did raket go? That racoon is really fast."
 	set disable_raket_stealing_quest = true
-else
+else:
 	do raket_steal_scene()
 	*A masked figure takes the pie off your hands before you could notice*
 	Robot: Hey! Stop right there! That pie isn't for you!
@@ -37,7 +39,6 @@ else
 	Masked Figure: I see that you are serious about it, let's make a deal?
 	Masked Figure: If you want this pie back, you'll have to solve a few fraction problems first. Deal?
 	Robot: Deal. Hit me with your best shot!
-	set raket_sneaking_quest_complete = true
 	set current_quest = "raket_stealing"
 	do save_player_position_and_change_scene("res://scenes/gameplay_scenes/worded_fraction_gameplay/worded_to_fraction_addition.tscn" ,"res://scenes/levels/Floor1.tscn")
 
