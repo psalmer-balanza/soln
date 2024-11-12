@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dm0y58jknrh20"]
+[gd_scene load_steps=24 format=4 uid="uid://dm0y58jknrh20"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/giant_enemy_crab_battle.gd" id="1_i06mh"]
 [ext_resource type="AudioStream" uid="uid://sjrufp76dru3" path="res://audio/background_music/Water Crab.ogg" id="2_0l0x7"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="7_1r8aj"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="8_r1swt"]
 [ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="9_j8hd5"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="13_iq68t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmxk2"]
 atlas = ExtResource("3_kd7ni")
@@ -192,5 +193,33 @@ offset_bottom = 2.0
 position = Vector2(510, 290)
 script = ExtResource("9_j8hd5")
 
+[node name="Advice" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuickTutorial" parent="Advice" instance=ExtResource("13_iq68t")]
+
+[node name="right" parent="Advice/QuickTutorial/filter" index="0"]
+offset_left = 373.0
+
+[node name="bottom" parent="Advice/QuickTutorial/filter" index="2"]
+visible = false
+
+[node name="top" parent="Advice/QuickTutorial/filter" index="3"]
+visible = false
+
+[node name="Content" parent="Advice/QuickTutorial" index="1"]
+offset_left = 324.0
+offset_top = 42.0
+offset_right = 713.0
+offset_bottom = 442.0
+
+[node name="Label" parent="Advice/QuickTutorial/Content" index="1"]
+text = "Always select the simplified form of the fraction when choosing from the choices."
+
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]
+
+[editable path="Advice/QuickTutorial"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dfrf0ytq1ox5x"]
+[gd_scene load_steps=39 format=4 uid="uid://dfrf0ytq1ox5x"]
 
 [ext_resource type="Script" path="res://scripts/gameplay_scripts/battle.gd" id="1_5ad4a"]
 [ext_resource type="AudioStream" uid="uid://cj5a1s616aiit" path="res://audio/background_music/Nature Investigation Snekker-bg.ogg" id="2_e8bak"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="6_x7jxk"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_h80rs"]
 [ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="12_o0dsj"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="16_mpx1f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5n4l"]
 atlas = ExtResource("3_5tdl5")
@@ -293,5 +294,33 @@ offset_bottom = 2.0
 position = Vector2(510, 290)
 script = ExtResource("12_o0dsj")
 
+[node name="Advice" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuickTutorial" parent="Advice" instance=ExtResource("16_mpx1f")]
+
+[node name="right" parent="Advice/QuickTutorial/filter" index="0"]
+offset_left = 373.0
+
+[node name="bottom" parent="Advice/QuickTutorial/filter" index="2"]
+visible = false
+
+[node name="top" parent="Advice/QuickTutorial/filter" index="3"]
+visible = false
+
+[node name="Content" parent="Advice/QuickTutorial" index="1"]
+offset_left = 324.0
+offset_top = 42.0
+offset_right = 713.0
+offset_bottom = 442.0
+
+[node name="Label" parent="Advice/QuickTutorial/Content" index="1"]
+text = "Always select the simplified form of the fraction when choosing from the choices."
+
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]
+
+[editable path="Advice/QuickTutorial"]

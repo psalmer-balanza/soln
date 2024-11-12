@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dnq1la7m7qs1j"]
+[gd_scene load_steps=20 format=4 uid="uid://dnq1la7m7qs1j"]
 
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/final_boss/final_battle.gd" id="1_pnlfg"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/final_boss/eye.gd" id="2_b6p6x"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="8_x7gqq"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="9_f0g0v"]
 [ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="10_wm3lo"]
+[ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="14_l5rd4"]
 
 [sub_resource type="Gradient" id="Gradient_4pq66"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -158,5 +159,32 @@ offset_bottom = 2.0
 position = Vector2(510, 290)
 script = ExtResource("10_wm3lo")
 
+[node name="Advice" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuickTutorial" parent="Advice" instance=ExtResource("14_l5rd4")]
+
+[node name="right" parent="Advice/QuickTutorial/filter" index="0"]
+offset_left = 373.0
+
+[node name="bottom" parent="Advice/QuickTutorial/filter" index="2"]
+visible = false
+
+[node name="top" parent="Advice/QuickTutorial/filter" index="3"]
+visible = false
+
+[node name="Content" parent="Advice/QuickTutorial" index="1"]
+offset_left = 324.0
+offset_top = 42.0
+offset_right = 713.0
+offset_bottom = 442.0
+
+[node name="Label" parent="Advice/QuickTutorial/Content" index="1"]
+text = "Always select the simplified form of the fraction when choosing from the choices."
+
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]
+
+[editable path="Advice/QuickTutorial"]
