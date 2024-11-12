@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr8565r7bni6"]
+[gd_scene load_steps=10 format=3 uid="uid://dr8565r7bni6"]
 
 [ext_resource type="Script" path="res://scripts/main_menu_scripts/main_menu.gd" id="1_vheuk"]
 [ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="2_141v2"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_r403t"]
+[ext_resource type="AudioStream" uid="uid://cj5a1s616aiit" path="res://audio/background_music/Nature Investigation Snekker-bg.ogg" id="4_fibsu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
 atlas = ExtResource("2_141v2")
@@ -82,14 +83,6 @@ theme_override_font_sizes/font_size = 25
 text = "LOAD GAME"
 flat = true
 
-[node name="options" type="Button" parent="buttons"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r403t")
-theme_override_font_sizes/font_size = 25
-text = "SETTINGS
-"
-flat = true
-
 [node name="quit" type="Button" parent="buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r403t")
@@ -98,7 +91,29 @@ text = "QUIT
 "
 flat = true
 
+[node name="MenuBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fibsu")
+volume_db = -21.55
+autoplay = true
+
+[node name="ONLINE LABEL" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 43.0
+offset_top = 28.0
+offset_right = 137.0
+offset_bottom = 44.0
+text = "ONLINE MODE"
+
+[node name="OFFLINE LABEL" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 43.0
+offset_top = 28.0
+offset_right = 142.0
+offset_bottom = 44.0
+text = "OFFLINE MODE"
+
 [connection signal="pressed" from="buttons/new game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="buttons/load game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="buttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
