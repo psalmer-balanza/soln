@@ -8,6 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://cgqy3e524i4ci" path="res://assets/character_portraits/Rat.png" id="5_sdl2m"]
 [ext_resource type="PackedScene" uid="uid://cdf7d46axwoiq" path="res://scenes/ui/thankyou.tscn" id="6_j2cl5"]
 
+[sub_resource type="Animation" id="Animation_2vepa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 640)]
+}
+
 [sub_resource type="Animation" id="Animation_h2p0k"]
 resource_name = "roll_credits"
 length = 30.0
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 640), Vector2(0, -1369)]
-}
-
-[sub_resource type="Animation" id="Animation_2vepa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Credits:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 640)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ut0g"]

@@ -66,8 +66,8 @@ scale = Vector2(1.00145, 1.00297)
 script = ExtResource("1_lpcqc")
 
 [node name="Soln_background" type="AnimatedSprite2D" parent="Panel/CharacterBody2D"]
-position = Vector2(78.7705, 61.4673)
-scale = Vector2(0.308026, 0.438708)
+position = Vector2(78.6161, 61.6853)
+scale = Vector2(0.310115, 0.446798)
 sprite_frames = SubResource("SpriteFrames_4mjwi")
 animation = &"idle"
 
@@ -199,6 +199,7 @@ flat = true
 
 [node name="ErrorLabelUsername" type="RichTextLabel" parent="."]
 self_modulate = Color(0.576471, 0.247059, 0.270588, 1)
+layout_mode = 0
 offset_left = 511.0
 offset_top = 396.0
 offset_right = 733.0
@@ -206,4 +207,13 @@ offset_bottom = 422.0
 theme_override_fonts/normal_font = ExtResource("3_hu7dh")
 scroll_active = false
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 111.0
+offset_bottom = 64.0
+text = "BACK"
+
 [connection signal="button_down" from="StudentInformation/RegisterButton" to="." method="_on_register_button_button_down"]
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]
