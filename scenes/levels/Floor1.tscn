@@ -883,7 +883,7 @@ position = Vector2(0, -0.000137329)
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="MainCharacter" parent="." instance=ExtResource("14_mjtyp")]
-position = Vector2(1402, 1046)
+position = Vector2(357, 177)
 
 [node name="in_front_details" type="Node2D" parent="."]
 
@@ -903,7 +903,7 @@ tile_set = SubResource("TileSet_ul4d6")
 
 [node name="laboratory_accessories" type="TileMapLayer" parent="decorations"]
 position = Vector2(-16, -1)
-tile_map_data = PackedByteArray("AAANAAUAAAADAAAAAAAPAAQAAAABAAAAAAAPAAUAAAABAAEAAAAQAAQAAAACAAAAAAAQAAUAAAACAAEAAAAIAAYAAAABAAAAABAHAAYAAAACAAAAABAIAAcAAAABAAEAABAHAAcAAAACAAEAABANAAoAAAAAAAAAAAAJABYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAANAAUAAAADAAAAAAAPAAQAAAABAAAAAAAPAAUAAAABAAEAAAAQAAQAAAACAAAAAAAQAAUAAAACAAEAAAAIAAYAAAABAAAAABAHAAYAAAACAAAAABAIAAcAAAABAAEAABAHAAcAAAACAAEAABANAAoAAAAAAAAAAAAJABYAAAAAAAAAAAAvACMAAAAAAAAAAAAZAB8AAAAAAAAAAAA=")
 tile_set = ExtResource("6_1gvms")
 
 [node name="obstacles" type="Node2D" parent="."]
@@ -913,54 +913,6 @@ position = Vector2(346, 376)
 
 [node name="CollisionShape2D" parent="obstacles/MovableShinyRock/Actionable" index="0"]
 position = Vector2(9, 8)
-
-[node name="tooltips" type="Node2D" parent="."]
-
-[node name="monitor1" parent="tooltips" instance=ExtResource("16_etk15")]
-offset_left = 389.0
-offset_top = 141.0
-offset_right = 421.0
-offset_bottom = 182.0
-scale = Vector2(0.25, 0.25)
-
-[node name="MarginContainer2" parent="tooltips/monitor1" index="0"]
-offset_right = 214.0
-offset_bottom = 100.0
-
-[node name="Label" parent="tooltips/monitor1/MarginContainer2/MarginContainer" index="0"]
-text = "use WASD keys
-or Arrow keys
-to move"
-
-[node name="monitor2" parent="tooltips" instance=ExtResource("16_etk15")]
-offset_left = 381.0
-offset_top = 301.0
-offset_right = 413.0
-offset_bottom = 342.0
-scale = Vector2(0.25, 0.25)
-
-[node name="MarginContainer2" parent="tooltips/monitor2" index="0"]
-offset_right = 266.0
-offset_bottom = 79.0
-
-[node name="Label" parent="tooltips/monitor2/MarginContainer2/MarginContainer" index="0"]
-text = "You can use E or
-SPACE to interact"
-
-[node name="monitor3" parent="tooltips" instance=ExtResource("16_etk15")]
-offset_left = 251.0
-offset_top = 686.0
-offset_right = 283.0
-offset_bottom = 727.0
-scale = Vector2(0.25, 0.25)
-
-[node name="MarginContainer2" parent="tooltips/monitor3" index="0"]
-offset_right = 322.0
-offset_bottom = 79.0
-
-[node name="Label" parent="tooltips/monitor3/MarginContainer2/MarginContainer" index="0"]
-text = "If you're feeling lost
-follow the fireflies"
 
 [node name="Cutscenes" type="Node2D" parent="."]
 position = Vector2(321, 800)
@@ -1049,13 +1001,93 @@ position = Vector2(440, 1300)
 
 [node name="Occlusions" parent="." instance=ExtResource("29_8dra5")]
 
+[node name="tooltips" type="Node2D" parent="."]
+
+[node name="monitor1" parent="tooltips" instance=ExtResource("16_etk15")]
+offset_left = 389.0
+offset_top = 141.0
+offset_right = 421.0
+offset_bottom = 182.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="tooltips/monitor1" index="0"]
+offset_right = 214.0
+offset_bottom = 100.0
+
+[node name="Label" parent="tooltips/monitor1/MarginContainer2/MarginContainer" index="0"]
+text = "use WASD keys
+or Arrow keys
+to move"
+
+[node name="monitor2" parent="tooltips" instance=ExtResource("16_etk15")]
+offset_left = 381.0
+offset_top = 301.0
+offset_right = 413.0
+offset_bottom = 342.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="tooltips/monitor2" index="0"]
+offset_right = 266.0
+offset_bottom = 79.0
+
+[node name="Label" parent="tooltips/monitor2/MarginContainer2/MarginContainer" index="0"]
+text = "You can use E or
+SPACE to interact"
+
+[node name="monitor3" parent="tooltips" instance=ExtResource("16_etk15")]
+offset_left = 251.0
+offset_top = 686.0
+offset_right = 283.0
+offset_bottom = 727.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="tooltips/monitor3" index="0"]
+offset_right = 322.0
+offset_bottom = 79.0
+
+[node name="Label" parent="tooltips/monitor3/MarginContainer2/MarginContainer" index="0"]
+text = "If you're feeling lost
+follow the fireflies"
+
+[node name="monitor4" parent="tooltips" instance=ExtResource("16_etk15")]
+offset_left = 757.0
+offset_top = 975.0
+offset_right = 789.0
+offset_bottom = 1016.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="tooltips/monitor4" index="0"]
+offset_right = 322.0
+offset_bottom = 79.0
+
+[node name="Label" parent="tooltips/monitor4/MarginContainer2/MarginContainer" index="0"]
+text = "Finishing people's requests 
+gives you more energy"
+
+[node name="monitor5" parent="tooltips" instance=ExtResource("16_etk15")]
+offset_left = 1460.0
+offset_top = 1102.0
+offset_right = 1492.0
+offset_bottom = 1143.0
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer2" parent="tooltips/monitor5" index="0"]
+offset_right = 322.0
+offset_bottom = 79.0
+
+[node name="Label" parent="tooltips/monitor5/MarginContainer2/MarginContainer" index="0"]
+text = "You can press the
+Esc key to pause the game"
+
 [editable path="obstacles/MovableShinyRock"]
-[editable path="tooltips/monitor1"]
-[editable path="tooltips/monitor2"]
-[editable path="tooltips/monitor3"]
 [editable path="Cutscenes/SaisaiRockScene"]
 [editable path="Cutscenes/SaisaiRockScene/Saisai"]
 [editable path="Cutscenes/SaisaiRockScene/firefly"]
 [editable path="Cutscenes/SaisaiRockScene/firefly2"]
 [editable path="Cutscenes/CollectingSwordPieces"]
 [editable path="Occlusions"]
+[editable path="tooltips/monitor1"]
+[editable path="tooltips/monitor2"]
+[editable path="tooltips/monitor3"]
+[editable path="tooltips/monitor4"]
+[editable path="tooltips/monitor5"]
