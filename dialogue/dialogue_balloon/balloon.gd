@@ -43,7 +43,7 @@ var dialogue_line: DialogueLine:
 		
 		is_waiting_for_input = false
 		balloon.focus_mode = Control.FOCUS_ALL
-		balloon.grab_focus()
+		#balloon.grab_focus()
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:

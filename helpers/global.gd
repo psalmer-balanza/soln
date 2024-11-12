@@ -71,3 +71,8 @@ func randomize_questions(questions_array: Array, current_chosen_questions: Array
 	print("Current chosen index question are ", chosen_index_questions)
 	
 	return current_chosen_questions
+
+func add_energy():
+	if user_energy >= 5:
+		return
+	user_energy += 1
