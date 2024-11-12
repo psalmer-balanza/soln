@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://y83t81wmmpjx" path="res://dialogue/floor_2/rat_training_area.dialogue" id="15_m63yj"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="18_ncdd4"]
 [ext_resource type="PackedScene" uid="uid://dc2a3a5irn808" path="res://scenes/characters_scenes/floor2_characters/Giant Enemy Crab.tscn" id="18_vr7qy"]
-[ext_resource type="PackedScene" path="res://scenes/levels/test_floor2/decorations.tscn" id="19_4icpp"]
+[ext_resource type="PackedScene" uid="uid://bxg4ybtk1lrd" path="res://scenes/levels/test_floor2/decorations.tscn" id="19_4icpp"]
 [ext_resource type="PackedScene" uid="uid://bxmj5sxbr5016" path="res://scenes/cutscenes/floor2/waterlogged_1.tscn" id="20_24fd3"]
 [ext_resource type="PackedScene" uid="uid://cd28wrjjp4wrg" path="res://scenes/cutscenes/floor2/waterlogged_2.tscn" id="21_22hcu"]
 [ext_resource type="PackedScene" uid="uid://bh1bpynddf5nt" path="res://scenes/cutscenes/floor2/waterlogged_3.tscn" id="22_kq6do"]
@@ -1039,7 +1039,7 @@ rooms"
 color = Color(0.323096, 0.268242, 0.383669, 1)
 
 [node name="FreshSpawnDialogue" parent="." instance=ExtResource("14_onlp4")]
-position = Vector2(28, 6)
+position = Vector2(1, 2)
 
 [node name="Rat" parent="." instance=ExtResource("14_362hh")]
 position = Vector2(1728, 969)
@@ -1094,7 +1094,7 @@ tile_map_data = PackedByteArray("AAD7/wEAAQABAAIAAAACAAEAAQAAAAAAAAACAAIAAQAAAAE
 tile_set = SubResource("TileSet_kqces")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(3407, -193)
+position = Vector2(22, 20)
 
 [node name="FirePedestals" type="Node2D" parent="."]
 position = Vector2(-17, 156)
