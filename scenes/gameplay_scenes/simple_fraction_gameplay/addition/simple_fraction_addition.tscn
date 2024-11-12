@@ -360,8 +360,12 @@ offset_bottom = 384.0
 [node name="Label" parent="Tutorials/QuickTutorial/Content" index="1"]
 text = "To add fractions with the same denominators, simply add the numerators and copy the denominator."
 
-[node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("12_gxf0q")]
+[node name="CloseButton" parent="Tutorials/QuickTutorial/Close" index="0"]
+text = "NEXT"
+
+[node name="QuickTutorial2" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
+next = NodePath("../QuickTutorial3")
 
 [node name="right" parent="Tutorials/QuickTutorial2/filter" index="0"]
 offset_left = 0.0
@@ -381,6 +385,9 @@ offset_bottom = 403.0
 
 [node name="Label" parent="Tutorials/QuickTutorial2/Content" index="1"]
 text = "Then, type the correct numerator and denominator in the spaces provided."
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial2/Close" index="0"]
+text = "NEXT"
 
 [node name="QuickTutorial3" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
@@ -404,6 +411,9 @@ offset_bottom = 248.0
 
 [node name="Label" parent="Tutorials/QuickTutorial3/Content" index="1"]
 text = "To add fractions with the different denominators, first find the Least Common Denominator (LCD)."
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial3/Close" index="0"]
+text = "NEXT"
 
 [node name="QuickTutorial4" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
@@ -429,6 +439,9 @@ offset_bottom = 253.0
 [node name="Label" parent="Tutorials/QuickTutorial4/Content" index="1"]
 text = ""
 
+[node name="CloseButton" parent="Tutorials/QuickTutorial4/Close" index="0"]
+text = "NEXT"
+
 [node name="QuickTutorial5" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
 next = NodePath("../QuickTutorial6")
@@ -451,6 +464,9 @@ offset_right = 161.0
 [node name="Label" parent="Tutorials/QuickTutorial5/Content" index="1"]
 text = ""
 
+[node name="CloseButton" parent="Tutorials/QuickTutorial5/Close" index="0"]
+text = "NEXT"
+
 [node name="QuickTutorial6" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
 next = NodePath("../QuickTutorial7")
@@ -471,6 +487,9 @@ offset_right = 159.0
 
 [node name="Label" parent="Tutorials/QuickTutorial6/Content" index="1"]
 text = ""
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial6/Close" index="0"]
+text = "NEXT"
 
 [node name="QuickTutorial7" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
@@ -494,6 +513,9 @@ offset_bottom = 250.0
 [node name="Label" parent="Tutorials/QuickTutorial7/Content" index="1"]
 text = ""
 
+[node name="CloseButton" parent="Tutorials/QuickTutorial7/Close" index="0"]
+text = "NEXT"
+
 [node name="QuickTutorial8" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
 visible = false
 next = NodePath("../QuickTutorial9")
@@ -515,6 +537,9 @@ offset_bottom = 252.0
 
 [node name="Label" parent="Tutorials/QuickTutorial8/Content" index="1"]
 text = ""
+
+[node name="CloseButton" parent="Tutorials/QuickTutorial8/Close" index="0"]
+text = "NEXT"
 
 [node name="QuickTutorial9" parent="Tutorials" instance=ExtResource("12_gxf0q")]
 visible = false

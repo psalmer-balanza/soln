@@ -650,6 +650,9 @@ offset_top = 480.0
 offset_right = 129.368
 offset_bottom = 520.0
 
+[node name="CloseButton" parent="Control/QuickTutorial/Close" index="0"]
+text = "NEXT"
+
 [node name="QuickTutorial2" parent="Control" node_paths=PackedStringArray("next") instance=ExtResource("15_mwakl")]
 visible = false
 offset_left = -7.36842
@@ -712,6 +715,9 @@ offset_top = 480.0
 offset_right = 129.368
 offset_bottom = 520.0
 
+[node name="CloseButton" parent="Control/QuickTutorial2/Close" index="0"]
+text = "NEXT"
+
 [node name="QuickTutorial3" parent="Control" instance=ExtResource("15_mwakl")]
 visible = false
 offset_left = -7.36842
@@ -772,6 +778,9 @@ offset_left = 27.3684
 offset_top = 480.0
 offset_right = 129.368
 offset_bottom = 520.0
+
+[node name="CloseButton" parent="Control/QuickTutorial3/Close" index="0"]
+text = "NEXT"
 
 [node name="CorrectAnswerSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2iwgc")
