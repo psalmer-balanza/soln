@@ -17,6 +17,9 @@ func _process(delta: float) -> void:
 	else:
 		question.hide()
 		question_bg.hide()
+
+	if Global.guardian_enemy_hp == 50:
+		enemy_hp.add_theme_color_override("font_color", "#933f45")
 	
 	if Global.guardian_enemy_hp == 0:
 		DialogueState.current_quest = "final_boss_quiz_successful"

@@ -17,6 +17,10 @@ func _process(delta: float) -> void:
 		question.hide()
 		question_bg.hide()
 	
+	if Global.Giant_Enemy_Crab_Current_HP == 50:
+		enemy_hp.add_theme_color_override("font_color", "#933f45")
+	
+	
 	if Global.Giant_Enemy_Crab_HP == 0:
 		DialogueState.current_quest = "crab_quiz_successful"
 		Statistics.postQuizScore(PlayerState.student_id, PlayerState.classroom_id, 11, Global.total_score)

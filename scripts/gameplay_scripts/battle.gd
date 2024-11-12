@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 		
 	elif Global.Snekker_HP == 50:
 		snekker_sprite.play("damaged_life_2")
+		enemy_hp.add_theme_color_override("font_color", "#933f45")
 	
 	elif Global.Snekker_HP == 20:
 		snekker_sprite.play("damaged_life_3")
