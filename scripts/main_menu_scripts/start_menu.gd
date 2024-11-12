@@ -10,4 +10,4 @@ func _on_login_button_down():
 
 
 func _on_offline_mode_button_down():
-	get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")

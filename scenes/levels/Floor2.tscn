@@ -1014,7 +1014,7 @@ tile_map_data = PackedByteArray("AAADAA0AAAAAAAAAAAD//yAAAwAAAAIAAAD//x4AAwAAAAE
 tile_set = ExtResource("5_qdfio")
 
 [node name="MainCharacter" parent="." instance=ExtResource("5_g8opa")]
-position = Vector2(1757, -142)
+position = Vector2(35, 5)
 
 [node name="tooltipls" type="Node2D" parent="."]
 modulate = Color(0.458824, 1, 0.996078, 1)
