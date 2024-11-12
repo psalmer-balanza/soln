@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjbw6lvrumwhk"]
+
+[ext_resource type="Texture2D" uid="uid://0rn6bhs77scs" path="res://assets/floor_2/crystal ball.png" id="1_77ofh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vyfo"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(250, 0, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad0gv"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(0, 0, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mngv2"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(250, 1500, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b733l"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(0, 1500, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkjdm"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(0, 3000, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6v6j"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(250, 3000, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh4sx"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(250, 4500, 250, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn5e4"]
+atlas = ExtResource("1_77ofh")
+region = Rect2(0, 4500, 250, 1500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75i5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vyfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad0gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mngv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b733l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkjdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6v6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh4sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn5e4")
+}],
+"loop": true,
+"name": &"CrystalBall",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vi06a"]
+radius = 17.389
+
+[node name="CrystalBall" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(92, -641)
+sprite_frames = SubResource("SpriteFrames_75i5j")
+animation = &"CrystalBall"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(17, -6)
+scale = Vector2(-3.91231, -3.81172)
+shape = SubResource("CircleShape2D_vi06a")
