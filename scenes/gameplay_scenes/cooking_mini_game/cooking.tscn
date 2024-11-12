@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfjry6qqtrqd6"]
+[gd_scene load_steps=31 format=3 uid="uid://dfjry6qqtrqd6"]
 
 [ext_resource type="AudioStream" uid="uid://dgabtoa7cg2re" path="res://audio/background_music/Saisai Cooking.ogg" id="1_4ahw2"]
 [ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/area_2d.gd" id="1_5cav8"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://qi0gyl783jj2" path="res://scenes/ui/congratulations.tscn" id="22_bgp80"]
 [ext_resource type="PackedScene" uid="uid://c442aeoodnesa" path="res://scenes/levels/Floor1.tscn" id="23_tlpu8"]
 [ext_resource type="PackedScene" uid="uid://bbry446v48htq" path="res://scenes/ui/quick_tutorial.tscn" id="24_b43bd"]
-[ext_resource type="Script" path="res://scenes/gameplay_scenes/cooking_mini_game/tutorials.gd" id="24_ek2r0"]
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="24_j3b2b"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_shvq1"]
@@ -482,7 +481,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("24_ek2r0")
 
 [node name="QuickTutorial" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("24_b43bd")]
 offset_right = 1024.0
