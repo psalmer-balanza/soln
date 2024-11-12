@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://trxctaaesrgo"]
+[gd_scene load_steps=18 format=3 uid="uid://trxctaaesrgo"]
 
 [ext_resource type="Script" path="res://scripts/character_scripts/npc/snekkers.gd" id="1_djawe"]
 [ext_resource type="Texture2D" uid="uid://dlgfywqxxxqsm" path="res://assets/floor_1/npc/snekkers/Snekkers-Healed-Idle.png" id="2_x2knj"]
 [ext_resource type="Resource" uid="uid://bo6dh3eso0qgw" path="res://dialogue/floor_1/snekkers.dialogue" id="3_5hdfo"]
 [ext_resource type="Texture2D" uid="uid://qral3ctdrux8" path="res://assets/floor_1/npc/snekkers/Mushroomed-Snekkers-Idle.png" id="3_okgp8"]
-[ext_resource type="PackedScene" uid="uid://dbhdmiotem7uy" path="res://helpers/actionable.tscn" id="4_kipv2"]
 [ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="5_yf50a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rf2n"]
@@ -86,9 +85,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jh85t"]
-radius = 48.2597
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_v184n"]
 radius = 59.1354
 
@@ -111,14 +107,6 @@ scale = Vector2(0.0849609, 0.0878906)
 sprite_frames = SubResource("SpriteFrames_t5p1b")
 animation = &"snekkers_healed_idle"
 autoplay = "snekkers_healed_idle"
-
-[node name="Actionable" parent="." instance=ExtResource("4_kipv2")]
-dialogue_resource = ExtResource("3_5hdfo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(2, 22)
-shape = SubResource("CircleShape2D_jh85t")
-debug_color = Color(0.316232, 0.596424, 0.534196, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(1.08254, 19.1106)

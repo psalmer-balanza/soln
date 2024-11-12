@@ -961,8 +961,7 @@ position = Vector2(5, 210)
 shape = SubResource("RectangleShape2D_48qww")
 
 [node name="Snekkers" parent="." instance=ExtResource("14_5ewdd")]
-position = Vector2(994, 1776)
-script = null
+position = Vector2(995, 1813)
 
 [node name="PipeEntranceScene" parent="." instance=ExtResource("27_55muk")]
 position = Vector2(873, 1548)
