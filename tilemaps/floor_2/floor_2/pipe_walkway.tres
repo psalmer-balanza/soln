@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bgjpnl2hfvf4o"]
 
-[ext_resource type="Texture2D" uid="uid://3krc7fya0m63" path="res://scenes/levels/test_floor2/pipe_walkway.png" id="1_cbkmv"]
-[ext_resource type="Texture2D" uid="uid://bvnaxri8tl12r" path="res://scenes/levels/test_floor2/pipe_below.png" id="2_oh1ih"]
+[ext_resource type="Texture2D" uid="uid://3krc7fya0m63" path="res://assets/floor_2/pipe_walkway.png" id="1_cbkmv"]
+[ext_resource type="Texture2D" uid="uid://bvnaxri8tl12r" path="res://assets/floor_2/pipe_below.png" id="2_oh1ih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuj4w"]
 texture = ExtResource("1_cbkmv")

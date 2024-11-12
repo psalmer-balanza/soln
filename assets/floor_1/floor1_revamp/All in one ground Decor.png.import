@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b03nd31bdtkb3"
-path="res://.godot/imported/waterlogged_room.png-37915b122d730dd234d35fb081ad0298.ctex"
+uid="uid://ctryrrodivep0"
+path="res://.godot/imported/All in one ground Decor.png-b0737b3a41afde54fb0d0d63195f2f07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/test_floor2/waterlogged_room.png"
-dest_files=["res://.godot/imported/waterlogged_room.png-37915b122d730dd234d35fb081ad0298.ctex"]
+source_file="res://assets/floor_1/floor1_revamp/All in one ground Decor.png"
+dest_files=["res://.godot/imported/All in one ground Decor.png-b0737b3a41afde54fb0d0d63195f2f07.ctex"]
 
 [params]
 

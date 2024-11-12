@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfad566d0o20d"
-path="res://.godot/imported/waterpipe_entrance.png-8dd800583d02b09f3ab91b1e0f5f2287.ctex"
+uid="uid://dlwftcurewfym"
+path="res://.godot/imported/pipe_decor.png-a227b53498f27314bf4cf64bcf9c31f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/test_floor2/waterpipe_entrance.png"
-dest_files=["res://.godot/imported/waterpipe_entrance.png-8dd800583d02b09f3ab91b1e0f5f2287.ctex"]
+source_file="res://assets/floor_2/pipe_decor.png"
+dest_files=["res://.godot/imported/pipe_decor.png-a227b53498f27314bf4cf64bcf9c31f1.ctex"]
 
 [params]
 

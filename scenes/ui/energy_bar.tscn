@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0q0ebxluougn"]
 
-[ext_resource type="Script" path="res://scenes/ui/energy_bar.gd" id="1_ib1o3"]
+[ext_resource type="Script" path="res://scripts/ui/energy_bar.gd" id="1_ib1o3"]
 [ext_resource type="Texture2D" uid="uid://duepr4dc6e85c" path="res://assets/ui/user_gui/energy bar.png" id="2_3vq31"]
 
 [node name="EnergyBar" type="Control"]

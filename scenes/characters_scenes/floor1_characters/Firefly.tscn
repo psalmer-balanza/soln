@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bw7ejsmdlwoyr"]
 
-[ext_resource type="Script" path="res://scenes/levels/test_floor1/firefly.gd" id="1_iuyxs"]
+[ext_resource type="Script" path="res://scripts/character_scripts/npc/firefly.gd" id="1_iuyxs"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inlt7"]
 lifetime_randomness = 0.2

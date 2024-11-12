@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene_scripts/saisai_rock_scene.gd" id="1_dy5bx"]
 [ext_resource type="Texture2D" uid="uid://bcgx2awlqi1yl" path="res://assets/floor_1/cutscenes/pile of shiny rocks for saisai cutscne (1).png" id="2_r0u5n"]
 [ext_resource type="Texture2D" uid="uid://2ribuc4mgrjf" path="res://assets/floor_1/cutscenes/Shiny Rock Barrier.png" id="3_7jh6e"]
-[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/floor1_characters/saisai.tscn" id="3_fckah"]
+[ext_resource type="PackedScene" uid="uid://cvn3kdgd4qnx5" path="res://scenes/characters_scenes/floor1_characters/Saisai.tscn" id="3_fckah"]
 [ext_resource type="Texture2D" uid="uid://dg5umwl6c1mbx" path="res://assets/floor_1/cutscenes/Saisai Moving Colored Rock.png" id="4_egb74"]
 [ext_resource type="Texture2D" uid="uid://duvm581upfn71" path="res://assets/floor_1/npc/Saisai Idle Long (2).png" id="5_lu12e"]
 [ext_resource type="Texture2D" uid="uid://cdg7axht3e3x8" path="res://assets/floor_1/npc/saisai walking.png" id="6_8dehc"]
@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://d2ary7dmkm8rm" path="res://dialogue/floor_1/saisai_moving_rocks.dialogue" id="8_gewpo"]
 [ext_resource type="Texture2D" uid="uid://bk7tu0h8oyped" path="res://assets/floor_1/cutscenes/Wheelbarrow No Rocks.png" id="9_uivmv"]
 [ext_resource type="Texture2D" uid="uid://bjfxam8cjgyre" path="res://assets/floor_1/cutscenes/Wheelbarrow With Rocks.png" id="10_0oqn5"]
-[ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/levels/test_floor1/firefly.tscn" id="11_wqkp7"]
+[ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/characters_scenes/floor1_characters/Firefly.tscn" id="11_wqkp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u56d"]
 size = Vector2(270, 20)

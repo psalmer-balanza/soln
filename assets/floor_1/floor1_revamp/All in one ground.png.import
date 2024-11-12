@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i0ubr1y8d54"
-path="res://.godot/imported/pipes_side.png-f10c3e16da5db284c884e68064565cdb.ctex"
+uid="uid://tr25p61v3ik6"
+path="res://.godot/imported/All in one ground.png-2324b90653353a60dc20c3d6d58e293e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/test_floor2/pipes_side.png"
-dest_files=["res://.godot/imported/pipes_side.png-f10c3e16da5db284c884e68064565cdb.ctex"]
+source_file="res://assets/floor_1/floor1_revamp/All in one ground.png"
+dest_files=["res://.godot/imported/All in one ground.png-2324b90653353a60dc20c3d6d58e293e.ctex"]
 
 [params]
 

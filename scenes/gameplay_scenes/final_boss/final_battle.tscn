@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="7_jdeet"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="8_x7gqq"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="9_f0g0v"]
-[ext_resource type="Script" path="res://scenes/levels/camera_2d.gd" id="10_wm3lo"]
+[ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="10_wm3lo"]
 
 [sub_resource type="Gradient" id="Gradient_4pq66"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)

@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cv6gtkstr2nfo"]
 
-[ext_resource type="Texture2D" uid="uid://b03nd31bdtkb3" path="res://scenes/levels/test_floor2/waterlogged_room.png" id="1_ho0mp"]
+[ext_resource type="Texture2D" uid="uid://b03nd31bdtkb3" path="res://assets/floor_2/waterlogged_room.png" id="1_ho0mp"]
 [ext_resource type="Texture2D" uid="uid://b258wcipsbpur" path="res://assets/floor_2/sand.png" id="2_5e030"]
 [ext_resource type="Texture2D" uid="uid://dxiscswrxc81n" path="res://assets/floor_2/sand tile.png" id="3_d7qsr"]
 [ext_resource type="Texture2D" uid="uid://b81s5ywf5ivn3" path="res://assets/floor_2/sand tile (1).png" id="4_22pvp"]

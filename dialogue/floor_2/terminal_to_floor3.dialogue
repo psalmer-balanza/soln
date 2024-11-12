@@ -13,14 +13,14 @@ if current_quest == "crab_quiz_after":
 	- (Leave)
 		=> end
 	=> end
-else
+else:
 	(A complicated stream of technology lays before you)
 	What is the password?
 	- I don't know.
 	Shellbot: MY PC!
 	Robot: Oops, let me head back.
 	=> end
-
+=> end
 ~ end
 set in_dialogue = false
 => END

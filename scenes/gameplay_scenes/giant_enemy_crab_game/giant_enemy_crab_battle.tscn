@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://brh6b8ufqdjks" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/board_box.png" id="6_bgkqy"]
 [ext_resource type="Texture2D" uid="uid://c6tabi6nfju21" path="res://assets/background/brick_bg.png" id="7_1r8aj"]
 [ext_resource type="PackedScene" uid="uid://u4k3ryv31ukj" path="res://scenes/gameplay_scenes/question.tscn" id="8_r1swt"]
-[ext_resource type="Script" path="res://scenes/levels/camera_2d.gd" id="9_j8hd5"]
+[ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="9_j8hd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmxk2"]
 atlas = ExtResource("3_kd7ni")

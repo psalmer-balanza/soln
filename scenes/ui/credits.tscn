@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://c4vnrko0wnjkh"]
 
-[ext_resource type="Script" path="res://scenes/ui/credits.gd" id="1_yh7mk"]
+[ext_resource type="Script" path="res://scripts/ui/credits.gd" id="1_yh7mk"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8qwun"]
 [ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/Christian Music Instrumental.ogg" id="3_70v14"]
 [ext_resource type="Texture2D" uid="uid://bipet4e2rgoke" path="res://assets/character_portraits/Saisai.png" id="3_ltmjr"]
 [ext_resource type="Texture2D" uid="uid://c71niuc3mf0o7" path="res://assets/character_portraits/Raket.png" id="4_rhy5m"]
 [ext_resource type="Texture2D" uid="uid://cgqy3e524i4ci" path="res://assets/character_portraits/Rat.png" id="5_sdl2m"]
-[ext_resource type="PackedScene" uid="uid://drwponpv2ow46" path="res://scenes/ui/thankyou.tscn" id="6_j2cl5"]
+[ext_resource type="PackedScene" uid="uid://cdf7d46axwoiq" path="res://scenes/ui/thankyou.tscn" id="6_j2cl5"]
 
 [sub_resource type="Animation" id="Animation_h2p0k"]
 resource_name = "roll_credits"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbry446v48htq"]
 
-[ext_resource type="Script" path="res://scripts/UI/quick_tutorial.gd" id="1_uotad"]
+[ext_resource type="Script" path="res://scripts/ui/quick_tutorial.gd" id="1_uotad"]
 [ext_resource type="Texture2D" uid="uid://f4a5kyl64epc" path="res://assets/ui/tex_box/speech_bubble.png" id="2_f3qmj"]
 [ext_resource type="FontFile" uid="uid://baqxnk61g1qva" path="res://assets/fonts/PixelOperator8.ttf" id="3_l34cy"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_ogdd3"]

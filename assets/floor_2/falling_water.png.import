@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvnaxri8tl12r"
-path="res://.godot/imported/pipe_below.png-a570ef05f2c9339f5c22d1cc1b3de05b.ctex"
+uid="uid://b58aj7c5ga2ov"
+path="res://.godot/imported/falling_water.png-fa8d1327b3ae5f77302bf08948cd31a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/levels/test_floor2/pipe_below.png"
-dest_files=["res://.godot/imported/pipe_below.png-a570ef05f2c9339f5c22d1cc1b3de05b.ctex"]
+source_file="res://assets/floor_2/falling_water.png"
+dest_files=["res://.godot/imported/falling_water.png-fa8d1327b3ae5f77302bf08948cd31a1.ctex"]
 
 [params]
 

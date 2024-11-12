@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://mpf4ptcr7lqr" path="res://assets/floor_1/npc/snekkers/snekkers_lives/snekkers2.0 (remove redshroom).png" id="5_0eyau"]
 [ext_resource type="Texture2D" uid="uid://kex21phpt41e" path="res://scenes/gameplay_scenes/worded_fraction_gameplay/assets/button_box.png" id="6_x7jxk"]
 [ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_h80rs"]
-[ext_resource type="Script" path="res://scenes/levels/camera_2d.gd" id="12_o0dsj"]
+[ext_resource type="Script" path="res://scripts/character_scripts/camera_2d.gd" id="12_o0dsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5n4l"]
 atlas = ExtResource("3_5tdl5")
