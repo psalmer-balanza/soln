@@ -8,9 +8,9 @@ signal incorrect
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A magician was cooking two batches of magical mushrooms. In the first batch, she used two over five of his total magic power, and in the second batch, he used three over ten​. How much magic power did she use in total?", 2, 5, 3, 10, 0],  # First question fractions
-	["I had a stock of potions. I used three over eight​ of them in the morning and five over twelve in the afternoon. How many potions did I use in total?", 3, 8, 5, 12, 1],  # Second question fractions
-	["I was baking pies. One pie was sliced into three sixths​, and another was sliced into five sixths​. How much pie do I have altogether?", 3, 6, 5, 6, 2],  # Third question fractions
+	["A magician was cooking two batches of magical mushrooms. In the first batch, she used two out of five of his total magic power, and in the second batch, he used three out of ten​. How much magic power did she use in total?", 2, 5, 3, 10, 0],  # First question fractions
+	["I have two shelves of potions. The first shelf had eight potions, and I used three of them in the morning. The second shelf held twelve potions, of which I used five in the afternoon. How many potions did I use?", 3, 8, 5, 12, 1],  # Second question fractions
+	["I was baking pies with my friends. I took three pieces out of six from Saisai's pie and took five pieces out of six from Robot's pie. How much pie do I have altogether?", 3, 6, 5, 6, 2],  # Third question fractions
 	]
 	
 var fraction_questions_house = [

@@ -43,7 +43,8 @@ Mushroomed Snekkers: Get out of here!!!
 Mushroomed Snekkers: Well what do you think?
 
 - I'm sorry
-	Mushroomed Snekkers: A little too late for that don't you think
+	Mushroomed Snekkers: A little too late for that don't you think [wait=0.5] Listen, I don’t mean to but ever since the darkness came i've had this headache for ages.
+	
 	=> Snekkers_next_Dialogue
 - I didn't mean to
 	Mushroomed Snekkers: Well I didn't mean to wake up either
@@ -53,12 +54,12 @@ Mushroomed Snekkers: Well what do you think?
 	Mushroomed Snekkers: Oh that little racoon always finding ways to bother me.
 	- That's mean..,
 	Mushroomed Snekkers: Listen, I don’t mean to but ever since the darkness came i've had this headache for ages.
-	Mushroomed Snekkers: Sleeping inscriptions on the wall of the cave are the only things that help.
+	Mushroomed Snekkers: Sleeping and someone said solving the inscriptions on the wall of the cave are the only things that help but I don't know how.
 	=> Snekkers_next_Dialogue
 
 ~ Snekkers_next_Dialogue
 I see… [wait=0.5] Wait, did you say inscriptions?! I can help you with that!
-Mushroomed Snekkers: Uh, sure [wait=2] 
+Mushroomed Snekkers: I'd like to see you try. [wait=2] 
 
 do save_player_position_and_change_scene("res://scenes/gameplay_scenes/battle.tscn", "res://scenes/levels/Floor1.tscn")
 
