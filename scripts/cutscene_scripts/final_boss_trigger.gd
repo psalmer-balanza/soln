@@ -39,6 +39,7 @@ func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, 
 	camera.shake()
 	animation.play("rise")
 	timer.start()
+	DialogueState.in_dialogue = true
 
 func _on_timer_timeout() -> void:
 	camera.stop_shake()

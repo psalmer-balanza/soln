@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://d2ary7dmkm8rm" path="res://dialogue/floor_1/saisai_moving_rocks.dialogue" id="8_gewpo"]
 [ext_resource type="Texture2D" uid="uid://bk7tu0h8oyped" path="res://assets/floor_1/cutscenes/Wheelbarrow No Rocks.png" id="9_uivmv"]
 [ext_resource type="Texture2D" uid="uid://bjfxam8cjgyre" path="res://assets/floor_1/cutscenes/Wheelbarrow With Rocks.png" id="10_0oqn5"]
-[ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/characters_scenes/floor1_characters/firefly.tscn" id="11_wqkp7"]
+[ext_resource type="PackedScene" uid="uid://bw7ejsmdlwoyr" path="res://scenes/characters_scenes/floor1_characters/Firefly.tscn" id="11_wqkp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u56d"]
 size = Vector2(270, 20)

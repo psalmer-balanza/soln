@@ -36,6 +36,8 @@ func _ready():
 		$Saisai/AutoActionable/CollisionShape2D.disabled = false
 
 func play_move_rock() -> void:
+	DialogueState.in_dialogue = true
+	
 	# Remove speech bvubble and saisai collision
 	remove_saisai_speech_bubble = true 
 	$Saisai/CollisionPolygon2D.disabled = true
@@ -66,3 +68,4 @@ func play_move_rock() -> void:
 	remove_saisai_speech_bubble = false
 	has_moved_rock = true
 	disable_saisai_moving_rocks_quest = true
+	DialogueState.in_dialogue = false
