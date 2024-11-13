@@ -1,7 +1,7 @@
 ~ start
 set in_dialogue = true
 
-if current_quest == "crab_quiz_after":
+if current_quest == "crab_quiz_after" or current_quest == "floor_3"
 	(A complicated stream of technology lays before you)
 	Robot: So this is the way to the lighthouse.
 	What is the password?

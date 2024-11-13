@@ -15,6 +15,7 @@ var is_quest_complete: bool
 
 @onready var camera = $"../../Camera2D"
 @onready var timer = $"../../Timer"
+@onready var end_timer = $"../../Reminisce"
 @onready var animation = $"../../AnimationPlayer"
 
 @onready var character = $"../../../MainCharacter"
@@ -57,7 +58,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		timer.start()
 		animation.play("float")
 	if anim_name == "float_down":
-		get_tree().change_scene_to_file("res://scenes/ui/credits.tscn")
+		end_timer.start()
+
 
 func _on_timer_timeout() -> void:
 	animation.play("float_down")
+
+
+func _on_reminisce_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/credits.tscn")

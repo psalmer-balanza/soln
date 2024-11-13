@@ -148,18 +148,25 @@ tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAA
 tile_set = SubResource("TileSet_3x3ed")
 
 [node name="Question" parent="." instance=ExtResource("9_f0g0v")]
-visible = false
 layout_mode = 1
-offset_left = -2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 2.0
+offset_left = 152.0
+offset_top = 105.0
+offset_right = 152.0
+offset_bottom = 105.0
+scale = Vector2(0.7, 0.7)
+
+[node name="bg" parent="Question" index="0"]
+offset_left = -229.0
+offset_top = -160.0
+offset_right = 235.0
+offset_bottom = 111.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(510, 290)
 script = ExtResource("10_wm3lo")
 
 [node name="Advice" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -187,4 +194,5 @@ text = "Always select the simplified form of the fraction when choosing from the
 [connection signal="pressed" from="Attack/Attack" to="." method="_on_attack_pressed"]
 [connection signal="draw" from="Question" to="Question" method="_on_draw"]
 
+[editable path="Question"]
 [editable path="Advice/QuickTutorial"]

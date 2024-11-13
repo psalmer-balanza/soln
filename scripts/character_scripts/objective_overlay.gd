@@ -43,11 +43,11 @@ func _ready() -> void:
 		"after_wr_3": false,
 		"wizard_training_room": false,
 		"after_wizard_training_room": false,
-		"robob_21f31irst_meet": false,
-		"robob_3first_meet": false,
+		"crab_quiz_after": false,
 		"robob_3first13_meet": false,
 		
 		#FLOOR3
+		"floor_3": false,
 		"end_dialogue": false,
 	}
 
@@ -112,6 +112,11 @@ func _process(delta: float) -> void:
 			handle_quest_label(cq, "Pass the wizard rat's trials.")
 		"after_wizard_training_room":
 			handle_quest_label(cq, "Face the Giant Enemy Crab.")
+		"crab_quiz_after":
+			handle_quest_label(cq, "Go to the Crab's TERMINAL.")
+		
+		"floor_3":
+			handle_quest_label(cq, "Find the LIGHTHOUSE.")
 		"end_dialogue":
 			handle_quest_label(cq, "Save the world of Sol'n.")
 	# Typewriter effect update
