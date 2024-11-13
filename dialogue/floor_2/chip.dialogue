@@ -52,7 +52,7 @@ Chip: I'm not sure what you could do with it though...
 Robot: Thanks!
 (You received a Flask badge!)
 set player_badges["flask"] = true
-set current_quest == "after_chip"
+set current_quest = "after_chip"
 set disable_chip_quest = true
 => end
 ~ end
