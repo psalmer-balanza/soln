@@ -48,7 +48,7 @@ func _ready():
 			["What is 1/6 + 1/3?", "1/2", "2/6", "3/6", "4/6", "1/2"]
 			]
 		## questions for final boss
-		elif DialogueState.current_quest == "final_boss_quest":
+		elif DialogueState.current_quest == "final_boss_quest_retry" || DialogueState.current_quest == "crab_quiz_after":
 			mc_questions = [
 				["If you have a fraction 5/6, what is the numerator?", "6", "5", "10", "8", "5"],
 				["You share one thirds of a pizza with a friend and then add another one thirds of another pizza. How much pizza do you have in total?", "1/2", "2/3", "3/3", "4/3", "2/3"],

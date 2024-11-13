@@ -17,7 +17,7 @@ func _process(_delta):
 	elif DialogueState.current_quest == "saisai_house_invite":
 		$Saisai/AutoActionable/CollisionShape2D.disabled = true
 		$Saisai/Actionable/CollisionShape2D.disabled = true
-	elif DialogueState.current_quest == "moving_rock_done" or DialogueState.current_quest == "starting":
+	elif DialogueState.current_quest == "movable_rock_done" or DialogueState.current_quest == "starting":
 		$Saisai/Actionable/CollisionShape2D.disabled = false
 		
 	if remove_saisai_speech_bubble == true: 
