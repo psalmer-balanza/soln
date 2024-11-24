@@ -315,5 +315,8 @@ func next():
 func _on_incorrect() -> void:
 	Global.user_energy -= 1
 	if Global.user_energy == 0 and Global.is_online:
+		Global.is_simplified_tutorial = false
 		Statistics.post_fraction_statistics(PlayerState.classroom_id, PlayerState.student_id, current_chosen_questions[question_index][5], QuestionsLoader.minigame_id, num_right_ans, num_wrong_ans)
-		
+	
+	elif Global.user_energy == 0:
+		Global.is_simplified_tutorial = false

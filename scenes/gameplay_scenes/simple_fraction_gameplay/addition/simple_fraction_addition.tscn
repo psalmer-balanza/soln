@@ -363,9 +363,9 @@ text = "To add fractions with the same denominators, simply add the numerators a
 [node name="CloseButton" parent="Tutorials/QuickTutorial/Close" index="0"]
 text = "NEXT"
 
-[node name="QuickTutorial2" parent="Tutorials" node_paths=PackedStringArray("next") instance=ExtResource("12_gxf0q")]
+[node name="QuickTutorial2" parent="Tutorials" instance=ExtResource("12_gxf0q")]
 visible = false
-next = NodePath("../QuickTutorial3")
+next = NodePath("")
 
 [node name="right" parent="Tutorials/QuickTutorial2/filter" index="0"]
 offset_left = 0.0
@@ -552,13 +552,13 @@ offset_right = 320.0
 
 [node name="bottom" parent="Tutorials/QuickTutorial9/filter" index="2"]
 offset_left = 360.0
-offset_top = 406.0
+offset_top = 412.0
 offset_right = 529.0
 
 [node name="top" parent="Tutorials/QuickTutorial9/filter" index="3"]
 offset_left = 360.0
 offset_right = 529.0
-offset_bottom = 237.0
+offset_bottom = 247.0
 
 [node name="Label" parent="Tutorials/QuickTutorial9/Content" index="1"]
 text = ""
