@@ -64,9 +64,13 @@ func randomize_questions(questions_array: Array, current_chosen_questions: Array
 			is_chosen = false
 		
 		# Add if question is new
-		else: 
-			chosen_index_questions.append(int(questions_array[random_number_question][5]))
-			current_chosen_questions.append(questions_array[random_number_question])
+		elif !is_chosen: 
+			if Global.is_online:
+				chosen_index_questions.append(int(questions_array[random_number_question][5]) - 1)
+				current_chosen_questions.append(questions_array[random_number_question])
+			else:
+				chosen_index_questions.append(int(questions_array[random_number_question][5]))
+				current_chosen_questions.append(questions_array[random_number_question])
 	
 	print("Current chosen index question are ", chosen_index_questions)
 	
