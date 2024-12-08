@@ -1,4 +1,5 @@
 ~ start
+set in_dialogue = true
 
 set current_quest = "end_dialogue"
 Robot: This is it
@@ -10,5 +11,8 @@ Robot: They need their light
 Robot: I will become the source of their light
 Robot: Beep boop
 set current_quest = "ending"
+=> end
 
+~ end
+set in_dialogue = false
 => END
