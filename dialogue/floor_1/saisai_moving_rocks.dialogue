@@ -23,7 +23,7 @@ elif current_quest == "saisai_wheelbarrow":
 #	- Uh oh... I'll be back!
 #		=> end
 #Before finishing simple addition (first meet)
-else 
+elif current_quest == "movable_rock_done":
 	Saisai: Hey there, I saw you clear those magical inscriptions, would you be willing to help me with these?
 	Saisai: Look at these shiny little rocks! They're sooo pretty, right? 
 	Saisai: I wanna use them to make my garden extra cute, but... um... they’re super heavy, 

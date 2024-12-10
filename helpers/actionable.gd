@@ -8,5 +8,4 @@ extends Area2D
 # Show balloon when actionable is activated
 func action() -> void:
 	DialogueState.in_dialogue = true
-	DialogueState.current_quest = "floor_3"
 	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)
