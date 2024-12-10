@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 		
 	elif Global.Snekker_HP == 0:
 		DialogueState.current_quest = "snake_quiz_complete"
+		if Global.total_score < 0:
+			Global.total_score = 0
 		Statistics.postQuizScore(PlayerState.student_id, PlayerState.classroom_id, 5, Global.total_score)
 		get_tree().change_scene_to_file("res://scenes/levels/Floor1.tscn")
 
