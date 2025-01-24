@@ -28,6 +28,7 @@ DialogueState="*res://helpers/dialogue_state.gd"
 QuestionsLoader="*res://helpers/questions_loader.gd"
 Statistics="*res://helpers/statistics.gd"
 StateLoader="*res://helpers/save_state_loader.gd"
+SaveState="*res://helpers/save_state.gd"
 
 [dialogue_manager]
 
@@ -39,7 +40,7 @@ general/balloon_path="res://dialogue/dialogue_balloon/balloon.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=576
-window/size/mode=2
+window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://assets/ui/Mouse Cursor.png"
