@@ -1,0 +1,329 @@
+[gd_scene load_steps=24 format=3 uid="uid://ddu7mncxa2ni6"]
+
+[ext_resource type="Script" path="res://scripts/opening/opening.gd" id="1_xakfp"]
+[ext_resource type="Texture2D" uid="uid://ba1r065rltavo" path="res://assets/opening/intro_animation.png" id="2_kyhqy"]
+[ext_resource type="Texture2D" uid="uid://c6dgj1k2tddmy" path="res://assets/background/Lighthouse_movement.png" id="3_jkukn"]
+[ext_resource type="FontFile" uid="uid://b7ifwnhbxq6y5" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_wuyxb"]
+[ext_resource type="AudioStream" uid="uid://ffo3nmf4wq78" path="res://audio/background_music/final_boss/Christian Music Instrumental.ogg" id="4_0j6v8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf7co"]
+atlas = ExtResource("2_kyhqy")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4m3i"]
+atlas = ExtResource("2_kyhqy")
+region = Rect2(128, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi5bv"]
+atlas = ExtResource("2_kyhqy")
+region = Rect2(256, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on8nh"]
+atlas = ExtResource("2_kyhqy")
+region = Rect2(384, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmxym"]
+atlas = ExtResource("2_kyhqy")
+region = Rect2(512, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbwmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf7co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4m3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi5bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on8nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmxym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ciok"]
+atlas = ExtResource("3_jkukn")
+region = Rect2(0, 0, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7c3h"]
+atlas = ExtResource("3_jkukn")
+region = Rect2(0, 281, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwxq"]
+atlas = ExtResource("3_jkukn")
+region = Rect2(0, 562, 510, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3miy"]
+atlas = ExtResource("3_jkukn")
+region = Rect2(0, 843, 510, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aax75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ciok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7c3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3miy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_jl5de"]
+resource_name = "intro"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7, 9, 14, 16, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(516, 1294), Vector2(516, 700), Vector2(516, 700), Vector2(516, 250), Vector2(516, 250), Vector2(516, -200), Vector2(516, -200)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(19, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bqhyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(516, 1294)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.207843, 0.168627, 0.25098, 0.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D/Soln_background:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cxa3p"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0305833, 0.0206106, 0.0440897, 0.8), Color(0.207843, 0.168627, 0.25098, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_pipxq"]
+resource_name = "fade text 1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_onbbh"]
+resource_name = "fade text 2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vxjbb"]
+resource_name = "fade bg"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Soln_background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4kwt"]
+_data = {
+"RESET": SubResource("Animation_bqhyq"),
+"fade": SubResource("Animation_cxa3p"),
+"fade bg": SubResource("Animation_vxjbb"),
+"fade text 1": SubResource("Animation_pipxq"),
+"fade text 2": SubResource("Animation_onbbh"),
+"intro": SubResource("Animation_jl5de")
+}
+
+[node name="Opening" type="Node2D"]
+script = ExtResource("1_xakfp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 2053.0
+offset_bottom = 1158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207843, 0.168627, 0.25098, 0.8)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(516, 1294)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_qbwmk")
+autoplay = "default"
+
+[node name="Soln_background" type="AnimatedSprite2D" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -143.571)
+scale = Vector2(0.286863, 0.292831)
+sprite_frames = SubResource("SpriteFrames_aax75")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h4kwt")
+}
+speed_scale = 0.5
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 175.0
+offset_top = 240.0
+offset_right = 1600.0
+offset_bottom = 341.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_wuyxb")
+theme_override_font_sizes/font_size = 100
+text = "The sun has died"
+
+[node name="Label2" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 29.0
+offset_top = 240.0
+offset_right = 1942.0
+offset_bottom = 445.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_wuyxb")
+theme_override_font_sizes/font_size = 100
+text = "it is now your mission
+to recharge it."
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0j6v8")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
