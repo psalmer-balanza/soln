@@ -80,7 +80,7 @@ func get_questions(minigame_id):
 	post_data["MinigameID"] = minigame_id
 	post_data["ClassroomID"] = PlayerState.classroom_id
 	var url 
-	
+
 	if minigame_id == 1 || minigame_id == 2 || minigame_id == 6 || minigame_id == 7 || minigame_id == 8 || minigame_id == 9:
 		url = "http://"+ Global.host_ip +":3000/game/getfractions"
 	elif minigame_id == 3 || minigame_id == 4 || minigame_id == 10:
@@ -94,7 +94,7 @@ func get_questions(minigame_id):
 
 	var json_body = JSON.stringify(post_data)
 	var headers = ["Content-type: application/json"]
-	
+
 	# execute POST request
 	var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json_body)
 	if error != OK:

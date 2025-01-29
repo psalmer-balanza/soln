@@ -10,8 +10,8 @@ else:
 
 ~ first_dialogue
 Guardian: GREETINGS!
-Guardian: It seems that you were the one sent to recharge the light
-Guardian: Answer my test and prove to me that you are worthy to relight the world
+Guardian: It seems that you were the one sent to recharge the light!
+Guardian: Answer my test and prove to me that you are worthy to relight the world!
 
 - (Do the test)
 	set current_quest = "final_boss_quest_retry"
@@ -28,7 +28,7 @@ do save_player_position_and_change_scene("res://scenes/gameplay_scenes/final_bos
 
 
 ~ success_dialogue
-Guardian: You are worthy as the prophecy told.
+Guardian: You are worthy as the prophecy told!
 Guardian: Your energy is enough to save the world.
 Guardian: Now go forth to the lighthouse and light it up.
 Guardian: Hero.

@@ -8,6 +8,7 @@ if current_quest == "crab_quiz_after" or current_quest == "floor_3"
 	- 123
 		(An elevator appears before you)
 		Robot: It's time.
+		set current_quest = "floor_3"
 		do change_scene_to_floor3()
 		=> end
 	- (Leave)

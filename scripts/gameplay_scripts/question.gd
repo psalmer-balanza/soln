@@ -19,7 +19,7 @@ var question
 
 func _ready():
 	if Global.is_online:
-		print("CURRENT QUEST IS: ", DialogueState.current_quest)
+		print("ONLINE MODE: CURRENT QUEST IS: ", DialogueState.current_quest)
 		QuestionsLoader.connect("questions_loaded", _on_questions_loaded)
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
 			QuestionsLoader.get_snekkers_questions()
@@ -31,7 +31,7 @@ func _ready():
 			
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
-		print("Current quest is: ", DialogueState.current_quest)
+		print("OFFLINE MODE: Current quest is: ", DialogueState.current_quest)
 		
 		# questions for snekkers
 		if DialogueState.current_quest == "face_the_snake_post_cutscene":
