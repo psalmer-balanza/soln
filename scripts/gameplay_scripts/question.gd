@@ -27,7 +27,11 @@ func _ready():
 			print("crab questions")
 			QuestionsLoader.get_crab_questions()
 		else:
-			QuestionsLoader.get_final_boss_questions()
+			# QuestionsLoader.get_final_boss_questions()
+			# ugly fix to final boss online bug, questions are already loaded in floor3.tscn, just load them
+			mc_questions = QuestionsLoader.final_boss_questions
+			mc_choice_ids = QuestionsLoader.final_boss_choice_ids
+			Global.total_score = mc_questions.size()
 			
 	else:
 		# else get OFFLINE VALUES FOR QUIZ
