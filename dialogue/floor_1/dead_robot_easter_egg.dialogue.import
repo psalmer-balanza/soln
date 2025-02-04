@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cqq53br7naa0c"
+path="res://.godot/imported/dead_robot_easter_egg.dialogue-68f0230dd101be4f0bbe13d284022353.tres"
+
+[deps]
+
+source_file="res://dialogue/floor_1/dead_robot_easter_egg.dialogue"
+dest_files=["res://.godot/imported/dead_robot_easter_egg.dialogue-68f0230dd101be4f0bbe13d284022353.tres"]
+
+[params]
+
+defaults=true

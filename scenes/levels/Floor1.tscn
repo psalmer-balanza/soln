@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://c442aeoodnesa"]
+[gd_scene load_steps=66 format=4 uid="uid://c442aeoodnesa"]
 
 [ext_resource type="Texture2D" uid="uid://tr25p61v3ik6" path="res://assets/floor_1/floor1_revamp/All in one ground.png" id="1_3mv17"]
 [ext_resource type="Script" path="res://scripts/levels/floor_1.gd" id="1_akh82"]
@@ -22,7 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://50xwge6vcpc3" path="res://scenes/characters_scenes/floor1_characters/main_character.tscn" id="14_mjtyp"]
 [ext_resource type="PackedScene" uid="uid://cboj5uc2cb5at" path="res://scenes/cutscenes/floor1/saisai_rock_scene.tscn" id="16_awl35"]
 [ext_resource type="PackedScene" uid="uid://b6xwc5smmiwmn" path="res://scenes/ui/text_box.tscn" id="16_etk15"]
+[ext_resource type="Texture2D" uid="uid://d2bqbxcw8qjy5" path="res://assets/main_character/mc_idle_front.png" id="17_avni4"]
 [ext_resource type="PackedScene" uid="uid://djmytl8d74p23" path="res://scenes/characters_scenes/floor1_characters/Raket.tscn" id="17_frjke"]
+[ext_resource type="PackedScene" uid="uid://nw64sg18ajk6" path="res://helpers/auto_actionable.tscn" id="18_e0tge"]
+[ext_resource type="Resource" uid="uid://cqq53br7naa0c" path="res://dialogue/floor_1/dead_robot_easter_egg.dialogue" id="19_0nc8r"]
 [ext_resource type="PackedScene" uid="uid://bs4r8b8nw7byt" path="res://scenes/cutscenes/floor1/movable_shiny_rock.tscn" id="19_7pd8a"]
 [ext_resource type="PackedScene" uid="uid://cokl1at586il8" path="res://scenes/cutscenes/floor1/raket_stealing.tscn" id="24_yrk65"]
 [ext_resource type="PackedScene" uid="uid://b5ooe8vsvk548" path="res://scenes/cutscenes/floor1/collecting_sword_pieces.tscn" id="25_t57pw"]
@@ -763,6 +766,45 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2kbvb")
 sources/1 = SubResource("TileSetAtlasSource_yy761")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyfgu"]
+atlas = ExtResource("17_avni4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri77k"]
+atlas = ExtResource("17_avni4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrw4f"]
+atlas = ExtResource("17_avni4")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64eno"]
+atlas = ExtResource("17_avni4")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wegk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyfgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri77k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrw4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64eno")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hu2xp"]
+radius = 14.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifwp7"]
 texture = ExtResource("14_m21wj")
 28:0/size_in_atlas = Vector2i(4, 4)
@@ -894,6 +936,18 @@ tile_set = ExtResource("9_tb47j")
 [node name="cave wall upper side" type="TileMapLayer" parent="in_front_details"]
 tile_map_data = PackedByteArray("AAAMABcAAAACAAMAAAANABcAAAACAAMAAAAOABcAAAACAAMAAAAPABcAAAACAAMAAAAQABcAAAACAAMAAAARABcAAAACAAMAAAASABcAAAACAAMAAAATABcAAAACAAMAAAAUABcAAAABAAQAAAAYABcAAAAEAAQAAAAZABcAAAAFAAQAAAALABcAAAAAAAQAAAAUABYAAAAAAAUAAAAUABUAAAAAAAQAAAAYABYAAAAFAAUAAAAYABUAAAAFAAQAAAAXABcAAAADAAQAAAAVABcAAAACAAQAAAAXABYAAAAEAAUAAAAVABYAAAABAAUAAAALABgAAAABAAQAAAAMABgAAAACAAQAAAAKABgAAAAAAAQAAAAKABkAAAAAAAUAAAAKABoAAAAAAAUAAAAKABsAAAAAAAUAAAAKABwAAAAAAAUAAAAZABgAAAAFAAUAAAAZABkAAAAFAAUAAAAZABoAAAAFAAUAAAAZABsAAAAFAAUAAAAZABwAAAAFAAUAAAALAB0AAAABAAcAAAAMAB4AAAABAAcAAAAYAB0AAAAEAAcAAAAXAB4AAAAEAAcAAAANAB8AAAACAAkAAAAOAB8AAAACAAkAAAAPAB8AAAACAAkAAAAQAB8AAAACAAkAAAARAB8AAAACAAkAAAASAB8AAAACAAkAAAATAB8AAAACAAkAAAAUAB8AAAACAAkAAAAVAB8AAAACAAkAAAAWAB8AAAACAAkAAAAKAB0AAAABAAkAAAAYAB4AAAAEAAkAAAALABkAAAABAAUAAAALABoAAAABAAUAAAALABsAAAABAAUAAAALABwAAAABAAUAAAAYABgAAAAEAAUAAAAYABkAAAAEAAUAAAAYABoAAAAEAAUAAAAYABsAAAAEAAUAAAAYABwAAAAEAAUAAAAXAB0AAAADAAcAAAAWAB4AAAADAAcAAAANAB4AAAACAAcAAAAMAB0AAAACAAcAAAAXAB8AAAAFAAcAAAAMAB8AAAAAAAcAAAA=")
 tile_set = ExtResource("9_tb47j")
+
+[node name="OldPeculiarEasterEgg1" type="AnimatedSprite2D" parent="."]
+position = Vector2(377, 1146)
+sprite_frames = SubResource("SpriteFrames_3wegk")
+autoplay = "default"
+frame_progress = 0.301469
+
+[node name="AutoActionable" parent="OldPeculiarEasterEgg1" instance=ExtResource("18_e0tge")]
+dialogue_resource = ExtResource("19_0nc8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OldPeculiarEasterEgg1/AutoActionable"]
+shape = SubResource("CircleShape2D_hu2xp")
 
 [node name="decorations" type="Node2D" parent="."]
 

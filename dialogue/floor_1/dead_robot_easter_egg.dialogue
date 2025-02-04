@@ -1,0 +1,14 @@
+~ start
+
+set in_dialogue = true
+(You spot a robot sneaking around the forest near Saisai's garden)
+Old Peculiar: Chosen one. The prophecy has told of your arrival.
+- What?
+Old Peculiar: We shall meet again...
+(The robot doesn't go anywhere)
+- Oh... bye then (leave)
+=> end
+
+~ end
+set in_dialogue = false
+=> END
