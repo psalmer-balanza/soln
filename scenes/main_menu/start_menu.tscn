@@ -56,6 +56,16 @@ script = ExtResource("1_a73is")
 position = Vector2(528, 288)
 scale = Vector2(2.00823, 2.02335)
 
+[node name="OfflineMode" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 229.0
+offset_right = 751.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("3_fknky")
+theme_override_font_sizes/font_size = 25
+text = "© HexOffenders"
+flat = true
+
 [node name="SolnBackground" type="AnimatedSprite2D" parent="."]
 position = Vector2(527.951, 287.86)
 scale = Vector2(2.00804, 2.05082)
@@ -63,6 +73,17 @@ sprite_frames = SubResource("SpriteFrames_jaifq")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.89831
+
+[node name="Copyright" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 774.0
+offset_top = 404.0
+offset_right = 899.0
+offset_bottom = 425.0
+theme_override_fonts/normal_font = ExtResource("3_fknky")
+theme_override_font_sizes/normal_font_size = 9
+text = "© HexOffenders"
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -93,6 +114,7 @@ theme_override_font_sizes/font_size = 25
 text = "Play Offline"
 flat = true
 
+[connection signal="button_down" from="OfflineMode" to="." method="_on_offline_mode_button_down"]
 [connection signal="button_down" from="Buttons/Register" to="." method="_on_register_button_down"]
 [connection signal="button_down" from="Buttons/Login" to="." method="_on_login_button_down"]
 [connection signal="button_down" from="Buttons/OfflineMode" to="." method="_on_offline_mode_button_down"]
