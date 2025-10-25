@@ -3,22 +3,35 @@ extends Control
 signal correct
 signal incorrect
 
-
-## UPDATE THE WORDED QUESTIONS SINCE THE QUESTIONS ARE NOW RANDOM
+# index 0: question, index 1: 1st numerator, index 2: 1st denominator
+# index 3: 2nd numerator, index 4: 2nd denominator, index 5: index of the question
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A magician was cooking two batches of magical mushrooms. In the first batch, she used two out of five of his total magic power, and in the second batch, he used three out of ten​. How much magic power did she use in total?", 2, 5, 3, 10, 0],  # First question fractions
-	["I have two shelves of potions. The first shelf had eight potions, and I used three of them in the morning. The second shelf held twelve potions, of which I used five in the afternoon. How many potions did I use?", 3, 8, 5, 12, 1],  # Second question fractions
-	["I was baking pies with my friends. I took three pieces out of six from Saisai's pie and took five pieces out of six from Robot's pie. How much pie do I have altogether?", 3, 6, 5, 6, 2],  # Third question fractions
-	]
+	["Raket practiced his ninja skills by slicing a pie into ten pieces. He took four pieces during training and two more afterward. How much of the pie did Raket take in total?", 4, 10, 2, 10, 0],
+	["During stealth training, Raket found two pies. The first was sliced into eight pieces, and he took three. The second was sliced into twelve pieces, and he took four. How much pie did Raket take altogether?", 3, 8, 4, 12, 1],
+	["Raket grabbed two pies to test his speed. The first had six slices, and he took five. The second had nine slices, and he took three. How much pie did Raket take in all?", 5, 6, 3, 9, 2],
+	["Robot caught Raket trying to sneak two slices of pie. One pie had eight pieces, and Raket already ate three. The other pie had ten pieces, and he ate two. How much pie did Raket eat in total?", 3, 8, 2, 10, 3],
+	["While sneaking through the kitchen, Raket spotted two fruit pies. The first was divided into twelve pieces, and he took four. The second was divided into six, and he took two. How much pie did Raket take together?", 4, 12, 2, 6, 4],
+	["As part of his ninja lesson, Raket used pie crusts to practice cutting quietly. One crust was divided into four parts, and he used one. Another crust was divided into eight parts, and he used three. How much crust did he use in total?", 1, 4, 3, 8, 5],
+	["Robot challenged Raket with two training pies. The first was sliced into nine pieces, and Raket ate three. The second was sliced into six pieces, and he ate two. How much pie did he eat together?", 3, 9, 2, 6, 6],
+	["Raket tried hiding two pies before Robot could see him. One pie was sliced into six pieces, and he took two. The other was sliced into twelve, and he took four. How much pie did Raket take altogether?", 2, 6, 4, 12, 7],
+	["Raket was caught by Robot holding two half-eaten pies. The first had eight slices, and he ate three. The second had ten slices, and he ate two. How much pie did he eat in total?", 3, 8, 2, 10, 8],
+	["After realizing his mistake, Raket returned the pies he took. One pie had twelve slices, and he gave back five. Another had nine slices, and he returned four. How much pie did Raket return in total?", 5, 12, 4, 9, 9]
+]
 	
 var fraction_questions_house = [
 	["Raket and Robot shared a pie that was sliced into ten pieces. Raket took four pieces of the pie, while Robot took three pieces. How much pie will they eat together?", 4, 10, 3, 10, 0],
-	["Raket had a pie sliced into ten pieces and ate sixth tenth for breakfast and lunch. For dinner, Raket set aside two-tenths for him and one-tenth for the Robot. How much pie was saved for Robots and Rakets dinner?", 2, 10, 1, 10, 1],
-	["Saisai prepared the pie you delivered so you could give it to Raket. Saisai suggested that you can eat five-tenths of the pie while Raket can eat the remaining five pieces. How much pie was eaten in total?", 5, 10, 5, 10, 2]
-];
-
+	["Raket had a pie sliced into ten pieces and ate six for breakfast and lunch. For dinner, Raket set aside two for him and one for Robot. How much pie was saved for Robots and Rakets dinner?", 2, 10, 1, 10, 1],
+	["Saisai prepared the pie you delivered so you could give it to Raket. Saisai suggested that you can eat five of the pie while Raket can eat the remaining five pieces. How much pie was eaten in total?", 5, 10, 5, 10, 2],
+	["Robot baked a new pie and cut it into eight slices. He ate three slices in the morning and one slice in the afternoon. How much of the pie did he eat that day?", 3, 8, 1, 8, 3],
+	["Saisai brought a pie that was cut into twelve pieces. She gave four pieces to Raket and three pieces to Robot. How much of the pie was given away in total?", 4, 12, 3, 12, 4],
+	["Saisai and Robot were baking together that has a total of four crusts. Saisai used one of the pie crust for one pie and another one for another. How much crust did Raket use in total?", 1, 4, 1, 4, 5],
+	["Saisai had group the pie into two group one pie has a total of three cuts while the other has six. She decided give one piece of the first pie to Robot while two piece of the second pie to Raket. How much pie did they both receive?", 1, 3, 2, 6, 6],
+	["Robot sliced a pie into six equal parts. He ate two slices during lunch and one slice for dessert. How much of the pie did he eat in all?", 2, 6, 1, 6, 7],
+	["Saisai baked a strawberry pie cut into eight slices. Raket took three slices, and Saisai took two slices. How much pie did they eat together?", 3, 8, 2, 8, 8],
+	["Raket decided to share his pie cut into twelve slices. He gave four slices to Saisai and two slices to Robot. How much of the pie did he give away in total?", 4, 12, 2, 12, 9]
+]
 
  # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on

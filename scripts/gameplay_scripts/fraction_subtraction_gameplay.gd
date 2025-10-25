@@ -3,16 +3,22 @@ extends Control
 signal correct
 signal incorrect
 
-
-## UPDATE THE WORDED QUESTIONS SINCE THE QUESTIONS ARE NOW RANDOM
+# index 0: question, index 1: 1st numerator, index 2: 1st denominator
+# index 3: 2nd numerator, index 4: 2nd denominator, index 5: index of the question
 
 # Store multiple questions as pairs of numerators and denominators
 var fraction_questions = [
-	["A water tank was initially filled with two fifths of its capacity. After some usage, another three tenths was drained. How much water remains in the tank?", 2, 5, 3, 10, 0],
-	["A pipe was carrying water to a water supply. In the morning, five sixths of the water supply was filled, but three eights was drained in the afternoon. How much water remains in the reservoir?", 5, 6, 3, 8, 1],
-	["Two sections of a pipeline had been filled. The first section was filled to five over six of its capacity, and the second section was drained to three over six of its capacity. What is the remaining capacity in the pipes?", 5, 6, 3, 6, 2]
+	["A cauldron in the Wizard Rat’s training room was initially filled with five sixths of a glowing potion. During a practice spell, another two thirds was spilled. How much potion remains in the cauldron?", 5, 6, 2, 3, 0],
+	["A crystal orb was charged with seven eighths of its total magical energy. After a surge of dark power struck the chamber, three fourths of the energy was drained. How much energy remains in the orb?", 7, 8, 3, 4, 1],
+	["A spell scroll contained nine tenths of the Wizard Rat’s ancient runes. Over time, two fifths of the runes faded from the parchment. How much of the inscription remains visible?", 9, 10, 2, 5, 2],
+	["A training flask was filled with four fifths of a shimmering elixir. During an experiment, one half was accidentally vaporized. How much elixir remains in the flask?", 4, 5, 1, 2, 3],
+	["The Wizard Rat’s mana crystal held six sevenths of its total energy. After a draining duel with the cursed crab, two thirds of that energy was lost. How much power remains in the crystal?", 6, 7, 2, 3, 4],
+	["A magical lantern glowed at three fourths of its brightness. When the dark mist spread through the corridor, one third of its light faded. How much brightness remains in the lantern?", 3, 4, 1, 3, 5],
+	["A potion bottle was filled with seven ninths of a rare healing mixture. After a failed spell, four ninths of it spilled onto the floor. How much of the potion remains in the bottle?", 7, 9, 4, 9, 6],
+	["A crystal bowl contained eight tenths of enchanted water. During a purification ritual, three fifths of it evaporated. How much enchanted water remains in the bowl?", 8, 10, 3, 5, 7],
+	["A glowing rune stone held five eighths of its magic power. When the Wizard Rat used it for teleportation practice, one fourth of its energy was consumed. How much magic remains in the stone?", 5, 8, 1, 4, 8],
+	["A beaker of luminous dust was filled to six tenths of its capacity. During a storm inside the tower, one third of it was scattered by the wind. How much dust remains in the beaker?", 6, 10, 1, 3, 9]
 ]
-
 
 # List to store question context text for each round
 var current_question_index = 0  # Track which question the player is on

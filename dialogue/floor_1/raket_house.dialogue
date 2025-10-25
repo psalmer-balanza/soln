@@ -4,10 +4,9 @@ set in_dialogue = true
 if current_quest == "share_pie_with_raket" or current_quest == "starting"
 	Raket: By the way, I’m Raket the blacksmith racoon. What’s your name? 
 	- Oh, I’m {{player_username}}.
-	Raket: Well then {{player_username}}, how about we cut the pie into 10 slices?
-	Raket: You can take 4/10 and I’ll take 3/10 of the pie? 
-	Raket: There will still be a few left for me to eat for dinner.
-	Robot: Isn’t 4/10 too much for me? The pie is for you…
+	Raket: Well then {{player_username}}, how about we cut the pie into a number of slices?
+	Raket: You can take these number of slices?
+	Robot: Isn’t that number of slices too much for me? The pie is for you…
 	Raket: I don’t think so. Let's try solving it, see how much will we eat later and how much will be left for me.
 	- Alright
 	set current_quest = "raket_house"
